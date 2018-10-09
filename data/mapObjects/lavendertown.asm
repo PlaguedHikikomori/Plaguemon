@@ -9,13 +9,14 @@ LavenderTownObject:
 	db $d, $3, $0, LAVENDER_HOUSE_2
 	db $d, $7, $0, NAME_RATERS_HOUSE
 
-	db $6 ; signs
+	db $7 ; signs
 	db $9, $b, $4 ; LavenderTownText4
 	db $3, $9, $5 ; LavenderTownText5
 	db $d, $10, $6 ; MartSignText
 	db $5, $4, $7 ; PokeCenterSignText
 	db $9, $5, $8 ; LavenderTownText8
 	db $7, $11, $9 ; LavenderTownText9
+	db $d, $1, $a; LavenderTownText10
 
 	db $3 ; objects
 	object SPRITE_LITTLE_GIRL, $f, $9, WALK, $0, $1 ; person

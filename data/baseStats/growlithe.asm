@@ -1,8 +1,8 @@
 db DEX_GROWLITHE ; pokedex id
-db 55 ; base hp
+db 80 ; base hp
 db 70 ; base attack
 db 45 ; base defense
-db 60 ; base speed
+db 100 ; base speed
 db 50 ; base special
 db FIRE ; species type 1
 db FIRE ; species type 2

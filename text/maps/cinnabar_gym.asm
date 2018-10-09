@@ -1,44 +1,26 @@
 _BlaineBattleText::
-	text "Hah!"
+	text "Crawling in my skin.."
 
-	para "I am BLAINE! I"
-	line "am the LEADER of"
-	cont "CINNABAR GYM!"
+	para "These wounds,"
+	line "they will not heal"
+	
+	para "Fear is how i fall"
 
-	para "My fiery #MON"
-	line "will incinerate"
-	cont "all challengers!"
-
-	para "Hah! You better"
-	line "have BURN HEAL!"
+	para "Confusing what"
+	line "is real.."
 	done
 
 _BlaineEndBattleText::
-	text "I have"
-	line "burnt out!"
+	text "I've lost"
 
-	para "You have earned"
-	line "the VOLCANOBADGE!@@"
+	para "Here's the"
+	line "KNOT of the ROPE"
+	cont "that killed me.."
 
 _BlaineFireBlastText::
-	text "FIRE BLAST is the"
-	line "ultimate fire"
-	cont "technique!"
-
-	para "Don't waste it on"
-	line "water #MON!"
 	done
 
 _BlaineBadgeText::
-	text "Hah!"
-
-	para "The VOLCANOBADGE"
-	line "heightens the"
-	cont "SPECIAL abilities"
-	cont "of your #MON!"
-
-	para "Here, you can"
-	line "have this too!"
 	done
 
 _ReceivedTM38Text::
@@ -49,15 +31,6 @@ _ReceivedTM38Text::
 
 _TM38ExplanationText::
 	db $0
-	para "TM38 contains"
-	line "FIRE BLAST!"
-
-	para "Teach it to fire-"
-	line "type #MON!"
-
-	para "CHARMELEON or"
-	line "PONYTA would be"
-	cont "good bets!"
 	done
 
 _TM38NoRoomText::

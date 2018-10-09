@@ -70,12 +70,12 @@ _BoulderText::
 _MartSignText::
 	text "All your item"
 	line "needs fulfilled!"
-	cont "#MON MART"
+	cont "PLAGUEMON MART"
 	done
 
 _PokeCenterSignText::
-	text "Heal Your #MON!"
-	line "#MON CENTER"
+	text "Heal Your PLAGUEMON!"
+	line "PLAGUEMON Corp."
 	done
 
 _FoundItemText::
@@ -90,81 +90,59 @@ _NoMoreRoomForItemText::
 	done
 
 _OaksAideHiText::
-	text "Hi! Remember me?"
-	line "I'm PROF.OAK's"
-	cont "AIDE!"
+	text "Are you experinced"
+	line "enough now, kid?"
 
-	para "If you caught @"
+	para "If you got @"
 	TX_NUM hOaksAideRequirement, 1, 3
-	text ""
-	line "kinds of #MON,"
-	cont "I'm supposed to"
-	cont "give you an"
-	cont "@"
-	TX_RAM wOaksAideRewardItemName
-	text "!"
-
-	para "So, <PLAYER>! Have"
-	line "you caught at"
+	text "PLAGUEMONs,"
+	line "I'll give you"
+	cont "a torch.."
+	
+	para "So, <PLAYER>!"
+	line "You got at"
 	cont "least @"
 	TX_NUM hOaksAideRequirement, 1, 3
-	text " kinds of"
-	cont "#MON?"
+	text "#MON?"
 	done
 
 _OaksAideUhOhText::
-	text "Let's see..."
-	line "Uh-oh! You have"
-	cont "caught only @"
+	text "Nah man..."
+	line "Don't play on me"
+	cont "Those are just @"
 	TX_NUM hOaksAideNumMonsOwned, 1, 3
-	text ""
-	cont "kinds of #MON!"
+	text "#MON!"
 
 	para "You need @"
 	TX_NUM hOaksAideRequirement, 1, 3
 	text " kinds"
 	line "if you want the"
-	cont "@"
-	TX_RAM wOaksAideRewardItemName
-	text "."
+	cont "torch.."
 	done
 
 _OaksAideComeBackText::
 	text "Oh. I see."
-
-	para "When you get @"
-	TX_NUM hOaksAideRequirement, 1, 3
-	text ""
-	line "kinds, come back"
-	cont "for @"
-	TX_RAM wOaksAideRewardItemName
-	text "."
 	done
 
 _OaksAideHereYouGoText::
-	text "Great! You have"
-	line "caught @"
-	TX_NUM hOaksAideNumMonsOwned, 1, 3
-	text " kinds "
-	cont "of #MON!"
-	cont "Congratulations!"
+	text "Yes! You mad"
+	line "slaver!"
+		
+	para "Congratulations!"
 
 	para "Here you go!"
 	prompt
 
 _OaksAideGotItemText::
 	text "<PLAYER> got the"
-	line "@"
-	TX_RAM wOaksAideRewardItemName
-	text "!@@"
+	line "TORCH!"
+	cont "!@@"
 
 _OaksAideNoRoomText::
 	text "Oh! I see you"
 	line "don't have any"
 	cont "room for the"
-	cont "@"
-	TX_RAM wOaksAideRewardItemName
-	text "."
+	cont "TORCH.."
 	done
 
 INCLUDE "text/maps/viridian_forest.asm"
@@ -386,29 +364,20 @@ _GymStatueText2::
 	done
 
 _ViridianCityPokecenterGuyText::
-	text "#MON CENTERs"
-	line "heal your tired,"
-	cont "hurt or fainted"
-	cont "#MON!"
+	text "#CORP"
+	line "nuke your mons,"
+	cont "to give them a"
+	cont "new life!"
 	done
 
 _PewterCityPokecenterGuyText::
 	text "Yawn!"
-
-	para "When JIGGLYPUFF"
-	line "sings, #MON"
-	cont "get drowsy..."
-
-	para "...Me too..."
-	line "Snore..."
+	
 	done
 
 _CeruleanPokecenterGuyText::
-	text "BILL has lots of"
-	line "#MON!"
-
-	para "He collects rare"
-	line "ones too!"
+	text "I'm really bored"
+	line "by this couch!"
 	done
 
 _LavenderPokecenterGuyText::
@@ -420,21 +389,21 @@ _LavenderPokecenterGuyText::
 	done
 
 _MtMoonPokecenterBenchGuyText::
-	text "If you have too"
-	line "many #MON, you"
-	cont "should store them"
-	cont "via PC!"
+	text "Shit."
+	line "Why you bother"
+	cont "all the people"
+	cont "you encounter?"
 	done
 
 _RockTunnelPokecenterGuyText::
 	text "I heard that"
-	line "GHOSTs haunt"
-	cont "LAVENDER TOWN!"
+	line "poltergeist"
+	cont "exists!"
 	done
 
 _UnusedBenchGuyText1::
 	text "I wish I could"
-	line "catch #MON."
+	line "die."
 	done
 
 _UnusedBenchGuyText2::
@@ -449,19 +418,7 @@ _UnusedBenchGuyText3::
 	done
 
 _VermilionPokecenterGuyText::
-	text "It is true that a"
-	line "higher level"
-	cont "#MON will be"
-	cont "more powerful..."
-
-	para "But, all #MON"
-	line "will have weak"
-	cont "points against"
-	cont "specific types."
-
-	para "So, there is no"
-	line "universally"
-	cont "strong #MON."
+	text "Can't move."
 	done
 
 _CeladonCityPokecenterGuyText::
@@ -494,11 +451,11 @@ _SaffronCityPokecenterGuyText1::
 	text "It would be great"
 	line "if the ELITE FOUR"
 	cont "came and stomped"
-	cont "TEAM ROCKET!"
+	cont "PLAGUE CORP!"
 	done
 
 _SaffronCityPokecenterGuyText2::
-	text "TEAM ROCKET took"
+	text "PLAGUE CORP took"
 	line "off! We can go"
 	cont "out safely again!"
 	cont "That's great!"
@@ -515,26 +472,28 @@ _BookcaseText::
 	done
 
 _NewBicycleText::
-	text "A shiny new"
-	line "BICYCLE!"
+	text "Woah. This looks"
+	line "HARDCORE!"
 	done
 
 _PushStartText::
-	text "Push START to"
-	line "open the MENU!"
+	text "Sometimes even"
+	line "live is an act"
+	cont "of courage."
 	done
 
 _SaveOptionText::
-	text "The SAVE option is"
-	line "on the MENU"
-	cont "screen."
+	text "If i had no "
+	line "sense of humor,"
+	cont "i would have long"
+	cont "ago committed"
+	cont "suicide."
 	done
 
 _StrengthsAndWeaknessesText::
-	text "All #MON types"
-	line "have strong and"
-	cont "weak points"
-	cont "against others."
+	text "A videogame"
+	line "is a suicide"
+	cont "postponed."
 	done
 
 _TimesUpText::
@@ -621,15 +580,15 @@ _MagazinesText::
 	done
 
 _BillsHouseMonitorText::
-	text "TELEPORTER is"
-	line "displayed on the"
-	cont "PC monitor."
+	text "Some strange"
+	line "chemical studies"
+	cont "and molecules."
 	done
 
 _BillsHouseInitiatedText::
-	text "<PLAYER> initiated"
-	line "TELEPORTER's Cell"
-	cont "Separator!@@"
+	text "<PLAYER> started"
+	line "to write some"
+	cont "Assembly code!@@"
 
 _BillsHousePokemonListText1::
 	text "BILL's favorite"
@@ -642,30 +601,25 @@ _BillsHousePokemonListText2::
 	done
 
 _OakLabEmailText::
-	text "There's an e-mail"
-	line "message here!"
+	text "Computer is open."
+	line "Seems some binary"
+	cont "code ..."
 
 	para "..."
 
-	para "Calling all"
-	line "#MON trainers!"
+	para "01101011"
+	line "01101001"
+    cont "01101100"
+	cont "01101100"
 
-	para "The elite trainers"
-	line "of #MON LEAGUE"
-	cont "are ready to take"
-	cont "on all comers!"
-
-	para "Bring your best"
-	line "#MON and see"
-	cont "how you rate as a"
-	cont "trainer!"
-
-	para "#MON LEAGUE HQ"
-	line "INDIGO PLATEAU"
-
-	para "PS: PROF.OAK,"
-	line "please visit us!"
-	cont "..."
+	para "01111001"
+	line "01101111"
+	cont "01110101"
+	cont "01110010"
+    cont "01110011"
+	cont "01100101"
+	cont "01101100"
+	cont "00001010"
 	done
 
 _GameCornerCoinCaseText::
@@ -717,68 +671,73 @@ _TurnPageText::
 	done
 
 _ViridianSchoolNotebookText5::
-	text "GIRL: Hey! Don't"
-	line "look at my notes!@@"
+	text "GIRL: That's "
+	line "MERCURY FULMINATE!@@"
 
 _ViridianSchoolNotebookText1::
 	text "Looked at the"
-	line "notebook!"
-
+	line "cookbook.."
+	
+	para "It's dated 1971!"
+	
 	para "First page..."
 
-	para "# BALLs are"
-	line "used to catch"
-	cont "#MON."
+	para "In one beaker mix"
+	line "5 g MERCURY with"
+	cont "35 ml NITRIC ACID"
 
-	para "Up to 6 #MON"
-	line "can be carried."
+	para "Using the glassrod"
+	line "Slowly, heat the"
 
-	para "People who raise"
-	line "and make #MON"
-	cont "fight are called"
-	cont "#MON trainers."
+	para "mixture until the"
+	line "MERCURY dissolves"
+	cont "Solution should"
+	cont "turn green,boils."
 	prompt
 
 _ViridianSchoolNotebookText2::
 	text "Second page..."
 
-	para "A healthy #MON"
-	line "may be hard to"
-	cont "catch, so weaken"
-	cont "it first!"
+	para "Place 30mg of"
+	line "ETHYL ALCOHOL"
+	cont "into the second"
+	cont "beaker"
 
-	para "Poison, burns and"
-	line "other damage are"
-	cont "effective!"
+	para "Add very slowly "
+	line "the first beaker"
+	cont "to the second."
+	cont "Red toxic fumes"
+	cont "should appear."
 	prompt
 
 _ViridianSchoolNotebookText3::
 	text "Third page..."
 
-	para "#MON trainers"
-	line "seek others to"
-	cont "engage in #MON"
-	cont "fights."
+	para "After 40 minutes"
+	line "fumes will turn"
+	cont "white. Reaction"
+	cont "is near complete."
 
-	para "Battles are"
-	line "constantly fought"
-	cont "at #MON GYMs."
+	para "After 10 min"
+	line "add 30 ml of"
+	cont "DISTILLED WATER"
+	cont "into solution."
 	prompt
 
 _ViridianSchoolNotebookText4::
 	text "Fourth page..."
 
-	para "The goal for"
-	line "#MON trainers"
-	cont "is to beat the "
-	cont "top 8 #MON"
-	cont "GYM LEADERs."
+	para "Filter crystals"
+	line "carefully."
+	cont "Continue now "
+	cont "filtering with"
+	cont "DIST. WATER."
 
-	para "Do so to earn the"
-	line "right to face..."
+	para "Test crystals ph"
+	line "until neutral."
 
-	para "The ELITE FOUR of"
-	line "#MON LEAGUE!"
+	para "Store dry crystals"
+	line "in safe place!"
 	prompt
 
 _EnemiesOnEverySideText::
@@ -802,9 +761,9 @@ _IndigoPlateauHQText::
 
 _RedBedroomSNESText::
 	text "<PLAYER> is"
-	line "playing the SNES!"
+	line "playing SPACEWEED!"
 	cont "...Okay!"
-	cont "It's time to go!"
+	cont "Time to get high!"
 	done
 
 _Route15UpstairsBinocularsText::
@@ -817,15 +776,18 @@ _Route15UpstairsBinocularsText::
 	done
 
 _AerodactylFossilText::
-	text "AERODACTYL Fossil"
-	line "A primitive and"
-	cont "rare #MON."
+	text "This is the "
+	line "HOLY PREPUCE."
+	cont "It was cutted of"
+	cont "Jesus penis!"
 	done
 
 _KabutopsFossilText::
-	text "KABUTOPS Fossil"
-	line "A primitive and"
-	cont "rare #MON."
+	text "This is"
+	line "YERSINIA PESTIS."
+	cont "It was one of the"
+	cont "deadliest bacteria"
+	cont "in mankind history!"
 	done
 
 _LinkCableHelpText1::
@@ -863,78 +825,65 @@ _LinkCableInfoText3::
 	prompt
 
 _ViridianSchoolBlackboardText1::
-	text "The blackboard"
-	line "describes #MON"
-	cont "STATUS changes"
-	cont "during battles."
+	text "Some shit"
+	line "that you can"
+	cont "read or not."
+	cont "I don't care."
 	prompt
 
 _ViridianSchoolBlackboardText2::
-	text "Which heading do"
-	line "you want to read?"
+	text "Ok, so this"
+	line "can happen.."
 	done
 
 _ViridianBlackboardSleepText::
-	text "A #MON can't"
-	line "attack if it's"
-	cont "asleep!"
+	text "#MON can't"
+	line "attack if they"
+	cont "are in a COMA!"
 
-	para "#MON will stay"
-	line "asleep even after"
-	cont "battles."
+	para "COMA can last"
+	line "as long as it"
+	cont "will."
 
-	para "Use AWAKENING to"
+	para "Use A SLAP to"
 	line "wake them up!"
 	prompt
 
 _ViridianBlackboardPoisonText::
-	text "When poisoned, a"
-	line "#MON's health"
-	cont "steadily drops."
-
-	para "Poison lingers"
-	line "after battles."
-
-	para "Use an ANTIDOTE"
-	line "to cure poison!"
+	text "A TUMOR is"
+	line "a fucking TUMOR."
 	prompt
 
 _ViridianBlackboardPrlzText::
-	text "Paralysis could"
-	line "make #MON"
-	cont "moves misfire!"
-
-	para "Paralysis remains"
-	line "after battles."
-
-	para "Use PARLYZ HEAL"
-	line "for treatment!"
+	text "ANXIETY is"
+	line "such a shit."
+	
+	para "Sometimes XANAX"
+	line "helps!"
 	prompt
 
 _ViridianBlackboardBurnText::
-	text "A burn reduces"
-	line "power and speed."
-	cont "It also causes"
-	cont "ongoing damage."
+	text "Being POSSESSED"
+	line "is when your"
+	cont "body belongs to"
+	cont "a DEMON."
 
-	para "Burns remain"
-	line "after battles."
+	para "It can kill"
+	line "you."
 
-	para "Use BURN HEAL to"
-	line "cure a burn!"
+	para "Use CRUCIFIX to"
+	line "release him."
 	prompt
 
 _ViridianBlackboardFrozenText::
-	text "If frozen, a"
-	line "#MON becomes"
-	cont "totally immobile!"
+	text "OVERDOSE is"
+	line "like a limbo."
+	cont "You can be here."
 
-	para "It stays frozen"
-	line "even after the"
-	cont "battle ends."
+	para "Or you can't."
+	line "Use NALOXONE"
+	cont "To have a chance."
 
-	para "Use ICE HEAL to"
-	line "thaw out #MON!"
 	prompt
 
 _VermilionGymTrashText::
@@ -1002,29 +951,30 @@ _DroppedHiddenCoinsText::
 	done
 
 _IndigoPlateauStatuesText1::
-	text "INDIGO PLATEAU"
+	text "MPHF!"
 	prompt
 
 _IndigoPlateauStatuesText2::
-	text "The ultimate goal"
-	line "of trainers!"
-	cont "#MON LEAGUE HQ"
+	text "All the.. mpfh"
+	line "population got.."
+	cont "tortured..."
 	done
 
 _IndigoPlateauStatuesText3::
-	text "The highest"
-	line "#MON authority"
-	cont "#MON LEAGUE HQ"
+	text "This world was"
+	line "mpf.. destroyed"
+	cont "by the greed of"
+	cont "the mighty.."
 	done
 
 _PokemonBooksText::
-	text "Crammed full of"
-	line "#MON books!"
+	text "This fetus looks"
+	line "very awful!"
 	done
 
 _DiglettSculptureText::
 	text "It's a sculpture"
-	line "of DIGLETT."
+	line "of a DICK."
 	done
 
 _ElevatorText::
@@ -1063,7 +1013,7 @@ _EnemyRanText::
 
 _HurtByPoisonText::
 	text "<USER>'s"
-	line "hurt by poison!"
+	line "TUMOR'S GROWING!"
 	prompt
 
 _HurtByBurnText::
@@ -1080,18 +1030,18 @@ _EnemyMonFaintedText::
 	text "Enemy @"
 	TX_RAM wEnemyMonNick
 	text ""
-	line "fainted!"
+	line "DIED!"
 	prompt
 
 _MoneyForWinningText::
-	text "<PLAYER> got ¥@"
+	text "<PLAYER> stole ¥@"
 	TX_BCD wAmountMoneyWon, 3 | LEADING_ZEROES | LEFT_ALIGN
 	text ""
-	line "for winning!"
+	line "from his wallet!"
 	prompt
 
 _TrainerDefeatedText::
-	text "<PLAYER> defeated"
+	text "<PLAYER> humiliated"
 	line "@"
 	TX_RAM wTrainerName
 	text "!"
@@ -1100,16 +1050,16 @@ _TrainerDefeatedText::
 _PlayerMonFaintedText::
 	TX_RAM wBattleMonNick
 	text ""
-	line "fainted!"
+	line "DIED!"
 	prompt
 
 _UseNextMonText::
-	text "Use next #MON?"
+	text "Fear, fag?"
 	done
 
 _Sony1WinText::
-	text "<RIVAL>: Yeah! Am"
-	line "I great or what?"
+	text "<RIVAL>: GWAAAAR!"
+	line "GWOOOOON!"
 	prompt
 
 _PlayerBlackedOutText2::
@@ -1148,8 +1098,8 @@ _TrainerSentOutText::
 	done
 
 _NoWillText::
-	text "There's no will"
-	line "to fight!"
+	text "You stare at"
+	line "a cold corpse."
 	prompt
 
 _CantEscapeText::
@@ -1163,7 +1113,7 @@ _NoRunningText::
 	prompt
 
 _GotAwayText::
-	text "Got away safely!"
+	text "COWARD!"
 	prompt
 
 _ItemsCantBeUsedHereText::
@@ -1212,8 +1162,8 @@ _GetOutText::
 	prompt
 
 _FastAsleepText::
-	text "<USER>"
-	line "is fast asleep!"
+	text "<USER> is"
+	line "in other dimension!"
 	prompt
 
 _WokeUpText::
@@ -1355,7 +1305,7 @@ _DoesntAffectMonText::
 	prompt
 
 _CriticalHitText::
-	text "Critical hit!"
+	text "Humiliating!"
 	prompt
 
 _OHKOText::
@@ -1421,7 +1371,7 @@ _HitXTimesText::
 
 _GainedText::
 	TX_RAM wcd6d
-	text " gained"
+	text " absorbed"
 	line "@@"
 
 _WithExpAllText::
@@ -1434,13 +1384,13 @@ _BoostedText::
 
 _ExpPointsText::
 	TX_NUM wExpAmountGained, 2, 4
-	text " EXP. Points!"
+	text " radiations!"
 	prompt
 
 _GrewLevelText::
 	TX_RAM wcd6d
-	text " grew"
-	line "to level @"
+	text " radiation"
+	line "grew to @"
 	TX_NUM wCurEnemyLVL, 1, 3
 	text "!@@"
 
@@ -1468,7 +1418,7 @@ _EnemyAppearedText::
 _TrainerWantsToFightText::
 	TX_RAM wTrainerName
 	text " wants"
-	line "to fight!"
+	line "your money!"
 	prompt
 
 _UnveiledGhostText::
@@ -1519,13 +1469,12 @@ _ComeBackText::
 	done
 
 _SuperEffectiveText::
-	text "It's super"
-	line "effective!"
+    text "MASSACRE!"
 	prompt
-
+	
 _NotVeryEffectiveText::
-	text "It's not very"
-	line "effective..."
+	text "That was"
+	line "weak, pussy.."
 	prompt
 
 _SafariZoneEatingText::
@@ -1866,11 +1815,11 @@ _GetDexRatedText::
 
 _ClosedOaksPCText::
 	text "Closed link to"
-	line "PROF.OAK's PC.@@"
+	line "THE PROF's PC.@@"
 
 _AccessedOaksPCText::
-	text "Accessed PROF."
-	line "OAK's PC."
+	text "Accessed THE"
+	line "PROF's PC."
 
 	para "Accessed #DEX"
 	line "Rating System."
@@ -2036,7 +1985,7 @@ _ChooseABoxText::
 
 _EvolvedText::
 	TX_RAM wcf4b
-	text " evolved"
+	text " mutated"
 	done
 
 _IntoText::
@@ -2050,39 +1999,40 @@ _StoppedEvolvingText::
 	text "Huh? @"
 	TX_RAM wcf4b
 	text ""
-	line "stopped evolving!"
+	line "stopped mutating!"
 	prompt
 
 _IsEvolvingText::
 	text "What? @"
 	TX_RAM wcf4b
 	text ""
-	line "is evolving!"
+	line "is mutating!"
 	done
 
 _FellAsleepText::
 	text "<TARGET>"
-	line "fell asleep!"
+	line "got in a COMA!"
 	prompt
 
 _AlreadyAsleepText::
 	text "<TARGET>'s"
-	line "already asleep!"
+	line "already in COMA!"
 	prompt
 
 _PoisonedText::
 	text "<TARGET>"
-	line "was poisoned!"
+	line "got a TUMOR!"
 	prompt
 
 _BadlyPoisonedText::
 	text "<TARGET>'s"
-	line "badly poisoned!"
+	line "TUMOR getting"
+	cont "worse.."
 	prompt
 
 _BurnedText::
 	text "<TARGET>"
-	line "was burned!"
+	line "got POSSESSED!"
 	prompt
 
 _FrozenText::
@@ -2191,7 +2141,7 @@ _MoveWasDisabledText::
 	prompt
 
 _NothingHappenedText::
-	text "Nothing happened!"
+	text "Waste of time!"
 	prompt
 
 _NoEffectText::
@@ -2428,14 +2378,14 @@ INCLUDE "text/maps/saffron_pokecenter.asm"
 INCLUDE "text/maps/mr_psychics_house.asm"
 
 _PokemartGreetingText::
-	text "Hi there!"
-	next "May I help you?"
+	text "You again."
+	next "Sup bro?"
 	done
 
 _PokemonFaintedText::
 	TX_RAM wcd6d
 	text ""
-	line "fainted!"
+	line "DIED!"
 	done
 
 _PlayerBlackedOutText::
@@ -2452,7 +2402,7 @@ _RepelWoreOffText::
 	done
 
 _PokemartBuyingGreetingText::
-	text "Take your time."
+	text "Nice stuff, huh?"
 	done
 
 _PokemartTellBuyPriceText::
@@ -2465,13 +2415,12 @@ _PokemartTellBuyPriceText::
 	done
 
 _PokemartBoughtItemText::
-	text "Here you are!"
-	line "Thank you!"
+	text "Need a shopper?"
 	prompt
 
 _PokemartNotEnoughMoneyText::
-	text "You don't have"
-	line "enough money."
+	text "You are poor like"
+	line "a ghetto whore."
 	prompt
 
 _PokemartItemBagFullText::
@@ -2492,8 +2441,7 @@ _PokemartTellSellPriceText::
 	done
 
 _PokemartItemBagEmptyText::
-	text "You don't have"
-	line "anything to sell."
+	text "STFU TRAMP!"
 	prompt
 
 _PokemartUnsellableItemText::
@@ -2502,12 +2450,12 @@ _PokemartUnsellableItemText::
 	prompt
 
 _PokemartThankYouText::
-	text "Thank you!"
+	text "Go find a real"
+	line "job, mate."
 	done
 
 _PokemartAnythingElseText::
-	text "Is there anything"
-	line "else I can do?"
+	text "Money is evil."
 	done
 
 _LearnedMove1Text::
@@ -2583,12 +2531,12 @@ _HMCantDeleteText::
 	prompt
 
 _PokemonCenterWelcomeText::
-	text "Welcome to our"
-	line "#MON CENTER!"
+	text "Welcome to"
+	line "# CORP.!"
 
-	para "We heal your"
-	line "#MON back to"
-	cont "perfect health!"
+	para "We breath a"
+	line "new life inside"
+	cont "dead #mons!"
 	prompt
 
 _ShallWeHealYourPokemonText::
@@ -2608,8 +2556,9 @@ _PokemonFightingFitText::
 	prompt
 
 _PokemonCenterFarewellText::
-	text "We hope to see"
-	line "you again!"
+	text "You will! Stupid"
+	line "mortal! I'm"
+	cont "just CODE!"
 	done
 
 _CableClubNPCAreaReservedFor2FriendsLinkedByCableText::
@@ -2680,8 +2629,8 @@ _CyclingIsFunText::
 	prompt
 
 _FlashLightsAreaText::
-	text "A blinding FLASH"
-	line "lights the area!"
+	text "Now you can"
+	line "see in the dark!"
 	prompt
 
 _WarpToLastPokemonCenterText::
@@ -2781,8 +2730,8 @@ _ItemUseBallText02::
 	prompt
 
 _ItemUseBallText03::
-	text "Aww! It appeared"
-	line "to be caught! "
+	text "DAMN YOU"
+	line "BEAST! "
 	prompt
 
 _ItemUseBallText04::
@@ -2854,11 +2803,7 @@ _ThrewRockText::
 	done
 
 _PlayedFluteNoEffectText::
-	text "Played the #"
-	line "FLUTE."
-
-	para "Now, that's a"
-	line "catchy tune!"
+	text "Diggin.."
 	prompt
 
 _FluteWokeUpText::
@@ -2867,8 +2812,8 @@ _FluteWokeUpText::
 	prompt
 
 _PlayedFluteHadEffectText::
-	text "<PLAYER> played the"
-	line "# FLUTE.@@"
+	text "<PLAYER> is removing"
+	line "dead bodies.@@"
 
 _CoinCaseNumCoinsText::
 	text "Coins"
@@ -2949,7 +2894,7 @@ _MonCannotLearnMachineMoveText::
 	prompt
 
 _ItemUseNotTimeText::
-	text "OAK: <PLAYER>!"
+	text "<PLAYER>!"
 	line "This isn't the"
 	cont "time to use that! "
 	prompt
@@ -3001,6 +2946,14 @@ _ItemUseText002::
 	TX_RAM wcf4b
 	text "!"
 	done
+	
+_MotocrossText::
+	text "BRAP BRAP!"
+	prompt
+	
+_BeAHandText::
+	text "You're now a HAND!"
+	prompt
 
 _GotOnBicycleText1::
 	text "<PLAYER> got on the@@"
@@ -3008,15 +2961,6 @@ _GotOnBicycleText1::
 _GotOnBicycleText2::
 	TX_RAM wcf4b
 	text "!"
-	prompt
-
-_GotOffBicycleText1::
-	text "<PLAYER> got off@@"
-
-_GotOffBicycleText2::
-	text "the @"
-	TX_RAM wcf4b
-	text "."
 	prompt
 
 _ThrewAwayItemText::
@@ -3034,8 +2978,8 @@ _IsItOKToTossItemText::
 	prompt
 
 _TooImportantToTossText::
-	text "That's too impor-"
-	line "tant to toss!"
+	text "You ungrateful"
+	line "shit!"
 	prompt
 
 _AlreadyKnowsText::
@@ -3151,7 +3095,7 @@ _WannaTrade3Text::
 	done
 
 _NoTrade3Text::
-	text "That's too bad."
+	text "Fuck you."
 	done
 
 _WrongMon3Text::
@@ -3160,12 +3104,12 @@ _WrongMon3Text::
 	TX_RAM wInGameTradeGiveMonName
 	text "."
 
-	para "If you get one,"
-	line "trade it with me!"
+	para "Do you read"
+	line "jerk on my face?"
 	done
 
 _Thanks3Text::
-	text "Thanks pal!"
+	text "Now is sex-time!"
 	done
 
 _AfterTrade3Text::

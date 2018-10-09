@@ -1,5 +1,5 @@
 SFX_Get_Key_Item_3_Ch4:
-	executemusic
+	;executemusic
 	tempo 256
 	volume 7, 7
 	duty 2
@@ -24,7 +24,7 @@ SFX_Get_Key_Item_3_Ch4:
 
 
 SFX_Get_Key_Item_3_Ch5:
-	executemusic
+	;executemusic
 	vibrato 4, 2, 3
 	duty 2
 	notetype 5, 13, 1
@@ -48,7 +48,7 @@ SFX_Get_Key_Item_3_Ch5:
 
 
 SFX_Get_Key_Item_3_Ch6:
-	executemusic
+	;executemusic
 	notetype 5, 1, 0
 	octave 4
 	D# 4

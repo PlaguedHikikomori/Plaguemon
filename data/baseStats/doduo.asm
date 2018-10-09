@@ -10,7 +10,7 @@ db 190 ; catch rate
 db 96 ; base exp yield
 INCBIN "pic/bmon/doduo.pic",0,1 ; 55, sprite dimensions
 dw DoduoPicFront
-dw DoduoPicBack
+dw DoduoPicFront
 ; attacks known at lvl 0
 db PECK
 db 0

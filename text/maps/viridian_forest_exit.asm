@@ -1,19 +1,15 @@
 _ViridianForestExitText1::
-	text "Many #MON live"
-	line "only in forests "
-	cont "and caves."
+	text "Does code"
+	line "take a shit"
+	cont "sometimes?"
 
-	para "You need to look"
-	line "everywhere to get"
-	cont "different kinds!"
 	done
 
 _ViridianForestExitText2::
 	text "Have you noticed"
-	line "the bushes on the"
-	cont "roadside?"
+	line "that people on"
+	cont "their knees?"
 
-	para "They can be cut"
-	line "down by a special"
-	cont "#MON move."
+	para "They can be"
+	line "executed!"
 	done

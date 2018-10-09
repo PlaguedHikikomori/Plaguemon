@@ -10,7 +10,7 @@ db 255 ; catch rate
 db 81 ; base exp yield
 INCBIN "pic/bmon/diglett.pic",0,1 ; 55, sprite dimensions
 dw DiglettPicFront
-dw DiglettPicBack
+dw DiglettPicFront
 ; attacks known at lvl 0
 db SCRATCH
 db 0

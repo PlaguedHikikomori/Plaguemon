@@ -1,39 +1,30 @@
 _CeladonCityText1::
-	text "I got my KOFFING"
-	line "in CINNABAR!"
-
-	para "It's nice, but it"
-	line "breathes poison"
-	cont "when it's angry!"
+	text "I'm going to kill"
+	line "myself tomorrow."
 	done
 
 _CeladonCityText2::
-	text "Heheh! This GYM"
-	line "is great! It's"
-	cont "full of women!"
+	text "This gym was"
+	line "full of women."
 	done
 
 _CeladonCityText3::
-	text "The GAME CORNER"
-	line "is bad for our"
-	cont "city's image!"
+	text "So happy that"
+	line "the Game corner"
+	cont "collapsed!"
 	done
 
 _CeladonCityText4::
-	text "Moan! I blew it"
-	line "all at the slots!"
-
-	para "I knew I should"
-	line "have cashed in my"
-	cont "coins for prizes!"
+	text "I've lost all"
+	line "my money.."
 	done
 
 _TM41PreText::
-	text "Hello, there!"
+	text "Yo!"
 
-	para "I've seen you,"
-	line "but I never had a"
-	cont "chance to talk!"
+	para "I think you"
+	line "would like that."
+	cont "probably."
 
 	para "Here's a gift for"
 	line "dropping by!"
@@ -47,13 +38,13 @@ _ReceivedTM41Text::
 
 _TM41ExplanationText::
 	text "TM41 teaches"
-	line "SOFTBOILED!"
+	line "PREGNANCY!"
 
 	para "Only one #MON"
 	line "can use it!"
 
 	para "That #MON is"
-	line "CHANSEY!"
+	line "PREGNANTA!"
 	done
 
 _TM41NoRoomText::
@@ -62,17 +53,13 @@ _TM41NoRoomText::
 	done
 
 _CeladonCityText6::
-	text "This is my trusted"
-	line "pal, POLIWRATH!"
-
-	para "It evolved from"
-	line "POLIWHIRL when I"
-	cont "used WATER STONE!"
+	text "Try to use"
+	line "STEROIDS!"
 	done
 
 _CeladonCityText7::
-	text "POLIWRATH: Ribi"
-	line "ribit!@@"
+	text "PPPPP"
+	line "PAIN!@@"
 
 _CeladonCityText8::
 	text "What are you"
@@ -80,73 +67,67 @@ _CeladonCityText8::
 	done
 
 _CeladonCityText9::
-	text "Keep out of TEAM"
-	line "ROCKET's way!"
+	text "Fuck you man."
 	done
 
 _CeladonCityText10::
-	text "TRAINER TIPS"
+	text "FACT"
 
-	para "X ACCURACY boosts"
-	line "the accuracy of"
-	cont "techniques!"
+	para "A person dies"
+	line "by suicide"
+	cont "every 40 seconds."
 
-	para "DIRE HIT jacks up"
-	line "the likelihood of"
-	cont "critical hits!"
-
-	para "Get your items at"
-	line "CELADON DEPT."
-	cont "STORE!"
 	done
 
 _CeladonCityText11::
 	text "CELADON CITY"
 	line "The City of"
-	cont "Rainbow Dreams"
+	cont "Lustful dreams."
 	done
 
 _CeladonCityText13::
 	text "CELADON CITY"
 	line "#MON GYM"
-	cont "LEADER: ERIKA"
+	cont "LEADER: DOLORES"
 
-	para "The Nature Loving"
-	line "Princess!"
+	para "That Irish"
+	line "singer.."
 	done
 
 _CeladonCityText14::
-	text "CELADON MANSION"
+	text "KILROY WAS HERE"
 	done
 
 _CeladonCityText15::
 	text "Find what you"
-	line "need at CELADON"
-	cont "DEPT. STORE!"
+	line "need.."
 	done
 
 _CeladonCityText16::
-	text "TRAINER TIPS"
+	text "FACT"
 
-	para "GUARD SPEC."
-	line "protects #MON"
-	cont "against SPECIAL"
-	cont "attacks such as"
-	cont "fire and water!"
-
-	para "Get your items at"
-	line "CELADON DEPT."
-	cont "STORE!"
+	para "Every 25 suicide"
+	line "attemps,"
+	cont "just one ends"
+	cont "with success."
+	
 	done
 
 _CeladonCityText17::
-	text "Coins exchanged"
-	line "for prizes!"
-	cont "PRIZE EXCHANGE"
+	text "FACT"
+
+	para "Poisoning is the"
+	line "most common way"
+	cont "to suicide"
+	cont "for women."
+	
 	done
 
 _CeladonCityText18::
-	text "ROCKET GAME CORNER"
-	line "The playground"
-	cont "for grown-ups!"
+	text "Happiness is not"
+	line "an ideal of"
+	cont "reason."
+	
+	para "But of "
+	line "imagination."
 	done

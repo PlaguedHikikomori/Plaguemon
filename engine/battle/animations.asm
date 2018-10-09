@@ -283,7 +283,7 @@ LoadSubanimation:
 	srl a
 	swap a
 	ld [wSubAnimTransform],a
-	cp a,4 ; is the animation reversed?
+	cp a,4 ; is the animation reversed? --------------------------------------------------------------------------------
 	ld hl,0
 	jr nz,.storeSubentryAddr
 ; if the animation is reversed, then place the initial subentry address at the end of the list of subentries
@@ -522,24 +522,6 @@ SetAnimationPalette:
 	ld a, [wOnSGB]
 	and a
 	ld a, $e4
-	jr z, .notSGB
-	ld a, $f0
-	ld [wAnimPalette], a
-	ld b, $e4
-	ld a, [wAnimationID]
-	cp TRADE_BALL_DROP_ANIM
-	jr c, .next
-	cp TRADE_BALL_POOF_ANIM + 1
-	jr nc, .next
-	ld b, $f0
-.next
-	ld a, b
-	ld [rOBP0], a
-	ld a, $6c
-	ld [rOBP1], a
-	ret
-.notSGB
-	ld a, $e4
 	ld [wAnimPalette], a
 	ld [rOBP0], a
 	ld a, $6c
@@ -582,6 +564,7 @@ PlaySubanimation:
 	add hl,de
 	add hl,de
 	ld a,[hli]
+	ld a, $40 ; <--------- Flatten moves Y range...
 	ld [wBaseCoordY],a
 	ld a,[hl]
 	ld [wBaseCoordX],a
@@ -1293,22 +1276,23 @@ AnimationSlideMonUp:
 	coord de, 1, 5
 	ld a, $30
 	jr z, .next
-	coord hl, 12, 1
-	coord de, 12, 0
+	coord hl, 12, 5
+	coord de, 12, 4
 	ld a, $ff
 .next
 	ld [wSlideMonUpBottomRowLeftTile], a
 	jp _AnimationSlideMonUp
 
 AnimationSlideMonDown:
-; Slides the mon's sprite down out of the screen.
+; Slides the mon's sprite down out of the screen. ;HIKI, nascondi sotto
 	xor a
 	call GetTileIDList
 .loop
-	call GetMonSpriteTileMapPointerFromRowCount
+	call GetMonSpriteTileMapPointerFromRowCount   
 	push bc
 	push de
-	call CopyPicTiles
+	;coord hl, 15, 11
+    call CopyPicTiles
 	call Delay3
 	call AnimationHideMonPic
 	pop de
@@ -1574,9 +1558,9 @@ AnimationMoveMonHorizontally:
 	call AnimationHideMonPic
 	ld a, [H_WHOSETURN]
 	and a
-	coord hl, 2, 5
+	coord hl, 0, 5 ; coordinate muovi playermon orizzontale
 	jr z, .next
-	coord hl, 11, 0
+	coord hl, 13, 5 ;coordinate muovi avversario orizzontale
 .next
 	xor a
 	push hl
@@ -1603,7 +1587,8 @@ AnimationSpiralBallsInward:
 	ld a, [H_WHOSETURN]
 	and a
 	jr z, .playerTurn
-	ld a, -40
+	;ld a, -40
+	xor a
 	ld [wSpiralBallsBaseY], a
 	ld a, 80
 	ld [wSpiralBallsBaseX], a
@@ -1687,8 +1672,8 @@ AnimationSquishMonPic:
 	ld a, [H_WHOSETURN]
 	and a
 	jr z, .playerTurn
-	coord hl, 16, 0
-	coord de, 14, 0
+	coord hl, 16, 5
+	coord de, 14, 5
 	jr .next
 .playerTurn
 	coord hl, 5, 5
@@ -1900,7 +1885,7 @@ _AnimationSlideMonOff:
 	ld a, [H_WHOSETURN]
 	and a
 	jr z, .playerTurn
-	coord hl, 12, 0
+	coord hl, 12, 5
 	jr .next
 .playerTurn
 	coord hl, 0, 5
@@ -2141,35 +2126,41 @@ AnimationTransformMon:
 	ld [wChangeMonPicEnemyTurnSpecies], a
 
 ChangeMonPic:
-	ld a, [H_WHOSETURN]
-	and a
-	jr z, .playerTurn
-	ld a, [wChangeMonPicEnemyTurnSpecies]
-	ld [wcf91], a
-	ld [wd0b5], a
-	xor a
-	ld [wSpriteFlipped], a
-	call GetMonHeader
-	coord hl, 12, 0
-	call LoadFrontSpriteByMonIndex
-	jr .done
+    ld a, [H_WHOSETURN]
+    and a
+    jr z, .playerTurn
+    ld a, [wChangeMonPicEnemyTurnSpecies]
+    ld [wcf91], a
+    ld [wd0b5], a
+    xor a
+    ld [wSpriteFlipped], a
+    call GetMonHeader
+    coord hl, 12, 5
+    call LoadFrontSpriteByMonIndex
+    jr .done
 .playerTurn
-	ld a, [wBattleMonSpecies2]
+    ld a, [wBattleMonSpecies2]
+    push af
+    ld a, [wChangeMonPicPlayerTurnSpecies]
+    ld [wBattleMonSpecies2], a
+    ld [wd0b5], a
+    call GetMonHeader
+	ld a, [wSpriteFlipped]
 	push af
-	ld a, [wChangeMonPicPlayerTurnSpecies]
-	ld [wBattleMonSpecies2], a
-	ld [wd0b5], a
-	call GetMonHeader
-	predef LoadMonBackPic
-	xor a
-	call GetTileIDList
-	call GetMonSpriteTileMapPointerFromRowCount
-	call CopyPicTiles
+	ld a, 1
+	ld a, [wSpriteFlipped]
+    predef LoadMonBackPic
 	pop af
-	ld [wBattleMonSpecies2], a
+	ld [wSpriteFlipped], a
+    xor a
+    call GetTileIDList
+    call GetMonSpriteTileMapPointerFromRowCount
+    call CopyPicTiles
+    pop af
+    ld [wBattleMonSpecies2], a
 .done
-	ld b, SET_PAL_BATTLE
-	jp RunPaletteCommand
+    ld b, SET_PAL_BATTLE
+    jp RunPaletteCommand
 
 AnimationHideEnemyMonPic:
 ; Hides the enemy mon's sprite
@@ -2213,11 +2204,11 @@ AnimationHideMonPic:
 	ld a, 5 * SCREEN_WIDTH + 1
 
 ClearMonPicFromTileMap:
-	push hl
+	push hl   
 	push de
 	push bc
 	ld e, a
-	ld d, 0
+	ld d, 5
 	coord hl, 0, 0
 	add hl, de
 	lb bc, 7, 7
@@ -2235,12 +2226,12 @@ GetMonSpriteTileMapPointerFromRowCount:
 	ld a, [H_WHOSETURN]
 	and a
 	jr nz, .enemyTurn
-	ld a, 20 * 5 + 1
+	ld a, 1
 	jr .next
 .enemyTurn
 	ld a, 12
 .next
-	coord hl, 0, 0
+	coord hl, 0, 5
 	ld e, a
 	ld d, 0
 	add hl, de
@@ -2533,14 +2524,51 @@ MoveSoundTable:
 
 CopyPicTiles:
 	ld a, [H_WHOSETURN]
-	and a
-	ld a, $31 ; base tile ID of player mon sprite
-	jr z, .next
+    and a
+    ld a, $31 ;base tile ID of player mon sprite
+    jr z, .flipped
 ; enemy turn
-	xor a ; base tile ID of enemy mon sprite
-.next
-	ld [hBaseTileID], a
-	jr CopyTileIDs_NoBGTransfer
+    xor a ; base tile ID of enemy mon sprite
+    ld [hBaseTileID], a
+    jr CopyTileIDs_NoBGTransfer
+ 
+.flipped
+    ld [hBaseTileID], a
+ 
+    xor a
+    ld [H_AUTOBGTRANSFERENABLED], a
+ 
+    push hl
+ 
+    push bc
+    ld b, 0
+    dec c
+    add hl, bc
+    pop bc
+ 
+.rowLoop
+    push bc
+    push hl
+    ld a, [hBaseTileID]
+    ld b, a
+.columnLoop
+    ld a, [de]
+    add b
+    inc de
+    ld [hld], a
+    dec c
+    jr nz, .columnLoop
+    pop hl
+    ld bc, 20
+    add hl, bc
+    pop bc
+    dec b
+    jr nz, .rowLoop
+ 
+    ld a, $1
+    ld [H_AUTOBGTRANSFERENABLED], a
+    pop hl
+    ret
 
 ; copy the tiles used when a mon is being sent out of or into a pokeball
 CopyDownscaledMonTiles:

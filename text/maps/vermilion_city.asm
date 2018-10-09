@@ -1,123 +1,113 @@
 _VermilionCityText1::
-	text "We're careful"
-	line "about pollution!"
+	text "Pollution run out"
+	line "of our hands."
 
-	para "We've heard GRIMER"
-	line "multiplies in"
-	cont "toxic sludge!"
+	para "What we've"
+	line "become?"
 	done
 
 _VermilionCityText_198a7::
-	text "Did you see S.S."
-	line "ANNE moored in"
-	cont "the harbor?"
+	text "That ship is"
+	line "completely"
+	cont "unsinkable."
 	done
 
 _VermilionCityText_198ac::
-	text "So, S.S.ANNE has"
-	line "departed!"
+	text "The ship sinked!"
 
-	para "She'll be back in"
-	line "about a year."
+	para "So many people"
+	line "drowned."
 	done
 
 _SSAnneWelcomeText4::
-	text "Welcome to S.S."
-	line "ANNE!"
+	text "Welcome to"
+	line "TITANIC!"
 	done
 
 _SSAnneWelcomeText9::
-	text "Welcome to S.S."
-	line "ANNE!"
+	text "Welcome to"
+	line "TITANIC!"
 
 	para "Excuse me, do you"
-	line "have a ticket?"
+	line "booked a room?"
 	prompt
 
 _SSAnneFlashedTicketText::
-	text "<PLAYER> flashed"
-	line "the S.S.TICKET!"
+	text "<PLAYER>'s room"
+	line "is the 237!"
 
 	para "Great! Welcome to"
-	line "S.S.ANNE!"
+	line "TITANIC!"
 	done
 
 _SSAnneNoTicketText::
 	text "<PLAYER> doesn't"
-	line "have the needed"
-	cont "S.S.TICKET."
+	line "have any room"
+	cont "booked."
 
 	para "Sorry!"
 
-	para "You need a ticket"
-	line "to get aboard."
+	para "You need a seat"
+	line "number to get in."
 	done
 
 _SSAnneNotHereText::
-	text "The ship set sail."
+	text "It was a"
+	line "catastrophe."
+	
+	para "1503 people died."
 	done
 
 _VermilionCityText4::
-	text "I'm putting up a"
-	line "building on this"
-	cont "plot of land."
+	text "I never finished"
+	line "building"
+	cont "my house.."
 
-	para "My #MON is"
-	line "tamping the land."
+	para "I fell so cold."
 	done
 
 _VermilionCityText5::
-	text "MACHOP: Guoh!"
-	line "Gogogoh!@@"
-
+	text "BURN!"
+	
 _VermilionCityText14::
-	text ""
-	para "A MACHOP is"
-	line "stomping the land"
-	cont "flat."
+	text "BURN!"
+	para "A #MON"
+	line "screaming so"
+	cont "LOUD."
 	done
 
 _VermilionCityText6::
-	text "S.S.ANNE is a"
+	text "TITANIC is a"
 	line "famous luxury"
 	cont "cruise ship."
-
-	para "We visit VERMILION"
-	line "once a year."
 	done
 
 _VermilionCityText7::
 	text "VERMILION CITY"
-	line "The Port of"
-	cont "Exquisite Sunsets"
+	line "The esoteric"
+	cont "and dark city."
 	done
 
 _VermilionCityText8::
 	text "NOTICE!"
 
 	para "ROUTE 12 may be"
-	line "blocked off by a"
-	cont "sleeping #MON."
-
-	para "Detour through"
-	line "ROCK TUNNEL to"
-	cont "LAVENDER TOWN."
-
-	para "VERMILION POLICE"
+	line "blocked off by"
+	cont "a corpse."
 	done
 
 _VermilionCityText11::
-	text "#MON FAN CLUB"
-	line "All #MON fans"
+	text "SATANIC CHURCH."
+	line "You're"
 	cont "welcome!"
 	done
 
 _VermilionCityText12::
 	text "VERMILION CITY"
 	line "#MON GYM"
-	cont "LEADER: LT.SURGE"
+	cont "LEADER: LEMMY"
 
-	para "The Lightning "
+	para "The firing"
 	line "American!"
 	done
 

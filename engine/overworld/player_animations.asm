@@ -537,3 +537,6 @@ _HandleMidJump:
 PlayerJumpingYScreenCoords:
 ; Sequence of y screen coordinates for player's sprite when jumping over a ledge.
 	db $38, $36, $34, $32, $31, $30, $30, $30, $31, $32, $33, $34, $36, $38, $3C, $3C
+	
+
+

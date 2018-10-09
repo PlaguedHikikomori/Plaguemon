@@ -21,7 +21,7 @@ FuchsiaGymScript_75453:
 Gym5CityName:
 	db "FUCHSIA CITY@"
 Gym5LeaderName:
-	db "KOGA@"
+	db "TUPAC@"
 
 FuchsiaGymScript_75477:
 	xor a

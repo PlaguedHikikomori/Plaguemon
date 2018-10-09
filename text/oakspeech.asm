@@ -1,29 +1,34 @@
 _OakSpeechText1::
 	text "Hello there!"
-	line "Welcome to the"
-	cont "world of #MON!"
+	line "Long time no see,"
+	cont "huh?"
 
-	para "My name is OAK!"
-	line "People call me"
-	cont "the #MON PROF!"
+	para "It's me, THE PROF!"
+	line "Things changed"
+	cont "over here.."
+    cont  "over years.."
 	prompt
 
 _OakSpeechText2A::
-	text "This world is"
-	line "inhabited by"
-	cont "creatures called"
-	cont "#MON!@@"
+	text "The place you know"
+	line "it's not the same."
+	cont "it collapsed,"
+	cont "creatures mutated"
+    cont "people got mad."
+	prompt
+
 
 _OakSpeechText2B::
-	text $51,"For some people,"
-	line "#MON are"
-	cont "pets. Others use"
-	cont "them for fights."
+	text $51,"Now, you have"
+	line "to escape!"
+	cont "Don't look back."
+	cont "GO AWAY!"
 
-	para "Myself..."
+	para "This game is"
+    line "cursed."
 
-	para "I study #MON"
-	line "as a profession."
+	para "Please.."
+	line "don't play it."
 	prompt
 
 _IntroducePlayerText::
@@ -32,24 +37,32 @@ _IntroducePlayerText::
 	prompt
 
 _IntroduceRivalText::
-	text "This is my grand-"
-	line "son. He's been"
-	cont "your rival since"
-	cont "you were a baby."
+	text "You carry a huge"
+	line "secret, <PLAYER>."
+	cont "Something evil..."
+	cont "Something bad."
 
-	para "...Erm, what is"
-	line "his name again?"
+	para "It will always "
+	line "follow you,"
+	cont "watch your back."
+	
+	para "Sometimes you'll"
+	line "barely see it."
+	cont "Others, you won't."
+	cont "Call him: EVILIO."
 	prompt
 
 _OakSpeechText3::
-	text "<PLAYER>!"
+	text $E1,$E2,"NOW YOU WILL"
+	line "BE SCANNED."
 
-	para "Your very own"
-	line "#MON legend is"
-	cont "about to unfold!"
+	para "What? Who are you?"
+	line $E1,$E2,"THE PROGRAM IS"
+	cont "What do you want?!"
 
-	para "A world of dreams"
-	line "and adventures"
-	cont "with #MON"
-	cont "awaits! Let's go!"
+	para $E1,$E2,"CODING YOUR SOUL"
+	line "Leave me ALONE!"
+	cont $E1,$E2,"PLEASE,STAND BY."
+	cont "NOOOOOOOO!"
+	
 	done

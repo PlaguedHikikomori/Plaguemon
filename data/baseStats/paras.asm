@@ -10,7 +10,7 @@ db 190 ; catch rate
 db 70 ; base exp yield
 INCBIN "pic/bmon/paras.pic",0,1 ; 55, sprite dimensions
 dw ParasPicFront
-dw ParasPicBack
+dw ParasPicFront
 ; attacks known at lvl 0
 db SCRATCH
 db 0

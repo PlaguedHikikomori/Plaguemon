@@ -1,44 +1,38 @@
 _Route6BattleText1::
-	text "Who's there?"
-	line "Quit listening in"
-	cont "on us!"
+	text "Let me see your"
+	line "ID!"
 	done
 
 _Route6EndBattleText1::
-	text "I"
-	line "just can't win!"
+	text "Shit."
 	prompt
 
 _Route6AfterBattleText1::
-	text "Whisper..."
-	line "whisper..."
+	text "Mind your"
+	line "business.."
 	done
 
 _Route6BattleText2::
-	text "Excuse me! This"
-	line "is a private"
-	cont "conversation!"
+	text "Got any drugs"
+	line "with you?"
 	done
 
 _Route6EndBattleText2::
 	text "Ugh!"
-	line "I hate losing!"
 	prompt
 
 _Route6BattleText3::
-	text "There aren't many"
-	line "bugs out here."
+	text "Lost my hash"
+	line "here.."
 	done
 
 _Route6EndBattleText3::
-	text "No!"
-	line "You're kidding!"
+	text "Damn"
 	prompt
 
 _Route6AfterBattleText3::
-	text "I like bugs, so"
-	line "I'm going back to"
-	cont "VIRIDIAN FOREST."
+	text "I was smoking"
+	line "here yesterday..."
 	done
 
 _Route6BattleText4::
@@ -58,13 +52,12 @@ _Route6AfterBattleText4::
 	done
 
 _Route6BattleText5::
-	text "Me? Well, OK."
+	text "Wanna play?"
 	line "I'll play!"
 	done
 
 _Route6EndBattleText5::
-	text "Just"
-	line "didn't work!"
+	text "It hurts!"
 	prompt
 
 _Route6AfterBattleText5::
@@ -77,11 +70,12 @@ _Route6BattleText6::
 	text "I've never seen"
 	line "you around!"
 	cont "Are you good?"
+	cont "Need something?"
 	done
 
 _Route6EndBattleText6::
-	text "You"
-	line "are too good!"
+	text "Full of cops"
+	line "around here!"
 	prompt
 
 _Route6AfterBattleText6::

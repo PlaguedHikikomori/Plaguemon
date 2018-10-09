@@ -10,7 +10,7 @@ db 60 ; catch rate
 db 173 ; base exp yield
 INCBIN "pic/bmon/weezing.pic",0,1 ; 77, sprite dimensions
 dw WeezingPicFront
-dw WeezingPicBack
+dw WeezingPicFront
 ; attacks known at lvl 0
 db TACKLE
 db SMOG

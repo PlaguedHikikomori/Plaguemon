@@ -190,3 +190,4 @@ const_value = 1
 	const BELLSPROUT   ; $BC
 	const WEEPINBELL   ; $BD
 	const VICTREEBEL   ; $BE
+	const SPACE_WEED   ; $BF

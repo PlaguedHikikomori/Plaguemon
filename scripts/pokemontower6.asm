@@ -32,7 +32,7 @@ PokemonTower6Script0:
 	ld a, $6
 	ld [hSpriteIndexOrTextID], a
 	call DisplayTextID
-	ld a, MAROWAK
+	ld a, DRAGONITE
 	ld [wCurOpponent], a
 	ld a, 30
 	ld [wCurEnemyLVL], a

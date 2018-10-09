@@ -1,16 +1,14 @@
 _Route11BattleText1::
-	text "Win, lose or draw!"
+	text "Win or nothing!"
 	done
 
 _Route11EndBattleText1::
-	text "Atcha!"
-	line "Didn't go my way!"
+	text "BOOM!"
 	prompt
 
 _Route11AfterBattleText1::
-	text "#MON is life!"
-	line "And to live is to"
-	cont "gamble!"
+	text "See?"
+	line "Still here.."
 	done
 
 _Route11BattleText2::
@@ -25,55 +23,50 @@ _Route11EndBattleText2::
 
 _Route11AfterBattleText2::
 	text "You can't be a"
-	line "coward in the"
-	cont "world of #MON!"
+	line "coward with a"
+	cont "gun on your head"
 	done
 
 _Route11BattleText3::
-	text "Let's go, but"
-	line "don't cheat!"
+	text "KICKFLIP!"
 	done
 
 _Route11EndBattleText3::
 	text "Huh?"
-	line "That's not right!"
 	prompt
 
 _Route11AfterBattleText3::
-	text "I did my best! I"
-	line "have no regrets!"
+	text "Damn i lose."
 	done
 
 _Route11BattleText4::
-	text "Careful!"
-	line "I'm laying down"
-	cont "some cables!"
+	text "I like to"
+	line "play with fire!"
 	done
 
 _Route11EndBattleText4::
-	text "That"
-	line "was electric!"
+	text "I"
+	line "got burned!"
 	prompt
 
 _Route11AfterBattleText4::
-	text "Spread the word"
-	line "to save energy!"
+	text "Damn, it"
+	line "hurts!"
 	done
 
 _Route11BattleText5::
-	text "I just became a"
-	line "trainer! But, I"
-	cont "think I can win!"
+	text "I just started"
+	line "skating but"
+	cont "i'm a pro."
 	done
 
 _Route11EndBattleText5::
-	text "My"
-	line "#MON couldn't!"
+	text "SIGH."
 	prompt
 
 _Route11AfterBattleText5::
-	text "What do you want?"
-	line "Leave me alone!"
+	text "The poser is"
+	line "stil you!"
 	done
 
 _Route11BattleText6::
@@ -87,8 +80,8 @@ _Route11EndBattleText6::
 	prompt
 
 _Route11AfterBattleText6::
-	text "Luck of the draw!"
-	line "Just luck!"
+	text "I shoot.."
+	line "..and don't die"
 	done
 
 _Route11BattleText7::
@@ -102,19 +95,17 @@ _Route11EndBattleText7::
 	prompt
 
 _Route11AfterBattleText7::
-	text "It's just luck."
-	line "Luck of the draw."
+	text "This gun does"
+	line "not work or.."
 	done
 
 _Route11BattleText8::
 	text "I'm the best in"
-	line "my class!"
+	line "my park!"
 	done
 
 _Route11EndBattleText8::
 	text "Darn!"
-	line "I need to make my"
-	cont "#MON stronger!"
 	prompt
 
 _Route11AfterBattleText8::
@@ -128,6 +119,6 @@ _Route11AfterBattleText8::
 	done
 
 _Route11BattleText9::
-	text "Watch out for"
-	line "live wires!"
+	text "Don't stay on"
+	line "my trajectory!"
 	done

@@ -1,14 +1,14 @@
 Route24Mons:
 	db $19
 	IF DEF(_RED)
-		db 7,WEEDLE
-		db 8,KAKUNA
-		db 12,PIDGEY
-		db 12,ODDISH
+		db 7,NIDORAN_M
+		db 8,NIDORAN_F
+		db 12,KABUTO
+		db 12,OMANYTE
 		db 13,ODDISH
 		db 10,ABRA
-		db 14,ODDISH
-		db 13,PIDGEY
+		db 14,CHANSEY
+		db 13,PARAS
 		db 8,ABRA
 		db 12,ABRA
 	ENDC

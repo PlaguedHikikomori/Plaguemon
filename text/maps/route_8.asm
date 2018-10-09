@@ -1,37 +1,34 @@
 _Route8BattleText1::
 	text "You look good at"
 	line "#MON, but"
-	cont "how's your chem?"
+	cont "how's your sex?"
 	done
 
 _Route8EndBattleText1::
 	text "Ow!"
-	line "Meltdown!"
 	prompt
 
 _Route8AfterBattleText1::
 	text "I am better at"
-	line "school than this!"
+	line "fucking than this!"
 	done
 
 _Route8BattleText2::
 	text "All right! Let's"
-	line "roll the dice!"
+	line "arm the gun!"
 	done
 
 _Route8EndBattleText2::
-	text "Drat!"
-	line "Came up short!"
+	text "BOOM!"
 	prompt
 
 _Route8AfterBattleText2::
-	text "Lady Luck's not"
-	line "with me today!"
+	text "WHY I CAN'T"
+	line "DIEEEE!"
 	done
 
 _Route8BattleText3::
-	text "You need strategy"
-	line "to win at this!"
+	text "Dollars!"
 	done
 
 _Route8EndBattleText3::
@@ -40,14 +37,12 @@ _Route8EndBattleText3::
 	prompt
 
 _Route8AfterBattleText3::
-	text "Go with GRIMER"
-	line "first...and..."
-	cont "...and...then..."
+	text "You new papi?"
 	done
 
 _Route8BattleText4::
-	text "I like NIDORAN, so"
-	line "I collect them!"
+	text "Nobody gives a"
+	line "a fuck about us."
 	done
 
 _Route8EndBattleText4::
@@ -55,96 +50,80 @@ _Route8EndBattleText4::
 	prompt
 
 _Route8AfterBattleText4::
-	text "When #MON grow"
-	line "up they get ugly!"
-	cont "They shouldn't"
-	cont "evolve!"
+	text "A raped girl"
+	line "is just a dirty"
+	cont "tissue that can"
+	cont "breath.."
 	done
 
 _Route8BattleText5::
-	text "School is fun, but"
-	line "so are #MON."
+	text "Drugs are fun, but"
+	line "so are girls."
 	done
 
 _Route8EndBattleText5::
 	text "I'll"
-	line "stay with school."
+	line "stay with drugs."
 	prompt
 
 _Route8AfterBattleText5::
-	text "We're stuck here"
-	line "because of the"
-	cont "gates at SAFFRON."
+	text "50 dollars suck"
+	line "and fuck."
 	done
 
 _Route8BattleText6::
-	text "MEOWTH is so cute,"
-	line "meow, meow, meow!"
+	text "I like cats.."
 	done
 
 _Route8EndBattleText6::
-	text "Meow!"
+	text "But.."
 	prompt
 
 _Route8AfterBattleText6::
-	text "I think PIDGEY"
-	line "and RATTATA"
-	cont "are cute too!"
+	text "..also cazzi."
 	done
 
 _Route8BattleText7::
-	text "We must look"
-	line "silly standing"
-	cont "here like this!"
+	text "I hate myself."
 	done
 
 _Route8EndBattleText7::
-	text "Look what"
-	line "you did!"
+	text "Now more..."
 	prompt
 
 _Route8AfterBattleText7::
-	text "SAFFRON's gate"
-	line "keeper won't let"
-	cont "us through."
-	cont "He's so mean!"
+	text "I want to kill"
+	line "myself."
+	cont "Wanna join?"
 	done
 
 _Route8BattleText8::
-	text "I'm a rambling,"
-	line "gambling dude!"
+	text "Life is a"
+	line "gamble!"
 	done
 
 _Route8EndBattleText8::
-	text "Missed"
-	line "the big score!"
+	text "However.."
 	prompt
 
 _Route8AfterBattleText8::
-	text "Gambling and"
-	line "#MON are like"
-	cont "eating peanuts!"
-	cont "Just can't stop!"
+	text "Death can be"
+	line "too.."
 	done
 
 _Route8BattleText9::
-	text "What's a cute,"
-	line "round and fluffy"
-	cont "#MON?"
+	text "I'm bleeding"
+	line "numbers.."
 	done
 
 _Route8EndBattleText9::
-	text "Stop!"
-
-	para "Don't be so mean"
-	line "to my CLEFAIRY!"
+	text "Is this, pain?"
 	prompt
 
 _Route8AfterBattleText9::
-	text "I heard that"
-	line "CLEFAIRY evolves"
-	cont "when it's exposed"
-	cont "to a MOON STONE."
+	text "Now that i"
+	line "discovered this.."
+	cont "i want to die.."
 	done
 
 _Route8Text10::

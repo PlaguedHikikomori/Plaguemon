@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 187 ; base exp yield
 INCBIN "pic/bmon/scyther.pic",0,1 ; 77, sprite dimensions
 dw ScytherPicFront
-dw ScytherPicBack
+dw ScytherPicFront
 ; attacks known at lvl 0
 db QUICK_ATTACK
 db 0

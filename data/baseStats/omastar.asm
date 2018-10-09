@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 199 ; base exp yield
 INCBIN "pic/bmon/omastar.pic",0,1 ; 66, sprite dimensions
 dw OmastarPicFront
-dw OmastarPicBack
+dw OmastarPicFront
 ; attacks known at lvl 0
 db WATER_GUN
 db WITHDRAW

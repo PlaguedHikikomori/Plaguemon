@@ -1,20 +1,18 @@
 _RockTunnel2AfterBattleText8::
-	text "I'll raise my"
-	line "#MON to beat"
-	cont "yours, kid!"
+	text "But don't kill"
+	line "them.."
 	done
 
 _RockTunnel2BattleText9::
-	text "I draw #MON"
+	text "I draw vaginas"
 	line "when I'm home."
 	done
 
 _RockTunnel2EndBattleText9::
-	text "Whew!"
-	line "I'm exhausted!"
+	text "Often.."
 	prompt
 
 _RockTunnel2AfterBattleText9::
 	text "I'm an artist,"
-	line "not a fighter."
+	line "not a maniac."
 	done

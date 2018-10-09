@@ -558,8 +558,8 @@ TwoOptionMenuStrings:
 	db   "TRADE"
 	next "CANCEL@"
 .HealCancelMenu
-	db   "HEAL"
-	next "CANCEL@"
+	db   "NUKE"
+	next "DIE@"
 
 DisplayFieldMoveMonMenu:
 	xor a
@@ -682,18 +682,18 @@ DisplayFieldMoveMonMenu:
 	jp PlaceString
 
 FieldMoveNames:
-	db "CUT@"
-	db "FLY@"
+	db "DECAPITATE@"
+	db "GLIDE@"
 	db "@"
-	db "SURF@"
-	db "STRENGTH@"
-	db "FLASH@"
-	db "DIG@"
-	db "TELEPORT@"
-	db "SOFTBOILED@"
+	db "WADE@"
+	db "FORCE@"
+	db "TORCH@"
+	db "TUNNEL@"
+	db "DISAPPEAR@"
+	db "PREGNANCY@"
 
 PokemonMenuEntries:
-	db   "STATS"
+	db   "SOUL"
 	next "SWITCH"
 	next "CANCEL@"
 
@@ -755,13 +755,13 @@ GetMonFieldMoves:
 ; Leftmost tile = -1 + tile column in which the first letter of the move's name should be displayed
 ;                 "SOFTBOILED" is $08 because it has 4 more letters than "SURF", for example, whose value is $0C
 FieldMoveDisplayData:
-	db CUT, $01, $0C
+	db CUT, $01, $08
 	db FLY, $02, $0C
 	db $B4, $03, $0C ; unused field move
 	db SURF, $04, $0C
 	db STRENGTH, $05, $0A
 	db FLASH, $06, $0C
 	db DIG, $07, $0C
-	db TELEPORT, $08, $0A
+	db TELEPORT, $08, $09
 	db SOFTBOILED, $09, $08
 	db $ff ; list terminator

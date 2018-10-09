@@ -1,37 +1,30 @@
 _BrunoBeforeBattleText::
-	text "I am BRUNO of"
-	line "the ELITE FOUR!"
+	text "NAM MYOHO"
+	line "RENGE KYO!"
 
-	para "Through rigorous"
-	line "training, people"
-	cont "and #MON can"
-	cont "become stronger!"
+	para "NAM MYOHO"
+	line "RENGE KYO!"
 
-	para "I've weight"
-	line "trained with"
-	cont "my #MON!"
+	para "NAM MYOHO"
+	line "RENGE KYO!"
 
-	para "<PLAYER>!"
-
-	para "We will grind you"
-	line "down with our"
-	cont "superior power!"
-
-	para "Hoo hah!"
+	para "NAM MYOHO"
+	line "RENGE KYO!"
+	
+	para "I'M BUDDHA AND"
+	line "I'LL FUCK UP"
+	cont "YO!"
 	done
 
 _BrunoEndBattleText::
-	text "Why?"
-	line "How could I lose?"
+	text "Mmm. I have"
+	line "to meditate.."
 	prompt
 
 _BrunoAfterBattleText::
-	text "My job is done!"
-	line "Go face your next"
-	cont "challenge!"
+	text "Go further now."
 	done
 
 _BrunoDontRunAwayText::
-	text "Someone's voice:"
-	line "Don't run away!"
+	text "PUSSY!"
 	done

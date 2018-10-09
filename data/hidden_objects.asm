@@ -1,4 +1,5 @@
 HiddenObjectMaps:
+    db REDS_HOUSE_1F
 	db REDS_HOUSE_2F
 	db BLUES_HOUSE
 	db OAKS_LAB
@@ -88,6 +89,7 @@ HiddenObjectMaps:
 
 HiddenObjectPointers:
 ; each of these pointers is for the corresponding map in HiddenObjectMaps
+	dw RedsHouse1FHiddenObjects
 	dw RedsHouse2FHiddenObjects
 	dw BluesHouseHiddenObjects
 	dw OaksLabHiddenObjects
@@ -191,11 +193,17 @@ ColosseumHiddenObjects:
 	db BANK(CableClubLeftGameboy)
 	dw CableClubLeftGameboy
 	db $FF
+RedsHouse1FHiddenObjects:
+	db $01,$00,$04
+	dbw BANK(OpenRedsPC), OpenRedsPC
+	;db $04,$05,$d0
+	;dbw BANK(KabutopsFossil), Space_Weed
+	db $FF
 RedsHouse2FHiddenObjects:
 	db $01,$00,$04
 	dbw BANK(OpenRedsPC), OpenRedsPC
 	db $05,$03,$d0
-	dbw BANK(PrintRedSNESText), PrintRedSNESText
+	dbw BANK(KabutopsFossil), Space_Weed
 	db $FF
 BluesHouseHiddenObjects:
 	db $01,$00,$04
@@ -602,7 +610,7 @@ PokemonTower5HiddenObjects:
 Route13HiddenObjects:
 	db $0e,$01,PP_UP
 	dbw BANK(HiddenItems),HiddenItems
-	db $0d,$10,CALCIUM
+	db $0d,$10,MOTORBIKE
 	dbw BANK(HiddenItems),HiddenItems
 	db $FF
 SafariZoneEntranceHiddenObjects:

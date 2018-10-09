@@ -476,13 +476,13 @@ ShowPokedexDataInternal:
 	call IndexToPokedex
 
 	coord hl, 2, 8
-	ld a, "№"
+	ld a, " "
 	ld [hli],a
-	ld a,"⠄"
+	ld a," "
 	ld [hli],a
 	ld de,wd11e
 	lb bc, LEADING_ZEROES | 1, 3
-	call PrintNumber ; print pokedex number
+	; print pokedex number
 
 	ld hl,wPokedexOwned
 	call IsPokemonBitSet

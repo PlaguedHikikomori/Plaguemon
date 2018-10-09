@@ -1,146 +1,105 @@
 _GaryChampionIntroText::
-	text "<RIVAL>: Hey!"
+	text "AHAHAHAH!"
 
-	para "I was looking"
-	line "forward to seeing"
-	cont "you, <PLAYER>!"
+	para "YOU KNOW IT"
+	line "WAS"
+	cont "MEEE!"
 
-	para "My rival should"
-	line "be strong to keep"
-	cont "me sharp!"
+	para "YOUR TOUGHTEST"
+	line "RIVAL..."
 
-	para "While working on"
-	line "#DEX, I looked"
-	cont "all over for"
-	cont "powerful #MON!"
+	para "YOUR WORST"
+	line "ENEMY!"
 
-	para "Not only that, I"
-	line "assembled teams"
-	cont "that would beat"
-	cont "any #MON type!"
+	para "WITHOUT ME"
+	line "YOU COULDN'T"
+	cont "EXIST!!!"
+	
+	para "WHO AM I?"
 
-	para "And now!"
+	para "YOU DIDN'T"
+	line "UNDERSTAND?!"
 
-	para "I'm the #MON"
-	line "LEAGUE champion!"
+	para "I'M YOUR"
+	line "DEEPEST FEARS.."
+	
+	para "YOUR"
+	line "SUBCONCIOUS.."
 
-	para "<PLAYER>! Do you"
-	line "know what that"
-	cont "means?"
-
-	para "I'll tell you!"
-
-	para "I am the most"
-	line "powerful trainer"
-	cont "in the world!"
+	para "I AM"
+	line "YOUR"
+	cont "DARK SIDE!"
+	
+	para "I AM"
+	
+	para "YOURSELF!"
 	done
 
 _GaryDefeatedText::
-	text "NO!"
-	line "That can't be!"
-	cont "You beat my best!"
+	text "GWHAAT?!"
+	line "I G-G-GWAS"
+	cont "GW-GW-GW..."
 
-	para "After all that"
-	line "work to become"
-	cont "LEAGUE champ?"
+	para "GW-GW-GWALMOST"
+	line "OVERCOME YOU.."
+	cont "GWAND NOW...G.."
 
-	para "My reign is over"
-	line "already?"
-	cont "It's not fair!"
+	para "GWI..GWLOSING.."
+	line "GGGWWW"
+	cont "POGWWERR!"
 	prompt
 
 _GaryVictoryText::
-	text "Hahaha!"
-	line "I won, I won!"
-
-	para "I'm too good for"
-	line "you, <PLAYER>!"
-
-	para "You did well to"
-	line "even reach me,"
-	cont "<RIVAL>, the"
-	cont "#MON genius!"
-
-	para "Nice try, loser!"
-	line "Hahaha!"
+	text "AHAHAHAH!"
+	line "SILLY HUMAN!"
 	prompt
 
 _GaryText_76103::
-	text "Why?"
-	line "Why did I lose?"
+	text "GWAAAAA!!!"
+	line "IIIIIII"
 
-	para "I never made any"
-	line "mistakes raising"
-	cont "my #MON..."
+	para "GWWWWHAAATEEE"
 
-	para "Darn it! You're"
-	line "the new #MON"
-	cont "LEAGUE champion!"
-
-	para "Although I don't"
-	line "like to admit it."
+	para "GWWWWYYOOUU!!!"
+	
+	para " "
+	
+	para "*<PLAYER> please,"
+	line "turn up volume!*"
+	
 	done
 
 _GaryText2::
-	text "OAK: <PLAYER>!"
+	text "<PLAYER>!"
 	done
 
 _GaryText_76120::
-	text "OAK: So, you won!"
-	line "Congratulations!"
-	cont "You're the new"
-	cont "#MON LEAGUE"
-	cont "champion!"
-
-	para "You've grown up so"
-	line "much since you"
-	cont "first left with"
-	cont "@"
-	TX_RAM wcd6d
-	text "!"
-
-	para "<PLAYER>, you have"
-	line "come of age!"
+	text "You did it!"
 	done
 
 _GaryText_76125::
-	text "OAK: <RIVAL>! I'm"
-	line "disappointed!"
+	text "You have defeated"
+	line "your dark side.."
 
-	para "I came when I"
-	line "heard you beat"
-	cont "the ELITE FOUR!"
+	para "Killed your"
+	line "fears..."
+	
+	para "Drowned your"
+	line "demons.."
 
-	para "But, when I got"
-	line "here, you had"
-	cont "already lost!"
+	para "EVILIO was you"
+	line "the whole time.."
 
-	para "<RIVAL>! Do you"
-	line "understand why"
-	cont "you lost?"
+	para "You've managed to"
+	line "understand it"
+	cont "and exile your"
+	cont "evil half.."
 
-	para "You have forgotten"
-	line "to treat your"
-	cont "#MON with"
-	cont "trust and love!"
-
-	para "Without them, you"
-	line "will never become"
-	cont "a champ again!"
+	para "Now you're"
+	line "ready to know"
+	cont "the truth!"
 	done
 
 _GaryText_7612a::
-	text "OAK: <PLAYER>!"
-
-	para "You understand"
-	line "that your victory"
-	cont "was not just your"
-	cont "own doing!"
-
-	para "The bond you share"
-	line "with your #MON"
-	cont "is marvelous!"
-
-	para "<PLAYER>!"
-	line "Come with me!"
+	text "Come with me.."
 	done

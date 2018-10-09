@@ -1,23 +1,22 @@
 _CeladonMansion1Text1::
-	text "MEOWTH: Meow!@@"
+	text "GRRR!@@"
 
 _CeladonMansion1Text2::
-	text "My dear #MON"
-	line "keep me company."
+	text "They constantly"
+	line "meow for additional"
+	cont "snack.."
 
-	para "MEOWTH even brings"
-	line "money home!"
 	done
 
 _CeladonMansion1Text3::
-	text "CLEFAIRY: Pi"
-	line "pippippi!@@"
+	text "Bleurb.."
+	line "Bleurb..@@"
 
 _CeladonMansion1Text4::
-	text "NIDORAN: Kya"
-	line "kyaoo!@@"
+	text "Fzzzz"
+	line "Fzzzz!@@"
 
 _CeladonMansion1Text5::
-	text "CELADON MANSION"
-	line "Manager's Suite"
+	text "This place stinks"
+	line "of cat piss.."
 	done

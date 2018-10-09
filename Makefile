@@ -3,6 +3,7 @@ MD5 := md5sum -c --quiet
 
 2bpp     := $(PYTHON) extras/pokemontools/gfx.py 2bpp
 1bpp     := $(PYTHON) extras/pokemontools/gfx.py 1bpp
+pcm      := $(PYTHON) extras/pokemontools/pcm.py pcm
 pic      := $(PYTHON) extras/pokemontools/pic.py compress
 includes := $(PYTHON) extras/pokemontools/scan_includes.py
 
@@ -10,7 +11,7 @@ pokered_obj := audio_red.o main_red.o text_red.o wram_red.o
 pokeblue_obj := audio_blue.o main_blue.o text_blue.o wram_blue.o
 
 .SUFFIXES:
-.SUFFIXES: .asm .o .gbc .png .2bpp .1bpp .pic
+.SUFFIXES: .asm .o .gbc .png .2bpp .1bpp .pic .wav .pcm
 .SECONDEXPANSION:
 # Suppress annoying intermediate file deletion messages.
 .PRECIOUS: %.2bpp
@@ -28,7 +29,7 @@ compare: red blue
 
 clean:
 	rm -f $(roms) $(pokered_obj) $(pokeblue_obj) $(roms:.gbc=.sym)
-	find . \( -iname '*.1bpp' -o -iname '*.2bpp' -o -iname '*.pic' \) -exec rm {} +
+	find . \( -iname '*.1bpp' -o -iname '*.2bpp' -o -iname '*.pic' -o -iname '*.pcm' \) -exec rm {} +
 
 %.asm: ;
 
@@ -40,15 +41,19 @@ $(pokered_obj): %_red.o: %.asm $$(dep)
 $(pokeblue_obj): %_blue.o: %.asm $$(dep)
 	rgbasm -D _BLUE -h -o $@ $*.asm
 
-pokered_opt  = -jsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "POKEMON RED"
+pokered_opt  = -jsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "PLAGUEMON"
 pokeblue_opt = -jsv -k 01 -l 0x33 -m 0x13 -p 0 -r 03 -t "POKEMON BLUE"
 
 %.gbc: $$(%_obj)
 	rgblink -n $*.sym -l pokered.link -o $@ $^
 	rgbfix $($*_opt) $@
+	printf '\xB0' | dd conv=notrunc of=$@ bs=1 count=1 seek=318
+	rgbfix -v $@
 	sort $*.sym -o $*.sym
 
 %.png:  ;
 %.2bpp: %.png  ; @$(2bpp) $<
 %.1bpp: %.png  ; @$(1bpp) $<
 %.pic:  %.2bpp ; @$(pic)  $<
+%.wav:  ;
+%.pcm:  %.wav  ; @$(pcm) $<

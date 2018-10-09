@@ -158,20 +158,40 @@ SlidePlayerAndEnemySilhouettesOnScreen:
 	ld [rOBP0], a
 	ld [rOBP1], a
 .slideSilhouettesLoop ; slide silhouettes of the player's pic and the enemy's pic onto the screen
-	ld h, b
+    ld a, [wIsInBattle]
+	dec a ; is it a trainer battle?
+	jr z, .MonsterScroll
+	ld h, b               ;SCROLLO PER UMANI
 	ld l, $40
 	call SetScrollXForSlidingPlayerBodyLeft ; begin background scrolling on line $40
 	inc b
 	inc b
 	ld h, $0
 	ld l, $60
-	call SetScrollXForSlidingPlayerBodyLeft ; end background scrolling on line $60
+	call SetScrollXForSlidingPlayerBodyLeft  ;end background scrolling on line $60
 	call SlidePlayerHeadLeft
 	ld a, c
 	ld [hSCX], a
 	dec c
 	dec c
 	jr nz, .slideSilhouettesLoop
+	jr .continueScroll
+.MonsterScroll   ;SCROLLO PER MOSTRI
+    ld h, b
+	ld l, $10
+	call SetScrollXForSlidingPlayerBodyLeft ; begin background scrolling on line $40
+	inc b
+	inc b
+	ld h, $0
+	ld l, $60
+	call SetScrollXForSlidingPlayerBodyLeft  ;end background scrolling on line $60
+	call SlidePlayerHeadLeft
+	ld a, c
+	ld [hSCX], a
+	dec c
+	dec c
+	jr nz, .MonsterScroll
+.continueScroll
 	ld a, $1
 	ld [H_AUTOBGTRANSFERENABLED], a
 	ld a, $31
@@ -260,7 +280,7 @@ StartBattle:
 	ret c ; return if the player ran from battle
 	ld a, [wActionResultOrTookBattleTurn]
 	and a ; was the item used successfully?
-	jr z, .displaySafariZoneBattleMenu ; if not, display the menu again; XXX does this ever jump?
+	jr z, .displaySafariZoneBattleMenu ; if not, display the menu again - XXX does this ever jump?
 	ld a, [wNumSafariBalls]
 	and a
 	jr nz, .notOutOfSafariBalls
@@ -756,12 +776,12 @@ HandlePoisonBurnLeechSeed_IncreaseEnemyHP:
 	ret
 
 UpdateCurMonHPBar:
-	coord hl, 10, 9    ; tile pointer to player HP bar
+	coord hl, 2, 2   ; tile pointer to player HP bar
 	ld a, [H_WHOSETURN]
 	and a
 	ld a, $1
 	jr z, .playersTurn
-	coord hl, 2, 2    ; tile pointer to enemy HP bar
+	coord hl, 11, 2    ; tile pointer to enemy HP bar
 	xor a
 .playersTurn
 	push bc
@@ -857,12 +877,12 @@ FaintEnemyPokemon:
 	ld hl, wPlayerUsedMove
 	ld [hli], a
 	ld [hl], a
-	coord hl, 12, 5
-	coord de, 12, 6
+	coord hl, 12, 10
+	coord de, 12, 11            ;Hiki, punto di slide pokemon morto
 	call SlideDownFaintedMonPic
-	coord hl, 0, 0
-	lb bc, 4, 11
-	call ClearScreenArea
+	coord hl, 10, 0             ;Hiki, cordinate hud nemico
+	lb bc, 3, 10
+	call ClearScreenArea        ;Hiki, pulite qui
 	ld a, [wIsInBattle]
 	dec a
 	jr z, .wild_win
@@ -1111,8 +1131,8 @@ RemoveFaintedPlayerMon:
 	ld [hl], a
 	ld [wBattleMonStatus], a
 	call ReadPlayerMonCurHPAndStatus
-	coord hl, 9, 7
-	lb bc, 5, 11
+	coord hl, 0, 0
+	lb bc, 3, 10
 	call ClearScreenArea
 	coord hl, 1, 10
 	coord de, 1, 11
@@ -1278,7 +1298,7 @@ SlideDownFaintedMonPic:
 	push bc
 	push de
 	push hl
-	ld b, 6 ; number of rows
+	ld b, 6 ; number of rows --- RICOMINCIARE A PROGRAMMARE DA QUI
 .rowLoop
 	push bc
 	push hl
@@ -1517,7 +1537,7 @@ EnemySendOutFirstMon:
 	call LoadMonFrontSprite
 	ld a,-$31
 	ld [hStartTileID],a
-	coord hl, 15, 6
+	coord hl, 15, 11          ; Hiki, altezza nemico mandato da trainer avversario
 	predef AnimateSendingOutMon
 	ld a,[wEnemyMonSpecies2]
 	call PlayCry
@@ -1818,6 +1838,10 @@ SendOutMon:
 	call DrawEnemyHUDAndHPBar
 .skipDrawingEnemyHUDAndHPBar
 	call DrawPlayerHUDAndHPBar
+	ld a, [wSpriteFlipped]
+	push af
+	ld a, 1
+	ld [wSpriteFlipped], a
 	predef LoadMonBackPic
 	xor a
 	ld [hStartTileID], a
@@ -1847,8 +1871,10 @@ SendOutMon:
 	ld [H_WHOSETURN], a
 	ld a, POOF_ANIM
 	call PlayMoveAnimation
-	coord hl, 4, 11
+	coord hl, 4, 11               ;Hiki, posizione pokemon giocatore
 	predef AnimateSendingOutMon
+	pop af
+	ld [wSpriteFlipped], a
 	ld a, [wcf91]
 	call PlayCry
 	call PrintEmptyString
@@ -1897,20 +1923,21 @@ ReadPlayerMonCurHPAndStatus:
 	jp CopyData
 
 DrawHUDsAndHPBars:
+    call BackgroundBattle
 	call DrawPlayerHUDAndHPBar
 	jp DrawEnemyHUDAndHPBar
 
 DrawPlayerHUDAndHPBar:
 	xor a
 	ld [H_AUTOBGTRANSFERENABLED], a
-	coord hl, 9, 7
-	lb bc, 5, 11
-	call ClearScreenArea
-	callab PlacePlayerHUDTiles
-	coord hl, 18, 9
+	coord hl, 0, 0
+	lb bc, 3, 4
+    call ClearScreenArea  ;Hiki, pulisce l'area dello schermo in cui posizionare la HUD del pokemon giocatore
+	;callab PlacePlayerHUDTiles -Hiki, posiziona la striscia nera sotto la HUD del pokemon giocatore
+	;coord hl, 18, 2        -Hiki, posiziona inizio HUD giocatore
 	ld [hl], $73
 	ld de, wBattleMonNick
-	coord hl, 10, 7
+	coord hl, 0, 1      ;Hiki, posizione nome pokemon giocatore
 	call CenterMonName
 	call PlaceString
 	ld hl, wBattleMonSpecies
@@ -1921,7 +1948,7 @@ DrawPlayerHUDAndHPBar:
 	ld de, wLoadedMonLevel
 	ld bc, wBattleMonPP - wBattleMonLevel
 	call CopyData
-	coord hl, 14, 8
+	coord hl, 3, 0   ;Hiki, posizione livello mutazione pokemon giocatore
 	push hl
 	inc hl
 	ld de, wLoadedMonStatus
@@ -1932,7 +1959,7 @@ DrawPlayerHUDAndHPBar:
 .doNotPrintLevel
 	ld a, [wLoadedMonSpecies]
 	ld [wcf91], a
-	coord hl, 10, 9
+	coord hl, 1, 2     ; Hiki, posizione HP giocatore
 	predef DrawHP
 	ld a, $1
 	ld [H_AUTOBGTRANSFERENABLED], a
@@ -1964,12 +1991,12 @@ DrawPlayerHUDAndHPBar:
 DrawEnemyHUDAndHPBar:
 	xor a
 	ld [H_AUTOBGTRANSFERENABLED], a
-	coord hl, 0, 0
-	lb bc, 4, 12
+	coord hl, 10, 0
+	lb bc, 3, 10
 	call ClearScreenArea
-	callab PlaceEnemyHUDTiles
+	;callab PlaceEnemyHUDTiles    -posiziona striscia nera pokemon avversario
 	ld de, wEnemyMonNick
-	coord hl, 1, 0
+	coord hl, 10, 0    ;Hiki, posizione nome pokemon avversario
 	call CenterMonName
 	call PlaceString
 	coord hl, 4, 1
@@ -1978,9 +2005,10 @@ DrawEnemyHUDAndHPBar:
 	ld de, wEnemyMonStatus
 	call PrintStatusConditionNotFainted
 	pop hl
-	jr nz, .skipPrintLevel ; if the mon has a status condition, skip printing the level
+	jr nz, .skipPrintLevel ; se il pokemon ha una condizione di stato, skippa di printare il livello
 	ld a, [wEnemyMonLevel]
 	ld [wLoadedMonLevel], a
+	coord hl, 15, 1
 	call PrintLevel
 .skipPrintLevel
 	ld hl, wEnemyMonHP
@@ -2045,7 +2073,7 @@ DrawEnemyHUDAndHPBar:
 .drawHPBar
 	xor a
 	ld [wHPBarType], a
-	coord hl, 2, 2
+	coord hl, 10, 2
 	call DrawHPBar
 	ld a, $1
 	ld [H_AUTOBGTRANSFERENABLED], a
@@ -2133,7 +2161,7 @@ DisplayBattleMenu:
 	ld a, $2 ; select the "ITEM" menu
 	jp .upperLeftMenuItemWasNotSelected
 .oldManName
-	db "OLD MAN@"
+	db "OLD JUNKIE@"
 .handleBattleMenuInput
 	ld a, [wBattleAndStartSavedMenuItem]
 	ld [wCurrentMenuItem], a
@@ -4932,7 +4960,7 @@ ApplyDamageToEnemyPokemon:
 	ld [wHPBarNewHP+1],a
 	ld a,[hl]
 	ld [wHPBarNewHP],a
-	coord hl, 2, 2
+	coord hl, 10, 2       ;Hiki, anima hp bar nemico
 	xor a
 	ld [wHPBarType],a
 	predef UpdateHPBar2 ; animate the HP bar shortening
@@ -5050,7 +5078,7 @@ ApplyDamageToPlayerPokemon:
 	ld [wHPBarMaxHP+1],a
 	ld a,[hl]
 	ld [wHPBarMaxHP],a
-	coord hl, 10, 9
+	coord hl, 1, 2     ;Hiki, anima hp bar giocatore
 	ld a,$01
 	ld [wHPBarType],a
 	predef UpdateHPBar2 ; animate the HP bar shortening
@@ -6933,7 +6961,7 @@ InitWildBattle:
 	xor a
 	ld [wTrainerClass], a
 	ld [hStartTileID], a
-	coord hl, 12, 0
+	coord hl, 12, 5          ; Hiki, coordinate nemico libero?
 	predef CopyUncompressedPicToTilemap
 
 ; common code that executes after init battle code specific to trainer or wild battles
@@ -6955,9 +6983,9 @@ _InitBattleCommon:
 	ld a, $9c
 	ld [H_AUTOBGTRANSFERDEST + 1], a
 	call LoadScreenTilesFromBuffer1
-	coord hl, 9, 7
-	lb bc, 5, 10
-	call ClearScreenArea
+	;coord hl, 9, 11          - x - y - seleziona area
+	;lb bc, 1, 10             - altezza - larghezza
+	;call ClearScreenArea    - Hiki, hud delle pokeball, pulisci
 	coord hl, 1, 0
 	lb bc, 4, 10
 	call ClearScreenArea
@@ -7102,21 +7130,13 @@ LoadMonBackPic:
 ; been loaded with GetMonHeader.
 	ld a, [wBattleMonSpecies2]
 	ld [wcf91], a
-	coord hl, 1, 5
-	ld b, 7
-	ld c, 8
+	coord hl, 0, 0
+	ld b, 8
+	ld c, 7
 	call ClearScreenArea
-	ld hl,  wMonHBackSprite - wMonHeader
-	call UncompressMonSprite
-	predef ScaleSpriteByTwo
-	ld de, vBackPic
-	call InterlaceMergeSpriteBuffers ; combine the two buffers to a single 2bpp sprite
 	ld hl, vSprites
 	ld de, vBackPic
-	ld c, (2*SPRITEBUFFERSIZE)/16 ; count of 16-byte chunks to be copied
-	ld a, [H_LOADEDROMBANK]
-	ld b, a
-	jp CopyVideoData
+	jp LoadMonFrontSprite
 
 JumpMoveEffect:
 	call _JumpMoveEffect
@@ -8717,3 +8737,155 @@ PlayBattleAnimationGotID:
 	pop de
 	pop hl
 	ret
+	
+BackgroundBattle:
+    coord hl, 0, 5
+	lb bc, 7, 1
+	call ClearScreenArea
+    ld a, [wCurMap]
+	cp POKEMONTOWER_2
+	jp z, .cemetery
+	ld a, [wCurMap]
+	cp POKEMONTOWER_3
+	jp z, .cemetery
+	ld a, [wCurMap]
+	cp POKEMONTOWER_4
+	jr z, .cemetery
+	ld a, [wCurMap]
+	cp POKEMONTOWER_5
+	jr z, .cemetery
+	ld a, [wCurMap]
+	cp POKEMONTOWER_6
+	jr z, .cemetery
+	ld a, [wCurMap]
+	cp POKEMONTOWER_7
+	jr z, .cemetery
+	ld a, [wWalkBikeSurfState]
+	cp $2
+	jp nz, .normal
+.sea
+	ld de, Sea
+	ld hl, vChars1 + $400
+	lb bc, BANK(Sea), $08
+	call CopyVideoData
+	coord hl, 0, 3
+	ld de, ParallaxString
+	call PlaceString
+	ld de, SeaWaste
+	ld hl, vChars1 + $480
+	lb bc, BANK(SeaWaste), $18
+	call CopyVideoData
+	coord hl, 8, 5
+	ld de, CityStuffString
+	call PlaceString
+	coord hl, 8, 6
+	ld de, CityStuffString2
+	call PlaceString
+	coord hl, 8, 7
+	ld de, CityStuffString3
+	call PlaceString
+	coord hl, 8, 8
+	ld de, CityStuffString4
+	call PlaceString
+	coord hl, 8, 9
+	ld de, CityStuffString5
+	call PlaceString
+	coord hl, 8, 10
+	ld de, CityStuffString6
+	call PlaceString
+	coord hl, 19, 5
+	lb bc, 7, 1
+	call ClearScreenArea
+	ret
+.cemetery
+	ld de, Cemetery
+	ld hl, vChars1 + $400
+	lb bc, BANK(Cemetery), $08
+	call CopyVideoData
+	coord hl, 0, 3
+	ld de, ParallaxString
+	call PlaceString
+	ld de, CemeteryStuff
+	ld hl, vChars1 + $480
+	lb bc, BANK(CemeteryStuff), $18
+	call CopyVideoData
+	coord hl, 8, 5
+	ld de, CityStuffString
+	call PlaceString
+	coord hl, 8, 6
+	ld de, CityStuffString2
+	call PlaceString
+	coord hl, 8, 7
+	ld de, CityStuffString3
+	call PlaceString
+	coord hl, 8, 8
+	ld de, CityStuffString4
+	call PlaceString
+	coord hl, 8, 9
+	ld de, CityStuffString5
+	call PlaceString
+	coord hl, 8, 10
+	ld de, CityStuffString6
+	call PlaceString
+	coord hl, 19, 5
+	lb bc, 7, 1
+	call ClearScreenArea
+	ret
+.normal
+    ld de, Parallax
+	ld hl, vChars1 + $400
+	lb bc, BANK(Parallax), $08
+	call CopyVideoData
+	coord hl, 0, 3
+	ld de, ParallaxString
+	call PlaceString
+	ld de, CityStuff
+	ld hl, vChars1 + $480
+	lb bc, BANK(CityStuff), $18
+	call CopyVideoData
+	coord hl, 8, 5
+	ld de, CityStuffString
+	call PlaceString
+	coord hl, 8, 6
+	ld de, CityStuffString2
+	call PlaceString
+	coord hl, 8, 7
+	ld de, CityStuffString3
+	call PlaceString
+	coord hl, 8, 8
+	ld de, CityStuffString4
+	call PlaceString
+	coord hl, 8, 9
+	ld de, CityStuffString5
+	call PlaceString
+	coord hl, 8, 10
+	ld de, CityStuffString6
+	call PlaceString
+	coord hl, 19, 5
+	lb bc, 7, 1
+	call ClearScreenArea
+	ret
+
+ParallaxString:
+	db   $C0,$C1,$C2,$C3,$C0,$C1,$C2,$C3,$C0,$C1,$C2,$C3,$C0,$C1,$C2,$C3,$C0,$C1,$C2,$C3
+	db   $C4,$C5,$C6,$C7,$C4,$C5,$C6,$C7,$C4,$C5,$C6,$C7,$C4,$C5,$C6,$C7,$C4,$C5,$C6,$C7
+	db   "@"
+	
+CityStuffString:
+	db   $C8,$C9,$CA,$CB
+	db   "@"
+CityStuffString2:
+	db   $CC,$CD,$CE,$CF
+	db   "@"
+CityStuffString3:
+	db   $D0,$D1,$D2,$D3
+	db   "@"
+CityStuffString4:
+	db   $D4,$D5,$D6,$D7
+	db   "@"
+CityStuffString5:
+	db   $D8,$D9,$DA,$DB
+	db   "@"
+CityStuffString6:
+	db   $DC,$DD,$DE,$DF
+	db   "@"

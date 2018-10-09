@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 159 ; base exp yield
 INCBIN "pic/bmon/beedrill.pic",0,1 ; 77, sprite dimensions
 dw BeedrillPicFront
-dw BeedrillPicBack
+dw BeedrillPicFront
 ; attacks known at lvl 0
 db FURY_ATTACK
 db 0

@@ -449,14 +449,13 @@ CannotGetOffHereText:
 ; items which bring up the party menu when used
 UsableItems_PartyMenu:
 	db MOON_STONE
-	db ANTIDOTE
+	;db ANTIDOTE
 	db BURN_HEAL
 	db ICE_HEAL
 	db AWAKENING
 	db PARLYZ_HEAL
 	db FULL_RESTORE
 	db MAX_POTION
-	db HYPER_POTION
 	db SUPER_POTION
 	db POTION
 	db FIRE_STONE
@@ -466,12 +465,12 @@ UsableItems_PartyMenu:
 	db PROTEIN
 	db IRON
 	db CARBOS
-	db CALCIUM
+	;db CALCIUM
 	db RARE_CANDY
 	db LEAF_STONE
-	db FULL_HEAL
+	;db FULL_HEAL
 	db REVIVE
-	db MAX_REVIVE
+	;db MAX_REVIVE
 	db FRESH_WATER
 	db SODA_POP
 	db LEMONADE
@@ -488,12 +487,19 @@ UsableItems_PartyMenu:
 
 ; items which close the item menu when used
 UsableItems_CloseMenu:
+    db MOTORBIKE
 	db ESCAPE_ROPE
 	db ITEMFINDER
 	db POKE_FLUTE
 	db OLD_ROD
 	db GOOD_ROD
 	db SUPER_ROD
+	db HYPER_POTION
+	db ANTIDOTE
+	db MAX_ELIXER
+	db MAX_REVIVE
+	db REPEL
+	db FULL_HEAL
 	db $ff
 
 StartMenu_TrainerInfo:

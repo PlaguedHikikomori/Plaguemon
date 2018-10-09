@@ -8,6 +8,6 @@ _SeafoamIslands5Text4::
 	done
 
 _SeafoamIslands5Text5::
-	text "DANGER"
-	line "Fast current!"
+	text "You will"
+	line "die here!"
 	done

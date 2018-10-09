@@ -477,13 +477,18 @@ AcidAnim:
 	db $FF
 
 EmberAnim:
-	db $46,$33,$11
+    db SE_DARKEN_MON_PALETTE, $FF
+	db $41,$33,$1A
+	db $42,$33,$1A
+	db $44,$33,$1A
+    db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
 FlamethrowerAnim:
-	db $46,$34,$1F
+	db SE_DARKEN_MON_PALETTE, $FF
 	db $46,$34,$0C
-	db $46,$34,$0D
+	db SE_FLASH_SCREEN_LONG, $FF
+	db $46,$34,$0C
 	db $FF
 
 MistAnim:
@@ -638,9 +643,8 @@ SleepPowderAnim:
 	db $FF
 
 PedalDanceAnim:
-	db SE_LIGHT_SCREEN_PALETTE, $4F
-	db SE_PETALS_FALLING, $FF
-	db SE_RESET_SCREEN_PALETTE, $FF
+    db SE_FLASH_SCREEN_LONG, $89
+	db $46,$2E,$12
 	db $FF
 
 StringShotAnim:

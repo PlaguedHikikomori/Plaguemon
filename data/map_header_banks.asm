@@ -248,3 +248,8 @@ MapHeaderBanks:
 	db BANK(Lorelei_h)
 	db BANK(Bruno_h)
 	db BANK(Agatha_h)
+	db BANK(SpaceWorld_h)
+	db BANK(SecretLab_h)
+	
+	
+	

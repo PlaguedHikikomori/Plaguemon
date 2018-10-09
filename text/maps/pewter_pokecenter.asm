@@ -1,7 +1,7 @@
 _PewterPokecenterText2::
 	text "What!?"
 
-	para "TEAM ROCKET is"
+	para "PLAGUE CORP. is"
 	line "at MT.MOON? Huh?"
 	cont "I'm on the phone!"
 
@@ -9,6 +9,5 @@ _PewterPokecenterText2::
 	done
 
 _PewterJigglypuffText::
-	text "JIGGLYPUFF: Puu"
-	line "pupuu!"
+	text "BRAAAINS!"
 	done

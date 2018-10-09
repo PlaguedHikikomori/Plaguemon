@@ -10,7 +10,7 @@ db 190 ; catch rate
 db 100 ; base exp yield
 INCBIN "pic/bmon/seel.pic",0,1 ; 66, sprite dimensions
 dw SeelPicFront
-dw SeelPicBack
+dw SeelPicFront
 ; attacks known at lvl 0
 db HEADBUTT
 db 0

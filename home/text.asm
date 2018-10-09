@@ -220,9 +220,9 @@ Char5DText::
 Char5BText::
 	db "PC@"
 Char5EText::
-	db "ROCKET@"
+	db "PLAGUER@"
 Char54Text::
-	db "POKé@"
+	db "PLAGUE@"
 Char56Text::
 	db "……@"
 Char5AText::
@@ -372,6 +372,7 @@ TextCommandProcessor::
 	ld [wTextDest],a
 	ld a,b
 	ld [wTextDest + 1],a
+
 
 NextTextCommand::
 	ld a,[hli]

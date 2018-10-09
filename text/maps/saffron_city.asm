@@ -14,13 +14,9 @@ _SaffronCityText3::
 	done
 
 _SaffronCityText4::
-	text "SAFFRON belongs"
-	line "to TEAM ROCKET!"
 	done
 
 _SaffronCityText5::
-	text "Being evil makes"
-	line "me feel so alive!"
 	done
 
 _SaffronCityText6::
@@ -29,23 +25,27 @@ _SaffronCityText6::
 	done
 
 _SaffronCityText7::
-	text "With SILPH under"
-	line "control, we can"
-	cont "exploit #MON"
-	cont "around the world!"
 	done
 
 _SaffronCityText8::
-	text "You beat TEAM"
-	line "ROCKET all alone?"
-	cont "That's amazing!"
 	done
 
 _SaffronCityText9::
-	text "Yeah! TEAM ROCKET"
-	line "is gone!"
-	cont "It's safe to go"
-	cont "out again!"
+	text "This was the"
+	line "center of the"
+	cont "catastrophe.."
+	
+	para "I got disfigured"
+	line "i'm the only one"
+	cont "alive in this city"
+	
+	para "I quick escaped the"
+	line "explosion with"
+	cont "KARONTIS, now i don't"
+	cont "need it anymore.."
+	
+	para "Take it.."
+	line "It's yours.."
 	done
 
 _SaffronCityText10::

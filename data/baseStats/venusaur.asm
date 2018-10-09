@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 208 ; base exp yield
 INCBIN "pic/bmon/venusaur.pic",0,1 ; 77, sprite dimensions
 dw VenusaurPicFront
-dw VenusaurPicBack
+dw VenusaurPicFront
 ; attacks known at lvl 0
 db TACKLE
 db GROWL

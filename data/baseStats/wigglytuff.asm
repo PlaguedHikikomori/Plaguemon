@@ -10,7 +10,7 @@ db 50 ; catch rate
 db 109 ; base exp yield
 INCBIN "pic/bmon/wigglytuff.pic",0,1 ; 66, sprite dimensions
 dw WigglytuffPicFront
-dw WigglytuffPicBack
+dw WigglytuffPicFront
 ; attacks known at lvl 0
 db SING
 db DISABLE

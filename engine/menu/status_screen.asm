@@ -51,12 +51,12 @@ DrawHP_:
 	add hl, bc
 	ld de, wLoadedMonHP
 	lb bc, 2, 3
-	call PrintNumber
-	ld a, "/"
+	;call PrintNumber   -hiki, stampa numero hp
+	;ld a, "/"
 	ld [hli], a
 	ld de, wLoadedMonMaxHP
 	lb bc, 2, 3
-	call PrintNumber
+	;call PrintNumber   -hiki, stampa numero max hp
 	pop hl
 	pop de
 	ret

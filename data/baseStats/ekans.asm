@@ -10,7 +10,7 @@ db 255 ; catch rate
 db 62 ; base exp yield
 INCBIN "pic/bmon/ekans.pic",0,1 ; 55, sprite dimensions
 dw EkansPicFront
-dw EkansPicBack
+dw EkansPicFront
 ; attacks known at lvl 0
 db WRAP
 db LEER

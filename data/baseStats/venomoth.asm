@@ -10,7 +10,7 @@ db 75 ; catch rate
 db 138 ; base exp yield
 INCBIN "pic/bmon/venomoth.pic",0,1 ; 77, sprite dimensions
 dw VenomothPicFront
-dw VenomothPicBack
+dw VenomothPicFront
 ; attacks known at lvl 0
 db TACKLE
 db DISABLE

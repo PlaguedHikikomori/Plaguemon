@@ -1,10 +1,10 @@
 db DEX_DRAGONAIR ; pokedex id
-db 61 ; base hp
-db 84 ; base attack
-db 65 ; base defense
-db 70 ; base speed
-db 70 ; base special
-db DRAGON ; species type 1
+db 100 ; base hp
+db 100 ; base attack
+db 100 ; base defense
+db 100 ; base speed
+db 100 ; base special
+db FIRE   ; species type 1
 db DRAGON ; species type 2
 db 45 ; catch rate
 db 144 ; base exp yield
@@ -16,7 +16,7 @@ db WRAP
 db LEER
 db THUNDER_WAVE
 db 0
-db 5 ; growth rate
+db 3 ; growth rate
 ; learnset
 	tmlearn 6,7,8
 	tmlearn 9,10,11,12,13,14

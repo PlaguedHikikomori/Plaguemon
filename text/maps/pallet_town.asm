@@ -1,55 +1,55 @@
 _OakAppearsText::
-	text "OAK: Hey! Wait!"
+	text "PROF: Hey! Wait!"
 	line "Don't go out!@@"
 
 _OakWalksUpText::
-	text "OAK: It's unsafe!"
-	line "Wild #MON live"
-	cont "in tall grass!"
+	text "There are plenty"
+	line "radiations over"
+	cont "there!"
 
 	para "You need your own"
-	line "#MON for your"
-	cont "protection."
-	cont "I know!"
-
+	line "monster to"
+	cont "absorb them."
+	
 	para "Here, come with"
 	line "me!"
 	done
 
 _PalletTownText2::
-	text "I'm raising"
-	line "#MON too!"
+	text "I'm not so into"
+	line "TRAP music..."
 
-	para "When they get"
-	line "strong, they can"
-	cont "protect me!"
+	para "I still prefer the"
+	line "good, old skool "
+	cont "DUBSTEP tunes.."
+	
 	done
 
 _PalletTownText3::
-	text "Technology is"
-	line "incredible!"
+	text "Look at me!"
+	line "Look at me!"
 
-	para "You can now store"
-	line "and recall items"
-	cont "and #MON as"
-	cont "data via PC!"
+	para "I'm like a bitch"
+	line "who is your mans"
+	cont "Aye!"
+	cont "Aye!"
 	done
 
 _PalletTownText4::
-	text "OAK #MON"
+	text "#MON"
 	line "RESEARCH LAB"
 	done
 
 _PalletTownText5::
 	text "PALLET TOWN"
-	line "Shades of your"
-	cont "journey await!"
+	line "Please:"
+	cont "STAY SAFE."
 	done
 
 _PalletTownText6::
-	text "<PLAYER>'s house "
+	text "<PLAYER>'s house"
 	done
 
 _PalletTownText7::
-	text "<RIVAL>'s house "
+	text "<PLAYER>'s studio"
 	done

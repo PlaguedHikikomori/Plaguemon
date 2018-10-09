@@ -26,6 +26,7 @@ VBlank::
 	call VBlankCopy
 	call VBlankCopyDouble
 	call UpdateMovingBgTiles
+	callab Scrolling
 	call $ff80 ; hOAMDMA
 	ld a, BANK(PrepareOAMData)
 	ld [H_LOADEDROMBANK], a

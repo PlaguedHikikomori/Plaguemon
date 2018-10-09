@@ -1,15 +1,14 @@
 _PokemonTower2Text_60c1f::
-	text "The GHOST was the"
-	line "restless soul of"
-	cont "CUBONE's mother!"
+	text "You dared to"
+	line "challenge"
+	cont "CHILONGO!"
 	done
 
 _PokemonTower2Text_60c24::
-	text "The mother's soul"
-	line "was calmed."
-
-	para "It departed to"
-	line "the afterlife!"
+	text "Now your soul"
+	line "will be tortured"
+	cont "for the rest of"
+	cont "eternity!"
 	done
 
 _PokemonTower6BattleText1::
@@ -56,6 +55,6 @@ _PokemonTower6AfterBattleText3::
 	done
 
 _PokemonTower6Text6::
-	text "Be gone..."
-	line "Intruders..."
+	text "LEAVE ME"
+	line "ALONE!"
 	done

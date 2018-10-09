@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 201 ; base exp yield
 INCBIN "pic/bmon/kabutops.pic",0,1 ; 66, sprite dimensions
 dw KabutopsPicFront
-dw KabutopsPicBack
+dw KabutopsPicFront
 ; attacks known at lvl 0
 db SCRATCH
 db HARDEN

@@ -1,13 +1,13 @@
 _ViridianForestEntranceText1::
-	text "Are you going to"
-	line "VIRIDIAN FOREST?"
-	cont "Be careful, it's"
-	cont "a natural maze!"
+	text "In Japan in 2014"
+	line "on average 70"
+	cont "people committed"
+	cont "suicide everyday."
 	done
 
 _ViridianForestEntranceText2::
-	text "RATTATA may be"
-	line "small, but its"
-	cont "bite is wicked!"
-	cont "Did you get one?"
+	text "Symptoms of"
+	line "Chlamydia may"
+	cont "include burning"
+	cont "with urination."
 	done

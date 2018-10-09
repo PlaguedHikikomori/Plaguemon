@@ -33,15 +33,16 @@ AnimateHallOfFame:
 .skipInc
 	ld a, $90
 	ld [hWY], a
-	ld c, BANK(Music_HallOfFame)
-	ld a, MUSIC_HALL_OF_FAME
-	call PlayMusic
+	;ld c, BANK(Music_HallOfFame)
+	;ld a, MUSIC_HALL_OF_FAME
+	;call PlayMusic
+	call ClearSprites
 	ld hl, wPartySpecies
 	ld c, $ff
 .partyMonLoop
 	ld a, [hli]
-	cp $ff
-	jr z, .doneShowingParty
+	;cp $ff
+	jr .doneShowingParty
 	inc c
 	push hl
 	push bc
@@ -82,8 +83,8 @@ AnimateHallOfFame:
 	ld [wHoFMonSpecies], a
 	inc a
 	ld [wHoFMonOrPlayer], a ; player
-	call HoFShowMonOrPlayer
-	call HoFDisplayPlayerStats
+	;call HoFShowMonOrPlayer
+	;call HoFDisplayPlayerStats
 	call HoFFadeOutScreenAndMusic
 	xor a
 	ld [hWY], a

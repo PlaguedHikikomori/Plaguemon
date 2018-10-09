@@ -1,47 +1,57 @@
 SeafoamIslands1Script:
-	call EnableAutoTextBoxDrawing
-	SetEvent EVENT_IN_SEAFOAM_ISLANDS
-	ld hl, wFlags_0xcd60
-	bit 7, [hl]
-	res 7, [hl]
-	jr z, .asm_4483b
-	ld hl, Seafoam1HolesCoords
-	call CheckBoulderCoords
-	ret nc
-	EventFlagAddress hl, EVENT_SEAFOAM1_BOULDER1_DOWN_HOLE
-	ld a, [wCoordIndex]
+	ld a, [wSimulatedJoypadStatesIndex]
+	ld b, a
 	cp $1
-	jr nz, .asm_44819
-	SetEventReuseHL EVENT_SEAFOAM1_BOULDER1_DOWN_HOLE
-	ld a, HS_SEAFOAM_ISLANDS_1_BOULDER_1
-	ld [wObjectToHide], a
-	ld a, HS_SEAFOAM_ISLANDS_2_BOULDER_1
-	ld [wObjectToShow], a
-	jr .asm_44825
-.asm_44819
-	SetEventAfterBranchReuseHL EVENT_SEAFOAM1_BOULDER2_DOWN_HOLE, EVENT_SEAFOAM1_BOULDER1_DOWN_HOLE
-	ld a, HS_SEAFOAM_ISLANDS_1_BOULDER_2
-	ld [wObjectToHide], a
-	ld a, HS_SEAFOAM_ISLANDS_2_BOULDER_2
-	ld [wObjectToShow], a
-.asm_44825
-	ld a, [wObjectToHide]
-	ld [wMissableObjectIndex], a
-	predef HideObject
-	ld a, [wObjectToShow]
-	ld [wMissableObjectIndex], a
-	predef_jump ShowObject
-.asm_4483b
-	ld a, $9f
-	ld [wDungeonWarpDestinationMap], a
-	ld hl, Seafoam1HolesCoords
-	jp IsPlayerOnDungeonWarp
+	call z, SeaFoamIslands1Script_46872
+	ld a, b
+	and a
+	ret nz
+	ld a, $0
+	ld [wSeafoamIslands5CurScript], a
+	ret
 
-Seafoam1HolesCoords:
-	db $06,$11
-	db $06,$18
-	db $ff
+SeaFoamIslands1Script_46872:
+	xor a
+	ld [wWalkBikeSurfState], a
+	ld [wWalkBikeSurfStateCopy], a
+	jp ForceBikeOrSurf
 
 SeafoamIslands1TextPointers:
-	dw BoulderText
-	dw BoulderText
+	dw ArticunoText2
+	dw SeafoamIslands1Text4
+	dw SeafoamIslands1Text5
+
+ArticunoTrainerHeader2:
+	dbEventFlagBit EVENT_BEAT_ARTICUNO
+	db ($0 << 4) ; trainer's view range
+	dwEventFlagAddress EVENT_BEAT_ARTICUNO
+	dw ArticunoBattleText2 ; TextBeforeBattle
+	dw ArticunoBattleText2 ; TextAfterBattle
+	dw ArticunoBattleText2 ; TextEndBattle
+	dw ArticunoBattleText2 ; TextEndBattle
+
+	db $ff
+
+ArticunoText2:
+	TX_ASM
+	ld hl, ArticunoTrainerHeader2
+	call TalkToTrainer
+	ld a, $4
+	ld [wSeafoamIslands5CurScript], a
+	jp TextScriptEnd
+
+ArticunoBattleText2:
+	TX_FAR _ArticunoBattleText
+	TX_ASM
+	ld a, ARTICUNO
+	call PlayCry
+	call WaitForSoundToFinish
+	jp TextScriptEnd
+
+SeafoamIslands1Text4:
+	TX_FAR _SeafoamIslands5Text4
+	db "@"
+
+SeafoamIslands1Text5:
+	TX_FAR _SeafoamIslands5Text5
+	db "@"

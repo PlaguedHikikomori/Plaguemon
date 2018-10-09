@@ -1,63 +1,48 @@
 _SSAnne2Text1::
-	text "This ship, she is"
-	line "a luxury liner"
+	text "3rd class people"
+	line "cannot get here!"
 	cont "for trainers!"
-
-	para "At every port, we"
-	line "hold parties with"
-	cont "invited trainers!"
 	done
 
 _SSAnneRivalBeforeBattleText::
-	text "<RIVAL>: Bonjour!"
-	line "<PLAYER>!"
+	text "EVILIO: GGGGGG"
+	line "WWWWWW"
 
-	para "Imagine seeing"
-	line "you here!"
+	para "GWA"
 
-	para "<PLAYER>, were you"
-	line "really invited?"
+	para "GWA"
+	
 
-	para "So how's your"
-	line "#DEX coming?"
+	para "GWAAAAIII"
 
-	para "I already caught"
-	line "40 kinds, pal!"
 
-	para "Different kinds"
-	line "are everywhere!"
+	para "GWHHAAATE"
 
-	para "Crawl around in"
-	line "grassy areas!"
+
+	para "GWWWYOU!!!"
+
+
+
 	done
 
 _SSAnneRivalDefeatedText::
-	text "Humph!"
+	text "GWOST!"
 
-	para "At least you're"
-	line "raising your"
-	cont "#MON!"
 	prompt
 
 _SSAnneRivalWonText::
-	text "<PLAYER>! What are"
-	line "you, seasick?"
-
-	para "You should shape"
-	line "up, pal!"
+	text "Puke if you"
+	line "have to!"
 	prompt
 
 _SSAnneRivalCaptainText::
-	text "<RIVAL>: I heard"
-	line "there was a CUT"
-	cont "master on board."
+	text "EVILIO: GWWWW"
+	line "GWWWEEE MORE"
+	cont "III HHHAAATTEE"
+	cont "YYYOOOUU"
+	
+	para "DDD MMMOOORR"
+	line "II GGOOTT ST.."
+	cont "STWOOONGGG!!"
 
-	para "But, he was just a"
-	line "seasick, old man!"
-
-	para "But, CUT itself is"
-	line "really useful!"
-
-	para "You should go see"
-	line "him! Smell ya!"
 	done

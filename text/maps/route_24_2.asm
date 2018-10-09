@@ -1,6 +1,6 @@
 _Route24EndBattleText1::
-	text "I"
-	line "thought not!"
+	text "Ok,"
+	line "help!"
 	prompt
 
 _Route24AfterBattleText1::
@@ -10,8 +10,8 @@ _Route24AfterBattleText1::
 	done
 
 _Route24BattleText2::
-	text "OK! I'm No. 5!"
-	line "I'll stomp you!"
+	text "DMT?"
+	line "It's ZUPER!"
 	done
 
 _Route24EndBattleText2::
@@ -20,18 +20,16 @@ _Route24EndBattleText2::
 	prompt
 
 _Route24AfterBattleText2::
-	text "I did my best, I"
-	line "have no regrets!"
+	text "You sober fuck."
 	done
 
 _Route24BattleText3::
-	text "I'm No. 4!"
-	line "Getting tired?"
+	text "This is PUSHER"
+	line "STREET, my man."
 	done
 
 _Route24EndBattleText3::
-	text "I lost"
-	line "too!"
+	text "But.."
 	prompt
 
 _Route24AfterBattleText3::
@@ -40,43 +38,33 @@ _Route24AfterBattleText3::
 	done
 
 _Route24BattleText4::
-	text "Here's No. 3!"
-	line "I won't be easy!"
+	text "Shrooms?"
 	done
 
 _Route24EndBattleText4::
-	text "Ow!"
-	line "Stomped flat!"
+	text "Oh."
 	prompt
 
 _Route24AfterBattleText4::
-	text "I did my best, I"
-	line "have no regrets!"
+	text "Sky is pink."
+	line "What colors are?"
 	done
 
 _Route24BattleText5::
-	text "I'm second!"
-	line "Now it's serious!"
+	text "Heroin, instead?"
 	done
 
 _Route24EndBattleText5::
-	text "How could I"
-	line "lose?"
+	text "Sniff."
 	prompt
 
 _Route24AfterBattleText5::
-	text "I did my best, I"
-	line "have no regrets!"
+	text "I love white"
+	line "THAI!"
 	done
 
 _Route24BattleText6::
-	text "This is NUGGET"
-	line "BRIDGE! Beat us 5"
-	cont "trainers and win"
-	cont "a fabulous prize!"
-
-	para "Think you got"
-	line "what it takes?"
+	text "You need crack?"
 	done
 
 _Route24EndBattleText6::
@@ -85,6 +73,6 @@ _Route24EndBattleText6::
 	prompt
 
 _Route24AfterBattleText6::
-	text "I did my best, I"
-	line "have no regrets!"
+	text "Ok, you are"
+	line "already high!"
 	done

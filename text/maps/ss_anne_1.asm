@@ -1,21 +1,23 @@
 _SSAnne1Text1::
 	text "Bonjour!"
-	line "I am le waiter on"
-	cont "this ship!"
+	line "What a wonderful"
+	cont "day!"
 
-	para "I will be happy"
-	line "to serve you any-"
-	cont "thing you please!"
+	para "Today, this ship"
+	line "will sail for"
+	cont "the first time!"
 
-	para "Ah! Le strong"
-	line "silent type!"
+	para "Remember this"
+	line "date:"
+	cont "15 April, 1912."
 	done
 
 _SSAnne1Text2::
-	text "The passengers"
-	line "are restless!"
+	text "The crew is"
+	line "made by 898"
+	cont "members.."
 
-	para "You might be"
-	line "challenged by the"
-	cont "more bored ones!"
+	para "Passengers are"
+	line "around 2200"
+	cont "people!"
 	done

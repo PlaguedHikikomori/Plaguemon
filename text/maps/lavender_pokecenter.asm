@@ -1,7 +1,6 @@
 _LavenderPokecenterText2::
-	text "TEAM ROCKET will"
-	line "do anything for"
-	cont "the sake of gold!"
+	text "Fuck politics."
+	line "Do drugs."
 	done
 
 _LavenderPokecenterText3::

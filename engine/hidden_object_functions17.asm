@@ -51,6 +51,16 @@ KabutopsFossil:
 KabutopsFossilText:
 	TX_FAR _KabutopsFossilText
 	db "@"
+	
+Space_Weed:
+	ld a, SPACE_WEED
+	ld [wcf91], a
+	call DisplayMonFrontSpriteInBox
+	call EnableAutoTextBoxDrawing
+	tx_pre RedBedroomSNESText
+	;callab Shmup   -Inizio routine minigioco spaceweed
+	ret
+
 
 DisplayMonFrontSpriteInBox:
 ; Displays a pokemon's front sprite in a pop-up window.
@@ -74,6 +84,7 @@ DisplayMonFrontSpriteInBox:
 	ld [hStartTileID], a
 	coord hl, 10, 11
 	predef AnimateSendingOutMon
+	predef ScaleSpriteByTwo
 	call WaitForTextScrollButtonPress
 	call LoadScreenTilesFromBuffer1
 	call Delay3
@@ -268,13 +279,13 @@ ViridianSchoolBlackboardText2:
 	db "@"
 
 StatusAilmentText1:
-	db   " SLP"
-	next " PSN"
-	next " PAR@"
+	db   " COM"
+	next " TMR"
+	next " ANX@"
 
 StatusAilmentText2:
-	db   " BRN"
-	next " FRZ"
+	db   " POS"
+	next " OVD"
 	next " QUIT@@"
 
 ViridianBlackboardStatusPointers:

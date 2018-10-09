@@ -10,7 +10,7 @@ db 75 ; catch rate
 db 157 ; base exp yield
 INCBIN "pic/bmon/muk.pic",0,1 ; 77, sprite dimensions
 dw MukPicFront
-dw MukPicBack
+dw MukPicFront
 ; attacks known at lvl 0
 db POUND
 db DISABLE

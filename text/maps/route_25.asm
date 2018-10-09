@@ -1,5 +1,5 @@
 _Route25BattleText1::
-	text "Local trainers"
+	text "Local skaters"
 	line "come here to"
 	cont "practice!"
 	done
@@ -10,28 +10,25 @@ _Route25EndBattleText1::
 	prompt
 
 _Route25AfterBattleText1::
-	text "All #MON have"
-	line "weaknesses. It's"
-	cont "best to raise"
-	cont "different kinds."
+	text "I'm veru good"
+	line "at NOSEGRINDS!"
 	done
 
 _Route25BattleText2::
-	text "Dad took me to a"
-	line "great party on"
-	cont "S.S.ANNE at"
-	cont "VERMILION CITY!"
+	text "Tons of bitches"
+	line "like"
+	cont "Skater boys."
 	done
 
 _Route25EndBattleText2::
-	text "I'm"
-	line "not mad!"
+	text "But"
+	line "not me."
 	prompt
 
 _Route25AfterBattleText2::
-	text "On S.S.ANNE, I"
-	line "saw trainers from"
-	cont "around the world."
+	text "It's my deck"
+	line "that suck. Wish"
+	cont "i had a PLAGUE."
 	done
 
 _Route25BattleText3::
@@ -84,7 +81,7 @@ _Route25AfterBattleText5::
 
 _Route25BattleText6::
 	text "My friend has a"
-	line "cute #MON."
+	line "gigantic dick."
 	cont "I'm so jealous!"
 	done
 
@@ -94,33 +91,24 @@ _Route25EndBattleText6::
 	prompt
 
 _Route25AfterBattleText6::
-	text "You came from MT."
-	line "MOON? May I have"
-	cont "a CLEFAIRY?"
+	text "IT HURTS"
 	done
 
 _Route25BattleText7::
-	text "I just got down"
-	line "from MT.MOON,"
-	cont "but I'm ready!"
+	text "DOLLARS!"
 	done
 
 _Route25EndBattleText7::
-	text "You"
-	line "worked hard!"
+	text "Oh no."
 	prompt
 
 _Route25AfterBattleText7::
-	text "Drat!"
-	line "A ZUBAT bit me"
-	cont "back in there."
+	text "I like boobs."
 	done
 
 _Route25BattleText8::
-	text "I'm off to see a"
-	line "#MON collector"
-	cont "at the cape!"
-	done
+	text "BLING BLING"
+    done
 
 _Route25EndBattleText8::
 	text "You"
@@ -128,29 +116,24 @@ _Route25EndBattleText8::
 	prompt
 
 _Route25AfterBattleText8::
-	text "The collector has"
-	line "many rare kinds"
-	cont "of #MON."
+	text "Does mu phone."
 	done
 
 _Route25BattleText9::
-	text "You're going to"
-	line "see BILL? First,"
-	cont "let's fight!"
+	text "I need greens."
 	done
 
 _Route25EndBattleText9::
-	text "You're"
-	line "something."
+	text "I'm"
+	line "horny now."
 	prompt
 
 _Route25AfterBattleText9::
-	text "The trail below"
-	line "is a shortcut to"
-	cont "CERULEAN CITY."
-	done
+	text "This is my"
+	line "zone."
+    done
 
 _Route25Text11::
-	text "SEA COTTAGE"
-	line "BILL lives here!"
+	text "A lonely"
+	line "house.."
 	done

@@ -21,7 +21,7 @@ SilphCo7Object:
 	object SPRITE_ROCKET, $14, $2, STAY, LEFT, $7, OPP_ROCKET, $21
 	object SPRITE_ROCKET, $13, $e, STAY, RIGHT, $8, OPP_ROCKET, $22
 	object SPRITE_BLUE, $3, $7, STAY, UP, $9 ; person
-	object SPRITE_BALL, $1, $9, STAY, NONE, $a, CALCIUM
+	object SPRITE_BALL, $1, $9, STAY, NONE, $a, NONE
 	object SPRITE_BALL, $18, $b, STAY, NONE, $b, TM_03
 
 	; warp-to

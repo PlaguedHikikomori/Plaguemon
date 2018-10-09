@@ -1,113 +1,101 @@
 _SSAnne9Text_61bf2::
-	text "In all my travels"
-	line "I've never seen"
-	cont "any #MON sleep"
-	cont "like this one!"
+	text "Did you see that"
+	line "heap of corpses"
+	cont "on the road?"
+	cont "I have a pic!"
 
-	para "It was something"
-	line "like this!"
+	para "It's disgusting"
 	prompt
 
 _SSAnne9Text_61c01::
-	text "Ah yes, I have"
-	line "seen some #MON"
-	cont "ferry people"
-	cont "across the water!"
+	text "My back hurts"
+	line "as hell.."
 	done
 
 _SSAnne9Text_61c10::
-	text "#MON can CUT"
-	line "down small bushes."
+	text "#MON can"
+	line "DECAPITATE people."
 	done
 
 _SSAnne9Text_61c1f::
-	text "Have you gone to"
-	line "the SAFARI ZONE"
-	cont "in FUCHSIA CITY?"
-
-	para "It had many rare"
-	line "kinds of #MON!!"
+	text "Finally a place"
+	line "to use my child"
+	cont "as i want."
 	done
 
 _SSAnne9Text_61c2e::
 	text "Me and my Daddy"
-	line "think the SAFARI"
-	cont "ZONE is awesome!"
+	line "always take rooms"
+	cont "away from home."
 	done
 
 _SSAnne9Text_61c3d::
-	text "The CAPTAIN looked"
-	line "really sick and"
-	cont "pale!"
+	text "2 girls.."
 	done
 
 _SSAnne9Text_61c4c::
-	text "I hear many people"
-	line "get seasick!"
+	text "1 cup.."
 	done
 
 _SSAnne9BattleText1::
 	text "Competing against"
-	line "the young keeps"
-	cont "me youthful."
+	line "white people"
+	cont "is cool."
 	done
 
 _SSAnne9EndBattleText1::
 	text "Good"
 	line "fight! Ah, I feel"
-	cont "young again!"
+	cont "white pride!"
 	prompt
 
 _SSAnne9AfterBattleText1::
-	text "15 years ago, I"
-	line "would have won!"
+	text "I never fought"
+	line "against a nigger!"
 	done
 
 _SSAnne9BattleText2::
-	text "Check out what I"
-	line "fished up!"
+	text "This ship"
+	line "will blow up!"
 	done
 
 _SSAnne9EndBattleText2::
-	text "I'm"
-	line "all out!"
+	text "Or not.."
 	prompt
 
 _SSAnne9AfterBattleText2::
-	text "Party?"
-
-	para "The cruise ship's"
-	line "party should be"
-	cont "over by now."
+	text "I will let myself"	
+	line "explode at the"
+	cont "party."
 	done
 
 _SSAnne9BattleText3::
 	text "Which do you like,"
-	line "a strong or a"
-	cont "rare #MON?"
+	line "white people"
+	cont "or black ones?"
 	done
 
 _SSAnne9EndBattleText3::
-	text "I must"
-	line "salute you!"
+	text "Equality"
+	line "does not exist!"
 	prompt
 
 _SSAnne9AfterBattleText3::
-	text "I prefer strong"
-	line "and rare #MON."
+	text "I only prefer"
+	line "real americans."
 	done
 
 _SSAnne9BattleText4::
-	text "I never saw you"
-	line "at the party."
+	text "Was you at"
+	line "the party?"
 	done
 
 _SSAnne9EndBattleText4::
-	text "Take"
-	line "it easy!"
+	text "I don't"
+	line "remember.."
 	prompt
 
 _SSAnne9AfterBattleText4::
-	text "Oh, I adore your"
-	line "strong #MON!"
+	text "To be honest,"
+	line "i loved it!"
 	done

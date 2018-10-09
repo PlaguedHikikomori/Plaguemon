@@ -1,27 +1,10 @@
 _KogaExplainToxicText::
-	text "When afflicted by"
-	line "TOXIC, #MON"
-	cont "suffer more and"
-	cont "more as battle"
-	cont "progresses!"
-
-	para "It will surely"
-	line "terrorize foes!"
 	done
 
 _FuchsiaGymText9::
-	text "Now that you have"
-	line "the SOULBADGE,"
-	cont "the DEFENSE of"
-	cont "your #MON"
-	cont "increases!"
-
-	para "It also lets you"
-	line "SURF outside of"
-	cont "battle!"
-
-	para "Ah! Take this"
-	line "too!"
+	text "This bandana"
+	line "holds really"
+	cont "strong powers.."
 	done
 
 _ReceivedTM06Text::
@@ -32,29 +15,13 @@ _ReceivedTM06Text::
 
 _TM06ExplanationText::
 	db $0
-	para "TM06 contains"
-	line "TOXIC!"
-
-	para "It is a secret"
-	line "technique over"
-	cont "400 years old!"
 	done
 
 _TM06NoRoomText::
-	text "Make space for"
-	line "this, child!"
+	text "Make space scum."
 	done
 
 _FuchsiaGymBattleText1::
-	text "Strength isn't"
-	line "the key for"
-	cont "#MON!"
-
-	para "It's strategy!"
-
-	para "I'll show you how"
-	line "strategy can beat"
-	cont "brute strength!"
 	done
 
 _FuchsiaGymEndBattleText1::

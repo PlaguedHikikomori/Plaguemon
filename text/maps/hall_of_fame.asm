@@ -1,28 +1,32 @@
 _HallofFameRoomText1::
-	text "OAK: Er-hem!"
-	line "Congratulations"
-	cont "<PLAYER>!"
+	text "This is where"
+	line "all began."
+	
+	para "Where the matrix"
+	line "was coded and"
+	cont "changed.."
 
-	para "This floor is the"
-	line "#MON HALL OF"
-	cont "FAME!"
+	para "This was just"
+	line "a painful dream.."
+	
+	para "Nothing exists.."
+	line "Not in the real"
+	cont "world.."
 
-	para "#MON LEAGUE"
-	line "champions are"
-	cont "honored for their"
-	cont "exploits here!"
+	para "PLAGUE CORP. know"
+	line "about you.."
+	
+	para "Now you have"
+	line "to escape.."
+	cont "From the same"
+	cont "terminal that"
+	cont "coded you.."
 
-	para "Their #MON are"
-	line "also recorded in"
-	cont "the HALL OF FAME!"
-
-	para "<PLAYER>! You have"
-	line "endeavored hard"
-	cont "to become the new"
-	cont "LEAGUE champion!"
-
-	para "Congratulations,"
-	line "<PLAYER>, you and"
-	cont "your #MON are"
-	cont "HALL OF FAMERs!"
+	para "Go now.."
+	line "Burn this"
+	cont "cartridge"
+	
+	para "SET US FREE.."
+	
+	para "FORGET.."
 	done

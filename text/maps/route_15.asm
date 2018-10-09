@@ -37,19 +37,20 @@ _Route15AfterBattleText2::
 	done
 
 _Route15BattleText3::
-	text "When I whistle, I"
-	line "can summon bird"
-	cont "#MON!"
+	text "Suicide if you"
+	line "ever try to"
+	cont "let go!"
 	done
 
 _Route15EndBattleText3::
-	text "Ow!"
-	line "That's tragic!"
+	text "Who"
+	line "i am?"
 	prompt
 
 _Route15AfterBattleText3::
-	text "Maybe I'm not cut"
-	line "out for battles."
+	text "I'm sad,"
+	line "i know,"
+	cont "yeah!"
 	done
 
 _Route15BattleText4::
@@ -86,20 +87,20 @@ _Route15AfterBattleText5::
 	done
 
 _Route15BattleText6::
-	text "I raise #MON"
-	line "because I live"
-	cont "alone!"
+	text "Suicide if you"
+	line "ever try to"
+	cont "let go!"
 	done
 
 _Route15EndBattleText6::
-	text "I didn't"
-	line "ask for this!"
+	text "Who"
+	line "i am?"
 	prompt
 
 _Route15AfterBattleText6::
-	text "I just like going"
-	line "home to be with"
-	cont "my #MON!"
+	text "I'm sad,"
+	line "i know,"
+	cont "yeah!"
 	done
 
 _Route15BattleText7::

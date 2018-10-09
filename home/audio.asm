@@ -24,11 +24,14 @@ PlayDefaultMusicCommon::
 	jr z, .walking
 	cp $2
 	jr z, .surfing
-	ld a, MUSIC_BIKE_RIDING
+	ld a, MUSIC_SURFING
 	jr .next
 
+.motocrossmusic
+    ld a, MUSIC_SURFING	
+	
 .surfing
-	ld a, MUSIC_SURFING
+	ld a, MUSIC_BIKE_RIDING
 
 .next
 	ld b, a

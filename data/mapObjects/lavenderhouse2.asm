@@ -7,9 +7,8 @@ LavenderHouse2Object:
 
 	db $0 ; signs
 
-	db $2 ; objects
-	object SPRITE_SLOWBRO, $3, $5, STAY, UP, $1 ; person
-	object SPRITE_BRUNETTE_GIRL, $2, $4, STAY, RIGHT, $2 ; person
+	db $0 ; objects
+	
 
 	; warp-to
 	EVENT_DISP LAVENDER_HOUSE_2_WIDTH, $7, $2

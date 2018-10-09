@@ -12,9 +12,9 @@ SeafoamIslands1Object:
 
 	db $0 ; signs
 
-	db $2 ; objects
-	object SPRITE_BOULDER, $12, $a, STAY, BOULDER_MOVEMENT_BYTE_2, $1 ; person
-	object SPRITE_BOULDER, $1a, $7, STAY, BOULDER_MOVEMENT_BYTE_2, $2 ; person
+	db $1 ; objects
+	object SPRITE_BIRD, $1a, $7, STAY, DOWN, $1, ARTICUNO, 50
+	
 
 	; warp-to
 	EVENT_DISP SEAFOAM_ISLANDS_1_WIDTH, $11, $4

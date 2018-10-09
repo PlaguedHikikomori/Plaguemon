@@ -1,78 +1,61 @@
 _TowerRescueFujiText::
-	text "MR.FUJI: Heh? You"
-	line "came to save me?"
+	text "Ol sonuf vaoresaji"
+	line "gohu IAD Balata"
 
-	para "Thank you. But, I"
-	line "came here of my"
-	cont "own free will."
-
-	para "I came to calm"
-	line "the soul of"
-	cont "CUBONE's mother."
-
-	para "I think MAROWAK's"
-	line "spirit has gone"
-	cont "to the afterlife."
-
-	para "I must thank you"
-	line "for your kind"
-	cont "concern!"
-
-	para "Follow me to my"
-	line "home, #MON"
-	cont "HOUSE at the foot"
-	cont "of this tower."
+	para "elanusaha"
+	line "caelazod"
+	cont "vonpho..."
 	done
 
 _PokemonTower7BattleText1::
-	text "What do you want?"
-	line "Why are you here?"
+	text "In the name of"
+	line "Shaytan!"
 	done
 
 _PokemonTower7EndBattleText1::
-	text "I give up!"
+	text "I curse you!"
 	prompt
 
 _PokemonTower7AfterBattleText1::
-	text "I'm not going to"
-	line "forget this!"
+	text "I order to dark"
+	line "forces to give me"
+	cont "their power!"
 	done
 
 _PokemonTower7BattleText2::
-	text "This old guy came"
-	line "and complained"
-	cont "about us harming"
-	cont "useless #MON!"
+	text "Open the gates of"
+	line "the hell and come"
+	cont "in front of me"
+	cont "from the abyss."
 
-	para "We're talking it"
-	line "over as adults!"
+	para "Receive me as"
+	line "your brother!"
 	done
 
 _PokemonTower7EndBattleText2::
-	text "Please!"
-	line "No more!"
+	text "Nooo!"
 	prompt
 
 _PokemonTower7AfterBattleText2::
-	text "#MON are only"
-	line "good for making"
-	cont "money!"
+	text "Give me the"
+	line "satisfaction i"
+	cont "ask!"
 
-	para "Stay out of our"
-	line "business!"
+	para "Your name as a"
+	line "part of mine.."
 	done
 
 _PokemonTower7BattleText3::
-	text "You're not saving"
-	line "anyone, kid!"
+	text "From all the gods"
+	line "of darkness!"
 	done
 
 _PokemonTower7EndBattleText3::
-	text "Don't"
-	line "fight us ROCKETs!"
+	text "Everything"
+	line "is done now.."
 	prompt
 
 _PokemonTower7AfterBattleText3::
-	text "You're not getting"
-	line "away with this!"
+	text "Show us your"
+	line "desires!"
 	done

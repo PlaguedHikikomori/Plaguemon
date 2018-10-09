@@ -1,11 +1,11 @@
 _MtMoon3Text_49f24::
 	text "You want the"
-	line "DOME FOSSIL?"
+	line "Z80-sn CHIP?"
 	done
 
 _MtMoon3Text_49f64::
 	text "You want the"
-	line "HELIX FOSSIL?"
+	line "Z80-sp CHIP?"
 	done
 
 _MtMoon3Text_49f6f::
@@ -22,7 +22,7 @@ _MtMoon3Text_49f85::
 	text "Hey, stop!"
 
 	para "I found these"
-	line "fossils! They're"
+	line "chips! They're"
 	cont "both mine!"
 	done
 
@@ -40,12 +40,12 @@ _MtMoon3Text_49f8f::
 _MtMoon3Text_49f94::
 	text "Far away, on"
 	line "CINNABAR ISLAND,"
-	cont "there's a #MON"
+	cont "there's a"
 	cont "LAB."
 
 	para "They do research"
 	line "on regenerating"
-	cont "fossils."
+	cont "chips."
 	done
 
 _MtMoon3Text_49f99::
@@ -53,8 +53,8 @@ _MtMoon3Text_49f99::
 	line "this is mine!@@"
 
 _MtMoon3BattleText2::
-	text "TEAM ROCKET will"
-	line "find the fossils,"
+	text "PLAGUE CORP. will"
+	line "find the chips,"
 	cont "revive and sell"
 	cont "them for cash!"
 	done
@@ -66,12 +66,12 @@ _MtMoon3EndBattleText2::
 
 _MtMoon3AfterBattleText2::
 	text "You made me mad!"
-	line "TEAM ROCKET will"
+	line "PLAGUE CORP will"
 	cont "blacklist you!"
 	done
 
 _MtMoon3BattleText3::
-	text "We, TEAM ROCKET,"
+	text "We, PLAGUE CORP,"
 	line "are #MON"
 	cont "gangsters!"
 	done
@@ -82,15 +82,15 @@ _MtMoon3EndBattleText3::
 	prompt
 
 _MtMoon3AfterBattleText3::
-	text "Darn it all! My"
-	line "associates won't"
-	cont "stand for this!"
+	text "I think they"
+	line "left me here"
+	cont "forever!"
 	done
 
 _MtMoon3BattleText4::
 	text "We're pulling a"
 	line "big job here!"
-	cont "Get lost, kid!"
+	cont "Go fuck yourself!"
 	done
 
 _MtMoon3EndBattleText4::
@@ -100,14 +100,14 @@ _MtMoon3EndBattleText4::
 
 _MtMoon3AfterBattleText4::
 	text "If you find a"
-	line "fossil, give it"
+	line "chip, give it"
 	cont "to me and scram!"
 	done
 
 _MtMoon3BattleText5::
-	text "Little kids"
+	text "Little dicks"
 	line "should leave"
-	cont "grown-ups alone!"
+	cont "big dicks alone!"
 	done
 
 _MtMoon3EndBattleText5::
@@ -116,7 +116,7 @@ _MtMoon3EndBattleText5::
 	prompt
 
 _MtMoon3AfterBattleText5::
-	text "#MON lived"
+	text "I lived"
 	line "here long before"
 	cont "people came."
 	done

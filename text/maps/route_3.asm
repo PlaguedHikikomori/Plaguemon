@@ -1,51 +1,38 @@
 _Route3Text1::
-	text "Whew... I better"
-	line "take a rest..."
-	cont "Groan..."
-
-	para "That tunnel from"
-	line "CERULEAN takes a"
-	cont "lot out of you!"
+	text "Any porn comics?"
 	done
 
 _Route3BattleText1::
-	text "Hey! I met you in"
-	line "VIRIDIAN FOREST!"
+	text "Bitch stink.."
 	done
 
 _Route3EndBattleText1::
-	text "You"
-	line "beat me again!"
+	text "Shit!"
 	prompt
 
 _Route3AfterBattleText1::
-	text "There are other"
-	line "kinds of #MON"
-	cont "than those found"
-	cont "in the forest!"
+    text "Quit staring if"
+	line "you don't want to"
+	cont "fight, bitch!"
 	done
+	
 
 _Route3BattleText2::
-	text "Hi! I like shorts!"
-	line "They're comfy and"
-	cont "easy to wear!"
+    text "You looked at me,"
+	line "didn't you, scum?"
 	done
-
+	
 _Route3EndBattleText2::
 	text "I don't"
 	line "believe it!"
 	prompt
 
 _Route3AfterBattleText2::
-	text "Are you storing"
-	line "your #MON on"
-	cont "PC? Each BOX can"
-	cont "hold 20 #MON!"
+	text "My head.."
 	done
 
 _Route3BattleText3::
-	text "You looked at me,"
-	line "didn't you?"
+	text "It hurts."
 	done
 
 _Route3EndBattleText3::
@@ -54,27 +41,22 @@ _Route3EndBattleText3::
 	prompt
 
 _Route3AfterBattleText3::
-	text "Quit staring if"
-	line "you don't want to"
-	cont "fight!"
+	text "I feel cold."
 	done
 
 _Route3BattleText4::
-	text "Are you a trainer?"
+	text "Are you a faggot?"
 	line "Let's fight!"
 	done
 
 _Route3EndBattleText4::
 	text "If I"
-	line "had new #MON I"
+	line "had new money i"
 	cont "would've won!"
 	prompt
 
 _Route3AfterBattleText4::
-	text "If a #MON BOX"
-	line "on the PC gets"
-	cont "full, just switch"
-	cont "to another BOX!"
+	text "My libido lowered."
 	done
 
 _Route3BattleText5::
@@ -84,14 +66,12 @@ _Route3BattleText5::
 	done
 
 _Route3EndBattleText5::
-	text "Be nice!"
+	text "I cum."
 	prompt
 
 _Route3AfterBattleText5::
-	text "Avoid fights by"
-	line "not letting"
-	cont "people see you!"
-	done
+	text "Avoid fights puss"
+    done
 
 _Route3BattleText6::
 	text "Hey! You're not"
@@ -99,19 +79,16 @@ _Route3BattleText6::
 	done
 
 _Route3EndBattleText6::
-	text "Lost!"
-	line "Lost! Lost!"
+	text "I'm lost!"
 	prompt
-
+	
 _Route3AfterBattleText6::
 	text "I always wear"
-	line "shorts, even in"
-	cont "winter!"
+	line "shorts, i have to"
 	done
 
 _Route3BattleText7::
-	text "You can fight my"
-	line "new #MON!"
+	text "YOU SUCK."
 	done
 
 _Route3EndBattleText7::
@@ -120,9 +97,8 @@ _Route3EndBattleText7::
 	prompt
 
 _Route3AfterBattleText7::
-	text "Trained #MON"
-	line "are stronger than"
-	cont "the wild ones!"
+	text "My dick is so"
+	line "tiny."
 	done
 
 _Route3BattleText8::
@@ -131,12 +107,11 @@ _Route3BattleText8::
 	done
 
 _Route3EndBattleText8::
-	text "That's it?"
+	text "I liked it."
 	prompt
 
 _Route3AfterBattleText8::
-	text "ROUTE 4 is at the"
-	line "foot of MT.MOON."
+	text "I liked it."
 	done
 
 _Route3Text10::

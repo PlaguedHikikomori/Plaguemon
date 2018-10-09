@@ -1,26 +1,29 @@
 _VermilionGymText_5cb72::
-	text "A little word of"
-	line "advice, kid!"
+	text "I don't share you"
+	line "greed!"
 
-	para "Electricity is"
-	line "sure powerful!"
+	para "The only card i"
+	line "need is..."
 
-	para "But, it's useless"
-	line "against ground-"
-	cont "type #MON!"
+	para "THE ACE OF SPADES!"
+	
+	para "THE ACE OF SPADES!"
+
 	done
 
 _VermilionGymText_5cb77::
-	text "The THUNDERBADGE"
+	text "JACK DANIELS"
 	line "cranks up your"
-	cont "#MON's SPEED!"
+	cont "day!"
 
-	para "It also lets your"
-	line "#MON FLY any"
+	para "It also lets you"
+	line "FLY any"
 	cont "time, kid!"
 
-	para "You're special,"
-	line "kid! Take this!"
+	para "You'll need that"
+	line "in every journey!"
+	
+	para "Also this.."
 	done
 
 _ReceivedTM24Text::
@@ -32,112 +35,80 @@ _ReceivedTM24Text::
 _TM24ExplanationText::
 	db $0
 	para "TM24 contains"
-	line "THUNDERBOLT!"
+	line "LITTLE BOY!"
 
-	para "Teach it to an"
-	line "electric #MON!"
+	para "It's the bomb"
+	line "that destroyed"
+	cont "HIROSHIMA!"
 	done
 
 _TM24NoRoomText::
-	text "Yo kid, make room"
-	line "in your pack!"
+	text "There should be"
+	line "always space for"
+	cont "alcohol!"
 	done
 
 _ReceivedThunderbadgeText::
-	text "Whoa!"
+	text "SHIT!"
 
-	para "You're the real"
-	line "deal, kid!"
+	para "You rocked"
+	line "kid!"
 
-	para "Fine then, take"
-	line "the THUNDERBADGE!"
+	para "Let's drink some"
+	line "bourbon together!"
 	prompt
 
 _VermilionGymBattleText1::
-	text "When I was in the"
-	line "Army, LT.SURGE"
-	cont "was my strict CO!"
+	text "When I followed"
+	line "MOTORHEAD, LEMMY"
+	cont "fucked a lot!"
 	done
 
 _VermilionGymEndBattleText1::
-	text "Stop!"
-	line "You're very good!"
+	text "So much.."
 	prompt
 
 _VermilionGymAfterBattleText1::
-	text "The door won't"
-	line "open?"
+	text "If the door are"
+	line "closed.."
 
-	para "LT.SURGE always"
-	line "was cautious!"
+	para "Probably he is"
+	line "fucking groupies"
 	done
 
 _VermilionGymBattleText2::
-	text "I'm a lightweight,"
-	line "but I'm good with"
-	cont "electricity!"
+	text "PORCO DIO!"
 	done
 
 _VermilionGymEndBattleText2::
-	text "Fried!"
+	text "Freghet!"
 	prompt
 
 _VermilionGymAfterBattleText2::
-	text "OK, I'll talk!"
-
-	para "LT.SURGE said he"
-	line "hid door switches"
-	cont "inside something!"
+	text "PORCA MADONNA!"
 	done
 
 _VermilionGymBattleText3::
-	text "This is no place"
-	line "for kids!"
+	text "Ehy.."
+	line "bring some girls!"
 	done
 
 _VermilionGymEndBattleText3::
-	text "Wow!"
-	line "Surprised me!"
+	text "Boring.."
 	prompt
 
 _VermilionGymAfterBattleText3::
-	text "LT.SURGE set up"
-	line "double locks!"
-	cont "Here's a hint!"
-
-	para "When you open the"
-	line "1st lock, the 2nd"
-	cont "lock is right"
-	cont "next to it!"
+	text "I have a snake"
+	line "tattooed on my"
+	cont "dick!"
 	done
 
 _VermilionGymText_5cbf4::
-	text "Yo! Champ in"
-	line "making!"
-
-	para "LT.SURGE has a"
-	line "nickname. People"
-	cont "refer to him as"
-	cont "the Lightning"
-	cont "American!"
-
-	para "He's an expert on"
-	line "electric #MON!"
-
-	para "Birds and water"
-	line "#MON are at"
-	cont "risk! Beware of"
-	cont "paralysis too!"
-
-	para "LT.SURGE is very"
-	line "cautious!"
-
-	para "You'll have to"
-	line "break a code to"
-	cont "get to him!"
+	text "Drink this glass"
+	line "of good bourbon!"
 	done
 
 _VermilionGymText_5cbf9::
-	text "Whew! That match"
-	line "was electric!"
+	text "Sooo gooood"
+	line "right?!"
 	done

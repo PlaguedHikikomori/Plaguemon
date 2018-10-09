@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 190 ; base exp yield
 INCBIN "pic/bmon/gengar.pic",0,1 ; 66, sprite dimensions
 dw GengarPicFront
-dw GengarPicBack
+dw GengarPicFront
 ; attacks known at lvl 0
 db LICK
 db CONFUSE_RAY

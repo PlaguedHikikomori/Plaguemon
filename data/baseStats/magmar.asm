@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 167 ; base exp yield
 INCBIN "pic/bmon/magmar.pic",0,1 ; 66, sprite dimensions
 dw MagmarPicFront
-dw MagmarPicBack
+dw MagmarPicFront
 ; attacks known at lvl 0
 db EMBER
 db 0

@@ -62,7 +62,18 @@ SaffronCityText8:
 
 SaffronCityText9:
 	TX_FAR _SaffronCityText9
-	db "@"
+	TX_ASM
+	ld a, LAPRAS
+	call DisplayPokedex
+	ld a, [wCurrentMenuItem]
+	and a
+	jr nz, .done
+	ld a, [wcf91]
+	ld b, a
+	ld c, 30
+	call GivePokemon
+.done
+	jp TextScriptEnd
 
 SaffronCityText10:
 	TX_FAR _SaffronCityText10

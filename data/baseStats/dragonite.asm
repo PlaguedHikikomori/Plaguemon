@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 218 ; base exp yield
 INCBIN "pic/bmon/dragonite.pic",0,1 ; 77, sprite dimensions
 dw DragonitePicFront
-dw DragonitePicBack
+dw DragonitePicFront
 ; attacks known at lvl 0
 db WRAP
 db LEER

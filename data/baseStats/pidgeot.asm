@@ -1,28 +1,28 @@
 db DEX_PIDGEOT ; pokedex id
-db 83 ; base hp
-db 80 ; base attack
-db 75 ; base defense
-db 91 ; base speed
-db 70 ; base special
+db 160 ; base hp
+db 110 ; base attack
+db 65 ; base defense
+db 30 ; base speed
+db 65 ; base special
 db NORMAL ; species type 1
-db FLYING ; species type 2
-db 45 ; catch rate
-db 172 ; base exp yield
+db NORMAL ; species type 2
+db 25 ; catch rate
+db 154 ; base exp yield
 INCBIN "pic/bmon/pidgeot.pic",0,1 ; 77, sprite dimensions
 dw PidgeotPicFront
-dw PidgeotPicBack
+dw PidgeotPicFront
 ; attacks known at lvl 0
-db GUST
-db SAND_ATTACK
-db QUICK_ATTACK
+db HEADBUTT
+db AMNESIA
+db REST
 db 0
-db 3 ; growth rate
+db 5 ; growth rate
 ; learnset
-	tmlearn 2,4,6
-	tmlearn 9,10,15
-	tmlearn 20
-	tmlearn 31,32
-	tmlearn 33,34,39
-	tmlearn 43,44
-	tmlearn 50,52
+	tmlearn 1,5,6,8
+	tmlearn 9,10,11,12,13,14,15,16
+	tmlearn 17,18,19,20,22,24
+	tmlearn 25,26,27,29,31,32
+	tmlearn 33,34,35,36,38,40
+	tmlearn 44,46,48
+	tmlearn 50,53,54
 db 0 ; padding

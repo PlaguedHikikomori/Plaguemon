@@ -1,17 +1,17 @@
 _PokemonTower3BattleText1::
-	text "Urrg...Awaa..."
-	line "Huhu...graa.."
+	text "Blood.."
+	line "Goat.."
 	done
 
 _PokemonTower3EndBattleText1::
 	text "Hwa!"
-	line "I'm saved!"
+	line ".."
 	prompt
 
 _PokemonTower3AfterBattleText1::
-	text "The GHOSTs can be"
-	line "identified by the"
-	cont "SILPH SCOPE."
+	text "EMF SENSOR"
+	line "is a great"
+	cont "technology."
 	done
 
 _PokemonTower3BattleText2::

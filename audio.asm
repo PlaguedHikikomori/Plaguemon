@@ -2,6 +2,24 @@
 AUDIO_1 EQU $2
 AUDIO_2 EQU $8
 AUDIO_3 EQU $1f
+AUDIO_4 EQU $20
+
+PCM_1  EQU $21
+PCM_2  EQU $22
+PCM_3  EQU $23
+PCM_4  EQU $24
+PCM_5  EQU $25
+PCM_6  EQU $31
+PCM_7  EQU $32
+PCM_8  EQU $33
+PCM_9  EQU $34
+PCM_10 EQU $35
+PCM_11 EQU $36
+PCM_12 EQU $37
+PCM_13 EQU $38
+GLOBAL AUDIO_1, AUDIO_2, AUDIO_3, AUDIO_4
+GLOBAL PCM_1, PCM_2, PCM_3, PCM_4, PCM_5, PCM_6, PCM_7
+GLOBAL PCM_8, PCM_9, PCM_10, PCM_11, PCM_12, PCM_13
 
 INCLUDE "constants.asm"
 
@@ -669,5 +687,13 @@ INCLUDE "audio/music/introbattle.asm"
 INCLUDE "audio/music/surfing.asm"
 INCLUDE "audio/music/jigglypuffsong.asm"
 INCLUDE "audio/music/halloffame.asm"
-INCLUDE "audio/music/credits.asm"
+INCLUDE "audio/music/motocross.asm"
 
+SECTION "Pikachu Cries 1",ROMX,BANK[PCM_1]
+PikachuCry1::
+	dw (PikachuCry1_End - PikachuCry1) - 2 ; length of pcm data
+	INCBIN "audio/burp/burp.pcm"
+PikachuCry1_End:
+
+	db $77  ; unused
+	

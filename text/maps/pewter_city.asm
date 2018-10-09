@@ -1,34 +1,34 @@
 _PewterCityText1::
-	text "It's rumored that"
-	line "CLEFAIRYs came"
-	cont "from the moon!"
+	text "Fuck me like"
+	line "an orphan."
+	
 
-	para "They appeared "
-	line "after MOON STONE"
-	cont "fell on MT.MOON."
+	para "No one will ask"
+	line "about bruises."
+	
 	done
 
 _PewterCityText2::
-	text "There aren't many"
-	line "serious #MON"
-	cont "trainers here!"
+	text "This city"
+	line "sucks."
+	cont "I mean.."
 
-	para "They're all like"
-	line "BUG CATCHERs,"
-	cont "but PEWTER GYM's"
-	cont "BROCK is totally"
-	cont "into it!"
+	para "Sometimes"
+	line "i hear guitar"
+	cont "solos in that"
+	cont "house over "
+	cont "there..."
 	done
 
 _PewterCityText_193f1::
 	text "Did you check out"
-	line "the MUSEUM?"
+	line "the MUSEUM scum?"
 	done
 
 _PewterCityText_193f6::
-	text "Weren't those"
-	line "fossils from MT."
-	cont "MOON amazing?"
+	text "Did you liked"
+	line "those organs,"
+	cont "do you?"
 	done
 
 _PewterCityText_193fb::
@@ -57,61 +57,61 @@ _PewterCityText_1942c::
 	done
 
 _PewterCityText_19431::
-	text "I'm spraying REPEL"
-	line "to keep #MON"
+	text "I'm jerking"
+	line "myself off"
 	cont "out of my garden!"
 	done
 
 _PewterCityText_1945d::
-	text "You're a trainer"
-	line "right? BROCK's"
-	cont "looking for new"
-	cont "challengers!"
-	cont "Follow me!"
+	text "Ehi, do you wanna"
+	line "see a dead body?"
+	cont "Come with me!"
+	cont "Should be the"
+	cont "right day!"
 	done
 
 _PewterCityText14::
-	text "If you have the"
-	line "right stuff, go"
-	cont "take on BROCK!"
+	text "Beat him like"
+	line "he is still"
+	cont "ALIVE!"
 	done
 
 _PewterCityText6::
-	text "TRAINER TIPS"
+	text "FACT:"
 
 	para "Any #MON that"
 	line "takes part in"
-	cont "battle, however"
-	cont "short, earns EXP!"
+	cont "battle expose"
+	cont "to radiation!"
 	done
 
 _PewterCityText7::
 	text "NOTICE!"
 
 	para "Thieves have been"
-	line "stealing #MON"
-	cont "fossils at MT."
+	line "stealing secret"
+	cont "chips at MT."
 	cont "MOON! Please call"
-	cont "PEWTER POLICE"
+	cont "PEWTER PIGS"
 	cont "with any info!"
 	done
 
 _PewterCityText10::
 	text "PEWTER MUSEUM"
-	line "OF SCIENCE"
+	line "OF HUMANS"
 	done
 
 _PewterCityText11::
 	text "PEWTER CITY"
 	line "#MON GYM"
-	cont "LEADER: BROCK"
+	cont "LEADER: KURT"
 
-	para "The Rock Solid"
-	line "#MON Trainer!"
+	para "The Grunge"
+	line "martyr!"
 	done
 
 _PewterCityText12::
 	text "PEWTER CITY"
-	line "A Stone Gray"
+	line "A Grunge"
 	cont "City"
 	done

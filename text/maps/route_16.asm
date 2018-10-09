@@ -91,26 +91,25 @@ _Route16AfterBattleText6::
 	done
 
 _Route16Text7::
-	text "A sleeping #MON"
-	line "blocks the way!"
+	text "Shit, what a"
+	line "disgusting sight!"
 	done
 
 _Route16Text10::
-	text "SNORLAX woke up!"
+	text "Damn!"
 
-	para "It attacked in a"
-	line "grumpy rage!"
+	para "The pyramid"
+	line "started moving!"
 	done
 
 _Route16Text11::
-	text "With a big yawn,"
-	line "SNORLAX returned"
-	cont "to the mountains!"
+	text "Those corpses were"
+	line "scary as fuck!"
 	done
 
 _Route16Text8::
 	text "Enjoy the slope!"
-	line "CYCLING ROAD"
+	line "IDIOT."
 	done
 
 _Route16Text9::

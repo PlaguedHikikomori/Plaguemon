@@ -5,5 +5,5 @@ _Route2Text3::
 	done
 
 _Route2Text4::
-	text "DIGLETT's CAVE"
+	text "KAZETTO's CAVE"
 	done

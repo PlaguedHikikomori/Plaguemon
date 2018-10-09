@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 197 ; base exp yield
 INCBIN "pic/bmon/jolteon.pic",0,1 ; 66, sprite dimensions
 dw JolteonPicFront
-dw JolteonPicBack
+dw JolteonPicFront
 ; attacks known at lvl 0
 db TACKLE
 db SAND_ATTACK

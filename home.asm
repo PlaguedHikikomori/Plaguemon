@@ -572,6 +572,9 @@ GetMonHeader::
 	ld de,GhostPic
 	cp MON_GHOST ; Ghost
 	jr z,.specialID
+	ld de,SpaceWeed
+	cp SPACE_WEED ; SPACE_WEED_COVER
+	jr z,.specialID
 	ld de,FossilAerodactylPic
 	ld b,$77 ; size of Aerodactyl fossil sprite
 	cp FOSSIL_AERODACTYL ; Aerodactyl fossil
@@ -782,12 +785,12 @@ LoadUncompressedSpriteData::
 	ld a, $7
 	sub b      ; 7-w
 	inc a      ; 8-w
-	srl a      ; (8-w)/2     ; horizontal center (in tiles, rounded up)
+	srl a      ; (8-w)/2      horizontal center (in tiles, rounded up)
 	ld b, a
 	add a
 	add a
 	add a
-	sub b      ; 7*((8-w)/2) ; skip for horizontal center (in tiles)
+	sub b      ; 7*((8-w)/2) skip for horizontal center (in tiles)
 	ld [H_SPRITEOFFSET], a
 	ld a, c
 	swap a
@@ -801,10 +804,10 @@ LoadUncompressedSpriteData::
 	sub b      ; 7-h         ; skip for vertical center (in tiles, relative to current column)
 	ld b, a
 	ld a, [H_SPRITEOFFSET]
-	add b     ; 7*((8-w)/2) + 7-h ; combined overall offset (in tiles)
+	add b     ; 7*((8-w)/2) + 7-h  combined overall offset (in tiles)
 	add a
 	add a
-	add a     ; 8*(7*((8-w)/2) + 7-h) ; combined overall offset (in bytes)
+	add a     ; 8*(7*((8-w)/2) + 7-h)  combined overall offset (in bytes)
 	ld [H_SPRITEOFFSET], a
 	xor a
 	ld [$4000], a
@@ -1113,6 +1116,8 @@ DisplayTextID::
 	ld l,a ; hl = address of the text
 	ld a,[hl] ; a = first byte of text
 ; check first byte of text for special cases
+    cp $f4   ; Bitch
+	jp z,DisplayBitchDialogue
 	cp $fe   ; Pokemart NPC
 	jp z,DisplayPokemartDialogue
 	cp $ff   ; Pokemon Center NPC
@@ -1229,6 +1234,8 @@ LoadItemList::
 	jr nz,.loop
 	ret
 
+
+	
 DisplayPokemonCenterDialogue::
 ; zeroing these doesn't appear to serve any purpose
 	xor a
@@ -3091,12 +3098,12 @@ LoadFontTilePatterns::
 	ld de, vFont
 	ld bc, FontGraphicsEnd - FontGraphics
 	ld a, BANK(FontGraphics)
-	jp FarCopyDataDouble ; if LCD is off, transfer all at once
+	jp FarCopyData ; if LCD is off, transfer all at once
 .on
 	ld de, FontGraphics
 	ld hl, vFont
-	lb bc, BANK(FontGraphics), (FontGraphicsEnd - FontGraphics) / $8
-	jp CopyVideoDataDouble ; if LCD is on, transfer during V-blank
+	lb bc, BANK(FontGraphics), (FontGraphicsEnd) 
+	jp CopyVideoData ; if LCD is on, transfer during V-blank
 
 LoadTextBoxTilePatterns::
 	ld a, [rLCDC]
@@ -4719,3 +4726,5 @@ const_value = 1
 	add_tx_pre BookOrSculptureText                  ; 40
 	add_tx_pre ElevatorText                         ; 41
 	add_tx_pre PokemonStuffText                     ; 42
+
+

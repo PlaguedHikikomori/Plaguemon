@@ -10,7 +10,7 @@ db 225 ; catch rate
 db 111 ; base exp yield
 INCBIN "pic/bmon/goldeen.pic",0,1 ; 66, sprite dimensions
 dw GoldeenPicFront
-dw GoldeenPicBack
+dw GoldeenPicFront
 ; attacks known at lvl 0
 db PECK
 db TAIL_WHIP

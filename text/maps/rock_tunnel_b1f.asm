@@ -1,111 +1,107 @@
 _RockTunnel1BattleText1::
-	text "This tunnel goes"
-	line "a long way, kid!"
+	text "Are you lost?"
 	done
 
 _RockTunnel1EndBattleText1::
-	text "Doh!"
-	line "You win!"
+	text "Or.."
+	line "I am.."
 	prompt
 
 _RockTunnel1AfterBattleText1::
-	text "Watch for ONIX!"
-	line "It can put the"
-	cont "squeeze on you!"
+	text "Girls sucks all"
+	line "your blood.."
 	done
 
 _RockTunnel1BattleText2::
-	text "Hmm. Maybe I'm"
-	line "lost in here..."
+	text "Where the fuck"
+	line "am I?"
 	done
 
 _RockTunnel1EndBattleText2::
-	text "Ease up!"
-	line "What am I doing?"
-	cont "Which way is out?"
+	text "Shit!"
 	prompt
 
 _RockTunnel1AfterBattleText2::
-	text "That sleeping"
-	line "#MON on ROUTE"
-	cont "12 forced me to"
+	text "That pile of"
+	line "rotten bodies"
+	cont "forced me to"
 	cont "take this detour."
 	done
 
 _RockTunnel1BattleText3::
-	text "Outsiders like"
-	line "you need to show"
-	cont "me some respect!"
+	text "Ehy, show me"
+	line "some respect,"
+	cont "douchebag!"
 	done
 
 _RockTunnel1EndBattleText3::
-	text "I give!"
+	text "Sob.."
 	prompt
 
 _RockTunnel1AfterBattleText3::
-	text "You're talented"
-	line "enough to hike!"
+	text "This wasteland"
+	line "stinks.."
 	done
 
 _RockTunnel1BattleText4::
-	text "#MON fight!"
-	line "Ready, go!"
+	text "Wanna see "
+	line "something nice?"
 	done
 
 _RockTunnel1EndBattleText4::
-	text "Game"
-	line "over!"
+	text "Oh, it was"
+	line "semi-chub!"
 	prompt
 
 _RockTunnel1AfterBattleText4::
-	text "Oh well, I'll get"
-	line "a ZUBAT as I go!"
+	text "I'm using"
+	line "Cialis lately."
 	done
 
 _RockTunnel1BattleText5::
-	text "Eek! Don't try"
-	line "anything funny in"
-	cont "the dark!"
+	text "Did you came"
+	line "here for hustling"
+	cont "huh?"
 	done
 
 _RockTunnel1EndBattleText5::
-	text "It"
-	line "was too dark!"
+	text "Yeah.."
+	line "Me too.."
 	prompt
 
 _RockTunnel1AfterBattleText5::
-	text "I saw a MACHOP"
-	line "in this tunnel!"
+	text "I like the girls"
+	line "pimps have.."
 	done
 
 _RockTunnel1BattleText6::
-	text "I came this far"
-	line "for #MON!"
+	text "Do you have"
+	line "something for"
+	cont "me?!"
 	done
 
 _RockTunnel1EndBattleText6::
-	text "I'm"
-	line "out of #MON!"
+	text "Nothing.."
 	prompt
 
 _RockTunnel1AfterBattleText6::
-	text "You looked cute"
-	line "and harmless!"
+	text "I stay here and"
+	line "steal drugs from"
+	cont "kids like you.."
 	done
 
 _RockTunnel1BattleText7::
-	text "You have #MON!"
-	line "Let's start!"
+	text "I know you have"
+	line "weed! Show me!"
 	done
 
 _RockTunnel1EndBattleText7::
-	text "You"
-	line "play hard!"
+	text "Damn.."
 	prompt
 
 _RockTunnel1AfterBattleText7::
-	text "Whew! I'm all"
-	line "sweaty now!"
+	text "Where did you"
+	line "hidden it?"
 	done
 
 _RockTunnel1Text8::

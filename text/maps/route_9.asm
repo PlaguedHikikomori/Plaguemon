@@ -1,29 +1,27 @@
 _Route9BattleText1::
-	text "You have #MON"
-	line "with you!"
-	cont "You're mine!"
+	text "You're mine!"
 	done
 
 _Route9EndBattleText1::
-	text "You"
-	line "deceived me!"
+	text "I can't"
+	line "arrest you!"
 	prompt
 
 _Route9AfterBattleText1::
-	text "You need light to"
-	line "get through that"
-	cont "dark tunnel ahead."
+	text "But you can"
+	line "arrest me if you"
+	cont "would like to!"
 	done
 
 _Route9BattleText2::
-	text "Who's that walking"
-	line "with those good"
-	cont "looking #MON?"
+	text "Ehi.."
+	line "Where are you"
+	cont "running?"
 	done
 
 _Route9EndBattleText2::
-	text "Out"
-	line "like a light!"
+	text "Ok"
+	line "Can go.."
 	prompt
 
 _Route9AfterBattleText2::
@@ -31,123 +29,102 @@ _Route9AfterBattleText2::
 	done
 
 _Route9BattleText3::
-	text "I'm taking ROCK"
-	line "TUNNEL to go to"
-	cont "LAVENDER..."
+	text "Hands up!"
 	done
 
 _Route9EndBattleText3::
-	text "Can't"
-	line "measure up!"
+	text "You're"
+	line "free to go!"
 	prompt
 
 _Route9AfterBattleText3::
-	text "Are you off to"
-	line "ROCK TUNNEL too?"
+	text "Where did you"
+	line "hide your coke?"
 	done
 
 _Route9BattleText4::
-	text "Don't you dare"
-	line "condescend me!"
+	text "Hit me or i"
+	line "will hit you!"
 	done
 
 _Route9EndBattleText4::
 	text "No!"
-	line "You're too much!"
+	line "Too much!"
 	prompt
 
 _Route9AfterBattleText4::
-	text "You're obviously"
-	line "talented! Good"
-	cont "luck to you!"
+	text "We have to"
+	line "serve and"
+	cont "protect, but.."
 	done
 
 _Route9BattleText5::
-	text "Bwahaha!"
-	line "Great! I was"
-	cont "bored, eh!"
+	text "I protect"
+	line "my girls.."
 	done
 
 _Route9EndBattleText5::
-	text "Keep it"
-	line "coming, eh!"
-
-	para "Oh wait. I'm out"
-	line "of #MON!"
+	text "Mostly.."
 	prompt
 
 _Route9AfterBattleText5::
-	text "You sure had guts"
-	line "standing up to me"
-	cont "there, eh?"
+	text "Treat them right"
+	line "ok?"
 	done
 
 _Route9BattleText6::
-	text "Hahaha!"
-	line "Aren't you a"
-	cont "little toughie!"
+	text "Move that ass!"
 	done
 
 _Route9EndBattleText6::
-	text "What's"
-	line "that?"
+	text "Sorry.."
 	prompt
 
 _Route9AfterBattleText6::
-	text "Hahaha! Kids"
-	line "should be tough!"
+	text "More dollars.."
+	line "More whips.."
 	done
 
 _Route9BattleText7::
-	text "I got up early"
-	line "every day to"
-	cont "raise my #MON"
-	cont "from cocoons!"
+	text "Got my teeth"
+	line "plated in gold"
 	done
 
 _Route9EndBattleText7::
-	text "WHAT?"
-
-	para "What a total"
-	line "waste of time!"
+	text "Sad.."
 	prompt
 
 _Route9AfterBattleText7::
-	text "I have to collect"
-	line "more than bugs to"
-	cont "get stronger..."
+	text "They're fake,"
 	done
 
 _Route9BattleText8::
-	text "Hahahaha!"
-	line "Come on, dude!"
+	text "20 dollars"
+	line "10 minutes!"
 	done
 
 _Route9EndBattleText8::
-	text "Hahahaha!"
-	line "You beat me fair!"
+	text "Ok.."
+	line "Free for this time."
 	prompt
 
 _Route9AfterBattleText8::
-	text "Hahahaha!"
-	line "Us hearty guys"
-	cont "always laugh!"
+	text "My fee is"
+	line "the 60 percent."
 	done
 
 _Route9BattleText9::
-	text "Go, my super bug"
-	line "#MON!"
+	text "Where's my xan?"
 	done
 
 _Route9EndBattleText9::
-	text "My"
-	line "bugs..."
+	text "Sigh.."
 	prompt
 
 _Route9AfterBattleText9::
-	text "If you don't like"
-	line "bug #MON, you"
-	cont "bug me!"
+	text "I can't rap"
+	line "without my"
+	cont "xannies!"
 	done
 
 _Route9Text11::

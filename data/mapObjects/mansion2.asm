@@ -9,9 +9,7 @@ Mansion2Object:
 
 	db $0 ; signs
 
-	db $4 ; objects
-	object SPRITE_BLACK_HAIR_BOY_2, $3, $11, WALK, $2, $1, OPP_BURGLAR, $7
-	object SPRITE_BALL, $1c, $7, STAY, NONE, $2, CALCIUM
+	db $2; objects
 	object SPRITE_BOOK_MAP_DEX, $12, $2, STAY, NONE, $3 ; person
 	object SPRITE_BOOK_MAP_DEX, $3, $16, STAY, NONE, $4 ; person
 

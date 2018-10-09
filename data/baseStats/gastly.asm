@@ -10,7 +10,7 @@ db 190 ; catch rate
 db 95 ; base exp yield
 INCBIN "pic/bmon/gastly.pic",0,1 ; 77, sprite dimensions
 dw GastlyPicFront
-dw GastlyPicBack
+dw GastlyPicFront
 ; attacks known at lvl 0
 db LICK
 db CONFUSE_RAY

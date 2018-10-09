@@ -1,17 +1,17 @@
 _Route4Text1::
-	text "Ouch! I tripped"
-	line "over a rocky"
-	cont "#MON, GEODUDE!"
+	text "I tripped"
+	line "with those"
+	cont "shrooms!"
 	done
 
 _Route4BattleText1::
-	text "I came to get my"
-	line "mushroom #MON!"
+	text "I came to get"
+	line "mushrooms"
 	done
 
 _Route4EndBattleText1::
-	text "Oh! My cute"
-	line "mushroom #MON!"
+	text "Oh! My trippy"
+	line "mushrooms."
 	prompt
 
 _Route4AfterBattleText1::
@@ -20,7 +20,7 @@ _Route4AfterBattleText1::
 	cont "mushrooms here."
 
 	para "I think I got"
-	line "them all."
+	line "them all. LOL"
 	done
 
 _Route4Text5::

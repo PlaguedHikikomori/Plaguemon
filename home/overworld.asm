@@ -27,6 +27,8 @@ EnterMap::
 	res 3, [hl]
 	callba EnterMapAnim
 	call UpdateSprites
+	ld a, $40
+    ld [wAnimCounter], a
 .didNotEnterUsingFlyWarpOrDungeonWarp
 	callba CheckForceBikeOrSurf ; handle currents in SF islands and forced bike riding in cycling road
 	ld hl, wd72d
@@ -39,8 +41,15 @@ EnterMap::
 	ld [wJoyIgnore], a
 
 OverworldLoop::
-	call DelayFrame
+    call DelayFrame
 OverworldLoopLessDelay::
+    callba Blinking
+	ld a, [hJoyPressed]
+	cp SELECT
+	jr nz, .noburp
+	ldpikacry e, PikachuCry1
+	callab PlayPikachuSoundClip
+.noburp
 	call DelayFrame
 	call LoadGBPal
 	ld a,[wd736]
@@ -73,12 +82,25 @@ OverworldLoopLessDelay::
 	ld a,[hJoyPressed]
 .checkIfStartIsPressed
 	bit 3,a ; start button
-	jr z,.startButtonNotPressed
+	jr z,.cadaverino 
 ; if START is pressed
 	xor a
 	ld [hSpriteIndexOrTextID],a ; start menu text ID
 	jp .displayDialogue
+.cadaverino
+    ld a,[wWalkBikeSurfState]
+	cp a, $04
+	jr z, .KnifeKeyPress
+	ld a,[wWalkBikeSurfState]
+	cp a, $01
+	jr nz, .startButtonNotPressed
+.KnifeKeyPress
+	ld a, [hJoyPressed] ; Check what buttons are being pressed
+	bit 1, a ; Are you holding B?
+	jr z, .startButtonNotPressed ; If you aren't holding B, skip ahead to step normally.
+	callba Knife ;-------------ERRORE--------------
 .startButtonNotPressed
+    ld a,[hJoyHeld]
 	bit 0,a ; A button
 	jp z,.checkIfDownButtonIsPressed
 ; if A is pressed
@@ -142,6 +164,7 @@ OverworldLoopLessDelay::
 	ld [wPlayerLastStopDirection],a ; save the last direction
 	xor a
 	ld [wPlayerMovingDirection],a ; zero the direction
+.overworldLoop
 	jp OverworldLoop
 
 .checkIfDownButtonIsPressed
@@ -243,7 +266,7 @@ OverworldLoopLessDelay::
 ; not surfing
 	call CollisionCheckOnLand
 	jr nc,.noCollision
-; collision occurred
+; collision occurredz
 	push hl
 	ld hl,wd736
 	bit 2,[hl] ; standing on warp flag
@@ -274,7 +297,7 @@ OverworldLoopLessDelay::
 	call UpdateSprites
 
 .moveAhead2
-	ld hl,wFlags_0xcd60
+   	ld hl,wFlags_0xcd60
 	res 2,[hl]
 	ld a,[wWalkBikeSurfState]
 	dec a ; riding a bike?
@@ -282,8 +305,18 @@ OverworldLoopLessDelay::
 	ld a,[wd736]
 	bit 6,a ; jumping a ledge?
 	jr nz,.normalPlayerSpriteAdvancement
-	call DoBikeSpeedup
+	call DoBikeSpeedup ; if riding a bike and not jumping a ledge
+	jr .car
 .normalPlayerSpriteAdvancement
+	; Ask for motorbike 
+	ld a,[wWalkBikeSurfState]
+	cp a, $03
+	jr nz, .notRunning
+    call DoBikeSpeedup 
+.car
+	call DoBikeSpeedup 
+	call DoBikeSpeedup 
+.notRunning 
 	call AdvancePlayerSprite
 	ld a,[wWalkCounter]
 	and a
@@ -720,12 +753,12 @@ ExtraWarpCheck::
 	ld a, [wCurMap]
 	cp SS_ANNE_3
 	jr z, .useFunction1
-	cp ROCKET_HIDEOUT_1
-	jr z, .useFunction2
-	cp ROCKET_HIDEOUT_2
-	jr z, .useFunction2
-	cp ROCKET_HIDEOUT_4
-	jr z, .useFunction2
+	;cp ROCKET_HIDEOUT_1
+	;jr z, .useFunction2
+	;cp ROCKET_HIDEOUT_2
+	;jr z, .useFunction2
+	;cp ROCKET_HIDEOUT_4
+	;jr z, .useFunction2
 	cp ROCK_TUNNEL_1
 	jr z, .useFunction2
 	ld a, [wCurMapTileset]
@@ -838,6 +871,12 @@ LoadPlayerSpriteGraphics::
 	jp z, LoadBikePlayerSpriteGraphics
 	dec a
 	jp z, LoadSurfingPlayerSpriteGraphics
+	dec a                                    ;Hiki, determina grafica motocross
+	jp z, LoadMotocrossPlayerSpriteGraphics  ;carica grafica motocross
+	dec a
+	jp z, LoadFlamePlayerSpriteGraphics
+	dec a
+	jp z, LoadHandPlayerSpriteGraphics
 	jp LoadWalkingPlayerSpriteGraphics
 
 IsBikeRidingAllowed::
@@ -845,26 +884,7 @@ IsBikeRidingAllowed::
 ; or maps with tilesets in BikeRidingTilesets.
 ; Return carry if biking is allowed.
 
-	ld a, [wCurMap]
-	cp ROUTE_23
-	jr z, .allowed
-	cp INDIGO_PLATEAU
-	jr z, .allowed
-
-	ld a, [wCurMapTileset]
-	ld b, a
-	ld hl, BikeRidingTilesets
-.loop
-	ld a, [hli]
-	cp b
-	jr z, .allowed
-	inc a
-	jr nz, .loop
-	and a
-	ret
-
-.allowed
-	scf
+	scf ;questa è la funzione che permette di entrare dove cazzo ci pare con l'auto -bike in real game-
 	ret
 
 INCLUDE "data/bike_riding_tilesets.asm"
@@ -1351,11 +1371,11 @@ CheckForTilePairCollisions::
 ; it's mainly used to simulate differences in elevation
 
 TilePairCollisionsLand::
-	db CAVERN, $20, $05
-	db CAVERN, $41, $05
+	db CAVERN, $20, $05    ;provvisorio
+	db CAVERN, $41, $05    ;provvisorio
 	db FOREST, $30, $2E
-	db CAVERN, $2A, $05
-	db CAVERN, $05, $21
+	db CAVERN, $2A, $05    ;provvisorio
+	db CAVERN, $05, $21    ;provvisorio
 	db FOREST, $52, $2E
 	db FOREST, $55, $2E
 	db FOREST, $56, $2E
@@ -1365,9 +1385,9 @@ TilePairCollisionsLand::
 	db $FF
 
 TilePairCollisionsWater::
-	db FOREST, $14, $2E
-	db FOREST, $48, $2E
-	db CAVERN, $14, $05
+	;db FOREST, $14, $2E   -provvisorio
+	;db FOREST, $48, $2E   -provvisorio
+	db CAVERN, $14, $05   ;provvisorio
 	db $FF
 
 ; this builds a tile map from the tile block map based on the current X/Y coordinates of the player's character
@@ -2001,17 +2021,29 @@ RunMapScript::
 
 LoadWalkingPlayerSpriteGraphics::
 	ld de,RedSprite
-	ld hl,vNPCSprites
-	jr LoadPlayerSpriteGraphicsCommon
+	jp Backup
 
 LoadSurfingPlayerSpriteGraphics::
 	ld de,SeelSprite
-	ld hl,vNPCSprites
-	jr LoadPlayerSpriteGraphicsCommon
+	jp Backup
 
 LoadBikePlayerSpriteGraphics::
+	ld de,CarSprite
+	jp Backup
+	
+LoadMotocrossPlayerSpriteGraphics::         ;hiki, carica grafica per motocross
+	ld de,MotocrossSprite
+	jp Backup
+	
+LoadFlamePlayerSpriteGraphics::
+	ld de,RedFlame
+	jp Backup
+	
+LoadHandPlayerSpriteGraphics::        
 	ld de,RedCyclingSprite
-	ld hl,vNPCSprites
+	
+Backup:                                      ;hiki, trick per riciclare spazio
+    ld hl,vNPCSprites
 
 LoadPlayerSpriteGraphicsCommon::
 	push de
@@ -2421,3 +2453,5 @@ ForceBikeOrSurf::
 	ld hl, LoadPlayerSpriteGraphics
 	call Bankswitch
 	jp PlayDefaultMusic ; update map/player state?
+
+

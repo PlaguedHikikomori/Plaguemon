@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 202 ; base exp yield
 INCBIN "pic/bmon/aerodactyl.pic",0,1 ; 77, sprite dimensions
 dw AerodactylPicFront
-dw AerodactylPicBack
+dw AerodactylPicFront
 ; attacks known at lvl 0
 db WING_ATTACK
 db AGILITY

@@ -10,7 +10,7 @@ db 255 ; catch rate
 db 54 ; base exp yield
 INCBIN "pic/bmon/zubat.pic",0,1 ; 55, sprite dimensions
 dw ZubatPicFront
-dw ZubatPicBack
+dw ZubatPicFront
 ; attacks known at lvl 0
 db LEECH_LIFE
 db 0

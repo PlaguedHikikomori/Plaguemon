@@ -1,78 +1,39 @@
 _ViridianGymText_74ace::
-	text "Fwahahaha! This is"
-	line "my hideout!"
-
-	para "I planned to"
-	line "resurrect TEAM"
-	cont "ROCKET here!"
-
-	para "But, you have"
-	line "caught me again!"
-	cont "So be it! This"
-	cont "time, I'm not"
-	cont "holding back!"
-
-	para "Once more, you"
-	line "shall face"
-	cont "GIOVANNI, the"
-	cont "greatest trainer!"
+	text "It's a ME!"
+	line "PLARIO!"
 	done
 
 _ViridianGymText_74ad3::
-	text "Ha!"
-	line "That was a truly"
-	cont "intense fight!"
-	cont "You have won!"
-	cont "As proof, here is"
-	cont "the EARTHBADGE!@@"
+	text "Damn, you won.."
+	line "This whole world"
+	cont "was my experiment.."
+	cont "And you find me.."
+	cont "Now go away.."
+	cont "Take this!@@"
 
 _ViridianGymText_74ad9::
-	text "Having lost, I"
-	line "cannot face my"
-	cont "underlings!"
-	cont "TEAM ROCKET is"
-	cont "finished forever!"
+	text "It's a dark chip."
+	line "Now you can go"
+	cont "further in this"
+	cont "adventure.."
+	cont "AND BE FREE!"
 
-	para "I will dedicate my"
-	line "life to the study"
-	cont "of #MON!"
-
-	para "Let us meet again"
-	line "some day!"
+	para "Also try it on"
+	line "your starter.."
+	
+	para "You will not"
+	line "believe.."
 	cont "Farewell!@@"
 
 _ViridianGymText12::
-	text "The EARTHBADGE"
-	line "makes #MON of"
-	cont "any level obey!"
-
-	para "It is evidence of"
-	line "your mastery as a"
-	cont "#MON trainer!"
-
-	para "With it, you can"
-	line "enter the #MON"
-	cont "LEAGUE!"
-
-	para "It is my gift for"
-	line "your #MON"
-	cont "LEAGUE challenge!"
 	done
 
 _ReceivedTM27Text::
 	text "<PLAYER> received"
-	line "TM27!@@"
+	line "DARK CHIP!@@"
 
 _TM27ExplanationText::
 	db $0
-	para "TM27 is FISSURE!"
-	line "It will take out"
-	cont "#MON with just"
-	cont "one hit!"
-
-	para "I made it when I"
-	line "ran the GYM here,"
-	cont "too long ago..."
 	done
 
 _TM27NoRoomText::

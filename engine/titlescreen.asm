@@ -3,6 +3,7 @@ CopyFixedLengthText:
 	ld bc, NAME_LENGTH
 	jp CopyData
 
+	
 SetDefaultNamesBeforeTitlescreen:
 	ld hl, NintenText
 	ld de, wPlayerName
@@ -46,10 +47,10 @@ DisplayTitleScreen:
 	ld a, BANK(GamefreakLogoGraphics)
 	call FarCopyData2
 	ld hl, PokemonLogoGraphics
-	ld de, vTitleLogo
+	ld de, vTitleLogo  
 	ld bc, $600
 	ld a, BANK(PokemonLogoGraphics)
-	call FarCopyData2          ; first chunk
+	call FarCopyData2          ;- first chunk
 	ld hl, PokemonLogoGraphics+$600
 	ld de, vTitleLogo2
 	ld bc, $100
@@ -61,9 +62,11 @@ DisplayTitleScreen:
 	ld a, BANK(Version_GFX)
 	call FarCopyDataDouble
 	call ClearBothBGMaps
-
+	
+    
+	
 ; place tiles for pokemon logo (except for the last row)
-	coord hl, 2, 1
+	coord hl, 2, 4
 	ld a, $80
 	ld de, SCREEN_WIDTH
 	ld c, 6
@@ -81,7 +84,7 @@ DisplayTitleScreen:
 	jr nz, .pokemonLogoTileLoop
 
 ; place tiles for the last row of the pokemon logo
-	coord hl, 2, 7
+	coord hl, 2, 10
 	ld a, $31
 	ld b, $10
 .pokemonLogoLastTileRowLoop
@@ -90,7 +93,7 @@ DisplayTitleScreen:
 	dec b
 	jr nz, .pokemonLogoLastTileRowLoop
 
-	call DrawPlayerCharacter
+
 
 ; put a pokeball in the player's hand
 	ld hl, wOAMBuffer + $28
@@ -98,9 +101,9 @@ DisplayTitleScreen:
 	ld [hl], a
 
 ; place tiles for title screen copyright
-	coord hl, 2, 17
+	coord hl, 5, 17
 	ld de, .tileScreenCopyrightTiles
-	ld b, $10
+	ld b, $0A
 .tileScreenCopyrightTilesLoop
 	ld a, [de]
 	ld [hli], a
@@ -111,34 +114,39 @@ DisplayTitleScreen:
 	jr .next
 
 .tileScreenCopyrightTiles
-	db $41,$42,$43,$42,$44,$42,$45,$46,$47,$48,$49,$4A,$4B,$4C,$4D,$4E ; ©'95.'96.'98 GAME FREAK inc.
+	db $46,$47,$48,$49,$4a,$7f,$4b,$4c,$4d,$4e	
+.tileScreenCopyrightTiles2
+	db $41
 
 .next
+    coord hl, 9, 2
+	ld de, .tileScreenCopyrightTiles2
+	ld b, $0A
+	ld a, [de]
+	ld [hli], a
 	call SaveScreenTilesToBuffer2
 	call LoadScreenTilesFromBuffer2
 	call EnableLCD
-IF DEF(_RED)
-	ld a,CHARMANDER ; which Pokemon to show first on the title screen
-ENDC
-IF DEF(_BLUE)
-	ld a,SQUIRTLE ; which Pokemon to show first on the title screen
-ENDC
-
+	ld a,BLASTOISE ; which Pokemon to show first on the title screen
 	ld [wTitleMonSpecies], a
-	call LoadTitleMonSprite
 	ld a, (vBGMap0 + $300) / $100
 	call TitleScreenCopyTileMapToVRAM
 	call SaveScreenTilesToBuffer1
-	ld a, $40
+	ld a, $90
 	ld [hWY], a
 	call LoadScreenTilesFromBuffer2
 	ld a, vBGMap0 / $100
 	call TitleScreenCopyTileMapToVRAM
 	ld b, SET_PAL_TITLE_SCREEN
 	call RunPaletteCommand
-	call GBPalNormal
-	ld a, %11100100
+	ld a, %00111111 ;  Hiki, Palette schermata titolo
+	ld [rBGP], a
+	ld a, %01111111
 	ld [rOBP0], a
+	ld [rOBP1], a
+	xor a
+	ld [hSCX], a
+	
 
 ; make pokemon logo bounce up and down
 	ld bc, hSCY ; background scroll Y
@@ -172,7 +180,7 @@ ENDC
 .ScrollTitleScreenPokemonLogo:
 ; Scrolls the Pokemon logo on the title screen to create the bouncing effect
 ; Scrolls d pixels e times
-	call DelayFrame
+    call DelayFrame
 	ld a, [bc] ; background scroll Y
 	add d
 	ld [bc], a
@@ -181,35 +189,36 @@ ENDC
 	ret
 
 .finishedBouncingPokemonLogo
-	call LoadScreenTilesFromBuffer1
+    call LoadScreenTilesFromBuffer1
 	ld c, 36
 	call DelayFrames
 	ld a, SFX_INTRO_WHOOSH
 	call PlaySound
 
 ; scroll game version in from the right
-	call PrintGameVersionOnTitleScreen
-	ld a, SCREEN_HEIGHT_PIXELS
+	call PrintGameVersionOnTitleScreen ; Hiki --- lost diaries
+	ld a, SCREEN_WIDTH_PIXELS
 	ld [hWY], a
 	ld d, 144
 .scrollTitleScreenGameVersionLoop
 	ld h, d
-	ld l, 64
+	ld l, 8
 	call ScrollTitleScreenGameVersion
 	ld h, 0
-	ld l, 80
+	ld l, 90
 	call ScrollTitleScreenGameVersion
 	ld a, d
-	add 4
+	add 1
 	ld d, a
 	and a
 	jr nz, .scrollTitleScreenGameVersionLoop
-
+	
 	ld a, vBGMap1 / $100
 	call TitleScreenCopyTileMapToVRAM
 	call LoadScreenTilesFromBuffer2
 	call PrintGameVersionOnTitleScreen
-	call Delay3
+	;call DrawPlagueLabsLogo
+    call Delay3
 	call WaitForSoundToFinish
 	ld a, MUSIC_TITLE_SCREEN
 	ld [wNewSoundID], a
@@ -219,34 +228,40 @@ ENDC
 
 ; Keep scrolling in new mons indefinitely until the user performs input.
 .awaitUserInterruptionLoop
-	ld c, 200
-	call CheckForUserInterruption
-	jr c, .finishedWaiting
+    ;ld c, 200
+	;call CheckForUserInterruption
+	;jr c, .finishedWaiting
 	call TitleScreenScrollInMon
 	ld c, 1
 	call CheckForUserInterruption
 	jr c, .finishedWaiting
 	callba TitleScreenAnimateBallIfStarterOut
-	call TitleScreenPickNewMon
 	jr .awaitUserInterruptionLoop
 
 .finishedWaiting
-	ld a, [wTitleMonSpecies]
+    call FlashScreen2
+	ld a, %00111111   ;Hiki, Palette schermata titolo
+	ld [rBGP], a
+	call DrawPlayerCharacter
+	ld a, $19
 	call PlayCry
 	call WaitForSoundToFinish
-	call GBPalWhiteOutWithDelay3
-	call ClearSprites
+	;call ClearSprites
+	;call DrawPlayerCharacter 
 	xor a
 	ld [hWY], a
 	inc a
 	ld [H_AUTOBGTRANSFERENABLED], a
-	call ClearScreen
+	;call ClearScreen
+	predef PredefShakeScreenVertically
 	ld a, vBGMap0 / $100
 	call TitleScreenCopyTileMapToVRAM
 	ld a, vBGMap1 / $100
 	call TitleScreenCopyTileMapToVRAM
 	call Delay3
-	call LoadGBPal
+	;call LoadGBPal
+	ld a, %00100111 ;  Hiki, Palette schermata titolo
+	ld [rOBP0], a
 	ld a, [hJoyHeld]
 	ld b, a
 	and D_UP | SELECT | B_BUTTON
@@ -287,7 +302,7 @@ TitleScreenPickNewMon:
 
 TitleScreenScrollInMon:
 	ld d, 0 ; scroll in
-	callba TitleScroll
+	;callba TitleScroll --- scroll dei mostri
 	xor a
 	ld [hWY], a
 	ret
@@ -299,7 +314,7 @@ ScrollTitleScreenGameVersion:
 	jr nz, .wait
 
 	ld a, h
-	ld [rSCX], a
+	ld [rSCY], a
 
 .wait2
 	ld a, [rLY]
@@ -307,17 +322,17 @@ ScrollTitleScreenGameVersion:
 	jr z, .wait2
 	ret
 
+
 DrawPlayerCharacter:
-	ld hl, PlayerCharacterTitleGraphics
-	ld de, vSprites
-	ld bc, PlayerCharacterTitleGraphicsEnd - PlayerCharacterTitleGraphics
-	ld a, BANK(PlayerCharacterTitleGraphics)
-	call FarCopyData2
-	call ClearSprites
+   	ld de,Eye
+	ld hl,vSprites
+	lb bc, BANK(Eye), $14
+	call CopyVideoData
+    call ClearSprites
 	xor a
 	ld [wPlayerCharacterOAMTile], a
 	ld hl, wOAMBuffer
-	ld de, $605a
+	ld de, $7942
 	ld b, 7
 .loop
 	push de
@@ -342,6 +357,14 @@ DrawPlayerCharacter:
 	ld d, a
 	dec b
 	jr nz, .loop
+	ret
+	
+DrawPlagueLabsLogo:
+	ld hl, GamefreakLogoGraphics
+	ld de, vSprites - $50
+	ld bc, GamefreakLogoGraphicsEnd - GamefreakLogoGraphics
+	ld a, BANK(GamefreakLogoGraphics)
+	call FarCopyData2
 	ret
 
 ClearBothBGMaps:
@@ -372,32 +395,57 @@ LoadCopyrightTiles:
 	ld hl, vChars2 + $600
 	lb bc, BANK(NintendoCopyrightLogoGraphics), (GamefreakLogoGraphicsEnd - NintendoCopyrightLogoGraphics) / $10
 	call CopyVideoData
-	coord hl, 2, 7
+	coord hl, 6, 6
 	ld de, CopyrightTextString
 	jp PlaceString
 
 CopyrightTextString:
-	db   $60,$61,$62,$61,$63,$61,$64,$7F,$65,$66,$67,$68,$69,$6A             ; ©'95.'96.'98 Nintendo
-	next $60,$61,$62,$61,$63,$61,$64,$7F,$6B,$6C,$6D,$6E,$6F,$70,$71,$72     ; ©'95.'96.'98 Creatures inc.
-	next $60,$61,$62,$61,$63,$61,$64,$7F,$73,$74,$75,$76,$77,$78,$79,$7A,$7B ; ©'95.'96.'98 GAME FREAK inc.
+	db   $73,$74,$75,$76,$77,$78,$79,$7A,$7B             ; PLAGUE LABS
 	db   "@"
 
 INCLUDE "data/title_mons.asm"
 
 ; prints version text (red, blue)
 PrintGameVersionOnTitleScreen:
-	coord hl, 7, 8
+	coord hl, 6, 12
 	ld de, VersionOnTitleScreenText
 	jp PlaceString
 
 ; these point to special tiles specifically loaded for that purpose and are not usual text
 VersionOnTitleScreenText:
-IF DEF(_RED)
 	db $60,$61,$7F,$65,$66,$67,$68,$69,"@" ; "Red Version"
-ENDC
-IF DEF(_BLUE)
-	db $61,$62,$63,$64,$65,$66,$67,$68,"@" ; "Blue Version"
-ENDC
 
-NintenText: db "NINTEN@"
-SonyText:   db "SONY@"
+
+
+NintenText: db "ME@"
+SonyText:   db "EVILIO@"
+
+FlashScreen2:
+.dog
+	ld hl, BattleTransition_FlashScreenPalettes2
+.loop
+	ld a, [hli]
+	cp $1
+	jr z, .done
+	ld [rBGP], a
+	ld c, 1
+	call DelayFrames
+	jr .loop
+.done
+	dec b
+	jr nz, .dog
+	ret
+
+BattleTransition_FlashScreenPalettes2:
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $01 ; terminator
+	
+
+	

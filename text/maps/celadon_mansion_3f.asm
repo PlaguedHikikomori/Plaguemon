@@ -1,6 +1,24 @@
 _ProgrammerText::
-	text "Me? I'm the"
-	line "programmer!"
+	text "Behind the machine"
+	line "there is always"
+	cont "a human.."
+	
+	para "I sincerely don't"
+	line "know why i did"
+	cont "this..."
+	
+	para "I'm Hikikomori.."
+	line "I did this hack.."
+	
+	para "It's full of bugs.."
+	line "But this version is"
+	cont "made in just a year"
+	cont "just by me alone.."
+	
+	para "If you want to reach"
+	line "out send a mail to.."
+	cont "hiki.fall  -at-"
+	cont "hotmail.it"
 	done
 
 _GraphicArtistText::
@@ -61,6 +79,5 @@ _CeladonMansion3Text7::
 	done
 
 _CeladonMansion3Text8::
-	text "GAME FREAK"
-	line "Development Room"
+	text "PLAGUE LABS"
 	done

@@ -34,15 +34,8 @@ _LavenderHouse1Text4::
 	text "NIDORINO: Gaoo!@@"
 
 _LavenderHouse1Text_1d94c::
-	text "MR.FUJI: <PLAYER>."
-
-	para "Your #DEX quest"
-	line "may fail without"
-	cont "love for your"
-	cont "#MON."
-
-	para "I think this may"
-	line "help your quest."
+	text "Corpses needs to"
+	line "be removed.."
 	prompt
 
 _ReceivedFluteText::
@@ -53,13 +46,10 @@ _ReceivedFluteText::
 
 _FluteExplanationText::
 	db $0
-	para "Upon hearing #"
-	line "FLUTE, sleeping"
-	cont "#MON will"
-	cont "spring awake."
-
-	para "It works on all"
-	line "sleeping #MON."
+	para "This SHOVEL"
+	line "will help you"
+	cont "freeing up"
+	cont "your road.."
 	done
 
 _FluteNoRoomText::
@@ -68,8 +58,8 @@ _FluteNoRoomText::
 	done
 
 _MrFujiAfterFluteText::
-	text "MR.FUJI: Has my"
-	line "FLUTE helped you?"
+	text "That was heavy"
+	line "uh?"
 	done
 
 _LavenderHouse1Text6::

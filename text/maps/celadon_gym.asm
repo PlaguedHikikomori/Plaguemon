@@ -1,64 +1,28 @@
 _CeladonGymText_48a5e::
-	text "Hello. Lovely"
-	line "weather isn't it?"
-	cont "It's so pleasant."
-
-	para "...Oh dear..."
-	line "I must have dozed"
-	cont "off. Welcome."
-
-	para "My name is ERIKA."
-	line "I am the LEADER"
-	cont "of CELADON GYM."
-
-	para "I teach the art of"
-	line "flower arranging."
-	cont "My #MON are of"
-	cont "the grass-type."
-
-	para "Oh, I'm sorry, I"
-	line "had no idea that"
-	cont "you wished to"
-	cont "challenge me."
-
-	para "Very well, but I"
-	line "shall not lose."
+	text "In your head.."
+	line "In your head.."
 	done
 
 _CeladonGymText_48a63::
-	text "Oh!"
-	line "I concede defeat."
+	text "ZOMBIE!"
+	
+	para "ZOMBIE!"
 
-	para "You are remarkably"
-	line "strong."
-
-	para "I must confer you"
-	line "the RAINBOWBADGE."
+	para "ZOMBIEEEE!"
 	prompt
 
 _CeladonGymText_48a68::
-	text "You are cataloging"
-	line "#MON? I must"
-	cont "say I'm impressed."
-
-	para "I would never"
-	line "collect #MON"
-	cont "if they were"
-	cont "unattractive."
+	text "With their tanks.."
+	line "And their bombs.."
+	
+	para "And their bombs.."
+	line "And their guns.."
 	done
 
 _CeladonGymText9::
-	text "The RAINBOWBADGE"
-	line "will make #MON"
-	cont "up to L50 obey."
-
-	para "It also allows"
-	line "#MON to use"
-	cont "STRENGTH in and"
-	cont "out of battle."
-
-	para "Please also take"
-	line "this with you."
+	text "This SHAMROCK"
+	line "will bring you"
+	cont "enough luck.."
 	done
 
 _ReceivedTM21Text::
@@ -69,13 +33,7 @@ _ReceivedTM21Text::
 
 _TM21ExplanationText::
 	db $0
-	para "TM21 contains"
-	line "MEGA DRAIN."
-
-	para "Half the damage"
-	line "it inflicts is"
-	cont "drained to heal"
-	cont "your #MON!"
+	para "Now please leave."
 	done
 
 _TM21NoRoomText::

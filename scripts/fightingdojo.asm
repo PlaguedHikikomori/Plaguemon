@@ -269,6 +269,7 @@ FightingDojoText6:
 	ld b, a
 	ld c, 30
 	call GivePokemon
+	ret
 	jr nc, .done
 
 	; once Poké Ball is taken, hide sprite
@@ -304,6 +305,7 @@ FightingDojoText7:
 	ld b, a
 	ld c,30
 	call GivePokemon
+	ret
 	jr nc, .done
 	SetEvents EVENT_GOT_HITMONCHAN, EVENT_DEFEATED_FIGHTING_DOJO
 

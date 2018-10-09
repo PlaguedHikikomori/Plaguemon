@@ -25,7 +25,7 @@ CinnabarGymScript_75772:
 Gym7CityName:
 	db "CINNABAR ISLAND@"
 Gym7LeaderName:
-	db "BLAINE@"
+	db "CHESTER@"
 
 CinnabarGymScript_75792:
 	xor a

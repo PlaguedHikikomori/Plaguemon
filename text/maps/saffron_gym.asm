@@ -1,57 +1,16 @@
 _SaffronGymText_5d162::
-	text "I had a vision of"
-	line "your arrival!"
-
-	para "I have had psychic"
-	line "powers since I"
-	cont "was a child."
-
-	para "I first learned"
-	line "to bend spoons"
-	cont "with my mind."
-
-	para "I dislike fight-"
-	line "ing, but if you"
-	cont "wish, I will show"
-	cont "you my powers!"
+	text "Love is a losing"
+	line "game!"
 	done
 
 _SaffronGymText_5d167::
-	text "I'm"
-	line "shocked!"
-	cont "But, a loss is a"
-	cont "loss."
-
-	para "I admit I didn't"
-	line "work hard enough"
-	cont "to win!"
-
-	para "You earned the"
-	line "MARSHBADGE!@@"
+	text "And i lost my"
+	line "panties too.."
 
 _SaffronGymText_5d16e::
-	text "Everyone has"
-	line "psychic power!"
-	cont "People just don't"
-	cont "realize it!"
 	done
 
 _SaffronGymText_5d173::
-	text "The MARSHBADGE"
-	line "makes #MON up"
-	cont "to L70 obey you!"
-
-	para "Stronger #MON"
-	line "will become wild,"
-	cont "ignoring your"
-	cont "orders in battle!"
-
-	para "Just don't raise"
-	line "your #MON too"
-	cont "much!"
-
-	para "Wait, please take"
-	line "this TM with you!"
 	done
 
 ReceivedTM46Text::
@@ -60,15 +19,13 @@ ReceivedTM46Text::
 
 _TM46ExplanationText::
 	db $0
-	para "TM46 is PSYWAVE!"
-	line "It uses powerful"
-	cont "psychic waves to"
-	cont "inflict damage!"
+	para "Make your enemies"
+	line "take a booze!"
 	done
 
 _TM46NoRoomText::
-	text "Your pack is full"
-	line "of other items!"
+	text "Dammit bro,"
+	line "discard something!"
 	done
 
 _SaffronGymText_5d1e6::

@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 177 ; base exp yield
 INCBIN "pic/bmon/golem.pic",0,1 ; 66, sprite dimensions
 dw GolemPicFront
-dw GolemPicBack
+dw GolemPicFront
 ; attacks known at lvl 0
 db TACKLE
 db DEFENSE_CURL

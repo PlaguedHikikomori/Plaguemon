@@ -20,7 +20,7 @@ Gym4CityName:
 	db "CELADON CITY@"
 
 Gym4LeaderName:
-	db "ERIKA@"
+	db "DOLORES@"
 
 CeladonGymText_48943:
 	xor a

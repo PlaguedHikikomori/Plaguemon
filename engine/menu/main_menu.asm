@@ -1,6 +1,6 @@
 MainMenu:
 ; Check save file
-	call InitOptions
+    call InitOptions
 	xor a
 	ld [wOptionsInitialized],a
 	inc a
@@ -25,6 +25,8 @@ MainMenu:
 	res 6,[hl]
 	call ClearScreen
 	call RunDefaultPaletteCommand
+	ld a, %00010011
+	ld [rBGP], a
 	call LoadTextBoxTilePatterns
 	call LoadFontTilePatterns
 	ld hl,wd730
@@ -33,22 +35,28 @@ MainMenu:
 	cp a,1
 	jr z,.noSaveFile
 ; there's a save file
-	coord hl, 0, 0
+	coord hl, 3, 0
 	ld b,6
 	ld c,13
 	call TextBoxBorder
-	coord hl, 2, 2
+	coord hl, 5, 2
 	ld de,ContinueText
+	call PlaceString
+	coord hl, 11, 8  ;version
+	ld de,VersionText
 	call PlaceString
 	jr .next2
 .noSaveFile
-	coord hl, 0, 0
+	coord hl, 3, 0
 	ld b,4
 	ld c,13
 	call TextBoxBorder
-	coord hl, 2, 2
+	coord hl, 5, 2
 	ld de,NewGameText
 	call PlaceString
+	coord hl, 11, 6     ;version
+	ld de,VersionText
+	call PlaceString 
 .next2
 	ld hl,wd730
 	res 6,[hl]
@@ -82,6 +90,7 @@ MainMenu:
 	ld a,b
 	and a
 	jr z,.choseContinue
+	;call ClearSprites
 	cp a,1
 	jp z,StartNewGame
 	call DisplayOptionMenu
@@ -89,6 +98,7 @@ MainMenu:
 	ld [wOptionsInitialized],a
 	jp .mainMenuLoop
 .choseContinue
+    call ClearSprites
 	call DisplayContinueGameInfo
 	ld hl,wCurrentMapScriptFlags
 	set 5,[hl]
@@ -305,8 +315,9 @@ LinkCanceledText:
 	db "@"
 
 StartNewGame:
-	ld hl, wd732
+   	ld hl, wd732
 	res 1, [hl]
+	call ClearSprites
 	call OakSpeech
 	ld c, 20
 	call DelayFrames
@@ -339,6 +350,10 @@ CableClubOptionsText:
 	db   "TRADE CENTER"
 	next "COLOSSEUM"
 	next "CANCEL@"
+	
+VersionText:
+	db "v 0.666"
+	db "@"
 
 DisplayContinueGameInfo:
 	xor a

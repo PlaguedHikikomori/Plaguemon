@@ -1,11 +1,11 @@
 _Route16HouseText3::
-	text "Oh, you found my"
-	line "secret retreat!"
+	text "Fuck shit.."
+	line "Don't bother me."
 
-	para "Please don't tell"
-	line "anyone I'm here."
-	cont "I'll make it up"
-	cont "to you with this!"
+	para "Take this and"
+	line "go the fuck"
+	cont "away from my"
+	cont "house, intruder!"
 	prompt
 
 _ReceivedHM02Text::
@@ -13,12 +13,12 @@ _ReceivedHM02Text::
 	line "HM02!@@"
 
 _HM02ExplanationText::
-	text "HM02 is FLY."
-	line "It will take you"
-	cont "back to any town."
+	text "HM02 is GLIDE."
+	line "You can go the"
+	cont "fuck you want."
 
-	para "Put it to good"
-	line "use!"
+	para "Now get the"
+	line "shit out!"
 	done
 
 _HM02NoRoomText::
@@ -27,5 +27,5 @@ _HM02NoRoomText::
 	done
 
 _Route16HouseText_1e652::
-	text "FEAROW: Kyueen!"
+	text "SHEEEIT!"
 	done

@@ -13,13 +13,8 @@ Route10Object:
 	db $37, $9, $9 ; Route10Text9
 	db $29, $5, $a ; Route10Text10
 
-	db $6 ; objects
-	object SPRITE_BLACK_HAIR_BOY_2, $a, $2c, STAY, LEFT, $1, OPP_POKEMANIAC, $1
-	object SPRITE_HIKER, $3, $39, STAY, UP, $2, OPP_HIKER, $7
-	object SPRITE_BLACK_HAIR_BOY_2, $e, $40, STAY, LEFT, $3, OPP_POKEMANIAC, $2
-	object SPRITE_LASS, $7, $19, STAY, LEFT, $4, OPP_JR_TRAINER_F, $7
-	object SPRITE_HIKER, $3, $3d, STAY, DOWN, $5, OPP_HIKER, $8
-	object SPRITE_LASS, $7, $36, STAY, DOWN, $6, OPP_JR_TRAINER_F, $8
+	db $0 ; objects
+
 
 	; warp-to
 	EVENT_DISP ROUTE_10_WIDTH, $13, $b ; ROCK_TUNNEL_POKECENTER

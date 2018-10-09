@@ -10,7 +10,7 @@ db 190 ; catch rate
 db 105 ; base exp yield
 INCBIN "pic/bmon/tentacool.pic",0,1 ; 55, sprite dimensions
 dw TentacoolPicFront
-dw TentacoolPicBack
+dw TentacoolPicFront
 ; attacks known at lvl 0
 db ACID
 db 0

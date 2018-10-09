@@ -10,7 +10,7 @@ db 225 ; catch rate
 db 115 ; base exp yield
 INCBIN "pic/bmon/krabby.pic",0,1 ; 55, sprite dimensions
 dw KrabbyPicFront
-dw KrabbyPicBack
+dw KrabbyPicFront
 ; attacks known at lvl 0
 db BUBBLE
 db LEER

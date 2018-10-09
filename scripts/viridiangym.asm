@@ -141,7 +141,7 @@ ViridianGymScript3_74995:
 	ld [hSpriteIndexOrTextID], a
 	call DisplayTextID
 	SetEvent EVENT_BEAT_VIRIDIAN_GYM_GIOVANNI
-	lb bc, TM_27, 1
+	lb bc, GOLD_TEETH, 1
 	call GiveItem
 	jr nc, .BagFull
 	ld a, $d

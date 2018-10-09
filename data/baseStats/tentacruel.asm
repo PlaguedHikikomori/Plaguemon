@@ -10,7 +10,7 @@ db 60 ; catch rate
 db 205 ; base exp yield
 INCBIN "pic/bmon/tentacruel.pic",0,1 ; 66, sprite dimensions
 dw TentacruelPicFront
-dw TentacruelPicBack
+dw TentacruelPicFront
 ; attacks known at lvl 0
 db ACID
 db SUPERSONIC

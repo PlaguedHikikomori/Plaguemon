@@ -23,8 +23,8 @@ HallOfFamePC:
 	call EnableLCD
 	ld a, $ff
 	call PlaySoundWaitForCurrent
-	ld c, BANK(Music_Credits)
-	ld a, MUSIC_CREDITS
+	ld c, BANK(Music_Gym)
+	ld a, MUSIC_GYM
 	call PlayMusic
 	ld c, 128
 	call DelayFrames
@@ -177,7 +177,7 @@ Credits:
 	call FillMiddleOfScreenWithWhite
 	pop hl
 .nextCreditsCommand
-	ld a, [de]
+	ld a, $fa
 	inc de
 	push de
 	cp $ff
@@ -244,6 +244,11 @@ Credits:
 	call DelayFrames
 	call FillMiddleOfScreenWithWhite
 	pop de
+	call GBPalNormal
+	call CityExplosion11
+	callba BombFlash
+	callba BombFlash
+	call CityExplosion12
 	ld de, TheEndGfx
 	ld hl, vChars2 + $600
 	lb bc, BANK(TheEndGfx), (TheEndGfxEnd - TheEndGfx) / $10
@@ -254,7 +259,7 @@ Credits:
 	coord hl, 4, 9
 	inc de
 	call PlaceString
-	jp FadeInCreditsText
+	ret
 
 TheEndTextString:
 ; "T H E  E N D"
@@ -268,3 +273,62 @@ INCLUDE "text/credits_text.asm"
 TheEndGfx:
 	INCBIN "gfx/theend.interleave.2bpp"
 TheEndGfxEnd:
+
+CityExplosion11:
+	ld de, Freedom
+	ld hl, vChars1
+	lb bc, BANK(Freedom), $70
+	call CopyVideoData
+	coord hl, 0, 6
+	ld de, CopyrightTextString11
+	call PlaceString
+	ld c, 250
+	call DelayFrames
+	call FillMiddleOfScreenWithWhite
+	ret
+
+CopyrightTextString11:
+	db   $7F,$7F,$80,$81,$82,$83,$84,$85,$86,$87,$88,$89,$8A,$8B,$8C,$8D,$8E,$8F,$7F,$7F    
+	db   $7F,$7F,$90,$91,$92,$93,$94,$95,$96,$97,$98,$99,$9A,$9B,$9C,$9D,$9E,$9F,$7F,$7F    
+	db   $7F,$7F,$A0,$A1,$A2,$A3,$A4,$A5,$A6,$A7,$A8,$A9,$AA,$AB,$AC,$AD,$AE,$AF,$7F,$7F
+    db   $7F,$7F,$B0,$B1,$B2,$B3,$B4,$B5,$B6,$B7,$B8,$B9,$BA,$BB,$BC,$BD,$BE,$BF,$7F,$7F 
+    db   $7F,$7F,$C0,$C1,$C2,$C3,$C4,$C5,$C6,$C7,$C8,$C9,$CA,$CB,$CC,$CD,$CE,$CF,$7F,$7F    
+	db   $7F,$7F,$D0,$D1,$D2,$D3,$D4,$D5,$D6,$D7,$D8,$D9,$DA,$DB,$DC,$DD,$DE,$DF,$7F,$7F    
+	db   $7F,$7F,$E0,$E1,$E2,$E3,$E4,$E5,$E6,$E7,$E8,$E9,$EA,$EB,$EC,$ED,$EE,$EF,$7F,$7F	
+	db   "@"
+	
+CityExplosion12:
+	ld de, Freedom2
+	ld hl, vChars1
+	lb bc, BANK(Freedom2), $70
+	call CopyVideoData
+	coord hl, 0, 6
+	ld de, CopyrightTextString12
+	call PlaceString
+	ld c, 250
+	call DelayFrames
+	call FillMiddleOfScreenWithWhite
+	ret
+
+CopyrightTextString12:
+	db   $7F,$7F,$80,$81,$82,$83,$84,$85,$86,$87,$88,$89,$8A,$8B,$8C,$8D,$8E,$8F,$7F,$7F    
+	db   $7F,$7F,$90,$91,$92,$93,$94,$95,$96,$97,$98,$99,$9A,$9B,$9C,$9D,$9E,$9F,$7F,$7F    
+	db   $7F,$7F,$A0,$A1,$A2,$A3,$A4,$A5,$A6,$A7,$A8,$A9,$AA,$AB,$AC,$AD,$AE,$AF,$7F,$7F
+    db   $7F,$7F,$B0,$B1,$B2,$B3,$B4,$B5,$B6,$B7,$B8,$B9,$BA,$BB,$BC,$BD,$BE,$BF,$7F,$7F 
+    db   $7F,$7F,$C0,$C1,$C2,$C3,$C4,$C5,$C6,$C7,$C8,$C9,$CA,$CB,$CC,$CD,$CE,$CF,$7F,$7F    
+	db   $7F,$7F,$D0,$D1,$D2,$D3,$D4,$D5,$D6,$D7,$D8,$D9,$DA,$DB,$DC,$DD,$DE,$DF,$7F,$7F    
+	db   $7F,$7F,$E0,$E1,$E2,$E3,$E4,$E5,$E6,$E7,$E8,$E9,$EA,$EB,$EC,$ED,$EE,$EF,$7F,$7F	
+	db   "@"
+	
+Freedom:
+
+INCBIN "gfx/red/freedom1.2bpp"
+
+FreedomEnd:
+
+Freedom2:
+
+INCBIN "gfx/red/freedom2.2bpp"
+
+Freedom2End:
+

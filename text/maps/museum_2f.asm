@@ -1,45 +1,48 @@
 _Museum2FText1::
-	text "MOON STONE?"
+	text "AGENT P?"
 
 	para "What's so special"
 	line "about it?"
 	done
 
 _Museum2FText2::
-	text "July 20, 1969!"
+	text "December 8, 1980!"
 
-	para "The 1st lunar"
-	line "landing!"
+	para "John Lennon"
+	line "was shot."
 
 	para "I bought a color"
 	line "TV to watch it!"
 	done
 
 _Museum2FText3::
-	text "We have a space"
-	line "exhibit now."
+	text "I have to piss."
+	line "At least, i think."
 	done
 
 _Museum2FText4::
-	text "I want a PIKACHU!"
-	line "It's so cute!"
+	text "I want to be"
+	line "fucked like a hoe."
 
 	para "I asked my Daddy"
-	line "to catch me one!"
+	line "to do it!"
 	done
 
 _Museum2FText5::
-	text "Yeah, a PIKACHU"
-	line "soon, I promise!"
+	text "Shut up,"
+	line "little slut!"
 	done
 
 _Museum2FText6::
-	text "SPACE SHUTTLE"
-	line "COLUMBIA"
+	text "BLACK DAHLIA"
+	line "MURDER CORPSE"
 	done
 
 _Museum2FText7::
-	text "Meteorite that"
-	line "fell on MT.MOON."
-	cont "(MOON STONE?)"
+	text "I see myself"
+	line "reflected on the"
+	cont "glass."
+	
+	para "What a strange"
+	line "feeling."
 	done

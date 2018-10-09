@@ -10,7 +10,7 @@ db 75 ; catch rate
 db 149 ; base exp yield
 INCBIN "pic/bmon/primeape.pic",0,1 ; 77, sprite dimensions
 dw PrimeapePicFront
-dw PrimeapePicBack
+dw PrimeapePicFront
 ; attacks known at lvl 0
 db SCRATCH
 db LEER

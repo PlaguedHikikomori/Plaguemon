@@ -1,20 +1,10 @@
 _PewterGymText_5c4a3::
-	text "There are all"
-	line "kinds of trainers"
-	cont "in the world!"
-
-	para "You appear to be"
-	line "very gifted as a"
-	cont "#MON trainer!"
-
-	para "Go to the GYM in"
-	line "CERULEAN and test"
-	cont "your abilities!"
+	text "As you were.."
 	done
 
 _TM34PreReceiveText::
-	text "Wait! Take this"
-	line "with you!"
+	text "As i want you"
+	line "to be.."
 	done
 
 _ReceivedTM34Text::
@@ -23,120 +13,91 @@ _ReceivedTM34Text::
 
 _TM34ExplanationText::
 	db $0
-	para "A TM contains a"
-	line "technique that"
-	cont "can be taught to"
-	cont "#MON!"
+	para "As a friend.."
+	line "As a friend.."
+	cont "As a know enemy.."
 
-	para "A TM is good only"
-	line "once! So when you"
-	cont "use one to teach"
-	cont "a new technique,"
-	cont "pick the #MON"
-	cont "carefully!"
+	para "Take your time.."
+	line "Hurry up.."
+	cont "The choice is yours"
+	cont "don't be late.."
+	cont "Take a rest.."
+	cont "As a friend."
 
 	para "TM34 contains"
-	line "BIDE!"
+	line "SADNESS!"
 
-	para "Your #MON will"
-	line "absorb damage in"
-	cont "battle then pay"
-	cont "it back double!"
+	para "Memoria!"
+	line "Memoria!"
+	cont "Memoria!"
+	cont "Memoria!"
 	done
 
 _TM34NoRoomText::
-	text "You don't have"
-	line "room for this!"
+	text "Not enough space"
 	done
 
 _PewterGymText_5c4bc::
-	text "I took"
-	line "you for granted."
+	text "This is all i got"
+	line "for my entire lige"
 
-	para "As proof of your"
-	line "victory, here's"
-	cont "the BOULDERBADGE!"
+	para "Remember me forever"
+	line "so take this."
+	cont "My bullet shell.."
 
 	para "<PLAYER> received"
-	line "the BOULDERBADGE!@@"
+	line "20 GAUGE SHELL!@@"
 
 _PewterGymText_5c4c1::
 	db $0
-	para "That's an official"
-	line "#MON LEAGUE"
-	cont "BADGE!"
+	para "That's a rare"
+	line "relic!"
 
-	para "Its bearer's"
-	line "#MON become"
-	cont "more powerful!"
-
-	para "The technique"
-	line "FLASH can now be"
-	cont "used any time!"
 	prompt
 
 _PewterGymBattleText1::
 	text "Stop right there,"
 	line "kid!"
 
-	para "You're still light"
-	line "years from facing"
-	cont "BROCK!"
+	para "Dead bodies are"
+	line "not so cool as"
+	cont "you may taught."
 	done
 
 _PewterGymEndBattleText1::
 	text "Darn!"
 
-	para "Light years isn't"
-	line "time! It measures"
-	cont "distance!"
 	prompt
 
 _PewterGymAfterBattleText1::
-	text "You're pretty hot,"
-	line "but not as hot"
-	cont "as BROCK!"
+	text "You're pretty sad,"
+	line "but not as sad"
+	cont "as KURT!"
 	done
 
 _PewterGymText_5c515::
-	text "Hiya! I can tell"
-	line "you have what it"
-	cont "takes to become a"
-	cont "#MON champ!"
-
-	para "I'm no trainer,"
-	line "but I can tell"
-	cont "you how to win!"
-
-	para "Let me take you"
-	line "to the top!"
+	text "Do you feel"
+	line "scared?"
 	done
 
 _PewterGymText_5c51a::
-	text "All right! Let's"
-	line "get happening!"
+	text "THAT'S RIGHT!"
 	prompt
 
 _PewterGymText_5c51f::
-	text "The 1st #MON"
-	line "out in a match is"
-	cont "at the top of the"
-	cont "#MON LIST!"
+	text "The entire thing"
+	line "is made to push"
+	cont "people to commit"
+	cont "SUICIDE!"
 
-	para "By changing the"
-	line "order of #MON,"
-	cont "matches could be"
-	cont "made easier!"
 	done
 
 _PewterGymText_5c524::
-	text "It's a free"
-	line "service! Let's"
-	cont "get happening!"
+	text "YOU SHOULD!"
 	prompt
 
 _PewterGymText_5c529::
-	text "Just as I thought!"
-	line "You're #MON"
-	cont "champ material!"
+	text "I'm somehow"
+	line "pretty horny"
+	cont "now!"
 	done

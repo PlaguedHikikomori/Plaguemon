@@ -10,7 +10,7 @@ db 190 ; catch rate
 db 102 ; base exp yield
 INCBIN "pic/bmon/drowzee.pic",0,1 ; 66, sprite dimensions
 dw DrowzeePicFront
-dw DrowzeePicBack
+dw DrowzeePicFront
 ; attacks known at lvl 0
 db POUND
 db HYPNOSIS

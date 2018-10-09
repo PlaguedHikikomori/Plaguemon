@@ -19,21 +19,21 @@ ItemUsePtrTable:
 	dw ItemUseBall       ; MASTER_BALL
 	dw ItemUseBall       ; ULTRA_BALL
 	dw ItemUseBall       ; GREAT_BALL
-	dw ItemUseBall       ; POKE_BALL
+	dw ItemUseBall       ; POKE_BALL  
 	dw ItemUseTownMap    ; TOWN_MAP
 	dw ItemUseBicycle    ; BICYCLE
 	dw ItemUseSurfboard  ; out-of-battle Surf effect
 	dw ItemUseBall       ; SAFARI_BALL
 	dw ItemUsePokedex    ; POKEDEX
 	dw ItemUseEvoStone   ; MOON_STONE
-	dw ItemUseMedicine   ; ANTIDOTE
+	dw UsedKetamine      ; ANTIDOTE
 	dw ItemUseMedicine   ; BURN_HEAL
 	dw ItemUseMedicine   ; ICE_HEAL
 	dw ItemUseMedicine   ; AWAKENING
 	dw ItemUseMedicine   ; PARLYZ_HEAL
 	dw ItemUseMedicine   ; FULL_RESTORE
 	dw ItemUseMedicine   ; MAX_POTION
-	dw ItemUseMedicine   ; HYPER_POTION
+	dw UsedLsd           ; HYPER_POTION
 	dw ItemUseMedicine   ; SUPER_POTION
 	dw ItemUseMedicine   ; POTION
 	dw ItemUseBait       ; BOULDERBADGE
@@ -54,7 +54,7 @@ ItemUsePtrTable:
 	dw ItemUseVitamin    ; PROTEIN
 	dw ItemUseVitamin    ; IRON
 	dw ItemUseVitamin    ; CARBOS
-	dw ItemUseVitamin    ; CALCIUM
+	dw ItemUseMotorbike  ; MOTORBIKE
 	dw ItemUseVitamin    ; RARE_CANDY
 	dw UnusableItem      ; DOME_FOSSIL
 	dw UnusableItem      ; HELIX_FOSSIL
@@ -67,19 +67,19 @@ ItemUsePtrTable:
 	dw UnusableItem      ; NUGGET
 	dw UnusableItem      ; ??? PP_UP
 	dw ItemUsePokedoll   ; POKE_DOLL
-	dw ItemUseMedicine   ; FULL_HEAL
+	dw ItemBeHand        ; FULL_HEAL
 	dw ItemUseMedicine   ; REVIVE
-	dw ItemUseMedicine   ; MAX_REVIVE
+	dw UsedAk47          ; MAX_REVIVE
 	dw ItemUseGuardSpec  ; GUARD_SPEC
 	dw ItemUseSuperRepel ; SUPER_REPL
 	dw ItemUseMaxRepel   ; MAX_REPEL
 	dw ItemUseDireHit    ; DIRE_HIT
 	dw UnusableItem      ; COIN
-	dw ItemUseMedicine   ; FRESH_WATER
-	dw ItemUseMedicine   ; SODA_POP
+	dw ItemUseEvoStone   ; FRESH_WATER
+	dw ItemUseEvoStone   ; SODA_POP
 	dw ItemUseMedicine   ; LEMONADE
 	dw UnusableItem      ; S_S_TICKET
-	dw UnusableItem      ; GOLD_TEETH
+	dw ItemUseEvoStone   ; GOLD_TEETH
 	dw ItemUseXStat      ; X_ATTACK
 	dw ItemUseXStat      ; X_DEFEND
 	dw ItemUseXStat      ; X_SPEED
@@ -98,7 +98,7 @@ ItemUsePtrTable:
 	dw ItemUsePPRestore  ; ETHER
 	dw ItemUsePPRestore  ; MAX_ETHER
 	dw ItemUsePPRestore  ; ELIXER
-	dw ItemUsePPRestore  ; MAX_ELIXER
+	dw ItemUseBurn       ; MAX_ELIXER
 
 ItemUseBall:
 
@@ -649,7 +649,7 @@ ItemUseBicycle:
 	xor a
 	ld [wWalkBikeSurfState],a ; change player state to walking
 	call PlayDefaultMusic ; play walking music
-	ld hl,GotOffBicycleText
+	;ld hl,GotOffBicycleText
 	jr .printText
 .tryToGetOnBike
 	call IsBikeRidingAllowed
@@ -659,10 +659,54 @@ ItemUseBicycle:
 	ld [hJoyHeld],a ; current joypad state
 	inc a
 	ld [wWalkBikeSurfState],a ; change player state to bicycling
-	ld hl,GotOnBicycleText
+	;ld hl,BeAHandText
 	call PlayDefaultMusic ; play bike riding music
 .printText
 	jp PrintText
+	
+ItemUseMotorbike:
+	ld a,[wIsInBattle]    ;carica nell'accumulatore lo stato 
+	and a                 ;è in battaglia il player?
+	jp nz,ItemUseNotTime   ;se si, salta.
+	ld a,[wWalkBikeSurfState] ;carica il lo stato nell'accumulatore
+	ld [wWalkBikeSurfStateCopy],a    ;carica in un indirizzo ram lo stato del giocatore
+	cp a,2 ; is the player surfing?   
+	;se è due, stai surfando
+	jp z,ItemUseNotTime               ;se si, salta.
+	dec a	; is player already bicycling?  
+	dec a   
+	dec a   ;ha gia il motocross?
+	jr nz,.tryToGetOnBike ;in qualsiasi caso, salta sulla bici
+.getOffBike
+	call ItemUseReloadOverworldData
+	xor a
+	ld [wWalkBikeSurfState],a ; change player state to walking
+	call PlayDefaultMusic ; play walking music
+	;ld hl,GotOffBicycleText
+	jr .printText
+.tryToGetOnBike
+	call ItemUseReloadOverworldData   ;senno riscrivi i dati del mondo
+	xor a ; no keys pressed            
+	ld [hJoyHeld],a ; current joypad state
+	inc a                     ; incrementa accumulutore da zero ad uno, per impostare lo stato su ciclista
+	inc a                     ; surfando
+	inc a                     ; nuovo stato
+	ld [wWalkBikeSurfState],a ; change player state to bicycling,che accade qui quando lo riloddi
+	ld hl,MotocrossText
+	call PlayDefaultMusic ; play bike riding music
+	ld a, 254
+	ld [wRepelRemainingSteps],a
+.printText
+	jp PrintText
+	
+ItemUseBurn:
+    xor a
+	ld [wActionResultOrTookBattleTurn], a ; initialise to failure value
+	ld a, [wCurMapTileset]
+	and a ; OVERWORLD
+    dec a
+	ld a, [wTileInFrontOfPlayer]
+	jp UsedBurn   ;Hiki brucia
 
 ; used for Surf out-of-battle effect
 ItemUseSurfboard:
@@ -1517,7 +1561,7 @@ ItemUseEscapeRope:
 	ld [wActionResultOrTookBattleTurn],a ; item used
 	ld a,[wPseudoItemID]
 	and a ; using Dig?
-	ret nz ; if so, return
+	ret nz ; if so, returnz
 	call ItemUseReloadOverworldData
 	ld c,30
 	call DelayFrames
@@ -2406,11 +2450,9 @@ GotOnBicycleText:
 	TX_LINE
 	TX_FAR _GotOnBicycleText2
 	db "@"
-
-GotOffBicycleText:
-	TX_FAR _GotOffBicycleText1
-	TX_LINE
-	TX_FAR _GotOffBicycleText2
+	
+MotocrossText:
+    TX_FAR _MotocrossText
 	db "@"
 
 ; restores bonus PP (from PP Ups) when healing at a pokemon center
@@ -2987,3 +3029,399 @@ CheckMapForMon:
 	jr nz, .loop
 	dec hl
 	ret
+
+UsedKetamine:
+    ld hl,SniffedText
+	ld a, $C0
+    ld [wd736], a
+	jp PrintText
+	
+SniffedText:
+	TX_FAR _SniffedText
+	db "@"
+	
+_SniffedText::
+	text "<PLAYER> snorted"
+	line "some @"
+	TX_RAM wcd6d
+	text "!"
+	prompt
+	
+UsedLsd:
+    call LoadCurrentMapView
+	call UpdateSprites
+	ld hl,LsdText
+	call PrintText
+  	ld hl, BattleTransition_FlashScreenPalettesLSD
+.loop
+	ld a, [hli]
+	cp $1
+	jr z, .done
+	ld [rBGP], a
+	ld c, 3
+	call DelayFrames
+	jr .loop
+.done
+	dec b
+	ret
+	
+BattleTransition_FlashScreenPalettesLSD:
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $E4 ; terminator
+	
+LsdText:
+	TX_FAR _LsdText
+	db "@"
+	
+_LsdText::
+	text "<PLAYER> started"
+	line "tripping.."
+	prompt
+	
+UsedBurnText:
+	TX_FAR _BurnText
+	db "@"
+	
+_BurnText::
+	text "<PLAYER> is prepairing"
+	line "some nice TRITOLO!"
+	prompt
+	
+	
+;Hiki, esplosione del terreno
+UsedBurn: 
+	xor a
+	ld [wActionResultOrTookBattleTurn], a ; initialise to failure value
+	ld a, [wCurMapTileset]
+	and a ; OVERWORLD
+	jr z, .overworld
+	cp GYM
+	jr nz, .nothingToBurn
+	ld a, [wTileInFrontOfPlayer]
+	cp $50 ; gym cut tree
+	jr nz, .nothingToBurn
+	jr .canBurn
+.overworld
+	dec a
+	ld a, [wTileInFrontOfPlayer]
+	cp $4e ; cut tree
+	jr z, .canBurn
+.nothingToBurn
+	ld hl, .NothingToCutText
+	jp PrintText
+
+.NothingToCutText
+	TX_FAR _NothingToCutText
+	db "@"
+
+.canBurn
+	ld [wCutTile], a
+	ld a, 1
+	ld [wActionResultOrTookBattleTurn], a ; used cut
+	ld hl, wd730
+	set 6, [hl]
+	call GBPalWhiteOutWithDelay3
+	;call ClearSprites
+	call RestoreScreenTilesAndReloadTilePatterns
+	ld a, SCREEN_HEIGHT_PIXELS
+	;ld [hWY], a
+	call Delay3
+	call LoadGBPal
+	call LoadCurrentMapView
+	call SaveScreenTilesToBuffer2
+	call Delay3
+	xor a
+	;ld [hWY], a
+	ld hl, UsedBurnText
+	call PrintText
+	call LoadScreenTilesFromBuffer2
+    ld hl, wd730
+	res 6, [hl]
+	ld a, $ff
+	ld [wUpdateSpritesEnabled], a
+	call InitBurnAnimOAM
+	ld de, CutTreeBlockSwaps
+	call ReplaceBurnedTileBlock
+	call RedrawMapView
+	call InitBurnAnimOAM
+	ld de, CutTreeBlockSwaps
+	call ReplaceBurnedTileBlock2
+	call RedrawMapView
+	call InitBurnAnimOAM
+	ld de, CutTreeBlockSwaps
+	call ReplaceBurnedTileBlock3
+	call RedrawMapView
+	call InitBurnAnimOAM
+	ld de, CutTreeBlockSwaps
+	call ReplaceBurnedTileBlock4
+	call RedrawMapView
+	call InitBurnAnimOAM
+	ld de, CutTreeBlockSwaps
+	call ReplaceBurnedTileBlock4
+	call RedrawMapView
+	callba AnimCut
+	ld a, $1
+	ld [wUpdateSpritesEnabled], a
+	ld a, SFX_CUT
+	call PlaySound
+	ld a, $90
+	;ld [hWY], a
+	call UpdateSprites
+	jp RedrawMapView
+	
+	
+; fine esplosione	
+	
+InitBurnAnimOAM:
+	xor a
+	ld [wWhichAnimationOffsets], a
+	ld a, %11100100
+	ld [rOBP1], a
+	ld a, [wCutTile]
+	cp $4e ; cut tree
+	jr nz, .notbuilding
+	ld hl, vChars1 + $7c0
+	call LoadSmokeAnimationTilePattern
+	ld hl, vChars1 + $7d0
+	call LoadSmokeAnimationTilePattern
+	ld hl, vChars1 + $7e0
+	call LoadSmokeAnimationTilePattern
+	ld hl, vChars1 + $7f0
+	call LoadSmokeAnimationTilePattern
+	call WriteCutOrBoulderDustAnimationOAMBlock
+	ld hl, wOAMBuffer + $93
+	ld de, 4
+	ld a, $30
+	ld c, e
+.loop
+	ld [hl], a
+	add hl, de
+	xor $60
+	dec c
+	jr nz, .loop
+.notbuilding
+	ret
+
+LoadSmokeAnimationTilePattern:
+  	ld de, AnimationTileset2 + $410 ; tile depicting a leaf
+	lb bc, BANK(AnimationTileset2), $01
+	call CopyVideoData
+	ld hl, BattleTransition_Explosion
+	ld [rBGP], a
+	ld c, 3
+	call DelayFrames
+	dec b
+	ld hl, BattleTransition_Explosion
+	ld [rBGP], a
+	ld c, 3
+	call DelayFrames
+	ld a, %11101111
+	ld [rOBP0], a
+    ld a, %11101111
+	ld [rOBP1], a
+	ld hl, vChars1 + $7c0	
+	ld de, AnimationTileset2 + $410 ; tile depicting a leaf
+	lb bc, BANK(AnimationTileset2), $01
+	call CopyVideoData
+	ret
+	
+BattleTransition_Explosion:
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
+	db $F9 ; terminator
+	
+ReplaceBurnedTileBlock:
+; Determine the address of the tile block that contains the tile in front of the
+; player (i.e. where the tree is) and replace it with the corresponding tile
+; block that doesn't have the tree.
+	push de
+	ld a, [wCurMapWidth]
+	add 6
+	ld c, a
+	ld b, 0
+	ld d, 0
+	ld hl, wCurrentTileBlockMapViewPointer 
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	add hl, bc
+		
+Cobra:
+	ld a, [wSpriteStateData1 + 9] ; player sprite's facing direction
+	and a
+	jr z, .down
+	cp SPRITE_FACING_UP
+	jr z, .up
+	cp SPRITE_FACING_LEFT
+	jr z, .left
+; right
+	ld a, [wXBlockCoord]
+	and a
+	jr z, .centerTileBlock
+	jr .rightOfCenter
+.down
+	ld a, [wYBlockCoord]
+	and a
+	jr z, .centerTileBlock
+	jr .belowCenter
+.up
+	ld a, [wYBlockCoord]
+	and a
+	jr z, .aboveCenter
+	jr .centerTileBlock
+.left
+	ld a, [wXBlockCoord]
+	and a
+	jr z, .leftOfCenter
+	jr .centerTileBlock
+.belowCenter
+	add hl, bc
+.centerTileBlock
+	add hl, bc
+.aboveCenter
+	ld e, $2
+	add hl, de
+	jr .next
+.leftOfCenter
+	ld e, $1
+	add hl, bc
+	add hl, de
+	jr .next
+.rightOfCenter
+	ld e, $3
+	add hl, bc
+	add hl, de
+.next
+	pop de
+	ld a, [hl]
+	ld c, a
+.loop ; find the matching tile block in the array
+	ld a, [de]
+	inc de
+	inc de
+	cp $ff
+	ret z
+	cp c
+	jr nz, .loop
+	dec de
+	ld a, [de] ; replacement tile block from matching array entry
+	ld [hl], a
+	ret
+
+ReplaceBurnedTileBlock2:
+; Determine the address of the tile block that contains the tile in front of the
+; player (i.e. where the tree is) and replace it with the corresponding tile
+; block that doesn't have the tree.
+	push de
+	ld a, [wCurMapWidth]
+	add 7
+	ld c, a
+	ld b, 0
+	ld d, 0
+	ld hl, wCurrentTileBlockMapViewPointer 
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	add hl, bc
+	jp Cobra
+	ret
+
+ReplaceBurnedTileBlock3:
+; Determine the address of the tile block that contains the tile in front of the
+; player (i.e. where the tree is) and replace it with the corresponding tile
+; block that doesn't have the tree.
+	push de
+	ld a, [wCurMapWidth]
+	add 6
+	ld c, a
+	ld b, 0
+	ld d, 0
+	ld hl, wCurrentTileBlockMapViewPointer
+	ld a, [hli]
+	ld h, [hl]
+	ld l, a
+	;add hl, bc
+	jp Cobra
+	ret
+
+ReplaceBurnedTileBlock4:
+; Determine the address of the tile block that contains the tile in front of the
+; player (i.e. where the tree is) and replace it with the corresponding tile
+; block that doesn't have the tree.
+	push de
+	ld a, [wCurMapWidth]
+	add 6
+	ld c, a
+	ld b, 0
+	ld d, 0
+	ld hl, wCurrentTileBlockMapViewPointer
+	ld a, [hli]
+	inc a
+	ld h, [hl]
+	ld l, a
+	;add hl, bc
+	jp Cobra
+	ret
+	
+;------------MERDA--------------	
+UsedAk47:
+  	ld a,[wIsInBattle]    ;carica nell'accumulatore lo stato 
+	and a                 ;è in battaglia il player?
+	jp nz,ItemUseNotTime   ;se si, salta.
+	ld a,[wWalkBikeSurfState] ;carica il lo stato nell'accumulatore
+	ld [wWalkBikeSurfStateCopy],a    ;carica in un indirizzo ram lo stato del giocatore
+	cp a,2 ; is the player surfing?   
+	;se è due, stai surfando
+	jp z,ItemUseNotTime               ;se si, salta.
+	dec a	; is player already bicycling?  
+	dec a   
+	dec a   
+	dec a
+	jr nz,.tryToGetOnBike ;in qualsiasi caso, salta sulla bici
+.getOffBike
+	call ItemUseReloadOverworldData
+	xor a
+	ld [wWalkBikeSurfState],a ; change player state to walking
+	call PlayDefaultMusic ; play walking music
+	;ld hl,GotOffBicycleText
+	jr .printText
+.tryToGetOnBike
+	call ItemUseReloadOverworldData   ;senno riscrivi i dati del mondo
+	xor a ; no keys pressed            
+	ld [hJoyHeld],a ; current joypad state
+	inc a                     ; incrementa accumulutore da zero ad uno, per impostare lo stato su ciclista
+	inc a                     ; surfando
+	inc a             
+    inc a                     ; nuovo stato
+	ld [wWalkBikeSurfState],a ; change player state to bicycling,che accade qui quando lo riloddi
+.printText
+	jp PrintText
+;--------------------------------z
+
+ItemBeHand:
+    ld a, $5
+    ld [wWalkBikeSurfState], a 
+	;ld hl,BeAHandText
+	;jp PrintText
+	ret
+
+;BeAHandText:
+;	TX_FAR _BeAHandText
+;    db "@"
+	
+		
+    
+
+	

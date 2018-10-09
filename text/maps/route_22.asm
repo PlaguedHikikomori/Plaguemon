@@ -1,5 +1,5 @@
 _Route22RivalBeforeBattleText1::
-	text "<RIVAL>: Hey!"
+	text "EVILIO: Hey!"
 	line "<PLAYER>!"
 
 	para "You're going to"
@@ -38,7 +38,7 @@ _Route22RivalDefeatedText1::
 	prompt
 
 _Route22Text_511bc::
-	text "<RIVAL>: What?"
+	text "EVILIO: What?"
 	line "Why do I have 2"
 	cont "#MON?"
 
@@ -47,55 +47,28 @@ _Route22Text_511bc::
 	prompt
 
 _Route22RivalBeforeBattleText2::
-	text "<RIVAL>: What?"
-	line "<PLAYER>! What a"
-	cont "surprise to see"
-	cont "you here!"
+	text "EVILIO: GWAAA!"
+	line "GWYOU GWAGAIG!"
+	cont "GWE GWARE SOMEWHAT"
+	cont "GWONE THING!"
 
-	para "So you're going to"
-	line "#MON LEAGUE?"
-
-	para "You collected all"
-	line "the BADGEs too?"
-	cont "That's cool!"
-
-	para "Then I'll whip you"
-	line "<PLAYER> as a"
-	cont "warm up for"
-	cont "#MON LEAGUE!"
-
-	para "Come on!"
 	done
 
 _Route22RivalAfterBattleText2::
-	text "That loosened me"
-	line "up! I'm ready for"
-	cont "#MON LEAGUE!"
-
-	para "<PLAYER>, you need"
-	line "more practice!"
-
-	para "But hey, you know"
-	line "that! I'm out of"
-	cont "here. Smell ya!"
+	text "GWAAAA"
+	line "GWWWYOU GWILL"
+	cont "GNNNNNNNOT.."
 	done
 
 _Route22RivalDefeatedText2::
-	text "What!?"
-
-	para "I was just"
-	line "careless!"
+	text "GWAAAT!"
 	prompt
 
 _Route22Text_511d0::
-	text "<RIVAL>: Hahaha!"
-	line "<PLAYER>! That's"
-	cont "your best? You're"
-	cont "nowhere near as"
-	cont "good as me, pal!"
-
-	para "Go train some"
-	line "more! You loser!"
+	text "EVILIO: GWAA!"
+	line "GWWWI'M"
+	cont "STILL GWWWW"
+	cont "STRONGER!!"
 	prompt
 
 _Route22FrontGateText::

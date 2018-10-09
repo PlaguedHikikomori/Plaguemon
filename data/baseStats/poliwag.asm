@@ -10,7 +10,7 @@ db 255 ; catch rate
 db 77 ; base exp yield
 INCBIN "pic/bmon/poliwag.pic",0,1 ; 55, sprite dimensions
 dw PoliwagPicFront
-dw PoliwagPicBack
+dw PoliwagPicFront
 ; attacks known at lvl 0
 db BUBBLE
 db 0

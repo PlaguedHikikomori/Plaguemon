@@ -1,20 +1,20 @@
 _Route12Text1::
-	text "A sleeping #MON"
-	line "blocks the way!"
+	text "A gruesome heap"
+	line "of dead bodies"
+	cont "blocks the way!"
 	done
 
 _Route12Text13::
-	text "SNORLAX woke up!"
+	text "Shit!"
 
-	para "It attacked in a"
-	line "grumpy rage!"
+	para "Those corpses"
+	line "are alive!"
 	done
 
 _Route12Text14::
-	text "SNORLAX calmed"
-	line "down! With a big"
-	cont "yawn, it returned"
-	cont "to the mountains!"
+	text "Those corpses"
+	line "just get up"
+	cont "and walked away.."
 	done
 
 _Route12BattleText1::
@@ -97,19 +97,16 @@ _Route12AfterBattleText5::
 	done
 
 _Route12BattleText6::
-	text "I'd rather be"
-	line "working!"
+	text "ALLAH IS BIG!"
 	done
 
 _Route12EndBattleText6::
-	text "It's"
-	line "not easy..."
+	text "Me no.."
 	prompt
 
 _Route12AfterBattleText6::
-	text "It's all right."
-	line "Losing doesn't"
-	cont "bug me any more."
+	text "Muslims are cool"
+	line "people.."
 	done
 
 _Route12BattleText7::

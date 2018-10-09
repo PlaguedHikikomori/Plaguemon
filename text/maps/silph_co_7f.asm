@@ -145,12 +145,12 @@ _SilphCo7AfterBattleText4::
 	done
 
 _SilphCo7Text_51ebe::
-	text "<RIVAL>: What"
+	text "EVILIO: What"
 	line "kept you <PLAYER>?"
 	done
 
 _SilphCo7Text_51ec3::
-	text "<RIVAL>: Hahaha!"
+	text "EVILIO: Hahaha!"
 	line "I thought you'd"
 	cont "turn up if I"
 	cont "waited here!"
@@ -173,7 +173,7 @@ _SilphCo7Text_51ec8::
 	prompt
 
 _SilphCo7Text_51ecd::
-	text "<RIVAL>: How can"
+	text "EVILIO: How can"
 	line "I put this?"
 
 	para "You're not good"

@@ -1,69 +1,75 @@
 _SSAnne6Text1::
-	text "You, mon petit!"
-	line "We're busy here!"
-	cont "Out of the way!"
+	text "We've different"
+	line "menus for 1st"
+	cont "and 2nd class."
 	done
 
 _SSAnne6Text2::
-	text "I saw an odd ball"
+	text "I saw an odd vial"
 	line "in the trash."
 	done
 
 _SSAnne6Text3::
-	text "I'm so busy I'm"
-	line "getting dizzy!"
+	text "I hate sea."
+	line "I have to puke!"
 	done
 
 _SSAnne6Text4::
-	text "Hum-de-hum-de-"
-	line "ho..."
+	text "We have this"
+	line "awesome 4th"
+	cont "funnel now!"
 
-	para "I peel spuds"
-	line "every day!"
-	cont "Hum-hum..."
 	done
 
 _SSAnne6Text5::
-	text "Did you hear about"
-	line "SNORLAX?"
+	text "We make this"
+	line "fantastic"
+	cont "viennese bread."
 
-	para "All it does is"
-	line "eat and sleep!"
 	done
 
 _SSAnne6Text6::
-	text "Snivel...Sniff..."
+	text "White Star Line"
+	line "Did an awesome job."
 
-	para "I only get to"
-	line "peel onions..."
-	cont "Snivel..."
 	done
 
 _SSAnne6Text_61807::
-	text "Er-hem! Indeed I"
-	line "am le CHEF!"
+	text "I am le CHEF!"
 
 	para "Le main course is"
 	prompt
 
 _SSAnne6Text_6180c::
-	text "Salmon du Salad!"
+    text "2nd class:"
 
-	para "Les guests may"
-	line "gripe it's fish"
-	cont "again, however!"
+	para "Spring Lamb"
+
+	para "Mint Sauce"
+	
+	para "Roast Turkey"
+	
+	para "Cranberry Sauce"
+
 	done
 
 _SSAnne6Text_61811::
-	text "Eels au Barbecue!"
+	text "3rd class:"
 
-	para "Les guests will"
-	line "mutiny, I fear."
+	para "Jacked Potatoes"
+	
+	para "Ham and Eggs"
+	
+	para "Smoked Herrings"
 	done
 
 _SSAnne6Text_61816::
-	text "Prime Beef Steak!"
+	text "1st class:"
 
-	para "But, have I enough"
-	line "fillets du beef?"
+	para "Fillets of Brill"
+	
+	para "Chicken a la"
+	line "Maryland"
+	
+	para "Egg a l'Argenteuil"
 	done

@@ -64,7 +64,7 @@ OakSpeech:
 	call PrintText
 	call GBFadeOutToWhite
 	call ClearScreen
-	ld a,NIDORINO
+	ld a,VICTREEBEL
 	ld [wd0b5],a
 	ld [wcf91],a
 	call GetMonHeader
@@ -90,7 +90,6 @@ OakSpeech:
 	call FadeInIntroPic
 	ld hl,IntroduceRivalText
 	call PrintText
-	call ChooseRivalName
 .skipChoosingNames
 	call GBFadeOutToWhite
 	call ClearScreen

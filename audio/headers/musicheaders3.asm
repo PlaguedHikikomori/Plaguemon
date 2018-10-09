@@ -1,9 +1,6 @@
 Music_TitleScreen::
 	audio Music_TitleScreen, Ch0, Ch1, Ch2, Ch3
 
-Music_Credits::
-	audio Music_Credits, Ch0, Ch1, Ch2
-
 Music_HallOfFame::
 	audio Music_HallOfFame, Ch0, Ch1, Ch2
 
@@ -17,7 +14,10 @@ Music_BikeRiding::
 	audio Music_BikeRiding, Ch0, Ch1, Ch2, Ch3
 
 Music_Surfing::
-	audio Music_Surfing, Ch0, Ch1, Ch2
+	audio Music_Surfing, Ch3
+	
+Music_Motocross::
+    audio Music_Motocross, Ch3
 
 Music_GameCorner::
 	audio Music_GameCorner, Ch0, Ch1, Ch2

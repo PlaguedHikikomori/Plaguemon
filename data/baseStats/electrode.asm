@@ -1,16 +1,16 @@
 db DEX_ELECTRODE ; pokedex id
-db 60 ; base hp
+db 100 ; base hp
 db 50 ; base attack
 db 70 ; base defense
-db 140 ; base speed
+db 120 ; base speed
 db 80 ; base special
 db ELECTRIC ; species type 1
 db ELECTRIC ; species type 2
 db 60 ; catch rate
 db 150 ; base exp yield
-INCBIN "pic/bmon/electrode.pic",0,1 ; 55, sprite dimensions
+INCBIN "pic/bmon/electrode.pic",0,1 ; 77, sprite dimensions
 dw ElectrodePicFront
-dw ElectrodePicBack
+dw ElectrodePicFront
 ; attacks known at lvl 0
 db TACKLE
 db SCREECH

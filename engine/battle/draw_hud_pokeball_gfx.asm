@@ -21,7 +21,7 @@ SetupOwnPartyPokeballs:
 	ld hl, wPartyMon1
 	ld de, wPartyCount
 	call SetupPokeballs
-	ld a, $60
+	ld a, $20
 	ld hl, wBaseCoordX
 	ld [hli], a
 	ld [hl], a
@@ -121,7 +121,7 @@ PlacePlayerHUDTiles:
 	ld de, wHUDGraphicsTiles
 	ld bc, $3
 	call CopyData
-	coord hl, 18, 10
+	coord hl, 8, 12  ;Hiki, posiziona tiles della barra nera
 	ld de, -1
 	jr PlaceHUDTiles
 

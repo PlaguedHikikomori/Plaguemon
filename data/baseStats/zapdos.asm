@@ -10,7 +10,7 @@ db 3 ; catch rate
 db 216 ; base exp yield
 INCBIN "pic/bmon/zapdos.pic",0,1 ; 77, sprite dimensions
 dw ZapdosPicFront
-dw ZapdosPicBack
+dw ZapdosPicFront
 ; attacks known at lvl 0
 db THUNDERSHOCK
 db DRILL_PECK

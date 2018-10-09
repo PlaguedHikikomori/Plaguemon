@@ -1,8 +1,8 @@
 ItemPrices:
-	money 0     ; MASTER_BALL
+	money 8000   ; MASTER_BALL
 	money 1200  ; ULTRA_BALL
 	money 600   ; GREAT_BALL
-	money 200   ; POKE_BALL
+	money 10    ; POKE_BALL
 	money 0     ; TOWN_MAP
 	money 0     ; BICYCLE
 	money 0     ; SURFBOARD
@@ -16,7 +16,7 @@ ItemPrices:
 	money 200   ; PARLYZ_HEAL
 	money 3000  ; FULL_RESTORE
 	money 2500  ; MAX_POTION
-	money 1500  ; HYPER_POTION
+	money 500   ; HYPER_POTION
 	money 700   ; SUPER_POTION
 	money 300   ; POTION
 	money 0     ; BOULDERBADGE
@@ -37,8 +37,8 @@ ItemPrices:
 	money 9800  ; PROTEIN
 	money 9800  ; IRON
 	money 9800  ; CARBOS
-	money 9800  ; CALCIUM
-	money 4800  ; RARE_CANDY
+	money 1500  ; CALCIUM
+	money 1000  ; RARE_CANDY
 	money 0     ; DOME_FOSSIL
 	money 0     ; HELIX_FOSSIL
 	money 0     ; SECRET_KEY
@@ -52,7 +52,7 @@ ItemPrices:
 	money 1000  ; POKE_DOLL
 	money 600   ; FULL_HEAL
 	money 1500  ; REVIVE
-	money 4000  ; MAX_REVIVE
+	money 3000  ; MAX_REVIVE
 	money 700   ; GUARD_SPEC
 	money 500   ; SUPER_REPEL
 	money 700   ; MAX_REPEL
@@ -79,7 +79,7 @@ ItemPrices:
 	money 0     ; SUPER_ROD
 	money 0     ; PP_UP
 	money 0     ; ETHER
-	money 0     ; MAX_ETHER
+	money 5000  ; MAX_ETHER
 	money 0     ; ELIXER
 	money 0     ; MAX_ELIXER
 	money 0     ; FLOOR_B2F

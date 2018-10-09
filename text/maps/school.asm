@@ -1,13 +1,10 @@
 _SchoolText1::
-	text "Whew! I'm trying"
-	line "to memorize all"
-	cont "my notes."
+	text "Someday i'll do"
+	line "an awesome bomb"
 	done
 
 _SchoolText2::
-	text "Okay!"
+	text "Yo!"
 
-	para "Be sure to read"
-	line "the blackboard"
-	cont "carefully!"
+	para "Need any meth?"
 	done

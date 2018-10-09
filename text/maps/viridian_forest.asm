@@ -1,119 +1,105 @@
 _ViridianForestText1::
-	text "I came here with"
-	line "some friends!"
+	text "I came here"
+	line "for a reason:"
 
-	para "They're out for"
-	line "#MON fights!"
-	done
+	para "A nice place"
+	line "to hang myself."
+    done
 
 _ViridianForestBattleText1::
-	text "Hey! You have"
-	line "#MON! Come on!"
-	cont "Let's battle'em!"
+	text "Hey! Are you"
+	line "scared now?"
 	done
 
 _ViridianForestEndBattleText1::
-	text "No!"
-	line "CATERPIE can't"
-	cont "cut it!"
+	text "Cut"
+	line "your wrist if you"
+	cont "prefer.."
 	prompt
 
 _ViridianFrstAfterBattleText1::
-	text "Ssh! You'll scare"
-	line "the bugs away!"
+	text "Ssh! Respect"
+	line "death silence!"
 	done
 
 _ViridianForestBattleText2::
-	text "Yo! You can't jam"
-	line "out if you're a"
-	cont "#MON trainer!"
+	text "Yo!"
 	done
 
 _ViridianForestEndBattleText2::
 	text "Huh?"
 	line "I ran out of"
-	cont "#MON!"
+	cont "money!"
 	prompt
 
 _ViridianFrstAfterBattleText2::
-	text "Darn! I'm going"
-	line "to catch some"
-	cont "stronger ones!"
+	text "I want to exist."
+	line "*breath slowly*"
+	cont "OXYGEN IS SO FRESH!"
 	done
 
 _ViridianForestBattleText3::
-	text "Hey, wait up!"
-	line "What's the hurry?"
+	text "No hurry dude."
 	done
 
 _ViridianForestEndBattleText3::
-	text "I"
-	line "give! You're good"
-	cont "at this!"
+	text "I'm"
+	line "failure."
 	prompt
 
 _ViridianFrstAfterBattleText3::
-	text "Sometimes, you"
-	line "can find stuff on"
-	cont "the ground!"
-
-	para "I'm looking for"
-	line "the stuff I"
-	cont "dropped!"
+	text "People are made"
+	line "of blood.."
 	done
 
 _ViridianForestText8::
-	text "I ran out of #"
-	line "BALLs to catch"
-	cont "#MON with!"
-
-	para "You should carry"
-	line "extras!"
+	text "I'm sad.."
 	done
 
 _ViridianForestText9::
-	text "TRAINER TIPS"
+	text "FACT:"
 
-	para "If you want to"
-	line "avoid battles,"
-	cont "stay away from"
-	cont "grassy areas!"
+	para "Most suicide in"
+	line "Japan are men."
+	cont "In 2007, 71%"
+	cont "were male."
 	done
 
 _ViridianForestText10::
-	text "For poison, use"
-	line "ANTIDOTE! Get it"
-	cont "at #MON MARTs!"
+	text "In some arab"
+	line "countries. Suicide"
+	cont "is illegal."
 	done
 
 _ViridianForestText11::
-	text "TRAINER TIPS"
+	text "FACT:"
 
-	para "Contact PROF.OAK"
-	line "via PC to get"
-	cont "your #DEX"
-	cont "evaluated!"
+	para "Shame is the"
+	line "most powerful"
+	cont "society control"
+	cont "in Japan."
 	done
 
 _ViridianForestText12::
-	text "TRAINER TIPS"
+	text "FACT:"
 
-	para "No stealing of"
-	line "#MON from"
-	cont "other trainers!"
-	cont "Catch only wild"
-	cont "#MON!"
+	para "Nearly 2000"
+	line "high school"
+	cont "students, "
+	cont "committed suicide"
+	cont "as result of"
+	cont "bullying, 2014."
 	done
 
 _ViridianForestText13::
-	text "TRAINER TIPS"
+	text "FACT:"
 
-	para "Weaken #MON"
-	line "before attempting"
-	cont "capture!"
+	para "A frequent place"
+	line "for suicide is"
+	cont "Aokigahara.."
 
-	para "When healthy,"
-	line "they may escape!"
+	para "An area at the"
+	line "base of Mt.Fuji!"
 	done
 
 _ViridianForestText14::

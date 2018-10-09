@@ -5,8 +5,6 @@ ChoosePlayerName:
 	ld a, [wCurrentMenuItem]
 	and a
 	jr z, .customName
-	ld hl, DefaultNamesPlayerList
-	call GetDefaultName
 	ld de, wPlayerName
 	call OakSpeechSlidePicLeft
 	jr .done
@@ -39,7 +37,6 @@ ChooseRivalName:
 	and a
 	jr z, .customName
 	ld hl, DefaultNamesRivalList
-	call GetDefaultName
 	ld de, wRivalName
 	call OakSpeechSlidePicLeft
 	jr .done
@@ -162,10 +159,10 @@ OakSpeechSlidePicCommon:
 DisplayIntroNameTextBox:
 	push de
 	coord hl, 0, 0
-	ld b, $a
+	ld b, $3
 	ld c, $9
 	call TextBoxBorder
-	coord hl, 3, 0
+	coord hl, 0, 0
 	ld de, .namestring
 	call PlaceString
 	pop de
@@ -182,7 +179,15 @@ DisplayIntroNameTextBox:
 	ld [wTopMenuItemY], a
 	inc a
 	ld [wMaxMenuItem], a
-	jp HandleMenuInput
+	call ClearScreen
+	call Delay3
+	ld de, Rival1Pic   ; mostra il mostro per un attimo
+	ld b, $13
+	call IntroDisplayPicCenteredOrUpperRight
+	call GBFadeOutToBlack
+	
+	
+	
 
 .namestring
 	db "NAME@"
@@ -190,9 +195,6 @@ DisplayIntroNameTextBox:
 IF DEF(_RED)
 DefaultNamesPlayer:
 	db   "NEW NAME"
-	next "RED"
-	next "ASH"
-	next "JACK"
 	db   "@"
 
 DefaultNamesRival:
@@ -219,41 +221,17 @@ DefaultNamesRival:
 	db   "@"
 ENDC
 
-GetDefaultName:
-; a = name index
-; hl = name list
-	ld b, a
-	ld c, 0
-.loop
-	ld d, h
-	ld e, l
-.innerLoop
-	ld a, [hli]
-	cp "@"
-	jr nz, .innerLoop
-	ld a, b
-	cp c
-	jr z, .foundName
-	inc c
-	jr .loop
-.foundName
-	ld h, d
-	ld l, e
-	ld de, wcd6d
-	ld bc, $14
-	jp CopyData
+
 
 IF DEF(_RED)
 DefaultNamesPlayerList:
 	db "NEW NAME@"
-	db "RED@"
-	db "ASH@"
-	db "JACK@"
+	
 DefaultNamesRivalList:
 	db "NEW NAME@"
-	db "BLUE@"
-	db "GARY@"
-	db "JOHN@"
+	db "EVILIO@"
+	db "EVILIO@"
+	db "EVILIO@"
 ENDC
 IF DEF(_BLUE)
 DefaultNamesPlayerList:

@@ -1,26 +1,12 @@
 _KogaBeforeBattleText::
-	text "KOGA: Fwahahaha!"
-
-	para "A mere child like"
-	line "you dares to"
-	cont "challenge me?"
-
-	para "Very well, I"
-	line "shall show you"
-	cont "true terror as a"
-	cont "ninja master!"
-
-	para "You shall feel"
-	line "the despair of"
-	cont "poison and sleep"
-	cont "techniques!"
+	text "Who shoot me?!"
 	done
 
 _KogaAfterBattleText::
-	text "Humph!"
-	line "You have proven"
-	cont "your worth!"
+	text "Ja, i think"
+	line "that was B.I.G."
+	cont "too.."
 
-	para "Here! Take the"
-	line "SOULBADGE!"
+	para "Here! Take my"
+	line "RED BANDANA!"
 	prompt

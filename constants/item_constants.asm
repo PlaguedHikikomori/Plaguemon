@@ -40,7 +40,7 @@ SAFARI_ROCK           EQU $16 ; overload
 	const PROTEIN       ; $24
 	const IRON          ; $25
 	const CARBOS        ; $26
-	const CALCIUM       ; $27
+	const MOTORBIKE     ; $27
 	const RARE_CANDY    ; $28
 	const DOME_FOSSIL   ; $29
 	const HELIX_FOSSIL  ; $2A

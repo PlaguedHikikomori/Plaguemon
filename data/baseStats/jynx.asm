@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 137 ; base exp yield
 INCBIN "pic/bmon/jynx.pic",0,1 ; 66, sprite dimensions
 dw JynxPicFront
-dw JynxPicBack
+dw JynxPicFront
 ; attacks known at lvl 0
 db POUND
 db LOVELY_KISS

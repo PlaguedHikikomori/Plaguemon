@@ -434,6 +434,8 @@ Mon059_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
+    db 60,FIRE_BLAST
+	db 62,EARTHQUAKE
 	db 0
 
 Mon151_EvosMoves:
@@ -501,6 +503,7 @@ Mon092_EvosMoves:
 Mon123_EvosMoves:
 ;SCYTHER
 ;Evolutions
+    db EV_ITEM,FRESH_WATER,1,MACHAMP
 	db 0
 ;Learnset
 	db 17,LEER
@@ -529,6 +532,7 @@ Mon120_EvosMoves:
 Mon009_EvosMoves:
 ;BLASTOISE
 ;Evolutions
+    db EV_ITEM,GOLD_TEETH,1,POLIWRATH
 	db 0
 ;Learnset
 	db 8,BUBBLE
@@ -582,7 +586,6 @@ Mon153_EvosMoves:
 Mon058_EvosMoves:
 ;GROWLITHE
 ;Evolutions
-	db EV_ITEM,FIRE_STONE,1,ARCANINE
 	db 0
 ;Learnset
 	db 18,EMBER
@@ -647,7 +650,7 @@ Mon079_EvosMoves:
 Mon064_EvosMoves:
 ;KADABRA
 ;Evolutions
-	db EV_TRADE,1,ALAKAZAM
+	db EV_ITEM,FIRE_STONE,1,ALAKAZAM
 	db 0
 ;Learnset
 	db 16,CONFUSION
@@ -661,7 +664,7 @@ Mon064_EvosMoves:
 Mon075_EvosMoves:
 ;GRAVELER
 ;Evolutions
-	db EV_TRADE,1,GOLEM
+	db EV_ITEM,THUNDER_STONE,1,GOLEM
 	db 0
 ;Learnset
 	db 11,DEFENSE_CURL
@@ -688,7 +691,6 @@ Mon113_EvosMoves:
 Mon067_EvosMoves:
 ;MACHOKE
 ;Evolutions
-	db EV_TRADE,1,MACHAMP
 	db 0
 ;Learnset
 	db 20,LOW_KICK
@@ -1082,7 +1084,6 @@ Mon132_EvosMoves:
 Mon052_EvosMoves:
 ;MEOWTH
 ;Evolutions
-	db EV_LEVEL,28,PERSIAN
 	db 0
 ;Learnset
 	db 12,BITE
@@ -1183,7 +1184,6 @@ Mon167_EvosMoves:
 Mon147_EvosMoves:
 ;DRATINI
 ;Evolutions
-	db EV_LEVEL,30,DRAGONAIR
 	db 0
 ;Learnset
 	db 10,THUNDER_WAVE
@@ -1196,7 +1196,6 @@ Mon147_EvosMoves:
 Mon148_EvosMoves:
 ;DRAGONAIR
 ;Evolutions
-	db EV_LEVEL,55,DRAGONITE
 	db 0
 ;Learnset
 	db 10,THUNDER_WAVE
@@ -1453,7 +1452,6 @@ Mon046_EvosMoves:
 Mon061_EvosMoves:
 ;POLIWHIRL
 ;Evolutions
-	db EV_ITEM,WATER_STONE,1,POLIWRATH
 	db 0
 ;Learnset
 	db 16,HYPNOSIS
@@ -1470,13 +1468,13 @@ Mon062_EvosMoves:
 	db 0
 ;Learnset
 	db 16,HYPNOSIS
-	db 19,WATER_GUN
+	db 60,HYPER_BEAM
 	db 0
 
 Mon013_EvosMoves:
 ;WEEDLE
 ;Evolutions
-	db EV_LEVEL,7,KAKUNA
+	db EV_LEVEL,7,METAPOD
 	db 0
 ;Learnset
 	db 0
@@ -1588,7 +1586,7 @@ Mon172_EvosMoves:
 Mon010_EvosMoves:
 ;CATERPIE
 ;Evolutions
-	db EV_LEVEL,7,METAPOD
+	db EV_LEVEL,7,KAKUNA
 	db 0
 ;Learnset
 	db 0
@@ -1829,7 +1827,7 @@ Mon178_EvosMoves:
 Mon093_EvosMoves:
 ;HAUNTER
 ;Evolutions
-	db EV_TRADE,1,GENGAR
+	db EV_ITEM,SODA_POP,1,GENGAR
 	db 0
 ;Learnset
 	db 29,HYPNOSIS
@@ -1860,7 +1858,6 @@ Mon065_EvosMoves:
 Mon017_EvosMoves:
 ;PIDGEOTTO
 ;Evolutions
-	db EV_LEVEL,36,PIDGEOT
 	db 0
 ;Learnset
 	db 5,SAND_ATTACK
@@ -1909,6 +1906,7 @@ Mon001_EvosMoves:
 Mon003_EvosMoves:
 ;VENUSAUR
 ;Evolutions
+    db EV_ITEM,GOLD_TEETH,1,DRATINI
 	db 0
 ;Learnset
 	db 7,LEECH_SEED
@@ -2205,6 +2203,7 @@ Mon008_EvosMoves:
 Mon006_EvosMoves:
 ;CHARIZARD
 ;Evolutions
+    db EV_ITEM,GOLD_TEETH,1,DRAGONAIR
 	db 0
 ;Learnset
 	db 9,EMBER

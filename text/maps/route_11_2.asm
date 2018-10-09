@@ -1,28 +1,26 @@
 _Route11EndBattleText9::
-	text "Whoa!"
-	line "You spark plug!"
+	text "Water!"
+	line "WATER!"
 	prompt
 
 _Route11AfterBattleText9::
-	text "Well, better get"
-	line "back to work."
+	text "Burns really"
+	line "sucks."
 	done
 
 _Route11BattleText10::
-	text "My #MON should"
-	line "be ready by now!"
+	text "HEELFLIP!"
 	done
 
 _Route11EndBattleText10::
-	text "Too"
-	line "much, too young!"
+	text "Bail."
 	prompt
 
 _Route11AfterBattleText10::
 	text "I better go find"
-	line "stronger ones!"
+	line "a PLAGUE DECK!"
 	done
 
 _Route11Text11::
-	text "DIGLETT's CAVE"
+	text "KAZZO's CAVE"
 	done

@@ -7,13 +7,8 @@ PokemonTower4Object:
 
 	db $0 ; signs
 
-	db $6 ; objects
-	object SPRITE_MEDIUM, $5, $a, STAY, RIGHT, $1, OPP_CHANNELER, $9
-	object SPRITE_MEDIUM, $f, $7, STAY, DOWN, $2, OPP_CHANNELER, $a
-	object SPRITE_MEDIUM, $e, $c, STAY, LEFT, $3, OPP_CHANNELER, $c
-	object SPRITE_BALL, $c, $a, STAY, NONE, $4, ELIXER
-	object SPRITE_BALL, $9, $a, STAY, NONE, $5, AWAKENING
-	object SPRITE_BALL, $c, $10, STAY, NONE, $6, HP_UP
+	db $0 ; objects
+
 
 	; warp-to
 	EVENT_DISP POKEMONTOWER_4_WIDTH, $9, $3 ; POKEMONTOWER_5

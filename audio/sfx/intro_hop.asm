@@ -1,6 +1,18 @@
-SFX_Intro_Hop_Ch4:
-	duty 2
-	unknownsfx0x10 38
-	unknownsfx0x20 12, 194, 128, 6
-	unknownsfx0x10 8
+SFX_Intro_Hop_Ch7:
+	unknownnoise0x20 4, 44, 32
+	unknownnoise0x20 4, 44, 32
+	unknownnoise0x20 4, 44, 32
+	unknownnoise0x20 3, 160, 32
+	unknownnoise0x20 4, 44, 32
+	unknownnoise0x20 4, 44, 32
+	unknownnoise0x20 4, 44, 32
+	unknownnoise0x20 3, 160, 32
+	unknownnoise0x20 4, 44, 32
+	unknownnoise0x20 4, 44, 32
+	unknownnoise0x20 4, 44, 32
+	unknownnoise0x20 3, 160, 32
+	unknownnoise0x20 4, 44, 32
+	unknownnoise0x20 4, 44, 32
+	unknownnoise0x20 4, 44, 32
+	unknownnoise0x20 3, 160, 32
 	endchannel

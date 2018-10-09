@@ -1,30 +1,31 @@
 _ViridianMartText1::
-	text "Okay! Say hi to"
-	line "PROF.OAK for me!"
+	text "Say PROF. he"
+	line "owes me money!"
 	done
 
 _ViridianMartText4::
-	text "Hey! You came from"
-	line "PALLET TOWN?"
+	text "Hey! You're the"
+	line "ugly guy i was"
+	cont "warned about?"
 	done
 
 ViridianMartParcelQuestText::
-	text "You know PROF."
-	line "OAK, right?"
+	text "So bro, this is"
+	line "what he wanted."
 
-	para "His order came in."
-	line "Will you take it"
-	cont "to him?"
+	para "He uses tons" 
+	line "of most weird"
+	cont "drugs available."
 
 	para "<PLAYER> got"
-	line "OAK's PARCEL!@@"
+	line "25-I NBOME!@@"
 
 _ViridianMartText2::
-	text "This shop sells"
-	line "many ANTIDOTEs."
+	text "Do you have a"
+	line "cigarette, my man?"
 	done
 
 _ViridianMartText3::
-	text "No! POTIONs are"
-	line "all sold out."
+	text "Any rolling"
+	line "papers?"
 	done

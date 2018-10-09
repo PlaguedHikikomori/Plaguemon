@@ -1,19 +1,17 @@
 _Route22GateText_1e704::
-	text "Only truly skilled"
-	line "trainers are"
+	text "Only really wasted"
+	line "people are"
 	cont "allowed through."
 
 	para "You don't have the"
-	line "BOULDERBADGE yet!@@"
+	line "20GAUGE SHELL yet!@@"
 
 _Route22GateText_1e715::
 	db $0
-	para "The rules are"
-	line "rules. I can't"
-	cont "let you pass."
+	para "Go deeper man."
 	done
 
 _Route22GateText_1e71a::
-	text "Oh! That is the"
-	line "BOULDERBADGE!"
-	cont "Go right ahead!@@"
+	text "Oh! Jesusfuck."
+	line "Let the poor Kurt"
+	cont "rest in peace!@@"

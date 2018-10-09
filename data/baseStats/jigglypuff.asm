@@ -10,7 +10,7 @@ db 170 ; catch rate
 db 76 ; base exp yield
 INCBIN "pic/bmon/jigglypuff.pic",0,1 ; 55, sprite dimensions
 dw JigglypuffPicFront
-dw JigglypuffPicBack
+dw JigglypuffPicFront
 ; attacks known at lvl 0
 db SING
 db 0

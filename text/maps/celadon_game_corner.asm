@@ -49,7 +49,7 @@ _CeladonGameCornerText3::
 
 	para "It's rumored that"
 	line "this place is run"
-	cont "by TEAM ROCKET."
+	cont "by PLAGUE CORP."
 	done
 
 _CeladonGameCornerText4::

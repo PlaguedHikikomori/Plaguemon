@@ -1,24 +1,28 @@
 _LoreleiBeforeBattleText::
-	text "Welcome to"
-	line "#MON LEAGUE!"
+	text "You found the"
+	line "OLYMPUS!"
 
-	para "I am LORELEI of"
-	line "the ELITE FOUR!"
+	para "We are copies"
+	line "of the world"
+	cont "rulers!"
 
-	para "No one can best"
-	line "me when it comes"
-	cont "to icy #MON!"
+	para "We manage to keep"
+	line "the matrix"
+	cont "working, but.."
 
-	para "Freezing moves"
-	line "are powerful!"
+	para "Sometimes brave"
+	line "scums like you"
+	cont "interfere with"
+	cont "our plans.."
 
-	para "Your #MON will"
-	line "be at my mercy"
-	cont "when they are"
-	cont "frozen solid!"
-
-	para "Hahaha!"
-	line "Are you ready?"
+	para "Now you must be"
+	line "destroyed."
+	
+	para "I'm JESUS CHRIST"
+	line "as you can see"
+	cont "i walk on water.."
+	cont "and i'll fuck you"
+	cont "up!"
 	done
 
 _LoreleiEndBattleText::
@@ -27,16 +31,13 @@ _LoreleiEndBattleText::
 	prompt
 
 _LoreleiAfterBattleText::
-	text "You're better"
-	line "than I thought!"
-	cont "Go on ahead!"
+	text "DAMN HUMAN!"
+	line "You'll burn"
+	cont "in hell!"
 
-	para "You only got a"
-	line "taste of #MON"
-	cont "LEAGUE power!"
 	done
 
 _LoreleiDontRunAwayText::
-	text "Someone's voice:"
-	line "Don't run away!"
+	text "A sibling voice:"
+	line "COWARD!"
 	done

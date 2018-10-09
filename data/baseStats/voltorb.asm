@@ -1,8 +1,8 @@
 db DEX_VOLTORB ; pokedex id
-db 40 ; base hp
+db 35 ; base hp
 db 30 ; base attack
 db 50 ; base defense
-db 100 ; base speed
+db 110 ; base speed
 db 55 ; base special
 db ELECTRIC ; species type 1
 db ELECTRIC ; species type 2
@@ -10,7 +10,7 @@ db 190 ; catch rate
 db 103 ; base exp yield
 INCBIN "pic/bmon/voltorb.pic",0,1 ; 55, sprite dimensions
 dw VoltorbPicFront
-dw VoltorbPicBack
+dw VoltorbPicFront
 ; attacks known at lvl 0
 db TACKLE
 db SCREECH

@@ -10,7 +10,7 @@ Route25Mons:
 		db 14,ODDISH
 		db 10,ABRA
 		db 7,METAPOD
-		db 8,CATERPIE
+		db 24,RHYHORN
 	ENDC
 	IF DEF(_BLUE)
 		db 8,CATERPIE

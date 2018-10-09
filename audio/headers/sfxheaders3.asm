@@ -287,7 +287,7 @@ SFX_Intro_Hip::
 	audio SFX_Intro_Hip, Ch4
 
 SFX_Intro_Hop::
-	audio SFX_Intro_Hop, Ch4
+	audio SFX_Intro_Hop, Ch7
 
 SFX_Intro_Raise::
 	audio SFX_Intro_Raise, Ch7

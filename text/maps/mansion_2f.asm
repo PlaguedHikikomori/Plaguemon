@@ -17,19 +17,18 @@ _Mansion2AfterBattleText1::
 
 _Mansion2Text3::
 	text "Diary: July 5"
-	line "Guyana,"
-	cont "South America"
+	line "Summer is hot"
+	cont "as fuck this year."
 
-	para "A new #MON was"
-	line "discovered deep"
-	cont "in the jungle."
+	para "I just want to"
+	line "fuck.."
+	cont "I don't care."
 	done
 
 _Mansion2Text4::
 	text "Diary: July 10"
-	line "We christened the"
-	cont "newly discovered"
-	cont "#MON, MEW."
+	line "I really need to"
+	cont "fuck now.."
 	done
 
 _Mansion2Text_520c2::

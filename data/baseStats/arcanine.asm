@@ -10,7 +10,7 @@ db 75 ; catch rate
 db 213 ; base exp yield
 INCBIN "pic/bmon/arcanine.pic",0,1 ; 77, sprite dimensions
 dw ArcaninePicFront
-dw ArcaninePicBack
+dw ArcaninePicFront
 ; attacks known at lvl 0
 db ROAR
 db EMBER

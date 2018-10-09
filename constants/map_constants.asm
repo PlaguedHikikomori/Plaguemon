@@ -156,7 +156,7 @@ ENDM
 	mapconst POKEMONTOWER_7,              9, 10 ; $94
 	mapconst LAVENDER_HOUSE_1,            4,  4 ; $95
 	mapconst LAVENDER_MART,               4,  4 ; $96
-	mapconst LAVENDER_HOUSE_2,            4,  4 ; $97
+	mapconst LAVENDER_HOUSE_2,            4,  3 ; $97
 	mapconst FUCHSIA_MART,                4,  4 ; $98
 	mapconst FUCHSIA_HOUSE_1,             4,  4 ; $99
 	mapconst FUCHSIA_POKECENTER,          4,  7 ; $9A
@@ -253,3 +253,5 @@ ENDM
 	mapconst LORELEIS_ROOM,               6,  5 ; $F5
 	mapconst BRUNOS_ROOM,                 6,  5 ; $F6
 	mapconst AGATHAS_ROOM,                6,  5 ; $F7
+	mapconst SPACE_WORLD,                 9, 10 ; $F8
+	mapconst SECRET_LAB,                  6,  5 ; $F9

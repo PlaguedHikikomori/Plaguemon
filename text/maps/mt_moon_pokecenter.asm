@@ -1,46 +1,41 @@
 _MtMoonPokecenterText1::
-	text "I've 6 # BALLs"
-	line "set in my belt."
+	text "I want to fuck"
+	line "the nurse."
 
-	para "At most, you can"
-	line "carry 6 #MON."
+	para "But she can't"
+	line "is blocked inside"
+	line "walls like a sim."
 	done
 
 _MtMoonPokecenterText3::
-	text "TEAM ROCKET"
-	line "attacks CERULEAN"
+	text "PLAGUE CORP."
+	line "attacks"
 	cont "citizens..."
 
-	para "TEAM ROCKET is"
-	line "always in the"
-	cont "news!"
+	para "Rape their women."
+	line "Kill their childs."
 	done
 
 _MagikarpSalesmanText1::
-	text "MAN: Hello, there!"
-	line "Have I got a deal"
-	cont "just for you!"
-
-	para "I'll let you have"
-	line "a swell MAGIKARP"
-	cont "for just ¥500!"
-	cont "What do you say?"
-	done
+	text "I have some"
+	line "special sushi"
+	cont "for you.."
+    done
 
 _MagikarpSalesmanNoText::
-	text "No? I'm only"
-	line "doing this as a"
-	cont "favor to you!"
+	text "Live the life,"
+	line "man!"
+	cont "Do crazy shit!"
 	done
 
 _MagikarpSalesmanNoMoneyText::
-	text "You'll need more"
-	line "money than that!"
+	text "I hate"
+	line "poor people!"
 	done
 
 _MagikarpSalesmanText2::
-	text "MAN: Well, I don't"
-	line "give refunds!"
+	text "Some tasty mutant"
+	line "fish!"
 	done
 
 _MtMoonPokecenterText5::

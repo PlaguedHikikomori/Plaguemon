@@ -1,42 +1,40 @@
 _SSAnne8Text8::
-	text "WIGGLYTUFF: Puup"
-	line "pupuu!@@"
+	text "Every second i live"
+	line "i feel pain!@@"
 
 _SSAnne8BattleText1::
 	text "I travel alone"
 	line "on my journeys!"
 
-	para "My #MON are my"
-	line "only friends!"
+	para "Seeking for"
+	line "some slaves.."
 	done
 
 _SSAnne8EndBattleText1::
-	text "My, my"
-	line "friends..."
+	text "Stupid nigga."
 	prompt
 
 _SSAnne8AfterBattleText1::
-	text "You should be"
-	line "nice to friends!"
+	text "You shouldn't be"
+	line "nice to niggers!"
 	done
 
 _SSAnne8BattleText2::
-	text "You pup! How dare"
+	text "You negro! How dare"
 	line "you barge in!"
 	done
 
 _SSAnne8EndBattleText2::
 	text "Humph!"
-	line "You rude child!"
+	line "You rude negro!"
 	prompt
 
 _SSAnne8AfterBattleText2::
-	text "I wish to be left"
-	line "alone! Get out!"
+	text "GO AWAY NEGRO!"
 	done
 
 _SSAnne8BattleText3::
-	text "I love #MON!"
+	text "I love bitches!"
 	line "Do you?"
 	done
 
@@ -46,59 +44,49 @@ _SSAnne8EndBattleText3::
 	prompt
 
 _SSAnne8AfterBattleText3::
-	text "Let me be your"
-	line "friend, OK?"
-
-	para "Then we can trade"
-	line "#MON!"
+	text "Let's share"
+	line "my girls, OK?"
 	done
 
 _SSAnne8BattleText4::
-	text "I collected these"
-	line "#MON from all"
-	cont "around the world!"
+	text "I'm escaping"
+	line "from a cage.."
 	done
 
 _SSAnne8EndBattleText4::
-	text "Oh no!"
-	line "I went around the"
-	cont "world for these!"
+	text "You're so"
+	line "violent!"
 	prompt
 
 _SSAnne8AfterBattleText4::
 	text "You hurt my poor"
-	line "worldly #MON!"
-
-	para "I demand that you"
-	line "heal them at a"
-	cont "#MON CENTER!"
+	line "vagina!"
 	done
 
 _SSAnne8Text5::
 	text "Waiter, I would"
-	line "like a cherry pie"
-	cont "please!"
+	line "like a coconaut"
+	cont "sandwich, please!"
 	done
 
 _SSAnne8Text6::
-	text "A cruise is so"
-	line "elegant yet cozy!"
+	text "I have a bad"
+	line "presentiment.."
 	done
 
 _SSAnne8Text7::
 	text "I always travel"
-	line "with WIGGLYTUFF!"
+	line "with my pneumatic"
+	cont "detwiller!"
 	done
 
 _SSAnne8Text9::
-	text "We are cruising"
-	line "around the world."
+	text "I'll see "
+	line "NEW YORK!"
 	done
 
 _SSAnne8Text11::
-	text "Ssh! I'm a GLOBAL"
-	line "POLICE agent!"
+	text "I have a gun with"
+	line "me.."
 
-	para "I'm on the trail"
-	line "of TEAM ROCKET!"
 	done

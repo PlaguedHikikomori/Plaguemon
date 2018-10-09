@@ -24,3 +24,5 @@ const_value = 0
 	const CLUB         ; 21
 	const FACILITY     ; 22
 	const PLATEAU      ; 23
+	const SPACE        ; 24
+	const RAVE         ; 25

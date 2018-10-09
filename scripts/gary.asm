@@ -108,7 +108,10 @@ GaryScript3:
 	ret
 
 GaryScript4:
-	callba Music_Cities1AlternateTempo
+	;callba Music_Cities1AlternateTempo
+	ld c, BANK(Music_Gym)    ;Musica Battuto Gary
+	ld a, MUSIC_GYM
+	call PlayMusic
 	ld a, $2
 	ld [hSpriteIndexOrTextID], a
 	call GaryScript_760c8

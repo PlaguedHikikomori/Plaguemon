@@ -1,64 +1,52 @@
 _LavenderTownText_4413c::
 	text "Do you believe in"
-	line "GHOSTs?"
+	line "reality?"
 	done
 
 _LavenderTownText_44141::
-	text "Really? So there"
-	line "are believers..."
+	text "This could be a"
+	line "mistake..."
 	done
 
 _LavenderTownText_44146::
-	text "Hahaha, I guess"
-	line "not."
-
-	para "That white hand"
-	line "on your shoulder,"
-	cont "it's not real."
+	text "Nothing is real."
+	line "Nothing."
 	done
 
 _LavenderTownText2::
-	text "This town is known"
-	line "as the grave site"
-	cont "of #MON."
-
-	para "Memorial services"
-	line "are held in"
-	cont "#MON TOWER."
+	text "Picture me that"
+	line "i pictured DEATH."
 	done
 
 _LavenderTownText3::
-	text "GHOSTs appeared"
-	line "in #MON TOWER."
-
-	para "I think they're"
-	line "the spirits of"
-	cont "#MON that the"
-	cont "ROCKETs killed."
+	text "I can hear"
+	line "my soul screams."
 	done
 
 _LavenderTownText4::
-	text "LAVENDER TOWN"
-	line "The Noble Purple"
-	cont "Town"
+	text "-.- .. .-.. .-.."
+	line "-.-- --- ..- .-."
+	cont "... . .-.. ..-."
 	done
 
 _LavenderTownText5::
-	text "New SILPH SCOPE!"
+	text "With death also"
+	line "sadness.."
 
-	para "Make the Invisible"
-	line "Plain to See!"
-
-	para "SILPH CO."
+	para "Dies.."
 	done
 
 _LavenderTownText8::
-	text "LAVENDER VOLUNTEER"
-	line "#MON HOUSE"
+	text "THE UNDERTAKER."
 	done
 
 _LavenderTownText9::
-	text "May the Souls of"
-	line "#MON Rest Easy"
-	cont "#MON TOWER"
+	text "Lasciate ogni"
+	line "speranza.."
+
+	para "Voi ch'entrate."
+	done
+	
+_LavenderTownText10::
+	text "RAVE ROOM."
 	done

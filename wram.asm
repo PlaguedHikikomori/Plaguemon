@@ -201,9 +201,10 @@ wFrequencyModifier:: ; c0f1
 wTempoModifier:: ; c0f2
 	ds 1
 
-	ds 13
-
-
+wc0f3:: ds 1
+wc0f4:: ds 1
+wc0f5:: ds 11
+	
 SECTION "Sprite State Data", WRAM0[$c100]
 
 wSpriteDataStart::
@@ -2909,8 +2910,10 @@ wSeafoamIslands5CurScript:: ; d668
 	ds 1
 wRoute18GateCurScript:: ; d669
 	ds 1
-
-	ds 78
+wSecretLabCurScript:: ;d66A
+	ds 1
+	
+	ds 77
 wGameProgressFlagsEnd::
 
 	ds 56

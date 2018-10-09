@@ -10,7 +10,7 @@ db 90 ; catch rate
 db 148 ; base exp yield
 INCBIN "pic/bmon/persian.pic",0,1 ; 77, sprite dimensions
 dw PersianPicFront
-dw PersianPicBack
+dw PersianPicFront
 ; attacks known at lvl 0
 db SCRATCH
 db GROWL

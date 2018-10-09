@@ -1,10 +1,10 @@
 db DEX_DRATINI ; pokedex id
-db 41 ; base hp
-db 64 ; base attack
-db 45 ; base defense
-db 50 ; base speed
-db 50 ; base special
-db DRAGON ; species type 1
+db 100 ; base hp
+db 100 ; base attack
+db 100 ; base defense
+db 100 ; base speed
+db 100 ; base special
+db GRASS ; species type 1
 db DRAGON ; species type 2
 db 45 ; catch rate
 db 67 ; base exp yield
@@ -16,7 +16,7 @@ db WRAP
 db LEER
 db 0
 db 0
-db 5 ; growth rate
+db 3 ; growth rate
 ; learnset
 	tmlearn 6,8
 	tmlearn 9,10,11,12,13,14

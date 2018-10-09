@@ -8,7 +8,18 @@ PlayIntro:
 	inc a
 	ld [H_AUTOBGTRANSFERENABLED], a
 	call PlayShootingStar
-	call PlayIntroScene
+	call CityExplosion
+	call EnableLCD
+	;call Monster
+	call CityExplosion
+	ld a, SFX_INTRO_RAISE
+	call PlaySound
+	call PreBlackBomb
+	ld a, SFX_INTRO_HOP
+	call PlaySound
+	call BlackBomb
+	;call Monster2
+	;call PlayIntroScene
 	call GBFadeOutToWhite
 	xor a
 	ld [hSCX], a
@@ -30,7 +41,7 @@ PlayIntroScene:
 	call IntroCopyTiles
 	ld a, 0
 	ld [wBaseCoordX], a
-	ld a, 80
+	ld a, 60
 	ld [wBaseCoordY], a
 	lb bc, 6, 6
 	call InitIntroNidorinoOAM
@@ -222,7 +233,7 @@ IntroClearCommon:
 	ret
 
 IntroPlaceBlackTiles:
-	ld a, $1
+	ld a, $E ; nero da fungo atomico..
 .loop
 	ld [hli], a
 	dec c
@@ -297,15 +308,33 @@ LoadIntroGraphics:
 	call FarCopyData2
 	ld hl, FightIntroFrontMon
 	ld de, vChars0
-	ld bc, FightIntroFrontMonEnd - FightIntroFrontMon
+	ld bc, $600
 	ld a, BANK(FightIntroFrontMon)
 	jp FarCopyData2
 
 PlayShootingStar:
 	ld b, SET_PAL_GAME_FREAK_INTRO
 	call RunPaletteCommand
+	callba LoadCopyrightAndTextBoxTiles2  ;Beta explain
+	ld a, %00011011
+	ld [rBGP], a
+	ld c, 255
+	call DelayFrames
+	call DelayFrames
+	call ClearScreen
+	call DisableLCD
+	xor a
+	ld [wCurOpponent], a
+	;call IntroDrawBlackBars
+	call LoadIntroGraphics
+	call EnableLCD
+	ld hl, rLCDC
+	res 5, [hl]
+	set 3, [hl]
+	ld c, 64
+	call DelayFrames
 	callba LoadCopyrightAndTextBoxTiles
-	ld a, %11100100
+	ld a, %00011011
 	ld [rBGP], a
 	ld c, 180
 	call DelayFrames
@@ -313,6 +342,8 @@ PlayShootingStar:
 	call DisableLCD
 	xor a
 	ld [wCurOpponent], a
+	ld a, %11100100
+	ld [rBGP], a
 	call IntroDrawBlackBars
 	call LoadIntroGraphics
 	call EnableLCD
@@ -437,15 +468,25 @@ GameFreakIntro:
 GameFreakIntroEnd:
 
 FightIntroBackMon:
-	INCBIN "gfx/intro_fight.2bpp"
+	INCBIN "gfx/red/explosion2.2bpp"
 FightIntroBackMonEnd:
+
+PreExplosion:
+	INCBIN "gfx/red/explosion3.2bpp"
+PreExplosionEnd:
+
+MonsterPic:
+	INCBIN "gfx/red/monster.2bpp"
+MonsterPicEnd:
+
+Monster2Pic:
+	INCBIN "gfx/red/monsterdead.2bpp"
+Monster2PicEnd:
 
 FightIntroFrontMon:
 
 IF DEF(_RED)
-	INCBIN "gfx/red/intro_nido_1.6x6.2bpp"
-	INCBIN "gfx/red/intro_nido_2.6x6.2bpp"
-	INCBIN "gfx/red/intro_nido_3.6x6.2bpp"
+	INCBIN "gfx/red/city.2bpp"
 ENDC
 IF DEF(_BLUE)
 	INCBIN "gfx/blue/intro_purin_1.6x6.2bpp"
@@ -456,3 +497,131 @@ ENDC
 FightIntroFrontMonEnd:
 
 	ds $10 ; blank tile
+	
+CityExplosion:
+	ld de, FightIntroFrontMon
+	ld hl, vChars1
+	lb bc, BANK(FightIntroFrontMon), $70
+	call CopyVideoData
+	coord hl, 0, 6
+	ld de, CopyrightTextString2
+	call PlaceString
+	call DelayFrames
+	ret
+
+CopyrightTextString2:
+	db   $7F,$7F,$80,$81,$82,$83,$84,$85,$86,$87,$88,$89,$8A,$8B,$8C,$8D,$8E,$8F,$7F,$7F    
+	db   $7F,$7F,$90,$91,$92,$93,$94,$95,$96,$97,$98,$99,$9A,$9B,$9C,$9D,$9E,$9F,$7F,$7F    
+	db   $7F,$7F,$A0,$A1,$A2,$A3,$A4,$A5,$A6,$A7,$A8,$A9,$AA,$AB,$AC,$AD,$AE,$AF,$7F,$7F
+    db   $7F,$7F,$B0,$B1,$B2,$B3,$B4,$B5,$B6,$B7,$B8,$B9,$BA,$BB,$BC,$BD,$BE,$BF,$7F,$7F 
+    db   $7F,$7F,$C0,$C1,$C2,$C3,$C4,$C5,$C6,$C7,$C8,$C9,$CA,$CB,$CC,$CD,$CE,$CF,$7F,$7F    
+	db   $7F,$7F,$D0,$D1,$D2,$D3,$D4,$D5,$D6,$D7,$D8,$D9,$DA,$DB,$DC,$DD,$DE,$DF,$7F,$7F    
+	db   $7F,$7F,$E0,$E1,$E2,$E3,$E4,$E5,$E6,$E7,$E8,$E9,$EA,$EB,$EC,$ED,$EE,$EF,$7F,$7F	
+	db   "@"
+
+PreBlackBomb:
+	ld de, PreExplosion
+	ld hl, vChars2 + $20
+	lb bc, BANK(PreExplosion), $2E
+	call CopyVideoData
+	coord hl, 0, 5
+	ld de, CopyrightTextString3
+	call PlaceString
+    call BombFlash
+    call BombFlash
+    call BombFlash
+    call BombFlash
+	ret
+	
+CopyrightTextString3:
+	db   $7F,$7F,$7F,$7F,$7F,$7F,$02,$03,$04,$05,$06,$07,$08,$09,$0A,$7F,$7F,$7F,$7F,$7F   
+	db   $7F,$7F,$7F,$7F,$7F,$7F,$0B,$0C,$0D,$0E,$0F,$10,$11,$12,$13,$7F,$7F,$7F,$7F,$7F     
+	db   $7F,$7F,$90,$91,$92,$93,$14,$15,$16,$17,$18,$19,$1A,$1B,$1C,$7F,$7F,$7F,$7F,$7F
+    db   $7F,$7F,$A0,$A1,$A2,$A3,$1D,$1E,$1F,$20,$21,$22,$23,$24,$25,$7F,$7F,$7F,$7F,$7F
+    db   $7F,$7F,$B0,$B1,$B2,$B3,$26,$27,$28,$29,$2A,$2B,$2C,$2D,$2E    
+	db   "@"
+
+
+	
+
+	
+	
+BlackBomb:
+	ld de, FightIntroBackMon
+	ld hl, vChars2 + $20
+	lb bc, BANK(FightIntroBackMon), $2E
+	call CopyVideoData
+	coord hl, 0, 5
+	ld de, CopyrightTextString4
+	call PlaceString
+	call BombFlash
+	call BombFlash
+	call BombFlash
+	call BombFlash
+	ret
+	
+CopyrightTextString4:
+	db   $7F,$7F,$7F,$7F,$7F,$7F,$02,$03,$04,$05,$06,$07,$08,$09,$0A,$7F,$7F,$7F,$7F,$7F   
+	db   $7F,$7F,$7F,$7F,$7F,$7F,$0B,$0C,$0D,$0E,$0F,$10,$11,$12,$13,$7F,$7F,$7F,$7F,$7F     
+	db   $7F,$7F,$90,$91,$92,$93,$14,$15,$16,$17,$18,$19,$1A,$1B,$1C,$7F,$7F,$7F,$7F,$7F
+    db   $7F,$7F,$A0,$A1,$A2,$A3,$1D,$1E,$1F,$20,$21,$22,$23,$24,$25,$7F,$7F,$7F,$7F,$7F
+    db   $7F,$7F,$B0,$B1,$B2,$B3,$26,$27,$28,$29,$2A,$2B,$2C,$2D,$2E    
+	db   "@"
+
+BombFlash:
+    ld a,[rBGP]
+	push af ; save initial palette
+	ld a,%00011011 ; 0, 1, 2, 3 (inverted colors)
+	ld [rBGP],a
+	ld c,8
+	call DelayFrames
+	xor a ; white out background
+	ld [rBGP],a
+	ld c,8
+	call DelayFrames
+	pop af
+	ld [rBGP],a ; restore initial palette
+	;call DelayFrames
+	ret
+	
+Monster:
+	ld de, MonsterPic
+	ld hl, vChars1
+	lb bc, BANK(MonsterPic), $70
+	call CopyVideoData
+	coord hl, 0, 6
+	ld de, CopyrightTextString5
+	call PlaceString
+	call DelayFrames
+	ret
+
+CopyrightTextString5:
+	db   $7F,$7F,$80,$81,$82,$83,$84,$85,$86,$87,$88,$89,$8A,$8B,$8C,$8D,$8E,$8F,$7F,$7F    
+	db   $7F,$7F,$90,$91,$92,$93,$94,$95,$96,$97,$98,$99,$9A,$9B,$9C,$9D,$9E,$9F,$7F,$7F    
+	db   $7F,$7F,$A0,$A1,$A2,$A3,$A4,$A5,$A6,$A7,$A8,$A9,$AA,$AB,$AC,$AD,$AE,$AF,$7F,$7F
+    db   $7F,$7F,$B0,$B1,$B2,$B3,$B4,$B5,$B6,$B7,$B8,$B9,$BA,$BB,$BC,$BD,$BE,$BF,$7F,$7F 
+    db   $7F,$7F,$C0,$C1,$C2,$C3,$C4,$C5,$C6,$C7,$C8,$C9,$CA,$CB,$CC,$CD,$CE,$CF,$7F,$7F    
+	db   $7F,$7F,$D0,$D1,$D2,$D3,$D4,$D5,$D6,$D7,$D8,$D9,$DA,$DB,$DC,$DD,$DE,$DF,$7F,$7F    
+	db   $7F,$7F,$E0,$E1,$E2,$E3,$E4,$E5,$E6,$E7,$E8,$E9,$EA,$EB,$EC,$ED,$EE,$EF,$7F,$7F	
+	db   "@"
+	
+Monster2:
+	ld de, Monster2Pic
+	ld hl, vChars1
+	lb bc, BANK(Monster2Pic), $70
+	call CopyVideoData
+	coord hl, 0, 6
+	ld de, CopyrightTextString6
+	call PlaceString
+	call DelayFrames
+	ret
+
+CopyrightTextString6:
+	db   $7F,$7F,$80,$81,$82,$83,$84,$85,$86,$87,$88,$89,$8A,$8B,$8C,$8D,$8E,$8F,$7F,$7F    
+	db   $7F,$7F,$90,$91,$92,$93,$94,$95,$96,$97,$98,$99,$9A,$9B,$9C,$9D,$9E,$9F,$7F,$7F    
+	db   $7F,$7F,$A0,$A1,$A2,$A3,$A4,$A5,$A6,$A7,$A8,$A9,$AA,$AB,$AC,$AD,$AE,$AF,$7F,$7F
+    db   $7F,$7F,$B0,$B1,$B2,$B3,$B4,$B5,$B6,$B7,$B8,$B9,$BA,$BB,$BC,$BD,$BE,$BF,$7F,$7F 
+    db   $7F,$7F,$C0,$C1,$C2,$C3,$C4,$C5,$C6,$C7,$C8,$C9,$CA,$CB,$CC,$CD,$CE,$CF,$7F,$7F    
+	db   $7F,$7F,$D0,$D1,$D2,$D3,$D4,$D5,$D6,$D7,$D8,$D9,$DA,$DB,$DC,$DD,$DE,$DF,$7F,$7F    
+	db   $7F,$7F,$E0,$E1,$E2,$E3,$E4,$E5,$E6,$E7,$E8,$E9,$EA,$EB,$EC,$ED,$EE,$EF,$7F,$7F	
+	db   "@"

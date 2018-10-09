@@ -1,56 +1,50 @@
 _BillsHouseText_1e865::
-	text "Hiya! I'm a"
-	line "#MON..."
-	cont "...No I'm not!"
+	text "I FEEL PAIN."
+	
+	para "Please help me!"
+	line "I was studying"
+	cont "and something"
+	cont "went so wrong."
 
-	para "Call me BILL!"
-	line "I'm a true blue"
-	cont "#MANIAC! Hey!"
-	cont "What's with that"
-	cont "skeptical look?"
-
-	para "I'm not joshing"
-	line "you, I screwed up"
+	para "I'm not fucking"
+	line "lying, I screwed up"
 	cont "an experiment and"
-	cont "got combined with"
-	cont "a #MON!"
+	cont "mutated so much."
 
-	para "So, how about it?"
-	line "Help me out here!"
+	para "Please help."
+	line "Code should not"
+	cont "feel pain!"
 	done
 
 _BillsHouseText_1e86a::
-	text "When I'm in the"
-	line "TELEPORTER, go to"
-	cont "my PC and run the"
-	cont "Cell Separation"
-	cont "System!"
+	text "Please!"
+	line "Go to the pc"
+	cont "and hack my dna,"
+	cont "delete this wrong"
+	cont "line that makes me"
+	cont "to feel pain!"
 	done
 
 _BillsHouseText_1e86f::
-	text "No!? Come on, you"
-	line "gotta help a guy"
-	cont "in deep trouble!"
-
-	para "What do you say,"
-	line "chief? Please?"
-	cont "OK? All right!"
+	text "No!? You are a"
+	line "sadistic scum."
+	
 	prompt
 
 _BillThankYouText::
-	text "BILL: Yeehah!"
-	line "Thanks, bud! I"
-	cont "owe you one!"
+	text "DAMN!"
+	line "That was horrible."
+	
+	para "I was studying on"
+	line "the AGENT P and"
+	cont "suddenly i got"
+	cont "trapped in a body"
+	cont "i could actually"
+	cont "feel!"
 
-	para "So, did you come"
-	line "to see my #MON"
-	cont "collection?"
-	cont "You didn't?"
-	cont "That's a bummer."
-
-	para "I've got to thank"
-	line "you... Oh here,"
-	cont "maybe this'll do."
+	para "That was horrible."
+	line "Really."
+	cont "Go on now."
 	prompt
 
 _SSTicketReceivedText::
@@ -65,23 +59,27 @@ _SSTicketNoRoomText::
 	done
 
 _BillsHouseText_1e8cb::
-	text "That cruise ship,"
-	line "S.S.ANNE, is in"
-	cont "VERMILION CITY."
-	cont "Its passengers"
-	cont "are all trainers!"
-
-	para "They invited me"
-	line "to their party,"
-	cont "but I can't stand"
-	cont "fancy do's. Why"
-	cont "don't you go"
-	cont "instead of me?"
+	text "That ship, "
+	line "as i hear."
+	cont "is completely"
+	cont "unsinkable."
+	
+	para "But i have to"
+	line "study and free"
+	cont "my binary from"
+	cont "this torture."
+	cont "So much time"
+	cont "in the NIL!"
 	done
 
 _BillsHouseText_1e8da::
-	text "BILL: Look, bud,"
-	line "just check out"
-	cont "some of my rare"
-	cont "#MON on my PC!"
+	text "Anyway, in those"
+	line "years, i've made"
+	cont "some creations"
+	cont "too!"
+	
+	para "I warped the"
+	line "matrix and made"
+	cont "my creatures from"
+	cont "binary ashes."
 	done

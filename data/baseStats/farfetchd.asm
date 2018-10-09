@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 94 ; base exp yield
 INCBIN "pic/bmon/farfetchd.pic",0,1 ; 66, sprite dimensions
 dw FarfetchdPicFront
-dw FarfetchdPicBack
+dw FarfetchdPicFront
 ; attacks known at lvl 0
 db PECK
 db SAND_ATTACK

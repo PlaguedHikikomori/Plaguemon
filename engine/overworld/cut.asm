@@ -79,6 +79,14 @@ InitCutAnimOAM:
 	ld a, [wCutTile]
 	cp $52
 	jr z, .grass
+	cp $56 ; barrel - Hiki, comparazione per esplosivo
+	jr z, .grass
+	cp $57 ; barrel
+	jr z, .grass
+	cp $47 ; barrel
+	jr z, .grass
+	cp $46 ; barrel - Hiki
+	jr z, .grass
 ; tree
 	ld de, Overworld_GFX + $2d0 ; cuttable tree sprite top row
 	ld hl, vChars1 + $7c0
@@ -257,7 +265,21 @@ CutTreeBlockSwaps:
 	db $35, $4C
 	db $60, $6E
 	db $0B, $0A
-	db $3C, $35
+	db $3C, $7B
 	db $3F, $35
-	db $3D, $36
+	db $3D, $7B
+	db $38, $01
+	db $39, $01
+	db $7C, $7B
+	db $7E, $7B
+	db $72, $7B
+	db $73, $7B
+	db $20, $01
+	db $21, $01
+	db $0C, $7B
+	db $0D, $7B
+	db $0E, $7B
+	db $10, $7B
+	db $11, $7B
+	db $37, $7B
 	db $FF ; list terminator

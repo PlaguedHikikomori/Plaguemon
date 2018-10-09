@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 92 ; base exp yield
 INCBIN "pic/bmon/eevee.pic",0,1 ; 55, sprite dimensions
 dw EeveePicFront
-dw EeveePicBack
+dw EeveePicFront
 ; attacks known at lvl 0
 db TACKLE
 db SAND_ATTACK

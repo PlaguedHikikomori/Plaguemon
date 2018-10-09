@@ -64,3 +64,7 @@ CoinCaseNoRoomText:
 CeladonDinerText_491b7:
 	TX_FAR _CeladonDinerText_491b7
 	db "@"
+	
+
+	
+

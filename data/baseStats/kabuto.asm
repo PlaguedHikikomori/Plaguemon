@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 119 ; base exp yield
 INCBIN "pic/bmon/kabuto.pic",0,1 ; 55, sprite dimensions
 dw KabutoPicFront
-dw KabutoPicBack
+dw KabutoPicFront
 ; attacks known at lvl 0
 db SCRATCH
 db HARDEN

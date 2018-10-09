@@ -1,16 +1,17 @@
 _Lab1Text1::
-	text "We study #MON"
-	line "extensively here."
+	text "We came here"
+	line "far from the"
+	cont "disaster.."
 
-	para "People often bring"
-	line "us rare #MON"
-	cont "for examination."
+	para "To try to re-code"
+	line "original flora"
+	cont "and fauna of this"
+	cont "world.."
 	done
 
 _Lab1Text2::
-	text "A photo of the"
-	line "LAB's founder,"
-	cont "DR.FUJI!"
+	text "A sad"
+	line "face."
 	done
 
 _Lab1Text3::

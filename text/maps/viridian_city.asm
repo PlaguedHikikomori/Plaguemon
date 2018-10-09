@@ -1,68 +1,60 @@
 _ViridianCityText1::
-	text "Those # BALLs"
-	line "at your waist!"
-	cont "You have #MON!"
+	text "I can't sleep"
+	line "at night... "
+	cont ":( :( :( :("
 
-	para "It's great that"
-	line "you can carry and"
-	cont "use #MON any"
-	cont "time, anywhere!"
+	para "Smoking Cigs..."
+	line "Masturbating... "
+	cont "make the night"
+	cont "go by!"
 	done
 
 _ViridianCityText_19122::
-	text "This #MON GYM"
-	line "is always closed."
-
-	para "I wonder who the"
-	line "LEADER is?"
+	text "A lot of childs"
+	line "enter in this"
+    cont "building very"
+	cont "often.."
 	done
-
+	
 _ViridianCityText_19127::
 	text "VIRIDIAN GYM's"
 	line "LEADER returned!"
 	done
 
 _ViridianCityText_1914d::
-	text "You want to know"
-	line "about the 2 kinds"
-	cont "of caterpillar"
-	cont "#MON?"
+	text "Did you"
+	line "have some sex"
+	cont "this morning?"
 	done
 
 _ViridianCityText_19152::
-	text "Oh, OK then!"
+	text "Ahah, LOSER!"
 	done
 
 _ViridianCityText_19157::
-	text "CATERPIE has no"
-	line "poison, but"
-	cont "WEEDLE does."
-
-	para "Watch out for its"
-	line "POISON STING!"
+	text "Well done boy,"
+	line "well done."
 	done
 
 _ViridianCityText_19175::
 	text "Oh Grandpa! Don't"
 	line "be so mean!"
 	cont "He hasn't had his"
-	cont "coffee yet."
+	cont "methadone yet."
 	done
 
 _ViridianCityText_1917a::
-	text "When I go shop in"
-	line "PEWTER CITY, I"
-	cont "have to take the"
-	cont "winding trail in"
-	cont "VIRIDIAN FOREST."
+	text "I just use"
+	line "some benzos."
+	cont "Nothing more."
 	done
 
 _ViridianCityText_19191::
-	text "You can't go"
-	line "through here!"
+	text "Where are you"
+	line "going, man?"
 
-	para "This is private"
-	line "property!"
+	para "Leave me alone"
+	line "douche!"
 	done
 
 _ViridianCityText_191ca::
@@ -98,43 +90,39 @@ _TM42NoRoomText::
 	done
 
 _ViridianCityText_1920a::
-	text "Ahh, I've had my"
-	line "coffee now and I"
-	cont "feel great!"
+	text "Ahh, I love"
+	line "methadone smell"
+	cont "in the morning!"
 
-	para "Sure you can go"
-	line "through!"
+	para "Go wherever"
+	line "you want.."
 
-	para "Are you in a"
-	line "hurry?"
+	para "Also, you hate"
+	line "captivity animals?"
 	done
 
 _ViridianCityText_1920f::
-	text "I see you're using"
-	line "a #DEX."
+	text "Yes!"
+	line "I know the feeling."
 
-	para "When you catch a"
-	line "#MON, #DEX"
-	cont "is automatically"
-	cont "updated."
+	para "Sometimes just "
+	line "to make 'em fight,"
+	cont "some others to make"
+	cont "super tasty meals!"
 
-	para "What? Don't you"
-	line "know how to catch"
-	cont "#MON?"
-
-	para "I'll show you"
-	line "how to then."
+	para "I'll catch one now"
+	line "for dinner!"
 	done
 
 _ViridianCityText_19214::
-	text "Time is money..."
-	line "Go along then."
+	text "You don't know"
+	line "what you miss."
 	done
 
 _ViridianCityText_19219::
-	text "First, you need"
-	line "to weaken the"
-	cont "target #MON."
+	text "Mmmmm!"
+	line "This will taste"
+	cont "great with mayo!"
 	done
 
 _ViridianCityText8::
@@ -144,29 +132,24 @@ _ViridianCityText8::
 	done
 
 _ViridianCityText9::
-	text "TRAINER TIPS"
-
-	para "Catch #MON"
-	line "and expand your"
-	cont "collection!"
-
-	para "The more you have,"
-	line "the easier it is"
-	cont "to fight!"
+	text "Solitude is"
+	line "painful in youth."
+	
+	para "But delicious in"
+	line "years of maturity"
 	done
 
 _ViridianCityText10::
-	text "TRAINER TIPS"
+	text "FACT:"
 
-	para "The battle moves"
-	line "of #MON are"
-	cont "limited by their"
-	cont "POWER POINTs, PP."
+	para "Fraud is delibe-"
+	line "rate deception"
+	cont "to secure unfair"
+	cont "or unlawful gain."
 
-	para "To replenish PP,"
-	line "rest your tired"
-	cont "#MON at a"
-	cont "#MON CENTER!"
+	para "Ot to deprive a"
+	line "victim of a"
+	cont "legal right."
 	done
 
 _ViridianCityText13::
@@ -175,6 +158,5 @@ _ViridianCityText13::
 	done
 
 _ViridianCityText14::
-	text "The GYM's doors"
-	line "are locked..."
+	text "Can't get in."
 	done

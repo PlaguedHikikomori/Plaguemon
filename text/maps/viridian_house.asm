@@ -1,23 +1,20 @@
 _ViridianHouseText1::
-	text "Coming up with"
-	line "nicknames is fun,"
-	cont "but hard."
-
-	para "Simple names are"
-	line "the easiest to"
-	cont "remember."
+	text "Whenever i climb"
+	line "i am followed"
+	cont "by a dog"
+    cont "called 'EGO'"
 	done
 
 _ViridianHouseText2::
 	text "My Daddy loves"
-	line "#MON too."
+	line "choking me."
 	done
 
 _ViridianHouseText_1d5b1::
-	text "SPEARY: Tetweet!"
+	text "BRAAAINS!"
 	done
 
 _ViridianHouseText4::
-	text "SPEAROW"
-	line "Name: SPEARY"
+	text "Who reads is"
+	line "a faggot."
 	done

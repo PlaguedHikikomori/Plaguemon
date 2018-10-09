@@ -25,7 +25,7 @@ Gym3CityName:
 	db "VERMILION CITY@"
 
 Gym3LeaderName:
-	db "LT.SURGE@"
+	db "LEMMY@"
 
 VermilionGymScript_5ca6d:
 	CheckEvent EVENT_2ND_LOCK_OPENED

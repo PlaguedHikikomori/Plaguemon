@@ -20,7 +20,7 @@ Gym2CityName:
 	db "CERULEAN CITY@"
 
 Gym2LeaderName:
-	db "MISTY@"
+	db "LIL PEEP@"
 
 CeruleanGymScript_5c6ed:
 	xor a

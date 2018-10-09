@@ -1,36 +1,26 @@
 _SaffronGateText_1dfe7::
-	text "I'm on guard duty."
-	line "Gee, I'm thirsty,"
-	cont "though!"
+	text "Wo Wo. Slow down."
+	line "Terrorist."
+		
+	para "This area is"
+	line "NUKED."
+	cont "Go away!"
 
-	para "Oh wait there,"
-	line "the road's closed."
 	done
 
 _SaffronGateText_8aaa9::
 	text "Whoa, boy!"
-	line "I'm parched!"
+	line "I'm so tired!"
 	cont "..."
-	cont "Huh? I can have"
-	cont "this drink?"
-	cont "Gee, thanks!@@"
+	cont "Ehm man,"
+	cont "Do you have some"
+	cont "COCAINE?@@"
 
 _SaffronGateText_1dff1::
 	db $0
-	para "..."
-	line "Glug glug..."
-	cont "..."
-	cont "Gulp..."
-	cont "If you want to go"
-	cont "to SAFFRON CITY..."
-	cont "..."
-	cont "You can go on"
-	cont "through. I'll"
-	cont "share this with"
-	cont "the other guards!"
 	done
 
 _SaffronGateText_1dff6::
 	text "Hi, thanks for"
-	line "the cool drinks!"
+	line "the cool drugs!"
 	done

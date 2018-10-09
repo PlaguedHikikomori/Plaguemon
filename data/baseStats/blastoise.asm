@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 210 ; base exp yield
 INCBIN "pic/bmon/blastoise.pic",0,1 ; 77, sprite dimensions
 dw BlastoisePicFront
-dw BlastoisePicBack
+dw BlastoisePicFront
 ; attacks known at lvl 0
 db TACKLE
 db TAIL_WHIP

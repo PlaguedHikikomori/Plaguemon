@@ -1,21 +1,14 @@
 _VermilionGymText_5cb6d::
-	text "Hey, kid! What do"
-	line "you think you're"
-	cont "doing here?"
+	text "If you win the"
+	line "gamble, i tell you"
+	cont "i'm your man!"
 
-	para "You won't live"
-	line "long in combat!"
-	cont "That's for sure!"
+	para "You win some, lose"
+	line "some, all the same"
+	cont "to me!"
 
-	para "I tell you kid,"
-	line "electric #MON"
-	cont "saved me during"
-	cont "the war!"
-
-	para "They zapped my"
-	line "enemies into"
-	cont "paralysis!"
-
-	para "The same as I'll"
-	line "do to you!"
+	para "The pleasure is to"
+	line "play, makes no"
+	cont "difference what"
+	cont "you say!"
 	done

@@ -1,14 +1,14 @@
 _DaisyInitialText::
 	text "Hi <PLAYER>!"
-	line "<RIVAL> is out at"
-	cont "Grandpa's lab."
+	line "We fucked when"
+	cont "we was childs."
 	done
 
 _DaisyOfferMapText::
-	text "Grandpa asked you"
-	line "to run an errand?"
-	cont "Here, this will"
-	cont "help you!"
+	text "It's dangerous "
+	line "to go alone."
+	
+	cont "loser!"
 	prompt
 
 _GotMapText::
@@ -18,24 +18,23 @@ _GotMapText::
 	text "!@@"
 
 _DaisyBagFullText::
-	text "You have too much"
-	line "stuff with you."
+	text "You are such a"
+	line "compulsive "
+	cont "accumulator!"
 	done
 
 _DaisyUseMapText::
-	text "Use the TOWN MAP"
-	line "to find out where"
-	cont "you are."
+	text "You can't find"
+	line "your own"
+	cont "asshole."
 	done
 
 _BluesHouseText2::
-	text "#MON are living"
-	line "things! If they"
-	cont "get tired, give"
-	cont "them a rest!"
+	text "I'm lucid only"
+	line "when i'm stoned."
 	done
 
 _BluesHouseText3::
-	text "It's a big map!"
+	text "It's a big dick!"
 	line "This is useful!"
 	done

@@ -25,7 +25,7 @@ Music_Vermilion::
 	audio Music_Vermilion, Ch0, Ch1, Ch2, Ch3
 
 Music_Lavender::
-	audio Music_Lavender, Ch0, Ch1, Ch2, Ch3
+	audio Music_Lavender, Ch1, Ch2, Ch3, Ch4
 
 Music_SSAnne::
 	audio Music_SSAnne, Ch0, Ch1, Ch2

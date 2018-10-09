@@ -6,9 +6,8 @@ _PokemonTower1Text1::
 	done
 
 _PokemonTower1Text2::
-	text "Did you come to"
-	line "pay respects?"
-	cont "Bless you!"
+	text "This place stinks"
+	line "so much.."
 	done
 
 _PokemonTower1Text3::

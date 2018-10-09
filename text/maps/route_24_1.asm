@@ -1,12 +1,12 @@
 _Route24Text_51510::
-	text "Congratulations!"
-	line "You beat our 5"
-	cont "contest trainers!@@"
+	text "WHOA."
+	line "You don't like"
+	cont "to have fun!@@"
 
 _Route24Text_51515::
 	db $0
-	para "You just earned a"
-	line "fabulous prize!"
+	para "Take this shit"
+	line "ungrateful fuck!"
 	prompt
 
 _Route24Text_5151a::
@@ -21,13 +21,12 @@ _Route24Text_51521::
 	done
 
 _Route24Text_51526::
-	text "By the way, would"
-	line "you like to join"
-	cont "TEAM ROCKET?"
-
-	para "We're a group"
-	line "dedicated to evil"
-	cont "using #MON!"
+	text "Spread the virus"
+	line "with us!"
+	
+	para "We're the"
+	line "majestic PLAGUE"
+	cont "CORPORATION!"
 
 	para "Want to join?"
 
@@ -47,18 +46,16 @@ _Route24Text_51526::
 	done
 
 _Route24Text_5152b::
-	text "Arrgh!"
-	line "You are good!"
+	text "Shit!"
 	prompt
 
 _Route24Text_51530::
-	text "With your ability,"
-	line "you could become"
-	cont "a top leader in"
-	cont "TEAM ROCKET!"
+	text "PLAGUE CORP."
+	line "needs killers"
+	cont "like you!"
 	done
 
 _Route24BattleText1::
-	text "I saw your feat"
-	line "from the grass!"
+	text "Let me jerk off"
+	line "in peace!"
 	done

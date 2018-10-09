@@ -1,10 +1,10 @@
 _CeladonMansion5Text1::
-	text "I know everything"
-	line "about the world"
-	cont "of #MON in"
-	cont "your GAME BOY!"
+	text "My dog died."
+	line "I'm feeling"
+	cont "something.."
+	cont "You would call"
+	cont "this.. PAIN!"
 
-	para "Get together with"
-	line "your friends and"
-	cont "trade #MON!"
+	para "Please, bury him"
+	line "for me, i can't."
 	done

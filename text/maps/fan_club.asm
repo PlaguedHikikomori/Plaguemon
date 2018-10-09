@@ -1,85 +1,82 @@
 PikachuFanText::
-	text "Won't you admire"
-	line "my PIKACHU's"
-	cont "adorable tail?"
+	text "HAIL SATAN!"
 	done
 
 PikachuFanBetterText::
-	text "Humph! My PIKACHU"
-	line "is twice as cute"
-	cont "as that one!"
+	text "Indulgence"
+	line "instead of"
+	cont "abstinence!"
 	done
 
 SeelFanText::
-	text "I just love my"
-	line "SEEL!"
-
-	para "It squeals when I"
-	line "hug it!"
+	text "Vengeance!"
+	
+	para "Instead of turning"
+	line "the other cheek!"
 	done
 
 SeelFanBetterText::
-	text "Oh dear!"
+	text "Kindness!"
 
-	para "My SEEL is far"
-	line "more attractive!"
+	para "For who deserve"
+	line "it!"
 	done
 
 FanClubPikachuText::
-	text "PIKACHU: Chu!"
-	line "Pikachu!"
+	text "SAAAAA!"
 	done
 
 FanClubSeelText::
-	text "SEEL: Kyuoo!"
+	text "TAAAAAN!"
 	done
 
 FanClubMeetChairText::
-	text "I chair the"
-	line "#MON Fan Club!"
+	text "I'm the master"
+	line "of ceremony!"
 
-	para "I have collected"
-	line "over 100 #MON!"
+	para "We're praying"
+	line "the LORD!"
 
-	para "I'm very fussy"
-	line "when it comes to"
-	cont "#MON!"
+	para "Trying to make"
+	line "it come."
 
-	para "So..."
+	para "And save our"
+	line "code souls!"
 
-	para "Did you come"
-	line "visit to hear"
-	cont "about my #MON?"
+	para "Do you want"
+	line "to join?"
 	done
 
 FanClubChairStoryText::
-	text "Good!"
-	line "Then listen up!"
+	text "Perfect!"
+	
+	para "Now repeat with"
+	line "me:"
+	
 
-	para "My favorite"
-	line "RAPIDASH..."
+	para "My fear..."
+	line "My secrets.."
+	cont "My blood.."
+	cont "My devotion..."
+	cont "My hate..."
+	cont "My forgiveness..."
+	cont "My pain..."
+	cont "My pleasure.."
+	cont "My love.."
+	cont "My disdain.."
 
-	para "It...cute..."
-	line "lovely...smart..."
-	cont "plus...amazing..."
-	cont "you think so?..."
-	cont "oh yes...it..."
-	cont "stunning..."
-	cont "kindly..."
-	cont "love it!"
+	para "I DO NOT BELONG"
+	cont "TO THESE THINGS!"
+	cont "THESE THINGS"
+	cont "BELONG TO ME!"
+	cont "I DO NOT BELONG"
+	cont "TO THESE THING!"
+	cont "THESE THINGS"
+	cont "BELONG TO ME!"
 
-	para "Hug it...when..."
-	cont "sleeping...warm"
-	cont "and cuddly..."
-	cont "spectacular..."
-	cont "ravishing..."
-	cont "...Oops! Look at"
-	cont "the time! I kept"
-	cont "you too long!"
-
-	para "Thanks for hearing"
-	line "me out! I want"
-	cont "you to have this!"
+	para "Thanks for helping"
+	line "us! Now set things"
+	cont "on fire!"
 	prompt
 
 ReceivedBikeVoucherText::
@@ -89,35 +86,33 @@ ReceivedBikeVoucherText::
 	text "!@@"
 
 ExplainBikeVoucherText::
-	text ""
-	para "Exchange that for"
-	line "a BICYCLE!"
+	text "You can find TNT"
+	para "in the shop!"
+	
+	para "However give this"
+	line "GAS TANK to MAX."
 
-	para "Don't worry, my"
-	line "FEAROW will FLY"
-	cont "me anywhere!"
+	para "Gasoline is pretty"
+	line "rare!"
 
-	para "So, I don't need a"
-	line "BICYCLE!"
-
-	para "I hope you like"
-	line "cycling!"
+	para "He will reward"
+	line "you!"
 	done
 
 FanClubNoStoryText::
-	text "Oh. Come back"
-	line "when you want to"
-	cont "hear my story!"
+	text "WHAT?!"
+	line "YOU WILL BURN"
+	cont "IN HELL FLAMES!"
 	done
 
 FanClubChairFinalText::
-	text "Hello, <PLAYER>!"
+	text "Hail, <PLAYER>!"
 
-	para "Did you come see"
-	line "me about my"
-	cont "#MON again?"
+	para "Did you come preach"
+	line "with us"
+	cont "again?"
 
-	para "No? Too bad!"
+	para "No? SHAME!"
 	done
 
 FanClubBagFullText::
@@ -126,18 +121,16 @@ FanClubBagFullText::
 	done
 
 _FanClubText6::
-	text "Our Chairman is"
-	line "very vocal about"
-	cont "#MON."
+	text "SAAA--TAAN!"
 	done
 
 _FanClubText7::
 	text "Let's all listen"
 	line "politely to other"
-	cont "trainers!"
+	cont "adepts!"
 	done
 
 _FanClubText8::
-	text "If someone brags,"
-	line "brag right back!"
+	text "We should left"
+	line "our code bodies!"
 	done

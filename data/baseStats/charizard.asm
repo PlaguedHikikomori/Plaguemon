@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 209 ; base exp yield
 INCBIN "pic/bmon/charizard.pic",0,1 ; 77, sprite dimensions
 dw CharizardPicFront
-dw CharizardPicBack
+dw CharizardPicFront
 ; attacks known at lvl 0
 db SCRATCH
 db GROWL

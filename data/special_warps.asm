@@ -86,6 +86,8 @@ FlyWarpDataPtr:
 	dw Route4FlyWarp
 	db ROUTE_10, 0
 	dw Route10FlyWarp
+	db SPACE_WORLD, 0
+	dw SpaceWorldFlyWarp
 
 ; Original Format:
 ;   [Event Displacement][Y-block][X-block][Y-sub_block][X-sub_block]
@@ -117,3 +119,5 @@ Route4FlyWarp:
 	FLYWARP_DATA ROUTE_4_WIDTH,          6, 11
 Route10FlyWarp:
 	FLYWARP_DATA ROUTE_10_WIDTH,        20, 11
+SpaceWorldFlyWarp:
+    FLYWARP_DATA SPACE_WORLD_WIDTH,      8,  4

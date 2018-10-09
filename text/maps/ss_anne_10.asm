@@ -1,68 +1,65 @@
 _SSAnne10Text8::
-	text "MACHOKE: Gwoh!"
-	line "Goggoh!@@"
+	text "PAAAAIN!"
+	line "@@"
 
 _SSAnne10BattleText1::
 	text "You know what they"
-	line "say about sailors"
-	cont "and fighting!"
+	line "say about tattoos"
+	cont "and infections!"
 	done
 
 _SSAnne10EndBattleText1::
-	text "Right!"
-	line "Good fight, mate!"
+	text "A little spit"
+	line "will heal all!"
 	prompt
 
 _SSAnne10AfterBattleText1::
-	text "Haha! Want to be"
-	line "a sailor, mate?"
+	text "Haha! Want a"
+	line "rad tattoo, mate?"
 	done
 
 _SSAnne10BattleText2::
-	text "My sailor's pride"
-	line "is at stake!"
+	text "I make ink with"
+	line "carbon and spit!"
 	done
 
 _SSAnne10EndBattleText2::
-	text "Your"
-	line "spirit sank me!"
+	text "You"
+	line "stink!"
 	prompt
 
 _SSAnne10AfterBattleText2::
-	text "Did you see the"
-	line "FISHING GURU in"
-	cont "VERMILION CITY?"
+	text "I have to"
+	line "find some"
+	cont "needles.."
 	done
 
 _SSAnne10BattleText3::
-	text "Us sailors have"
-	line "#MON too!"
+	text "Would you like"
+	line "a boat tattoo?"
 	done
 
 _SSAnne10EndBattleText3::
 	text "OK, "
-	line "you're not bad."
+	line "Something else.."
 	prompt
 
 _SSAnne10AfterBattleText3::
-	text "We caught all our"
-	line "#MON while"
-	cont "out at sea!"
+	text "No infinite"
+	line "symbols please."
 	done
 
 _SSAnne10BattleText4::
-	text "I like feisty"
-	line "kids like you!@@"
+	text "That skin is"
+	line "so white!@@"
 
 _SSAnne10EndBattleText4::
 	text "Argh!"
-	line "Lost it!"
 	prompt
 
 _SSAnne10AfterBattleText4::
-	text "Sea #MON live"
-	line "in deep water."
-	cont "You'll need a ROD!"
+	text "---BZZ---"
+	line "---BZZ---"
 	done
 
 _SSAnne10BattleText5::
@@ -83,30 +80,18 @@ _SSAnne10AfterBattleText5::
 	done
 
 _SSAnne10BattleText6::
-	text "Hello stranger!"
-	line "Stop and chat!"
-
-	para "All my #MON"
-	line "are from the sea!"
+	text "I love my ak-47!"
 	done
 
 _SSAnne10EndBattleText6::
-	text "Darn!"
-	line "I let that one"
-	cont "get away!"
+	text "JIHAD!"
 	prompt
 
 _SSAnne10AfterBattleText6::
-	text "I was going to"
-	line "make you my"
-	cont "assistant too!"
+	text "I will die"
+	line "with this ship."
 	done
 
 _SSAnne10Text7::
-	text "My buddy, MACHOKE,"
-	line "is super strong!"
-
-	para "He has enough"
-	line "STRENGTH to move"
-	cont "big rocks!"
+	text "Third class sucks."
 	done

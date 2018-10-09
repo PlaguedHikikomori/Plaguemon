@@ -1,26 +1,27 @@
 _SSAnne5Text1::
 	text "The party's over."
-	line "The ship will be"
-	cont "departing soon."
+	line "We'll die"
+	cont "soon."
 	done
 
 _SSAnne5Text2::
-	text "Scrubbing decks"
-	line "is hard work!"
+	text "I need some"
+	line "anal sex!"
 	done
 
 _SSAnne5Text3::
-	text "Urf. I feel ill."
+	text "So many nights"
+	line "awake.."
 
-	para "I stepped out to"
-	line "get some air."
+	para "To make this shitty"
+	line "game."
 	done
 
 _SSAnne5BattleText1::
 	text "Hey matey!"
 
 	para "Let's do a little"
-	line "jig!"
+	line "script on dick!"
 	done
 
 _SSAnne5EndBattleText1::
@@ -29,24 +30,22 @@ _SSAnne5EndBattleText1::
 	prompt
 
 _SSAnne5AfterBattleText1::
-	text "How many kinds of"
-	line "#MON do you"
-	cont "think there are?"
+	text "Too much tattooers"
+	line "nowadays.."
 	done
 
 _SSAnne5BattleText2::
-	text "Ahoy there!"
-	line "Are you seasick?"
+	text "Do you fear"
+	line "needles?"
 	done
 
 _SSAnne5EndBattleText2::
-	text "I was"
-	line "just careless!"
+	text "SHIT!"
 	prompt
 
 _SSAnne5AfterBattleText2::
 	text "My Pa said there"
 	line "are 100 kinds of"
-	cont "#MON. I think"
+	cont "illness. I think"
 	cont "there are more."
 	done

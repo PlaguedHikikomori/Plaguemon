@@ -1,20 +1,22 @@
 _VermilionHouse2Text_560b1::
-	text "I'm the FISHING"
-	line "GURU!"
+	text "The waters"
+	line "of this world"
+	cont "became so polluted"
+	cont "tons of fishes"
+	cont "mutated!"
+	
+	para "Did you"
+	line "noticed?"
 
-	para "I simply Looove"
-	line "fishing!"
-
-	para "Do you like to"
-	line "fish?"
+	
 	done
 
 _VermilionHouse2Text_560b6::
-	text "Grand! I like"
-	line "your style!"
-
-	para "Take this and"
-	line "fish, young one!"
+	text "Damn, so true."
+	
+	para "If you like,"
+	line "you can capture"
+	cont "some of them!"
 
 	para "<PLAYER> received"
 	line "an @"
@@ -23,31 +25,26 @@ _VermilionHouse2Text_560b6::
 
 _VermilionHouse2Text_560bb::
 	db $0
-	para "Fishing is a way"
-	line "of life!"
-
-	para "From the seas to"
-	line "rivers, go out"
-	cont "and land the big"
-	cont "one, young one!"
+	para "Kill 'em all."
+	
+	para "Also, you could"
+	line "find really strange"
+	cont "things in those"
+	cont "waters!"
 	done
 
 _VermilionHouse2Text_560c0::
-	text "Oh... That's so"
-	line "disappointing..."
+	text "Are you blind?"
 	done
 
 _VermilionHouse2Text_560c5::
-	text "Hello there,"
-	line "<PLAYER>!"
+	text "<PLAYER>!"
 
-	para "How are the fish"
-	line "biting?"
+	para "Had any nice"
+	line "meal?"
 	done
 
 _VermilionHouse2Text_560ca::
-	text "Oh no!"
-
-	para "You have no room"
-	line "for my gift!"
+	text "Don't be so"
+	line "greedy!"
 	done

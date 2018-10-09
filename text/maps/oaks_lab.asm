@@ -1,51 +1,50 @@
 _OaksLabGaryText1::
-	text "<RIVAL>: Yo"
-	line "<PLAYER>! Gramps"
-	cont "isn't around!"
+	text "EVILIO: Gwarl"
+	line "Gwarl"
+	cont "Gwarl!"
 	done
 
 _OaksLabText40::
-	text "<RIVAL>: Heh, I"
-	line "don't need to be"
-	cont "greedy like you!"
+	text "EVILIO: Gwarl"
+	line "Gwarl"
+	cont "Gwarl! GWARL!"
 
-	para "Go ahead and"
-	line "choose, <PLAYER>!"
+	para "Gwarl"
+	line "Gwarl!"
 	done
 
 _OaksLabText41::
-	text "<RIVAL>: My"
-	line "#MON looks a"
-	cont "lot stronger."
+	text "EVILIO: Gwa-"
+	line "ar-arl!"
+	cont "Gwawawa!"
 	done
 
 _OaksLabText39::
-	text "Those are #"
-	line "BALLs. They"
-	cont "contain #MON!"
+	text "It's a Plague "
+	line "VIAL."
+	cont "Weird shit."
 	done
 
 _OaksLabCharmanderText::
-	text "So! You want the"
-	line "fire #MON,"
-	cont "CHARMANDER?"
+	text "Do you prefer"
+	line "to embrace"
+	cont "SATANISM?"
 	done
 
 _OaksLabSquirtleText::
-	text "So! You want the"
-	line "water #MON,"
-	cont "SQUIRTLE?"
+	text "Do you prefer"
+	line "the perverted"
+	cont "SEX path?"
 	done
 
 _OaksLabBulbasaurText::
-	text "So! You want the"
-	line "plant #MON,"
-	cont "BULBASAUR?"
+	text "Do you prefer"
+	line "the twisted"
+	cont "DRUGS way?"
 	done
 
 _OaksLabMonEnergeticText::
-	text "This #MON is"
-	line "really energetic!"
+	text "Ok"
 	prompt
 
 _OaksLabReceivedMonText::
@@ -55,65 +54,65 @@ _OaksLabReceivedMonText::
 	text "!@@"
 
 _OaksLabLastMonText::
-	text "That's PROF.OAK's"
-	line "last #MON!"
+	text "Stop, you cheap"
+	line "scum!"
 	done
 
 _OaksLabText_1d2f0::
-	text "OAK: Now, <PLAYER>,"
-	line "which #MON do"
-	cont "you want?"
+	text "PROF: So"
+	line "take one of"
+	cont "those vials."
 	done
 
 _OaksLabText_1d2f5::
-	text "OAK: If a wild"
-	line "#MON appears,"
-	cont "your #MON can"
-	cont "fight against it!"
+	text "PROF: Kill"
+	line "monsters,"
+	cont "or make them"
+	cont "your slaves!"
 	done
 
 _OaksLabText_1d2fa::
-	text "OAK: <PLAYER>,"
-	line "raise your young"
-	cont "#MON by making"
-	cont "it fight!"
+	text "PROF: <PLAYER>,"
+	line "raise your "
+	cont "PLAGUEMON by"
+	cont "making it fight!"
 	done
 
 _OaksLabDeliverParcelText1::
-	text "OAK: Oh, <PLAYER>!"
+	text "PROF: Oh, <PLAYER>!"
 
 	para "How is my old"
-	line "#MON?"
+	line "PLAGUEMON?"
 
 	para "Well, it seems to"
-	line "like you a lot."
+	line "be pretty ill."
 
-	para "You must be"
-	line "talented as a"
-	cont "#MON trainer!"
+	para "Well done."
+	line "Treat this "
+	cont "things as shit."
 
 	para "What? You have"
 	line "something for me?"
 
 	para "<PLAYER> delivered"
-	line "OAK's PARCEL.@@"
+	line "25-I NBOME.@@"
 
 _OaksLabDeliverParcelText2::
 	text ""
 	para "Ah! This is the"
-	line "custom # BALL"
+	line "research chemical"
 	cont "I ordered!"
 	cont "Thank you!"
 	done
 
 _OaksLabAroundWorldText::
-	text "#MON around the"
-	line "world wait for"
-	cont "you, <PLAYER>!"
+	text "Now, get out of"
+	line "my way."
+	cont "<PLAYER>!"
 	done
 
 _OaksLabGivePokeballsText1::
-	text "OAK: You can't get"
+	text "PROF: You can't get"
 	line "detailed data on"
 	cont "#MON by just"
 	cont "seeing them."
@@ -133,19 +132,19 @@ _OaksLabGivePokeballsText2::
 	cont "it's fair game."
 
 	para "Just throw a #"
-	line "BALL at it and try"
+	line "VIAL at it and try"
 	line "to catch it!"
 
 	para "This won't always"
 	line "work, though."
 
-	para "A healthy #MON"
+	para "#MONs"
 	line "could escape. You"
 	cont "have to be lucky!"
 	done
 
 _OaksLabPleaseVisitText::
-	text "OAK: Come see me"
+	text "PROF: Come see me"
 	line "sometimes."
 
 	para "I want to know how"
@@ -154,7 +153,7 @@ _OaksLabPleaseVisitText::
 	done
 
 _OaksLabText_1d31d::
-	text "OAK: Good to see "
+	text "PROF: Good to see "
 	line "you! How is your "
 	cont "#DEX coming? "
 	cont "Here, let me take"
@@ -162,9 +161,9 @@ _OaksLabText_1d31d::
 	prompt
 
 _OaksLabText_1d32c::
-	text "It's encyclopedia-"
-	line "like, but the"
-	cont "pages are blank!"
+	text "It's like"
+	line "a geigher"
+	cont "counter!"
 	done
 
 _OaksLabText8::
@@ -172,24 +171,24 @@ _OaksLabText8::
 	done
 
 _OaksLabText_1d340::
-	text "PROF.OAK is the"
-	line "authority on"
-	cont "#MON!"
+	text "THE PROF was the"
+	line "authority here"
+	cont "but now.."
 
-	para "Many #MON"
-	line "trainers hold him"
-	cont "in high regard!"
+	para "This place is"
+	line "so sad. He"
+	cont "is just stuck."
 	done
 
 _OaksLabRivalWaitingText::
-	text "<RIVAL>: Gramps!"
-	line "I'm fed up with"
-	cont "waiting!"
+	text "EVILIO: GWARL!"
+	line "Gwa-gwa-hwa"
+	cont "warrr!"
 	done
 
 _OaksLabChooseMonText::
-	text "OAK: <RIVAL>?"
-	line "Let me think..."
+	text "PROF: EVILIO?"
+	line "OMG."
 
 	para "Oh, that's right,"
 	line "I told you to"
@@ -198,193 +197,192 @@ _OaksLabChooseMonText::
 	para "Here, <PLAYER>!"
 
 	para "There are 3"
-	line "#MON here!"
+	line "PLAGUEMON here!"
 
 	para "Haha!"
 
 	para "They are inside"
-	line "the # BALLs."
+	line "the PLAGUE VIALS."
 
 	para "When I was young,"
-	line "I was a serious"
-	cont "#MON trainer!"
+	line "I was happy."
+	cont "now.."
 
-	para "In my old age, I"
-	line "have only 3 left,"
-	cont "but you can have"
-	cont "one! Choose!"
+	para "It's too late"
+	line "Choose one."
+	cont "Hope god will"
+	cont "have mercy!"
 	done
 
 _OaksLabRivalInterjectionText::
-	text "<RIVAL>: Hey!"
-	line "Gramps! What"
-	cont "about me?"
+	text "EVILIO: GWA!"
+	line "Gwarls! Warl"
+	cont "wars war?"
 	done
 
 _OaksLabBePatientText::
-	text "OAK: Be patient!"
-	line "<RIVAL>, you can"
-	cont "have one too!"
+	text "PROF: EVILIO!"
+	line "Please."
+	cont "leave him alone!"
 	done
 
 _OaksLabLeavingText::
-	text "OAK: Hey! Don't go"
-	line "away yet!"
+	text "PROF: No hurry"
+	line "man.."
 	done
 
 _OaksLabRivalPickingMonText::
-	text "<RIVAL>: I'll take"
-	line "this one, then!"
+	text "EVILIO: GWARL"
+	line "GWA-GWARL!!!"
 	done
 
 _OaksLabRivalReceivedMonText::
-	text "<RIVAL> received"
+	text "EVILIO stealed"
 	line "a @"
 	TX_RAM wcd6d
 	text "!@@"
 
 _OaksLabRivalChallengeText::
-	text "<RIVAL>: Wait"
-	line "<PLAYER>!"
-	cont "Let's check out"
-	cont "our #MON!"
-
-	para "Come on, I'll take"
-	line "you on!"
-	done
+	text "EVILIO: GWARL"
+	line "GW<PLAYER>!"
+	cont "GWA GWA GWA"
+	cont "W A R!"
+    done
 
 _OaksLabText_1d3be::
-	text "WHAT?"
-	line "Unbelievable!"
-	cont "I picked the"
-	cont "wrong #MON!"
+	text "GWARL?!"
+	line "Gwawawawa!"
+	cont "GWORL"
+	cont "GWOOOST!"
 	prompt
 
 _OaksLabText_1d3c3::
-	text "<RIVAL>: Yeah! Am"
-	line "I great or what?"
+	text "EVILIO: GWARL!"
+	line "GWARL! GWARL!"
 	prompt
 
 _OaksLabRivalToughenUpText::
-	text "<RIVAL>: Okay!"
-	line "I'll make my"
-	cont "#MON fight to"
-	cont "toughen it up!"
+	text "EVILIO: GWERL!"
+	line "GWI GWEI"
+	cont "GWIGHT"
+	cont "GWARP!"
 
-	para "<PLAYER>! Gramps!"
-	line "Smell you later!"
+	para "GW<PLAYER>! GWAR!"
+	line "GWERL GWU GWAR!"
 	done
 
 _OaksLabText21::
-	text "<RIVAL>: Gramps!"
+	text "EVILIO: GWAMP!"
 	done
 
 _OaksLabText22::
-	text "<RIVAL>: What did"
-	line "you call me for?"
+	text "EVILIO: GW"
+	line "GW GW GW"
 	done
 
 _OaksLabText23::
-	text "OAK: Oh right! I"
+	text "PROF: Oh right! I"
 	line "have a request"
-	cont "of you two."
+	cont "for you tw.."
+	cont "one!"
 	done
 
 _OaksLabText24::
 	text "On the desk there"
-	line "is my invention,"
-	cont "#DEX!"
+	line "is that old shit"
+	cont "PLAGUEX!"
 
-	para "It automatically"
-	line "records data on"
-	cont "#MON you've"
-	cont "seen or caught!"
+	para "You know hwo"
+	line "it works"
+	cont "right?"
+	cont "Nerd!"
 
-	para "It's a hi-tech"
-	line "encyclopedia!"
+	para "It's the reason"
+	line "you are here."
 	done
 
 _OaksLabText25::
-	text "OAK: <PLAYER> and"
-	line "<RIVAL>! Take"
-	cont "these with you!"
+	text "PROF: <PLAYER> and"
+	line ".., no. Just"
+	cont "<PLAYER>!"
 
 	para "<PLAYER> got"
-	line "#DEX from OAK!@@"
+	line "#DEX!@@"
 
 _OaksLabText26::
 	text "To make a complete"
 	line "guide on all the"
-	cont "#MON in the"
+	cont "monsters in the"
 	cont "world..."
 
 	para "That was my dream!"
 
 	para "But, I'm too old!"
-	line "I can't do it!"
+	line "i'm just a unuseful"
+	cont "piece of shit!"
 
-	para "So, I want you two"
-	line "to fulfill my"
-	cont "dream for me!"
+	para "and you should"
+	line "not even be"
+	cont "here!"
 
-	para "Get moving, you"
-	line "two!"
+	para "20 years passed"
+	line "TWENTY!"
 
-	para "This is a great"
-	line "undertaking in"
-	cont "#MON history!"
+	para "Go get a real life"
+	line "Just forget!"
+	cont "FORGET!"
 	done
 
 _OaksLabText27::
-	text "<RIVAL>: Alright"
-	line "Gramps! Leave it"
-	cont "all to me!"
+	text "EVILIO: GWA?!"
+	line "Gwamps! GWIT"
+	cont "GME!"
 
-	para "<PLAYER>, I hate to"
-	line "say it, but I"
-	cont "don't need you!"
+	para "GW<PLAYER>, GWATE"
+	line "GWUT"
+	cont "FFFFF!"
 
-	para "I know! I'll"
-	line "borrow a TOWN MAP"
-	cont "from my sis!"
+	para "FUCK YOU"
+	line "FUCK"
+	cont "SHIT"
 
-	para "I'll tell her not"
-	line "to lend you one,"
-	cont "<PLAYER>! Hahaha!"
+	para "GWWW"
+	line "GWELEASE GME"
+	cont "<PLAYER>!!"
 	done
 
 _OaksLabText_1d405::
-	text "I study #MON as"
-	line "PROF.OAK's AIDE."
+	text "I never had"
+	line "anything to do."
 	done
 
 _OaksLabText_441cc::
-	text "#DEX comp-"
+	text "PLAGUEX comp-"
 	line "letion is:"
 
 	para "@"
 	TX_NUM hDexRatingNumMonsSeen, 1, 3
-	text " #MON seen"
+	text " PLAGUEMON lurked"
 	line "@"
 	TX_NUM hDexRatingNumMonsOwned, 1, 3
-	text " #MON owned"
+	text " PLAGUEMON trapped"
 
-	para "PROF.OAK's"
+	para "THE PROF"
 	line "Rating:"
 	prompt
 
 _OaksLabText_44201::
-	text "You still have"
-	line "lots to do."
-	cont "Look for #MON"
-	cont "in grassy areas!"
+	text "You lazy"
+	line "annoying poser."
+	cont "Hope you'll"
+	cont "die soon!"
 	done
 
 _OaksLabText_44206::
-	text "You're on the"
-	line "right track! "
-	cont "Get a FLASH HM"
-	cont "from my AIDE!"
+	text "Almost"
+	line "a full retard! "
+	cont "A wasted"
+	cont "day today!"
 	done
 
 _OaksLabText_4420b::

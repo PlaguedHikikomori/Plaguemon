@@ -87,6 +87,7 @@ const_value = 1
 	const SPRITE_LYING_OLD_MAN_UNUSED_1    ; $46
 	const SPRITE_LYING_OLD_MAN_UNUSED_2    ; $47
 	const SPRITE_LYING_OLD_MAN             ; $48
+	const SPRITE_DEAD_DOG
 
 ; different kinds of people events
 ITEM    EQU $80

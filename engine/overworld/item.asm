@@ -1,4 +1,5 @@
 PickUpItem:
+   	;call StopAllSounds           -Soluzione temporanea quando prendi oggetti con moto..
 	call EnableAutoTextBoxDrawing
 
 	ld a, [hSpriteIndexOrTextID]

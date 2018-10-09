@@ -22,7 +22,7 @@ TypeNames:
 	dw .Normal
 	dw .Normal
 
-	dw .Fire
+	dw .Satan
 	dw .Water
 	dw .Grass
 	dw .Electric
@@ -31,18 +31,18 @@ TypeNames:
 	dw .Dragon
 
 .Normal:   db "NORMAL@"
-.Fighting: db "FIGHTING@"
-.Flying:   db "FLYING@"
-.Poison:   db "POISON@"
-.Fire:     db "FIRE@"
-.Water:    db "WATER@"
-.Grass:    db "GRASS@"
-.Electric: db "ELECTRIC@"
-.Psychic:  db "PSYCHIC@"
-.Ice:      db "ICE@"
-.Ground:   db "GROUND@"
-.Rock:     db "ROCK@"
-.Bird:     db "BIRD@"
-.Bug:      db "BUG@"
-.Ghost:    db "GHOST@"
-.Dragon:   db "DRAGON@"
+.Fighting: db "VIOLENCE@"
+.Flying:   db "AERIAL@"
+.Poison:   db "ACID@"
+.Satan:    db "SATANIC@"
+.Water:    db "SEX@"
+.Grass:    db "DRUGS@"
+.Electric: db "NUCLEAR@"
+.Psychic:  db "MENTAL@"
+.Ice:      db "CHEMICAL@"
+.Ground:   db "NATURAL@"
+.Rock:     db "MINERAL@"
+.Bird:     db "ALIEN@"
+.Bug:      db "MILITARY@"
+.Ghost:    db "DEATH@"
+.Dragon:   db "DIVINITY@"

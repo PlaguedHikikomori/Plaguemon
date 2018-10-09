@@ -10,9 +10,9 @@ db 120 ; catch rate
 db 71 ; base exp yield
 INCBIN "pic/bmon/kakuna.pic",0,1 ; 55, sprite dimensions
 dw KakunaPicFront
-dw KakunaPicBack
+dw KakunaPicFront
 ; attacks known at lvl 0
-db HARDEN
+db PIN_MISSILE
 db 0
 db 0
 db 0

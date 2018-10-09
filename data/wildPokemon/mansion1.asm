@@ -1,14 +1,14 @@
 MansionMons1:
 	db $0A
 	IF DEF(_RED)
-		db 32,KOFFING
-		db 30,KOFFING
+		db 32,PERSIAN
+		db 30,PERSIAN
 		db 34,PONYTA
 		db 30,PONYTA
-		db 34,GROWLITHE
+		db 34,ARCANINE
 		db 32,PONYTA
-		db 30,GRIMER
-		db 28,PONYTA
+		db 30,ARCANINE
+		db 28,ARCANINE
 		db 37,WEEZING
 		db 39,MUK
 	ENDC

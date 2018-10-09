@@ -10,7 +10,7 @@ db 225 ; catch rate
 db 83 ; base exp yield
 INCBIN "pic/bmon/horsea.pic",0,1 ; 55, sprite dimensions
 dw HorseaPicFront
-dw HorseaPicBack
+dw HorseaPicFront
 ; attacks known at lvl 0
 db BUBBLE
 db 0

@@ -278,9 +278,9 @@ MtMoon3Text6:
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	SetEvent EVENT_GOT_DOME_FOSSIL
-	ld a, $4
-	ld [wMtMoon3CurScript], a
-	ld [wCurMapScript], a
+	;ld a, $4
+	;ld [wMtMoon3CurScript], a
+	;ld [wCurMapScript], a
 .asm_49f21
 	jp TextScriptEnd
 
@@ -306,9 +306,9 @@ MtMoon3Text7:
 	ld [wMissableObjectIndex], a
 	predef HideObject
 	SetEvent EVENT_GOT_HELIX_FOSSIL
-	ld a, $4
-	ld [wMtMoon3CurScript], a
-	ld [wCurMapScript], a
+	;ld a, $4
+	;ld [wMtMoon3CurScript], a
+	;ld [wCurMapScript], a
 .asm_49f61
 	jp TextScriptEnd
 

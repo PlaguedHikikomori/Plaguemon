@@ -61,6 +61,7 @@ TX_FAR: MACRO
 	db BANK(\1)
 ENDM
 
+TX_BITCH                   EQUS "db $f4"
 TX_VENDING_MACHINE         EQUS "db $f5"
 TX_CABLE_CLUB_RECEPTIONIST EQUS "db $f6"
 TX_PRIZE_VENDOR            EQUS "db $f7"
