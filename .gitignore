@@ -18,8 +18,8 @@
 *.2bpp
 *.1bpp
 *.pic
-gfx/attack_anim_1.png
-gfx/attack_anim_2.png
+!attack_anim_1.2bpp
+!attack_anim_2.2bpp
 
 # converted audio data
 *.pcm
