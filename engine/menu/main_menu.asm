@@ -45,6 +45,9 @@ MainMenu:
 	coord hl, 11, 8  ;version
 	ld de,VersionText
 	call PlaceString
+	coord hl, 11, 9  ;build
+	ld de,BuildText
+	call PlaceString
 	jr .next2
 .noSaveFile
 	coord hl, 3, 0
@@ -57,6 +60,9 @@ MainMenu:
 	coord hl, 11, 6     ;version
 	ld de,VersionText
 	call PlaceString 
+	coord hl, 11, 7  ;build
+	ld de,BuildText
+	call PlaceString
 .next2
 	ld hl,wd730
 	res 6,[hl]
@@ -353,6 +359,10 @@ CableClubOptionsText:
 	
 VersionText:
 	db "v 0.666"
+	db "@"
+	
+BuildText:
+	db "build 2"
 	db "@"
 
 DisplayContinueGameInfo:
