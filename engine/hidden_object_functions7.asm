@@ -445,10 +445,10 @@ BillsHousePokemonListText1:
 	db "@"
 
 BillsMonListText:
-	db   "EEVEE"
-	next "FLAREON"
-	next "JOLTEON"
-	next "VAPOREON"
+	db   "DEADOG"
+	next "CERBEREON"
+	next "NUKENION"
+	next "VENEREON"
 	next "CANCEL@"
 
 BillsHousePokemonListText2:
