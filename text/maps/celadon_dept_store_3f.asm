@@ -40,19 +40,19 @@ _CeladonMart3Text3::
 
 	para "My buddy's going"
 	line "to trade me his"
-	cont "KANGASKHAN for my"
-	cont "GRAVELER!"
+	cont "HELLTECH for my"
+	cont "PLUTONIUM!"
 	done
 
 _CeladonMart3Text4::
-	text "Come on GRAVELER!"
+	text "Come on PLUTONIUM!"
 
-	para "I love GRAVELER!"
+	para "I love PLUTONIUM!"
 	line "I collect them!"
 
 	para "Huh?"
 
-	para "GRAVELER turned"
+	para "PLUTONIUM turned"
 	line "into a different"
 	cont "#MON!"
 	done
