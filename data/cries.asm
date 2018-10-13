@@ -152,7 +152,7 @@ CryData:
 	db $14, $28, $C0; Pidgeotto
 	db $14, $11, $FF; Pidgeot
 	db $1E, $00, $80; Starmie
-	db $0F, $80, $01; Bulbasaur
+	db $0F, $30, $01; Bulbasaur
 	db $0F, $00, $C0; Venusaur
 	db $1A, $EE, $FF; Tentacruel
 	db $00, $00, $00; MissingNo.
