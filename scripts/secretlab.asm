@@ -18,9 +18,9 @@ SecretLabTextPointers:
 	dw PickUpItemText
 
 MewTrainerHeader:
-	dbEventFlagBit EVENT_BEAT_MEWTWO
+	dbEventFlagBit EVENT_BEAT_MEW
 	db ($0 << 4) ; trainer's view range
-	dwEventFlagAddress EVENT_BEAT_MEWTWO
+	dwEventFlagAddress EVENT_BEAT_MEW
 	dw MewBattleText ; TextBeforeBattle
 	dw MewBattleText ; TextAfterBattle
 	dw MewBattleText ; TextEndBattle

@@ -1,7 +1,7 @@
 _DaisyInitialText::
 	text "Hi <PLAYER>!"
 	line "We fucked when"
-	cont "we was childs."
+	cont "we were kids."
 	done
 
 _DaisyOfferMapText::

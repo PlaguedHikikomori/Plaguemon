@@ -1,158 +1,158 @@
 CryData:
 	;$BaseCry, $Pitch, $Length
-	db $11, $00, $80; Rhydon
-	db $03, $00, $80; Kangaskhan
-	db $00, $00, $80; Nidoran♂
-	db $19, $CC, $01; Clefairy
-	db $10, $00, $80; Spearow
-	db $06, $ED, $80; Voltorb
-	db $09, $00, $80; Nidoking
-	db $1F, $00, $80; Slowbro
-	db $0F, $20, $80; Ivysaur
-	db $0D, $00, $80; Exeggutor
-	db $0C, $00, $80; Lickitung
-	db $0B, $00, $80; Exeggcute
-	db $05, $00, $80; Grimer
-	db $07, $00, $FF; Gengar
-	db $01, $00, $80; Nidoran♀
-	db $0A, $00, $80; Nidoqueen
-	db $19, $00, $80; Cubone
-	db $04, $00, $80; Rhyhorn
-	db $1B, $00, $80; Lapras
-	db $15, $00, $80; Arcanine
-	db $1E, $EE, $FF; Mew
-	db $17, $00, $80; Gyarados
-	db $18, $00, $80; Shellder
-	db $1A, $00, $80; Tentacool
-	db $1C, $00, $80; Gastly
-	db $16, $00, $80; Scyther
-	db $1E, $02, $20; Staryu
-	db $13, $00, $80; Blastoise
-	db $14, $00, $80; Pinsir
-	db $12, $00, $80; Tangela
+	db $11, $23, $80; Rhydon
+	db $03, $23, $80; Kangaskhan
+	db $00, $23, $80; Nidoran♂
+	db $19, $23, $01; Clefairy
+	db $10, $23, $80; Spearow
+	db $06, $23, $80; Voltorb
+	db $09, $23, $80; Nidoking
+	db $1F, $23, $80; Slowbro
+	db $0F, $23, $80; Ivysaur
+	db $0D, $23, $80; Exeggutor
+	db $0C, $23, $80; Lickitung
+	db $0B, $23, $80; Exeggcute
+	db $05, $23, $80; Grimer
+	db $07, $23, $FF; Gengar
+	db $01, $23, $80; Nidoran♀
+	db $0A, $23, $80; Nidoqueen
+	db $19, $23, $80; Cubone
+	db $04, $23, $80; Rhyhorn
+	db $1B, $23, $80; Lapras
+	db $15, $23, $80; Arcanine
+	db $1E, $23, $FF; Mew
+	db $17, $23, $80; Gyarados
+	db $18, $23, $80; Shellder
+	db $1A, $23, $80; Tentacool
+	db $1C, $23, $80; Gastly
+	db $16, $23, $80; Scyther
+	db $1E, $23, $20; Staryu
+	db $13, $23, $80; Blastoise
+	db $14, $23, $80; Pinsir
+	db $12, $23, $80; Tangela
+	db $00, $23, $00; MissingNo.
+	db $00, $23, $00; MissingNo.
+	db $1F, $23, $40; Growlithe
+	db $17, $23, $C0; Onix
+	db $18, $23, $A0; Fearow
+	db $0E, $23, $04; Pidgey
+	db $02, $23, $80; Slowpoke
+	db $1C, $23, $C0; Kadabra
+	db $24, $23, $80; Graveler
+	db $14, $23, $C0; Chansey
+	db $1F, $23, $60; Machoke
+	db $20, $00, $40; Mr.Mime
+	db $12, $23, $C0; Hitmonlee
+	db $0C, $23, $C0; Hitmonchan
+	db $17, $23, $10; Arbok
+	db $1E, $23, $FF; Parasect
+	db $21, $00, $60; Psyduck
+	db $0D, $23, $20; Drowzee
+	db $12, $23, $40; Golem
+	db $00, $00, $00; MissingNo.
+	db $04, $23, $30; Magmar
+	db $00, $00, $00; MissingNo.
+	db $06, $23, $FF; Electabuzz
+	db $1C, $66, $C0; Magneton
+	db $12, $23, $DD; Koffing
+	db $00, $00, $00; MissingNo.
+	db $0A, $23, $60; Mankey
+	db $0C, $23, $C0; Seel
+	db $0B, $23, $01; Diglett
+	db $1D, $00, $40; Tauros
 	db $00, $00, $00; MissingNo.
 	db $00, $00, $00; MissingNo.
-	db $1F, $20, $40; Growlithe
-	db $17, $FF, $C0; Onix
-	db $18, $40, $A0; Fearow
-	db $0E, $DF, $04; Pidgey
-	db $02, $00, $80; Slowpoke
-	db $1C, $A8, $C0; Kadabra
-	db $24, $00, $80; Graveler
-	db $14, $0A, $C0; Chansey
-	db $1F, $48, $60; Machoke
-	db $20, $08, $40; Mr.Mime
-	db $12, $80, $C0; Hitmonlee
-	db $0C, $EE, $C0; Hitmonchan
-	db $17, $E0, $10; Arbok
-	db $1E, $42, $FF; Parasect
-	db $21, $20, $60; Psyduck
-	db $0D, $88, $20; Drowzee
-	db $12, $E0, $40; Golem
 	db $00, $00, $00; MissingNo.
-	db $04, $FF, $30; Magmar
-	db $00, $00, $00; MissingNo.
-	db $06, $8F, $FF; Electabuzz
-	db $1C, $20, $C0; Magneton
-	db $12, $E6, $DD; Koffing
-	db $00, $00, $00; MissingNo.
-	db $0A, $DD, $60; Mankey
-	db $0C, $88, $C0; Seel
-	db $0B, $AA, $01; Diglett
-	db $1D, $11, $40; Tauros
-	db $00, $00, $00; MissingNo.
-	db $00, $00, $00; MissingNo.
-	db $00, $00, $00; MissingNo.
-	db $10, $DD, $01; Farfetch'd
-	db $1A, $44, $40; Venonat
-	db $0F, $3C, $C0; Dragonite
+	db $10, $99, $01; Farfetch'd
+	db $1A, $11, $40; Venonat
+	db $0F, $12, $C0; Dragonite
 	db $00, $80, $10; MissingNo.
 	db $00, $00, $00; MissingNo.
 	db $1D, $E0, $80; MissingNo.
-	db $0B, $BB, $01; Doduo
-	db $0E, $FF, $FF; Poliwag
-	db $0D, $FF, $FF; Jynx
-	db $09, $F8, $40; Moltres
-	db $09, $80, $40; Articuno
-	db $18, $FF, $80; Zapdos
-	db $0E, $FF, $FF; Ditto
-	db $19, $77, $10; Meowth
+	db $0B, $23, $01; Doduo
+	db $0E, $23, $FF; Poliwag
+	db $0D, $23, $FF; Jynx
+	db $09, $23, $40; Moltres
+	db $09, $66, $40; Articuno
+	db $18, $23, $80; Zapdos
+	db $0E, $23, $FF; Ditto
+	db $19, $23, $10; Meowth
 	db $20, $20, $E0; Krabby
 	db $22, $FF, $40; MissingNo.
 	db $00, $00, $00; MissingNo.
 	db $0E, $E0, $60; MissingNo.
-	db $24, $4F, $10; Vulpix
-	db $24, $88, $60; Ninetales
-	db $0F, $EE, $01; Pikachu
-	db $09, $EE, $08; Raichu
+	db $24, $23, $10; Vulpix
+	db $24, $23, $60; Ninetales
+	db $0F, $23, $01; Pikachu
+	db $09, $23, $08; Raichu
 	db $00, $00, $00; MissingNo.
 	db $00, $00, $00; MissingNo.
-	db $0F, $60, $40; Dratini
-	db $0F, $40, $80; Dragonair
-	db $16, $BB, $40; Kabuto
-	db $18, $EE, $01; Kabutops
-	db $19, $99, $10; Horsea
-	db $19, $3C, $01; Seadra
+	db $0F, $23, $40; Dratini
+	db $0F, $23, $80; Dragonair
+	db $16, $23, $40; Kabuto
+	db $18, $23, $01; Kabutops
+	db $19, $23, $10; Horsea
+	db $19, $23, $01; Seadra
 	db $0F, $40, $C0; MissingNo.
 	db $0F, $20, $C0; MissingNo.
-	db $00, $20, $40; Sandshrew
-	db $00, $FF, $FF; Sandslash
-	db $1F, $F0, $01; Omanyte
-	db $1F, $FF, $40; Omastar
-	db $0E, $FF, $35; Jigglypuff
-	db $0E, $68, $60; Wigglytuff
-	db $1A, $88, $60; Eevee
-	db $1A, $10, $20; Flareon
-	db $1A, $3D, $80; Jolteon
-	db $1A, $AA, $FF; Vaporeon
-	db $1F, $EE, $01; Machop
-	db $1D, $E0, $80; Zubat
-	db $17, $12, $40; Ekans
-	db $1E, $20, $E0; Paras
-	db $0E, $77, $60; Poliwhirl
-	db $0E, $00, $FF; Poliwrath
-	db $15, $EE, $01; Weedle
-	db $13, $FF, $01; Kakuna
-	db $13, $60, $80; Beedrill
+	db $00, $11, $40; Sandshrew
+	db $00, $23, $FF; Sandslash
+	db $1F, $23, $01; Omanyte
+	db $1F, $66, $40; Omastar
+	db $0E, $66, $35; Jigglypuff
+	db $0E, $23, $60; Wigglytuff
+	db $1A, $11, $60; Eevee
+	db $1A, $02, $20; Flareon
+	db $1A, $05, $80; Jolteon
+	db $1A, $23, $FF; Vaporeon
+	db $1F, $23, $01; Machop
+	db $1D, $23, $80; Zubat
+	db $17, $23, $40; Ekans
+	db $1E, $23, $E0; Paras
+	db $0E, $23, $60; Poliwhirl
+	db $0E, $23, $FF; Poliwrath
+	db $15, $23, $01; Weedle
+	db $13, $23, $01; Kakuna
+	db $13, $66, $80; Beedrill
 	db $00, $00, $00; MissingNo.
-	db $0B, $99, $20; Dodrio
-	db $0A, $AF, $40; Primeape
-	db $0B, $2A, $10; Dugtrio
-	db $1A, $29, $80; Venomoth
-	db $0C, $23, $FF; Dewgong
+	db $0B, $23, $20; Dodrio
+	db $0A, $44, $40; Primeape
+	db $0B, $66, $10; Dugtrio
+	db $1A, $23, $80; Venomoth
+	db $0C, $66, $FF; Dewgong
 	db $00, $00, $00; MissingNo.
 	db $00, $00, $00; MissingNo.
-	db $16, $80, $20; Caterpie
-	db $1C, $CC, $01; Metapod
-	db $16, $77, $40; Butterfree
-	db $1F, $08, $C0; Machamp
+	db $16, $23, $20; Caterpie
+	db $1C, $23, $01; Metapod
+	db $16, $66, $40; Butterfree
+	db $1F, $00, $C0; Machamp
 	db $11, $20, $10; MissingNo.
-	db $21, $FF, $40; Golduck
-	db $0D, $EE, $40; Hypno
-	db $1D, $FA, $80; Golbat
-	db $1E, $99, $FF; Mewtwo
-	db $05, $55, $01; Snorlax
-	db $17, $80, $00; Magikarp
+	db $21, $23, $40; Golduck
+	db $0D, $66, $40; Hypno
+	db $1D, $66, $80; Golbat
+	db $1E, $66, $FF; Mewtwo
+	db $05, $23, $01; Snorlax
+	db $17, $66, $00; Magikarp
 	db $00, $00, $00; MissingNo.
 	db $00, $00, $00; MissingNo.
-	db $07, $EF, $FF; Muk
+	db $07, $23, $FF; Muk
 	db $0F, $40, $80; MissingNo.
-	db $20, $EE, $E0; Kingler
-	db $18, $6F, $E0; Cloyster
+	db $20, $23, $E0; Kingler
+	db $18, $23, $E0; Cloyster
 	db $00, $00, $00; MissingNo.
-	db $06, $A8, $90; Electrode
-	db $19, $AA, $20; Clefable
-	db $12, $FF, $FF; Weezing
-	db $19, $99, $FF; Persian
-	db $08, $4F, $60; Marowak
+	db $06, $23, $90; Electrode
+	db $19, $23, $20; Clefable
+	db $12, $23, $FF; Weezing
+	db $19, $23, $FF; Persian
+	db $08, $23, $60; Marowak
 	db $00, $00, $00; MissingNo.
-	db $1C, $30, $40; Haunter
-	db $1C, $C0, $01; Abra
-	db $1C, $98, $FF; Alakazam
-	db $14, $28, $C0; Pidgeotto
-	db $14, $11, $FF; Pidgeot
-	db $1E, $00, $80; Starmie
-	db $0F, $30, $01; Bulbasaur
+	db $1C, $13, $40; Haunter
+	db $1C, $77, $01; Abra
+	db $1C, $66, $FF; Alakazam
+	db $14, $13, $C0; Pidgeotto
+	db $14, $55, $FF; Pidgeot
+	db $1E, $66, $80; Starmie
+	db $0F, $23, $01; Bulbasaur
 	db $0F, $00, $C0; Venusaur
 	db $1A, $EE, $FF; Tentacruel
 	db $00, $00, $00; MissingNo.
@@ -175,18 +175,18 @@ CryData:
 	db $1C, $80, $60; Magnemite
 	db $00, $00, $00; MissingNo.
 	db $00, $00, $00; MissingNo.
-	db $04, $60, $40; Charmander
-	db $1D, $60, $40; Squirtle
-	db $04, $20, $40; Charmeleon
-	db $1D, $20, $40; Wartortle
-	db $04, $00, $80; Charizard
+	db $04, $23, $40; Charmander
+	db $1D, $23, $40; Squirtle
+	db $04, $13, $40; Charmeleon
+	db $1D, $13, $40; Wartortle
+	db $04, $66, $80; Charizard
 	db $1D, $00, $80; MissingNo.
 	db $00, $00, $00; MissingNo.
 	db $00, $00, $00; MissingNo.
 	db $00, $00, $00; MissingNo.
-	db $08, $DD, $01; Oddish
-	db $08, $AA, $40; Gloom
-	db $23, $22, $FF; Vileplume
-	db $21, $55, $01; Bellsprout
-	db $25, $44, $20; Weepinbell
-	db $25, $66, $CC; Victreebel
+	db $08, $23, $01; Oddish
+	db $08, $33, $40; Gloom
+	db $23, $44, $FF; Vileplume
+	db $21, $33, $01; Bellsprout
+	db $25, $22, $20; Weepinbell
+	db $25, $33, $CC; Victreebel

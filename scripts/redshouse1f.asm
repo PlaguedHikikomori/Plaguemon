@@ -31,6 +31,8 @@ MomHealPokemon:
 	ld a, MUSIC_PKMN_HEALED
 	ld [wNewSoundID], a
 	call PlaySound
+	ld a, $00
+    ld [wd736], a
 .next
 	ld a, [wChannelSoundIDs]
 	cp MUSIC_PKMN_HEALED
