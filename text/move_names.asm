@@ -127,7 +127,7 @@ MoveNames::
 	db "CHURCH BURN@"
 	db "TSUNAMI@"
 	db "CLAMP@"
-	db "SWIFT@"
+	db "SHURIKEN@"
 	db "SKULL BASH@"
 	db "SPIKE CANNON@"
 	db "CONSTRICT@"
