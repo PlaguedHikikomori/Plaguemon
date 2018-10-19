@@ -148,7 +148,7 @@ ItemUseBall:
 ; If the player is fighting an unidentified ghost, set the value that indicates
 ; the Pokémon can't be caught and skip the capture calculations.
 	callab IsGhostBattle
-	ld b,$10 ; can't be caught value
+	ld b,$10 ;can't be caught value - Commentando ghost potrebbe catturarsi
 	jp z,.setAnimData
 
 	ld a,[wBattleType]
