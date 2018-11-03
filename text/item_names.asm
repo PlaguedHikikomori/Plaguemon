@@ -67,7 +67,7 @@ ItemNames:
 	db "X DEFEND@"
 	db "X SPEED@"
 	db "X SPECIAL@"
-	db "COIN CASE@"
+	db "AK 47@"
 	db "25-I NBOME@"
 	db "ITEMFINDER@"
 	db "EMF SENSOR@"

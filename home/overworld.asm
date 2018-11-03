@@ -93,12 +93,23 @@ OverworldLoopLessDelay::
 	jr z, .KnifeKeyPress
 	ld a,[wWalkBikeSurfState]
 	cp a, $01
-	jr nz, .startButtonNotPressed
+	jr nz, .ak47
 .KnifeKeyPress
 	ld a, [hJoyPressed] ; Check what buttons are being pressed
 	bit 1, a ; Are you holding B?
 	jr z, .startButtonNotPressed ; If you aren't holding B, skip ahead to step normally.
 	callba Knife ;-------------ERRORE--------------
+	jp .startButtonNotPressed
+.ak47
+	ld a,[wWalkBikeSurfState]
+	cp a, $06
+	jr nz, .startButtonNotPressed
+	ld a, [hJoyPressed] ; Check what buttons are being pressed
+	bit 1, a ; Are you holding B?
+	jr z, .startButtonNotPressed ; If you aren't holding B, skip ahead to step normally.
+	callba Bullet2
+	ldpikacry e, PikachuCry2
+	callab PlayPikachuSoundClip
 .startButtonNotPressed
     ld a,[hJoyHeld]
 	bit 0,a ; A button
@@ -264,7 +275,7 @@ OverworldLoopLessDelay::
 	cp $02 ; surfing
 	jr z,.surfing
 ; not surfing
-	call CollisionCheckOnLand
+	callab CollisionCheckOnLand
 	jr nc,.noCollision
 ; collision occurredz
 	push hl
@@ -877,6 +888,9 @@ LoadPlayerSpriteGraphics::
 	jp z, LoadFlamePlayerSpriteGraphics
 	dec a
 	jp z, LoadHandPlayerSpriteGraphics
+	dec a
+	jp z, LoadGunPlayerSpriteGraphics
+	dec a
 	jp LoadWalkingPlayerSpriteGraphics
 
 IsBikeRidingAllowed::
@@ -1236,45 +1250,7 @@ IsSpriteInFrontOfPlayer2::
 	ld [hSpriteIndexOrTextID],a
 	ret
 
-; function to check if the player will jump down a ledge and check if the tile ahead is passable (when not surfing)
-; sets the carry flag if there is a collision, and unsets it if there isn't a collision
-CollisionCheckOnLand::
-	ld a,[wd736]
-	bit 6,a ; is the player jumping?
-	jr nz,.noCollision
-; if not jumping a ledge
-	ld a,[wSimulatedJoypadStatesIndex]
-	and a
-	jr nz,.noCollision ; no collisions when the player's movements are being controlled by the game
-	ld a,[wPlayerDirection] ; the direction that the player is trying to go in
-	ld d,a
-	ld a,[wSpriteStateData1 + 12] ; the player sprite's collision data (bit field) (set in the sprite movement code)
-	and d ; check if a sprite is in the direction the player is trying to go
-	jr nz,.collision
-	xor a
-	ld [hSpriteIndexOrTextID],a
-	call IsSpriteInFrontOfPlayer ; check for sprite collisions again? when does the above check fail to detect a sprite collision?
-	ld a,[hSpriteIndexOrTextID]
-	and a ; was there a sprite collision?
-	jr nz,.collision
-; if no sprite collision
-	ld hl,TilePairCollisionsLand
-	call CheckForJumpingAndTilePairCollisions
-	jr c,.collision
-	call CheckTilePassable
-	jr nc,.noCollision
-.collision
-	ld a,[wChannelSoundIDs + Ch4]
-	cp SFX_COLLISION ; check if collision sound is already playing
-	jr z,.setCarry
-	ld a,SFX_COLLISION
-	call PlaySound ; play collision sound (if it's not already playing)
-.setCarry
-	scf
-	ret
-.noCollision
-	and a
-	ret
+
 
 ; function that checks if the tile in front of the player is passable
 ; clears carry if it is, sets carry if not
@@ -1371,11 +1347,11 @@ CheckForTilePairCollisions::
 ; it's mainly used to simulate differences in elevation
 
 TilePairCollisionsLand::
-	db CAVERN, $20, $05    ;provvisorio
-	db CAVERN, $41, $05    ;provvisorio
+	db CAVERN, $20, $05    
+	db CAVERN, $41, $05    
 	db FOREST, $30, $2E
-	db CAVERN, $2A, $05    ;provvisorio
-	db CAVERN, $05, $21    ;provvisorio
+	db CAVERN, $2A, $05    
+	db CAVERN, $05, $21    
 	db FOREST, $52, $2E
 	db FOREST, $55, $2E
 	db FOREST, $56, $2E
@@ -1385,9 +1361,9 @@ TilePairCollisionsLand::
 	db $FF
 
 TilePairCollisionsWater::
-	;db FOREST, $14, $2E   -provvisorio
-	;db FOREST, $48, $2E   -provvisorio
-	db CAVERN, $14, $05   ;provvisorio
+	db FOREST, $14, $2E   
+	db FOREST, $48, $2E   
+	db CAVERN, $14, $05   
 	db $FF
 
 ; this builds a tile map from the tile block map based on the current X/Y coordinates of the player's character
@@ -2041,6 +2017,10 @@ LoadFlamePlayerSpriteGraphics::
 	
 LoadHandPlayerSpriteGraphics::        
 	ld de,RedCyclingSprite
+	jp Backup
+	
+LoadGunPlayerSpriteGraphics::        
+	ld de,RedGunSprite
 	
 Backup:                                      ;hiki, trick per riciclare spazio
     ld hl,vNPCSprites
@@ -2453,5 +2433,5 @@ ForceBikeOrSurf::
 	ld hl, LoadPlayerSpriteGraphics
 	call Bankswitch
 	jp PlayDefaultMusic ; update map/player state?
-
+	ret
 

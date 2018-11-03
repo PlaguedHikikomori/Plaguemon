@@ -84,7 +84,7 @@ ItemUsePtrTable:
 	dw ItemUseXStat      ; X_DEFEND
 	dw ItemUseXStat      ; X_SPEED
 	dw ItemUseXStat      ; X_SPECIAL
-	dw ItemUseCoinCase   ; COIN_CASE
+	dw ItemUseGun        ; COIN_CASE
 	dw ItemUseOaksParcel ; OAKS_PARCEL
 	dw ItemUseItemfinder ; ITEMFINDER
 	dw UnusableItem      ; SILPH_SCOPE
@@ -3417,10 +3417,39 @@ ItemBeHand:
 	;jp PrintText
 	ret
 
-;BeAHandText:
-;	TX_FAR _BeAHandText
-;    db "@"
-	
+ItemUseGun:
+	ld a,[wWalkBikeSurfState] ;carica il lo stato nell'accumulatore
+	ld [wWalkBikeSurfStateCopy],a    ;carica in un indirizzo ram lo stato del giocatore
+	cp a,2 ; is the player surfing?   
+	;se è due, stai surfando
+	jp z,ItemUseNotTime               ;se si, salta.
+	dec a	; is player already bicycling?  
+	dec a   
+	dec a   
+	dec a
+	dec a
+	dec a
+	jr nz,.tryToGetOnBike ;in qualsiasi caso, salta sulla bici
+.getOffBike
+	call ItemUseReloadOverworldData
+	xor a
+	ld [wWalkBikeSurfState],a ; change player state to walking
+	call PlayDefaultMusic ; play walking music
+	;ld hl,GotOffBicycleText
+	jr .printText
+.tryToGetOnBike
+	call ItemUseReloadOverworldData   ;senno riscrivi i dati del mondo
+	xor a ; no keys pressed            
+	ld [hJoyHeld],a ; current joypad state
+	inc a                     ; incrementa accumulutore da zero ad uno, per impostare lo stato su ciclista
+	inc a                     ; surfando
+	inc a             
+    inc a
+    inc a	
+	inc a					; nuovo stato
+	ld [wWalkBikeSurfState],a ; change player state to bicycling,che accade qui quando lo riloddi
+.printText
+	ret
 		
     
 

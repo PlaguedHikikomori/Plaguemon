@@ -1,323 +1,145 @@
 Music_Vermilion_Ch0::
-	tempo 156
-	volume 7, 7
-	duty 3
-	vibrato 12, 3, 4
-	toggleperfectpitch
-
-Music_Vermilion_branch_b9f6::
-	notetype 12, 11, 5
-	octave 3
-	E_ 4
-	C# 1
-	D_ 1
-	E_ 2
-	A_ 4
-	B_ 2
-	A_ 2
-	G# 2
-	F# 2
-	E_ 2
-	F# 2
-	A_ 4
-	F# 1
-	G# 1
-	A_ 2
-	E_ 4
-	C# 2
-	E_ 2
-	A_ 2
-	G# 2
-	B_ 2
-	A_ 2
-	G# 2
-	E_ 2
-	F# 2
-	G# 2
-	C# 2
-	D_ 2
-	E_ 2
-	F# 2
-	E_ 4
-	C# 1
-	D_ 1
-	E_ 2
-	A_ 4
-	B_ 2
-	A_ 2
-	G# 2
-	F# 2
-	E_ 2
-	F# 2
-	A_ 4
-	F# 1
-	G# 1
-	A_ 2
-	E_ 4
-	C# 1
-	D_ 1
-	E_ 2
-	A_ 2
-	G# 2
-	F# 2
-	A_ 2
-	G# 2
-	E_ 2
-	F# 2
-	G# 2
-	F# 4
-	E_ 4
-	F# 2
-	G# 2
-	F# 2
-	A_ 2
-	G# 2
-	B_ 2
-	A_ 2
-	octave 4
-	C# 2
-	D_ 2
-	C# 2
-	octave 3
-	B_ 2
-	A_ 2
-	G# 1
-	A_ 1
-	B_ 2
-	octave 4
-	C# 2
-	E_ 2
-	octave 3
-	A_ 2
-	octave 4
-	D_ 2
-	octave 3
-	G# 2
-	octave 4
-	C# 2
-	octave 3
-	F# 2
-	B_ 2
-	G# 2
-	A_ 2
-	B_ 2
-	A_ 2
-	G# 2
-	F# 2
-	E_ 2
-	F# 2
-	G# 2
-	B_ 2
-	loopchannel 0, Music_Vermilion_branch_b9f6
+	dutycycle 240
+	unknownsfx0x20 15, 215, 128, 7
+	unknownsfx0x20 4, 230, 160, 7
+	unknownsfx0x20 15, 210, 64, 7
+	dutycycle 240
+	unknownsfx0x20 15, 215, 128, 7
+	unknownsfx0x20 4, 230, 160, 7
+	unknownsfx0x20 15, 210, 64, 7
+	dutycycle 240
+	unknownsfx0x20 15, 215, 128, 7
+	unknownsfx0x20 4, 230, 160, 7
+	unknownsfx0x20 15, 210, 64, 7
+	dutycycle 240
+	unknownsfx0x20 15, 215, 128, 7
+	unknownsfx0x20 4, 230, 160, 7
+	unknownsfx0x20 15, 210, 64, 7
+	dutycycle 245
+	unknownsfx0x20 7, 214, 225, 7
+	unknownsfx0x20 6, 198, 226, 7
+	unknownsfx0x20 9, 214, 225, 7
+	unknownsfx0x20 7, 198, 224, 7
+	unknownsfx0x20 5, 182, 226, 7
+	unknownsfx0x20 7, 198, 225, 7
+	unknownsfx0x20 6, 182, 224, 7
+	unknownsfx0x20 8, 161, 223, 7
+	dutycycle 245
+	unknownsfx0x20 7, 214, 225, 7
+	unknownsfx0x20 6, 198, 226, 7
+	unknownsfx0x20 9, 214, 225, 7
+	unknownsfx0x20 7, 198, 224, 7
+	unknownsfx0x20 5, 182, 226, 7
+	unknownsfx0x20 7, 198, 225, 7
+	unknownsfx0x20 6, 182, 224, 7
+	unknownsfx0x20 8, 161, 223, 7
+	dutycycle 245
+	unknownsfx0x20 7, 214, 225, 7
+	unknownsfx0x20 6, 198, 226, 7
+	unknownsfx0x20 9, 214, 225, 7
+	unknownsfx0x20 7, 198, 224, 7
+	unknownsfx0x20 5, 182, 226, 7
+	unknownsfx0x20 7, 198, 225, 7
+	unknownsfx0x20 6, 182, 224, 7
+	unknownsfx0x20 8, 161, 223, 7
+	dutycycle 245
+	unknownsfx0x20 7, 214, 225, 7
+	unknownsfx0x20 6, 198, 226, 7
+	unknownsfx0x20 9, 214, 225, 7
+	unknownsfx0x20 7, 198, 224, 7
+	unknownsfx0x20 5, 182, 226, 7
+	unknownsfx0x20 7, 198, 225, 7
+	unknownsfx0x20 6, 182, 224, 7
+	unknownsfx0x20 8, 161, 223, 7
+	loopchannel 0, Music_Vermilion_Ch0
 
 
 Music_Vermilion_Ch1::
-	duty 3
-	vibrato 10, 2, 3
-
-Music_Vermilion_branch_ba66::
-	notetype 12, 12, 7
-	octave 3
-	A_ 8
-	octave 4
-	D_ 4
-	C# 4
-	octave 3
-	B_ 6
-	A_ 1
-	B_ 1
-	octave 4
-	C# 8
-	octave 3
-	A_ 8
-	octave 4
-	D_ 4
-	C# 4
-	octave 3
-	B_ 6
-	octave 4
-	C# 1
-	octave 3
-	B_ 1
-	A_ 8
-	A_ 8
-	octave 4
-	D_ 4
-	C# 4
-	octave 3
-	B_ 6
-	A_ 1
-	B_ 1
-	octave 4
-	C# 8
-	octave 3
-	A_ 8
-	octave 4
-	D_ 4
-	C# 4
-	octave 3
-	B_ 6
-	octave 4
-	C# 1
-	octave 3
-	B_ 1
-	A_ 8
-	B_ 4
-	octave 4
-	C# 4
-	D_ 4
-	E_ 4
-	F# 8
-	B_ 8
-	A_ 4
-	G# 4
-	F# 4
-	E_ 4
-	F# 8
-	E_ 8
-	loopchannel 0, Music_Vermilion_branch_ba66
+	dutycycle 90
+	unknownsfx0x20 15, 199, 83, 7
+	unknownsfx0x20 5, 182, 114, 7
+	unknownsfx0x20 15, 194, 17, 7
+	dutycycle 90
+	unknownsfx0x20 15, 199, 83, 7
+	unknownsfx0x20 5, 182, 114, 7
+	unknownsfx0x20 15, 194, 17, 7
+	dutycycle 90
+	unknownsfx0x20 15, 199, 83, 7
+	unknownsfx0x20 5, 182, 114, 7
+	unknownsfx0x20 15, 194, 17, 7
+	dutycycle 90
+	unknownsfx0x20 15, 199, 83, 7
+	unknownsfx0x20 5, 182, 114, 7
+	unknownsfx0x20 15, 194, 17, 7
+	dutycycle 68
+	unknownsfx0x20 6, 195, 201, 7
+	unknownsfx0x20 6, 179, 199, 7
+	unknownsfx0x20 10, 196, 195, 7
+	unknownsfx0x20 8, 180, 199, 7
+	unknownsfx0x20 6, 195, 201, 7
+	unknownsfx0x20 15, 162, 197, 7
+	dutycycle 68
+	unknownsfx0x20 6, 195, 201, 7
+	unknownsfx0x20 6, 179, 199, 7
+	unknownsfx0x20 10, 196, 195, 7
+	unknownsfx0x20 8, 180, 199, 7
+	unknownsfx0x20 6, 195, 201, 7
+	unknownsfx0x20 15, 162, 197, 7
+	dutycycle 68
+	unknownsfx0x20 6, 195, 201, 7
+	unknownsfx0x20 6, 179, 199, 7
+	unknownsfx0x20 10, 196, 195, 7
+	unknownsfx0x20 8, 180, 199, 7
+	unknownsfx0x20 6, 195, 201, 7
+	unknownsfx0x20 15, 162, 197, 7
+	dutycycle 68
+	unknownsfx0x20 6, 195, 201, 7
+	unknownsfx0x20 6, 179, 199, 7
+	unknownsfx0x20 10, 196, 195, 7
+	unknownsfx0x20 8, 180, 199, 7
+	unknownsfx0x20 6, 195, 201, 7
+	unknownsfx0x20 15, 162, 197, 7
+	loopchannel 0, Music_Vermilion_Ch1
+	
 
 
 Music_Vermilion_Ch2::
-	notetype 12, 1, 0
-
-Music_Vermilion_branch_baa8::
-	octave 4
-	A_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	G# 2
-	E_ 2
-	G# 2
-	E_ 2
-	A_ 2
-	G# 2
-	F# 2
-	E_ 2
-	A_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	G# 2
-	E_ 2
-	G# 2
-	E_ 2
-	A_ 2
-	G# 2
-	F# 2
-	G# 2
-	A_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	G# 2
-	E_ 2
-	G# 2
-	E_ 2
-	A_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	G# 2
-	E_ 2
-	G# 2
-	E_ 2
-	A_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	B_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	G# 2
-	E_ 2
-	F# 2
-	E_ 2
-	G# 2
-	E_ 2
-	G# 2
-	E_ 2
-	B_ 2
-	A_ 2
-	G# 2
-	F# 2
-	F# 2
-	E_ 2
-	G# 2
-	E_ 2
-	A_ 2
-	E_ 2
-	B_ 2
-	E_ 2
-	B_ 2
-	E_ 2
-	B_ 2
-	E_ 2
-	A_ 2
-	E_ 2
-	G# 2
-	E_ 2
-	loopchannel 0, Music_Vermilion_branch_baa8
+	endchannel
 
 
 Music_Vermilion_Ch3::
-	dspeed 12
-
-Music_Vermilion_branch_bb0e::
-	callchannel Music_Vermilion_branch_bb3f
-	triangle1 2
-	triangle1 1
-	triangle1 1
-	triangle1 2
-	triangle1 1
-	triangle1 1
-	triangle1 2
-	triangle1 1
-	triangle1 1
-	triangle1 1
-	triangle1 1
-	triangle1 1
-	triangle1 1
-	loopchannel 4, Music_Vermilion_branch_bb0e
-	callchannel Music_Vermilion_branch_bb3f
-	callchannel Music_Vermilion_branch_bb3f
-	callchannel Music_Vermilion_branch_bb3f
-	callchannel Music_Vermilion_branch_bb3f
-	loopchannel 0, Music_Vermilion_branch_bb0e
-
-Music_Vermilion_branch_bb3f::
-	triangle1 2
-	triangle1 1
-	triangle1 1
-	triangle1 2
-	triangle1 1
-	triangle1 1
-	triangle1 2
-	triangle1 1
-	triangle1 1
-	triangle1 2
-	triangle1 1
-	triangle1 1
-	endchannel
+	unknownnoise0x20 13, 246, 76
+	unknownnoise0x20 4, 230, 60
+	unknownnoise0x20 15, 242, 76
+	unknownnoise0x20 13, 25, 124
+	unknownnoise0x20 13, 247, 140
+	unknownnoise0x20 12, 214, 124
+	unknownnoise0x20 8, 196, 108
+	unknownnoise0x20 15, 179, 92
+	unknownnoise0x20 13, 246, 76
+	unknownnoise0x20 4, 230, 60
+	unknownnoise0x20 15, 242, 76
+	unknownnoise0x20 13, 25, 124
+	unknownnoise0x20 13, 247, 140
+	unknownnoise0x20 12, 214, 124
+	unknownnoise0x20 8, 196, 108
+	unknownnoise0x20 15, 179, 92
+	unknownnoise0x20 13, 246, 76
+	unknownnoise0x20 4, 230, 60
+	unknownnoise0x20 15, 242, 76
+	unknownnoise0x20 13, 25, 124
+	unknownnoise0x20 13, 247, 140
+	unknownnoise0x20 12, 214, 124
+	unknownnoise0x20 8, 196, 108
+	unknownnoise0x20 15, 179, 92
+	unknownnoise0x20 13, 246, 76
+	unknownnoise0x20 4, 230, 60
+	unknownnoise0x20 15, 242, 76
+	unknownnoise0x20 13, 25, 124
+	unknownnoise0x20 13, 247, 140
+	unknownnoise0x20 12, 214, 124
+	unknownnoise0x20 8, 196, 108
+	unknownnoise0x20 15, 179, 92
+	loopchannel 0, Music_Vermilion_Ch3
+	
+	

@@ -16,6 +16,8 @@ INCLUDE "home.asm"
 
 SECTION "bank1",ROMX,BANK[$1]
 
+INCLUDE "engine/overworld/tilepaircollision.asm"
+
 INCLUDE "engine/overworld/knife.asm"
 
 INCLUDE "data/facing.asm"
@@ -224,7 +226,7 @@ LittleGirlSprite:     INCBIN "gfx/sprites/little_girl.2bpp"
 BirdSprite:           INCBIN "gfx/sprites/bird.2bpp"
 FatBaldGuySprite:     
 GamblerSprite:        INCBIN "gfx/sprites/gambler.2bpp"
-BlackHairBoy2Sprite:  INCBIN "gfx/sprites/black_hair_boy_2.2bpp"
+BlackHairBoy2Sprite:  
 HikerSprite:          INCBIN "gfx/sprites/hiker.2bpp"
 FoulardWomanSprite:   INCBIN "gfx/sprites/foulard_woman.2bpp"
 GentlemanSprite:      INCBIN "gfx/sprites/gentleman.2bpp"
@@ -253,6 +255,8 @@ LoreleiSprite:        INCBIN "gfx/sprites/lorelei.2bpp"
 SeelSprite:           INCBIN "gfx/sprites/seel.2bpp"
 BurnedMan:            INCBIN "gfx/sprites/burnedman.2bpp"
 CarSprite:            INCBIN "gfx/sprites/car.2bpp"
+RedGunSprite:         INCBIN "gfx/sprites/redgun.2bpp"
+
 
 
 
@@ -2126,6 +2130,7 @@ CemeteryStuff:	   INCBIN  "gfx/cemeterystuff.2bpp"
 ShrinkPic1::  INCBIN "pic/trainer/shrink1.pic"
 ShrinkPic2::  INCBIN "pic/trainer/shrink2.pic"
 DeadDogSprite: INCBIN "gfx/sprites/deaddog.2bpp"
+INCLUDE "engine/items/bullet.asm"
 
 
 
