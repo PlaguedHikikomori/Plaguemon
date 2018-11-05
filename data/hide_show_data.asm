@@ -33,6 +33,11 @@ MapHSPointers:
 	dw MapHSXX
 	dw MapHS1A
 	dw MapHS1B
+	dw MapHSXX
+	dw MapHSXX
+	dw MapHSXX
+	dw MapHSXX
+	dw MapHSXX
 	dw MapHS21
 	dw MapHSXX
 	dw MapHS23
