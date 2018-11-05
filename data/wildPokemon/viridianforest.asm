@@ -7,7 +7,7 @@ ForestMons:
 		db 5,PIKACHU
 		db 4,RATICATE
 		db 6,JIGGLYPUFF
-		db 4,RATICATE
+		db 4,CATERPIE
 		db 3,PIKACHU
 	ENDC
 	IF DEF(_BLUE)

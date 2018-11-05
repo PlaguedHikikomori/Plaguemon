@@ -45,6 +45,9 @@ PrintBeginningBattleText:
 	call PrintText
 	ld hl, GhostCantBeIDdText
 	call PrintText
+	xor a
+	ld [wChannelSoundIDs+Ch5], a 
+	ld [wChannelSoundIDs+Ch7], a ; stop the "wild battle started" music
 	jr .done
 .isMarowak
 	ld a, b

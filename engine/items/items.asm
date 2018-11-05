@@ -649,8 +649,7 @@ ItemUseBicycle:
 	xor a
 	ld [wWalkBikeSurfState],a ; change player state to walking
 	call PlayDefaultMusic ; play walking music
-	;ld hl,GotOffBicycleText
-	jr .printText
+	ret
 .tryToGetOnBike
 	call IsBikeRidingAllowed
 	jp nc,NoCyclingAllowedHere
@@ -659,10 +658,8 @@ ItemUseBicycle:
 	ld [hJoyHeld],a ; current joypad state
 	inc a
 	ld [wWalkBikeSurfState],a ; change player state to bicycling
-	;ld hl,BeAHandText
 	call PlayDefaultMusic ; play bike riding music
-.printText
-	jp PrintText
+	ret
 	
 ItemUseMotorbike:
 	ld a,[wIsInBattle]    ;carica nell'accumulatore lo stato 
@@ -670,28 +667,23 @@ ItemUseMotorbike:
 	jp nz,ItemUseNotTime   ;se si, salta.
 	ld a,[wWalkBikeSurfState] ;carica il lo stato nell'accumulatore
 	ld [wWalkBikeSurfStateCopy],a    ;carica in un indirizzo ram lo stato del giocatore
-	cp a,2 ; is the player surfing?   
+	cp a, $2 ; is the player surfing?   
 	;se è due, stai surfando
-	jp z,ItemUseNotTime               ;se si, salta.
-	dec a	; is player already bicycling?  
-	dec a   
-	dec a   ;ha gia il motocross?
-	jr nz,.tryToGetOnBike ;in qualsiasi caso, salta sulla bici
+	jp z, ItemUseNotTime               ;se si, salta.
+	cp a, $3
+	jr nz, .tryToGetOnBike ;in qualsiasi caso, salta sulla bici
 .getOffBike
 	call ItemUseReloadOverworldData
 	xor a
 	ld [wWalkBikeSurfState],a ; change player state to walking
 	call PlayDefaultMusic ; play walking music
-	;ld hl,GotOffBicycleText
-	jr .printText
+	ret
 .tryToGetOnBike
 	call ItemUseReloadOverworldData   ;senno riscrivi i dati del mondo
 	xor a ; no keys pressed            
 	ld [hJoyHeld],a ; current joypad state
-	inc a                     ; incrementa accumulutore da zero ad uno, per impostare lo stato su ciclista
-	inc a                     ; surfando
-	inc a                     ; nuovo stato
-	ld [wWalkBikeSurfState],a ; change player state to bicycling,che accade qui quando lo riloddi
+	ld a, $3 ; using the motorbike
+	ld [wWalkBikeSurfState], a ; change player state to bicycling,che accade qui quando lo riloddi
 	ld hl,MotocrossText
 	call PlayDefaultMusic ; play bike riding music
 	ld a, 254

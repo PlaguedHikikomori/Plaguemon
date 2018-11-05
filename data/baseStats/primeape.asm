@@ -4,7 +4,7 @@ db 105 ; base attack
 db 60 ; base defense
 db 95 ; base speed
 db 60 ; base special
-db FIGHTING ; species type 1
+db ELECTRIC ; species type 1
 db FIGHTING ; species type 2
 db 75 ; catch rate
 db 149 ; base exp yield

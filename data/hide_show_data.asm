@@ -33,11 +33,6 @@ MapHSPointers:
 	dw MapHSXX
 	dw MapHS1A
 	dw MapHS1B
-	dw MapHSXX
-	dw MapHSXX
-	dw MapHSXX
-	dw MapHSXX
-	dw MapHSXX
 	dw MapHS21
 	dw MapHSXX
 	dw MapHS23
@@ -315,7 +310,7 @@ MapHS17:
 MapHS1A:
 	db ROUTE_15,$0B,Show
 MapHS1B:
-	db ROUTE_16,$07,Show
+	db ROUTE_16,$01,Show
 MapHS21:
 	db ROUTE_22,$01,Hide
 	db ROUTE_22,$02,Hide

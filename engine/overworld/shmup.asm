@@ -39,6 +39,9 @@ Blink:
 	INCBIN "gfx/red/redblink.2bpp"
 	
 Blinking:
+   ld a, [hJoyHeld]
+   and D_DOWN | D_UP | D_LEFT | D_RIGHT
+   ret nz ; return if a directional button is being pressed
    ld a, [wAnimCounter]
    cp $40
    jp nz, .goOn

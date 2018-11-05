@@ -28,18 +28,26 @@ MomHealPokemon:
 	call GBFadeOutToWhite
 	call ReloadMapData
 	predef HealParty
+	ld a, [wAudioROMBank] ; save the actual music bank
+	ld b, a ; save it to b register
+	ld a, BANK(Music_PalletTown) ; load the pallet town music bank
+	ld [wAudioROMBank], a
+	ld [wAudioSavedROMBank], a ; set it on ram
+	push bc ; save bc registers on the stack
 	ld a, MUSIC_PKMN_HEALED
 	ld [wNewSoundID], a
 	call PlaySound
-	ld a, $00
+	xor a
     ld [wd736], a
 .next
 	ld a, [wChannelSoundIDs]
 	cp MUSIC_PKMN_HEALED
 	jr z, .next
-	ld a, [wMapMusicSoundID]
-	ld [wNewSoundID], a
-	call PlaySound
+	pop bc ; retrieve the saved bc register cointaining the old music bank
+	ld a, b ; move the old music bank to a
+	ld [wAudioROMBank], a
+	ld [wAudioSavedROMBank], a ; set it on ram
+	call PlayDefaultMusic
 	call GBFadeInFromWhite
 	ld hl, MomHealText2
 	jp PrintText

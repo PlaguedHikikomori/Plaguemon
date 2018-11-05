@@ -70,6 +70,8 @@ CheckForceBikeOrSurf:
 	ld a, $1
 	ld [wWalkBikeSurfState], a
 	ld [wWalkBikeSurfStateCopy], a
+	xor a
+	ld [wChannelSoundIDs+Ch4], a ; reset the sound channels
 	jp ForceBikeOrSurf
 .incorrectMap
 	inc hl

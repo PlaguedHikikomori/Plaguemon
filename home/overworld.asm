@@ -850,10 +850,14 @@ LoadPlayerSpriteGraphics::
 ; Load sprite graphics based on whether the player is standing, biking, or surfing.
 
 	; 0: standing
-	; 1: biking
+	; 1: driving the Panda
 	; 2: surfing
+	; 3: driving the motorbike
 
 	ld a, [wWalkBikeSurfState]
+	cp $03 ; check if the player is driving the motorbike
+	jr z, .determineGraphics
+
 	dec a
 	jr z, .ridingBike
 

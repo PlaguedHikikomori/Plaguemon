@@ -13,17 +13,11 @@ Route16Object:
 	db $5, $7, $0, ROUTE_16_HOUSE
 
 	db $2 ; signs
-	db $b, $1b, $8 ; Route16Text8
-	db $11, $5, $9 ; Route16Text9
+	db $b, $1b, $4 ; Route16Text4
+	db $11, $5, $5 ; Route16Text5
 
 	db $1 ; objects
-	;object SPRITE_BIKER, $11, $c, STAY, LEFT, $1, OPP_BIKER, $5
-	;object SPRITE_BIKER, $e, $d, STAY, RIGHT, $2, OPP_CUE_BALL, $1
-	;object SPRITE_BIKER, $b, $c, STAY, UP, $3, OPP_CUE_BALL, $2
-	;object SPRITE_BIKER, $9, $b, STAY, LEFT, $4, OPP_BIKER, $6
-	;object SPRITE_BIKER, $6, $a, STAY, RIGHT, $5, OPP_CUE_BALL, $3
-	;object SPRITE_BIKER, $3, $c, STAY, RIGHT, $6, OPP_BIKER, $7
-	object SPRITE_SNORLAX, $1a, $a, STAY, DOWN, $7 ; person
+	object SPRITE_SNORLAX, $1a, $a, STAY, DOWN, $1 ; person
 
 	; warp-to
 	EVENT_DISP ROUTE_16_WIDTH, $a, $11 ; ROUTE_16_GATE_1F

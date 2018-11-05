@@ -21,6 +21,15 @@ _BlaineFireBlastText::
 	done
 
 _BlaineBadgeText::
+	text "There's something"
+
+	line "inside me"
+	para "that pulls beneath"
+
+	line "the surface"
+
+	para "consuming..."
+	para "confusing..."
 	done
 
 _ReceivedTM38Text::
