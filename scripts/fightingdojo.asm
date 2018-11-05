@@ -1,6 +1,6 @@
 FightingDojoScript:
 	call EnableAutoTextBoxDrawing
-	ld hl, FightingDojoTrainerHeader0
+	ld hl, $0000 ;FightingDojoTrainerHeader0
 	ld de, FightingDojoScriptPointers
 	ld a, [wFightingDojoCurScript]
 	call ExecuteCurMapScriptInTable
@@ -21,36 +21,37 @@ FightingDojoScriptPointers:
 	dw FightingDojoScript3
 
 FightingDojoScript1:
-	CheckEvent EVENT_DEFEATED_FIGHTING_DOJO
-	ret nz
-	call CheckFightingMapTrainers
-	ld a, [wTrainerHeaderFlagBit]
-	and a
-	ret nz
-	CheckEvent EVENT_BEAT_KARATE_MASTER
-	ret nz
-	xor a
-	ld [hJoyHeld], a
-	ld [wcf0d], a
-	ld a, [wYCoord]
-	cp $3
-	ret nz
-	ld a, [wXCoord]
-	cp $4
-	ret nz
-	ld a, $1
-	ld [wcf0d], a
-	ld a, PLAYER_DIR_RIGHT
-	ld [wPlayerMovingDirection], a
-	ld a, $1
-	ld [H_SPRITEINDEX], a
-	ld a, SPRITE_FACING_LEFT
-	ld [hSpriteFacingDirection], a
-	call SetSpriteFacingDirectionAndDelay
-	ld a, $1
-	ld [hSpriteIndexOrTextID], a
-	call DisplayTextID
 	ret
+	;CheckEvent EVENT_DEFEATED_FIGHTING_DOJO
+	;ret nz
+	;call CheckFightingMapTrainers
+	;ld a, [wTrainerHeaderFlagBit]
+	;and a
+	;ret nz
+	;CheckEvent EVENT_BEAT_KARATE_MASTER
+	;ret nz
+	;xor a
+	;ld [hJoyHeld], a
+	;ld [wcf0d], a
+	;ld a, [wYCoord]
+	;cp $3
+	;ret nz
+	;ld a, [wXCoord]
+	;cp $4
+	;ret nz
+	;ld a, $1
+	;ld [wcf0d], a
+	;ld a, PLAYER_DIR_RIGHT
+	;ld [wPlayerMovingDirection], a
+	;ld a, $1
+	;ld [H_SPRITEINDEX], a
+	;ld a, SPRITE_FACING_LEFT
+	;ld [hSpriteFacingDirection], a
+	;call SetSpriteFacingDirectionAndDelay
+	;ld a, $1
+	;ld [hSpriteIndexOrTextID], a
+	;call DisplayTextID
+	;retv
 
 FightingDojoScript3:
 	ld a, [wIsInBattle]
@@ -251,7 +252,7 @@ FightingDojoAfterBattleText4:
 FightingDojoText6:
 ; Hitmonlee Poké Ball
 	TX_ASM
-	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONCHAN
+	CheckEvent EVENT_GOT_HITMONLEE
 	jr z, .GetMon
 	ld hl, OtherHitmonText
 	call PrintText
@@ -269,7 +270,6 @@ FightingDojoText6:
 	ld b, a
 	ld c, 30
 	call GivePokemon
-	ret
 	jr nc, .done
 
 	; once Poké Ball is taken, hide sprite
@@ -287,7 +287,7 @@ WantHitmonleeText:
 FightingDojoText7:
 ; Hitmonchan Poké Ball
 	TX_ASM
-	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONCHAN
+	CheckEvent EVENT_GOT_HITMONCHAN
 	jr z, .GetMon
 	ld hl, OtherHitmonText
 	call PrintText
@@ -303,9 +303,8 @@ FightingDojoText7:
 	jr nz, .done
 	ld a, [wcf91]
 	ld b, a
-	ld c,30
+	ld c, 30
 	call GivePokemon
-	ret
 	jr nc, .done
 	SetEvents EVENT_GOT_HITMONCHAN, EVENT_DEFEATED_FIGHTING_DOJO
 
