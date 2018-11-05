@@ -8,8 +8,8 @@ FightingDojoObject:
 	db $0 ; signs
 
 	db $2; objects
-	object SPRITE_BALL, $4, $1, STAY, NONE, $6 ; person
-	object SPRITE_BALL, $5, $1, STAY, NONE, $7 ; person
+	object SPRITE_BALL, $4, $1, STAY, NONE, $1 ; person
+	object SPRITE_BALL, $5, $1, STAY, NONE, $2 ; person
 
 	; warp-to
 	EVENT_DISP FIGHTING_DOJO_WIDTH, $b, $4

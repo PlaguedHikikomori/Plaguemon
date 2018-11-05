@@ -376,8 +376,8 @@ MapHSA5:
 	db MANSION_1,$02,Show
 	db MANSION_1,$03,Show
 MapHSB1:
-	db FIGHTING_DOJO,$06,Show
-	db FIGHTING_DOJO,$07,Show
+	db FIGHTING_DOJO,$01,Show
+	db FIGHTING_DOJO,$02,Show
 MapHSB5:
 	db SILPH_CO_1F,$01,Hide
 MapHS53:
