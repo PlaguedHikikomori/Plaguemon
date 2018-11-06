@@ -12,9 +12,7 @@ SeafoamIslands1Object:
 
 	db $0 ; signs
 
-	db $1 ; objects
-	object SPRITE_BIRD, $1a, $7, STAY, DOWN, $1, ARTICUNO, 50
-	
+	db $0 ; objects	
 
 	; warp-to
 	EVENT_DISP SEAFOAM_ISLANDS_1_WIDTH, $11, $4
