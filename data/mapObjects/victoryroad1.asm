@@ -9,7 +9,6 @@ VictoryRoad1Object:
 	db $0 ; signs
 
 	db $0 ; objects
-	
 
 	; warp-to
 	EVENT_DISP VICTORY_ROAD_1_WIDTH, $11, $8

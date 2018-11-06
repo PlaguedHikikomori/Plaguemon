@@ -13,8 +13,7 @@ VictoryRoad2Object:
 	db $0 ; signs
 
 	db $1 ; objects
-	object SPRITE_BIRD, $b, $5, STAY, UP, $6, MOLTRES, 50
-	
+	object SPRITE_BIRD, $b, $5, STAY, UP, $1, MOLTRES, 50
 
 	; warp-to
 	EVENT_DISP VICTORY_ROAD_2_WIDTH, $8, $0 ; VICTORY_ROAD_1
