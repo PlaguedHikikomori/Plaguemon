@@ -33,7 +33,7 @@ TypeNames:
 .Normal:   db "NORMAL@"
 .Fighting: db "VIOLENCE@"
 .Flying:   db "AERIAL@"
-.Poison:   db "ACID@"
+.Poison:   db "WASTE@"
 .Satan:    db "SATANIC@"
 .Water:    db "SEX@"
 .Grass:    db "DRUGS@"
