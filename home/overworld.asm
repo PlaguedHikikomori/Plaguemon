@@ -291,7 +291,7 @@ OverworldLoopLessDelay::
 	jp OverworldLoop
 
 .surfing
-	call CollisionCheckOnWater
+	callab CollisionCheckOnWater
 	jp c,OverworldLoop
 
 .noCollision
@@ -1914,63 +1914,7 @@ JoypadOverworld::
 ; so the old value of c is used. 2429 is always called before this function,
 ; and 2429 always sets c to 0xF0. There is no 0xF0 background tile, so it
 ; is considered impassable and it is detected as a collision.
-CollisionCheckOnWater::
-	ld a,[wd730]
-	bit 7,a
-	jp nz,.noCollision ; return and clear carry if button presses are being simulated
-	ld a,[wPlayerDirection] ; the direction that the player is trying to go in
-	ld d,a
-	ld a,[wSpriteStateData1 + 12] ; the player sprite's collision data (bit field) (set in the sprite movement code)
-	and d ; check if a sprite is in the direction the player is trying to go
-	jr nz,.checkIfNextTileIsPassable ; bug?
-	ld hl,TilePairCollisionsWater
-	call CheckForJumpingAndTilePairCollisions
-	jr c,.collision
-	predef GetTileAndCoordsInFrontOfPlayer ; get tile in front of player (puts it in c and [wTileInFrontOfPlayer])
-	ld a,[wTileInFrontOfPlayer] ; tile in front of player
-	cp a,$14 ; water tile
-	jr z,.noCollision ; keep surfing if it's a water tile
-	cp a,$32 ; either the left tile of the S.S. Anne boarding platform or the tile on eastern coastlines (depending on the current tileset)
-	jr z,.checkIfVermilionDockTileset
-	cp a,$48 ; tile on right on coast lines in Safari Zone
-	jr z,.noCollision ; keep surfing
-; check if the [land] tile in front of the player is passable
-.checkIfNextTileIsPassable
-	ld hl,wTilesetCollisionPtr ; pointer to list of passable tiles
-	ld a,[hli]
-	ld h,[hl]
-	ld l,a
-.loop
-	ld a,[hli]
-	cp a,$ff
-	jr z,.collision
-	cp c
-	jr z,.stopSurfing ; stop surfing if the tile is passable
-	jr .loop
-.collision
-	ld a,[wChannelSoundIDs + Ch4]
-	cp SFX_COLLISION ; check if collision sound is already playing
-	jr z,.setCarry
-	ld a,SFX_COLLISION
-	call PlaySound ; play collision sound (if it's not already playing)
-.setCarry
-	scf
-	jr .done
-.noCollision
-	and a
-.done
-	ret
-.stopSurfing
-	xor a
-	ld [wWalkBikeSurfState],a
-	call LoadPlayerSpriteGraphics
-	call PlayDefaultMusic
-	jr .noCollision
-.checkIfVermilionDockTileset
-	ld a, [wCurMapTileset] ; tileset
-	cp SHIP_PORT ; Vermilion Dock tileset
-	jr nz, .noCollision ; keep surfing if it's not the boarding platform tile
-	jr .stopSurfing ; if it is the boarding platform tile, stop surfing
+
 
 ; function to run the current map's script
 RunMapScript::

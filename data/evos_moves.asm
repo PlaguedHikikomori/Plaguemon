@@ -29,7 +29,7 @@ EvosMovesPointerTable:
 	dw Mon009_EvosMoves
 	dw Mon127_EvosMoves
 	dw Mon114_EvosMoves
-	dw Mon152_EvosMoves ;MissingNo
+	dw Mon152_EvosMoves ;Proglotto
 	dw Mon153_EvosMoves ;MissingNo
 	dw Mon058_EvosMoves
 	dw Mon095_EvosMoves
@@ -570,10 +570,12 @@ Mon114_EvosMoves:
 	db 0
 
 Mon152_EvosMoves:
-;MISSINGNO
+;PROGLOTTO
 ;Evolutions
 	db 0
 ;Learnset
+    db 40,EARTHQUAKE
+	db 47,EXPLOSION
 	db 0
 
 Mon153_EvosMoves:
@@ -1077,6 +1079,7 @@ Mon145_EvosMoves:
 Mon132_EvosMoves:
 ;DITTO
 ;Evolutions
+    db EV_ITEM,X_ATTACK,1,PROGLOTTO
 	db 0
 ;Learnset
 	db 0

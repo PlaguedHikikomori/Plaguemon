@@ -297,6 +297,16 @@ _TangelaDexEntry::
 	next "ugly turned"
 	next "worse"
 	dex
+	
+_ProglottoDexEntry::
+	text "The fecal matter"
+	next "of a colony"
+	next "of sick cats"
+
+	page "found abandoned"
+	next "in a dead cat"
+	next "lady house."
+	dex
 
 _GrowlitheDexEntry::
 	text "His giant penis"

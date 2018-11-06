@@ -739,6 +739,10 @@ UncompressMonSprite::
 	ld a,BANK(MewPicFront)
 	jr z,.GotBank
 	ld a,b
+	cp PROGLOTTO
+	ld a, BANK(ProglottoPicFront)
+	jr z, .GotBank
+	ld a, b
 	cp FOSSIL_KABUTOPS
 	ld a,BANK(FossilKabutopsPic)
 	jr z,.GotBank

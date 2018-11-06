@@ -10,6 +10,7 @@ PICS_2 EQU $A
 PICS_3 EQU $B
 PICS_4 EQU $C
 PICS_5 EQU $D
+PICS_6 EQU $2D
 
 INCLUDE "home.asm"
 
@@ -26,7 +27,6 @@ INCLUDE "engine/black_out.asm"
 
 MewPicFront:: INCBIN "pic/bmon/mew.pic"
 MewPicBack::  INCBIN "pic/monback/mewb.pic"
-INCLUDE "data/baseStats/mew.asm"
 
 INCLUDE "engine/battle/safari_zone.asm"
 
@@ -2131,6 +2131,7 @@ ShrinkPic1::  INCBIN "pic/trainer/shrink1.pic"
 ShrinkPic2::  INCBIN "pic/trainer/shrink2.pic"
 DeadDogSprite: INCBIN "gfx/sprites/deaddog.2bpp"
 INCLUDE "engine/items/bullet.asm"
+ProglottoPicFront:: INCBIN "pic/bmon/proglotto.pic"
 
 
 
@@ -2157,6 +2158,7 @@ INCLUDE "engine/pikachu_pcm.asm"
 INCLUDE "audio/play_pikachu_pcm.asm"
 Sea:                   INCBIN "gfx/sea.2bpp"
 SeaWaste:              INCBIN "gfx/seawaste.2bpp"
+
 
 
 

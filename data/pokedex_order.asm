@@ -29,7 +29,7 @@ PokedexOrder:
 	db DEX_BLASTOISE
 	db DEX_PINSIR
 	db DEX_TANGELA
-	db 0 ; MISSINGNO.
+	db DEX_PROGLOTTO ; Proglotto
 	db 0 ; MISSINGNO.
 	db DEX_GROWLITHE
 	db DEX_ONIX

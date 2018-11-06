@@ -80,7 +80,7 @@ ItemUsePtrTable:
 	dw ItemUseMedicine   ; LEMONADE
 	dw UnusableItem      ; S_S_TICKET
 	dw ItemUseEvoStone   ; GOLD_TEETH
-	dw ItemUseXStat      ; X_ATTACK
+	dw ItemUseEvoStone   ; X_ATTACK
 	dw ItemUseXStat      ; X_DEFEND
 	dw ItemUseXStat      ; X_SPEED
 	dw ItemUseXStat      ; X_SPECIAL

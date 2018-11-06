@@ -221,7 +221,7 @@ CinnabarGymText1:
 	ld hl, BlaineBattleText
 	call PrintText
 	ld hl, BlaineEndBattleText
-	ld de, BlaineEndBattleText
+	;ld de, BlaineEndBattleText
 	call SaveEndBattleTextPointers
 	ld a, $7
 	ld [wGymLeaderNo], a
@@ -233,7 +233,7 @@ BlaineBattleText:
 
 BlaineEndBattleText:
 	TX_FAR _BlaineEndBattleText
-	TX_SFX_KEY_ITEM ; actually plays the second channel of SFX_BALL_POOF due to the wrong music bank being loaded
+	;TX_SFX_KEY_ITEM - actually plays the second channel of SFX_BALL_POOF due to the wrong music bank being loaded
 	TX_WAIT
 	db "@"
 

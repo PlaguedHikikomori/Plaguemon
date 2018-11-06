@@ -29,7 +29,7 @@ PokedexEntryPointers:
 	dw BlastoiseDexEntry
 	dw PinsirDexEntry
 	dw TangelaDexEntry
-	dw MissingNoDexEntry
+	dw ProglottoDexEntry
 	dw MissingNoDexEntry
 	dw GrowlitheDexEntry
 	dw OnixDexEntry
@@ -403,6 +403,13 @@ TangelaDexEntry:
 	db 3,3
 	dw 770
 	TX_FAR _TangelaDexEntry
+	db "@"
+	
+ProglottoDexEntry:
+	db "SICK TURD@"
+	db 2,3
+	dw 180
+	TX_FAR _ProglottoDexEntry
 	db "@"
 
 GrowlitheDexEntry:

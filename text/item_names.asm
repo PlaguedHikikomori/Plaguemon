@@ -63,7 +63,7 @@ ItemNames:
 	db "LEMONADE@"
 	db "TITANIC SEAT@"
 	db "DARK CHIP@"
-	db "X ATTACK@"
+	db "SHIT@"
 	db "X DEFEND@"
 	db "X SPEED@"
 	db "X SPECIAL@"

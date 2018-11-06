@@ -30,7 +30,7 @@ const_value = 1
 	const BLASTOISE    ; $1C
 	const PINSIR       ; $1D
 	const TANGELA      ; $1E
-	const MISSINGNO_1F ; $1F
+	const PROGLOTTO    ; $1F
 	const MISSINGNO_20 ; $20
 	const GROWLITHE    ; $21
 	const ONIX         ; $22

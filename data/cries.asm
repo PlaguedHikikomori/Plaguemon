@@ -30,7 +30,7 @@ CryData:
 	db $13, $23, $80; Blastoise
 	db $14, $23, $80; Pinsir
 	db $12, $23, $80; Tangela
-	db $00, $23, $00; MissingNo.
+	db $0E, $00, $FF; Proglotto
 	db $00, $23, $00; MissingNo.
 	db $1F, $23, $40; Growlithe
 	db $17, $23, $C0; Onix

@@ -29,7 +29,7 @@ MonsterNames:
 	db "SCOLENE@@@"
 	db "SHAMABOO@@"
 	db "MUTANGELA@"
-	db "MISSINGNO."
+	db "PROGLOTTO@"
 	db "MISSINGNO."
 	db "SCRATCHY@@"
 	db "OBSIDIAN@@"
