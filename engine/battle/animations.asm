@@ -2979,9 +2979,9 @@ BattleAnimCopyTileMapToVRAM:
 	jp Delay3
 
 TossBallAnimation:
-	ld a,[wIsInBattle]
-	cp a,2
-	jr z,.BlockBall ; if in trainer battle, play different animation
+	;ld a,[wIsInBattle]
+	;cp a,2
+	;jr z,.BlockBall ; if in trainer battle, play different animation
 	ld a,[wPokeBallAnimData]
 	ld b,a
 

@@ -10,7 +10,7 @@ MtMoon3Object:
 	db $0 ; signs
 
 	db $9 ; objects
-	object SPRITE_BLACK_HAIR_BOY_2, $c, $8, STAY, RIGHT, $1, OPP_SUPER_NERD, $2
+	object SPRITE_FISHER2, $c, $8, STAY, RIGHT, $1, OPP_FISHER, $2
 	object SPRITE_ROCKET, $b, $10, STAY, DOWN, $2, OPP_ROCKET, $1
 	object SPRITE_ROCKET, $f, $16, STAY, DOWN, $3, OPP_ROCKET, $2
 	object SPRITE_ROCKET, $1d, $b, STAY, UP, $4, OPP_ROCKET, $3

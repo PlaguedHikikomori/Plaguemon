@@ -821,6 +821,7 @@ HandleEnemyMonFainted:
 	ld a, [wIsInBattle]
 	dec a
 	ret z ; return if it's a wild battle
+.checkEnemyParty
 	call AnyEnemyPokemonAliveCheck
 	jp z, TrainerBattleVictory
 	ld hl, wBattleMonHP
@@ -1415,10 +1416,12 @@ EnemySendOutFirstMon:
 	dec a
 	ld [wAICount],a
 	ld hl,wPlayerBattleStatus1
+	ld a, [wFirstMonsNotOutYet]
+	dec a ; set the zero flag
 	res 5,[hl]
 	coord hl, 18, 0
 	ld a,8
-	call SlideTrainerPicOffScreen
+	call z, SlideTrainerPicOffScreen ; slide only when sending out the first pokémon(s)
 	call PrintEmptyString
 	call SaveScreenTilesToBuffer1
 	ld a,[wLinkState]
@@ -2391,19 +2394,51 @@ UseBagItem:
 	call LoadScreenTilesFromBuffer1
 	call DrawHUDsAndHPBars
 	call Delay3
-.returnAfterUsingItem_NoCapture
 
+.returnAfterUsingItem_NoCapture
 	call GBPalNormal
 	and a ; reset carry
 	ret
 
 .returnAfterCapturingMon
+	ld a, [wIsInBattle]
+	cp $2 ; check if it was a trainer battle
+	jr z, .continueAfterCapturingEnemyMon
+
 	call GBPalNormal
 	xor a
 	ld [wCapturedMonSpecies], a
 	ld a, $2
 	ld [wBattleResult], a
 	scf ; set carry
+	ret
+
+.continueAfterCapturingEnemyMon
+	ld a, $1
+	ld [wActionResultOrTookBattleTurn], a ; the next turn will be the enemy turn
+	ld a, [wEnemyMonPartyPos]
+	ld hl, wEnemyMon1HP
+	ld bc, wEnemyMon2 - wEnemyMon1
+	call AddNTimes
+	xor a
+	ld [hli], a
+	ld [hl], a ; set mon's status to 0 ; set the enemy's pokémon HP to 0
+	call ClearSprites
+	call LoadHpBarAndStatusTilePatterns
+	call BackgroundBattle
+	call DrawPlayerHUDAndHPBar
+	call AnyEnemyPokemonAliveCheck
+	pop hl ; remove the return address from the stack
+	jp z, TrainerBattleVictory ; if the enemy has no other pokémons, win the battle
+	push hl ; add the return address to the stack
+	call EnemySendOut
+	;call LoadScreenTilesFromBuffer2
+	ld a, [wBattleMonSpecies]
+	ld [wcf91], a
+	ld [wd0b5], a
+	call GetMonHeader
+	ld de, vFrontPic
+	call LoadMonFrontSprite
 	ret
 
 ItemsCantBeUsedHereText:

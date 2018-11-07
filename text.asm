@@ -2947,7 +2947,7 @@ _ItemUseText002::
 	text "!"
 	done
 	
-_MotocrossText::
+_MotorbikeText::
 	text "BRAP BRAP!"
 	prompt
 	

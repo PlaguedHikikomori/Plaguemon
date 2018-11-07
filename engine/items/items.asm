@@ -16,14 +16,14 @@ UseItem_:
 	jp hl
 
 ItemUsePtrTable:
-	dw ItemUseBall       ; MASTER_BALL
-	dw ItemUseBall       ; ULTRA_BALL
-	dw ItemUseBall       ; GREAT_BALL
-	dw ItemUseBall       ; POKE_BALL  
+	dw ItemUseMasterBall       ; MASTER_BALL
+	dw ItemUseUltraBall       ; ULTRA_BALL
+	dw ItemUseGreatBall       ; GREAT_BALL
+	dw ItemUsePokeBall       ; POKE_BALL  
 	dw ItemUseTownMap    ; TOWN_MAP
-	dw ItemUseBicycle    ; BICYCLE
+	dw ItemUsePanda    ; BICYCLE
 	dw ItemUseSurfboard  ; out-of-battle Surf effect
-	dw ItemUseBall       ; SAFARI_BALL
+	dw ItemUseSafariBall       ; SAFARI_BALL
 	dw ItemUsePokedex    ; POKEDEX
 	dw ItemUseEvoStone   ; MOON_STONE
 	dw UsedKetamine      ; ANTIDOTE
@@ -67,9 +67,9 @@ ItemUsePtrTable:
 	dw UnusableItem      ; NUGGET
 	dw UnusableItem      ; ??? PP_UP
 	dw ItemUsePokedoll   ; POKE_DOLL
-	dw ItemBeHand        ; FULL_HEAL
+	dw ItemUseBeTheThing      ; FULL_HEAL
 	dw ItemUseMedicine   ; REVIVE
-	dw UsedAk47          ; MAX_REVIVE
+	dw ItemUseAk47          ; MAX_REVIVE
 	dw ItemUseGuardSpec  ; GUARD_SPEC
 	dw ItemUseSuperRepel ; SUPER_REPL
 	dw ItemUseMaxRepel   ; MAX_REPEL
@@ -100,16 +100,16 @@ ItemUsePtrTable:
 	dw ItemUsePPRestore  ; ELIXER
 	dw ItemUseBurn       ; MAX_ELIXER
 
-ItemUseBall:
+ItemUseMasterBall:
+ItemUseUltraBall:
+ItemUseGreatBall:
+ItemUsePokeBall:
+ItemUseSafariBall:
 
 ; Balls can't be used out of battle.
 	ld a,[wIsInBattle]
 	and a
 	jp z,ItemUseNotTime
-
-; Balls can't catch trainers' Pokémon.
-	dec a
-	jp nz,ThrowBallAtTrainerMon
 
 ; If this is for the old man battle, skip checking if the party & box are full.
 	ld a,[wBattleType]
@@ -489,6 +489,8 @@ ItemUseBall:
 	ld [hl],a
 
 .skip6
+	ld a, [wEnemyMonPartyPos]
+	ld [wWhichPokemon], a ; save the current enemy pokémon's party position
 	ld a,[wcf91]
 	push af
 	ld a,[wEnemyMonSpecies2]
@@ -577,6 +579,10 @@ ItemUseBall:
 	and a ; is this the old man battle?
 	ret nz ; if so, don't remove a ball from the bag
 
+; Restore the current enemy pokémon's party position
+	ld a, [wWhichPokemon]
+	ld [wEnemyMonPartyPos], a
+	
 ; Remove a ball from the bag.
 	ld hl,wNumBagItems
 	inc a
@@ -634,62 +640,68 @@ ItemUseTownMap:
 	jp nz,ItemUseNotTime
 	jpba DisplayTownMap
 
-ItemUseBicycle:
-	ld a,[wIsInBattle]
+ItemUsePanda:
+	ld hl, $0000
+	ld a, $1
+	ld [wWalkBikeSurfStateCopy], a
+	jp ItemUseVehicle
+ItemUseMotorbike:
+	ld hl, MotorbikeText
+	ld a, 255
+	ld [wRepelRemainingSteps], a ; set the repels effect
+	ld a, $3
+	ld [wWalkBikeSurfStateCopy], a
+	jp ItemUseVehicle
+ItemUseAk47:
+	ld hl, $0000
+	ld a, $4
+	ld [wWalkBikeSurfStateCopy], a
+	jp ItemUseVehicle
+ItemUseBeTheThing:
+	ld hl, $0000
+	ld a, $5
+	ld [wWalkBikeSurfStateCopy], a
+	jp ItemUseVehicle
+ItemUseGun:
+	ld hl, $0000
+	ld a, $6
+	ld [wWalkBikeSurfStateCopy], a
+ItemUseVehicle:
+	push hl
+	ld a, [wIsInBattle]
 	and a
-	jp nz,ItemUseNotTime
-	ld a,[wWalkBikeSurfState]
-	ld [wWalkBikeSurfStateCopy],a
-	cp a,2 ; is the player surfing?
-	jp z,ItemUseNotTime
-	dec a ; is player already bicycling?
-	jr nz,.tryToGetOnBike
-.getOffBike
+	jp nz, ItemUseNotTime
+	ld a, [wWalkBikeSurfState]
+	ld b, a ; save it to b
+	cp a, 2 ; is the player surfing?
+	jp z, ItemUseNotTime
+	ld a, [wWalkBikeSurfStateCopy]
+	cp b ; was the item, already worn?
+	jr nz, .tryToWearItem
+.takeOffWearableItem
 	call ItemUseReloadOverworldData
+	pop hl
 	xor a
-	ld [wWalkBikeSurfState],a ; change player state to walking
+	ld [wWalkBikeSurfState], a ; change player state to walking
 	call PlayDefaultMusic ; play walking music
 	ret
-.tryToGetOnBike
-	call IsBikeRidingAllowed
-	jp nc,NoCyclingAllowedHere
+.tryToWearItem
 	call ItemUseReloadOverworldData
 	xor a ; no keys pressed
-	ld [hJoyHeld],a ; current joypad state
-	inc a
-	ld [wWalkBikeSurfState],a ; change player state to bicycling
-	call PlayDefaultMusic ; play bike riding music
-	ret
-	
-ItemUseMotorbike:
-	ld a,[wIsInBattle]    ;carica nell'accumulatore lo stato 
-	and a                 ;è in battaglia il player?
-	jp nz,ItemUseNotTime   ;se si, salta.
-	ld a,[wWalkBikeSurfState] ;carica il lo stato nell'accumulatore
-	ld [wWalkBikeSurfStateCopy],a    ;carica in un indirizzo ram lo stato del giocatore
-	cp a, $2 ; is the player surfing?   
-	;se è due, stai surfando
-	jp z, ItemUseNotTime               ;se si, salta.
-	cp a, $3
-	jr nz, .tryToGetOnBike ;in qualsiasi caso, salta sulla bici
-.getOffBike
-	call ItemUseReloadOverworldData
-	xor a
-	ld [wWalkBikeSurfState],a ; change player state to walking
-	call PlayDefaultMusic ; play walking music
-	ret
-.tryToGetOnBike
-	call ItemUseReloadOverworldData   ;senno riscrivi i dati del mondo
-	xor a ; no keys pressed            
-	ld [hJoyHeld],a ; current joypad state
-	ld a, $3 ; using the motorbike
-	ld [wWalkBikeSurfState], a ; change player state to bicycling,che accade qui quando lo riloddi
-	ld hl,MotocrossText
-	call PlayDefaultMusic ; play bike riding music
-	ld a, 254
-	ld [wRepelRemainingSteps],a
+	ld [hJoyHeld], a ; current joypad state
+	pop hl
+	ld a, [wWalkBikeSurfStateCopy] ; load the selected wearable item
+	ld [wWalkBikeSurfState], a ; change player's wearable item
+	call PlayDefaultMusic
+	ld a, h
+	and a
+	jr nz, .printText
+	ld a, l
+	and a
+	ret z
 .printText
-	jp PrintText
+	call PrintText
+	ret
 	
 ItemUseBurn:
     xor a
@@ -2443,8 +2455,8 @@ GotOnBicycleText:
 	TX_FAR _GotOnBicycleText2
 	db "@"
 	
-MotocrossText:
-    TX_FAR _MotocrossText
+MotorbikeText:
+    TX_FAR _MotorbikeText
 	db "@"
 
 ; restores bonus PP (from PP Ups) when healing at a pokemon center
@@ -3366,83 +3378,4 @@ ReplaceBurnedTileBlock4:
 	;add hl, bc
 	jp Cobra
 	ret
-	
-;------------MERDA--------------	
-UsedAk47:
-  	ld a,[wIsInBattle]    ;carica nell'accumulatore lo stato 
-	and a                 ;è in battaglia il player?
-	jp nz,ItemUseNotTime   ;se si, salta.
-	ld a,[wWalkBikeSurfState] ;carica il lo stato nell'accumulatore
-	ld [wWalkBikeSurfStateCopy],a    ;carica in un indirizzo ram lo stato del giocatore
-	cp a,2 ; is the player surfing?   
-	;se è due, stai surfando
-	jp z,ItemUseNotTime               ;se si, salta.
-	dec a	; is player already bicycling?  
-	dec a   
-	dec a   
-	dec a
-	jr nz,.tryToGetOnBike ;in qualsiasi caso, salta sulla bici
-.getOffBike
-	call ItemUseReloadOverworldData
-	xor a
-	ld [wWalkBikeSurfState],a ; change player state to walking
-	call PlayDefaultMusic ; play walking music
-	;ld hl,GotOffBicycleText
-	jr .printText
-.tryToGetOnBike
-	call ItemUseReloadOverworldData   ;senno riscrivi i dati del mondo
-	xor a ; no keys pressed            
-	ld [hJoyHeld],a ; current joypad state
-	inc a                     ; incrementa accumulutore da zero ad uno, per impostare lo stato su ciclista
-	inc a                     ; surfando
-	inc a             
-    inc a                     ; nuovo stato
-	ld [wWalkBikeSurfState],a ; change player state to bicycling,che accade qui quando lo riloddi
-.printText
-	jp PrintText
-;--------------------------------z
-
-ItemBeHand:
-    ld a, $5
-    ld [wWalkBikeSurfState], a 
-	;ld hl,BeAHandText
-	;jp PrintText
-	ret
-
-ItemUseGun:
-	ld a,[wWalkBikeSurfState] ;carica il lo stato nell'accumulatore
-	ld [wWalkBikeSurfStateCopy],a    ;carica in un indirizzo ram lo stato del giocatore
-	cp a,2 ; is the player surfing?   
-	;se è due, stai surfando
-	jp z,ItemUseNotTime               ;se si, salta.
-	dec a	; is player already bicycling?  
-	dec a   
-	dec a   
-	dec a
-	dec a
-	dec a
-	jr nz,.tryToGetOnBike ;in qualsiasi caso, salta sulla bici
-.getOffBike
-	call ItemUseReloadOverworldData
-	xor a
-	ld [wWalkBikeSurfState],a ; change player state to walking
-	call PlayDefaultMusic ; play walking music
-	;ld hl,GotOffBicycleText
-	jr .printText
-.tryToGetOnBike
-	call ItemUseReloadOverworldData   ;senno riscrivi i dati del mondo
-	xor a ; no keys pressed            
-	ld [hJoyHeld],a ; current joypad state
-	inc a                     ; incrementa accumulutore da zero ad uno, per impostare lo stato su ciclista
-	inc a                     ; surfando
-	inc a             
-    inc a
-    inc a	
-	inc a					; nuovo stato
-	ld [wWalkBikeSurfState],a ; change player state to bicycling,che accade qui quando lo riloddi
-.printText
-	ret
-		
-    
-
 	

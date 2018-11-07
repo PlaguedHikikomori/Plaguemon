@@ -12,11 +12,11 @@ Route8Object:
 	db $3, $11, $a ; Route8Text10
 
 	db $9 ; objects
-	object SPRITE_BLACK_HAIR_BOY_2, $8, $5, STAY, RIGHT, $1, OPP_SUPER_NERD, $3
+	object SPRITE_FISHER2, $8, $5, STAY, RIGHT, $1, OPP_FISHER, $3
 	object SPRITE_GAMBLER, $d, $9, STAY, UP, $2, OPP_GAMBLER, $5
-	object SPRITE_BLACK_HAIR_BOY_2, $2a, $6, STAY, UP, $3, OPP_SUPER_NERD, $4
+	object SPRITE_FISHER2, $2a, $6, STAY, UP, $3, OPP_FISHER, $4
 	object SPRITE_LASS, $1a, $3, STAY, LEFT, $4, OPP_LASS, $d
-	object SPRITE_BLACK_HAIR_BOY_2, $1a, $4, STAY, RIGHT, $5, OPP_SUPER_NERD, $5
+	object SPRITE_FISHER2, $1a, $4, STAY, RIGHT, $5, OPP_FISHER, $5
 	object SPRITE_LASS, $1a, $5, STAY, LEFT, $6, OPP_LASS, $e
 	object SPRITE_LASS, $1a, $6, STAY, RIGHT, $7, OPP_LASS, $f
 	object SPRITE_GAMBLER, $2e, $d, STAY, DOWN, $8, OPP_GAMBLER, $7
