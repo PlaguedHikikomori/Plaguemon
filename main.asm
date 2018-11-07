@@ -10,8 +10,8 @@ PICS_2 EQU $A
 PICS_3 EQU $B
 PICS_4 EQU $C
 PICS_5 EQU $D
-PICS_6 EQU $2D
-PICS_7 EQU $30
+PICS_6 EQU $22
+
 
 INCLUDE "home.asm"
 
@@ -2132,8 +2132,7 @@ ShrinkPic1::  INCBIN "pic/trainer/shrink1.pic"
 ShrinkPic2::  INCBIN "pic/trainer/shrink2.pic"
 DeadDogSprite: INCBIN "gfx/sprites/deaddog.2bpp"
 INCLUDE "engine/items/bullet.asm"
-SECTION "Pics 6", ROMX, BANK[PICS_6]
-ProglottoPicFront:: INCBIN "pic/bmon/proglotto.pic"
+
 
 
 
@@ -2166,9 +2165,13 @@ SeaWaste:              INCBIN "gfx/seawaste.2bpp"
 ShitSprite: 		   INCBIN "gfx/sprites/shit.2bpp"
 BibrodoSprite:         INCBIN "gfx/sprites/bibrodo.2bpp"
 
-SECTION "bank22",ROMX,BANK[$22]
-SECTION "Pics 7", ROMX, BANK[PICS_7]
+SECTION "Pics 6", ROMX, BANK[PICS_6]
+ProglottoPicFront:: INCBIN "pic/bmon/proglotto.pic"
 BibrodoPicFront::  INCBIN "pic/bmon/bibrodo.pic"
+
+
+
+
 
 
 
