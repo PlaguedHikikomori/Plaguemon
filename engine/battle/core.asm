@@ -7062,14 +7062,22 @@ _InitBattleCommon:
 
 _LoadTrainerPic:
 ; wd033-wd034 contain pointer to pic
+	ld a, [wTrainerClass]
+	push af
 	ld a, [wTrainerPicPointer]
 	ld e, a
 	ld a, [wTrainerPicPointer + 1]
 	ld d, a ; de contains pointer to trainer pic
 	ld a, [wLinkState]
 	and a
+	pop af
+	cp $08
+	jr z, .SuperNerd
 	ld a, Bank(TrainerPics) ; this is where all the trainer pics are (not counting Red's)
-	jr z, .loadSprite
+	jp .loadSprite
+.SuperNerd
+	ld a, Bank(SuperNerdPic)
+	jp .loadSprite
 	ld a, Bank(RedPicFront)
 .loadSprite
 	call UncompressSpriteFromDE

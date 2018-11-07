@@ -30,7 +30,7 @@ PokedexOrder:
 	db DEX_PINSIR
 	db DEX_TANGELA
 	db DEX_PROGLOTTO ; Proglotto
-	db 0 ; MISSINGNO.
+	db DEX_BIBRODO   ; Bibrodo
 	db DEX_GROWLITHE
 	db DEX_ONIX
 	db DEX_FEAROW

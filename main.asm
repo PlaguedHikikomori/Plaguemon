@@ -10,7 +10,8 @@ PICS_2 EQU $A
 PICS_3 EQU $B
 PICS_4 EQU $C
 PICS_5 EQU $D
-PICS_6 EQU $2D
+PICS_6 EQU $22
+
 
 INCLUDE "home.asm"
 
@@ -703,11 +704,11 @@ KabutopsPicFront::    INCBIN "pic/bmon/kabutops.pic"
 HorseaPicFront::      INCBIN "pic/bmon/horsea.pic"
 
 SeadraPicFront::      INCBIN "pic/bmon/seadra.pic"
-SeadraPicBack::       INCBIN "pic/monback/seadrab.pic"
+
 SandshrewPicFront::   INCBIN "pic/bmon/sandshrew.pic"
 SandshrewPicBack::    INCBIN "pic/monback/sandshrewb.pic"
 SandslashPicFront::   INCBIN "pic/bmon/sandslash.pic"
-SandslashPicBack::    INCBIN "pic/monback/sandslashb.pic"
+
 OmanytePicFront::     INCBIN "pic/bmon/omanyte.pic"
 OmanytePicBack::      INCBIN "pic/monback/omanyteb.pic"
 OmastarPicFront::     INCBIN "pic/bmon/omastar.pic"
@@ -725,7 +726,7 @@ JolteonPicFront::     INCBIN "pic/bmon/jolteon.pic"
 VaporeonPicFront::    INCBIN "pic/bmon/vaporeon.pic"
 
 MachopPicFront::      INCBIN "pic/bmon/machop.pic"
-MachopPicBack::       INCBIN "pic/monback/machopb.pic"
+
 ZubatPicFront::       INCBIN "pic/bmon/zubat.pic"
 
 EkansPicFront::       INCBIN "pic/bmon/ekans.pic"
@@ -733,16 +734,17 @@ EkansPicFront::       INCBIN "pic/bmon/ekans.pic"
 ParasPicFront::       INCBIN "pic/bmon/paras.pic"
 
 PoliwhirlPicFront::   INCBIN "pic/bmon/poliwhirl.pic"
-PoliwhirlPicBack::    INCBIN "pic/monback/poliwhirlb.pic"
+
 PoliwrathPicFront::   INCBIN "pic/bmon/poliwrath.pic"
-PoliwrathPicBack::    INCBIN "pic/monback/poliwrathb.pic"
+
 WeedlePicFront::      INCBIN "pic/bmon/weedle.pic"
-WeedlePicBack::       INCBIN "pic/monback/weedleb.pic"
+
 KakunaPicFront::      INCBIN "pic/bmon/kakuna.pic"
 
 BeedrillPicFront::    INCBIN "pic/bmon/beedrill.pic"
 
 FossilKabutopsPic::   INCBIN "pic/bmon/fossilkabutops.pic"
+
 
 
 SECTION "Battle (bank B)", ROMX, BANK[$B]
@@ -1282,7 +1284,6 @@ SailorPic::        INCBIN "pic/trainer/sailor.pic"
 JrTrainerMPic::   
 JrTrainerFPic::    INCBIN "pic/trainer/jr.trainerm.pic"
 PokemaniacPic::    INCBIN "pic/trainer/pokemaniac.pic"
-SuperNerdPic::     
 HikerPic::         INCBIN "pic/trainer/hiker.pic"
 BikerPic::         INCBIN "pic/trainer/biker.pic"
 BurglarPic::       INCBIN "pic/trainer/burglar.pic"
@@ -2131,7 +2132,9 @@ ShrinkPic1::  INCBIN "pic/trainer/shrink1.pic"
 ShrinkPic2::  INCBIN "pic/trainer/shrink2.pic"
 DeadDogSprite: INCBIN "gfx/sprites/deaddog.2bpp"
 INCLUDE "engine/items/bullet.asm"
-ProglottoPicFront:: INCBIN "pic/bmon/proglotto.pic"
+
+
+
 
 
 
@@ -2145,6 +2148,7 @@ INCLUDE "engine/overworld/tileset_header.asm"
 Rave_GFX:         INCBIN "gfx/tilesets/rave.t2.2bpp"
 Rave_Block:       INCBIN "gfx/blocksets/rave.bst"
 Rave_Coll::       INCBIN "gfx/tilesets/rave.tilecoll"
+SuperNerdPic::    INCBIN "pic/trainer/supernerd.pic"
 
 
 SECTION "bank21",ROMX,BANK[$21]
@@ -2158,6 +2162,17 @@ INCLUDE "engine/pikachu_pcm.asm"
 INCLUDE "audio/play_pikachu_pcm.asm"
 Sea:                   INCBIN "gfx/sea.2bpp"
 SeaWaste:              INCBIN "gfx/seawaste.2bpp"
+ShitSprite: 		   INCBIN "gfx/sprites/shit.2bpp"
+BibrodoSprite:         INCBIN "gfx/sprites/bibrodo.2bpp"
+
+SECTION "Pics 6", ROMX, BANK[PICS_6]
+ProglottoPicFront:: INCBIN "pic/bmon/proglotto.pic"
+BibrodoPicFront::  INCBIN "pic/bmon/bibrodo.pic"
+
+
+
+
+
 
 
 

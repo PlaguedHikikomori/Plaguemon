@@ -31,7 +31,7 @@ CryData:
 	db $14, $23, $80; Pinsir
 	db $12, $23, $80; Tangela
 	db $0E, $00, $FF; Proglotto
-	db $00, $23, $00; MissingNo.
+	db $25, $77, $FF; Bibrodo
 	db $1F, $23, $40; Growlithe
 	db $17, $23, $C0; Onix
 	db $18, $23, $A0; Fearow

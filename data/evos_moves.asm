@@ -30,7 +30,7 @@ EvosMovesPointerTable:
 	dw Mon127_EvosMoves
 	dw Mon114_EvosMoves
 	dw Mon152_EvosMoves ;Proglotto
-	dw Mon153_EvosMoves ;MissingNo
+	dw Mon153_EvosMoves ;Bibrodo
 	dw Mon058_EvosMoves
 	dw Mon095_EvosMoves
 	dw Mon022_EvosMoves
@@ -579,10 +579,16 @@ Mon152_EvosMoves:
 	db 0
 
 Mon153_EvosMoves:
-;MISSINGNO
+;BIBRODO
 ;Evolutions
 	db 0
 ;Learnset
+	db 23,PSYBEAM
+	db 28,RECOVER
+	db 35,AGILITY
+	db 42,TRI_ATTACK
+	db 50,PSYCHIC_M
+	db 84,AMNESIA
 	db 0
 
 Mon058_EvosMoves:
@@ -2093,6 +2099,7 @@ Mon074_EvosMoves:
 Mon137_EvosMoves:
 ;PORYGON
 ;Evolutions
+    db EV_ITEM,X_DEFEND,1,BIBRODO
 	db 0
 ;Learnset
 	db 23,PSYBEAM

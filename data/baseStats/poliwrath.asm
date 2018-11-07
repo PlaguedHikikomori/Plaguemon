@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 185 ; base exp yield
 INCBIN "pic/bmon/poliwrath.pic",0,1 ; 77, sprite dimensions
 dw PoliwrathPicFront
-dw PoliwrathPicBack
+dw PoliwrathPicFront
 ; attacks known at lvl 0
 db HYPNOSIS
 db WATER_GUN

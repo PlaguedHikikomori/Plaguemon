@@ -10,7 +10,7 @@ db 120 ; catch rate
 db 131 ; base exp yield
 INCBIN "pic/bmon/poliwhirl.pic",0,1 ; 66, sprite dimensions
 dw PoliwhirlPicFront
-dw PoliwhirlPicBack
+dw PoliwhirlPicFront
 ; attacks known at lvl 0
 db BUBBLE
 db HYPNOSIS

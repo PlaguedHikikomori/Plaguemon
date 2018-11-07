@@ -81,7 +81,7 @@ JrTrainerFName:
 PokemaniacName:
 	db "SEX MANIAC@"
 SuperNerdName:
-	db "PIMP@"
+	db "CYBER SLAVE@"
 BurglarName:
 	db "BURGLAR@"
 EngineerName:

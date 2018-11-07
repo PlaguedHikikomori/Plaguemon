@@ -23,7 +23,7 @@ TrainerPicAndMoneyPointers:
 	money 5000
 
 	dw SuperNerdPic
-	money 2500
+	money 9999
 
 	dw HikerPic
 	money 3500

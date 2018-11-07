@@ -61,13 +61,16 @@ Mansion4ScriptPointers:
 Mansion4TextPointers:
 	dw Mansion4Text1
 	dw Mansion4Text2
+	dw Mansion4Text3
+	dw Mansion4Text4
 	dw PickUpItemText
 	dw PickUpItemText
 	dw PickUpItemText
 	dw PickUpItemText
-	dw Mansion4Text7
+	dw Mansion3Text6      ;switch
 	dw PickUpItemText
-	dw Mansion3Text6
+	dw Mansion4Text7      ;diario
+	dw BibrodoText
 
 Mansion4TrainerHeader0:
 	dbEventFlagBit EVENT_BEAT_MANSION_4_TRAINER_0
@@ -86,6 +89,34 @@ Mansion4TrainerHeader1:
 	dw Mansion4AfterBattleText2 ; TextAfterBattle
 	dw Mansion4EndBattleText2 ; TextEndBattle
 	dw Mansion4EndBattleText2 ; TextEndBattle
+	
+Mansion4TrainerHeader2:
+	dbEventFlagBit EVENT_BEAT_MANSION_4_TRAINER_2
+	db ($3 << 4) ; trainer's view range
+	dwEventFlagAddress EVENT_BEAT_MANSION_4_TRAINER_2
+	dw Mansion4BattleText2 ; TextBeforeBattle
+	dw Mansion4AfterBattleText2 ; TextAfterBattle
+	dw Mansion4EndBattleText2 ; TextEndBattle
+	dw Mansion4EndBattleText2 ; TextEndBattle
+
+	
+Mansion4TrainerHeader3:
+	dbEventFlagBit EVENT_BEAT_MANSION_4_TRAINER_3
+	db ($3 << 4) ; trainer's view range
+	dwEventFlagAddress EVENT_BEAT_MANSION_4_TRAINER_3
+	dw Mansion4BattleText2 ; TextBeforeBattle
+	dw Mansion4AfterBattleText2 ; TextAfterBattle
+	dw Mansion4EndBattleText2 ; TextEndBattle
+	dw Mansion4EndBattleText2 ; TextEndBattle
+	
+BibrodoTrainerHeader:
+	dbEventFlagBit EVENT_BEAT_BIBRODO, 1
+	db 0 ; view range
+	dwEventFlagAddress EVENT_BEAT_BIBRODO, 1
+	dw BibrodoBattleText ; TextBeforeBattle
+	dw BibrodoBattleText ; TextAfterBattle
+	dw BibrodoBattleText ; TextEndBattle
+	dw BibrodoBattleText ; TextEndBattle
 
 	db $ff
 
@@ -98,6 +129,18 @@ Mansion4Text1:
 Mansion4Text2:
 	TX_ASM
 	ld hl, Mansion4TrainerHeader1
+	call TalkToTrainer
+	jp TextScriptEnd
+	
+Mansion4Text3:
+	TX_ASM
+	ld hl, Mansion4TrainerHeader2
+	call TalkToTrainer
+	jp TextScriptEnd
+
+Mansion4Text4:
+	TX_ASM
+	ld hl, Mansion4TrainerHeader3
 	call TalkToTrainer
 	jp TextScriptEnd
 
@@ -124,7 +167,51 @@ Mansion4EndBattleText2:
 Mansion4AfterBattleText2:
 	TX_FAR _Mansion4AfterBattleText2
 	db "@"
+	
+Mansion4BattleText3:
+	TX_FAR _Mansion4BattleText3
+	db "@"
+
+Mansion4EndBattleText3:
+	TX_FAR _Mansion4EndBattleText3
+	db "@"
+
+Mansion4AfterBattleText3:
+	TX_FAR _Mansion4AfterBattleText3
+	db "@"
+
+Mansion4BattleText4:
+	TX_FAR _Mansion4BattleText4
+	db "@"
+
+Mansion4EndBattleText4:
+	TX_FAR _Mansion4EndBattleText4
+	db "@"
+
+Mansion4AfterBattleText4:
+	TX_FAR _Mansion4AfterBattleText4
+	db "@"
 
 Mansion4Text7:
 	TX_FAR _Mansion4Text7
 	db "@"
+	
+BibrodoText:
+	TX_ASM
+	ld hl, BibrodoTrainerHeader
+	call TalkToTrainer
+	ld a, [wCurMapScript]
+	ld [wMansion4CurScript], a
+	jp TextScriptEnd
+
+BibrodoBattleText:
+	TX_FAR _BibrodoBattleText
+	TX_ASM
+	ld a, BIBRODO
+	call PlayCry
+	call WaitForSoundToFinish
+	jp TextScriptEnd
+
+_BibrodoBattleText::
+	text "OBEY TO ME!"
+	done

@@ -307,6 +307,16 @@ _ProglottoDexEntry::
 	next "in a dead cat"
 	next "lady house."
 	dex
+	
+_BibrodoDexEntry::
+	text "A virtual"
+	next "dictator created"
+	next "by human minds.."
+
+	page "A dystopian"
+	next "tribute to"
+	next "Orwell.."
+	dex
 
 _GrowlitheDexEntry::
 	text "His giant penis"

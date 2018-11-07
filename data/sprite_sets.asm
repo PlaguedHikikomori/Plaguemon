@@ -554,4 +554,14 @@ SpriteSheetPointerTable:
 	db $40 ; byte count
 	db BANK(DeadDogSprite)
 	
+	dw ShitSprite
+	db $40
+	db BANK(ShitSprite)
+	
+	dw BibrodoSprite
+	db $40
+	db BANK(BibrodoSprite)
+	
+	
+	
 	
