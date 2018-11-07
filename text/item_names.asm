@@ -64,7 +64,7 @@ ItemNames:
 	db "TITANIC SEAT@"
 	db "DARK CHIP@"
 	db "SHIT@"
-	db "X DEFEND@"
+	db "DISKTOPIA@"
 	db "X SPEED@"
 	db "X SPECIAL@"
 	db "AK 47@"

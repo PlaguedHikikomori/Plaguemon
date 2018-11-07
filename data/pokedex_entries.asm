@@ -30,7 +30,7 @@ PokedexEntryPointers:
 	dw PinsirDexEntry
 	dw TangelaDexEntry
 	dw ProglottoDexEntry
-	dw MissingNoDexEntry
+	dw BibrodoDexEntry
 	dw GrowlitheDexEntry
 	dw OnixDexEntry
 	dw FearowDexEntry
@@ -410,6 +410,13 @@ ProglottoDexEntry:
 	db 2,3
 	dw 180
 	TX_FAR _ProglottoDexEntry
+	db "@"
+	
+BibrodoDexEntry:
+	db "DICTATOR@"
+	db 0,0
+	dw 0
+	TX_FAR _BibrodoDexEntry
 	db "@"
 
 GrowlitheDexEntry:

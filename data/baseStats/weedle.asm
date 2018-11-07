@@ -10,7 +10,7 @@ db 255 ; catch rate
 db 52 ; base exp yield
 INCBIN "pic/bmon/weedle.pic",0,1 ; 55, sprite dimensions
 dw WeedlePicFront
-dw WeedlePicBack
+dw WeedlePicFront
 ; attacks known at lvl 0
 db POISON_STING
 db STRING_SHOT

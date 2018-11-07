@@ -14,7 +14,7 @@ Mansion4Object:
 	object SPRITE_BALL, $13, $19, STAY, NONE, $5, TM_14
 	object SPRITE_BALL, $5, $4, STAY, NONE, $6, TM_22
 	object SPRITE_OMANYTE, $10, $14, STAY, NONE, $b
-	object SPRITE_BIBRODO, $5, $d, STAY, NONE, $c, PORYGON, 50
+	object SPRITE_BIBRODO, $5, $d, STAY, NONE, $c, BIBRODO, 50
 
 	; warp-to
 	EVENT_DISP MANSION_4_WIDTH, $16, $17 ; MANSION_1

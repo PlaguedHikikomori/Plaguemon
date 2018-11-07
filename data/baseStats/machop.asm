@@ -10,7 +10,7 @@ db 180 ; catch rate
 db 88 ; base exp yield
 INCBIN "pic/bmon/machop.pic",0,1 ; 55, sprite dimensions
 dw MachopPicFront
-dw MachopPicBack
+dw MachopPicFront
 ; attacks known at lvl 0
 db KARATE_CHOP
 db 0

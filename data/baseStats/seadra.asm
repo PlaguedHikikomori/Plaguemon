@@ -10,7 +10,7 @@ db 75 ; catch rate
 db 155 ; base exp yield
 INCBIN "pic/bmon/seadra.pic",0,1 ; 66, sprite dimensions
 dw SeadraPicFront
-dw SeadraPicBack
+dw SeadraPicFront
 ; attacks known at lvl 0
 db BUBBLE
 db SMOKESCREEN

@@ -207,7 +207,7 @@ BibrodoText:
 BibrodoBattleText:
 	TX_FAR _BibrodoBattleText
 	TX_ASM
-	ld a, PORYGON
+	ld a, BIBRODO
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd

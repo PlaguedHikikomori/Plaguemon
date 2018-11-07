@@ -10,7 +10,7 @@ db 90 ; catch rate
 db 163 ; base exp yield
 INCBIN "pic/bmon/sandslash.pic",0,1 ; 66, sprite dimensions
 dw SandslashPicFront
-dw SandslashPicBack
+dw SandslashPicFront
 ; attacks known at lvl 0
 db SCRATCH
 db SAND_ATTACK
