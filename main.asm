@@ -1282,7 +1282,6 @@ SailorPic::        INCBIN "pic/trainer/sailor.pic"
 JrTrainerMPic::   
 JrTrainerFPic::    INCBIN "pic/trainer/jr.trainerm.pic"
 PokemaniacPic::    INCBIN "pic/trainer/pokemaniac.pic"
-SuperNerdPic::     
 HikerPic::         INCBIN "pic/trainer/hiker.pic"
 BikerPic::         INCBIN "pic/trainer/biker.pic"
 BurglarPic::       INCBIN "pic/trainer/burglar.pic"
@@ -2135,6 +2134,7 @@ ProglottoPicFront:: INCBIN "pic/bmon/proglotto.pic"
 
 
 
+
 SECTION "bank20",ROMX,BANK[$20]
 
 Space_GFX:         INCBIN "gfx/tilesets/space.t2.2bpp"
@@ -2145,6 +2145,7 @@ INCLUDE "engine/overworld/tileset_header.asm"
 Rave_GFX:         INCBIN "gfx/tilesets/rave.t2.2bpp"
 Rave_Block:       INCBIN "gfx/blocksets/rave.bst"
 Rave_Coll::       INCBIN "gfx/tilesets/rave.tilecoll"
+SuperNerdPic::    INCBIN "pic/trainer/supernerd.pic"
 
 
 SECTION "bank21",ROMX,BANK[$21]
@@ -2158,6 +2159,9 @@ INCLUDE "engine/pikachu_pcm.asm"
 INCLUDE "audio/play_pikachu_pcm.asm"
 Sea:                   INCBIN "gfx/sea.2bpp"
 SeaWaste:              INCBIN "gfx/seawaste.2bpp"
+ShitSprite: 		   INCBIN "gfx/sprites/shit.2bpp"
+BibrodoSprite:         INCBIN "gfx/sprites/bibrodo.2bpp"
+
 
 
 

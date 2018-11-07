@@ -28,6 +28,34 @@ _Mansion4AfterBattleText2::
 	cont "my studies!"
 	done
 
+_Mansion4BattleText3::
+	text "Uh-oh. Where am"
+	line "I now?"
+	done
+
+_Mansion4EndBattleText3::
+	text "Awooh!"
+	prompt
+
+_Mansion4AfterBattleText3::
+	text "You can find stuff"
+	line "lying around."
+	done
+
+_Mansion4BattleText4::
+	text "Uh-oh. Where am"
+	line "I now?"
+	done
+
+_Mansion4EndBattleText4::
+	text "Awooh!"
+	prompt
+
+_Mansion4AfterBattleText4::
+	text "You can find stuff"
+	line "lying around."
+	done
+
 _Mansion4Text7::
 	text "Diary; Sept. 1"
 	line "I'm starting having"

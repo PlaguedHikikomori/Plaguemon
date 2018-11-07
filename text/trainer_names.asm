@@ -6,7 +6,7 @@ TrainerNames:
 	db "PIG@"
 	db "PIG@"
 	db "SEX MANIAC@"
-	db "PIMP@"
+	db "CYBER SLAVE@"
 	db "PIMP@"
 	db "BIKER@"
 	db "BURGLAR@"

@@ -362,7 +362,7 @@ VersionText:
 	db "@"
 	
 BuildText:
-	db "build 2"
+	db "build 3"
 	db "@"
 
 DisplayContinueGameInfo:
