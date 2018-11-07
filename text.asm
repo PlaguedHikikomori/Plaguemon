@@ -2744,7 +2744,14 @@ _ItemUseBallText05::
 	line "@"
 	TX_RAM wEnemyMonNick
 	text " was"
-	cont "caught!@@"
+	cont "kidnapped!@@"
+	
+_ItemUseBallText09::
+	text "All right!"
+	line "@"
+	TX_RAM wEnemyMonNick
+	text " was"
+	cont "stolen!@@"
 
 _ItemUseBallText07::
 	TX_RAM wBoxMonNicks

@@ -516,7 +516,15 @@ ItemUseSafariBall:
 	dec a ; is this the old man battle?
 	jr z,.oldManCaughtMon ; if so, don't give the player the caught Pokémon
 
+	ld a, [wIsInBattle]
+	cp $2
+	jr nz, .setNormalText ; is this a wild battle?
+.setStolenText
+	ld hl,ItemUseBallText09
+	jr .printText
+.setNormalText
 	ld hl,ItemUseBallText05
+.printText
 	call PrintText
 
 ; Add the caught Pokémon to the Pokédex.
@@ -614,6 +622,13 @@ ItemUseBallText05:
 ;"All right! {MonName} was caught!"
 ;play sound
 	TX_FAR _ItemUseBallText05
+	TX_SFX_CAUGHT_MON
+	TX_BLINK
+	db "@"
+ItemUseBallText09:
+;"All right! {MonName} was stolen!"
+;play sound
+	TX_FAR _ItemUseBallText09
 	TX_SFX_CAUGHT_MON
 	TX_BLINK
 	db "@"

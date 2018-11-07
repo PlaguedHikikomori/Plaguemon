@@ -1524,9 +1524,9 @@ EnemySendOutFirstMon:
 	call LoadScreenTilesFromBuffer1
 .next4
 	call ClearSprites
-	coord hl, 0, 0
-	lb bc, 4, 11
-	call ClearScreenArea
+	;coord hl, 0, 0
+	;lb bc, 4, 11
+	;call ClearScreenArea
 	ld b, SET_PAL_BATTLE
 	call RunPaletteCommand
 	call GBPalNormal
@@ -1843,7 +1843,7 @@ SendOutMon:
 	call DrawPlayerHUDAndHPBar
 	ld a, [wSpriteFlipped]
 	push af
-	ld a, 1
+	ld a, 0
 	ld [wSpriteFlipped], a
 	predef LoadMonBackPic
 	xor a
@@ -2423,24 +2423,43 @@ UseBagItem:
 	xor a
 	ld [hli], a
 	ld [hl], a ; set mon's status to 0 ; set the enemy's pokémon HP to 0
-	call ClearSprites
-	call LoadHpBarAndStatusTilePatterns
+	call ReloadPlayerMonPic
+	call LoadScreenTilesFromBuffer2
 	call BackgroundBattle
+	call LoadHpBarAndStatusTilePatterns
 	call DrawPlayerHUDAndHPBar
+	call ClearEnemyHud
+	call ClearEnemyMonSprite
 	call AnyEnemyPokemonAliveCheck
 	pop hl ; remove the return address from the stack
 	jp z, TrainerBattleVictory ; if the enemy has no other pokémons, win the battle
 	push hl ; add the return address to the stack
 	call EnemySendOut
-	;call LoadScreenTilesFromBuffer2
-	ld a, [wBattleMonSpecies]
-	ld [wcf91], a
-	ld [wd0b5], a
-	call GetMonHeader
-	ld de, vFrontPic
-	call LoadMonFrontSprite
 	ret
 
+ReloadPlayerMonPic:
+	call LoadBattleMonFromParty
+	ld a, [wBattleMonSpecies2]
+	ld [wcf91], a
+	ld hl, vSprites
+	ld de, vBackPic
+	call LoadMonFrontSprite
+	ret
+	
+ClearEnemyMonSprite:
+	coord hl, 12, 5
+	lb bc, 7, 8
+	call ClearScreenArea
+	call DelayFrames
+	ret
+	
+ClearEnemyHud:
+	coord hl, 10, 0
+	lb bc, 3, 10
+	call ClearScreenArea
+	call DelayFrames
+	ret
+	
 ItemsCantBeUsedHereText:
 	TX_FAR _ItemsCantBeUsedHereText
 	db "@"
