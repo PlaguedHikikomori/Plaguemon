@@ -4,8 +4,8 @@ db 120 ; base attack
 db 100 ; base defense
 db 50 ; base speed
 db 90 ; base special
-db NORMAL ; species type 1
-db NORMAL ; species type 2
+db CYBER ; species type 1
+db CYBER ; species type 2
 db 25  ; catch rate
 db 130 ; base exp yield
 INCBIN "pic/bmon/bibrodo.pic",0,1 ; 77, sprite dimensions
