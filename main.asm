@@ -2164,6 +2164,7 @@ Sea:                   INCBIN "gfx/sea.2bpp"
 SeaWaste:              INCBIN "gfx/seawaste.2bpp"
 ShitSprite: 		   INCBIN "gfx/sprites/shit.2bpp"
 BibrodoSprite:         INCBIN "gfx/sprites/bibrodo.2bpp"
+DiskSprite:            INCBIN "gfx/sprites/disk.2bpp"
 
 SECTION "Pics 6", ROMX, BANK[PICS_6]
 ProglottoPicFront:: INCBIN "pic/bmon/proglotto.pic"
