@@ -894,6 +894,7 @@ Eye:                   INCBIN "gfx/eye.2bpp"
 EyeEnd:
 Parallax:              INCBIN "gfx/parallax.2bpp"
 Cemetery:              INCBIN "gfx/cemetery.2bpp"
+CyberWorld:            INCBIN "gfx/cyberquest.2bpp"
 
 
 SECTION "Battle (bank D)", ROMX, BANK[$D]
@@ -2128,6 +2129,7 @@ SECTION "bank1F",ROMX,BANK[$1F]
 INCLUDE "engine/overworld/shmup.asm"
 CityStuff:		   INCBIN  "gfx/citystuff.2bpp"
 CemeteryStuff:	   INCBIN  "gfx/cemeterystuff.2bpp"
+CyberStuff:		   INCBIN  "gfx/cyberstuff.2bpp"
 ShrinkPic1::  INCBIN "pic/trainer/shrink1.pic"
 ShrinkPic2::  INCBIN "pic/trainer/shrink2.pic"
 DeadDogSprite: INCBIN "gfx/sprites/deaddog.2bpp"
