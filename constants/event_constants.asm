@@ -1934,7 +1934,7 @@ const_value = 0
 	const EVENT_78B                                  ; 78B, (D838, bit 3)
 	const EVENT_78C                                  ; 78C, (D838, bit 4)
 	const EVENT_GOT_MASTER_BALL                      ; 78D, (D838, bit 5)
-	const EVENT_78E                                  ; 78E, (D838, bit 6)
+	const EVENT_GOT_LAPRAS                                  ; 78E, (D838, bit 6)
 	const EVENT_BEAT_SILPH_CO_GIOVANNI               ; 78F, (D838, bit 7)
 	const EVENT_790                                  ; 790, (D839, bit 0)
 	const EVENT_791                                  ; 791, (D839, bit 1)

@@ -965,9 +965,7 @@ OaksLabText5:
 	TX_ASM
 	CheckEvent EVENT_PALLET_AFTER_GETTING_POKEBALLS
 	jr nz, .asm_1d266
-	ld hl, wPokedexOwned
-	ld b, wPokedexOwnedEnd - wPokedexOwned
-	call CountSetBits
+	callba CountTotalCaughtPokemons
 	ld a, [wNumSetBits]
 	cp 2
 	jr c, .asm_1d279

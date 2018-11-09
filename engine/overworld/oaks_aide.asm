@@ -5,9 +5,7 @@ OaksAideScript:
 	ld a, [wCurrentMenuItem]
 	and a
 	jr nz, .choseNo
-	ld hl, wPokedexOwned
-	ld b, wPokedexOwnedEnd - wPokedexOwned
-	call CountSetBits
+	callba CountTotalCaughtPokemons
 	ld a, [wNumSetBits]
 	ld [hOaksAideNumMonsOwned], a
 	ld b, a

@@ -75,6 +75,10 @@ LoadSAV0:
 	ld de, wBoxDataStart
 	ld bc, wBoxDataEnd - wBoxDataStart
 	call CopyData
+	ld hl, sExtraData
+	ld de, wExtraDataStart
+	ld bc, wExtraDataEnd - wExtraDataStart
+	call CopyData
 	and a
 	jp SAVGoodChecksum
 
@@ -223,6 +227,10 @@ SaveSAVtoSRAM0:
 	ld bc, sMainDataCheckSum - sPlayerName
 	call SAVCheckSum
 	ld [sMainDataCheckSum], a
+	ld hl, wExtraDataStart
+	ld de, sExtraData
+	ld bc, wExtraDataEnd - wExtraDataStart
+	call CopyData
 	xor a
 	ld [MBC1SRamBankingMode], a
 	ld [MBC1SRamEnable], a

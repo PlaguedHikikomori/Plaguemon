@@ -151,4 +151,5 @@ PredefPointers::
 	add_predef DrawHP2
 	add_predef DisplayElevatorFloorMenu
 	add_predef OaksAideScript
-
+	add_predef SetPokedexSeen
+	add_predef SetPokedexCaught

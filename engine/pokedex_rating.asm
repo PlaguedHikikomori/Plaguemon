@@ -1,12 +1,8 @@
 DisplayDexRating:
-	ld hl, wPokedexSeen
-	ld b, wPokedexSeenEnd - wPokedexSeen
-	call CountSetBits
+	callba CountTotalSeenPokemons
 	ld a, [wNumSetBits]
 	ld [hDexRatingNumMonsSeen], a
-	ld hl, wPokedexOwned
-	ld b, wPokedexOwnedEnd - wPokedexOwned
-	call CountSetBits
+	callba CountTotalCaughtPokemons
 	ld a, [wNumSetBits]
 	ld [hDexRatingNumMonsOwned], a
 	ld hl, DexRatingsTable

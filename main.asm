@@ -2168,13 +2168,3 @@ BibrodoSprite:         INCBIN "gfx/sprites/bibrodo.2bpp"
 SECTION "Pics 6", ROMX, BANK[PICS_6]
 ProglottoPicFront:: INCBIN "pic/bmon/proglotto.pic"
 BibrodoPicFront::  INCBIN "pic/bmon/bibrodo.pic"
-
-
-
-
-
-
-
-
-
-

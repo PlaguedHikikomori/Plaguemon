@@ -427,9 +427,7 @@ PrintNumBadges:
 
 PrintNumOwnedMons:
 	push hl
-	ld hl, wPokedexOwned
-	ld b, wPokedexOwnedEnd - wPokedexOwned
-	call CountSetBits
+	callba CountTotalCaughtPokemons
 	pop hl
 	ld de, wNumSetBits
 	lb bc, 1, 3

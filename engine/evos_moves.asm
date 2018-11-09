@@ -214,16 +214,8 @@ Evolution_PartyMonLoop: ; loop over party mons
 	and a
 	call z, Evolution_ReloadTilesetTilePatterns
 	predef IndexToPokedex
-	ld a, [wd11e]
-	dec a
-	ld c, a
-	ld b, FLAG_SET
-	ld hl, wPokedexOwned
-	push bc
-	call Evolution_FlagAction
-	pop bc
-	ld hl, wPokedexSeen
-	call Evolution_FlagAction
+	predef SetPokedexSeen
+	predef SetPokedexCaught
 	pop de
 	pop hl
 	ld a, [wLoadedMonSpecies]

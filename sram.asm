@@ -19,6 +19,7 @@ sPartyData::   ds wPartyDataEnd  - wPartyDataStart ; af2c
 sCurBoxData::  ds wBoxDataEnd    - wBoxDataStart ; b0c0
 sTilesetType:: ds 1 ; b522
 sMainDataCheckSum:: ds 1 ; b523
+sExtraData::    ds wExtraDataEnd   - wExtraDataStart
 
 
 SECTION "Saved Boxes 1", SRAM, BANK[2]

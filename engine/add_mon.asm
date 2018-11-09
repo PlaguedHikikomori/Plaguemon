@@ -82,26 +82,12 @@ _AddPartyMon:
 ; If the mon is being added to the player's party, update the pokedex.
 	ld a, [wcf91]
 	ld [wd11e], a
+
 	push de
 	predef IndexToPokedex
+	predef SetPokedexSeen ; set the pokémon as seen
+	predef SetPokedexCaught ; set the pokémon as seen
 	pop de
-	ld a, [wd11e]
-	dec a
-	ld c, a
-	ld b, FLAG_TEST
-	ld hl, wPokedexOwned
-	call FlagAction
-	ld a, c ; whether the mon was already flagged as owned
-	ld [wUnusedD153], a ; not read
-	ld a, [wd11e]
-	dec a
-	ld c, a
-	ld b, FLAG_SET
-	push bc
-	call FlagAction
-	pop bc
-	ld hl, wPokedexSeen
-	call FlagAction
 
 	pop hl
 	push hl
@@ -325,17 +311,8 @@ _AddEnemyMonToPlayerParty:
 	ld a, [wcf91]
 	ld [wd11e], a
 	predef IndexToPokedex
-	ld a, [wd11e]
-	dec a
-	ld c, a
-	ld b, FLAG_SET
-	ld hl, wPokedexOwned
-	push bc
-	call FlagAction ; add to owned pokemon
-	pop bc
-	ld hl, wPokedexSeen
-	call FlagAction ; add to seen pokemon
-	and a
+	predef SetPokedexSeen
+	predef SetPokedexCaught
 	ret                  ; return success
 
 _MoveMon:

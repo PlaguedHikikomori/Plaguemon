@@ -1843,7 +1843,7 @@ SendOutMon:
 	call DrawPlayerHUDAndHPBar
 	ld a, [wSpriteFlipped]
 	push af
-	ld a, 0
+	ld a, 1
 	ld [wSpriteFlipped], a
 	predef LoadMonBackPic
 	xor a
@@ -6419,12 +6419,7 @@ LoadEnemyMonData:
 	ld a, [wEnemyMonSpecies2]
 	ld [wd11e], a
 	predef IndexToPokedex
-	ld a, [wd11e]
-	dec a
-	ld c, a
-	ld b, FLAG_SET
-	ld hl, wPokedexSeen
-	predef FlagActionPredef ; mark this mon as seen in the pokedex
+	predef SetPokedexSeen ; mark this mon as seen in the pokedex
 	ld hl, wEnemyMonLevel
 	ld de, wEnemyMonUnmodifiedLevel
 	ld bc, 1 + NUM_STATS * 2
@@ -7192,8 +7187,8 @@ LoadMonBackPic:
 ; been loaded with GetMonHeader.
 	ld a, [wBattleMonSpecies2]
 	ld [wcf91], a
-	coord hl, 0, 0
-	ld b, 8
+	coord hl, 0, 5
+	ld b, 7
 	ld c, 7
 	call ClearScreenArea
 	ld hl, vSprites

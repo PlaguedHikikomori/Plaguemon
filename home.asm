@@ -282,7 +282,7 @@ LoadFrontSpriteByMonIndex::
 	and a
 	pop hl
 	jr z, .invalidDexNumber ; dex #0 invalid
-	cp NUM_POKEMON + 1
+	cp TOTAL_POKEMON
 	jr c, .validDexNumber   ; dex >#151 invalid
 .invalidDexNumber
 	ld a, RHYDON ; $1
@@ -741,6 +741,10 @@ UncompressMonSprite::
 	ld a,b
 	cp PROGLOTTO
 	ld a, BANK(ProglottoPicFront)
+	jr z, .GotBank
+	ld a, b
+	cp BIBRODO
+	ld a, BANK(BibrodoPicFront)
 	jr z, .GotBank
 	ld a, b
 	cp FOSSIL_KABUTOPS

@@ -3226,6 +3226,17 @@ wBoxMonNicksEnd:: ; dee2
 
 wBoxDataEnd::
 
+wExtraDataStart::
+
+wPokedexOwnedExtra::
+	flag_array NUM_POKEMON_EXTRA
+wPokedexOwnedExtraEnd::
+
+wPokedexSeenExtra::
+	flag_array NUM_POKEMON_EXTRA
+wPokedexSeenExtraEnd::
+
+wExtraDataEnd::
 
 SECTION "Stack", WRAMX[$df00], BANK[1]
 	ds $ff

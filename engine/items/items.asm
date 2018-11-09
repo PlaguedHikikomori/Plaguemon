@@ -529,21 +529,8 @@ ItemUseSafariBall:
 
 ; Add the caught Pokémon to the Pokédex.
 	predef IndexToPokedex
-	ld a,[wd11e]
-	dec a
-	ld c,a
-	ld b,FLAG_TEST
-	ld hl,wPokedexOwned
-	predef FlagActionPredef
-	ld a,c
-	push af
-	ld a,[wd11e]
-	dec a
-	ld c,a
-	ld b,FLAG_SET
-	predef FlagActionPredef
-	pop af
-
+	predef SetPokedexCaught
+	ld a, c ; move the function result from c to a
 	and a ; was the Pokémon already in the Pokédex?
 	jr nz,.skipShowingPokedexData ; if so, don't show the Pokédex data
 
@@ -718,6 +705,8 @@ ItemUseVehicle:
 	call PrintText
 	ret
 	
+
+
 ItemUseBurn:
     xor a
 	ld [wActionResultOrTookBattleTurn], a ; initialise to failure value

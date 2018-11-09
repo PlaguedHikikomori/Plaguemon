@@ -73,8 +73,7 @@ HandlePokedexSideMenu:
 	push af
 	ld a,[wDexMaxSeenMon]
 	push af ; this doesn't need to be preserved
-	ld hl,wPokedexSeen
-	call IsPokemonBitSet
+	call HasPokemonBeenSeen
 	ld b,2
 	jr z,.exitSideMenu
 	call PokedexToIndex
@@ -171,16 +170,12 @@ HandlePokedexListMenu:
 	call DrawPokedexVerticalLine
 	coord hl, 14, 9
 	call DrawPokedexVerticalLine
-	ld hl,wPokedexSeen
-	ld b,wPokedexSeenEnd - wPokedexSeen
-	call CountSetBits
+	call CountTotalSeenPokemons
 	ld de, wNumSetBits
 	coord hl, 16, 3
 	lb bc, 1, 3
 	call PrintNumber ; print number of seen pokemon
-	ld hl,wPokedexOwned
-	ld b,wPokedexOwnedEnd - wPokedexOwned
-	call CountSetBits
+	call CountTotalCaughtPokemons
 	ld de, wNumSetBits
 	coord hl, 16, 6
 	lb bc, 1, 3
@@ -197,7 +192,26 @@ HandlePokedexListMenu:
 	coord hl, 16, 10
 	ld de,PokedexMenuItemsText
 	call PlaceString
-; find the highest pokedex number among the pokemon the player has seen
+; find the highest pokedex number among the pokemon the player has seen - Extra pokémons
+	ld hl,wPokedexSeenExtraEnd - 1
+	ld b, (wPokedexSeenExtraEnd - wPokedexSeenExtra) * 8 + 1
+.maxSeenExtraPokemonLoop
+	ld a,[hld]
+	ld c,8
+.maxSeenExtraPokemonInnerLoop
+	dec b
+	sla a
+	jr c,.storeMaxSeenExtraPokemon
+	ld d, a ; save the a value to d
+	ld a, b ; load the value of b into a
+	and a ; move the flags
+	ld a, d ; restore a
+	jr z, .extraPokemonNotFound ; break the for if no pokémons were found
+	dec c
+	jr nz,.maxSeenExtraPokemonInnerLoop
+	jr .maxSeenExtraPokemonLoop
+.extraPokemonNotFound
+; find the highest pokedex number among the pokemon the player has seen - Normal pokémons
 	ld hl,wPokedexSeenEnd - 1
 	ld b,(wPokedexSeenEnd - wPokedexSeen) * 8 + 1
 .maxSeenPokemonLoop
@@ -211,6 +225,10 @@ HandlePokedexListMenu:
 	jr nz,.maxSeenPokemonInnerLoop
 	jr .maxSeenPokemonLoop
 
+.storeMaxSeenExtraPokemon
+	ld a, b
+	add NUM_POKEMON
+	ld b, a
 .storeMaxSeenPokemon
 	ld a,b
 	ld [wDexMaxSeenMon],a
@@ -248,8 +266,7 @@ HandlePokedexListMenu:
 	add hl,de
 	dec hl
 	push hl
-	ld hl,wPokedexOwned
-	call IsPokemonBitSet
+	call HasPokemonBeenCaught
 	pop hl
 	ld a," "
 	jr z,.writeTile
@@ -257,8 +274,7 @@ HandlePokedexListMenu:
 .writeTile
 	ld [hl],a ; put a pokeball next to pokemon that the player has owned
 	push hl
-	ld hl,wPokedexSeen
-	call IsPokemonBitSet
+	call HasPokemonBeenSeen
 	jr nz,.getPokemonName ; if the player has seen the pokemon
 	ld de,.dashedLine ; print a dashed line in place of the name if the player hasn't seen the pokemon
 	jr .skipGettingName
@@ -388,6 +404,93 @@ IsPokemonBitSet:
 	and a
 	ret
 
+; check if a pokémon has been seen before
+HasPokemonBeenSeen:
+	ld a, [wd11e]
+	ld b, a ; save it into b
+	push bc
+	ld c, a
+	ld a, NUM_POKEMON
+	sub c
+	jr c, .checkExtraPokedex
+	ld hl, wPokedexSeen
+	jr .checkFlag
+.checkExtraPokedex
+	ld hl, wPokedexSeenExtra
+	ld c, a ; load the overflowed index into c
+	ld a, $FF ; load 255 into a
+	sub c ; $FF - Overflowed index
+	inc a ; this is because it will be decreased in IsPokemonBitSet
+	ld [wd11e], a ; set the new index
+.checkFlag
+	call IsPokemonBitSet
+	pop bc
+	ld a, b
+	ld [wd11e], a ; set the old index value
+	ret
+	
+HasPokemonBeenCaught:
+	ld a, [wd11e]
+	ld d, a ; save it into b
+	push de
+	ld c, a
+	ld a, NUM_POKEMON
+	sub c
+	jr c, .checkExtraPokedex
+	ld hl, wPokedexOwned
+	jr .checkFlag
+.checkExtraPokedex
+	ld hl, wPokedexOwnedExtra
+	ld c, a ; load the overflowed index into c
+	ld a, $FF ; load 255 into a
+	sub c ; $FF - Overflowed index
+	inc a ; this is because it will be decreased in IsPokemonBitSet
+	ld [wd11e], a ; set the new index
+.checkFlag
+	call IsPokemonBitSet
+	pop de
+	ld a, d
+	ld [wd11e], a ; set the old index value
+	ret
+	
+CountTotalSeenPokemons:
+	; count normal pokémons
+	ld hl, wPokedexSeen
+	ld b, wPokedexSeenEnd - wPokedexSeen
+	call CountSetBits
+	ld a, [wNumSetBits] ; get the counted normal pokémons
+	ld c, a ; save it into c
+
+	; count extra pokémons
+	ld hl, wPokedexSeenExtra
+	ld b, wPokedexSeenExtraEnd - wPokedexSeenExtra
+	push bc ; push bc to preserve the normal pokémons count
+	call CountSetBits
+	pop bc
+	ld a, [wNumSetBits] ; get the counted extra pokémons
+	add c ; sum it with the normal pokémons counts
+	ld [wNumSetBits], a ; save it on ram
+	ret
+	
+CountTotalCaughtPokemons:
+	; count normal pokémons
+	ld hl, wPokedexOwned
+	ld b, wPokedexOwnedEnd - wPokedexOwned
+	call CountSetBits
+	ld a, [wNumSetBits] ; get the counted normal pokémons
+	ld c, a ; save it into c
+
+	; count extra pokémons
+	ld hl, wPokedexOwnedExtra
+	ld b, wPokedexOwnedExtraEnd - wPokedexOwnedExtra
+	push bc ; push bc to preserve the normal pokémons count
+	call CountSetBits
+	pop bc
+	ld a, [wNumSetBits] ; get the counted extra pokémons
+	add c ; sum it with the normal pokémons counts
+	ld [wNumSetBits], a ; save it on ram
+	ret
+
 ; function to display pokedex data from outside the pokedex
 ShowPokedexData:
 	call GBPalWhiteOutWithDelay3
@@ -483,9 +586,8 @@ ShowPokedexDataInternal:
 	ld de,wd11e
 	lb bc, LEADING_ZEROES | 1, 3
 	; print pokedex number
-
-	ld hl,wPokedexOwned
-	call IsPokemonBitSet
+	
+	call HasPokemonBeenCaught
 	pop af
 	ld [wd11e],a
 	ld a,[wcf91]
@@ -660,6 +762,60 @@ IndexToPokedex:
 	ld [wd11e],a
 	pop hl
 	pop bc
+	ret
+
+SetPokedexSeen:
+	push bc
+	push hl
+	ld a, [wd11e] ; load the pokémon's pokédex index
+	ld c, a ; copy it to c
+	ld a, NUM_POKEMON ; load the total pokémons number
+	sub c ; Number of Pokémons - Pokédex Index
+	jr c, .setSeenExtra	 ; check if it overflows the number of normal pokémons
+	ld hl, wPokedexSeen ; set the flags starting address
+	dec c ; decrement c to get the real index
+	jr .setFlag
+.setSeenExtra
+	ld hl, wPokedexSeenExtra ; set the flags starting address
+	ld c, a
+	ld a, $FF
+	sub c ; get the new index --> Overflowed value - Old Index = New Index
+	ld c, a ; load it into c
+.setFlag
+	ld b, FLAG_SET
+	predef FlagActionPredef ; mark this mon as seen in the pokedex
+	pop hl
+	pop bc
+	ret
+
+SetPokedexCaught:
+	push hl
+	ld a, [wd11e] ; load the pokémon's pokédex index
+	ld c, a ; copy it to c
+	ld a, NUM_POKEMON ; load the total pokémons number
+	sub c ; Number of Pokémons - Pokédex Index
+	jr c, .setOwnedExtra	 ; check if it overflows the number of normal pokémons
+	ld hl, wPokedexOwned ; set the flags starting address
+	dec c ; decrement c to get the real index
+	jr .setFlag
+.setOwnedExtra
+	ld hl, wPokedexOwnedExtra ; set the flags starting address
+	ld c, a
+	ld a, $FF
+	sub c ; get the new index --> Overflowed value - Old Index = New Index
+	ld c, a ; load it into c
+.setFlag
+	ld d, c ; save c into d
+	ld b, FLAG_TEST
+	predef FlagActionPredef ; check if the mon was already registered in the pokédex
+	ld a, c ; save c to a
+	ld c, d ; restore c
+	ld b, FLAG_SET
+	push af
+	predef FlagActionPredef ; mark this mon as seen in the pokedex
+	pop af
+	ld c, a ; move a to c
+	pop hl
 	ret
 
 INCLUDE "data/pokedex_order.asm"

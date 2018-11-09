@@ -61,19 +61,32 @@ SaffronCityText8:
 	db "@"
 
 SaffronCityText9:
-	TX_FAR _SaffronCityText9
 	TX_ASM
+	CheckEvent EVENT_GOT_LAPRAS, 1
+	jp c, .alreadyGotLapras
+	ld hl, .LaprasNotBeenObtainedYetText
+	call PrintText
+.laprasNotBeenObtainedYet
 	ld a, LAPRAS
 	call DisplayPokedex
-	ld a, [wCurrentMenuItem]
-	and a
-	jr nz, .done
-	ld a, [wcf91]
-	ld b, a
-	ld c, 30
+	lb bc, LAPRAS, 30
 	call GivePokemon
+	SetEvent EVENT_GOT_LAPRAS
+	jr .done
+.alreadyGotLapras
+	ld hl, .AlreadyGotLaprasText
+.printText
+	call PrintText
 .done
 	jp TextScriptEnd
+
+.LaprasNotBeenObtainedYetText
+	TX_FAR _SaffronCityText9
+	db "@"
+
+.AlreadyGotLaprasText
+	TX_FAR _SaffronCityText10
+	db "@"
 
 SaffronCityText10:
 	TX_FAR _SaffronCityText10

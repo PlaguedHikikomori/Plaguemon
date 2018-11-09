@@ -6,7 +6,7 @@ SetDefaultNames:
 	ld a, [wd732]
 	push af
 	ld hl, wPlayerName
-	ld bc, wBoxDataEnd - wPlayerName
+	ld bc, wExtraDataEnd - wPlayerName
 	xor a
 	call FillMemory
 	ld hl, wSpriteStateData1

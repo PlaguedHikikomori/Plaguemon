@@ -27,11 +27,9 @@ DirectorText:
 	TX_ASM
 
 	; check pokédex
-	ld hl, wPokedexOwned
-	ld b, wPokedexOwnedEnd - wPokedexOwned
-	call CountSetBits
+	callba CountTotalCaughtPokemons
 	ld a, [wNumSetBits]
-	cp 150
+	cp NUM_POKEMON - 2
 	jr nc, .CompletedDex
 	ld hl, .GameDesigner
 	jr .done
