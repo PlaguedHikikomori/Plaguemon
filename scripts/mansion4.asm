@@ -234,6 +234,7 @@ PickUpDisk:
     TX_FAR _DisktopiaText
 	TX_ASM
     SetEvent EVENT_GOT_DISK
+	predef PickUpItem
 	jp TextScriptEnd
 	
 _DisktopiaText:
