@@ -32,7 +32,8 @@ _Mansion4BattleText3::
 	done
 
 _Mansion4EndBattleText3::
-	text "THE BRAIN.."
+	text "THE"
+    line "BRAIN.."
 	prompt
 
 _Mansion4AfterBattleText3::
@@ -48,8 +49,8 @@ _Mansion4BattleText4::
 	cont "us.."
 	cont "lefted the project.."
 	
-	para "We created THE BRAIN"
-	line "to rule us.."
+	para "We created THE"
+	line "BRAIN to rule us.."
 	done
 
 _Mansion4EndBattleText4::

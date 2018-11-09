@@ -94,20 +94,20 @@ Mansion4TrainerHeader2:
 	dbEventFlagBit EVENT_BEAT_MANSION_4_TRAINER_2
 	db ($1 << 4) ; trainer's view range
 	dwEventFlagAddress EVENT_BEAT_MANSION_4_TRAINER_2
-	dw Mansion4BattleText2 ; TextBeforeBattle
-	dw Mansion4AfterBattleText2 ; TextAfterBattle
-	dw Mansion4EndBattleText2 ; TextEndBattle
-	dw Mansion4EndBattleText2 ; TextEndBattle
+	dw Mansion4BattleText3 ; TextBeforeBattle
+	dw Mansion4AfterBattleText3 ; TextAfterBattle
+	dw Mansion4EndBattleText3 ; TextEndBattle
+	dw Mansion4EndBattleText3 ; TextEndBattle
 
 	
 Mansion4TrainerHeader3:
 	dbEventFlagBit EVENT_BEAT_MANSION_4_TRAINER_3
 	db ($3 << 4) ; trainer's view range
 	dwEventFlagAddress EVENT_BEAT_MANSION_4_TRAINER_3
-	dw Mansion4BattleText2 ; TextBeforeBattle
-	dw Mansion4AfterBattleText2 ; TextAfterBattle
-	dw Mansion4EndBattleText2 ; TextEndBattle
-	dw Mansion4EndBattleText2 ; TextEndBattle
+	dw Mansion4BattleText4 ; TextBeforeBattle
+	dw Mansion4AfterBattleText4 ; TextAfterBattle
+	dw Mansion4EndBattleText4 ; TextEndBattle
+	dw Mansion4EndBattleText4 ; TextEndBattle
 	
 BibrodoTrainerHeader:
 	dbEventFlagBit EVENT_BEAT_BIBRODO, 1
