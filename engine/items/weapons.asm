@@ -209,6 +209,7 @@ LoadBulletTileOneTime:
 	ret
 	
 LoadBulletTile:
+	ld de, BulletSprite
 	ld hl, vChars1 + $7c0
 	ld de, BallSprite
 	lb bc, BANK(BallSprite), $04
