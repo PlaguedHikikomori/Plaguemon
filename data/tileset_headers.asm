@@ -24,4 +24,4 @@ Tilesets:
 	tileset Facility_Block,    Facility_GFX,    Facility_Coll,    $12,$FF,$FF, $FF, CAVE
 	tileset Plateau_Block,     Plateau_GFX,     Plateau_Coll,     $FF,$FF,$FF, $45, CAVE
     tileset Space_Block,       Space_GFX,       Space_Coll,       $FF,$FF,$FF, $FF, OUTDOOR
-	tileset Rave_Block,        Rave_GFX,        Rave_Coll,        $FF,$FF,$FF, $FF, INDOOR 
+	tileset Rave_Block,        Rave_GFX,        Cavern_Coll,      $FF,$FF,$FF, $FF, INDOOR 
