@@ -86,6 +86,10 @@ DoBoulderDustAnimation:
 	ld a, [wd730]
 	bit 0, a
 	ret nz
+	ld a, $01
+	ld [wWhichAnimationOffsets], a ; select the boulder dust offsets
+	ld a, $08
+	ld [wAnimationDuration], a ; select the animation duration
 	callab AnimateBoulderDust
 	call DiscardButtonPresses
 	ld [wJoyIgnore], a

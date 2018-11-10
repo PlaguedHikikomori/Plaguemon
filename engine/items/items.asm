@@ -69,7 +69,7 @@ ItemUsePtrTable:
 	dw ItemUsePokedoll   ; POKE_DOLL
 	dw ItemUseBeTheThing      ; FULL_HEAL
 	dw ItemUseMedicine   ; REVIVE
-	dw ItemUseAk47          ; MAX_REVIVE
+	dw ItemUseFlamethrower         ; MAX_REVIVE
 	dw ItemUseGuardSpec  ; GUARD_SPEC
 	dw ItemUseSuperRepel ; SUPER_REPL
 	dw ItemUseMaxRepel   ; MAX_REPEL
@@ -84,7 +84,7 @@ ItemUsePtrTable:
 	dw ItemUseEvoStone   ; X_DEFEND
 	dw ItemUseXStat      ; X_SPEED
 	dw ItemUseXStat      ; X_SPECIAL
-	dw ItemUseGun        ; COIN_CASE
+	dw ItemUseAk47        ; COIN_CASE
 	dw ItemUseOaksParcel ; OAKS_PARCEL
 	dw ItemUseItemfinder ; ITEMFINDER
 	dw UnusableItem      ; SILPH_SCOPE
@@ -643,33 +643,10 @@ ItemUseTownMap:
 	jpba DisplayTownMap
 
 ItemUsePanda:
-	ld hl, $0000
-	ld a, $1
-	ld [wWalkBikeSurfStateCopy], a
-	jp ItemUseVehicle
 ItemUseMotorbike:
-	ld hl, MotorbikeText
-	ld a, 255
-	ld [wRepelRemainingSteps], a ; set the repels effect
-	ld a, $3
-	ld [wWalkBikeSurfStateCopy], a
-	jp ItemUseVehicle
-ItemUseAk47:
-	ld hl, $0000
-	ld a, $4
-	ld [wWalkBikeSurfStateCopy], a
-	jp ItemUseVehicle
+ItemUseFlamethrower:
 ItemUseBeTheThing:
-	ld hl, $0000
-	ld a, $5
-	ld [wWalkBikeSurfStateCopy], a
-	jp ItemUseVehicle
-ItemUseGun:
-	ld hl, $0000
-	ld a, $6
-	ld [wWalkBikeSurfStateCopy], a
-ItemUseVehicle:
-	push hl
+ItemUseAk47:
 	ld a, [wIsInBattle]
 	and a
 	jp nz, ItemUseNotTime
@@ -677,35 +654,111 @@ ItemUseVehicle:
 	ld b, a ; save it to b
 	cp a, 2 ; is the player surfing?
 	jp z, ItemUseNotTime
-	ld a, [wWalkBikeSurfStateCopy]
-	cp b ; was the item, already worn?
-	jr nz, .tryToWearItem
-.takeOffWearableItem
-	call ItemUseReloadOverworldData
-	pop hl
+	ld hl, VehiclesPtr ; load the vehicle structure
+	ld c, (VehiclesPtrEnd - VehiclesPtr) / 12 ; get the total items number
+	ld a, [wcf91] ; get the used item
+	ld d, a ; save it on d
+.searchUsedItem
+	ld a, [hl]
+	cp d ; check if it's the item used by the player
+	jr z, .itemHasBeenFound
+	dec c
+	jr z, .invalidVehicleItem ; return if the item hasn't been found 
+	push de ; preserve the item ID
+	ld de, $000C
+	add hl, de ; add to hl 12 (0C), to jump to the next item
+	pop de
+	jr .searchUsedItem ; loop
+.itemHasBeenFound
+	ld a, [wWalkBikeSurfState] ; load the driven vehicle
+	ld b, a ; move it to b
+	inc hl
+	inc hl ; increase it two times, to get the vehicle number
+	ld a, [hl] ; get the vehicle number
+	ld [wWalkBikeSurfStateCopy], a ; make a copy of it
+	cp b ; was the player driving the vehicle?
+	jr nz, .tryToDriveVehicle ; if not, drive it
+.getOffTheVehicle
+	ld de, $0006
+	add hl, de ; "jump" directly to the unmount text
+	ld a, [hli] ; move to a the first byte and increment hl
+	ld d, a ; move it to a
+	and a
+	jr z, .skipUnmountText ; check if there's no unmount text
+	ld a, [hl] ; move to a the second byte
+	ld h, a ; invert them
+	ld l, d
+	call PrintText
+.skipUnmountText
 	xor a
 	ld [wWalkBikeSurfState], a ; change player state to walking
 	call PlayDefaultMusic ; play walking music
 	ret
-.tryToWearItem
+.tryToDriveVehicle
+	inc hl
+	inc hl ; increment to "jump" to the function pointer
+	push hl
 	call ItemUseReloadOverworldData
+	pop hl
+	ld a, [hli] ; get the first byte and increase hl
+	ld d, a ; move it to d
+	and a
+	jr z, .skipFunctionCalling ; skip it if the first byte is $00
+	ld a, [hl] ; get the second byte
+	ld e, a ; move it to e
+	push hl ; preserve hl register address
+	ld h, e
+	ld l, d
+	call GenericJumpHL ; call the pointed function
+	pop hl ; pop out the preserved register address
+.skipFunctionCalling
+	inc hl ; increase it once, to "jump" to the text pointer
+	ld a, [hli] ; load the first byte to a and increase hl
+	and a
+	ld d, a
+	jr z, .skipStartingText ; skip it if the first byte is $00
+	ld a, [hl] ; load the second byte into a
+	push hl ; preserve hl register
+	ld h, a
+	ld l, d
+	call PrintText ; print the text
+	pop hl
+.skipStartingText
 	xor a ; no keys pressed
 	ld [hJoyHeld], a ; current joypad state
-	pop hl
 	ld a, [wWalkBikeSurfStateCopy] ; load the selected wearable item
 	ld [wWalkBikeSurfState], a ; change player's wearable item
+	ld de, $03
+	add hl, de ; increase hl to get the first byte of the music to be reproduced
+	ld a, [hl]
+	and a
+	jr z, .playDefaultMusic ; check if it's 00
+	ld a, BANK(Music_MeetProfOak) ; prepare the music bank
+	ld c, a ; move it to c
+	ld a, [hl] ; reload the music ID into a
+	call PlayMusic
+	ret
+.playDefaultMusic
 	call PlayDefaultMusic
-	ld a, h
-	and a
-	jr nz, .printText
-	ld a, l
-	and a
-	ret z
-.printText
-	call PrintText
+.invalidVehicleItem
 	ret
 	
-
+; Vehicle item ID | Vehicle ID | Vehicle mount effect | Vehicle mount text | Vehicle unmount text | Music played when mounted
+VehiclesPtr:
+	dw BICYCLE, $1, $0000, $0000, $0000, $0000 ; Panda
+	dw MOTORBIKE, $3, SetRepelsEffect, MotorbikeText, $0000, $0000 ; Motorbike
+	dw MAX_REVIVE, $4, $0000, $0000, $0000, MUSIC_MEET_PROF_OAK ; Flamethrower
+	dw FULL_HEAL, $5, $0000, $0000, $0000, MUSIC_MEET_PROF_OAK ; The thing
+	dw COIN_CASE, $6, $0000, $0000, $0000, MUSIC_MEET_PROF_OAK ; Ak47
+VehiclesPtrEnd:
+	
+SetRepelsEffect:
+	ld a, $FF
+	ld [wRepelRemainingSteps], a ; set the repels effect
+	ret
+	
+GenericJumpHL:
+	jp hl
 
 ItemUseBurn:
     xor a

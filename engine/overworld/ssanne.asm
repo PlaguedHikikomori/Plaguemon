@@ -1,15 +1,21 @@
 AnimateBoulderDust:
-	ld a, $1
-	ld [wWhichAnimationOffsets], a ; select the boulder dust offsets
 	ld a, [wUpdateSpritesEnabled]
 	push af
 	ld a, $ff
 	ld [wUpdateSpritesEnabled], a
 	ld a, %11100100
 	ld [rOBP1], a
+	ld a, [wWhichAnimationOffsets] ; which animation?
+	cp $02
+	jr z, .loadBullet
 	call LoadSmokeTileFourTimes
+	jr .writeAnimation
+.loadBullet
+	callba LoadBulletTileOneTime
+.writeAnimation
 	callba WriteCutOrBoulderDustAnimationOAMBlock
-	ld c, 8 ; number of steps in animation
+	ld a, [wAnimationDuration] ; get the animation duration
+	ld c, a ; number of steps in animation
 .loop
 	push bc
 	call GetMoveBoulderDustFunctionPointer
@@ -30,8 +36,13 @@ AnimateBoulderDust:
 	jp LoadPlayerSpriteGraphics
 
 GetMoveBoulderDustFunctionPointer:
-	ld a, [wSpriteStateData1 + 9] ; player's sprite facing direction
+	ld a, [wWhichAnimationOffsets] ; which animation?
+	cp $02
+	ld hl, ShootBulletFunctionPointerTable
+	jr z, .set
 	ld hl, MoveBoulderDustFunctionPointerTable
+.set
+	ld a, [wSpriteStateData1 + 9] ; player's sprite facing direction
 	ld c, a
 	ld b, $0
 	add hl, bc
@@ -66,6 +77,23 @@ MoveBoulderDustFunctionPointerTable:
 
 ; facing right
 	db $FF,$01
+	dw AdjustOAMBlockXPos
+
+ShootBulletFunctionPointerTable:
+; facing down
+	db $09,$00
+	dw AdjustOAMBlockXPos
+
+; facing up
+	db $F7,$00
+	dw AdjustOAMBlockYPos
+
+; facing left
+	db $F7,$01
+	dw AdjustOAMBlockXPos
+
+; facing right
+	db $09,$01
 	dw AdjustOAMBlockXPos
 
 LoadSmokeTileFourTimes:

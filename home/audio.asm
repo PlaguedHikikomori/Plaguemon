@@ -22,24 +22,35 @@ PlayDefaultMusicCommon::
 	ld a, [wWalkBikeSurfState]
 	and a
 	jr z, .walking
+	cp $1
+	jr z, .motocrossMusic ; Panda
 	cp $2
-	jr z, .surfing
-	ld a, MUSIC_SURFING
-	jr .next
-
-.motocrossmusic
-    ld a, MUSIC_SURFING	
-	
+	jr z, .surfing ; Surf
+	cp $3
+	jr z, .motocrossMusic ; Motorbike
+.usingWeapon ; Weapons
+	ld a, MUSIC_MEET_PROF_OAK
+	jr .nextOther
+.motocrossMusic
+    ld a, MUSIC_SURFING
+	jr .nextNormal
 .surfing
 	ld a, MUSIC_BIKE_RIDING
-
-.next
+.nextNormal
 	ld b, a
 	ld a, d
 	and a ; should current music be faded out first?
 	ld a, BANK(Music_BikeRiding)
 	jr nz, .next2
+	jr .faded
+.nextOther
+	ld b, a
+	ld a, d
+	and a ; should current music be faded out first?
+	ld a, BANK(Music_MeetProfOak)
+	jr nz, .next2
 
+.faded
 ; Only change the audio ROM bank if the current music isn't going to be faded
 ; out before the default music begins.
 	ld [wAudioROMBank], a

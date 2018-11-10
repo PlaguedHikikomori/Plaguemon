@@ -338,8 +338,10 @@ StartMenu_Item:
 	xor a
 	ld [wMenuItemToSwap],a
 	ld a,[wcf91]
-	cp a,BICYCLE
-	jp z,.useOrTossItem
+	ld hl,UsableItems_UseTossMenu
+	ld de,1
+	call IsInArray
+	jp c,.useOrTossItem
 .notBicycle1
 	ld a,USE_TOSS_MENU_TEMPLATE
 	ld [wTextBoxID],a
@@ -369,8 +371,10 @@ StartMenu_Item:
 	call GetItemName
 	call CopyStringToCF4B ; copy name to wcf4b
 	ld a,[wcf91]
-	cp a,BICYCLE
-	jr nz,.notBicycle2
+	ld hl,UsableItems_UseTossMenu
+	ld de,1
+	call IsInArray
+	jr nc,.notBicycle2
 	ld a,[wd732]
 	bit 5,a
 	jr z,.useItem_closeMenu
@@ -488,6 +492,7 @@ UsableItems_PartyMenu:
 ; items which close the item menu when used
 UsableItems_CloseMenu:
     db MOTORBIKE
+	db COIN_CASE
 	db ESCAPE_ROPE
 	db ITEMFINDER
 	db POKE_FLUTE
@@ -502,6 +507,15 @@ UsableItems_CloseMenu:
 	db FULL_HEAL
 	db $ff
 
+; items which won't open the "use/toss" sub menu when selected
+UsableItems_UseTossMenu:
+	db BICYCLE
+	db MOTORBIKE
+	db MAX_REVIVE
+	db FULL_HEAL
+	db COIN_CASE
+	db $ff
+	
 StartMenu_TrainerInfo:
 	call GBPalWhiteOut
 	call ClearScreen

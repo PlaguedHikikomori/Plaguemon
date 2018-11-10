@@ -60,6 +60,7 @@ OverworldLoopLessDelay::
 	jp nz,.moveAhead ; if the player sprite has not yet completed the walking animation
 	call JoypadOverworld ; get joypad state (which is possibly simulated)
 	callba SafariZoneCheck
+	callba CheckWeaponShot
 	ld a,[wSafariZoneGameOver]
 	and a
 	jp nz,WarpFound2
@@ -82,34 +83,11 @@ OverworldLoopLessDelay::
 	ld a,[hJoyPressed]
 .checkIfStartIsPressed
 	bit 3,a ; start button
-	jr z,.cadaverino 
+	jr z,.startButtonNotPressed
 ; if START is pressed
 	xor a
 	ld [hSpriteIndexOrTextID],a ; start menu text ID
 	jp .displayDialogue
-.cadaverino
-    ld a,[wWalkBikeSurfState]
-	cp a, $04
-	jr z, .KnifeKeyPress
-	ld a,[wWalkBikeSurfState]
-	cp a, $01
-	jr nz, .ak47
-.KnifeKeyPress
-	ld a, [hJoyPressed] ; Check what buttons are being pressed
-	bit 1, a ; Are you holding B?
-	jr z, .startButtonNotPressed ; If you aren't holding B, skip ahead to step normally.
-	callba Knife ;-------------ERRORE--------------
-	jp .startButtonNotPressed
-.ak47
-	ld a,[wWalkBikeSurfState]
-	cp a, $06
-	jr nz, .startButtonNotPressed
-	ld a, [hJoyPressed] ; Check what buttons are being pressed
-	bit 1, a ; Are you holding B?
-	jr z, .startButtonNotPressed ; If you aren't holding B, skip ahead to step normally.
-	callba Bullet2
-	ldpikacry e, PikachuCry2
-	callab PlayPikachuSoundClip
 .startButtonNotPressed
     ld a,[hJoyHeld]
 	bit 0,a ; A button
@@ -175,7 +153,6 @@ OverworldLoopLessDelay::
 	ld [wPlayerLastStopDirection],a ; save the last direction
 	xor a
 	ld [wPlayerMovingDirection],a ; zero the direction
-.overworldLoop
 	jp OverworldLoop
 
 .checkIfDownButtonIsPressed
@@ -277,7 +254,7 @@ OverworldLoopLessDelay::
 ; not surfing
 	callab CollisionCheckOnLand
 	jr nc,.noCollision
-; collision occurredz
+; collision occurred
 	push hl
 	ld hl,wd736
 	bit 2,[hl] ; standing on warp flag
@@ -321,11 +298,15 @@ OverworldLoopLessDelay::
 .normalPlayerSpriteAdvancement
 	; Ask for motorbike 
 	ld a,[wWalkBikeSurfState]
-	cp a, $03
+	cp $05
+	jr z, .theThing
+	cp $03
 	jr nz, .notRunning
+.running
     call DoBikeSpeedup 
 .car
 	call DoBikeSpeedup 
+.theThing
 	call DoBikeSpeedup 
 .notRunning 
 	call AdvancePlayerSprite
@@ -853,24 +834,18 @@ LoadPlayerSpriteGraphics::
 	; 1: driving the Panda
 	; 2: surfing
 	; 3: driving the motorbike
+	; 4: using the flamethrower
+	; 5: using "be the thing"
+	; 6: using the ak47
 
 	ld a, [wWalkBikeSurfState]
-	cp $03 ; check if the player is driving the motorbike
-	jr z, .determineGraphics
-
-	dec a
-	jr z, .ridingBike
+	cp $02 ; check if the player is surfing
+	jr nz, .determineGraphics
 
 	ld a, [hTilesetType]
 	and a
 	jr nz, .determineGraphics
 	jr .startWalking
-
-.ridingBike
-	; If the bike can't be used,
-	; start walking instead.
-	call IsBikeRidingAllowed
-	jr c, .determineGraphics
 
 .startWalking
 	xor a

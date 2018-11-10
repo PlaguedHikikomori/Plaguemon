@@ -20,8 +20,6 @@ SECTION "bank1",ROMX,BANK[$1]
 
 INCLUDE "engine/overworld/tilepaircollision.asm"
 
-INCLUDE "engine/overworld/knife.asm"
-
 INCLUDE "data/facing.asm"
 
 INCLUDE "engine/black_out.asm"
@@ -2131,7 +2129,7 @@ CemeteryStuff:	   INCBIN  "gfx/cemeterystuff.2bpp"
 ShrinkPic1::  INCBIN "pic/trainer/shrink1.pic"
 ShrinkPic2::  INCBIN "pic/trainer/shrink2.pic"
 DeadDogSprite: INCBIN "gfx/sprites/deaddog.2bpp"
-INCLUDE "engine/items/bullet.asm"
+INCLUDE "engine/items/weapons.asm"
 
 
 

@@ -151,7 +151,10 @@ GetCutOrBoulderDustAnimationOffsets:
 	and a
 	ld hl, CutAnimationOffsets
 	jr z, .next
+	cp $01
 	ld hl, BoulderDustAnimationOffsets
+	jr z, .next
+	ld hl, BulletAnimationOffsets
 .next
 	add hl, de
 	ld e, [hl]
@@ -179,6 +182,12 @@ BoulderDustAnimationOffsets:
 	db  8, -12 ; player is facing up
 	db -24, 20 ; player is facing left
 	db 40,  20 ; player is facing right
+	
+BulletAnimationOffsets:
+	db  8,  19 ; player is facing down
+	db  8, 15 ; player is facing up
+	db 5, 20 ; player is facing left
+	db 10,  20 ; player is facing right
 
 ReplaceTreeTileBlock:
 ; Determine the address of the tile block that contains the tile in front of the

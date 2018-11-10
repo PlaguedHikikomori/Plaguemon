@@ -1938,7 +1938,11 @@ wSubAnimSubEntryAddr:: ; d096
 ; the address of the current subentry of the current subanimation
 	ds 2
 
-	ds 2
+wShotAnimation:: ; d097
+	ds 1
+	
+wAnimationDuration:: ; d098
+	ds 1
 
 wOutwardSpiralTileMapPointer:: ; d09a
 	ds 1

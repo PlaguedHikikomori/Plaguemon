@@ -5,7 +5,7 @@ SpaceWorldScript:
 	ld a, [hJoyPressed]
 	cp B_BUTTON
 	ret nz
-	call Bullet2
+	;call Bullet2
 	ret
 	
 Shmup1:
