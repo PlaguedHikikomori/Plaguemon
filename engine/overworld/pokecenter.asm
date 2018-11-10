@@ -40,9 +40,9 @@ DisplayPokemonCenterDialogue_:
 	jr .done
 .declinedHealing
 	call LoadScreenTilesFromBuffer1 ; restore screen
-.done
 	ld hl, PokemonCenterFarewellText
 	call PrintText
+.done
 	jp UpdateSprites
 
 PokemonCenterWelcomeText:

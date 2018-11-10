@@ -8,12 +8,16 @@ AnimateBoulderDust:
 	ld a, [wWhichAnimationOffsets] ; which animation?
 	cp $02
 	jr z, .loadBullet
-	call LoadSmokeTileFourTimes
+	callba LoadSmokeTileFourTimes
 	jr .writeAnimation
 .loadBullet
-	callba LoadBulletTileOneTime
+	ld b, $01
+	callab LoadRightCoordinates
+	callba WriteBulletAnimationOAMBlock
+	jr .wrote
 .writeAnimation
 	callba WriteCutOrBoulderDustAnimationOAMBlock
+.wrote
 	ld a, [wAnimationDuration] ; get the animation duration
 	ld c, a ; number of steps in animation
 .loop
@@ -95,27 +99,3 @@ ShootBulletFunctionPointerTable:
 ; facing right
 	db $09,$01
 	dw AdjustOAMBlockXPos
-
-LoadSmokeTileFourTimes:
-	ld hl, vChars1 + $7c0
-	ld c, $4
-.loop
-	push bc
-	push hl
-	call LoadSmokeTile
-	pop hl
-	ld bc, $10
-	add hl, bc
-	pop bc
-	dec c
-	jr nz, .loop
-	ret
-
-LoadSmokeTile:
-	ld de, SSAnneSmokePuffTile
-	lb bc, BANK(SSAnneSmokePuffTile), (SSAnneSmokePuffTileEnd - SSAnneSmokePuffTile) / $10
-	jp CopyVideoData
-
-SSAnneSmokePuffTile:
-	INCBIN "gfx/ss_anne_smoke_puff.2bpp"
-SSAnneSmokePuffTileEnd:

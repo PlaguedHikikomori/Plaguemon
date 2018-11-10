@@ -192,6 +192,9 @@ FlameThrowerAnimation:
 
 BulletAnimation:
 	push de
+	ld b, $00 ; fire
+	call LoadRightCoordinates ; get the right coordinates to spawn the bang sprite
+	call ExecuteBangAnimation
 	ldpikacry e, PikachuCry2
 	callab PlayPikachuSoundClip
 	pop de
@@ -204,16 +207,125 @@ BulletAnimation:
 	callba AnimateBoulderDust	
 	ret
 
-LoadBulletTileOneTime:
-	call LoadBulletTile ; load the bullet tile
+; INPUTS
+; b = type
+; OUTPUTS
+; bc = bang coordinates
+LoadRightCoordinates:
+	ld a, [wSpriteStateData1 + 9] ; load the player facing direction
+	cp SPRITE_FACING_LEFT
+	jr z, .isFacingLeft
+	cp SPRITE_FACING_RIGHT
+	jr z, .isFacingRight
+	cp SPRITE_FACING_UP
+	jr z, .isFacingUp
+.isFacingDown
+	ld a, b
+	and a
+	jr z, .loadBangDown
+	call LoadBulletRotatedTileOneTime
+	jr .loadedDown
+.loadBangDown
+	call LoadBangRotatedOneTime
+.loadedDown
+	ld a, [wSpriteStateData1 + 4] ; load the player X coordinate into b
+	add $19
+	ld b, a
+	ld a, [wSpriteStateData1 + 6] ; load the player Y coordinate into c
+	add $0A
+	ld c, a
+	ld de, BangOAMDown
+	ret
+.isFacingUp
+	ld a, b
+	and a
+	jr z, .loadBangUp
+	call LoadBulletRotatedTileOneTime
+	jr .loadedUp
+.loadBangUp
+	call LoadBangRotatedOneTime
+.loadedUp
+	ld a, [wSpriteStateData1 + 4] ; load the player X coordinate into b
+	add $02
+	ld b, a
+	ld a, [wSpriteStateData1 + 6] ; load the player Y coordinate into c
+	add $0A
+	ld c, a
+	ld de, BangOAMUp
+	ret
+.isFacingLeft
+	ld a, b
+	and a
+	jr z, .loadBangLeft
+	call LoadBulletTileOneTime
+	jr .loadedLeft
+.loadBangLeft
+	call LoadBangOneTime
+.loadedLeft
+	ld a, [wSpriteStateData1 + 4] ; load the player X coordinate into b
+	add $12
+	ld b, a
+	ld a, [wSpriteStateData1 + 6] ; load the player Y coordinate into c
+	sub $05
+	ld c, a
+	ld de, BangOAMLeft
+	ret
+.isFacingRight
+	ld a, b
+	and a
+	jr z, .loadBangRight
+	call LoadBulletTileOneTime
+	jr .loadedRight
+.loadBangRight
+	call LoadBangOneTime
+.loadedRight
+	ld a, [wSpriteStateData1 + 4] ; load the player X coordinate into b
+	add $12
+	ld b, a
+	ld a, [wSpriteStateData1 + 6] ; load the player Y coordinate into c
+	add $14
+	ld c, a
+	ld de, BangOAMRight
 	ret
 	
-LoadBulletTile:
+LoadBulletTileOneTime:
 	ld de, BulletSprite
-	ld hl, vChars1 + $7c0
-	ld de, BallSprite
-	lb bc, BANK(BallSprite), $04
+	ld hl, vChars1 + $7C0
+	lb bc, BANK(BulletSprite), $04
 	jp CopyVideoData
+	
+LoadBulletRotatedTileOneTime:
+	ld de, BulletRotatedSprite
+	ld hl, vChars1 + $7C0
+	lb bc, BANK(BulletRotatedSprite), $04
+	jp CopyVideoData
+
+LoadBangOneTime:
+    ld de, BangSprite
+    ld hl, vChars1 + $7C0
+	lb bc, BANK(BangSprite), $04
+	jp CopyVideoData
+
+LoadBangRotatedOneTime:
+    ld de, BangRotatedSprite
+    ld hl, vChars1 + $7C0
+	lb bc, BANK(BangRotatedSprite), $04
+	jp CopyVideoData
+
+; INPUTS
+; de = OAM
+ExecuteBangAnimation:
+	ld a, $FF
+	ld [wUpdateSpritesEnabled], a
+	ld a, 1
+	call WriteOAMBlock
+	ld c, 30
+	call DelayFrames
+	ld a, $01
+	ld [wUpdateSpritesEnabled], a
+	call DelayFrame
+	call UpdateSprites
+	ret
 
 BulletsPtr:
 	dw FlameThrowerAnimation
@@ -274,3 +386,19 @@ ExecuteAnimation:
 FireOAM:
 	db $FC,$00,$FD,$00
 	db $FE,$00,$FF,$00
+
+BangOAMLeft:
+	db $FC,$00,$FD,$00
+	db $FE,$00,$FF,$00
+	
+BangOAMRight:
+	db $FD,$20,$FC,$20
+	db $FF,$20,$FE,$20
+
+BangOAMUp:
+	db $FC,$00,$FD,$00
+	db $FE,$00,$FF,$00
+	
+BangOAMDown:
+	db $FE,$40,$FF,$40
+	db $FC,$40,$FD,$40

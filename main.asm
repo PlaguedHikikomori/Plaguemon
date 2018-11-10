@@ -162,7 +162,6 @@ OldAmberSprite:        INCBIN "gfx/sprites/old_amber.2bpp"
 LyingOldManSprite:     INCBIN "gfx/sprites/lying_old_man.2bpp"
 
 
-
 SECTION "Graphics", ROMX, BANK[GFX]
 
 PokemonLogoGraphics:            INCBIN "gfx/pokemon_logo.2bpp"
@@ -187,6 +186,9 @@ WorldMapTileGraphics:           INCBIN "gfx/town_map.2bpp"
 WorldMapTileGraphicsEnd:
 PlayerCharacterTitleGraphics:   INCBIN "gfx/player_title.2bpp"
 PlayerCharacterTitleGraphicsEnd:
+BangSprite:         INCBIN "gfx/sprites/bang.2bpp"
+BangRotatedSprite:         INCBIN "gfx/sprites/bangRotated.2bpp"
+BulletRotatedSprite:         INCBIN "gfx/sprites/bulletRotated.2bpp"
 
 SECTION "Battle (bank 4)", ROMX, BANK[$4]
 
@@ -256,7 +258,6 @@ BurnedMan:            INCBIN "gfx/sprites/burnedman.2bpp"
 CarSprite:            INCBIN "gfx/sprites/car.2bpp"
 RedGunSprite:         INCBIN "gfx/sprites/redgun.2bpp"
 BulletSprite:         INCBIN "gfx/sprites/bullet.2bpp"
-
 
 
 

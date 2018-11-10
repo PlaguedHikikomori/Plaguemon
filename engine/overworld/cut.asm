@@ -130,9 +130,39 @@ WriteCutOrBoulderDustAnimationOAMBlock:
 	ld de, CutOrBoulderDustAnimationTilesAndAttributes
 	jp WriteOAMBlock
 
+WriteBulletAnimationOAMBlock:
+	call GetCutOrBoulderDustAnimationOffsets
+	ld a, [wSpriteStateData1 + 9] ; load the player facing direction
+	cp SPRITE_FACING_RIGHT
+	jr z, .right
+	cp SPRITE_FACING_DOWN
+	jr z, .down
+	ld de, BulletTilesAndAttributesLeftOrUp
+	jr .done
+.right
+	ld de, BulletTilesAndAttributesRight
+	jr .done
+.down
+	ld de, BulletTilesAndAttributesDown
+.done
+	ld a, $9
+	jp WriteOAMBlock
+
 CutOrBoulderDustAnimationTilesAndAttributes:
 	db $FC,$10,$FD,$10
 	db $FE,$10,$FF,$10
+	
+BulletTilesAndAttributesLeftOrUp:
+	db $FC,$00,$FD,$00
+	db $FE,$00,$FF,$00
+	
+BulletTilesAndAttributesRight:
+	db $FD,$20,$FC,$20
+	db $FF,$20,$FE,$20
+
+BulletTilesAndAttributesDown:
+	db $FE,$40,$FF,$40
+	db $FC,$40,$FD,$40
 
 GetCutOrBoulderDustAnimationOffsets:
 	ld hl, wSpriteStateData1 + 4
@@ -292,3 +322,27 @@ CutTreeBlockSwaps:
 	db $11, $7B
 	db $37, $7B
 	db $FF ; list terminator
+	
+LoadSmokeTileFourTimes:
+	ld hl, vChars1 + $7c0
+	ld c, $4
+.loop
+	push bc
+	push hl
+	call LoadSmokeTile
+	pop hl
+	ld bc, $10
+	add hl, bc
+	pop bc
+	dec c
+	jr nz, .loop
+	ret
+
+LoadSmokeTile:
+	ld de, SSAnneSmokePuffTile
+	lb bc, BANK(SSAnneSmokePuffTile), (SSAnneSmokePuffTileEnd - SSAnneSmokePuffTile) / $10
+	jp CopyVideoData
+
+SSAnneSmokePuffTile:
+	INCBIN "gfx/ss_anne_smoke_puff.2bpp"
+SSAnneSmokePuffTileEnd:

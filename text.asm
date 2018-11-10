@@ -2553,7 +2553,7 @@ _PokemonFightingFitText::
 	text "Thank you!"
 	line "Your #MON are"
 	cont "fighting fit!"
-	prompt
+	done
 
 _PokemonCenterFarewellText::
 	text "You will! Stupid"
