@@ -26,14 +26,14 @@ ItemUsePtrTable:
 	dw ItemUseSafariBall       ; SAFARI_BALL
 	dw ItemUsePokedex    ; POKEDEX
 	dw ItemUseEvoStone   ; MOON_STONE
-	dw UsedKetamine      ; ANTIDOTE
+	dw ItemUseKetamine      ; ANTIDOTE
 	dw ItemUseMedicine   ; BURN_HEAL
 	dw ItemUseMedicine   ; ICE_HEAL
 	dw ItemUseMedicine   ; AWAKENING
 	dw ItemUseMedicine   ; PARLYZ_HEAL
 	dw ItemUseMedicine   ; FULL_RESTORE
 	dw ItemUseMedicine   ; MAX_POTION
-	dw UsedLsd           ; HYPER_POTION
+	dw ItemUseLSD           ; HYPER_POTION
 	dw ItemUseMedicine   ; SUPER_POTION
 	dw ItemUseMedicine   ; POTION
 	dw ItemUseBait       ; BOULDERBADGE
@@ -98,7 +98,7 @@ ItemUsePtrTable:
 	dw ItemUsePPRestore  ; ETHER
 	dw ItemUsePPRestore  ; MAX_ETHER
 	dw ItemUsePPRestore  ; ELIXER
-	dw ItemUseBurn       ; MAX_ELIXER
+	dw ItemUseTNT    ; MAX_ELIXER
 
 ItemUseMasterBall:
 ItemUseUltraBall:
@@ -759,14 +759,14 @@ SetRepelsEffect:
 GenericJumpHL:
 	jp hl
 
-ItemUseBurn:
+ItemUseTNT:
     xor a
 	ld [wActionResultOrTookBattleTurn], a ; initialise to failure value
 	ld a, [wCurMapTileset]
 	and a ; OVERWORLD
     dec a
 	ld a, [wTileInFrontOfPlayer]
-	jp UsedBurn   ;Hiki brucia
+	jp UsedTNT ; BOOM!
 
 ; used for Surf out-of-battle effect
 ItemUseSurfboard:
@@ -3090,7 +3090,7 @@ CheckMapForMon:
 	dec hl
 	ret
 
-UsedKetamine:
+ItemUseKetamine:
     ld hl,SniffedText
 	ld a, $C0
     ld [wd736], a
@@ -3107,7 +3107,7 @@ _SniffedText::
 	text "!"
 	prompt
 	
-UsedLsd:
+ItemUseLSD:
     call LoadCurrentMapView
 	call UpdateSprites
 	ld hl,LsdText
@@ -3123,7 +3123,7 @@ UsedLsd:
 	jr .loop
 .done
 	dec b
-	ret
+	jp RemoveUsedItem
 	
 BattleTransition_FlashScreenPalettesLSD:
 	db $F9,$FE,$FF,$FE,$F9,$E4,$90,$40,$00,$40,$90,$E4
@@ -3160,7 +3160,7 @@ _BurnText::
 	
 	
 ;Hiki, esplosione del terreno
-UsedBurn: 
+UsedTNT: 
 	xor a
 	ld [wActionResultOrTookBattleTurn], a ; initialise to failure value
 	ld a, [wCurMapTileset]
@@ -3237,6 +3237,7 @@ UsedBurn:
 	call PlaySound
 	ld a, $90
 	;ld [hWY], a
+	call RemoveUsedItem
 	call UpdateSprites
 	jp RedrawMapView
 	

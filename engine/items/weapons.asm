@@ -210,7 +210,8 @@ LoadBulletTileOneTime:
 	
 LoadBulletTile:
 	ld hl, vChars1 + $7c0
-	lb bc, BANK(BurnedMan), $04
+	ld de, BallSprite
+	lb bc, BANK(BallSprite), $04
 	jp CopyVideoData
 
 BulletsPtr:
