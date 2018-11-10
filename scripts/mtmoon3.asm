@@ -164,7 +164,7 @@ MtMoon3TextPointers:
 	dw MtMoon3Text7
 	dw PickUpItemText
 	dw PickUpItemText
-	dw MtMoon3Text_49f99
+	dw PickUpItemText
 
 MtMoon3TrainerHeader0:
 	dbEventFlagBit EVENT_BEAT_MT_MOON_3_TRAINER_0

@@ -14,14 +14,14 @@ CeruleanCityObject:
 	db $9, $9, $0, CERULEAN_HOUSE_2
 
 	db $6 ; signs
-	db $13, $17, $c ; CeruleanCityText12
-	db $1d, $11, $d ; CeruleanCityText13
-	db $19, $1a, $e ; MartSignText
-	db $11, $14, $f ; PokeCenterSignText
-	db $19, $b, $10 ; CeruleanCityText16
-	db $15, $1b, $11 ; CeruleanCityText17
+	db $13, $17, $d ; CeruleanCityText12
+	db $1d, $11, $e ; CeruleanCityText13
+	db $19, $1a, $f ; MartSignText
+	db $11, $14, $10 ; PokeCenterSignText
+	db $19, $b, $11 ; CeruleanCityText16
+	db $15, $1b, $12 ; CeruleanCityText17
 
-	db $b ; objects
+	db $c ; objects
 	object SPRITE_BLUE, $14, $2, STAY, DOWN, $1 ; person
 	object SPRITE_ROCKET, $1e, $8, STAY, NONE, $2, OPP_ROCKET, $5
 	object SPRITE_BLACK_HAIR_BOY_1, $1f, $14, STAY, DOWN, $3 ; person
@@ -33,6 +33,7 @@ CeruleanCityObject:
 	object SPRITE_LASS, $9, $1b, WALK, $2, $9 ; person
 	object SPRITE_BLACK_HAIR_BOY_2, $4, $c, STAY, DOWN, $a ; person
 	object SPRITE_GUARD, $1b, $c, STAY, DOWN, $b ; person
+	object SPRITE_SHIT, $1b, $d, STAY, NONE, $c, X_ATTACK
 
 	; warp-to
 	EVENT_DISP CERULEAN_CITY_WIDTH, $b, $1b ; TRASHED_HOUSE

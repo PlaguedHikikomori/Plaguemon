@@ -285,6 +285,7 @@ MapHS03:
 	db CERULEAN_CITY,$06,Hide
 	db CERULEAN_CITY,$0A,Show
 	db CERULEAN_CITY,$0B,Show
+	db CERULEAN_CITY,$0C,Show
 MapHS0A:
 	db SAFFRON_CITY,$01,Show
 	db SAFFRON_CITY,$02,Show
@@ -417,6 +418,7 @@ MapHS3D:
 	db MT_MOON_3,$07,Show
 	db MT_MOON_3,$08,Show
 	db MT_MOON_3,$09,Show
+	db MT_MOON_3,$0A,Show
 MapHS60:
 	db SS_ANNE_2,$02,Hide
 MapHS66:

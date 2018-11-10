@@ -3,14 +3,14 @@ SaffronCityScript:
 
 SaffronCityTextPointers:
 	dw SaffronCityText1
-	dw SaffronCityText2
+	dw PickUpItemText
 	dw SaffronCityText3
 	dw SaffronCityText4
 	dw SaffronCityText5
 	dw SaffronCityText6
 	dw SaffronCityText7
 	dw SaffronCityText8
-	dw SaffronCityText9
+	dw $0000
 	dw SaffronCityText10
 	dw SaffronCityText11
 	dw SaffronCityText12
@@ -29,7 +29,31 @@ SaffronCityTextPointers:
 	dw SaffronCityText25
 
 SaffronCityText1:
+	TX_ASM
+	CheckEvent EVENT_GOT_LAPRAS, 1
+	jp c, .alreadyGotLapras
+	ld hl, .LaprasNotBeenObtainedYetText
+	call PrintText
+.laprasNotBeenObtainedYet
+	ld a, LAPRAS
+	call DisplayPokedex
+	lb bc, LAPRAS, 30
+	call GivePokemon
+	SetEvent EVENT_GOT_LAPRAS
+	jr .done
+.alreadyGotLapras
+	ld hl, .AlreadyGotLaprasText
+.printText
+	call PrintText
+.done
+	jp TextScriptEnd
+
+.LaprasNotBeenObtainedYetText
 	TX_FAR _SaffronCityText1
+	db "@"
+
+.AlreadyGotLaprasText
+	TX_FAR _SaffronCityText10
 	db "@"
 
 SaffronCityText2:
@@ -58,34 +82,6 @@ SaffronCityText7:
 
 SaffronCityText8:
 	TX_FAR _SaffronCityText8
-	db "@"
-
-SaffronCityText9:
-	TX_ASM
-	CheckEvent EVENT_GOT_LAPRAS, 1
-	jp c, .alreadyGotLapras
-	ld hl, .LaprasNotBeenObtainedYetText
-	call PrintText
-.laprasNotBeenObtainedYet
-	ld a, LAPRAS
-	call DisplayPokedex
-	lb bc, LAPRAS, 30
-	call GivePokemon
-	SetEvent EVENT_GOT_LAPRAS
-	jr .done
-.alreadyGotLapras
-	ld hl, .AlreadyGotLaprasText
-.printText
-	call PrintText
-.done
-	jp TextScriptEnd
-
-.LaprasNotBeenObtainedYetText
-	TX_FAR _SaffronCityText9
-	db "@"
-
-.AlreadyGotLaprasText
-	TX_FAR _SaffronCityText10
 	db "@"
 
 SaffronCityText10:

@@ -16,21 +16,22 @@ const_value = 0
 	const HS_CERULEAN_GUARD_1             ; 07
 	const HS_UNKNOWN_DUNGEON_GUY          ; 08
 	const HS_CERULEAN_GUARD_2             ; 09
-	const HS_SAFFRON_CITY_1               ; 0A
-	const HS_SAFFRON_CITY_2               ; 0B
-	const HS_SAFFRON_CITY_3               ; 0C
-	const HS_SAFFRON_CITY_4               ; 0D
-	const HS_SAFFRON_CITY_5               ; 0E
-	const HS_SAFFRON_CITY_6               ; 0F
-	const HS_SAFFRON_CITY_7               ; 10
-	const HS_SAFFRON_CITY_8               ; 11
-	const HS_SAFFRON_CITY_9               ; 12
-	const HS_SAFFRON_CITY_A               ; 13
-	const HS_SAFFRON_CITY_B               ; 14
-	const HS_SAFFRON_CITY_C               ; 15
-	const HS_SAFFRON_CITY_D               ; 16
-	const HS_SAFFRON_CITY_E               ; 17
-	const HS_SAFFRON_CITY_F               ; 18
+	const HS_CERULEAN_SHIT        ; 0A
+	const HS_SAFFRON_CITY_1               ; 0B
+	const HS_SAFFRON_CITY_2               ; 0C
+	const HS_SAFFRON_CITY_3               ; 0D
+	const HS_SAFFRON_CITY_4               ; 0E
+	const HS_SAFFRON_CITY_5               ; 0F
+	const HS_SAFFRON_CITY_6               ; 10
+	const HS_SAFFRON_CITY_7               ; 11
+	const HS_SAFFRON_CITY_8               ; 12
+	const HS_SAFFRON_CITY_9               ; 13
+	const HS_SAFFRON_CITY_A               ; 14
+	const HS_SAFFRON_CITY_B               ; 15
+	const HS_SAFFRON_CITY_C               ; 16
+	const HS_SAFFRON_CITY_D               ; 17
+	const HS_SAFFRON_CITY_E               ; 18
+	const HS_SAFFRON_CITY_F               ; 19
 	const HS_ROUTE_2_ITEM_1               ; 19 X
 	const HS_ROUTE_2_ITEM_2               ; 1A X
 	const HS_ROUTE_4_ITEM                 ; 1B X
@@ -119,6 +120,7 @@ const_value = 0
 	const HS_MT_MOON_3_FOSSIL_2           ; 6E
 	const HS_MT_MOON_3_ITEM_1             ; 6F X
 	const HS_MT_MOON_3_ITEM_2             ; 70 X
+	const HS_MT_MOON_3_ITEM_3			; 70
 	const HS_SS_ANNE_2_RIVAL              ; 71
 	const HS_SS_ANNE_8_ITEM               ; 72 X
 	const HS_SS_ANNE_9_ITEM_1             ; 73 X
@@ -233,5 +235,4 @@ const_value = 0
 	const HS_SEAFOAM_ISLANDS_4_BOULDER_4  ; E0
 	const HS_SEAFOAM_ISLANDS_5_BOULDER_1  ; E1
 	const HS_SEAFOAM_ISLANDS_5_BOULDER_2  ; E2
-	const HS_ARTICUNO                     ; E3 X
-	
+	const HS_ARTICUNO                     ; E3 X	

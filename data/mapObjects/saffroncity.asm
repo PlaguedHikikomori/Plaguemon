@@ -23,9 +23,9 @@ SaffronCityObject:
 	db $1d, $1b, $18 ; SaffronCityText24
 	db $13, $1, $19 ; SaffronCityText25
 
-	db $1 ; objects
-	object SPRITE_LAPRAS_GIVER, $22, $17, STAY, NONE, $9 ; person
-	
+	db $2 ; objects
+	object SPRITE_LAPRAS_GIVER, $22, $17, STAY, NONE, $1 ; person
+	object SPRITE_SHIT, $17, $06, STAY, NONE, $2, X_ATTACK ; person
 
 	; warp-to
 	EVENT_DISP SAFFRON_CITY_WIDTH, $5, $7 ; COPYCATS_HOUSE_1F

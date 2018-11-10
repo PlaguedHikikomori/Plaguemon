@@ -1,6 +1,19 @@
 _SaffronCityText1::
-	text "What do you want?"
-	line "Get lost!"
+	text "This was the"
+	line "center of the"
+	cont "catastrophe.."
+	
+	para "I got disfigured"
+	line "i'm the only one"
+	cont "alive in this city"
+	
+	para "I quick escaped the"
+	line "explosion with"
+	cont "KARONTIS, now i don't"
+	cont "need it anymore.."
+	
+	para "Take it.."
+	line "It's yours.."
 	done
 
 _SaffronCityText2::
@@ -28,24 +41,6 @@ _SaffronCityText7::
 	done
 
 _SaffronCityText8::
-	done
-
-_SaffronCityText9::
-	text "This was the"
-	line "center of the"
-	cont "catastrophe.."
-	
-	para "I got disfigured"
-	line "i'm the only one"
-	cont "alive in this city"
-	
-	para "I quick escaped the"
-	line "explosion with"
-	cont "KARONTIS, now i don't"
-	cont "need it anymore.."
-	
-	para "Take it.."
-	line "It's yours.."
 	done
 
 _SaffronCityText10::

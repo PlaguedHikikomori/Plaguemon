@@ -9,7 +9,7 @@ MtMoon3Object:
 
 	db $0 ; signs
 
-	db $9 ; objects
+	db $a ; objects
 	object SPRITE_FISHER2, $c, $8, STAY, RIGHT, $1, OPP_FISHER, $2
 	object SPRITE_ROCKET, $b, $10, STAY, DOWN, $2, OPP_ROCKET, $1
 	object SPRITE_ROCKET, $f, $16, STAY, DOWN, $3, OPP_ROCKET, $2
@@ -19,6 +19,7 @@ MtMoon3Object:
 	object SPRITE_OMANYTE, $d, $6, STAY, NONE, $7 ; person
 	object SPRITE_BALL, $19, $15, STAY, NONE, $8, HP_UP
 	object SPRITE_BALL, $1d, $5, STAY, NONE, $9, TM_01
+	object SPRITE_SHIT, $1e, $5, STAY, NONE, $a, X_ATTACK
 
 	; warp-to
 	EVENT_DISP MT_MOON_3_WIDTH, $9, $19 ; MT_MOON_2
