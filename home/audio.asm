@@ -28,11 +28,16 @@ PlayDefaultMusicCommon::
 	jr z, .surfing ; Surf
 	cp $3
 	jr z, .motocrossMusic ; Motorbike
+	cp $5
+	jr z, .handMusic
 .usingWeapon ; Weapons
 	ld a, MUSIC_MEET_PROF_OAK
 	jr .nextOther
 .motocrossMusic
     ld a, MUSIC_SURFING
+	jr .nextNormal
+.handMusic
+    ld a, MUSIC_JIGGLYPUFF_SONG
 	jr .nextNormal
 .surfing
 	ld a, MUSIC_BIKE_RIDING
