@@ -697,7 +697,6 @@ PikachuCry1_End:
 
 	db $77  ; unused
 	
-SECTION "Pikachu Cries 2",ROMX,BANK[PCM_2]
 PikachuCry2::
 	dw (PikachuCry2_End - PikachuCry2) - 2 ; length of pcm data
 	INCBIN "audio/gun/gun.pcm"
