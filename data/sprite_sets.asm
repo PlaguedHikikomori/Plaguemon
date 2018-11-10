@@ -562,6 +562,10 @@ SpriteSheetPointerTable:
 	db $40
 	db BANK(BibrodoSprite)
 	
+	dw DiskSprite
+	db $40
+	db BANK(DiskSprite)
+	
 	
 	
 	

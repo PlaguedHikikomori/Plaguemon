@@ -215,7 +215,7 @@ MapSongBanks:
 	db MUSIC_LAVENDER, BANK(Music_Lavender) 
 	db MUSIC_LAVENDER, BANK(Music_Lavender) 
 	db MUSIC_ROUTES2, BANK(Music_Routes2)  
-	db MUSIC_LAVENDER, BANK(Music_Lavender) 
+	db MUSIC_CINNABAR_MANSION, BANK(Music_CinnabarMansion)
 	db MUSIC_MEET_PROF_OAK, BANK(Music_MeetProfOak) 
 	db MUSIC_LAVENDER, BANK(Music_Lavender) 
 	db MUSIC_LAVENDER, BANK(Music_Lavender) 

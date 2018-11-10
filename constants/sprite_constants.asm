@@ -90,6 +90,7 @@ const_value = 1
 	const SPRITE_DEAD_DOG                  ; $49
 	const SPRITE_SHIT                      ; $4A
 	const SPRITE_BIBRODO                   ; $4B
+	const SPRITE_DISK                      ; $4C
 
 ; different kinds of people events
 ITEM    EQU $80

@@ -6,6 +6,18 @@ Mansion4Script:
 	ld a, [wMansion4CurScript]
 	call ExecuteCurMapScriptInTable
 	ld [wMansion4CurScript], a
+	CheckEvent EVENT_GOT_DISK
+	jp nz, .hide
+	CheckEvent EVENT_BEAT_BIBRODO
+	jp z, .hide
+	ld a, HS_MANSION_2_ITEM
+	ld [wMissableObjectIndex], a
+	predef ShowObject
+	ret
+.hide
+    ld a, HS_MANSION_2_ITEM
+	ld [wMissableObjectIndex], a
+	predef HideObject
 	ret
 
 Mansion4Script_523cf:
@@ -57,13 +69,13 @@ Mansion4ScriptPointers:
 	dw CheckFightingMapTrainers
 	dw DisplayEnemyTrainerTextAndStartBattle
 	dw EndTrainerBattle
-
+	
 Mansion4TextPointers:
 	dw Mansion4Text1
 	dw Mansion4Text2
 	dw Mansion4Text3
 	dw Mansion4Text4
-	dw PickUpItemText
+	dw PickUpDisk
 	dw PickUpItemText
 	dw PickUpItemText
 	dw PickUpItemText
@@ -71,6 +83,7 @@ Mansion4TextPointers:
 	dw PickUpItemText
 	dw Mansion4Text7      ;diario
 	dw BibrodoText
+
 
 Mansion4TrainerHeader0:
 	dbEventFlagBit EVENT_BEAT_MANSION_4_TRAINER_0
@@ -94,20 +107,20 @@ Mansion4TrainerHeader2:
 	dbEventFlagBit EVENT_BEAT_MANSION_4_TRAINER_2
 	db ($1 << 4) ; trainer's view range
 	dwEventFlagAddress EVENT_BEAT_MANSION_4_TRAINER_2
-	dw Mansion4BattleText2 ; TextBeforeBattle
-	dw Mansion4AfterBattleText2 ; TextAfterBattle
-	dw Mansion4EndBattleText2 ; TextEndBattle
-	dw Mansion4EndBattleText2 ; TextEndBattle
+	dw Mansion4BattleText3 ; TextBeforeBattle
+	dw Mansion4AfterBattleText3 ; TextAfterBattle
+	dw Mansion4EndBattleText3 ; TextEndBattle
+	dw Mansion4EndBattleText3 ; TextEndBattle
 
 	
 Mansion4TrainerHeader3:
 	dbEventFlagBit EVENT_BEAT_MANSION_4_TRAINER_3
 	db ($3 << 4) ; trainer's view range
 	dwEventFlagAddress EVENT_BEAT_MANSION_4_TRAINER_3
-	dw Mansion4BattleText2 ; TextBeforeBattle
-	dw Mansion4AfterBattleText2 ; TextAfterBattle
-	dw Mansion4EndBattleText2 ; TextEndBattle
-	dw Mansion4EndBattleText2 ; TextEndBattle
+	dw Mansion4BattleText4 ; TextBeforeBattle
+	dw Mansion4AfterBattleText4 ; TextAfterBattle
+	dw Mansion4EndBattleText4 ; TextEndBattle
+	dw Mansion4EndBattleText4 ; TextEndBattle
 	
 BibrodoTrainerHeader:
 	dbEventFlagBit EVENT_BEAT_BIBRODO, 1
@@ -202,6 +215,7 @@ BibrodoText:
 	call TalkToTrainer
 	ld a, [wCurMapScript]
 	ld [wMansion4CurScript], a
+	SetEvent EVENT_BEAT_BIBRODO
 	jp TextScriptEnd
 
 BibrodoBattleText:
@@ -215,3 +229,16 @@ BibrodoBattleText:
 _BibrodoBattleText::
 	text "OBEY TO ME!"
 	done
+	
+PickUpDisk:
+    TX_FAR _DisktopiaText
+	TX_ASM
+    SetEvent EVENT_GOT_DISK
+	predef PickUpItem
+	jp TextScriptEnd
+	
+_DisktopiaText:
+	text "A strange floppy"
+	line "disk.."
+	done
+

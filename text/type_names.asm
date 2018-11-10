@@ -29,6 +29,7 @@ TypeNames:
 	dw .Psychic
 	dw .Ice
 	dw .Dragon
+	dw .Cyber
 
 .Normal:   db "NORMAL@"
 .Fighting: db "VIOLENCE@"
@@ -46,3 +47,4 @@ TypeNames:
 .Bug:      db "MILITARY@"
 .Ghost:    db "DEATH@"
 .Dragon:   db "DIVINITY@"
+.Cyber:    db "CYBER@"

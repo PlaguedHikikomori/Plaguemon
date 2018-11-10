@@ -8799,6 +8799,12 @@ BackgroundBattle:
     coord hl, 0, 5
 	lb bc, 7, 1
 	call ClearScreenArea
+	ld a, [wCurOpponent]
+	cp BIBRODO
+	jp z, .cyber
+	ld a, [wTrainerClass]
+	cp $8
+	jp z, .cyber
     ld a, [wCurMap]
 	cp POKEMONTOWER_2
 	jp z, .cemetery
@@ -8888,6 +8894,19 @@ BackgroundBattle:
 	lb bc, 7, 1
 	call ClearScreenArea
 	ret
+.cyber
+    ld de, CyberWorld
+	ld hl, vChars1 + $400
+	lb bc, BANK(CyberWorld), $08
+	call CopyVideoData
+	coord hl, 0, 3
+	ld de, ParallaxString
+	call PlaceString
+	ld de, CyberStuff
+	ld hl, vChars1 + $480
+	lb bc, BANK(CyberStuff), $18
+	call CopyVideoData
+	jp .drawthings
 .normal
     ld de, Parallax
 	ld hl, vChars1 + $400
@@ -8900,6 +8919,7 @@ BackgroundBattle:
 	ld hl, vChars1 + $480
 	lb bc, BANK(CityStuff), $18
 	call CopyVideoData
+.drawthings
 	coord hl, 8, 5
 	ld de, CityStuffString
 	call PlaceString

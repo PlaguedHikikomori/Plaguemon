@@ -10,10 +10,10 @@ Mansion4Object:
 	object SPRITE_CABLE_CLUB_WOMAN, $15, $3, STAY, DOWN, $1, OPP_SUPER_NERD, $9   ;sprite, x, y, movimento, facing, script, nemico/pokemon/oggetto, party
 	object SPRITE_CABLE_CLUB_WOMAN, $11, $7, STAY, UP, $2, OPP_SUPER_NERD, $a
 	object SPRITE_CABLE_CLUB_WOMAN, $e, $6, STAY, DOWN, $3, OPP_SUPER_NERD, $b
-	object SPRITE_CABLE_CLUB_WOMAN, $8, $5, STAY, DOWN, $4, OPP_SUPER_NERD, $c
-	object SPRITE_BALL, $13, $19, STAY, NONE, $5, TM_14
-	object SPRITE_BALL, $5, $4, STAY, NONE, $6, TM_22
-	object SPRITE_OMANYTE, $10, $14, STAY, NONE, $b
+	object SPRITE_CABLE_CLUB_WOMAN, $8, $6, STAY, DOWN, $4, OPP_SUPER_NERD, $c
+	object SPRITE_DISK, $5, $d, STAY, NONE, $5, X_DEFEND
+	object SPRITE_DISK, $5, $4, STAY, NONE, $6, TM_22
+	object SPRITE_DISK, $10, $14, STAY, NONE, $b
 	object SPRITE_BIBRODO, $5, $d, STAY, NONE, $c, BIBRODO, 50
 
 	; warp-to
