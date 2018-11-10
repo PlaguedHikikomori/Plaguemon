@@ -748,7 +748,7 @@ VehiclesPtr:
 	dw BICYCLE, $1, $0000, $0000, $0000, $0000 ; Panda
 	dw MOTORBIKE, $3, SetRepelsEffect, MotorbikeText, $0000, $0000 ; Motorbike
 	dw MAX_REVIVE, $4, $0000, $0000, $0000, MUSIC_MEET_PROF_OAK ; Flamethrower
-	dw FULL_HEAL, $5, $0000, $0000, $0000, MUSIC_MEET_PROF_OAK ; The thing
+	dw FULL_HEAL, $5, $0000, $0000, $0000, $0000 ; The thing
 	dw COIN_CASE, $6, $0000, $0000, $0000, MUSIC_MEET_PROF_OAK ; Ak47
 VehiclesPtrEnd:
 	
