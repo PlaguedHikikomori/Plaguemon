@@ -117,13 +117,29 @@ KillNPCs:
 	ld [hSpriteIndexOrTextID], a ; reset the sprite index
 	ld de, $0004
 	add hl, de ; jump to the Y coordinate
+	ld a, [wSpriteStateData1 + 9] ; load the player facing direction
+	cp SPRITE_FACING_LEFT
+	jr z, .isFacingLeftOrDown ; check if the player is facing left
+	cp SPRITE_FACING_DOWN
+	jr nz, .isFacingRightOrUp ; check if the player is facing other direction than left or down
+.isFacingLeftOrDown
 	ld a, [hli] ; move it to a and increment hl
-	sub $03
+	sub $03 ; if the player is facing left/down
 	ld c, a ; move it to c --> c = Y coordinate
 	inc hl ; increment hl to the X coordinate
 	ld a, [hl]
-	add $1D
+	add $1D ; if the player is facing left/down
 	ld b, a ; move it to b --> b = X coordinate
+	jr .done
+.isFacingRightOrUp
+	ld a, [hli] ; move it to a and increment hl
+	add $1D ; if the player is facing right/up
+	ld c, a ; move it to c --> c = Y coordinate
+	inc hl ; increment hl to the X coordinate
+	ld a, [hl]	
+	sub $03 ; if the player is facing right/up
+	ld b, a ; move it to b --> b = X coordinate
+.done
 	scf ; set the carry flag
 	ret
 .noSpriteFound
@@ -175,13 +191,17 @@ FlameThrowerAnimation:
 	ret
 
 BulletAnimation:
+	push de
+	ldpikacry e, PikachuCry2
+	callab PlayPikachuSoundClip
+	pop de
 	ld a, $02 ; set the animation offset to 2 (Bullet animation)
 	ld [wWhichAnimationOffsets], a
 	ld a, [wAnimationDuration]
 	swap a ; swap nibbles
 	add a ; double it
 	ld [wAnimationDuration], a ; reload it
-	callba AnimateBoulderDust
+	callba AnimateBoulderDust	
 	ret
 
 LoadBulletTileOneTime:
