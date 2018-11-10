@@ -8,7 +8,7 @@ Music_OaksLab::
 	audio Music_OaksLab, Ch0, Ch1, Ch2
 
 Music_JigglypuffSong::
-	audio Music_JigglypuffSong, Ch0, Ch1
+	audio Music_JigglypuffSong, Ch0, Ch1, Ch3
 
 Music_BikeRiding::
 	audio Music_BikeRiding, Ch0, Ch1, Ch2, Ch3
