@@ -209,6 +209,7 @@ LoadBulletTileOneTime:
 	ret
 	
 LoadBulletTile:
+	ld de, BulletSprite
 	ld hl, vChars1 + $7c0
 	lb bc, BANK(BurnedMan), $04
 	jp CopyVideoData

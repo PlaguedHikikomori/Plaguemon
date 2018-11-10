@@ -255,6 +255,7 @@ SeelSprite:           INCBIN "gfx/sprites/seel.2bpp"
 BurnedMan:            INCBIN "gfx/sprites/burnedman.2bpp"
 CarSprite:            INCBIN "gfx/sprites/car.2bpp"
 RedGunSprite:         INCBIN "gfx/sprites/redgun.2bpp"
+BulletSprite:         INCBIN "gfx/sprites/bullet.2bpp"
 
 
 
