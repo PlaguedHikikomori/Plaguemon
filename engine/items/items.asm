@@ -683,9 +683,9 @@ ItemUseAk47:
 	add hl, de ; "jump" directly to the unmount text
 	ld a, [hli] ; move to a the first byte and increment hl
 	ld d, a ; move it to a
+	ld a, [hl] ; move to a the second byte
 	and a
 	jr z, .skipUnmountText ; check if there's no unmount text
-	ld a, [hl] ; move to a the second byte
 	ld h, a ; invert them
 	ld l, d
 	call PrintText
@@ -702,22 +702,21 @@ ItemUseAk47:
 	pop hl
 	ld a, [hli] ; get the first byte and increase hl
 	ld d, a ; move it to d
-	and a
-	jr z, .skipFunctionCalling ; skip it if the first byte is $00
 	ld a, [hl] ; get the second byte
-	ld e, a ; move it to e
+	and a
+	jr z, .skipFunctionCalling ; skip it if the second (first) byte is $00
 	push hl ; preserve hl register address
-	ld h, e
+	ld h, a
 	ld l, d
 	call GenericJumpHL ; call the pointed function
 	pop hl ; pop out the preserved register address
 .skipFunctionCalling
 	inc hl ; increase it once, to "jump" to the text pointer
 	ld a, [hli] ; load the first byte to a and increase hl
-	and a
 	ld d, a
-	jr z, .skipStartingText ; skip it if the first byte is $00
 	ld a, [hl] ; load the second byte into a
+	and a
+	jr z, .skipStartingText ; skip it if the first (second) byte is $00
 	push hl ; preserve hl register
 	ld h, a
 	ld l, d
