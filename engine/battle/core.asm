@@ -2423,8 +2423,8 @@ UseBagItem:
 	xor a
 	ld [hli], a
 	ld [hl], a ; set mon's status to 0 ; set the enemy's pokémon HP to 0
-	call ReloadPlayerMonPic
 	call LoadScreenTilesFromBuffer2
+	;call ReloadPlayerMonPic
 	call BackgroundBattle
 	call LoadHpBarAndStatusTilePatterns
 	call DrawPlayerHUDAndHPBar
@@ -2432,10 +2432,14 @@ UseBagItem:
 	call ClearEnemyMonSprite
 	call AnyEnemyPokemonAliveCheck
 	pop hl ; remove the return address from the stack
-	jp z, TrainerBattleVictory ; if the enemy has no other pokémons, win the battle
+	jr z, .battleWon  ; if the enemy has no other pokémons, win the battle
 	push hl ; add the return address to the stack
 	call EnemySendOut
 	ret
+.battleWon
+	ld a, $0 ; the player has won the battle
+	ld [wBattleResult], a
+	jp TrainerBattleVictory
 
 ReloadPlayerMonPic:
 	call LoadBattleMonFromParty
