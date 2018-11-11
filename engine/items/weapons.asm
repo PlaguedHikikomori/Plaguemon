@@ -214,6 +214,13 @@ FlameThrowerAnimation:
 	call ExecuteAnimation
     call BurningMan 
 	call ExecuteAnimation
+<<<<<<< HEAD
+=======
+	xor a
+	ld [wEmotionBubbleSpriteIndex],a
+	ld [wWhichEmotionBubble],a
+    predef EmotionBubble
+>>>>>>> b7016f035a704fcac3c1345b690df8f2d916aaf4
 	ret
 
 BulletAnimation:
