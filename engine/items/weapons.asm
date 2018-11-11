@@ -41,22 +41,36 @@ Shoot:
 	ld [wShotAnimation], a ; save it on ram
 	push de
 	ld e, d ; move the shooting range to e
-	call KillNPCs ; kill the NPCs in range
+	call FindNPCToKill ; kill the NPCs in range
+	ld h, d
+	ld l, e ; move de to hl, then push it
 	pop de
+	push hl ; save hl
 	jr c, .weaponCanShoot ; check if the weapon can shoot
 .canWeaponShoot
 	ld a, e ; load e into a
 	and a ; move flags
-	ret z ; return if no sprites were found and the weapon cannot shoot without a sprite in front of the player
+	jr z, .noSpritesFound ; return if no sprites were found and the weapon cannot shoot without a sprite in front of the player
 .weaponCanShoot
-	jp ShotAnimation ; play the weapon animation
+	call ShotAnimation ; play the weapon animation
+	pop hl ; restore the stored wMissableObjectList address
+	ld a, [hSpriteIndexOrTextID] ; load the sprite ID
+	ld [hli], a ; set the sprite
+	xor a
+	ld [hl], a  ; hide the killed NPC
+	ret
+.noSpritesFound
+	pop hl
+	ret
+	
 	
 ; INPUTS
 ; e = max NPCs distance
 ; OUTPUTS
 ; bc = X and Y coordinates of the found sprite
+; de = wMissableObjectList address, containing the NPC's hide/show ID
 ; carry = 1 if a sprite was found, 0 otherwise
-KillNPCs:
+FindNPCToKill:
 	ld d, $10
 .searchSprite
 	push de
@@ -87,7 +101,7 @@ KillNPCs:
 	ld hl, wMissableObjectList ; load to hl the starting pointer of the missable object list
 	ld b, $0
 .searchEmptyMissableObject ; search the first empty missable object
-	ld a, [hl] ; load into a the value of the pointed address
+	ld a, [hl] ; load into a the value of the pointed addres
 	cp $FF ; is it an empty missable object?
 	jr z, .emptyMissableObjectFound ; an empty missable object was found
 	ld c, a
@@ -100,23 +114,31 @@ KillNPCs:
 	cp $11 ; has it reached the maximum sprites value? (17, 0x11)
 	jr nz, .searchEmptyMissableObject
 .emptyMissableObjectFound ; an empty missable object was found
-	ld a, [hSpriteIndexOrTextID] ; load into a the found sprite ID
-	ld [hli], a ; load it into the wMissableObjectList and increase hl
-	xor a ; reset a
-	ld [hli], a ; load 00 to reset the object and increase hl
+	;ld a, [hSpriteIndexOrTextID] ; load into a the found sprite ID
+	;ld [hli], a ; load it into the wMissableObjectList and increase hl
+	;xor a ; reset a
+	;ld [hli], a ; load 00 to reset the object and increase hl
+	ld d, h
+	ld e, l ; load the sprite address to de
+	inc hl 
+	inc hl ; increment hl
 	ld a, $FF
-	ld [hl], a ; load the character terminator and increase hl	
+	ld [hl], a ; load the character terminator
 	jr .weaponFireAnimation
 .notEmptyMissableObjectFound
-	inc hl
-	xor a
-	ld [hl], a ; set the sprite to 00
+	;inc hl
+	;xor a
+	;ld [hl], a ; set the sprite to 00
+	ld d, h
+	ld e, l ; load the sprite address to de
 .weaponFireAnimation
 	pop hl ; get the previously saved sprite data pointer
-	xor a ; set a to $00
-	ld [hSpriteIndexOrTextID], a ; reset the sprite index
+	;xor a ; set a to $00
+	;ld [hSpriteIndexOrTextID], a ; reset the sprite index
+	push de ; push de to preserve its state
 	ld de, $0004
 	add hl, de ; jump to the Y coordinate
+	pop de
 	ld a, [wSpriteStateData1 + 9] ; load the player facing direction
 	cp SPRITE_FACING_LEFT
 	jr z, .isFacingLeftOrDown ; check if the player is facing left
@@ -183,11 +205,15 @@ ShotAnimation:
 ; INPUTS
 ; bc = animation coordinates
 FlameThrowerAnimation:
+	xor a ; reset a
+	ld [wWhichEmotionBubble], a ; set the "DIE" emotion bubble
+	push bc
+	predef EmotionBubble
+	pop bc
 	call Flame
 	call ExecuteAnimation
     call BurningMan 
 	call ExecuteAnimation
-    predef EmotionBubble
 	ret
 
 BulletAnimation:
@@ -317,7 +343,7 @@ LoadBangRotatedOneTime:
 ExecuteBangAnimation:
 	ld a, $FF
 	ld [wUpdateSpritesEnabled], a
-	ld a, 1
+	ld a, 9
 	call WriteOAMBlock
 	ld c, 30
 	call DelayFrames
