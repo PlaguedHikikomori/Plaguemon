@@ -101,7 +101,7 @@ FindNPCToKill:
 	ld hl, wMissableObjectList ; load to hl the starting pointer of the missable object list
 	ld b, $0
 .searchEmptyMissableObject ; search the first empty missable object
-	ld a, [hl] ; load into a the value of the pointed addres
+	ld a, [hl] ; load into a the value of the pointed address
 	cp $FF ; is it an empty missable object?
 	jr z, .emptyMissableObjectFound ; an empty missable object was found
 	ld c, a
@@ -214,13 +214,6 @@ FlameThrowerAnimation:
 	call ExecuteAnimation
     call BurningMan 
 	call ExecuteAnimation
-<<<<<<< HEAD
-=======
-	xor a
-	ld [wEmotionBubbleSpriteIndex],a
-	ld [wWhichEmotionBubble],a
-    predef EmotionBubble
->>>>>>> b7016f035a704fcac3c1345b690df8f2d916aaf4
 	ret
 
 BulletAnimation:
