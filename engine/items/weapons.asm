@@ -317,7 +317,7 @@ LoadBangRotatedOneTime:
 ExecuteBangAnimation:
 	ld a, $FF
 	ld [wUpdateSpritesEnabled], a
-	ld a, 1
+	ld a, 9
 	call WriteOAMBlock
 	ld c, 30
 	call DelayFrames
