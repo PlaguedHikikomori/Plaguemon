@@ -206,6 +206,7 @@ ShotAnimation:
 ; bc = animation coordinates
 FlameThrowerAnimation:
 	xor a ; reset a
+	ld [wEmotionBubbleSpriteIndex], a
 	ld [wWhichEmotionBubble], a ; set the "DIE" emotion bubble
 	push bc
 	predef EmotionBubble
