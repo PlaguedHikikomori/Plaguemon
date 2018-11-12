@@ -9,6 +9,7 @@ MainMenu:
 	jr nc,.mainMenuLoop
 
 	predef LoadSAV
+	callba DeleteAllWrongEntries ; delete al wrong entries on the pokédex
 
 .mainMenuLoop
 	ld c,20

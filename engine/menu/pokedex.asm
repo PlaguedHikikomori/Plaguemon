@@ -2,6 +2,7 @@ ShowPokedexMenu:
 	call GBPalWhiteOut
 	call ClearScreen
 	call UpdateSprites
+	call DeleteAllWrongEntries ; delete al wrong entries on the pokédex
 	ld a,[wListScrollOffset]
 	push af
 	xor a
@@ -50,6 +51,20 @@ ShowPokedexMenu:
 	dec b
 	jr z,.doPokemonListMenu ; if pokemon not seen or player pressed B button
 	jp .setUpGraphics ; if pokemon data or area was shown
+
+; delete corrupted pokédex data, caused by using an older save file
+DeleteAllWrongEntries:
+	ld hl,wPokedexSeenExtraEnd - 1
+	ld a, [hl]
+	bit 7, a ; check if the seventh bit is set (corrupted)
+	ret z ; return if it's not set
+	ld b, (wPokedexSeenExtraEnd - wPokedexOwnedExtra)
+.deleteLoop
+	xor a
+	ld [hld], a ; reset the memory address and decrement hl
+	dec b
+	jr nz, .deleteLoop
+	ret
 
 ; handles the menu on the lower right in the pokedex screen
 ; OUTPUT:
