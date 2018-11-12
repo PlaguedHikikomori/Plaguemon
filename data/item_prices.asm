@@ -67,7 +67,7 @@ ItemPrices:
 	money 550   ; X_DEFEND
 	money 350   ; X_SPEED
 	money 350   ; X_SPECIAL
-	money 0     ; COIN_CASE
+	money 10000     ; COIN_CASE
 	money 0     ; OAKS_PARCEL
 	money 0     ; ITEMFINDER
 	money 0     ; SILPH_SCOPE
