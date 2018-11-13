@@ -46,7 +46,7 @@ MainMenu:
 	coord hl, 11, 8  ;version
 	ld de,VersionText
 	call PlaceString
-	coord hl, 11, 9  ;build
+	coord hl, 9, 9  ;build
 	ld de,BuildText
 	call PlaceString
 	jr .next2
@@ -61,7 +61,7 @@ MainMenu:
 	coord hl, 11, 6     ;version
 	ld de,VersionText
 	call PlaceString 
-	coord hl, 11, 7  ;build
+	coord hl, 9, 7  ;build
 	ld de,BuildText
 	call PlaceString
 .next2
@@ -363,7 +363,7 @@ VersionText:
 	db "@"
 	
 BuildText:
-	db "build 3"
+	db "build 3.1"
 	db "@"
 
 DisplayContinueGameInfo:
