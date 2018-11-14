@@ -3108,6 +3108,8 @@ _SniffedText::
 	prompt
 	
 ItemUseLSD:
+    xor a
+    ld [wd736], a
     call LoadCurrentMapView
 	call UpdateSprites
 	ld hl,LsdText
