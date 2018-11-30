@@ -250,4 +250,4 @@ MapSongBanks:
 	db MUSIC_LAVENDER, BANK(Music_Lavender) 
 	db MUSIC_LAVENDER, BANK(Music_Lavender) 
 	db MUSIC_LAVENDER, BANK(Music_Lavender) 
-	
+	db MUSIC_LAVENDER, BANK(Music_Lavender) 	
