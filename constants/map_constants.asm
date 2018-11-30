@@ -255,3 +255,4 @@ ENDM
 	mapconst AGATHAS_ROOM,                6,  5 ; $F7
 	mapconst SPACE_WORLD,                 9, 10 ; $F8
 	mapconst SECRET_LAB,                  6,  5 ; $F9
+	mapconst KNIFE_ROOM,                  4,  4 ; $FA

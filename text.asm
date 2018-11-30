@@ -619,7 +619,7 @@ _OakLabEmailText::
     cont "01110011"
 	cont "01100101"
 	cont "01101100"
-	cont "00001010"
+	cont "01100110"
 	done
 
 _GameCornerCoinCaseText::

@@ -2171,3 +2171,8 @@ DiskSprite:            INCBIN "gfx/sprites/disk.2bpp"
 SECTION "Pics 6", ROMX, BANK[PICS_6]
 ProglottoPicFront:: INCBIN "pic/bmon/proglotto.pic"
 BibrodoPicFront::  INCBIN "pic/bmon/bibrodo.pic"
+INCLUDE "data/mapHeaders/kniferoom.asm"
+INCLUDE "scripts/kniferoom.asm"
+INCLUDE "data/mapObjects/kniferoom.asm"
+KnifeRoomBlocks:  INCBIN "maps/kniferoom.blk"
+

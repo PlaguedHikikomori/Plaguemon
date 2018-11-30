@@ -250,6 +250,9 @@ MapHeaderBanks:
 	db BANK(Agatha_h)
 	db BANK(SpaceWorld_h)
 	db BANK(SecretLab_h)
+	db BANK(KnifeRoom_h)
+	
+	
 	
 	
 	

@@ -250,3 +250,5 @@ MapHeaderPointers::
 	dw Agatha_h ;247
 	dw SpaceWorld_h
 	dw SecretLab_h
+	dw KnifeRoom_h
+	
