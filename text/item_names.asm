@@ -65,7 +65,7 @@ ItemNames:
 	db "DARK CHIP@"
 	db "SHIT@"
 	db "DISKTOPIA@"
-	db "X SPEED@"
+	db "HAZMAT SUIT@"
 	db "X SPECIAL@"
 	db "AK 47@"
 	db "25-I NBOME@"

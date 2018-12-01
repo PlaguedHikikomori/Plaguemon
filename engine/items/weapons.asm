@@ -32,6 +32,7 @@ ValidVehiclesPtr:
 	db $1, $0, $10, $0; Panda
 	db $4, $0, $10, $0 ; Flamethrower
 	db $6, $1, $50, $1 ; Ak47
+	db $7, $2,  $0, $0 ; Radio Suit
 ValidVehiclesPtrEnd:
 
 ; INPUTS
@@ -357,6 +358,7 @@ ExecuteBangAnimation:
 BulletsPtr:
 	dw FlameThrowerAnimation
 	dw BulletAnimation
+	dw NoAnimation
 BulletsPtrEnd:	
 
 BurningMan:
@@ -429,3 +431,7 @@ BangOAMUp:
 BangOAMDown:
 	db $FE,$40,$FF,$40
 	db $FC,$40,$FD,$40
+	
+NoAnimation:
+	ret
+	

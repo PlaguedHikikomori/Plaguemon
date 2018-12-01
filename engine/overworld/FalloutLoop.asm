@@ -1,4 +1,7 @@
 FalloutLoop::
+    ld a, [wWalkBikeSurfState]
+	cp $7
+	ret z
 	ld a, [wTilePlayerStandingOn]
 	ld c, a
 	ld a, $2C

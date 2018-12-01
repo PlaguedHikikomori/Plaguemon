@@ -871,6 +871,8 @@ LoadPlayerSpriteGraphics::
 	dec a
 	jp z, LoadGunPlayerSpriteGraphics
 	dec a
+	jp z, LoadRadioPlayerSpriteGraphics
+	dec a
 	jp LoadWalkingPlayerSpriteGraphics
 
 IsBikeRidingAllowed::
@@ -1945,6 +1947,10 @@ LoadHandPlayerSpriteGraphics::
 	
 LoadGunPlayerSpriteGraphics::        
 	ld de,RedGunSprite
+	jp Backup
+	
+LoadRadioPlayerSpriteGraphics::        
+	ld de,OakSprite
 	
 Backup:                                      ;hiki, trick per riciclare spazio
     ld hl,vNPCSprites

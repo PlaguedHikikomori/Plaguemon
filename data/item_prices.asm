@@ -65,7 +65,7 @@ ItemPrices:
 	money 0     ; GOLD_TEETH
 	money 500   ; X_ATTACK
 	money 550   ; X_DEFEND
-	money 350   ; X_SPEED
+	money 1000   ; X_SPEED
 	money 350   ; X_SPECIAL
 	money 10000     ; COIN_CASE
 	money 0     ; OAKS_PARCEL

@@ -82,7 +82,7 @@ ItemUsePtrTable:
 	dw ItemUseEvoStone   ; GOLD_TEETH
 	dw ItemUseEvoStone   ; X_ATTACK
 	dw ItemUseEvoStone   ; X_DEFEND
-	dw ItemUseXStat      ; X_SPEED
+	dw ItemUseRadioSuit  ; X_SPEED
 	dw ItemUseXStat      ; X_SPECIAL
 	dw ItemUseAk47        ; COIN_CASE
 	dw ItemUseOaksParcel ; OAKS_PARCEL
@@ -642,6 +642,7 @@ ItemUseTownMap:
 	jp nz,ItemUseNotTime
 	jpba DisplayTownMap
 
+ItemUseRadioSuit:
 ItemUsePanda:
 ItemUseMotorbike:
 ItemUseFlamethrower:
@@ -749,6 +750,7 @@ VehiclesPtr:
 	dw MAX_REVIVE, $4, $0000, $0000, $0000, MUSIC_MEET_PROF_OAK ; Flamethrower
 	dw FULL_HEAL, $5, $0000, $0000, $0000, $0000 ; The thing
 	dw COIN_CASE, $6, $0000, $0000, $0000, MUSIC_MEET_PROF_OAK ; Ak47
+	dw X_SPEED, $7, $0000, $0000, $0000, MUSIC_MEET_PROF_OAK ; Radio Suit
 VehiclesPtrEnd:
 	
 SetRepelsEffect:
@@ -3437,4 +3439,5 @@ ReplaceBurnedTileBlock4:
 	;add hl, bc
 	jp Cobra
 	ret
+	
 	
