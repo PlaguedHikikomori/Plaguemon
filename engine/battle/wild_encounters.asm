@@ -41,15 +41,6 @@ TryDoWildEncounter:
 	ld a, [wCurMap]
 	cp REDS_HOUSE_1F ; is this an indoor map?
 	jr c, .CantEncounter2
-	ld a, [wCurMap]
-	cp SPACE_WORLD ; is this an indoor map?
-	jr z, .CantEncounter2
-	ld a, [wCurMap]
-	cp KNIFE_ROOM 
-	jr z, .CantEncounter2
-	ld a, [wCurMap]
-	cp SECRET_LAB ; is this an indoor map?
-	jr z, .CantEncounter2
 	ld a, [wCurMapTileset]
 	cp FOREST ; Viridian Forest/Safari Zone
 	jr z, .CantEncounter2

@@ -247,6 +247,9 @@ WildDataPointers:
 	dw NoMons
 	dw NoMons
 	dw NoMons
+	dw NoMons
+	dw NoMons
+	dw NoMons
 	dw $FFFF
 
 ; wild pokemon data is divided into two parts.

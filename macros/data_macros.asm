@@ -80,6 +80,7 @@ RGB: MACRO
 	dw (\3 << 10 | \2 << 5 | \1)
 ENDM
 
+FIGHT EQU $FD
 WALK EQU $FE
 STAY EQU $FF
 
