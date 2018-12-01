@@ -2136,10 +2136,7 @@ ShrinkPic1::  INCBIN "pic/trainer/shrink1.pic"
 ShrinkPic2::  INCBIN "pic/trainer/shrink2.pic"
 DeadDogSprite: INCBIN "gfx/sprites/deaddog.2bpp"
 INCLUDE "engine/items/weapons.asm"
-
-
-
-
+INCLUDE "engine/overworld/FalloutLoop.asm"
 
 
 SECTION "bank20",ROMX,BANK[$20]

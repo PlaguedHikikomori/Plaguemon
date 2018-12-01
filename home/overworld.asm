@@ -44,6 +44,7 @@ OverworldLoop::
     call DelayFrame
 OverworldLoopLessDelay::
     callba Blinking
+	callba FalloutLoop
 	ld a, [hJoyPressed]
 	cp SELECT
 	jr nz, .noburp
