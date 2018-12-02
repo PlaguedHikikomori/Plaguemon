@@ -4,7 +4,7 @@ FalloutLoop::
 	ret z
 	ld a, [wTilePlayerStandingOn]
 	ld c, a
-	ld a, $2C
+	ld a, $03
 	cp c
 	ret nz
 	call PoisonAllMonsters
