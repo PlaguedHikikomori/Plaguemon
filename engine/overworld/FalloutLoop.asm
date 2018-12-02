@@ -1,4 +1,7 @@
 FalloutLoop::
+    ld a, [hTilesetType]
+	cp $02
+	ret nz
     ld a, [wWalkBikeSurfState]
 	cp $7
 	ret z
