@@ -157,6 +157,8 @@ UpdateNPCSprite:
 	jr z, .randomMovement  ; value $FF
 	inc a
 	jr z, .randomMovement  ; value $FE
+	inc a  ;-----------------------------------------------------------------------
+	jr z, .isFight ;------------------------------------------------------------------
 ; scripted movement
 	dec a
 	ld [hl], a       ; increment movement byte 1 (movement data index)
@@ -182,7 +184,14 @@ UpdateNPCSprite:
 .next
 	cp WALK
 	jr nz, .determineDirection
+	jp z, .isWalk
+.isFight           
+	call CheckSpriteCanSeePlayer
+	jr nc, .isWalk  ; -----------ERRORE--------------------------------------------------------
+    callab StabPlayer
+	ret
 ; current NPC movement data is $fe. this seems buggy
+.isWalk
 	ld [hl], $1     ; set movement byte 1 to $1
 	ld de, wNPCMovementDirections
 	call LoadDEPlusA ; a = [wNPCMovementDirections + $fe] (?)

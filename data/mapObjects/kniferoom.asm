@@ -8,7 +8,7 @@ KnifeRoomObject:
 	db $0 ; signs
 
 	db $1 ; objects
-	object SPRITE_FISHER, $1, $3, FIGHT, NONE, $1
+	object SPRITE_BLUE, $1, $3, FIGHT, $1, $1
 	
 	EVENT_DISP KNIFE_ROOM_WIDTH, $7, $2
 	EVENT_DISP KNIFE_ROOM_WIDTH, $7, $3
