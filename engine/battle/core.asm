@@ -1953,7 +1953,7 @@ DrawPlayerHUDAndHPBar:
 	call CopyData
 	coord hl, 3, 0   ;Hiki, posizione livello mutazione pokemon giocatore
 	push hl
-	inc hl
+	coord hl, 0, 5
 	ld de, wLoadedMonStatus
 	call PrintStatusConditionNotFainted
 	pop hl
@@ -2004,7 +2004,7 @@ DrawEnemyHUDAndHPBar:
 	call PlaceString
 	coord hl, 4, 1
 	push hl
-	inc hl
+	coord hl, 17, 5 ;---------------
 	ld de, wEnemyMonStatus
 	call PrintStatusConditionNotFainted
 	pop hl
