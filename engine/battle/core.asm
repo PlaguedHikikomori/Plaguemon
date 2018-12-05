@@ -1957,7 +1957,7 @@ DrawPlayerHUDAndHPBar:
 	ld de, wLoadedMonStatus
 	call PrintStatusConditionNotFainted
 	pop hl
-	jr nz, .doNotPrintLevel
+	;jr nz, .doNotPrintLevel
 	call PrintLevel
 .doNotPrintLevel
 	ld a, [wLoadedMonSpecies]
@@ -2008,7 +2008,7 @@ DrawEnemyHUDAndHPBar:
 	ld de, wEnemyMonStatus
 	call PrintStatusConditionNotFainted
 	pop hl
-	jr nz, .skipPrintLevel ; se il pokemon ha una condizione di stato, skippa di printare il livello
+	;jr nz, .skipPrintLevel - se il pokemon ha una condizione di stato, skippa di printare il livello
 	ld a, [wEnemyMonLevel]
 	ld [wLoadedMonLevel], a
 	coord hl, 15, 1
