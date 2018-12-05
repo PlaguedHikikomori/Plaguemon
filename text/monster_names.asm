@@ -147,7 +147,7 @@ MonsterNames:
 	db "MISSINGNO."
 	db "WRAITARL@@"
 	db "GENESUS@@@"
-	db "MARTIRUS @"
+	db "MARTIRUS@@"
 	db "UBERBIRO@@"
 	db "PUTREFACTO"
 	db "IRUKUNJI@@"

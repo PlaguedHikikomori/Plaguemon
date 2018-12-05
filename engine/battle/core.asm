@@ -1934,7 +1934,7 @@ DrawPlayerHUDAndHPBar:
 	xor a
 	ld [H_AUTOBGTRANSFERENABLED], a
 	coord hl, 0, 0
-	lb bc, 3, 4
+	lb bc, 3, 10
     call ClearScreenArea  ;Hiki, pulisce l'area dello schermo in cui posizionare la HUD del pokemon giocatore
 	;callab PlacePlayerHUDTiles -Hiki, posiziona la striscia nera sotto la HUD del pokemon giocatore
 	;coord hl, 18, 2        -Hiki, posiziona inizio HUD giocatore
