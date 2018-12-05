@@ -71,10 +71,10 @@ DrainHPEffect_:
 .next
 	ld a, [H_WHOSETURN]
 	and a
-	coord hl, 10, 9
+	coord hl, 1, 2
 	ld a, $1
 	jr z, .next2
-	coord hl, 2, 2
+	coord hl, 10, 2
 	xor a
 .next2
 	ld [wHPBarType], a

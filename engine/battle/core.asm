@@ -1962,7 +1962,7 @@ DrawPlayerHUDAndHPBar:
 .doNotPrintLevel
 	ld a, [wLoadedMonSpecies]
 	ld [wcf91], a
-	coord hl, 1, 2     ; Hiki, posizione HP giocatore
+	coord hl, 2, 2     ; Hiki, posizione HP giocatore
 	predef DrawHP
 	ld a, $1
 	ld [H_AUTOBGTRANSFERENABLED], a
@@ -2076,7 +2076,7 @@ DrawEnemyHUDAndHPBar:
 .drawHPBar
 	xor a
 	ld [wHPBarType], a
-	coord hl, 10, 2
+	coord hl, 11, 2
 	call DrawHPBar
 	ld a, $1
 	ld [H_AUTOBGTRANSFERENABLED], a
@@ -5018,7 +5018,7 @@ ApplyDamageToEnemyPokemon:
 	ld [wHPBarNewHP+1],a
 	ld a,[hl]
 	ld [wHPBarNewHP],a
-	coord hl, 10, 2       ;Hiki, anima hp bar nemico
+	coord hl, 11, 2       ;Hiki, anima hp bar nemico
 	xor a
 	ld [wHPBarType],a
 	predef UpdateHPBar2 ; animate the HP bar shortening
@@ -5136,7 +5136,7 @@ ApplyDamageToPlayerPokemon:
 	ld [wHPBarMaxHP+1],a
 	ld a,[hl]
 	ld [wHPBarMaxHP],a
-	coord hl, 1, 2     ;Hiki, anima hp bar giocatore
+	coord hl, 2, 2     ;Hiki, anima hp bar giocatore
 	ld a,$01
 	ld [wHPBarType],a
 	predef UpdateHPBar2 ; animate the HP bar shortening

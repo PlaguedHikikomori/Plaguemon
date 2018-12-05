@@ -571,6 +571,7 @@ ItemUseSafariBall:
 
 .done
 	ld a,[wBattleType]
+	push af
 	and a ; is this the old man battle?
 	ret nz ; if so, don't remove a ball from the bag
 
@@ -580,6 +581,7 @@ ItemUseSafariBall:
 	
 ; Remove a ball from the bag.
 	ld hl,wNumBagItems
+	pop af
 	inc a
 	ld [wItemQuantity],a
 	jp RemoveItemFromInventory
