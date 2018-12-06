@@ -5,7 +5,7 @@ db 95 ; base defense
 db 70 ; base speed
 db 120 ; base special
 db ELECTRIC ; species type 1
-db ELECTRIC ; species type 2
+db CYBER ; species type 2
 db 60 ; catch rate
 db 161 ; base exp yield
 INCBIN "pic/bmon/magneton.pic",0,1 ; 66, sprite dimensions

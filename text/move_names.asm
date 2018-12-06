@@ -92,7 +92,7 @@ MoveNames::
 	db "DIG@"
 	db "TOXIC@"
 	db "CONFUSION@"
-	db "PSYCHIC@"
+	db "MIND CONTROL@"
 	db "HYPNOSIS@"
 	db "MEDITATE@"
 	db "AGILITY@"
@@ -164,4 +164,8 @@ MoveNames::
 	db "SLASH@"
 	db "SUBSTITUTE@"
 	db "STRUGGLE@"
+	db "PROTO CANNON@"
+	db "MECHA PUNCH@"
+	db "LOW ON MEMORY@"
+	db "MACHINE LEARN@"
 
