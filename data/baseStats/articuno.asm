@@ -5,16 +5,16 @@ db 100 ; base defense
 db 85 ; base speed
 db 125 ; base special
 db ICE ; species type 1
-db FLYING ; species type 2
+db CYBER ; species type 2
 db 3 ; catch rate
 db 215 ; base exp yield
 INCBIN "pic/bmon/articuno.pic",0,1 ; 77, sprite dimensions
 dw ArticunoPicFront
 dw ArticunoPicBack
 ; attacks known at lvl 0
-db PECK
+db MACHINE_LEARN
 db ICE_BEAM
-db 0
+db DRILL_PECK
 db 0
 db 5 ; growth rate
 ; learnset

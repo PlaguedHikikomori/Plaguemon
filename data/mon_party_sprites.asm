@@ -67,7 +67,7 @@ MonPartyData:
 	dn SPRITE_WATER, SPRITE_MON             ;Lapras/Ditto
 	dn SPRITE_QUADRUPED, SPRITE_QUADRUPED   ;Eevee/Vaporeon
 	dn SPRITE_QUADRUPED, SPRITE_QUADRUPED   ;Jolteon/Flareon
-	dn SPRITE_MON, SPRITE_HELIX             ;Porygon/Omanyte
+	dn SPRITE_HELIX, SPRITE_HELIX           ;Porygon/Omanyte
 	dn SPRITE_HELIX, SPRITE_HELIX           ;Omastar/Kabuto
 	dn SPRITE_HELIX, SPRITE_BIRD_M          ;Kabutops/Aerodactyl
 	dn SPRITE_MON, SPRITE_BIRD_M            ;Snorlax/Articuno

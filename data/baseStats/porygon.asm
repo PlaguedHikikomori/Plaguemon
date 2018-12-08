@@ -4,7 +4,7 @@ db 60 ; base attack
 db 70 ; base defense
 db 40 ; base speed
 db 75 ; base special
-db NORMAL ; species type 1
+db CYBER ; species type 1
 db CYBER ; species type 2
 db 45 ; catch rate
 db 130 ; base exp yield

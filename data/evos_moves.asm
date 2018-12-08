@@ -204,15 +204,17 @@ Mon112_EvosMoves:
 	db 0
 
 Mon115_EvosMoves:
-;KANGASKHAN
+;KANGASKHAN/HELLTECH
 ;Evolutions
 	db 0
 ;Learnset
-	db 26,BITE
-	db 31,TAIL_WHIP
-	db 36,MEGA_PUNCH
-	db 41,LEER
-	db 46,DIZZY_PUNCH
+	db 17,EMBER
+	db 25,LEER
+	db 33,MECHA_PUNCH
+	db 41,FIRE_PUNCH
+	db 46,PROTO_CANNON
+	db 52,SMOKESCREEN
+	db 60,HYPER_BEAM
 	db 0
 
 Mon032_EvosMoves:
@@ -583,12 +585,12 @@ Mon153_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 23,PSYBEAM
-	db 28,RECOVER
-	db 35,AGILITY
-	db 42,TRI_ATTACK
-	db 50,PSYCHIC_M
-	db 84,AMNESIA
+	db 23,CONFUSION
+	db 28,LOW_ON_MEMORY
+	db 35,BARRIER
+	db 42,PSYCHIC_M
+	db 50,PROTO_CANNON
+	db 60,HYPER_BEAM
 	db 0
 
 Mon058_EvosMoves:
@@ -848,16 +850,16 @@ Mon125_EvosMoves:
 	db 0
 
 Mon082_EvosMoves:
-;MAGNETON
+;MAGNETON/SORAYAMBOT
 ;Evolutions
 	db 0
 ;Learnset
-	db 21,SONICBOOM
+	db 21,MACHINE_LEARN
 	db 25,THUNDERSHOCK
-	db 29,SUPERSONIC
+	db 33,MECHA_PUNCH
 	db 38,THUNDER_WAVE
-	db 46,SWIFT
-	db 54,SCREECH
+	db 46,SCREECH
+	db 54,THUNDERBOLT
 	db 0
 
 Mon109_EvosMoves:
@@ -1053,33 +1055,33 @@ Mon124_EvosMoves:
 	db 0
 
 Mon146_EvosMoves:
-;MOLTRES
+;MOLTRES/MOLCOPY
 ;Evolutions
 	db 0
 ;Learnset
-	db 51,LEER
-	db 55,AGILITY
-	db 60,SKY_ATTACK
+	db 51,MIMIC
+	db 55,PROTO_CANNON
+	db 60,FIRE_BLAST
 	db 0
 
 Mon144_EvosMoves:
-;ARTICUNO
+;ARTICUNO/ARTICLONE
 ;Evolutions
 	db 0
 ;Learnset
 	db 51,BLIZZARD
-	db 55,AGILITY
-	db 60,MIST
+	db 55,MIMIC
+	db 60,PROTO_CANNON
 	db 0
 
 Mon145_EvosMoves:
-;ZAPDOS
+;ZAPDOS/ZAPBORG
 ;Evolutions
 	db 0
 ;Learnset
-	db 51,THUNDER
-	db 55,AGILITY
-	db 60,LIGHT_SCREEN
+	db 51,PROTO_CANNON
+	db 55,THUNDER
+	db 60,MIMIC
 	db 0
 
 Mon132_EvosMoves:
@@ -1215,26 +1217,30 @@ Mon148_EvosMoves:
 	db 0
 
 Mon140_EvosMoves:
-;KABUTO
+;KABUTO/ZIRLORG
 ;Evolutions
-	db EV_LEVEL,40,KABUTOPS
+	db EV_LEVEL,38,KABUTOPS
 	db 0
 ;Learnset
-	db 34,ABSORB
-	db 39,SLASH
-	db 44,LEER
-	db 49,HYDRO_PUMP
+	db 12,LEER
+	db 19,MACHINE_LEARN
+	db 27,ROCK_THROW
+	db 36,SLASH
+	db 44,PROTO_CANNON
+	db 51,ROCK_SLIDE
 	db 0
 
 Mon141_EvosMoves:
-;KABUTOPS
+;KABUTOPS/ZILOSNAK
 ;Evolutions
 	db 0
 ;Learnset
-	db 34,ABSORB
-	db 39,SLASH
-	db 46,LEER
-	db 53,HYDRO_PUMP
+	db 16,LEER
+	db 25,MACHINE_LEARN
+	db 31,ROCK_THROW
+	db 43,LOW_ON_MEMORY
+	db 50,PROTO_CANNON
+	db 57,ROCK_SLIDE
 	db 0
 
 Mon116_EvosMoves:
@@ -1302,26 +1308,30 @@ Mon028_EvosMoves:
 	db 0
 
 Mon138_EvosMoves:
-;OMANYTE
+;OMANYTE/SHARPIDER
 ;Evolutions
-	db EV_LEVEL,40,OMASTAR
+	db EV_LEVEL,38,OMASTAR
 	db 0
 ;Learnset
-	db 34,HORN_ATTACK
-	db 39,LEER
-	db 46,SPIKE_CANNON
-	db 53,HYDRO_PUMP
+	db 12,LEER
+	db 19,MACHINE_LEARN
+	db 27,ROCK_THROW
+	db 36,LOW_ON_MEMORY
+	db 44,PROTO_CANNON
 	db 0
 
 Mon139_EvosMoves:
-;OMASTAR
+;OMASTAR/MECHANIGAL
 ;Evolutions
 	db 0
 ;Learnset
-	db 34,HORN_ATTACK
-	db 39,LEER
-	db 44,SPIKE_CANNON
-	db 49,HYDRO_PUMP
+	db 16,LEER
+	db 25,MACHINE_LEARN
+	db 31,LOW_ON_MEMORY
+	db 39,WATER_GUN
+	db 44,WRAP
+	db 50,PROTO_CANNON
+	db 57,HYDRO_PUMP
 	db 0
 
 Mon039_EvosMoves:
@@ -2097,15 +2107,17 @@ Mon074_EvosMoves:
 	db 0
 
 Mon137_EvosMoves:
-;PORYGON
+;PORYGON/TERMINALIX
 ;Evolutions
     db EV_ITEM,X_DEFEND,1,BIBRODO
 	db 0
 ;Learnset
-	db 23,PSYBEAM
-	db 28,RECOVER
-	db 35,AGILITY
-	db 42,TRI_ATTACK
+	db 18,CONFUSION
+	db 24,MACHINE_LEARN
+	db 35,LOW_ON_MEMORY
+	db 40,PSYCHIC_M
+	db 47,PROTO_CANNON
+	db 56,HYPER_BEAM
 	db 0
 
 Mon142_EvosMoves:
@@ -2127,17 +2139,17 @@ Mon184_EvosMoves:
 	db 0
 
 Mon081_EvosMoves:
-;MAGNEMITE
+;MAGNEMITE/GHOSHELLO
 ;Evolutions
 	db EV_LEVEL,30,MAGNETON
 	db 0
 ;Learnset
-	db 21,SONICBOOM
-	db 25,THUNDERSHOCK
-	db 29,SUPERSONIC
+	db 12,SONICBOOM
+	db 18,THUNDERSHOCK
+	db 24,MACHINE_LEARN
 	db 35,THUNDER_WAVE
-	db 41,SWIFT
-	db 47,SCREECH
+	db 41,SCREECH
+	db 47,THUNDERBOLT
 	db 0
 
 Mon185_EvosMoves:

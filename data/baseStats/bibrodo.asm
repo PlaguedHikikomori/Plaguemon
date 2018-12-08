@@ -1,9 +1,9 @@
 db DEX_BIBRODO ; pokedex id
-db 120 ; base hp
-db 120 ; base attack
-db 100 ; base defense
-db 50 ; base speed
-db 90 ; base special
+db 100 ; base hp
+db 90 ; base attack
+db 110 ; base defense
+db 70 ; base speed
+db 120 ; base special
 db CYBER ; species type 1
 db CYBER ; species type 2
 db 25  ; catch rate
@@ -14,8 +14,8 @@ dw BibrodoPicFront
 ; attacks known at lvl 0
 db TACKLE
 db SHARPEN
-db CONVERSION
-db 0
+db MACHINE_LEARN
+db LOW_ON_MEMORY
 db 0 ; growth rate
 ; learnset
 	tmlearn 6
