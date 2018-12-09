@@ -1,8 +1,8 @@
 db DEX_DRAGONAIR ; pokedex id
-db 100 ; base hp
-db 100 ; base attack
-db 100 ; base defense
-db 100 ; base speed
+db 92 ; base hp
+db 99 ; base attack
+db 92 ; base defense
+db 117 ; base speed
 db 100 ; base special
 db FIRE   ; species type 1
 db DRAGON ; species type 2
@@ -12,10 +12,10 @@ INCBIN "pic/bmon/dragonair.pic",0,1 ; 66, sprite dimensions
 dw DragonairPicFront
 dw DragonairPicBack
 ; attacks known at lvl 0
-db WRAP
+db SCRATCH
+db GROWL
+db EMBER
 db LEER
-db THUNDER_WAVE
-db 0
 db 3 ; growth rate
 ; learnset
 	tmlearn 6,7,8

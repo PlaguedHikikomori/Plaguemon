@@ -266,7 +266,7 @@ VicegripAnim:
 	db $08,$0A,$2A
 	db $FF
 
-GuillotineAnim:
+GuillotineAnim: ;GUILLOTINE, GOD REVENGE
 	db $06,$0B,$2A
 	db $FF
 
@@ -464,11 +464,11 @@ SonicBoomAnim:
 	db $46,$FF,$05
 	db $FF
 
-DisableAnim:
-	db SE_DARK_SCREEN_PALETTE, $48
-	db SE_DARK_SCREEN_FLASH, $2A
-	db SE_DARK_SCREEN_FLASH, $2A
-	db SE_RESET_SCREEN_PALETTE, $FF
+DisableAnim: ; used for DISABLE, LOW ON MEMORY
+	db SE_DARK_SCREEN_FLASH, $FF
+	db $06,$91,$17
+	db SE_DARK_SCREEN_FLASH, $FF
+	db $06,$02,$02
 	db $FF
 
 AcidAnim:
@@ -651,11 +651,10 @@ StringShotAnim:
 	db $08,$50,$37
 	db $FF
 
-DragonRageAnim:
-	db $46,$51,$1F
-	db $46,$FF,$0C
-	db $46,$FF,$0D
-	db $46,$FF,$0E
+DragonRageAnim: ;JUDGEMENT, WRATH OF GOD
+	db SE_DARK_SCREEN_FLASH, $FF
+	db $46,$FF,$2B
+	db SE_DARK_SCREEN_FLASH, $FF
 	db $FF
 
 FireSpinAnim:
@@ -866,7 +865,7 @@ ReflectAnim:
 	db $FF
 
 FocusEnergyAnim:
-	db SE_SPIRAL_BALLS_INWARD, $73
+	db SE_SHOOT_MANY_BALLS_UPWARD
 	db $FF
 
 BideAnim:
@@ -1029,22 +1028,25 @@ BubbleAnim:
 	db $16,$90,$35
 	db $FF
 
-DizzyPunchAnim:
-	db $06,$91,$17
-	db $06,$91,$17
-	db $06,$91,$17
-	db $06,$02,$02
+DizzyPunchAnim: ;CROP CIRCLES
+	db SE_DARK_SCREEN_PALETTE, $FF
+	db SE_DARK_SCREEN_FLASH, $6C
+	db $16,$66,$35
+	db SE_WAVY_SCREEN, $32
+	db SE_DARK_SCREEN_FLASH, $6C
+	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
 SporeAnim:
 	db $06,$92,$36
 	db $FF
 
-FlashAnim:
-	db SE_LIGHT_SCREEN_PALETTE, $48
-	db SE_DARK_SCREEN_FLASH, $88
-	db SE_DARK_SCREEN_FLASH, $FF
-	db SE_RESET_SCREEN_PALETTE, $FF
+FlashAnim: ;FLASH, TIME WARP
+	db $46,$FF,$3E
+	db SE_DARK_SCREEN_FLASH, $4E
+	db SE_FLASH_SCREEN_LONG, $F6
+	db $05,$F6,$01
+	db SE_DARK_SCREEN_FLASH, $4E
 	db $FF
 
 PsywaveAnim:

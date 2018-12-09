@@ -169,6 +169,10 @@ const_value = 1
 	const MECHA_PUNCH  ; a7
 	const LOW_ON_MEMORY; a8
 	const MACHINE_LEARN; a9
+	const CROP_CIRCLES ; aa
+	const TIME_WARP    ; ab
+	const WRATH_OF_GOD ; ac
+	const JUDGEMENT    ; ad
 	
 NUM_ATTACKS EQU const_value
 const_value = STRUGGLE + 1
