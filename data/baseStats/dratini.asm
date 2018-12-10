@@ -1,21 +1,21 @@
 db DEX_DRATINI ; pokedex id
-db 100 ; base hp
-db 100 ; base attack
-db 100 ; base defense
-db 100 ; base speed
-db 100 ; base special
+db 94 ; base hp
+db 96 ; base attack
+db 98 ; base defense
+db 94 ; base speed
+db 118 ; base special
 db GRASS ; species type 1
 db DRAGON ; species type 2
 db 45 ; catch rate
-db 67 ; base exp yield
+db 144 ; base exp yield
 INCBIN "pic/bmon/dratini.pic",0,1 ; 55, sprite dimensions
 dw DratiniPicFront
 dw DratiniPicBack
 ; attacks known at lvl 0
-db WRAP
-db LEER
-db 0
-db 0
+db TACKLE
+db GROWL
+db LEECH_SEED
+db VINE_WHIP
 db 3 ; growth rate
 ; learnset
 	tmlearn 6,8

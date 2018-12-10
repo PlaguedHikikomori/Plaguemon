@@ -218,7 +218,7 @@ Mon115_EvosMoves:
 	db 0
 
 Mon032_EvosMoves:
-;NIDORAN_M
+;NIDORAN_M/SCRAMBLO
 ;Evolutions
 	db EV_LEVEL,16,NIDORINO
 	db 0
@@ -272,13 +272,17 @@ Mon100_EvosMoves:
 	db 0
 
 Mon034_EvosMoves:
-;NIDOKING
+;NIDOKING/KESARUS
 ;Evolutions
 	db 0
 ;Learnset
-	db 8,HORN_ATTACK
-	db 14,POISON_STING
-	db 23,THRASH
+	db 12,HORN_ATTACK
+	db 23,POISON_STING
+	db 30,THRASH
+	db 36,EARTHQUAKE
+	db 40,JUDGEMENT
+	db 45,HORN_DRILL
+	db 52,DOUBLE_KICK
 	db 0
 
 Mon080_EvosMoves:
@@ -376,19 +380,23 @@ Mon029_EvosMoves:
 	db 8,SCRATCH
 	db 14,POISON_STING
 	db 21,TAIL_WHIP
-	db 29,BITE
+	db 29,VICEGRIP
 	db 36,FURY_SWIPES
 	db 43,DOUBLE_KICK
 	db 0
 
 Mon031_EvosMoves:
-;NIDOQUEEN
+;NIDOQUEEN/KALEDENDS
 ;Evolutions
 	db 0
 ;Learnset
-	db 8,SCRATCH
-	db 14,POISON_STING
-	db 23,BODY_SLAM
+	db 12,SCRATCH
+	db 23,POISON_STING
+	db 30,BODY_SLAM
+	db 36,VICEGRIP
+	db 40,JUDGEMENT
+	db 45,FURY_SWIPES
+	db 52,DOUBLE_KICK
 	db 0
 
 Mon104_EvosMoves:
@@ -441,26 +449,30 @@ Mon059_EvosMoves:
 	db 0
 
 Mon151_EvosMoves:
-;MEW
+;MEW/TWOMEW
 ;Evolutions
 	db 0
 ;Learnset
 	db 10,TRANSFORM
 	db 20,MEGA_PUNCH
 	db 30,METRONOME
-	db 40,PSYCHIC_M
+	db 40,PETAL_DANCE ;PARANOIA
+	db 50,CROP_CIRCLES
 	db 0
 
 Mon130_EvosMoves:
-;GYARADOS
+;GYARADOS/HANNYADOS
 ;Evolutions
 	db 0
 ;Learnset
 	db 20,BITE
+	db 20,LEER
 	db 25,DRAGON_RAGE
-	db 32,LEER
-	db 41,HYDRO_PUMP
-	db 52,HYPER_BEAM
+	db 33,WATER_GUN
+	db 41,JUDGEMENT
+	db 49,HYDRO_PUMP
+	db 57,WRATH_OF_GOD
+	db 62,HYPER_BEAM
 	db 0
 
 Mon090_EvosMoves:
@@ -667,7 +679,7 @@ Mon064_EvosMoves:
 	db 20,DISABLE
 	db 27,PSYBEAM
 	db 31,RECOVER
-	db 38,PSYCHIC_M
+	db 38,PETAL_DANCE
 	db 42,REFLECT
 	db 0
 
@@ -981,15 +993,16 @@ Mon048_EvosMoves:
 	db 0
 
 Mon149_EvosMoves:
-;DRAGONITE
+;DRAGONITE/CHILONGO
 ;Evolutions
 	db 0
 ;Learnset
-	db 10,THUNDER_WAVE
-	db 20,AGILITY
-	db 35,SLAM
-	db 45,DRAGON_RAGE
-	db 60,HYPER_BEAM
+	db 11,THUNDER_WAVE
+	db 21,AGILITY
+	db 31,JUDGEMENT
+	db 41,SUBSTITUTE
+	db 51,HYPER_BEAM
+	db 61,WRATH_OF_GOD
 	db 0
 
 Mon160_EvosMoves:
@@ -1193,27 +1206,36 @@ Mon167_EvosMoves:
 	db 0
 
 Mon147_EvosMoves:
-;DRATINI
+;DRATINI/PEYOTOZOR
 ;Evolutions
 	db 0
 ;Learnset
-	db 10,THUNDER_WAVE
-	db 20,AGILITY
-	db 30,SLAM
-	db 40,DRAGON_RAGE
-	db 50,HYPER_BEAM
+	db 7,LEECH_SEED
+	db 13,VINE_WHIP
+	db 22,POISONPOWDER
+	db 30,RAZOR_LEAF
+	db 44,DRAGON_RAGE
+	db 47,GROWTH
+	db 52,JUDGEMENT
+	db 55,HYPER_BEAM
+	db 58,SLEEP_POWDER
+	db 65,SOLARBEAM
 	db 0
 
 Mon148_EvosMoves:
-;DRAGONAIR
+;DRAGONAIR/HYDRALERN
 ;Evolutions
 	db 0
 ;Learnset
-	db 10,THUNDER_WAVE
-	db 20,AGILITY
-	db 35,SLAM
-	db 45,DRAGON_RAGE
+	db 9,EMBER
+	db 15,LEER
+	db 24,RAGE
+	db 36,SLASH
+	db 44,DRAGON_RAGE
+	db 48,FLAMETHROWER
+	db 52,JUDGEMENT
 	db 55,HYPER_BEAM
+	db 65,FIRE_BLAST
 	db 0
 
 Mon140_EvosMoves:
@@ -1482,12 +1504,19 @@ Mon061_EvosMoves:
 	db 0
 
 Mon062_EvosMoves:
-;POLIWRATH
+;POLIWRATH/SCOLORAL
 ;Evolutions
 	db 0
 ;Learnset
-	db 16,HYPNOSIS
-	db 60,HYPER_BEAM
+	db 8,BUBBLE
+	db 15,WATER_GUN
+	db 24,BITE
+	db 31,WITHDRAW
+	db 42,SKULL_BASH
+	db 44,DRAGON_RAGE
+	db 52,JUDGEMENT
+	db 55,HYPER_BEAM
+	db 65,HYDRO_PUMP
 	db 0
 
 Mon013_EvosMoves:
@@ -1689,15 +1718,16 @@ Mon042_EvosMoves:
 	db 0
 
 Mon150_EvosMoves:
-;MEWTWO
+;MEWTWO/MEWTATED
 ;Evolutions
 	db 0
 ;Learnset
-	db 63,BARRIER
-	db 66,PSYCHIC_M
-	db 70,RECOVER
-	db 75,MIST
-	db 81,AMNESIA
+	db 47,TIME_WARP
+	db 58,PETAL_DANCE ;PARANOIA
+	db 69,RECOVER
+	db 80,MIST
+	db 91,PSYCHIC_M
+	db 99,CROP_CIRCLES
 	db 0
 
 Mon143_EvosMoves:
@@ -1862,7 +1892,7 @@ Mon063_EvosMoves:
 	db 0
 
 Mon065_EvosMoves:
-;ALAKAZAM
+;ALAKAZAM/MARTIRUS
 ;Evolutions
 	db 0
 ;Learnset
@@ -1870,8 +1900,11 @@ Mon065_EvosMoves:
 	db 20,DISABLE
 	db 27,PSYBEAM
 	db 31,RECOVER
-	db 38,PSYCHIC_M
+	db 38,PETAL_DANCE
 	db 42,REFLECT
+	db 47,SUBSTITUTE
+	db 55,JUDGEMENT
+	db 60,PSYCHIC_M
 	db 0
 
 Mon017_EvosMoves:
@@ -2087,7 +2120,7 @@ Mon030_EvosMoves:
 	db 8,SCRATCH
 	db 14,POISON_STING
 	db 23,TAIL_WHIP
-	db 32,BITE
+	db 32,VICEGRIP
 	db 41,FURY_SWIPES
 	db 50,DOUBLE_KICK
 	db 0
@@ -2274,7 +2307,7 @@ Mon043_EvosMoves:
 	db 17,STUN_SPORE
 	db 19,SLEEP_POWDER
 	db 24,ACID
-	db 33,PETAL_DANCE
+	db 33,MEGA_DRAIN
 	db 46,SOLARBEAM
 	db 0
 
@@ -2288,18 +2321,22 @@ Mon044_EvosMoves:
 	db 17,STUN_SPORE
 	db 19,SLEEP_POWDER
 	db 28,ACID
-	db 38,PETAL_DANCE
+	db 38,MEGA_DRAIN
 	db 52,SOLARBEAM
 	db 0
 
 Mon045_EvosMoves:
-;VILEPLUME
+;VILEPLUME/LARSENEF
 ;Evolutions
 	db 0
 ;Learnset
 	db 15,POISONPOWDER
 	db 17,STUN_SPORE
 	db 19,SLEEP_POWDER
+	db 28,ACID
+	db 38,MEGA_DRAIN
+	db 45,CROP_CIRCLES
+	db 52,SOLARBEAM
 	db 0
 
 Mon069_EvosMoves:

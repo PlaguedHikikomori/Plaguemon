@@ -4,8 +4,8 @@ db 80 ; base attack
 db 85 ; base defense
 db 50 ; base speed
 db 100 ; base special
-db BIRD   ; species type 1
-db POISON ; species type 2
+db GRASS   ; species type 1
+db BIRD    ; species type 2
 db 45 ; catch rate
 db 184 ; base exp yield
 INCBIN "pic/bmon/vileplume.pic",0,1 ; 77, sprite dimensions
@@ -15,7 +15,7 @@ dw VileplumePicBack
 db STUN_SPORE
 db SLEEP_POWDER
 db ACID
-db PETAL_DANCE
+db 0
 db 3 ; growth rate
 ; learnset
 	tmlearn 3,6,8

@@ -14,8 +14,8 @@ dw MewtwoPicFront
 ; attacks known at lvl 0
 db CONFUSION
 db DISABLE
-db SWIFT
-db PSYCHIC_M
+db POUND
+db BARRIER
 db 5 ; growth rate
 ; learnset
 	tmlearn 1,5,6,8
