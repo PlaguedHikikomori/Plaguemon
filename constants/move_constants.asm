@@ -163,7 +163,7 @@ const_value = 1
 	const TRI_ATTACK   ; a1
 	const SUPER_FANG   ; a2
 	const SLASH        ; a3
-	const SUBSTITUTE   ; a4
+	const DISCIPLE     ; a4
 	const STRUGGLE     ; a5
 	const PROTO_CANNON ; a6
 	const MECHA_PUNCH  ; a7

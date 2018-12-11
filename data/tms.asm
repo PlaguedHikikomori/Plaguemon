@@ -48,7 +48,7 @@ TechnicalMachines:
 	db EXPLOSION
 	db ROCK_SLIDE
 	db TRI_ATTACK
-	db SUBSTITUTE
+	db DISCIPLE
 	db CUT
 	db FLY
 	db SURF

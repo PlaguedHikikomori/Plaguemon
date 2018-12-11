@@ -1342,15 +1342,15 @@ _IgnoredOrdersText::
 	line "ignored orders!"
 	prompt
 
-_SubstituteTookDamageText::
-	text "The SUBSTITUTE"
+_DiscipleTookDamageText::
+	text "The DISCIPLE"
 	line "took damage for"
 	cont "<TARGET>!"
 	prompt
 
-_SubstituteBrokeText::
-	text "<TARGET>'s"
-	line "SUBSTITUTE broke!"
+_DiscipleBrokeText::
+	text "DISCIPLE's"
+	line "lost his Faith!"
 	prompt
 
 _BuildingRageText::
@@ -2168,19 +2168,19 @@ _ParalyzedMayNotAttackText::
 	cont "not attack!"
 	prompt
 
-_SubstituteText::
-	text "It created a"
-	line "SUBSTITUTE!"
+_DiscipleText::
+	text "He confessed a"
+	line "DISCIPLE!"
 	prompt
 
-_HasSubstituteText::
+_HasDiscipleText::
 	text "<USER>"
-	line "has a SUBSTITUTE!"
+	line "has a DISCIPLE!"
 	prompt
 
-_TooWeakSubstituteText::
+_TooWeakDiscipleText::
 	text "Too weak to make"
-	line "a SUBSTITUTE!"
+	line "a DISCIPLE!"
 	prompt
 
 _CoinsScatteredText::

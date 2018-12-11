@@ -15,7 +15,7 @@ ResidualEffects1:
 	db REFLECT_EFFECT
 	db POISON_EFFECT
 	db PARALYZE_EFFECT
-	db SUBSTITUTE_EFFECT
+	db DISCIPLE_EFFECT
 	db MIMIC_EFFECT
 	db LEECH_SEED_EFFECT
 	db SPLASH_EFFECT
@@ -2542,10 +2542,10 @@ PartyMenuOrRockOrRun:
 	predef StatusScreen2
 ; now we need to reload the enemy mon pic
 	ld a, [wEnemyBattleStatus2]
-	bit HasSubstituteUp, a ; does the enemy mon have a substitute?
-	ld hl, AnimationSubstitute
+	bit HasDiscipleUp, a ; does the enemy mon have a Disciple?
+	ld hl, AnimationDisciple
 	jr nz, .doEnemyMonAnimation
-; enemy mon doesn't have substitute
+; enemy mon doesn't have Disciple
 	ld a, [wEnemyMonMinimized]
 	and a ; has the enemy mon used Minimise?
 	ld hl, AnimationMinimizeMon
@@ -2559,7 +2559,7 @@ PartyMenuOrRockOrRun:
 	call LoadMonFrontSprite
 	jr .enemyMonPicReloaded
 .doEnemyMonAnimation
-	ld b, BANK(AnimationSubstitute) ; BANK(AnimationMinimizeMon)
+	ld b, BANK(AnimationDisciple) ; BANK(AnimationMinimizeMon)
 	call Bankswitch
 .enemyMonPicReloaded ; enemy mon pic has been reloaded, so return to the party menu
 	jp .partyMenuWasSelected
@@ -3311,9 +3311,9 @@ getPlayerAnimationType:
 playPlayerMoveAnimation:
 	push af
 	ld a,[wPlayerBattleStatus2]
-	bit HasSubstituteUp,a
-	ld hl,HideSubstituteShowMonAnim
-	ld b,BANK(HideSubstituteShowMonAnim)
+	bit HasDiscipleUp,a
+	ld hl,HideDiscipleShowMonAnim
+	ld b,BANK(HideDiscipleShowMonAnim)
 	call nz,Bankswitch
 	pop af
 	ld [wAnimationType],a
@@ -3322,9 +3322,9 @@ playPlayerMoveAnimation:
 	call HandleExplodingAnimation
 	call DrawPlayerHUDAndHPBar
 	ld a,[wPlayerBattleStatus2]
-	bit HasSubstituteUp,a
-	ld hl,ReshowSubstituteAnim
-	ld b,BANK(ReshowSubstituteAnim)
+	bit HasDiscipleUp,a
+	ld hl,ReshowDiscipleAnim
+	ld b,BANK(ReshowDiscipleAnim)
 	call nz,Bankswitch
 	jr MirrorMoveCheck
 playerCheckIfFlyOrChargeEffect:
@@ -4001,7 +4001,7 @@ ExclamationPointMoveSets:
 	db WRAP, THRASH, TAIL_WHIP, LEER, BITE, GROWL, ROAR, SING, PECK, COUNTER
 	db STRENGTH, ABSORB, STRING_SHOT, EARTHQUAKE, FISSURE, DIG, TOXIC, SCREECH, HARDEN
 	db MINIMIZE, WITHDRAW, DEFENSE_CURL, METRONOME, LICK, CLAMP, CONSTRICT, POISON_GAS
-	db LEECH_LIFE, BUBBLE, FLASH, SPLASH, ACID_ARMOR, FURY_SWIPES, REST, SHARPEN, SLASH, SUBSTITUTE
+	db LEECH_LIFE, BUBBLE, FLASH, SPLASH, ACID_ARMOR, FURY_SWIPES, REST, SHARPEN, SLASH, DISCIPLE
 	db $00
 	db $FF ; terminator
 
@@ -4980,8 +4980,8 @@ ApplyDamageToEnemyPokemon:
 	or b
 	jr z,ApplyAttackToEnemyPokemonDone ; we're done if damage is 0
 	ld a,[wEnemyBattleStatus2]
-	bit HasSubstituteUp,a ; does the enemy have a substitute?
-	jp nz,AttackSubstitute
+	bit HasDiscipleUp,a ; does the enemy have a disciple?
+	jp nz,AttackDisciple
 ; subtract the damage from the pokemon's current HP
 ; also, save the current HP at wHPBarOldHP
 	ld a,[hld]
@@ -5099,8 +5099,8 @@ ApplyDamageToPlayerPokemon:
 	or b
 	jr z,ApplyAttackToPlayerPokemonDone ; we're done if damage is 0
 	ld a,[wPlayerBattleStatus2]
-	bit HasSubstituteUp,a ; does the player have a substitute?
-	jp nz,AttackSubstitute
+	bit HasDiscipleUp,a ; does the player have a disciple?
+	jp nz,AttackDisciple
 ; subtract the damage from the pokemon's current HP
 ; also, save the current HP at wHPBarOldHP and the new HP at wHPBarNewHP
 	ld a,[hld]
@@ -5143,48 +5143,48 @@ ApplyDamageToPlayerPokemon:
 ApplyAttackToPlayerPokemonDone:
 	jp DrawHUDsAndHPBars
 
-AttackSubstitute:
-; Unlike the two ApplyAttackToPokemon functions, Attack Substitute is shared by player and enemy.
+AttackDisciple:
+; Unlike the two ApplyAttackToPokemon functions, Attack Disciple is shared by player and enemy.
 ; Self-confusion damage as well as Hi-Jump Kick and Jump Kick recoil cause a momentary turn swap before being applied.
-; If the user has a Substitute up and would take damage because of that,
-; damage will be applied to the other player's Substitute.
+; If the user has a Disciple up and would take damage because of that,
+; damage will be applied to the other player's Disciple.
 ; Normal recoil such as from Double-Edge isn't affected by this glitch,
 ; because this function is never called in that case.
 
-	ld hl,SubstituteTookDamageText
+	ld hl,DiscipleTookDamageText
 	call PrintText
 ; values for player turn
-	ld de,wEnemySubstituteHP
+	ld de,wEnemyDiscipleHP
 	ld bc,wEnemyBattleStatus2
 	ld a,[H_WHOSETURN]
 	and a
-	jr z,.applyDamageToSubstitute
+	jr z,.applyDamageToDisciple
 ; values for enemy turn
-	ld de,wPlayerSubstituteHP
+	ld de,wPlayerDiscipleHP
 	ld bc,wPlayerBattleStatus2
-.applyDamageToSubstitute
+.applyDamageToDisciple
 	ld hl,wDamage
 	ld a,[hli]
 	and a
-	jr nz,.substituteBroke ; damage > 0xFF always breaks substitutes
-; subtract damage from HP of substitute
+	jr nz,.discipleBroke ; damage > 0xFF always breaks disciples
+; subtract damage from HP of disciple
 	ld a,[de]
 	sub [hl]
 	ld [de],a
 	ret nc
-.substituteBroke
-; If the target's Substitute breaks, wDamage isn't updated with the amount of HP
-; the Substitute had before being attacked.
+.discipleBroke
+; If the target's Disciple breaks, wDamage isn't updated with the amount of HP
+; the Disciple had before being attacked.
 	ld h,b
 	ld l,c
-	res HasSubstituteUp,[hl] ; unset the substitute bit
-	ld hl,SubstituteBrokeText
+	res HasDiscipleUp,[hl] ; unset the disciple bit
+	ld hl,DiscipleBrokeText
 	call PrintText
 ; flip whose turn it is for the next function call
 	ld a,[H_WHOSETURN]
 	xor a,$01
 	ld [H_WHOSETURN],a
-	callab HideSubstituteShowMonAnim ; animate the substitute breaking
+	callab HideDiscipleShowMonAnim ; animate the disciple breaking
 ; flip the turn back to the way it was
 	ld a,[H_WHOSETURN]
 	xor a,$01
@@ -5198,12 +5198,12 @@ AttackSubstitute:
 	ld [hl],a ; zero the effect of the attacker's move
 	jp DrawHUDsAndHPBars
 
-SubstituteTookDamageText:
-	TX_FAR _SubstituteTookDamageText
+DiscipleTookDamageText:
+	TX_FAR _DiscipleTookDamageText
 	db "@"
 
-SubstituteBrokeText:
-	TX_FAR _SubstituteBrokeText
+DiscipleBrokeText:
+	TX_FAR _DiscipleBrokeText
 	db "@"
 
 ; this function raises the attack modifier of a pokemon using Rage when that pokemon is attacked
@@ -5545,9 +5545,9 @@ MoveHitTest:
 	ld a,[de]
 	cp a,SWIFT_EFFECT
 	ret z ; Swift never misses (interestingly, Azure Heights lists this is a myth, but it appears to be true)
-	call CheckTargetSubstitute ; substitute check (note that this overwrites a)
+	call CheckTargetDisciple ; disciple check (note that this overwrites a)
 	jr z,.checkForDigOrFlyStatus
-; this code is buggy. it's supposed to prevent HP draining moves from working on substitutes.
+; this code is buggy. it's supposed to prevent HP draining moves from working on Disciples.
 ; since $7b79 overwrites a with either $00 or $01, it never works.
 	cp a,DRAIN_HP_EFFECT
 	jp z,.moveMissed
@@ -5861,9 +5861,9 @@ handleExplosionMiss:
 playEnemyMoveAnimation:
 	push af
 	ld a, [wEnemyBattleStatus2]
-	bit HasSubstituteUp, a ; does mon have a substitute?
-	ld hl, HideSubstituteShowMonAnim
-	ld b, BANK(HideSubstituteShowMonAnim)
+	bit HasDiscipleUp, a ; does mon have a Disciple?
+	ld hl, HideDiscipleShowMonAnim
+	ld b, BANK(HideDiscipleShowMonAnim)
 	call nz, Bankswitch
 	pop af
 	ld [wAnimationType], a
@@ -5872,10 +5872,10 @@ playEnemyMoveAnimation:
 	call HandleExplodingAnimation
 	call DrawEnemyHUDAndHPBar
 	ld a, [wEnemyBattleStatus2]
-	bit HasSubstituteUp, a ; does mon have a substitute?
-	ld hl, ReshowSubstituteAnim
-	ld b, BANK(ReshowSubstituteAnim)
-	call nz, Bankswitch ; slide the substitute's sprite out
+	bit HasDiscipleUp, a ; does mon have a disciple?
+	ld hl, ReshowDiscipleAnim
+	ld b, BANK(ReshowDiscipleAnim)
+	call nz, Bankswitch ; slide the disciple's sprite out
 	jr EnemyCheckIfMirrorMoveEffect
 
 EnemyCheckIfFlyOrChargeEffect:
@@ -7301,7 +7301,7 @@ MoveEffectPointerTable:
 	 dw ConfusionSideEffect       ; CONFUSION_SIDE_EFFECT
 	 dw TwoToFiveAttacksEffect    ; TWINEEDLE_EFFECT
 	 dw $0000                     ; unused effect
-	 dw SubstituteEffect          ; SUBSTITUTE_EFFECT
+	 dw DiscipleEffect            ; DISCIPLE_EFFECT
 	 dw HyperBeamEffect           ; HYPER_BEAM_EFFECT
 	 dw RageEffect                ; RAGE_EFFECT
 	 dw MimicEffect               ; MIMIC_EFFECT
@@ -7371,8 +7371,8 @@ PoisonEffect:
 	ld hl, wBattleMonStatus
 	ld de, wEnemyMoveEffect
 .poisonEffect
-	call CheckTargetSubstitute
-	jr nz, .noEffect ; can't poison a substitute target
+	call CheckTargetDisciple
+	jr nz, .noEffect ; can't poison a disciple target
 	ld a, [hli]
 	ld b, a
 	and a
@@ -7481,8 +7481,8 @@ ExplodeEffect:
 FreezeBurnParalyzeEffect:
 	xor a
 	ld [wAnimationType], a
-	call CheckTargetSubstitute ; test bit 4 of d063/d068 flags [target has substitute flag]
-	ret nz ; return if they have a substitute, can't effect them
+	call CheckTargetDisciple ; test bit 4 of d063/d068 flags [target has Disciple flag]
+	ret nz ; return if they have a disciple, can't effect them
 	ld a, [H_WHOSETURN]
 	and a
 	jp nz, opponentAttacker
@@ -7752,13 +7752,13 @@ UpdateStatDone:
 	ld a, [de]
 	cp MINIMIZE
 	jr nz, .asm_3f4f9
- ; if a substitute is up, slide off the substitute and show the mon pic before
+ ; if a Disciple is up, slide off the Disciple and show the mon pic before
  ; playing the minimize animation
-	bit HasSubstituteUp, [hl]
+	bit HasDiscipleUp, [hl]
 	push af
 	push bc
-	ld hl, HideSubstituteShowMonAnim
-	ld b, BANK(HideSubstituteShowMonAnim)
+	ld hl, HideDiscipleShowMonAnim
+	ld b, BANK(HideDiscipleShowMonAnim)
 	push de
 	call nz, Bankswitch
 	pop de
@@ -7770,8 +7770,8 @@ UpdateStatDone:
 	pop bc
 	ld a, $1
 	ld [bc], a
-	ld hl, ReshowSubstituteAnim
-	ld b, BANK(ReshowSubstituteAnim)
+	ld hl, ReshowDiscipleAnim
+	ld b, BANK(ReshowDiscipleAnim)
 	pop af
 	call nz, Bankswitch
 .applyBadgeBoostsAndStatusPenalties
@@ -7834,7 +7834,7 @@ StatModifierDownEffect:
 	cp $40 ; 1/4 chance to miss by in regular battle
 	jp c, MoveMissed
 .statModifierDownEffect
-	call CheckTargetSubstitute ; can't hit through substitute
+	call CheckTargetDisciple ; can't hit through disciple
 	jp nz, MoveMissed
 	ld a, [de]
 	cp ATTACK_DOWN_SIDE_EFFECT
@@ -8270,7 +8270,7 @@ TwoToFiveAttacksEffect:
 	jr .saveNumberOfHits
 
 FlinchSideEffect:
-	call CheckTargetSubstitute
+	call CheckTargetDisciple
 	ret nz
 	ld hl, wEnemyBattleStatus1
 	ld de, wPlayerMoveEffect
@@ -8419,7 +8419,7 @@ ConfusionSideEffect:
 	jr ConfusionSideEffectSuccess
 
 ConfusionEffect:
-	call CheckTargetSubstitute
+	call CheckTargetDisciple
 	jr nz, ConfusionEffectFailed
 	call MoveHitTest
 	ld a, [wMoveMissed]
@@ -8466,8 +8466,8 @@ ConfusionEffectFailed:
 ParalyzeEffect:
 	jpab ParalyzeEffect_
 
-SubstituteEffect:
-	jpab SubstituteEffect_
+DiscipleEffect:
+	jpab DiscipleEffect_
 
 HyperBeamEffect:
 	ld hl, wPlayerBattleStatus2
@@ -8734,7 +8734,7 @@ ParalyzedMayNotAttackText:
 	TX_FAR _ParalyzedMayNotAttackText
 	db "@"
 
-CheckTargetSubstitute:
+CheckTargetDisciple:
 	push hl
 	ld hl, wEnemyBattleStatus2
 	ld a, [H_WHOSETURN]
@@ -8742,7 +8742,7 @@ CheckTargetSubstitute:
 	jr z, .next1
 	ld hl, wPlayerBattleStatus2
 .next1
-	bit HasSubstituteUp, [hl]
+	bit HasDiscipleUp, [hl]
 	pop hl
 	ret
 

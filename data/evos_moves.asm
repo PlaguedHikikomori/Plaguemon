@@ -466,9 +466,8 @@ Mon130_EvosMoves:
 	db 0
 ;Learnset
 	db 20,BITE
-	db 20,LEER
 	db 25,DRAGON_RAGE
-	db 33,WATER_GUN
+	db 33,LEER
 	db 41,JUDGEMENT
 	db 49,HYDRO_PUMP
 	db 57,WRATH_OF_GOD
@@ -731,7 +730,7 @@ Mon122_EvosMoves:
 	db 23,LIGHT_SCREEN
 	db 31,DOUBLESLAP
 	db 39,MEDITATE
-	db 47,SUBSTITUTE
+	db 47,DISCIPLE
 	db 0
 
 Mon106_EvosMoves:
@@ -1000,7 +999,7 @@ Mon149_EvosMoves:
 	db 11,THUNDER_WAVE
 	db 21,AGILITY
 	db 31,JUDGEMENT
-	db 41,SUBSTITUTE
+	db 41,DISCIPLE
 	db 51,HYPER_BEAM
 	db 61,WRATH_OF_GOD
 	db 0
@@ -1742,12 +1741,13 @@ Mon143_EvosMoves:
 	db 0
 
 Mon129_EvosMoves:
-;MAGIKARP
+;MAGIKARP/ROKUJOSHI
 ;Evolutions
 	db EV_LEVEL,20,GYARADOS
 	db 0
 ;Learnset
 	db 15,TACKLE
+	db 20,WATER_GUN
 	db 0
 
 Mon174_EvosMoves:
@@ -1902,7 +1902,7 @@ Mon065_EvosMoves:
 	db 31,RECOVER
 	db 38,PETAL_DANCE
 	db 42,REFLECT
-	db 47,SUBSTITUTE
+	db 47,DISCIPLE
 	db 55,JUDGEMENT
 	db 60,PSYCHIC_M
 	db 0

@@ -83,7 +83,7 @@ const_value = 0
 	const CONFUSION_SIDE_EFFECT      ; $4C
 	const TWINEEDLE_EFFECT           ; $4D
 	const UNUSED_EFFECT_4E           ; $4E
-	const SUBSTITUTE_EFFECT          ; $4F
+	const DISCIPLE_EFFECT            ; $4F
 	const HYPER_BEAM_EFFECT          ; $50
 	const RAGE_EFFECT                ; $51
 	const MIMIC_EFFECT               ; $52

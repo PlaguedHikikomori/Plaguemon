@@ -162,7 +162,7 @@ AttackAnimationPointers:
 	dw TriAttackAnim
 	dw SuperFangAnim
 	dw SlashAnim
-	dw SubstituteAnim
+	dw DiscipleAnim
 	dw StruggleAnim
 	dw ShowPicAnim
 	dw EnemyFlashAnim
@@ -1124,10 +1124,10 @@ SlashAnim:
 	db $06,$A2,$0F
 	db $FF
 
-SubstituteAnim:
+DiscipleAnim:
 	db SE_SLIDE_MON_OFF, $A3
 	db $08,$FF,$47
-	db SE_SUBSTITUTE_MON, $FF
+	db SE_DISCIPLE_MON, $FF
 	db $FF
 
 BallTossAnim:

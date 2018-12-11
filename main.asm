@@ -269,7 +269,7 @@ INCLUDE "engine/load_pokedex_tiles.asm"
 INCLUDE "engine/overworld/map_sprites.asm"
 INCLUDE "engine/overworld/emotion_bubbles.asm"
 INCLUDE "engine/evolve_trade.asm"
-INCLUDE "engine/battle/moveEffects/substitute_effect.asm"
+INCLUDE "engine/battle/moveEffects/disciple_effect.asm"
 INCLUDE "engine/menu/pc.asm"
 
 
