@@ -10,7 +10,7 @@ db 200 ; catch rate
 db 73 ; base exp yield
 INCBIN "pic/bmon/abra.pic",0,1 ; 55, sprite dimensions
 dw AbraPicFront
-dw AbraPicBack
+dw AbraPicFront
 ; attacks known at lvl 0
 db TELEPORT
 db 0

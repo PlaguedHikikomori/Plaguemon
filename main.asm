@@ -814,11 +814,11 @@ PersianPicFront::      INCBIN "pic/bmon/persian.pic"
 MarowakPicFront::      INCBIN "pic/bmon/marowak.pic"
 MarowakPicBack::       INCBIN "pic/monback/marowakb.pic"
 HaunterPicFront::      INCBIN "pic/bmon/haunter.pic"
-HaunterPicBack::       INCBIN "pic/monback/haunterb.pic"
+
 AbraPicFront::         INCBIN "pic/bmon/abra.pic"
-AbraPicBack::          INCBIN "pic/monback/abrab.pic"
+
 AlakazamPicFront::     INCBIN "pic/bmon/alakazam.pic"
-AlakazamPicBack::      INCBIN "pic/monback/alakazamb.pic"
+
 PidgeottoPicFront::    INCBIN "pic/bmon/pidgeotto.pic"
 PidgeottoPicBack::     INCBIN "pic/monback/pidgeottob.pic"
 PidgeotPicFront::      INCBIN "pic/bmon/pidgeot.pic"
