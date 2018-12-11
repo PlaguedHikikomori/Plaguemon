@@ -1023,7 +1023,7 @@ _HurtByBurnText::
 
 _HurtByGrowCannabisText::
 	text "GROW CANNABIS"
-	line "was rewarding"
+	line "has paid off"
 	prompt
 
 _EnemyMonFaintedText::
