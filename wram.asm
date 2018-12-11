@@ -1729,7 +1729,7 @@ wPlayerBattleStatus2:: ; d063
 ; bit 4 - has a disciple
 ; bit 5 - need to recharge
 ; bit 6 - rage
-; bit 7 - leech seeded
+; bit 7 - grow cannabis
 	ds 1
 
 wPlayerBattleStatus3:: ; d064

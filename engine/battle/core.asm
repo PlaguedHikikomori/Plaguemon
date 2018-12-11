@@ -17,7 +17,7 @@ ResidualEffects1:
 	db PARALYZE_EFFECT
 	db DISCIPLE_EFFECT
 	db MIMIC_EFFECT
-	db LEECH_SEED_EFFECT
+	db GROW_CANNABIS_EFFECT
 	db SPLASH_EFFECT
 	db -1
 SetDamageEffects:
@@ -79,7 +79,7 @@ SpecialEffects:
 	db EXPLODE_EFFECT
 	db DREAM_EATER_EFFECT
 	db PAY_DAY_EFFECT
-	db SWIFT_EFFECT
+	db SHURIKEN_EFFECT
 	db TWO_TO_FIVE_ATTACKS_EFFECT
 	db $1E
 	db CHARGE_EFFECT
@@ -533,7 +533,7 @@ MainInBattleLoop:
 	and a
 	jp z, HandlePlayerMonFainted
 .AIActionUsedEnemyFirst
-	call HandlePoisonBurnLeechSeed
+	call HandlePoisonBurnGrowCannabis
 	jp z, HandleEnemyMonFainted
 	call DrawHUDsAndHPBars
 	call ExecutePlayerMove
@@ -543,7 +543,7 @@ MainInBattleLoop:
 	ld a, b
 	and a
 	jp z, HandleEnemyMonFainted
-	call HandlePoisonBurnLeechSeed
+	call HandlePoisonBurnGrowCannabis
 	jp z, HandlePlayerMonFainted
 	call DrawHUDsAndHPBars
 	call CheckNumAttacksLeft
@@ -556,7 +556,7 @@ MainInBattleLoop:
 	ld a, b
 	and a
 	jp z, HandleEnemyMonFainted
-	call HandlePoisonBurnLeechSeed
+	call HandlePoisonBurnGrowCannabis
 	jp z, HandlePlayerMonFainted
 	call DrawHUDsAndHPBars
 	ld a, $1
@@ -571,13 +571,13 @@ MainInBattleLoop:
 	and a
 	jp z, HandlePlayerMonFainted
 .AIActionUsedPlayerFirst
-	call HandlePoisonBurnLeechSeed
+	call HandlePoisonBurnGrowCannabis
 	jp z, HandleEnemyMonFainted
 	call DrawHUDsAndHPBars
 	call CheckNumAttacksLeft
 	jp MainInBattleLoop
 
-HandlePoisonBurnLeechSeed:
+HandlePoisonBurnGrowCannabis:
 	ld hl, wBattleMonHP
 	ld de, wBattleMonStatus
 	ld a, [H_WHOSETURN]
@@ -602,7 +602,7 @@ HandlePoisonBurnLeechSeed:
 	ld a,BURN_PSN_ANIM
 	call PlayMoveAnimation   ; play burn/poison animation
 	pop hl
-	call HandlePoisonBurnLeechSeed_DecreaseOwnHP
+	call HandlePoisonBurnGrowCannabis_DecreaseOwnHP
 .notBurnedOrPoisoned
 	ld de, wPlayerBattleStatus2
 	ld a, [H_WHOSETURN]
@@ -612,7 +612,7 @@ HandlePoisonBurnLeechSeed:
 .playersTurn2
 	ld a, [de]
 	add a
-	jr nc, .notLeechSeeded
+	jr nc, .notGrowCannabis
 	push hl
 	ld a, [H_WHOSETURN]
 	push af
@@ -621,17 +621,17 @@ HandlePoisonBurnLeechSeed:
 	xor a
 	ld [wAnimationType], a
 	ld a,ABSORB
-	call PlayMoveAnimation ; play leech seed animation (from opposing mon)
+	call PlayMoveAnimation ; play grow cannabis animation (from opposing mon)
 	pop af
 	ld [H_WHOSETURN], a
 	pop hl
-	call HandlePoisonBurnLeechSeed_DecreaseOwnHP
-	call HandlePoisonBurnLeechSeed_IncreaseEnemyHP
+	call HandlePoisonBurnGrowCannabis_DecreaseOwnHP
+	call HandlePoisonBurnGrowCannabis_IncreaseEnemyHP
 	push hl
-	ld hl, HurtByLeechSeedText
+	ld hl, HurtByGrowCannabisText
 	call PrintText
 	pop hl
-.notLeechSeeded
+.notGrowCannabis
 	ld a, [hli]
 	or [hl]
 	ret nz          ; test if fainted
@@ -649,15 +649,15 @@ HurtByBurnText:
 	TX_FAR _HurtByBurnText
 	db "@"
 
-HurtByLeechSeedText:
-	TX_FAR _HurtByLeechSeedText
+HurtByGrowCannabisText:
+	TX_FAR _HurtByGrowCannabisText
 	db "@"
 
 ; decreases the mon's current HP by 1/16 of the Max HP (multiplied by number of toxic ticks if active)
-; note that the toxic ticks are considered even if the damage is not poison (hence the Leech Seed glitch)
+; note that the toxic ticks are considered even if the damage is not poison (hence the Grow Cannabis glitch)
 ; hl: HP pointer
 ; bc (out): total damage
-HandlePoisonBurnLeechSeed_DecreaseOwnHP:
+HandlePoisonBurnGrowCannabis_DecreaseOwnHP:
 	push hl
 	push hl
 	ld bc, $e      ; skip to max HP
@@ -725,7 +725,7 @@ HandlePoisonBurnLeechSeed_DecreaseOwnHP:
 
 ; adds bc to enemy HP
 ; bc isn't updated if HP subtracted was capped to prevent overkill
-HandlePoisonBurnLeechSeed_IncreaseEnemyHP:
+HandlePoisonBurnGrowCannabis_IncreaseEnemyHP:
 	push hl
 	ld hl, wEnemyMonMaxHP
 	ld a, [H_WHOSETURN]
@@ -5537,14 +5537,14 @@ MoveHitTest:
 .dreamEaterCheck
 	ld a,[de]
 	cp a,DREAM_EATER_EFFECT
-	jr nz,.swiftCheck
+	jr nz,.shurikenCheck
 	ld a,[bc]
 	and a,SLP ; is the target pokemon sleeping?
 	jp z,.moveMissed
-.swiftCheck
+.shurikenCheck
 	ld a,[de]
-	cp a,SWIFT_EFFECT
-	ret z ; Swift never misses (interestingly, Azure Heights lists this is a myth, but it appears to be true)
+	cp a,SHURIKEN_EFFECT
+	ret z ; Shuriken never misses (interestingly, Azure Heights lists this is a myth, but it appears to be true)
 	call CheckTargetDisciple ; disciple check (note that this overwrites a)
 	jr z,.checkForDigOrFlyStatus
 ; this code is buggy. it's supposed to prevent HP draining moves from working on Disciples.
@@ -7239,7 +7239,7 @@ MoveEffectPointerTable:
 	 dw StatModifierUpEffect      ; ACCURACY_UP1_EFFECT
 	 dw StatModifierUpEffect      ; EVASION_UP1_EFFECT
 	 dw PayDayEffect              ; PAY_DAY_EFFECT
-	 dw $0000                     ; SWIFT_EFFECT
+	 dw $0000                     ; SHURIKEN_EFFECT
 	 dw StatModifierDownEffect    ; ATTACK_DOWN1_EFFECT
 	 dw StatModifierDownEffect    ; DEFENSE_DOWN1_EFFECT
 	 dw StatModifierDownEffect    ; SPEED_DOWN1_EFFECT
@@ -7306,7 +7306,7 @@ MoveEffectPointerTable:
 	 dw RageEffect                ; RAGE_EFFECT
 	 dw MimicEffect               ; MIMIC_EFFECT
 	 dw $0000                     ; METRONOME_EFFECT
-	 dw LeechSeedEffect           ; LEECH_SEED_EFFECT
+	 dw GrowCannabisEffect        ; GROW_CANNABIS_EFFECT
 	 dw SplashEffect              ; SPLASH_EFFECT
 	 dw DisableEffect             ; DISABLE_EFFECT
 
@@ -7474,7 +7474,7 @@ ExplodeEffect:
 	inc hl
 	ld [hl], a ; set mon's status to 0
 	ld a, [de]
-	res Seeded, a ; clear mon's leech seed status
+	res Seeded, a ; clear mon's grow cannabis status
 	ld [de], a
 	ret
 
@@ -8577,8 +8577,8 @@ MimicLearnedMoveText:
 	TX_FAR _MimicLearnedMoveText
 	db "@"
 
-LeechSeedEffect:
-	jpab LeechSeedEffect_
+GrowCannabisEffect:
+	jpab GrowCannabisEffect_
 
 SplashEffect:
 	call PlayCurrentMoveAnimation

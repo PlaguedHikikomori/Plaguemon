@@ -672,7 +672,7 @@ ErikaSprite:          INCBIN "gfx/sprites/erika.2bpp"
 
 
 SECTION "Battle (bank A)", ROMX, BANK[$A]
-INCLUDE "engine/battle/moveEffects/leech_seed_effect.asm"
+INCLUDE "engine/battle/moveEffects/grow_cannabis_effect.asm"
 
 
 SECTION "Pics 3", ROMX, BANK[PICS_3]

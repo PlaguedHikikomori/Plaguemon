@@ -14,7 +14,7 @@ dw IvysaurPicBack
 ; attacks known at lvl 0
 db TACKLE
 db GROWL
-db LEECH_SEED
+db GROW_CANNABIS
 db 0
 db 3 ; growth rate
 ; learnset

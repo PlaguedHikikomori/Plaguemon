@@ -2427,7 +2427,7 @@ MoveSoundTable:
 	db SFX_BATTLE_26,         $20,$40 ; STRENGTH
 	db SFX_BATTLE_24,         $00,$80 ; ABSORB
 	db SFX_BATTLE_24,         $40,$c0 ; MEGA_DRAIN
-	db SFX_BATTLE_1B,         $03,$60 ; LEECH_SEED
+	db SFX_BATTLE_1B,         $03,$60 ; GROW_CANNABIS
 	db SFX_BATTLE_25,         $11,$e0 ; GROWTH
 	db SFX_BATTLE_12,         $20,$e0 ; RAZOR_LEAF
 	db SFX_BATTLE_2E,         $00,$80 ; SOLARBEAM
@@ -2483,7 +2483,7 @@ MoveSoundTable:
 	db SFX_BATTLE_29,         $1f,$20 ; FIRE_BLAST
 	db SFX_BATTLE_25,         $2f,$80 ; WATERFALL
 	db SFX_BATTLE_0F,         $1f,$ff ; CLAMP
-	db SFX_BATTLE_2B,         $1f,$60 ; SWIFT
+	db SFX_BATTLE_2B,         $1f,$60 ; SHURIKEN
 	db SFX_BATTLE_26,         $1e,$20 ; SKULL_BASH
 	db SFX_BATTLE_26,         $1f,$18 ; SPIKE_CANNON
 	db SFX_BATTLE_14,         $0f,$80 ; CONSTRICT

@@ -1021,9 +1021,9 @@ _HurtByBurnText::
 	line "hurt by the burn!"
 	prompt
 
-_HurtByLeechSeedText::
-	text "LEECH SEED saps"
-	line "<USER>!"
+_HurtByGrowCannabisText::
+	text "GROW CANNABIS"
+	line "was rewarding"
 	prompt
 
 _EnemyMonFaintedText::
