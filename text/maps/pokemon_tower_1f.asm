@@ -1,5 +1,5 @@
 _PokemonTower1Text1::
-	text "#MON TOWER was"
+	text "The CEMETERY was"
 	line "erected in the"
 	cont "memory of #MON"
 	cont "that had died."

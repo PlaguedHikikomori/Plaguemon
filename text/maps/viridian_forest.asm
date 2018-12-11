@@ -2,7 +2,7 @@ _ViridianForestText1::
 	text "I came here"
 	line "for a reason:"
 
-	para "A nice place"
+	para "It's a nice place"
 	line "to hang myself."
     done
 
@@ -12,14 +12,14 @@ _ViridianForestBattleText1::
 	done
 
 _ViridianForestEndBattleText1::
-	text "Cut"
-	line "your wrist if you"
+	text "Cut your"
+	line "wrist if you"
 	cont "prefer.."
 	prompt
 
 _ViridianFrstAfterBattleText1::
 	text "Ssh! Respect"
-	line "death silence!"
+	line "deads's silence!"
 	done
 
 _ViridianForestBattleText2::
@@ -44,7 +44,7 @@ _ViridianForestBattleText3::
 
 _ViridianForestEndBattleText3::
 	text "I'm"
-	line "failure."
+	line "a failure."
 	prompt
 
 _ViridianFrstAfterBattleText3::
@@ -67,7 +67,7 @@ _ViridianForestText9::
 
 _ViridianForestText10::
 	text "In some arab"
-	line "countries. Suicide"
+	line "countries suicide"
 	cont "is illegal."
 	done
 
@@ -85,9 +85,9 @@ _ViridianForestText12::
 
 	para "Nearly 2000"
 	line "high school"
-	cont "students, "
+	cont "students,"
 	cont "committed suicide"
-	cont "as result of"
+	cont "as a result of"
 	cont "bullying, 2014."
 	done
 
@@ -95,8 +95,8 @@ _ViridianForestText13::
 	text "FACT:"
 
 	para "A frequent place"
-	line "for suicide is"
-	cont "Aokigahara.."
+	line "to commit suicide"
+	cont "is Aokigahara.."
 
 	para "An area at the"
 	line "base of Mt.Fuji!"
@@ -104,6 +104,6 @@ _ViridianForestText13::
 
 _ViridianForestText14::
 	text "LEAVING"
-	line "VIRIDIAN FOREST"
-	cont "PEWTER CITY AHEAD"
+	line "SUICIDE FOREST"
+	cont "NEO PEW AHEAD"
 	done

@@ -15,6 +15,6 @@ _ViridianHouseText_1d5b1::
 	done
 
 _ViridianHouseText4::
-	text "Who reads is"
-	line "a faggot."
+	text "Whoever reads"
+	line "this is a faggot."
 	done

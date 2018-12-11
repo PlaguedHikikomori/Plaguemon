@@ -18,8 +18,8 @@ SeelFanText::
 SeelFanBetterText::
 	text "Kindness!"
 
-	para "For who deserve"
-	line "it!"
+	para "For those who"
+	line "deserve it!"
 	done
 
 FanClubPikachuText::
@@ -74,9 +74,9 @@ FanClubChairStoryText::
 	cont "THESE THINGS"
 	cont "BELONG TO ME!"
 
-	para "Thanks for helping"
-	line "us! Now set things"
-	cont "on fire!"
+	para "Thanks for help-"
+	line "ing us! Now set"
+	cont "things on fire!"
 	prompt
 
 ReceivedBikeVoucherText::
@@ -92,24 +92,24 @@ ExplainBikeVoucherText::
 	para "However give this"
 	line "GAS TANK to MAX."
 
-	para "Gasoline is pretty"
-	line "rare!"
+	para "Gasoline is"
+	line "pretty rare!"
 
 	para "He will reward"
 	line "you!"
 	done
 
 FanClubNoStoryText::
-	text "WHAT?!"
-	line "YOU WILL BURN"
-	cont "IN HELL FLAMES!"
+	text "WHAT?! YOU"
+	line "WILL BURN IN THE"
+	cont "FLAMES OF HELL!"
 	done
 
 FanClubChairFinalText::
 	text "Hail, <PLAYER>!"
 
-	para "Did you come preach"
-	line "with us"
+	para "Did you come to"
+	line "preach with us"
 	cont "again?"
 
 	para "No? SHAME!"

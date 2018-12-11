@@ -61,15 +61,15 @@ _Museum1FText_5c251::
 _Museum1FText_5c28e::
 	text "Ssh! I think that"
 	line "this chunk of"
-	cont "AGENT X can"
-	cont "generate monsters!"
+	cont "AGENT X can gen-"
+	cont "erate monsters!"
 
 	para "It would be great"
 	line "if #MON could"
 	cont "be generated"
 	cont "from it!"
 
-	para "But, my colleagues"
+	para "But my colleagues"
 	line "just piss on me!"
 
 	para "So I have a favor"
@@ -77,7 +77,7 @@ _Museum1FText_5c28e::
 
 	para "Take this to a"
 	line "LAB and"
-	cont "get it examined!"
+	cont "have it examined!"
 	prompt
 
 _ReceivedOldAmberText::

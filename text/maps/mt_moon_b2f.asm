@@ -1,10 +1,10 @@
 _MtMoon3Text_49f24::
-	text "You want the"
+	text "Do you want the"
 	line "Z80-sn CHIP?"
 	done
 
 _MtMoon3Text_49f64::
-	text "You want the"
+	text "Do you want the"
 	line "Z80-sp CHIP?"
 	done
 
@@ -34,12 +34,12 @@ _MtMoon3Text_49f8a::
 _MtMoon3Text_49f8f::
 	text "We'll each take"
 	line "one!"
-	cont "No being greedy!"
+	cont "Don't be greedy!"
 	done
 
 _MtMoon3Text_49f94::
 	text "Far away, on"
-	line "CINNABAR ISLAND,"
+	line "NEO CIN ISLAND,"
 	cont "there's a"
 	cont "LAB."
 

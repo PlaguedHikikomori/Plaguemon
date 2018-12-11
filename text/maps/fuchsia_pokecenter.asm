@@ -11,10 +11,10 @@ _FuchsiaPokecenterText1::
 _FuchsiaPokecenterText3::
 	text "There's a narrow"
 	line "trail west of"
-	cont "VIRIDIAN CITY."
+	cont "NEO VIR."
 
-	para "It goes to #MON"
-	line "LEAGUE HQ."
-	cont "The HQ governs"
-	cont "all trainers."
+	para "It goes to the"
+	line "SLAUGHTERHOUSE."
+	cont "They rule this"
+	cont "fucking world."
 	done

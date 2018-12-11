@@ -38,7 +38,7 @@ _Route1Text2::
 	done
 
 _Route1Text3::
-	text "ROUTE 1"
-	line "PALLET TOWN -"
-	cont "VIRIDIAN CITY"
+	text "STREET 1"
+	line "NEO PAL -"
+	cont "NEO VIR"
 	done

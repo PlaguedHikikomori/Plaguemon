@@ -1,8 +1,8 @@
 _VermilionCityText1::
-	text "Pollution run out"
+	text "Pollution got out"
 	line "of our hands."
 
-	para "What we've"
+	para "What have we"
 	line "become?"
 	done
 
@@ -28,8 +28,8 @@ _SSAnneWelcomeText9::
 	text "Welcome to"
 	line "TITANIC!"
 
-	para "Excuse me, do you"
-	line "booked a room?"
+	para "Excuse me, did"
+	line "you book a room?"
 	prompt
 
 _SSAnneFlashedTicketText::
@@ -61,9 +61,9 @@ _SSAnneNotHereText::
 _VermilionCityText4::
 	text "I never finished"
 	line "building"
-	cont "my house.."
+	cont "my house..."
 
-	para "I fell so cold."
+	para "I feel so cold."
 	done
 
 _VermilionCityText5::
@@ -83,7 +83,7 @@ _VermilionCityText6::
 	done
 
 _VermilionCityText7::
-	text "VERMILION CITY"
+	text "NEO VER"
 	line "The esoteric"
 	cont "and dark city."
 	done
@@ -91,7 +91,7 @@ _VermilionCityText7::
 _VermilionCityText8::
 	text "NOTICE!"
 
-	para "ROUTE 12 may be"
+	para "STREET 12 may be"
 	line "blocked off by"
 	cont "a corpse."
 	done
@@ -103,7 +103,7 @@ _VermilionCityText11::
 	done
 
 _VermilionCityText12::
-	text "VERMILION CITY"
+	text "NEO VER"
 	line "#MON GYM"
 	cont "LEADER: LEMMY"
 
@@ -112,5 +112,5 @@ _VermilionCityText12::
 	done
 
 _VermilionCityText13::
-	text "VERMILION HARBOR"
+	text "NEO VER HARBOR"
 	done

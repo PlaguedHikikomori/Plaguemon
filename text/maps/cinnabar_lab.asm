@@ -1,5 +1,5 @@
 _Lab1Text1::
-	text "We came here"
+	text "We came here,"
 	line "far from the"
 	cont "disaster.."
 

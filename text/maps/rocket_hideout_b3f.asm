@@ -11,8 +11,8 @@ _RocketHideout3EndBattleText2::
 
 _RocketHideout3AfterBattleTxt2::
 	text "SILPH SCOPE?"
-	line "The machine the"
-	cont "BOSS stole. It's"
+	line "The machine stolen"
+	cont "by the BOSS. It's"
 	cont "here somewhere."
 	done
 

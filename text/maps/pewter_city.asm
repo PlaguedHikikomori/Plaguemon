@@ -26,9 +26,9 @@ _PewterCityText_193f1::
 	done
 
 _PewterCityText_193f6::
-	text "Did you liked"
+	text "Did you like"
 	line "those organs,"
-	cont "do you?"
+	cont "didn't you?"
 	done
 
 _PewterCityText_193fb::
@@ -63,7 +63,7 @@ _PewterCityText_19431::
 	done
 
 _PewterCityText_1945d::
-	text "Ehi, do you wanna"
+	text "Hey, do you wanna"
 	line "see a dead body?"
 	cont "Come with me!"
 	cont "Should be the"
@@ -81,8 +81,9 @@ _PewterCityText6::
 
 	para "Any #MON that"
 	line "takes part in"
-	cont "battle expose"
-	cont "to radiation!"
+	cont "battle get"
+	cont "exposed to"
+	cont "radiation!"
 	done
 
 _PewterCityText7::
@@ -90,19 +91,19 @@ _PewterCityText7::
 
 	para "Thieves have been"
 	line "stealing secret"
-	cont "chips at MT."
-	cont "MOON! Please call"
-	cont "PEWTER PIGS"
+	cont "chips at WASTE-"
+	cont "LANDS! Please "
+	cont "call NEO PEW PIGS"
 	cont "with any info!"
 	done
 
 _PewterCityText10::
-	text "PEWTER MUSEUM"
+	text "NEO PEW MUSEUM"
 	line "OF HUMANS"
 	done
 
 _PewterCityText11::
-	text "PEWTER CITY"
+	text "NEO PEW"
 	line "#MON GYM"
 	cont "LEADER: KURT"
 
@@ -111,7 +112,7 @@ _PewterCityText11::
 	done
 
 _PewterCityText12::
-	text "PEWTER CITY"
+	text "NEO PEW"
 	line "A Grunge"
 	cont "City"
 	done

@@ -4,10 +4,10 @@ _ViridianGymText_74ace::
 	done
 
 _ViridianGymText_74ad3::
-	text "Damn, you won.."
+	text "Damn, you win.."
 	line "This whole world"
 	cont "was my experiment.."
-	cont "And you find me.."
+	cont "And you found me.."
 	cont "Now go away.."
 	cont "Take this!@@"
 
@@ -161,12 +161,12 @@ _ViridianGymBattleText8::
 	done
 
 _ViridianGymEndBattleText8::
-	text "I"
-	line "was beaten?"
+	text "I..."
+	line "beaten?"
 	prompt
 
 _ViridianGymAfterBattleText8::
-	text "You can go onto"
+	text "You can go to the"
 	line "#MON LEAGUE"
 	cont "only by defeating"
 	cont "our GYM LEADER!"
@@ -174,17 +174,17 @@ _ViridianGymAfterBattleText8::
 
 _ViridianGymText_74bd4::
 	text "Yo! Champ in"
-	line "making!"
+	line "the making!"
 
 	para "Even I don't know"
-	line "VIRIDIAN LEADER's"
+	line "NEO VIR LEADER's"
 	cont "identity!"
 
 	para "This will be the"
 	line "toughest of all"
-	cont "the GYM LEADERs!"
+	cont "GYM LEADERS!"
 
-	para "I heard that the"
+	para "I heard the"
 	line "trainers here"
 	cont "like ground-type"
 	cont "#MON!"
@@ -192,6 +192,6 @@ _ViridianGymText_74bd4::
 
 _ViridianGymText_74bd9::
 	text "Blow me away!"
-	line "GIOVANNI was the"
+	line "Was PLARIO the"
 	cont "GYM LEADER here?"
 	done

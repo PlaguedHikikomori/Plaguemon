@@ -1,7 +1,7 @@
 _Route2Text3::
-	text "ROUTE 2"
-	line "VIRIDIAN CITY -"
-	cont "PEWTER CITY"
+	text "STREET 2"
+	line "NEO VIR -"
+	cont "NEO PEW"
 	done
 
 _Route2Text4::

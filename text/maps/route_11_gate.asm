@@ -4,7 +4,7 @@ _Route11GateText1::
 	cont "isn't it hard to"
 	cont "think up names?"
 
-	para "In LAVENDER TOWN,"
+	para "In NEO LAV,"
 	line "there's a man who"
 	cont "rates #MON"
 	cont "nicknames."

@@ -10,7 +10,7 @@ _Route14EndBattleText1::
 	prompt
 
 _Route14AfterBattleText1::
-	text "You have some HMs"
+	text "Do you have some HMs"
 	line "right? #MON"
 	cont "can't ever forget"
 	cont "those moves."
@@ -68,8 +68,8 @@ _Route14AfterBattleText4::
 	done
 
 _Route14BattleText5::
-	text "Have you heard of"
-	line "the legendary"
+	text "Have you ever heard"
+	line "of the legendary"
 	cont "#MON?"
 	done
 
@@ -118,7 +118,7 @@ _Route14AfterBattleText7::
 
 _Route14BattleText8::
 	text "Perfect! I need to"
-	line "burn some time!"
+	line "kill some time!"
 	done
 
 _Route14EndBattleText8::
@@ -167,7 +167,6 @@ _Route14AfterBattleText10::
 	done
 
 _Route14Text11::
-	text "ROUTE 14"
-	line "West to FUCHSIA"
-	cont "CITY"
+	text "STREET 14"
+	line "West to NEO FUX"
 	done

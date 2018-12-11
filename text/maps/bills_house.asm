@@ -4,10 +4,10 @@ _BillsHouseText_1e865::
 	para "Please help me!"
 	line "I was studying"
 	cont "and something"
-	cont "went so wrong."
+	cont "went wrong."
 
-	para "I'm not fucking"
-	line "lying, I screwed up"
+	para "I'm not a fucking"
+	line "liar, I fucked up"
 	cont "an experiment and"
 	cont "mutated so much."
 
@@ -21,8 +21,8 @@ _BillsHouseText_1e86a::
 	line "Go to the pc"
 	cont "and hack my dna,"
 	cont "delete this wrong"
-	cont "line that makes me"
-	cont "to feel pain!"
+	cont "line that makes"
+	cont "me feel the pain!"
 	done
 
 _BillsHouseText_1e86f::
@@ -33,7 +33,7 @@ _BillsHouseText_1e86f::
 
 _BillThankYouText::
 	text "DAMN!"
-	line "That was horrible."
+	line "That was awful."
 	
 	para "I was studying on"
 	line "the AGENT P and"
@@ -42,7 +42,7 @@ _BillThankYouText::
 	cont "i could actually"
 	cont "feel!"
 
-	para "That was horrible."
+	para "That was awful."
 	line "Really."
 	cont "Go on now."
 	prompt
@@ -55,7 +55,7 @@ _SSTicketReceivedText::
 
 _SSTicketNoRoomText::
 	text "You've got too"
-	line "much stuff, bud!"
+	line "much stuff, man!"
 	done
 
 _BillsHouseText_1e8cb::

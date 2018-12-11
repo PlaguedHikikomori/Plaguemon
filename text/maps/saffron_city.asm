@@ -7,9 +7,10 @@ _SaffronCityText1::
 	line "i'm the only one"
 	cont "alive in this city"
 	
-	para "I quick escaped the"
-	line "explosion with"
-	cont "KARONTIS, now i don't"
+	para "I quickly escaped"
+	line "the explosion"
+	cont "with KARONTIS,"
+	cont "now i don't"
 	cont "need it anymore.."
 	
 	para "Take it.."
@@ -45,7 +46,7 @@ _SaffronCityText8::
 
 _SaffronCityText10::
 	text "People should be"
-	line "flocking back to"
+	line "flocking to"
 	cont "SAFFRON now."
 	done
 
@@ -54,7 +55,7 @@ _SaffronCityText11::
 	line "PIDGEOT when I"
 	cont "read about SILPH."
 
-	para "It's already over?"
+	para "Is it over already?"
 	line "I missed the"
 	cont "media action."
 	done
@@ -85,9 +86,9 @@ _SaffronCityText15::
 	done
 
 _SaffronCityText16::
-	text "SAFFRON CITY"
-	line "Shining, Golden"
-	cont "Land of Commerce"
+	text "NEO SAF"
+	line "The Center of"
+	cont "the Explosion"
 	done
 
 _SaffronCityText17::
@@ -95,12 +96,13 @@ _SaffronCityText17::
 	done
 
 _SaffronCityText18::
-	text "SAFFRON CITY"
+	text "NEO SAF"
 	line "#MON GYM"
-	cont "LEADER: SABRINA"
+	cont "LEADER: A."
+	cont "WINEHOUSE"
 
-	para "The Master of"
-	line "Psychic #MON!"
+	para "Proud member of"
+	line "Club 27!"
 	done
 
 _SaffronCityText20::
@@ -118,7 +120,7 @@ _SaffronCityText20::
 _SaffronCityText21::
 	text "TRAINER TIPS"
 
-	para "New GREAT BALL"
+	para "New PLAGUE TUBE"
 	line "offers improved"
 	cont "capture rates."
 

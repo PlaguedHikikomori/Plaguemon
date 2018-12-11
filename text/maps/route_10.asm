@@ -1,7 +1,7 @@
 _Route10BattleText1::
 	text "Wow, are you a"
 	line "maniac too?"
-	cont "Want to see my"
+	cont "Wanna see my"
 	cont "big dick?"
 	done
 
@@ -29,8 +29,9 @@ _Route10AfterBattleText2::
 	done
 
 _Route10BattleText3::
-	text "Hi kid, want to"
-	line "see my monster?"
+	text "Hi kid, do you"
+	line "want to see"
+	cont "my monster?"
 	done
 
 _Route10EndBattleText3::
@@ -82,14 +83,14 @@ _Route10EndBattleText6::
 
 _Route10AfterBattleText6::
 	text "Now comes the"
-	line "scariest part.."
+	line "scary part.."
 	done
 
 _Route10Text9::
 _Route10Text7::
-	text "ROCK TUNNEL"
+	text "DARK PATH"
 	done
 
 _Route10Text10::
-	text "POWER PLANT"
+	text "NUCLEAR PLANT"
 	done

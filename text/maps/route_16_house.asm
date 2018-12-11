@@ -14,7 +14,8 @@ _ReceivedHM02Text::
 
 _HM02ExplanationText::
 	text "HM02 is GLIDE."
-	line "You can go the"
+	line "You can go"
+	cont "wherever the"
 	cont "fuck you want."
 
 	para "Now get the"

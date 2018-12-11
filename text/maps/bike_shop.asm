@@ -7,8 +7,8 @@ _BikeShopText_1d810::
 	prompt
 
 _BikeShopText_1d815::
-	text "These vehicles are"
-	line "very rare here."
+	text "These vehicles"
+	line "are very rare."
 	done
 
 _BikeShopCantAffordText::
@@ -40,7 +40,7 @@ _BikeShopText_1d82f::
 	cont "fury road?"
 
 	para "You can go"
-	line "EVERYWHERE you"
+	line "WHEREVER you"
 	cont "want with it!"
 	done
 

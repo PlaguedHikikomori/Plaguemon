@@ -2,17 +2,17 @@ _FuchsiaCityText1::
 	text "Did you try the"
 	line "SAFARI GAME? Some"
 	cont "#MON can only"
-	cont "be caught there."
+	cont "be ensalved there."
 	done
 
 _FuchsiaCityText2::
-	text "SAFARI ZONE has a"
+	text "ABANDONLAND has a"
 	line "zoo in front of"
 	cont "the entrance."
 
 	para "Out back is the"
 	line "SAFARI GAME for"
-	cont "catching #MON."
+	cont "enslaving #MON."
 	done
 
 _FuchsiaCityText3::
@@ -32,9 +32,9 @@ _FuchsiaCityText5::
 	done
 
 _FuchsiaCityText11::
-	text "FUCHSIA CITY"
-	line "Behold! It's"
-	cont "Passion Pink!"
+	text "NEO FUX"
+	line "We hear a lot of"
+	cont "shootings at night"
 	done
 
 _FuchsiaCityText13::
@@ -43,75 +43,74 @@ _FuchsiaCityText13::
 	done
 
 _FuchsiaCityText16::
-	text "SAFARI ZONE"
+	text "ABANDONLAND"
 	line "WARDEN's HOME"
 	done
 
 _FuchsiaCityText17::
-	text "#MON PARADISE"
-	line "SAFARI ZONE"
+	text "#MON HELL"
+	line "ABANDONLAND"
 	done
 
 _FuchsiaCityText18::
-	text "FUCHSIA CITY"
+	text "NEO FUX"
 	line "#MON GYM"
-	cont "LEADER: KOGA"
+	cont "LEADER: TUPAC"
 
-	para "The Poisonous"
-	line "Ninja Master"
+	para "The West Coast"
+	line "Rap Legend"
 	done
 
 _FuchsiaCityChanseyText::
-	text "Name: CHANSEY"
+	text "Name: PREGNANTA"
 
-	para "Catching one is"
-	line "all up to chance."
+	para "Also a mother"
+	line "has to eat..."
 	prompt
 
 _FuchsiaCityVoltorbText::
-	text "Name: VOLTORB"
+	text "Name: KOWARENING"
 
-	para "The very image of"
-	line "a # BALL."
+	para "This fucking doll"
+	line "screams all night."
 	prompt
 
 _FuchsiaCityKangaskhanText::
-	text "Name: KANGASKHAN"
+	text "Name: HELLTECH"
 
-	para "A maternal #MON"
-	line "that raises its"
-	cont "young in a pouch"
-	cont "on its belly."
+	para "A badass #MON"
+	line "that looks like"
+	cont "Daitarn 3."
 	prompt
 
 _FuchsiaCitySlowpokeText::
-	text "Name: SLOWPOKE"
+	text "Name: SLOWGHOST"
 
-	para "Friendly and very"
-	line "slow moving."
+	para "A ghost hidden"
+	line "in a hippo's head"
 	prompt
 
 _FuchsiaCityLaprasText::
-	text "Name: LAPRAS"
+	text "Name: KARONTIS"
 
 	para "A.K.A. the king"
 	line "of the seas."
 	prompt
 
 _FuchsiaCityOmanyteText::
-	text "Name: OMANYTE"
+	text "Name: SHARPIDER"
 
 	para "A #MON that"
-	line "was resurrected"
-	cont "from a fossil."
+	line "was generated"
+	cont "from a chip."
 	prompt
 
 _FuchsiaCityKabutoText::
-	text "Name: KABUTO"
+	text "Name: ZIRLORG"
 
 	para "A #MON that"
-	line "was resurrected"
-	cont "from a fossil."
+	line "was generated"
+	cont "from a chip."
 	prompt
 
 _FuchsiaCityText_19b2a::

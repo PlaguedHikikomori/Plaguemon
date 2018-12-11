@@ -2,7 +2,7 @@ _Route22RivalBeforeBattleText1::
 	text "EVILIO: Hey!"
 	line "<PLAYER>!"
 
-	para "You're going to"
+	para "Are you going to"
 	line "#MON LEAGUE?"
 
 	para "Forget it! You"
@@ -72,6 +72,6 @@ _Route22Text_511d0::
 	prompt
 
 _Route22FrontGateText::
-	text "#MON LEAGUE"
+	text "SLAUGHTERHOUSE"
 	line "Front Gate"
 	done

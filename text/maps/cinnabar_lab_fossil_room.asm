@@ -1,14 +1,14 @@
 _Lab4Text_75dc6::
 	text "Hiya!"
 
-	para "I am important"
+	para "I'm an important"
 	line "scientist!"
 
-	para "I study here rare"
+	para "Here I study rare"
 	line "EEPROMS!"
 
-	para "You! Have you a"
-	line "chip for me?"
+	para "You! Have you got"
+	line "a chip for me?"
 	prompt
 
 _Lab4Text_75dcb::
@@ -32,7 +32,7 @@ _Lab4Text_75dd5::
 	para "It was @"
 	TX_RAM wcf4b
 	db $0
-	line "like I think!"
+	line "like I thought!"
 	prompt
 
 _Lab4Text_610ae::
@@ -55,7 +55,7 @@ _Lab4Text_610ae::
 	done
 
 _Lab4Text_610b3::
-	text "So! You hurry and"
+	text "So! Hurry up and"
 	line "give me that!"
 
 	para "<PLAYER> handed"

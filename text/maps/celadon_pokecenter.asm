@@ -1,12 +1,10 @@
 _CeladonPokecenterText2::
-	text "# FLUTE awakens"
-	line "#MON with a"
-	cont "sound that only"
-	cont "they can hear!"
+	text "Use a SHOVEL to"
+	line "remove corpses."
 	done
 
 _CeladonPokecenterText3::
 	text "I rode uphill on"
-	line "CYCLING ROAD from"
-	cont "FUCHSIA!"
+	line "SKATE ROAD from"
+	cont "NEO FUX!"
 	done

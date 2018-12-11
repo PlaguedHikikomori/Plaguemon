@@ -1,5 +1,5 @@
 _SSAnne6Text1::
-	text "We've different"
+	text "We have different"
 	line "menus for 1st"
 	cont "and 2nd class."
 	done
@@ -30,7 +30,7 @@ _SSAnne6Text5::
 
 _SSAnne6Text6::
 	text "White Star Line"
-	line "Did an awesome job."
+	line "did an awesome job."
 
 	done
 

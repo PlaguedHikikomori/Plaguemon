@@ -23,8 +23,8 @@ _Route8EndBattleText2::
 	prompt
 
 _Route8AfterBattleText2::
-	text "WHY I CAN'T"
-	line "DIEEEE!"
+	text "WHY CAN'T I"
+	line "DIEEEE!?!"
 	done
 
 _Route8BattleText3::
@@ -37,7 +37,7 @@ _Route8EndBattleText3::
 	prompt
 
 _Route8AfterBattleText3::
-	text "You new papi?"
+	text "You're new, papi?"
 	done
 
 _Route8BattleText4::
@@ -57,8 +57,8 @@ _Route8AfterBattleText4::
 	done
 
 _Route8BattleText5::
-	text "Drugs are fun, but"
-	line "so are girls."
+	text "Drugs are fun,"
+	line "but so are girls."
 	done
 
 _Route8EndBattleText5::
@@ -72,15 +72,15 @@ _Route8AfterBattleText5::
 	done
 
 _Route8BattleText6::
-	text "I like cats.."
+	text "I like cats..."
 	done
 
 _Route8EndBattleText6::
-	text "But.."
+	text "...but..."
 	prompt
 
 _Route8AfterBattleText6::
-	text "..also cazzi."
+	text "...also cazzi."
 	done
 
 _Route8BattleText7::
@@ -88,7 +88,7 @@ _Route8BattleText7::
 	done
 
 _Route8EndBattleText7::
-	text "Now more..."
+	text "Now even more..."
 	prompt
 
 _Route8AfterBattleText7::
@@ -103,17 +103,17 @@ _Route8BattleText8::
 	done
 
 _Route8EndBattleText8::
-	text "However.."
+	text "However..."
 	prompt
 
 _Route8AfterBattleText8::
 	text "Death can be"
-	line "too.."
+	line "too..."
 	done
 
 _Route8BattleText9::
 	text "I'm bleeding"
-	line "numbers.."
+	line "numbers..."
 	done
 
 _Route8EndBattleText9::
@@ -123,11 +123,11 @@ _Route8EndBattleText9::
 _Route8AfterBattleText9::
 	text "Now that i"
 	line "discovered this.."
-	cont "i want to die.."
+	cont "i want to die..."
 	done
 
 _Route8Text10::
-	text "UNDERGROUND PATH"
-	line "CELADON CITY -"
-	cont "LAVENDER TOWN"
+	text "SUBWAY"
+	line "NEO CEL -"
+	cont "NEO LAV"
 	done

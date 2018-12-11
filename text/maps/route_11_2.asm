@@ -5,7 +5,7 @@ _Route11EndBattleText9::
 
 _Route11AfterBattleText9::
 	text "Burns really"
-	line "sucks."
+	line "suck."
 	done
 
 _Route11BattleText10::
@@ -22,5 +22,5 @@ _Route11AfterBattleText10::
 	done
 
 _Route11Text11::
-	text "KAZZO's CAVE"
+	text "KAZETTO's CAVE"
 	done

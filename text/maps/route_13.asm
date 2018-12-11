@@ -4,7 +4,7 @@ _Route13BattleText2::
 	done
 
 _Route13EndBattleText2::
-	text "My"
+	text "Did my"
 	line "bird combo lost?"
 	prompt
 
@@ -31,7 +31,7 @@ _Route13AfterBattleText3::
 	done
 
 _Route13BattleText4::
-	text "Wow! Your BADGEs"
+	text "Wow! Your BADGES"
 	line "are too cool!"
 	done
 
@@ -42,8 +42,8 @@ _Route13EndBattleText4::
 
 _Route13AfterBattleText4::
 	text "You got those"
-	line "BADGEs from GYM"
-	cont "LEADERs. I know!"
+	line "BADGES from GYM"
+	cont "LEADERS. I know!"
 	done
 
 _Route13BattleText5::
@@ -116,7 +116,7 @@ _Route13BattleText9::
 	done
 
 _Route13EndBattleText9::
-	text "It's over"
+	text "Is it over"
 	line "already?"
 	prompt
 
@@ -173,7 +173,7 @@ _Route13Text12::
 	done
 
 _Route13Text13::
-	text "ROUTE 13"
+	text "STREET 13"
 	line "North to SILENCE"
 	cont "BRIDGE"
 	done

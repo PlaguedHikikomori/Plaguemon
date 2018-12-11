@@ -46,7 +46,7 @@ _SaffronGymText_5d1e6::
 	done
 
 _SaffronGymText_5d1eb::
-	text "Psychic power,"
+	text "Psychic powers,"
 	line "huh?"
 
 	para "If I had that,"
@@ -56,7 +56,7 @@ _SaffronGymText_5d1eb::
 
 _SaffronGymBattleText1::
 	text "SABRINA is younger"
-	line "than I, but I"
+	line "than me, but I"
 	cont "respect her!"
 	done
 
@@ -119,7 +119,7 @@ _SaffronGymBattleText4::
 	done
 
 _SaffronGymEndBattleText4::
-	text "I don't"
+	text "I can't"
 	line "believe this!"
 	prompt
 

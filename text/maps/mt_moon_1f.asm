@@ -74,8 +74,8 @@ _MtMoon1AfterBattleText6::
 	done
 
 _MtMoon1BattleText7::
-	text "Did you take"
-	line "any shower,"
+	text "Do you take"
+	line "a shower,"
 	cont "sometimes?"
 	done
 
@@ -87,7 +87,7 @@ _MtMoon1EndBattleText7::
 _MtMoon1AfterBattleText7::
 	text "I saw them! I'm"
 	line "sure they're from"
-	cont "Plague Corp!"
+	cont "PLAGUE CORP!"
 	done
 
 _MtMoon1BattleText8::

@@ -36,7 +36,7 @@ _Route11EndBattleText3::
 	prompt
 
 _Route11AfterBattleText3::
-	text "Damn i lose."
+	text "Damn, i lost."
 	done
 
 _Route11BattleText4::
@@ -66,7 +66,7 @@ _Route11EndBattleText5::
 
 _Route11AfterBattleText5::
 	text "The poser is"
-	line "stil you!"
+	line "still you!"
 	done
 
 _Route11BattleText6::
@@ -105,7 +105,7 @@ _Route11BattleText8::
 	done
 
 _Route11EndBattleText8::
-	text "Darn!"
+	text "Damn!"
 	prompt
 
 _Route11AfterBattleText8::

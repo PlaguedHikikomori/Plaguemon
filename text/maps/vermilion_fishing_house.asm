@@ -1,12 +1,12 @@
 _VermilionHouse2Text_560b1::
-	text "The waters"
-	line "of this world"
-	cont "became so polluted"
+	text "The water of"
+	line "this world became"
+	cont "so polluted that"
 	cont "tons of fishes"
 	cont "mutated!"
 	
 	para "Did you"
-	line "noticed?"
+	line "notice?"
 
 	
 	done
@@ -28,7 +28,7 @@ _VermilionHouse2Text_560bb::
 	para "Kill 'em all."
 	
 	para "Also, you could"
-	line "find really strange"
+	line "find very strange"
 	cont "things in those"
 	cont "waters!"
 	done

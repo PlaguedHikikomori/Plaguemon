@@ -17,7 +17,7 @@ _RocketHideout1AfterBattleTxt2::
 	done
 
 _RocketHideout1BattleText3::
-	text "You broke into"
+	text "Did you break into"
 	line "our operation?"
 	done
 

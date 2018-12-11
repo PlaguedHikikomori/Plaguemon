@@ -3,13 +3,13 @@ _CeladonHotelText1::
 	line "is a hotel for"
 	cont "people."
 
-	para "We're full up."
+	para "We're full."
 	done
 
 _CeladonHotelText2::
 	text "I'm on vacation"
 	line "with my brother"
-	cont "and boy friend."
+	cont "and my boyfriend."
 
 	para "CELADON is such a"
 	line "pretty city!"

@@ -1,22 +1,24 @@
 _ProgrammerText::
-	text "Behind the machine"
-	line "there is always"
-	cont "a human.."
+	text "Behind a machine"
+	line "there's always"
+	cont "a human..."
 	
 	para "I sincerely don't"
 	line "know why i did"
 	cont "this..."
 	
-	para "I'm Hikikomori.."
+	para "I'm Hikikomori..."
 	line "I did this hack.."
 	
-	para "It's full of bugs.."
-	line "But this version is"
-	cont "made in just a year"
-	cont "just by me alone.."
+	para "It's full of bugs"
+	line "but this version"
+	cont "has been made in"
+	cont "just one year,"
+	cont "all by myself.."
 	
-	para "If you want to reach"
-	line "out send a mail to.."
+	para "If you want to"
+	line "reach out send an"
+	cont "e-mail to:"
 	cont "hiki.fall  -at-"
 	cont "hotmail.it"
 	done
@@ -45,17 +47,17 @@ _GameDesignerText::
 	line "designer!"
 
 	para "Filling up your"
-	line "#DEX is tough,"
+	line "#X is tough,"
 	cont "but don't quit!"
 
 	para "When you finish,"
-	line "come tell me!"
+	line "come and tell me!"
 	done
 
 _CompletedDexText::
 	text "Wow! Excellent!"
 	line "You completed"
-	cont "your #DEX!"
+	cont "your #X!"
 	cont "Congratulations!"
 	cont "...@@"
 
@@ -74,7 +76,7 @@ _CeladonMansion3Text6::
 
 _CeladonMansion3Text7::
 	text "It's the script!"
-	line "Better not look"
+	line "It is best not to look"
 	cont "at the ending!"
 	done
 

@@ -20,8 +20,9 @@ _SSAnne5Text3::
 _SSAnne5BattleText1::
 	text "Hey matey!"
 
-	para "Let's do a little"
-	line "script on dick!"
+	para "Let's make a"
+	line "little lettering"
+	cont "on your dick!"
 	done
 
 _SSAnne5EndBattleText1::
@@ -30,7 +31,7 @@ _SSAnne5EndBattleText1::
 	prompt
 
 _SSAnne5AfterBattleText1::
-	text "Too much tattooers"
+	text "Too many tattooers"
 	line "nowadays.."
 	done
 
@@ -46,6 +47,6 @@ _SSAnne5EndBattleText2::
 _SSAnne5AfterBattleText2::
 	text "My Pa said there"
 	line "are 100 kinds of"
-	cont "illness. I think"
+	cont "diseases. I think"
 	cont "there are more."
 	done

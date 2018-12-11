@@ -36,7 +36,7 @@ _ReceivedTM28Text::
 _ReceivedTM28Text2::
 	db $0
 	para "NOOOOO!"
-	line "mI'm disappearing!@@"
+	line "I'm disappearing!@@"
 
 _TM28NoRoomText::
 	text "Make room for"
@@ -127,7 +127,7 @@ _CeruleanCityText10::
 	text "A cave."
 	done
 
-_CeruleanCityText12::
+_CeruleanCityText17::
 	text "CERULEAN CITY"
 	line "Drugs addicted"
 	cont "Everywhere."
@@ -136,20 +136,20 @@ _CeruleanCityText12::
 _CeruleanCityText13::
 	text "FACT"
 
-	para "Nearly 1.3 million"
-	line "people dies in"
-	cont "road crashes"
-	cont "every year."
+	para "Nearly 1.3"
+	line "million people"
+	cont "die in car acci-"
+	cont "dents every year."
 	done
 
 _CeruleanCityText16::
-	text "If i die,"
-	line "I'm gonna die"
+	text "If i'm gonna die,"
+	line "i'm gonna die"
 	cont "on the fury road!"
 	done
 
-_CeruleanCityText17::
-	text "CERULEAN CITY"
+_CeruleanCityText12::
+	text "NEO CER"
 	line "#MON GYM"
 	cont "LEADER: LIL PEEP"
 

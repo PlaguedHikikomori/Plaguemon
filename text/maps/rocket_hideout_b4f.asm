@@ -6,12 +6,12 @@ _RocketHideout4Text_4557a::
 
 _RocketHideout4Text_4557f::
 	text "WHAT!"
-	line "This cannot be!"
+	line "It can't be!"
 	prompt
 
 _RocketHideout4Text_45584::
 	text "I see that you"
-	line "raise #MON"
+	line "raised #MON"
 	cont "with utmost care."
 
 	para "A child like you"

@@ -28,8 +28,8 @@ _Route24Text_51526::
 	line "majestic PLAGUE"
 	cont "CORPORATION!"
 
-	para "Want to join?"
-
+	para "Do you want"
+	line "to join?"
 	para "Are you sure?"
 
 	para "Come on, join us!"
@@ -38,7 +38,7 @@ _Route24Text_51526::
 	line "to join!"
 
 	para "OK, you need"
-	line "convincing!"
+	line "to be convinced!"
 
 	para "I'll make you an"
 	line "offer you can't"

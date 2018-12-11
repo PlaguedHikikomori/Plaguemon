@@ -26,13 +26,13 @@ _TM18NoRoomText::
 	done
 
 _CeladonMart3Text2::
-	text "Captured #MON"
+	text "Enslaved #MON"
 	line "are registered"
 	cont "with an ID No."
 	cont "and OT, the name"
 	cont "of the Original"
 	cont "Trainer that"
-	cont "caught it!"
+	cont "enslaved it!"
 	done
 
 _CeladonMart3Text3::

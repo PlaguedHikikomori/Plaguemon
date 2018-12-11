@@ -1,6 +1,6 @@
 _ViridianForestEntranceText1::
-	text "In Japan in 2014"
-	line "on average 70"
+	text "2014, Japan:"
+	line "an average of 70"
 	cont "people committed"
 	cont "suicide everyday."
 	done

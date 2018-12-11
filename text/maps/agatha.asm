@@ -1,14 +1,14 @@
 _AgathaBeforeBattleText::
 	text "Do you see"
-	line "all this graves?"
+	line "all those graves?"
 
 	para "Those are the"
-	line "graves of all"
-	cont "people died"
+	line "graves of all the"
+	cont "people who died"
 	cont "in my name"
 	cont "today.."
 
-	para "And you'll be"
+	para "And now you'll be"
 	line "next.."
 
 	para "Prepare to"

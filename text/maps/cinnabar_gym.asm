@@ -1,5 +1,6 @@
 _BlaineBattleText::
-	text "Crawling in my skin.."
+	text "Crawling in"
+	line "my skin..."
 
 	para "These wounds,"
 	line "they will not heal"
@@ -97,7 +98,7 @@ _CinnabarGymText_759ce::
 
 _CinnabarGymText_759d3::
 	text "My theories are"
-	line "too complicated"
+	line "so complicated"
 	cont "for you!"
 	done
 
@@ -172,10 +173,10 @@ _CinnabarGymText_75aa7::
 
 _CinnabarGymText_75ac2::
 	text "Yo! Champ in"
-	line "making!"
+	line "the making!"
 
 	para "The hot-headed"
-	line "BLAINE is a fire"
+	line "CHESTER is a fire"
 	cont "#MON pro!"
 
 	para "Douse his spirits"

@@ -19,7 +19,8 @@ _TM34ExplanationText::
 
 	para "Take your time.."
 	line "Hurry up.."
-	cont "The choice is yours"
+	cont "The choice"
+	cont "is yours"
 	cont "don't be late.."
 	cont "Take a rest.."
 	cont "As a friend."
@@ -39,10 +40,10 @@ _TM34NoRoomText::
 
 _PewterGymText_5c4bc::
 	text "This is all i got"
-	line "for my entire lige"
+	line "for my entire life"
 
-	para "Remember me forever"
-	line "so take this."
+	para "Remember me for-"
+	line "ever so take this."
 	cont "My bullet shell.."
 
 	para "<PLAYER> received"
@@ -61,11 +62,11 @@ _PewterGymBattleText1::
 
 	para "Dead bodies are"
 	line "not so cool as"
-	cont "you may taught."
+	cont "you may think."
 	done
 
 _PewterGymEndBattleText1::
-	text "Darn!"
+	text "Damn!"
 
 	prompt
 

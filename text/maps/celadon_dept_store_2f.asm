@@ -1,10 +1,10 @@
 _CeladonMart2Text3::
-	text "SUPER REPEL keeps"
-	line "weak #MON at"
-	cont "bay..."
+	text "CYANOGEN keeps"
+	line "weak #MON"
+	cont "away..."
 
 	para "Hmm, it's a more"
-	line "powerful REPEL!"
+	line "powerful MONOXIDE!"
 	done
 
 _CeladonMart2Text4::

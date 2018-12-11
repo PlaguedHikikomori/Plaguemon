@@ -20,8 +20,8 @@ _SSAnne8AfterBattleText1::
 	done
 
 _SSAnne8BattleText2::
-	text "You negro! How dare"
-	line "you barge in!"
+	text "You negro! How"
+	line "dare you barge in!"
 	done
 
 _SSAnne8EndBattleText2::
@@ -65,19 +65,19 @@ _SSAnne8AfterBattleText4::
 
 _SSAnne8Text5::
 	text "Waiter, I would"
-	line "like a coconaut"
+	line "like a coconut"
 	cont "sandwich, please!"
 	done
 
 _SSAnne8Text6::
 	text "I have a bad"
-	line "presentiment.."
+	line "feeling..."
 	done
 
 _SSAnne8Text7::
 	text "I always travel"
 	line "with my pneumatic"
-	cont "detwiller!"
+	cont "dettwiller!"
 	done
 
 _SSAnne8Text9::
@@ -87,6 +87,6 @@ _SSAnne8Text9::
 
 _SSAnne8Text11::
 	text "I have a gun with"
-	line "me.."
+	line "me..."
 
 	done

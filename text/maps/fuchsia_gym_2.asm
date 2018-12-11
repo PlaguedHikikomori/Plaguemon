@@ -140,11 +140,11 @@ _FuchsiaGymText_7564e::
 	text "Yo! Champ in"
 	line "making!"
 
-	para "FUCHSIA GYM is"
+	para "NEO FUX GYM is"
 	line "riddled with"
 	cont "invisible walls!"
 
-	para "KOGA might appear"
+	para "TUPAC might appear"
 	line "close, but he's"
 	cont "blocked off!"
 

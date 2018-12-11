@@ -18,7 +18,7 @@ _Mansion2AfterBattleText1::
 _Mansion2Text3::
 	text "Diary: July 5"
 	line "Summer is hot"
-	cont "as fuck this year."
+	cont "as hell this year."
 
 	para "I just want to"
 	line "fuck.."

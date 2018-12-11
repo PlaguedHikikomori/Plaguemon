@@ -8,7 +8,7 @@ _RockTunnel1EndBattleText1::
 	prompt
 
 _RockTunnel1AfterBattleText1::
-	text "Girls sucks all"
+	text "Girls suck all"
 	line "your blood.."
 	done
 
@@ -44,7 +44,7 @@ _RockTunnel1AfterBattleText3::
 	done
 
 _RockTunnel1BattleText4::
-	text "Wanna see "
+	text "Wanna see"
 	line "something nice?"
 	done
 
@@ -59,7 +59,7 @@ _RockTunnel1AfterBattleText4::
 	done
 
 _RockTunnel1BattleText5::
-	text "Did you came"
+	text "Did you come"
 	line "here for hustling"
 	cont "huh?"
 	done
@@ -101,11 +101,11 @@ _RockTunnel1EndBattleText7::
 
 _RockTunnel1AfterBattleText7::
 	text "Where did you"
-	line "hidden it?"
+	line "hide it?"
 	done
 
 _RockTunnel1Text8::
-	text "ROCK TUNNEL"
-	line "CERULEAN CITY -"
-	cont "LAVENDER TOWN"
+	text "DARK PATH"
+	line "NEO CER -"
+	cont "NEO LAV"
 	done

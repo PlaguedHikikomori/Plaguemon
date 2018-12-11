@@ -15,16 +15,16 @@ _LavenderMartText2::
 	done
 
 _LavenderMartReviveText::
-	text "You know REVIVE?"
+	text "Do you know REVIVE?"
 	line "It revives any"
 	cont "fainted #MON!"
 	done
 
 _LavenderMartNuggetText::
-	text "I found a NUGGET"
+	text "I found a KIDNEY"
 	line "in the mountains."
 
 	para "I thought it was"
-	line "useless, but it"
-	cont "sold for ¥5000!"
+	line "useless, but i"
+	cont "sold it for ¥5000!"
 	done

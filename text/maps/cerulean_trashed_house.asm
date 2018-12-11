@@ -26,9 +26,9 @@ _CeruleanTrashedText_1d6b0::
 
 _CeruleanHouseTrashedText2::
 	text "They entered and"
-	line "raped me So hard."
+	line "raped me so hard."
 	cont "Actually dunno if"
-	cont "i liked!"
+	cont "i enjoyed!"
 	done
 
 _CeruleanHouseTrashedText3::

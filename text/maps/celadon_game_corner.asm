@@ -8,7 +8,7 @@ _CeladonGameCornerText1::
 	done
 
 _CeladonGameCornerText_48d22::
-	text "Welcome to ROCKET"
+	text "Welcome to PLAGUE"
 	line "GAME CORNER!"
 
 	para "Do you need some"
@@ -26,7 +26,7 @@ _CeladonGameCornerText_48d27::
 
 _CeladonGameCornerText_48d2c::
 	text "No? Please come"
-	line "play sometime!"
+	line "play anytime!"
 	done
 
 _CeladonGameCornerText_48d31::
@@ -90,7 +90,7 @@ _CeladonGameCornerText_48dca::
 	cont "champ in making!"
 
 	para "CELADON GYM's"
-	line "LEADER is ERIKA!"
+	line "LEADER is DOLORES!"
 	cont "She uses grass-"
 	cont "type #MON!"
 
@@ -181,6 +181,6 @@ _CeladonGameCornerText_48f09::
 	cont "Let's push it!@@"
 
 _CeladonGameCornerText_48f19::
-	text "Oops! Forgot the"
-	line "COIN CASE!"
+	text "Oops! I Forgot"
+	line "the COIN CASE!"
 	done

@@ -1,11 +1,11 @@
 _WantHitmonleeText::
-	text "You want the"
+	text "Do you want the"
 	line "hard kicking"
 	cont "HITMONBILL?"
 	done
 
 _WantHitmonchanText::
-	text "You want the"
+	text "Do you want the"
 	line "piston punching"
 	cont "HITMONMIKE?"
 	done
