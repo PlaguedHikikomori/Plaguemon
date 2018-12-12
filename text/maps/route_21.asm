@@ -1,7 +1,7 @@
 _Route21BattleText1::
-	text "You want to know"
-	line "if the fish are"
-	cont "biting?"
+	text "Do you want to"
+	line "know if the fish"
+	cont "are biting?"
 	done
 
 _Route21EndBattleText1::

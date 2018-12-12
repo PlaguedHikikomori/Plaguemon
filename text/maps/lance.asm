@@ -1,8 +1,9 @@
 _LanceBeforeBattleText::
 	text "AHAHAHAH!"
 	
-	para "You know who i am?"
-	line "I always have a"
+	para "Do you know"
+	line "who I am?"
+	cont "I always have a"
 	cont "different name"
 	cont "in every culture"
 

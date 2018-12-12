@@ -24,7 +24,7 @@ _PokemonTower7AfterBattleText1::
 
 _PokemonTower7BattleText2::
 	text "Open the gates of"
-	line "the hell and come"
+	line "hell and come"
 	cont "in front of me"
 	cont "from the abyss."
 

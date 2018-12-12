@@ -9,7 +9,7 @@ _SSAnne9Text_61bf2::
 
 _SSAnne9Text_61c01::
 	text "My back hurts"
-	line "as hell.."
+	line "like hell.."
 	done
 
 _SSAnne9Text_61c10::
@@ -44,8 +44,8 @@ _SSAnne9BattleText1::
 	done
 
 _SSAnne9EndBattleText1::
-	text "Good"
-	line "fight! Ah, I feel"
+	text "Good fight!"
+	line "Ah, I feel"
 	cont "white pride!"
 	prompt
 
@@ -76,8 +76,8 @@ _SSAnne9BattleText3::
 	done
 
 _SSAnne9EndBattleText3::
-	text "Equality"
-	line "does not exist!"
+	text "Equality does"
+	line "NOT exist!"
 	prompt
 
 _SSAnne9AfterBattleText3::
@@ -86,7 +86,7 @@ _SSAnne9AfterBattleText3::
 	done
 
 _SSAnne9BattleText4::
-	text "Was you at"
+	text "Was it you at"
 	line "the party?"
 	done
 

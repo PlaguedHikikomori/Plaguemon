@@ -7,9 +7,9 @@ _ViridianForestExitText1::
 
 _ViridianForestExitText2::
 	text "Have you noticed"
-	line "that people on"
+	line "those people on"
 	cont "their knees?"
 
-	para "They can be"
+	para "They will be"
 	line "executed!"
 	done

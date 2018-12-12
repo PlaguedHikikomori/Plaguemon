@@ -23,7 +23,7 @@ _Route3BattleText2::
 	done
 	
 _Route3EndBattleText2::
-	text "I don't"
+	text "I can't"
 	line "believe it!"
 	prompt
 
@@ -50,8 +50,8 @@ _Route3BattleText4::
 	done
 
 _Route3EndBattleText4::
-	text "If I"
-	line "had new money i"
+	text "If I had"
+	line "had extra money I"
 	cont "would've won!"
 	prompt
 
@@ -115,6 +115,6 @@ _Route3AfterBattleText8::
 	done
 
 _Route3Text10::
-	text "ROUTE 3"
-	line "MT.MOON AHEAD"
+	text "STREET 3"
+	line "WASTELANDS AHEAD"
 	done

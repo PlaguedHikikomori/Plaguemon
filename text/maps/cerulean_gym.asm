@@ -3,7 +3,7 @@ _CeruleanGymText_5c7be::
 	line "time in the"
 	cont "background."
 
-	para "I know i"
+	para "You know i"
 	line "got my problems."
 	cont "Know you got"
 	cont "yours too."
@@ -58,7 +58,7 @@ _CeruleanGymText_5c7d8::
 	cont "proves i lived!@@"
 
 _CeruleanGymBattleText1::
-	text "Ehy, stay away"
+	text "Hey, stay away"
 	line "from the star!"
 
 	para "He's resting!"

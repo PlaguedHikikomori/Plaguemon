@@ -10,14 +10,14 @@ _ViridianCityText1::
 	done
 
 _ViridianCityText_19122::
-	text "A lot of childs"
-	line "enter in this"
+	text "A lot of children"
+	line "enter this"
     cont "building very"
 	cont "often.."
 	done
 	
 _ViridianCityText_19127::
-	text "VIRIDIAN GYM's"
+	text "NEO VIR GYM's"
 	line "LEADER returned!"
 	done
 
@@ -38,9 +38,9 @@ _ViridianCityText_19157::
 
 _ViridianCityText_19175::
 	text "Oh Grandpa! Don't"
-	line "be so mean!"
-	cont "He hasn't had his"
-	cont "methadone yet."
+	line "be so mean! He"
+	cont "hasn't received"
+	cont "his methadone yet."
 	done
 
 _ViridianCityText_1917a::
@@ -63,7 +63,7 @@ _ViridianCityText_191ca::
 	cont "off in the sun."
 
 	para "I had this dream"
-	line "about a DROWZEE"
+	line "about a DUPUPPET"
 	cont "eating my dream."
 	cont "What's this?"
 	cont "Where did this TM"
@@ -97,26 +97,26 @@ _ViridianCityText_1920a::
 	para "Go wherever"
 	line "you want.."
 
-	para "Also, you hate"
-	line "captivity animals?"
+	para "Also, do you hate"
+	line "captive animals?"
 	done
 
 _ViridianCityText_1920f::
 	text "Yes!"
 	line "I know the feeling."
 
-	para "Sometimes just "
-	line "to make 'em fight,"
-	cont "some others to make"
-	cont "super tasty meals!"
+	para "Sometimes just to"
+	line "make 'em fight,"
+	cont "some others to"
+	cont "make tasty meals!"
 
-	para "I'll catch one now"
-	line "for dinner!"
+	para "I'll catch one"
+	line "now for dinner!"
 	done
 
 _ViridianCityText_19214::
 	text "You don't know"
-	line "what you miss."
+	line "what you're missin'"
 	done
 
 _ViridianCityText_19219::
@@ -126,9 +126,9 @@ _ViridianCityText_19219::
 	done
 
 _ViridianCityText8::
-	text "VIRIDIAN CITY "
+	text "NEO VIR"
 	line "The Eternally"
-	cont "Green Paradise"
+	cont "Green Hell"
 	done
 
 _ViridianCityText9::
@@ -147,13 +147,13 @@ _ViridianCityText10::
 	cont "to secure unfair"
 	cont "or unlawful gain."
 
-	para "Ot to deprive a"
+	para "Or to deprive a"
 	line "victim of a"
 	cont "legal right."
 	done
 
 _ViridianCityText13::
-	text "VIRIDIAN CITY"
+	text "NEO VIR"
 	line "#MON GYM"
 	done
 

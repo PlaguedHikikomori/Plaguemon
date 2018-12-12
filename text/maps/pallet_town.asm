@@ -4,8 +4,8 @@ _OakAppearsText::
 
 _OakWalksUpText::
 	text "There are plenty"
-	line "radiations over"
-	cont "there!"
+	line "of radiations"
+	cont "over there!"
 
 	para "You need your own"
 	line "monster to"
@@ -20,7 +20,7 @@ _PalletTownText2::
 	line "TRAP music..."
 
 	para "I still prefer the"
-	line "good, old skool "
+	line "good, old skool"
 	cont "DUBSTEP tunes.."
 	
 	done
@@ -29,8 +29,8 @@ _PalletTownText3::
 	text "Look at me!"
 	line "Look at me!"
 
-	para "I'm like a bitch"
-	line "who is your mans"
+	para "I'm like, bitch,"
+	line "who is your mans?"
 	cont "Aye!"
 	cont "Aye!"
 	done
@@ -41,7 +41,7 @@ _PalletTownText4::
 	done
 
 _PalletTownText5::
-	text "PALLET TOWN"
+	text "NEO PAL"
 	line "Please:"
 	cont "STAY SAFE."
 	done

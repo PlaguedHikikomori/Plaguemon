@@ -1,7 +1,7 @@
 _CeladonMart4Text2::
 	text "I'm getting a"
-	line "# DOLL for my"
-	cont "girl friend!"
+	line "VOODOO DOLL for"
+	cont "my bitch!"
 	done
 
 _CeladonMart4Text3::
@@ -11,7 +11,7 @@ _CeladonMart4Text3::
 	para "You can run from"
 	line "wild #MON by"
 	cont "distracting them"
-	cont "with a # DOLL!"
+	cont "with a VOODOO DOLL!"
 	done
 
 _CeladonMart4Text4::

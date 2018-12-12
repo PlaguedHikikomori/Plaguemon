@@ -13,7 +13,7 @@ _Route12Text13::
 
 _Route12Text14::
 	text "Those corpses"
-	line "just get up"
+	line "just got up"
 	cont "and walked away.."
 	done
 
@@ -127,8 +127,8 @@ _Route12AfterBattleText7::
 	done
 
 _Route12Text11::
-	text "ROUTE 12 "
-	line "North to LAVENDER"
+	text "STREET 12 "
+	line "North to NEO LAV"
 	done
 
 _Route12Text12::

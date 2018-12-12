@@ -1,10 +1,11 @@
 _ViridianMartText1::
-	text "Say PROF. he"
-	line "owes me money!"
+	text "Tell the PROF."
+	line "that he owes"
+	cont "me money!"
 	done
 
 _ViridianMartText4::
-	text "Hey! You're the"
+	text "Hey! Are you the"
 	line "ugly guy i was"
 	cont "warned about?"
 	done
@@ -14,7 +15,7 @@ ViridianMartParcelQuestText::
 	line "what he wanted."
 
 	para "He uses tons" 
-	line "of most weird"
+	line "of the weirdest"
 	cont "drugs available."
 
 	para "<PLAYER> got"
@@ -22,7 +23,7 @@ ViridianMartParcelQuestText::
 
 _ViridianMartText2::
 	text "Do you have a"
-	line "cigarette, my man?"
+	line "cig, my man?"
 	done
 
 _ViridianMartText3::

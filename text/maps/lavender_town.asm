@@ -41,10 +41,10 @@ _LavenderTownText8::
 	done
 
 _LavenderTownText9::
-	text "Lasciate ogni"
-	line "speranza.."
+	text "Lasciate ogne"
+	line "speranza..."
 
-	para "Voi ch'entrate."
+	para "Voi ch'intrate."
 	done
 	
 _LavenderTownText10::

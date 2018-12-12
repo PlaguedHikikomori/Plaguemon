@@ -8,16 +8,18 @@ _Route11GateUpstairsText_494a3::
 	cont "close to you."
 
 	para "It can't pinpoint"
-	line "it, so you have"
-	cont "to look yourself!"
+	line "it, so you will"
+	cont "have to look"
+	cont "by yourself!"
 	done
 
 _BinocularsSnorlaxText::
 	text "Looked into the"
 	line "binoculars."
 
-	para "A big #MON is"
-	line "asleep on a road!"
+	para "A big heap of"
+	line "bodies blocks"
+	cont "the road!"
 	done
 
 _BinocularsNoSnorlaxText::
@@ -33,8 +35,8 @@ _Route11GateUpstairsText_494d5::
 	line "binoculars."
 
 	para "The only way to"
-	line "get from CERULEAN"
-	cont "CITY to LAVENDER"
-	cont "is by way of the"
-	cont "ROCK TUNNEL."
+	line "get from NEO CER"
+	cont "to NEO LAV is"
+	cont "by way of the"
+	cont "DARK PATH."
 	done

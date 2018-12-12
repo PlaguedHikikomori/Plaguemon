@@ -13,7 +13,7 @@ _Route16GateUpstairsText_4983b::
 	text "Looked into the"
 	line "binoculars."
 
-	para "It's CELADON DEPT."
+	para "It's NEO CEL DEPT."
 	line "STORE!"
 	done
 
@@ -22,5 +22,5 @@ _Route16GateUpstairsText_49847::
 	line "binoculars."
 
 	para "There's a long"
-	line "path over water!"
+	line "path overwater!"
 	done

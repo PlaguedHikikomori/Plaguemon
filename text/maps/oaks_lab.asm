@@ -112,18 +112,18 @@ _OaksLabAroundWorldText::
 	done
 
 _OaksLabGivePokeballsText1::
-	text "PROF: You can't get"
-	line "detailed data on"
-	cont "#MON by just"
-	cont "seeing them."
+	text "PROF: You can't"
+	line "get detailed data"
+	cont "on #MON by"
+	cont "just seeing them."
 
-	para "You must catch"
+	para "You must enslave"
 	line "them! Use these"
 	cont "to capture wild"
 	cont "#MON."
 
 	para "<PLAYER> got 5"
-	line "# BALLs!@@"
+	line "# VIALs!@@"
 
 _OaksLabGivePokeballsText2::
 	text ""
@@ -132,8 +132,8 @@ _OaksLabGivePokeballsText2::
 	cont "it's fair game."
 
 	para "Just throw a #"
-	line "VIAL at it and try"
-	line "to catch it!"
+	line "VIAL at it and"
+	line "try to enslave it!"
 
 	para "This won't always"
 	line "work, though."
@@ -147,22 +147,22 @@ _OaksLabPleaseVisitText::
 	text "PROF: Come see me"
 	line "sometimes."
 
-	para "I want to know how"
-	line "your #DEX is"
-	cont "coming along."
+	para "I want to know"
+	line "how your #X"
+	cont "is coming along."
 	done
 
 _OaksLabText_1d31d::
-	text "PROF: Good to see "
-	line "you! How is your "
-	cont "#DEX coming? "
+	text "PROF: Good to see"
+	line "you! How is your"
+	cont "#X coming? "
 	cont "Here, let me take"
 	cont "a look!"
 	prompt
 
 _OaksLabText_1d32c::
 	text "It's like"
-	line "a geigher"
+	line "a geiger"
 	cont "counter!"
 	done
 
@@ -237,7 +237,7 @@ _OaksLabRivalPickingMonText::
 	done
 
 _OaksLabRivalReceivedMonText::
-	text "EVILIO stealed"
+	text "EVILIO stole"
 	line "a @"
 	TX_RAM wcd6d
 	text "!@@"
@@ -292,9 +292,8 @@ _OaksLabText24::
 	line "is that old shit"
 	cont "PLAGUEX!"
 
-	para "You know hwo"
-	line "it works"
-	cont "right?"
+	para "You know how to"
+	line "use it, don't you?"
 	cont "Nerd!"
 
 	para "It's the reason"
@@ -307,7 +306,7 @@ _OaksLabText25::
 	cont "<PLAYER>!"
 
 	para "<PLAYER> got"
-	line "#DEX!@@"
+	line "#X!@@"
 
 _OaksLabText26::
 	text "To make a complete"
@@ -318,7 +317,7 @@ _OaksLabText26::
 	para "That was my dream!"
 
 	para "But, I'm too old!"
-	line "i'm just a unuseful"
+	line "i'm just a useless"
 	cont "piece of shit!"
 
 	para "and you should"
@@ -381,8 +380,8 @@ _OaksLabText_44201::
 _OaksLabText_44206::
 	text "Almost"
 	line "a full retard! "
-	cont "A wasted"
-	cont "day today!"
+	cont "Todays is "
+	cont "a wasted day!"
 	done
 
 _OaksLabText_4420b::
@@ -414,7 +413,7 @@ _OaksLabText_4421a::
 	done
 
 _OaksLabText_4421f::
-	text "Ho! This is geting"
+	text "Ho! This is getting"
 	line "even better!"
 	done
 
@@ -469,7 +468,7 @@ _OaksLabText_44247::
 	done
 
 _OaksLabText_4424c::
-	text "Your #DEX is"
+	text "Your #X is"
 	line "entirely complete!"
 	cont "Congratulations!"
 	done

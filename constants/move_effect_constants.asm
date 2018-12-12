@@ -21,7 +21,7 @@ const_value = 0
 	const ACCURACY_UP1_EFFECT        ; $0E
 	const EVASION_UP1_EFFECT         ; $0F
 	const PAY_DAY_EFFECT             ; $10
-	const SWIFT_EFFECT               ; $11
+	const SHURIKEN_EFFECT               ; $11
 	const ATTACK_DOWN1_EFFECT        ; $12
 	const DEFENSE_DOWN1_EFFECT       ; $13
 	const SPEED_DOWN1_EFFECT         ; $14
@@ -83,12 +83,12 @@ const_value = 0
 	const CONFUSION_SIDE_EFFECT      ; $4C
 	const TWINEEDLE_EFFECT           ; $4D
 	const UNUSED_EFFECT_4E           ; $4E
-	const SUBSTITUTE_EFFECT          ; $4F
+	const DISCIPLE_EFFECT            ; $4F
 	const HYPER_BEAM_EFFECT          ; $50
 	const RAGE_EFFECT                ; $51
 	const MIMIC_EFFECT               ; $52
 	const METRONOME_EFFECT           ; $53
-	const LEECH_SEED_EFFECT          ; $54
+	const GROW_CANNABIS_EFFECT       ; $54
 	const SPLASH_EFFECT              ; $55
 	const DISABLE_EFFECT             ; $56
 

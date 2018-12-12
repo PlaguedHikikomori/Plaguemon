@@ -10,7 +10,7 @@ _Route25EndBattleText1::
 	prompt
 
 _Route25AfterBattleText1::
-	text "I'm veru good"
+	text "I'm very good"
 	line "at NOSEGRINDS!"
 	done
 
@@ -27,7 +27,7 @@ _Route25EndBattleText2::
 
 _Route25AfterBattleText2::
 	text "It's my deck"
-	line "that suck. Wish"
+	line "that sucks. Wish"
 	cont "i had a PLAGUE."
 	done
 
@@ -75,7 +75,7 @@ _Route25EndBattleText5::
 _Route25AfterBattleText5::
 	text "If your #MON"
 	line "gets confused or"
-	cont "falls asleep,"
+	cont "gets in a coma,"
 	cont "switch it!"
 	done
 
@@ -86,8 +86,8 @@ _Route25BattleText6::
 	done
 
 _Route25EndBattleText6::
-	text "I'm"
-	line "not so jealous!"
+	text "I'm not"
+	line "so jealous!"
 	prompt
 
 _Route25AfterBattleText6::
@@ -116,7 +116,7 @@ _Route25EndBattleText8::
 	prompt
 
 _Route25AfterBattleText8::
-	text "Does mu phone."
+	text "Does my phone."
 	done
 
 _Route25BattleText9::

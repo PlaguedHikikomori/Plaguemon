@@ -4,7 +4,7 @@ _FuchsiaHouse1Text1::
 	cont "but still active!"
 
 	para "All his teeth are"
-	line "false, though."
+	line "fake, though."
 	done
 
 _FuchsiaHouse1Text2::

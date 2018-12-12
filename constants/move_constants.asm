@@ -72,7 +72,7 @@ const_value = 1
 	const STRENGTH     ; 46
 	const ABSORB       ; 47
 	const MEGA_DRAIN   ; 48
-	const LEECH_SEED   ; 49
+	const GROW_CANNABIS; 49
 	const GROWTH       ; 4a
 	const RAZOR_LEAF   ; 4b
 	const SOLARBEAM    ; 4c
@@ -128,7 +128,7 @@ const_value = 1
 	const FIRE_BLAST   ; 7e
 	const WATERFALL    ; 7f
 	const CLAMP        ; 80
-	const SWIFT        ; 81
+	const SHURIKEN     ; 81
 	const SKULL_BASH   ; 82
 	const SPIKE_CANNON ; 83
 	const CONSTRICT    ; 84
@@ -163,7 +163,7 @@ const_value = 1
 	const TRI_ATTACK   ; a1
 	const SUPER_FANG   ; a2
 	const SLASH        ; a3
-	const SUBSTITUTE   ; a4
+	const DISCIPLE     ; a4
 	const STRUGGLE     ; a5
 	const PROTO_CANNON ; a6
 	const MECHA_PUNCH  ; a7

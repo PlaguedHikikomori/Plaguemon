@@ -1044,8 +1044,8 @@ SpecialEffectPointers:
 	dw AnimationSlideEnemyMonOff
 	db SE_SHAKE_BACK_AND_FORTH ; $DA
 	dw AnimationShakeBackAndForth
-	db SE_SUBSTITUTE_MON ; $D9
-	dw AnimationSubstitute
+	db SE_DISCIPLE_MON ; $D9
+	dw AnimationDisciple
 	db SE_WAVY_SCREEN ; $D8
 	dw AnimationWavyScreen
 	db $FF
@@ -2031,7 +2031,7 @@ WavyScreenLineOffsets:
 	db 0, 0, 0, 0, 0, -1, -1, -1, -2, -2, -2, -2, -2, -1, -1, -1
 	db $80 ; terminator
 
-AnimationSubstitute:
+AnimationDisciple:
 ; Changes the pokemon's sprite to the mini sprite
 	ld hl, wTempPic
 	xor a
@@ -2075,7 +2075,7 @@ CopySlowbroSpriteData:
 	ld a, BANK(SlowbroSprite)
 	jp FarCopyData2
 
-HideSubstituteShowMonAnim:
+HideDiscipleShowMonAnim:
 	ld a, [H_WHOSETURN]
 	and a
 	ld hl, wPlayerMonMinimized
@@ -2085,12 +2085,12 @@ HideSubstituteShowMonAnim:
 	ld a, [wEnemyBattleStatus2]
 .next1
 	push hl
-; if the substitute broke, slide it down, else slide it offscreen horizontally
-	bit HasSubstituteUp, a
-	jr nz, .substituteStillUp
+; if the Disciple broke, slide it down, else slide it offscreen horizontally
+	bit HasDiscipleUp, a
+	jr nz, .discipleStillUp
 	call AnimationSlideMonDown
 	jr .next2
-.substituteStillUp
+.discipleStillUp
 	call AnimationSlideMonOff
 .next2
 	pop hl
@@ -2100,9 +2100,9 @@ HideSubstituteShowMonAnim:
 	call AnimationFlashMonPic
 	jp AnimationShowMonPic
 
-ReshowSubstituteAnim:
+ReshowDiscipleAnim:
 	call AnimationSlideMonOff
-	call AnimationSubstitute
+	call AnimationDisciple
 	jp AnimationShowMonPic
 
 AnimationBoundUpAndDown:
@@ -2427,7 +2427,7 @@ MoveSoundTable:
 	db SFX_BATTLE_26,         $20,$40 ; STRENGTH
 	db SFX_BATTLE_24,         $00,$80 ; ABSORB
 	db SFX_BATTLE_24,         $40,$c0 ; MEGA_DRAIN
-	db SFX_BATTLE_1B,         $03,$60 ; LEECH_SEED
+	db SFX_BATTLE_1B,         $03,$60 ; GROW_CANNABIS
 	db SFX_BATTLE_25,         $11,$e0 ; GROWTH
 	db SFX_BATTLE_12,         $20,$e0 ; RAZOR_LEAF
 	db SFX_BATTLE_2E,         $00,$80 ; SOLARBEAM
@@ -2483,7 +2483,7 @@ MoveSoundTable:
 	db SFX_BATTLE_29,         $1f,$20 ; FIRE_BLAST
 	db SFX_BATTLE_25,         $2f,$80 ; WATERFALL
 	db SFX_BATTLE_0F,         $1f,$ff ; CLAMP
-	db SFX_BATTLE_2B,         $1f,$60 ; SWIFT
+	db SFX_BATTLE_2B,         $1f,$60 ; SHURIKEN
 	db SFX_BATTLE_26,         $1e,$20 ; SKULL_BASH
 	db SFX_BATTLE_26,         $1f,$18 ; SPIKE_CANNON
 	db SFX_BATTLE_14,         $0f,$80 ; CONSTRICT
@@ -2518,7 +2518,7 @@ MoveSoundTable:
 	db SFX_BATTLE_29,         $f8,$ff ; TRI_ATTACK
 	db SFX_BATTLE_26,         $f0,$ff ; SUPER_FANG
 	db SFX_NOT_VERY_EFFECTIVE,$01,$ff ; SLASH
-	db SFX_BATTLE_2C,         $d8,$04 ; SUBSTITUTE
+	db SFX_BATTLE_2C,         $d8,$04 ; DISCIPLE
 	db SFX_BATTLE_0B,         $00,$80 ; STRUGGLE
 	db SFX_BATTLE_0B,         $00,$80
 

@@ -267,7 +267,7 @@ Mon100_EvosMoves:
 	db 17,SONICBOOM
 	db 22,SELFDESTRUCT
 	db 29,LIGHT_SCREEN
-	db 36,SWIFT
+	db 36,SHURIKEN
 	db 43,EXPLOSION
 	db 0
 
@@ -305,7 +305,7 @@ Mon002_EvosMoves:
 	db EV_LEVEL,32,VENUSAUR
 	db 0
 ;Learnset
-	db 7,LEECH_SEED
+	db 7,GROW_CANNABIS
 	db 13,VINE_WHIP
 	db 22,POISONPOWDER
 	db 30,RAZOR_LEAF
@@ -341,7 +341,7 @@ Mon102_EvosMoves:
 	db 0
 ;Learnset
 	db 25,REFLECT
-	db 28,LEECH_SEED
+	db 28,GROW_CANNABIS
 	db 32,STUN_SPORE
 	db 37,POISONPOWDER
 	db 42,SOLARBEAM
@@ -466,9 +466,8 @@ Mon130_EvosMoves:
 	db 0
 ;Learnset
 	db 20,BITE
-	db 20,LEER
 	db 25,DRAGON_RAGE
-	db 33,WATER_GUN
+	db 33,LEER
 	db 41,JUDGEMENT
 	db 49,HYDRO_PUMP
 	db 57,WRATH_OF_GOD
@@ -537,7 +536,7 @@ Mon120_EvosMoves:
 	db 17,WATER_GUN
 	db 22,HARDEN
 	db 27,RECOVER
-	db 32,SWIFT
+	db 32,SHURIKEN
 	db 37,MINIMIZE
 	db 42,LIGHT_SCREEN
 	db 47,HYDRO_PUMP
@@ -731,7 +730,7 @@ Mon122_EvosMoves:
 	db 23,LIGHT_SCREEN
 	db 31,DOUBLESLAP
 	db 39,MEDITATE
-	db 47,SUBSTITUTE
+	db 47,DISCIPLE
 	db 0
 
 Mon106_EvosMoves:
@@ -1000,7 +999,7 @@ Mon149_EvosMoves:
 	db 11,THUNDER_WAVE
 	db 21,AGILITY
 	db 31,JUDGEMENT
-	db 41,SUBSTITUTE
+	db 41,DISCIPLE
 	db 51,HYPER_BEAM
 	db 61,WRATH_OF_GOD
 	db 0
@@ -1179,7 +1178,7 @@ Mon025_EvosMoves:
 ;Learnset
 	db 9,THUNDER_WAVE
 	db 16,QUICK_ATTACK
-	db 26,SWIFT
+	db 26,SHURIKEN
 	db 33,AGILITY
 	db 43,THUNDER
 	db 0
@@ -1210,7 +1209,7 @@ Mon147_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 7,LEECH_SEED
+	db 7,GROW_CANNABIS
 	db 13,VINE_WHIP
 	db 22,POISONPOWDER
 	db 30,RAZOR_LEAF
@@ -1313,7 +1312,7 @@ Mon027_EvosMoves:
 	db 10,SAND_ATTACK
 	db 17,SLASH
 	db 24,POISON_STING
-	db 31,SWIFT
+	db 31,SHURIKEN
 	db 38,FURY_SWIPES
 	db 0
 
@@ -1325,7 +1324,7 @@ Mon028_EvosMoves:
 	db 10,SAND_ATTACK
 	db 17,SLASH
 	db 27,POISON_STING
-	db 36,SWIFT
+	db 36,SHURIKEN
 	db 47,FURY_SWIPES
 	db 0
 
@@ -1742,12 +1741,13 @@ Mon143_EvosMoves:
 	db 0
 
 Mon129_EvosMoves:
-;MAGIKARP
+;MAGIKARP/ROKUJOSHI
 ;Evolutions
 	db EV_LEVEL,20,GYARADOS
 	db 0
 ;Learnset
 	db 15,TACKLE
+	db 20,WATER_GUN
 	db 0
 
 Mon174_EvosMoves:
@@ -1819,7 +1819,7 @@ Mon101_EvosMoves:
 	db 17,SONICBOOM
 	db 22,SELFDESTRUCT
 	db 29,LIGHT_SCREEN
-	db 40,SWIFT
+	db 40,SHURIKEN
 	db 50,EXPLOSION
 	db 0
 
@@ -1902,7 +1902,7 @@ Mon065_EvosMoves:
 	db 31,RECOVER
 	db 38,PETAL_DANCE
 	db 42,REFLECT
-	db 47,SUBSTITUTE
+	db 47,DISCIPLE
 	db 55,JUDGEMENT
 	db 60,PSYCHIC_M
 	db 0
@@ -1946,7 +1946,7 @@ Mon001_EvosMoves:
 	db EV_LEVEL,16,IVYSAUR
 	db 0
 ;Learnset
-	db 7,LEECH_SEED
+	db 7,GROW_CANNABIS
 	db 13,VINE_WHIP
 	db 20,POISONPOWDER
 	db 27,RAZOR_LEAF
@@ -1961,7 +1961,7 @@ Mon003_EvosMoves:
     db EV_ITEM,GOLD_TEETH,1,DRATINI
 	db 0
 ;Learnset
-	db 7,LEECH_SEED
+	db 7,GROW_CANNABIS
 	db 13,VINE_WHIP
 	db 22,POISONPOWDER
 	db 30,RAZOR_LEAF

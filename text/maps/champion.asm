@@ -5,7 +5,7 @@ _GaryChampionIntroText::
 	line "WAS"
 	cont "MEEE!"
 
-	para "YOUR TOUGHTEST"
+	para "YOUR TOUGHEST"
 	line "RIVAL..."
 
 	para "YOUR WORST"
@@ -17,7 +17,7 @@ _GaryChampionIntroText::
 	
 	para "WHO AM I?"
 
-	para "YOU DIDN'T"
+	para "DIDN'T YOU"
 	line "UNDERSTAND?!"
 
 	para "I'M YOUR"

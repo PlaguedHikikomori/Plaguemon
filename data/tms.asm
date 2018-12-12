@@ -37,7 +37,7 @@ TechnicalMachines:
 	db SELFDESTRUCT
 	db EGG_BOMB
 	db FIRE_BLAST
-	db SWIFT
+	db SHURIKEN
 	db SKULL_BASH
 	db SOFTBOILED
 	db DREAM_EATER
@@ -48,7 +48,7 @@ TechnicalMachines:
 	db EXPLOSION
 	db ROCK_SLIDE
 	db TRI_ATTACK
-	db SUBSTITUTE
+	db DISCIPLE
 	db CUT
 	db FLY
 	db SURF

@@ -10,18 +10,18 @@ _Route9EndBattleText1::
 _Route9AfterBattleText1::
 	text "But you can"
 	line "arrest me if you"
-	cont "would like to!"
+	cont "like to!"
 	done
 
 _Route9BattleText2::
-	text "Ehi.."
+	text "Hey..."
 	line "Where are you"
 	cont "running?"
 	done
 
 _Route9EndBattleText2::
 	text "Ok"
-	line "Can go.."
+	line "You can go..."
 	prompt
 
 _Route9AfterBattleText2::
@@ -95,7 +95,7 @@ _Route9EndBattleText7::
 	prompt
 
 _Route9AfterBattleText7::
-	text "They're fake,"
+	text "They're fake."
 	done
 
 _Route9BattleText8::
@@ -104,13 +104,13 @@ _Route9BattleText8::
 	done
 
 _Route9EndBattleText8::
-	text "Ok.."
-	line "Free for this time."
+	text "Ok.. Free"
+	line "for this time."
 	prompt
 
 _Route9AfterBattleText8::
 	text "My fee is"
-	line "the 60 percent."
+	line "60 percent."
 	done
 
 _Route9BattleText9::
@@ -128,7 +128,7 @@ _Route9AfterBattleText9::
 	done
 
 _Route9Text11::
-	text "ROUTE 9"
-	line "CERULEAN CITY-"
-	cont "ROCK TUNNEL"
+	text "STREET 9"
+	line "NEO CER -"
+	cont "DARK PATH"
 	done

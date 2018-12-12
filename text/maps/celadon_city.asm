@@ -80,18 +80,18 @@ _CeladonCityText10::
 	done
 
 _CeladonCityText11::
-	text "CELADON CITY"
-	line "The City of"
-	cont "Lustful dreams."
+	text "NEO CEL"
+	line "28 missing"
+	cont "childrens"
 	done
 
 _CeladonCityText13::
-	text "CELADON CITY"
+	text "NEO CEL"
 	line "#MON GYM"
 	cont "LEADER: DOLORES"
 
 	para "That Irish"
-	line "singer.."
+	line "singer..."
 	done
 
 _CeladonCityText14::
@@ -100,7 +100,7 @@ _CeladonCityText14::
 
 _CeladonCityText15::
 	text "Find what you"
-	line "need.."
+	line "need..."
 	done
 
 _CeladonCityText16::
@@ -116,10 +116,10 @@ _CeladonCityText16::
 _CeladonCityText17::
 	text "FACT"
 
-	para "Poisoning is the"
-	line "most common way"
-	cont "to suicide"
-	cont "for women."
+	para "For women,"
+	line "poisoning is the"
+	cont "most common way"
+	cont "to commit suicide."
 	
 	done
 

@@ -42,15 +42,15 @@ _Mansion4AfterBattleText3::
 	done
 
 _Mansion4BattleText4::
-	text "After the disaster.."
-	line "Scientists"
+	text "After the disas-"
+	line "ter, scientists.."
 	cont "that were"
 	cont "experimenting on"
-	cont "us.."
-	cont "lefted the project.."
+	cont "us left"
+	cont "the project.."
 	
 	para "We created THE"
-	line "BRAIN to rule us.."
+	line "BRAIN to rule us."
 	done
 
 _Mansion4EndBattleText4::
@@ -64,8 +64,9 @@ _Mansion4AfterBattleText4::
 
 _Mansion4Text7::
 	text "Diary; Sept. 1"
-	line "I'm starting having"
-	cont "seizures daily.."
+	line "I'm starting to"
+	cont "have seizures"
+	cont "every damn day.."
 
 	para "I hate this game."
 	done

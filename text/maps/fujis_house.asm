@@ -34,7 +34,7 @@ _LavenderHouse1Text4::
 	text "NIDORINO: Gaoo!@@"
 
 _LavenderHouse1Text_1d94c::
-	text "Corpses needs to"
+	text "Corpses need to"
 	line "be removed.."
 	prompt
 

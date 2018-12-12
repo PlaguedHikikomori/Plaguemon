@@ -39,7 +39,7 @@ _RockTunnel2EndBattleText4::
 	prompt
 
 _RockTunnel2AfterBattleText4::
-	text "I tought mine"
+	text "I thought mine"
 	line "was huge until"
 	cont "i saw yours."
 	done
@@ -79,7 +79,7 @@ _RockTunnel2AfterBattleText6::
 
 _RockTunnel2BattleText7::
 	text "This wasteland"
-	line "is full of maniacs"
+	line "is full of"
 	cont "maniacs!"
 	done
 

@@ -100,7 +100,7 @@ _Route19EndBattleText7::
 
 _Route19AfterBattleText7::
 	text "It's still a long"
-	line "way to go to"
+	line "way to"
 	cont "SEAFOAM ISLANDS."
 	done
 
@@ -114,7 +114,7 @@ _Route19EndBattleText8::
 	prompt
 
 _Route19AfterBattleText8::
-	text "My boy friend"
+	text "My boyfriend"
 	line "wanted to swim to"
 	cont "SEAFOAM ISLANDS."
 	done
@@ -151,7 +151,7 @@ _Route19AfterBattleText10::
 	done
 
 _Route19Text11::
-	text "SEA ROUTE 19"
-	line "FUCHSIA CITY -"
-	cont "SEAFOAM ISLANDS"
+	text "CANAL 19"
+	line "NEO FUX -"
+	cont "HIDDEN ISLANDS"
 	done

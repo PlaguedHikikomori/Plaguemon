@@ -637,10 +637,10 @@ wAILayer2Encouragement:: ; ccd5
 	ds 1
 	ds 1
 
-; current HP of player and enemy substitutes
-wPlayerSubstituteHP:: ; ccd7
+; current HP of player and enemy disciples
+wPlayerDiscipleHP:: ; ccd7
 	ds 1
-wEnemySubstituteHP:: ; ccd8
+wEnemyDiscipleHP:: ; ccd8
 	ds 1
 
 wTestBattlePlayerSelectedMove:: ; ccd9
@@ -1726,10 +1726,10 @@ wPlayerBattleStatus2:: ; d063
 ; bit 0 - X Accuracy effect
 ; bit 1 - protected by "mist"
 ; bit 2 - focus energy effect
-; bit 4 - has a substitute
+; bit 4 - has a disciple
 ; bit 5 - need to recharge
 ; bit 6 - rage
-; bit 7 - leech seeded
+; bit 7 - grow cannabis
 	ds 1
 
 wPlayerBattleStatus3:: ; d064

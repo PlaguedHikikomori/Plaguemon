@@ -1,6 +1,6 @@
 _HallofFameRoomText1::
 	text "This is where"
-	line "all began."
+	line " it all began."
 	
 	para "Where the matrix"
 	line "was coded and"

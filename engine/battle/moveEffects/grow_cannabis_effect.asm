@@ -1,4 +1,4 @@
-LeechSeedEffect_:
+GrowCannabisEffect_:
 	callab MoveHitTest
 	ld a, [wMoveMissed]
 	and a
@@ -7,11 +7,11 @@ LeechSeedEffect_:
 	ld de, wEnemyMonType1
 	ld a, [H_WHOSETURN]
 	and a
-	jr z, .leechSeedEffect
+	jr z, .growCannabisEffect
 	ld hl, wPlayerBattleStatus2
 	ld de, wBattleMonType1
-.leechSeedEffect
-; miss if the target is grass-type or already seeded
+.growCannabisEffect
+; miss if the target is drugs-type or already seeded
 	ld a, [de]
 	cp GRASS
 	jr z, .moveMissed

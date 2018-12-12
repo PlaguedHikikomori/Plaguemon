@@ -1,5 +1,5 @@
 _KogaBeforeBattleText::
-	text "Who shoot me?!"
+	text "Who shot me?!"
 	done
 
 _KogaAfterBattleText::

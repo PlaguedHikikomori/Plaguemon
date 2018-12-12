@@ -14,7 +14,7 @@ dw DratiniPicBack
 ; attacks known at lvl 0
 db TACKLE
 db GROWL
-db LEECH_SEED
+db GROW_CANNABIS
 db VINE_WHIP
 db 3 ; growth rate
 ; learnset

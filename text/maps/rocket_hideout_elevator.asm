@@ -1,3 +1,3 @@
 _RocketElevatorText_4578b::
-	text "It appears to"
+	text "It seems to"
 	line "need a key.@@"

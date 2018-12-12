@@ -13,7 +13,8 @@ _MtMoonPokecenterText3::
 	cont "citizens..."
 
 	para "Rape their women."
-	line "Kill their childs."
+	line "Kill their"
+	cont "children."
 	done
 
 _MagikarpSalesmanText1::
@@ -23,7 +24,7 @@ _MagikarpSalesmanText1::
     done
 
 _MagikarpSalesmanNoText::
-	text "Live the life,"
+	text "Live life,"
 	line "man!"
 	cont "Do crazy shit!"
 	done

@@ -1,5 +1,5 @@
 _VermilionGymText_5cb6d::
-	text "If you win the"
+	text "If you like to"
 	line "gamble, i tell you"
 	cont "i'm your man!"
 

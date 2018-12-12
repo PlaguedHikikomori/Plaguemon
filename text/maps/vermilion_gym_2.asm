@@ -1,6 +1,6 @@
 _VermilionGymText_5cb72::
-	text "I don't share you"
-	line "greed!"
+	text "I don't share"
+	line "your greed!"
 
 	para "The only card i"
 	line "need is..."
@@ -23,7 +23,7 @@ _VermilionGymText_5cb77::
 	para "You'll need that"
 	line "in every journey!"
 	
-	para "Also this.."
+	para "Take also this:"
 	done
 
 _ReceivedTM24Text::
@@ -44,7 +44,7 @@ _TM24ExplanationText::
 
 _TM24NoRoomText::
 	text "There should be"
-	line "always space for"
+	line "always room for"
 	cont "alcohol!"
 	done
 
@@ -61,7 +61,7 @@ _ReceivedThunderbadgeText::
 _VermilionGymBattleText1::
 	text "When I followed"
 	line "MOTORHEAD, LEMMY"
-	cont "fucked a lot!"
+	cont "banged a lot!"
 	done
 
 _VermilionGymEndBattleText1::
@@ -72,7 +72,7 @@ _VermilionGymAfterBattleText1::
 	text "If the door are"
 	line "closed.."
 
-	para "Probably he is"
+	para "He's probably"
 	line "fucking groupies"
 	done
 
@@ -89,7 +89,7 @@ _VermilionGymAfterBattleText2::
 	done
 
 _VermilionGymBattleText3::
-	text "Ehy.."
+	text "Hey.."
 	line "bring some girls!"
 	done
 

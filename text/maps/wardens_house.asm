@@ -25,7 +25,7 @@ _WardenTeethText1::
 _WardenTeethText2::
 	db $0
 	para "The WARDEN popped"
-	line "in his teeth!"
+	line "his teeth!"
 	prompt
 
 _WardenThankYouText::
@@ -34,8 +34,8 @@ _WardenThankYouText::
 	cont "understand a word"
 	cont "that I said."
 
-	para "I couldn't work"
-	line "that way."
+	para "There was no way"
+	line "i could work like that."
 	cont "Let me give you"
 	cont "something for"
 	cont "your trouble."
@@ -69,7 +69,7 @@ _HM04ExplanationText::
 
 _HM04NoRoomText::
 	text "Your pack is"
-	line "stuffed full!"
+	line "fully stuffed!"
 	done
 
 _FuchsiaHouse2Text_75176::

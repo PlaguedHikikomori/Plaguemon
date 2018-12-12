@@ -55,7 +55,7 @@ _Route17EndBattleText4::
 
 _Route17AfterBattleText4::
 	text "Are you looking"
-	line "for adventure?"
+	line "for an adventure?"
 	done
 
 _Route17BattleText5::
@@ -87,7 +87,7 @@ _Route17EndBattleText6::
 _Route17AfterBattleText6::
 	text "Maybe some #MON"
 	line "need element"
-	cont "STONEs to evolve."
+	cont "STONES to evolve."
 	done
 
 _Route17BattleText7::
@@ -176,9 +176,9 @@ _Route17Text13::
 	done
 
 _Route17Text14::
-	text "ROUTE 17"
-	line "CELADON CITY -"
-	cont "FUCHSIA CITY"
+	text "STREET 17"
+	line "NEO CEL -"
+	cont "NEO FUX"
 	done
 
 _Route17Text15::
@@ -186,10 +186,10 @@ _Route17Text15::
 
 	para "Don't throw the"
 	line "game, throw #"
-	cont "BALLs instead!"
+	cont "VIALs instead!"
 	done
 
 _Route17Text16::
-	text "CYCLING ROAD"
+	text "SKATE ROAD"
 	line "Slope ends here!"
 	done

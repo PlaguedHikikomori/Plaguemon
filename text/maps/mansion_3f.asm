@@ -32,10 +32,10 @@ _Mansion3Text5::
 	text "Diary: Feb. 12"
 	line "6 days passed.."
 
-	para "It contues mutating"
-	line "every second.."
-	cont "It's out of our"
-	cont "control.."
+	para "It keeps on"
+	line "mutating every"
+	cont "second. It's out"
+	cont "of our control..."
 	
-	para "We left.."
+	para "We left..."
 	done

@@ -21,7 +21,7 @@ _Route16Text4::
 	done
 
 _Route16Text5::
-	text "ROUTE 16"
-	line "CELADON CITY -"
-	cont "FUCHSIA CITY"
+	text "STREET 16"
+	line "NEO CEL -"
+	cont "NEO FUX"
 	done

@@ -23,11 +23,11 @@ TransformEffect_:
 	jr z, .transformEffect
 	ld hl, wEnemyBattleStatus2
 .transformEffect
-; animation(s) played are different if target has Substitute up
-	bit HasSubstituteUp, [hl]
+; animation(s) played are different if target has Disciple up
+	bit HasDiscipleUp, [hl]
 	push af
-	ld hl, HideSubstituteShowMonAnim
-	ld b, BANK(HideSubstituteShowMonAnim)
+	ld hl, HideDiscipleShowMonAnim
+	ld b, BANK(HideDiscipleShowMonAnim)
 	call nz, Bankswitch
 	ld a, [wOptions]
 	add a
@@ -38,8 +38,8 @@ TransformEffect_:
 	ld b, BANK(AnimationTransformMon)
 .gotAnimToPlay
 	call Bankswitch
-	ld hl, ReshowSubstituteAnim
-	ld b, BANK(ReshowSubstituteAnim)
+	ld hl, ReshowDiscipleAnim
+	ld b, BANK(ReshowDiscipleAnim)
 	pop af
 	call nz, Bankswitch
 	pop bc

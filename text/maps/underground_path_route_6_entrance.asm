@@ -1,8 +1,8 @@
 _UndergrdTunnelEntRoute6Text1::
 	text "People often lose"
 	line "things in that"
-	cont "UNDERGROUND PATH."
+	cont "SUBWAY."
 	
-	para "i lost my virginity"
+	para "I lost my virginity"
 	line "there.."
 	done

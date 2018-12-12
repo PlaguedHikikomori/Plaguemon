@@ -71,7 +71,7 @@ AttackAnimationPointers:
 	dw StrengthAnim
 	dw AbsorbAnim
 	dw MegaDrainAnim
-	dw LeechSeedAnim
+	dw GrowCannabisAnim
 	dw GrowthAnim
 	dw RazorLeafAnim
 	dw SolarBeamAnim
@@ -127,7 +127,7 @@ AttackAnimationPointers:
 	dw FireBlastAnim
 	dw WaterfallAnim
 	dw ClampAnim
-	dw SwiftAnim
+	dw ShurikenAnim
 	dw SkullBashAnim
 	dw SpikeCannonAnim
 	dw ConstrictAnim
@@ -162,7 +162,7 @@ AttackAnimationPointers:
 	dw TriAttackAnim
 	dw SuperFangAnim
 	dw SlashAnim
-	dw SubstituteAnim
+	dw DiscipleAnim
 	dw StruggleAnim
 	dw ShowPicAnim
 	dw EnemyFlashAnim
@@ -608,7 +608,7 @@ MegaDrainAnim:
 	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
-LeechSeedAnim:
+GrowCannabisAnim:
 	db $46,$48,$1B
 	db $55,$4D,$1C
 	db $FF
@@ -935,7 +935,7 @@ ClampAnim:
 	db $06,$83,$23
 	db $FF
 
-SwiftAnim:
+ShurikenAnim:
 	db $43,$80,$3F
 	db $FF
 
@@ -1124,10 +1124,10 @@ SlashAnim:
 	db $06,$A2,$0F
 	db $FF
 
-SubstituteAnim:
+DiscipleAnim:
 	db SE_SLIDE_MON_OFF, $A3
 	db $08,$FF,$47
-	db SE_SUBSTITUTE_MON, $FF
+	db SE_DISCIPLE_MON, $FF
 	db $FF
 
 BallTossAnim:
