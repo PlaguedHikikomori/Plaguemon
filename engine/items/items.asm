@@ -3096,7 +3096,9 @@ CheckMapForMon:
 
 ItemUseKetamine:
     ld hl,SniffedText
-	ld a, $C0
+	ld a, [wd736]
+	set 6, a
+	set 7, a
     ld [wd736], a
 	jp PrintText
 	
