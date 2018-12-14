@@ -2129,6 +2129,8 @@ INCLUDE "engine/items/tm_prices.asm"
 SECTION "bank1F",ROMX,BANK[$1F]
 
 INCLUDE "engine/overworld/shmup.asm"
+INCLUDE "engine/overworld/blinking.asm"
+INCLUDE "engine/overworld/disclamer.asm"
 CityStuff:		   INCBIN  "gfx/citystuff.2bpp"
 CemeteryStuff:	   INCBIN  "gfx/cemeterystuff.2bpp"
 CyberStuff:		   INCBIN  "gfx/cyberstuff.2bpp"
