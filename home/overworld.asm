@@ -42,9 +42,34 @@ EnterMap::
 
 OverworldLoop::
     call DelayFrame
-OverworldLoopLessDelay::
+OverworldLoopLessDelay:
     callba Blinking
 	callba FalloutLoop
+	call Random   ;------------------------------------
+	cp $C5
+	jp nz, .noMind
+	call Random
+	cp $EF
+	jr z, .mind
+	cp $34
+	jr z, .mind
+	cp $16
+	jr z, .mind
+	cp $82
+	jr z, .mind
+	cp $56
+	jr z, .mind
+	cp $44
+	jr z, .mind
+	cp $12
+	jr z, .mind
+	cp $AA
+	jr z, .mind
+	cp $26
+	jr nz, .noMind
+.mind
+	callba InternalThought ;-------------------------
+.noMind
 	ld a, [hJoyPressed]
 	cp SELECT
 	jr nz, .noburp
