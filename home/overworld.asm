@@ -812,7 +812,6 @@ HandleFlyWarpOrDungeonWarp::
 	call Delay3
 	xor a
 	ld [wBattleResult], a
-	ld [wWalkBikeSurfState], a
 	ld [wIsInBattle], a
 	ld [wMapPalOffset], a
 	ld hl, wd732
