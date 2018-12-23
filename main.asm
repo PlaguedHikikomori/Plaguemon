@@ -18,6 +18,8 @@ INCLUDE "home.asm"
 
 SECTION "bank1",ROMX,BANK[$1]
 
+INCLUDE "engine/overworld/internalthought.asm"
+
 INCLUDE "engine/overworld/npc_stab.asm"
 
 INCLUDE "engine/overworld/tilepaircollision.asm"
@@ -814,11 +816,11 @@ PersianPicFront::      INCBIN "pic/bmon/persian.pic"
 MarowakPicFront::      INCBIN "pic/bmon/marowak.pic"
 MarowakPicBack::       INCBIN "pic/monback/marowakb.pic"
 HaunterPicFront::      INCBIN "pic/bmon/haunter.pic"
-HaunterPicBack::       INCBIN "pic/monback/haunterb.pic"
+
 AbraPicFront::         INCBIN "pic/bmon/abra.pic"
-AbraPicBack::          INCBIN "pic/monback/abrab.pic"
+
 AlakazamPicFront::     INCBIN "pic/bmon/alakazam.pic"
-AlakazamPicBack::      INCBIN "pic/monback/alakazamb.pic"
+
 PidgeottoPicFront::    INCBIN "pic/bmon/pidgeotto.pic"
 PidgeottoPicBack::     INCBIN "pic/monback/pidgeottob.pic"
 PidgeotPicFront::      INCBIN "pic/bmon/pidgeot.pic"
@@ -2129,6 +2131,8 @@ INCLUDE "engine/items/tm_prices.asm"
 SECTION "bank1F",ROMX,BANK[$1F]
 
 INCLUDE "engine/overworld/shmup.asm"
+INCLUDE "engine/overworld/blinking.asm"
+INCLUDE "engine/overworld/disclamer.asm"
 CityStuff:		   INCBIN  "gfx/citystuff.2bpp"
 CemeteryStuff:	   INCBIN  "gfx/cemeterystuff.2bpp"
 CyberStuff:		   INCBIN  "gfx/cyberstuff.2bpp"

@@ -2287,7 +2287,8 @@ wPrize2Price:: ; d143
 
 wPrize3Price:: ; d145
 	ds 2
-
+ 
+wSineCounter:: ;d147
 	ds 1
 
 wLinkBattleRandomNumberList:: ; d148

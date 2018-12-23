@@ -809,6 +809,9 @@ CheckNumAttacksLeft:
 HandleEnemyMonFainted:
 	xor a
 	ld [wInHandlePlayerMonFainted], a
+	coord hl, 17, 5
+	lb bc, 1, 3
+	call ClearScreenArea ; Clear the enemy's Pokémon status status
 	call FaintEnemyPokemon
 	call AnyPartyAlive
 	ld a, d
@@ -881,8 +884,11 @@ FaintEnemyPokemon:
 	coord hl, 12, 10
 	coord de, 12, 11            ;Hiki, punto di slide pokemon morto
 	call SlideDownFaintedMonPic
-	coord hl, 10, 0             ;Hiki, cordinate hud nemico
-	lb bc, 3, 10
+	coord hl, 10, 0
+	lb bc, 2, 10
+	call ClearScreenArea
+	coord hl, 11, 2
+	lb bc, 1, 9
 	call ClearScreenArea        ;Hiki, pulite qui
 	ld a, [wIsInBattle]
 	dec a
@@ -1080,6 +1086,9 @@ PlayBattleVictoryMusic:
 HandlePlayerMonFainted:
 	ld a, 1
 	ld [wInHandlePlayerMonFainted], a
+	coord hl, 0, 5
+	lb bc, 1, 3
+	call ClearScreenArea ; Clear the player's Pokémon status
 	call RemoveFaintedPlayerMon
 	call AnyPartyAlive     ; test if any more mons are alive
 	ld a, d
@@ -1384,6 +1393,9 @@ SlideTrainerPicOffScreen:
 
 ; send out a trainer's mon
 EnemySendOut:
+	coord hl, 17, 5
+	lb bc, 1, 3
+	call ClearScreenArea ; Clear the enemy's Pokémon status status
 	ld hl,wPartyGainExpFlags
 	xor a
 	ld [hl],a
@@ -1833,6 +1845,9 @@ LoadEnemyMonFromParty:
 	ret
 
 SendOutMon:
+	coord hl, 0, 5
+	lb bc, 1, 3
+	call ClearScreenArea ; Clear the players's Pokémon status status
 	callab PrintSendOutMonMessage
 	ld hl, wEnemyMonHP
 	ld a, [hli]
@@ -1951,13 +1966,10 @@ DrawPlayerHUDAndHPBar:
 	ld de, wLoadedMonLevel
 	ld bc, wBattleMonPP - wBattleMonLevel
 	call CopyData
-	coord hl, 3, 0   ;Hiki, posizione livello mutazione pokemon giocatore
-	push hl
-	coord hl, 0, 5
+	coord hl, 0, 5 ; Pokémon status coords
 	ld de, wLoadedMonStatus
 	call PrintStatusConditionNotFainted
-	pop hl
-	;jr nz, .doNotPrintLevel
+	coord hl, 3, 0 ; Pokémon level coords
 	call PrintLevel
 .doNotPrintLevel
 	ld a, [wLoadedMonSpecies]
@@ -1995,7 +2007,10 @@ DrawEnemyHUDAndHPBar:
 	xor a
 	ld [H_AUTOBGTRANSFERENABLED], a
 	coord hl, 10, 0
-	lb bc, 3, 10
+	lb bc, 2, 10
+	call ClearScreenArea
+	coord hl, 11, 2
+	lb bc, 1, 9
 	call ClearScreenArea
 	;callab PlaceEnemyHUDTiles    -posiziona striscia nera pokemon avversario
 	ld de, wEnemyMonNick
@@ -2422,11 +2437,10 @@ UseBagItem:
 	call AddNTimes
 	xor a
 	ld [hli], a
-	ld [hl], a ; set mon's status to 0 ; set the enemy's pokémon HP to 0
-	call LoadScreenTilesFromBuffer2
-	;call ReloadPlayerMonPic
+	ld [hl], a ; set the enemy's pokémon HP to 0
+	call ReloadPlayerMonPic
 	call BackgroundBattle
-	call LoadHpBarAndStatusTilePatterns
+	call LoadHudAndHpBarAndStatusTilePatterns
 	call DrawPlayerHUDAndHPBar
 	call ClearEnemyHud
 	call ClearEnemyMonSprite
@@ -2434,35 +2448,44 @@ UseBagItem:
 	pop hl ; remove the return address from the stack
 	jr z, .battleWon  ; if the enemy has no other pokémons, win the battle
 	push hl ; add the return address to the stack
-	call EnemySendOut
-	ret
+	jp EnemySendOut
 .battleWon
 	ld a, $0 ; the player has won the battle
 	ld [wBattleResult], a
 	jp TrainerBattleVictory
 
 ReloadPlayerMonPic:
-	call LoadBattleMonFromParty
+	ld a, [wSpriteFlipped]
+	push af ; preserve af
+	ld a, 1
+	ld [wSpriteFlipped], a  ; flip the sprite
 	ld a, [wBattleMonSpecies2]
 	ld [wcf91], a
-	ld hl, vSprites
-	ld de, vBackPic
-	call LoadMonFrontSprite
+	ld [wd0b5], a
+	call GetMonHeader
+	predef LoadMonBackPic
+	coord hl, 1, 5
+	ld a, [hStartTileID]	
+	add $31
+	call CopyUncompressedPicToHL
+	pop af
+	ld [wSpriteFlipped], a
 	ret
-	
+
 ClearEnemyMonSprite:
 	coord hl, 12, 5
 	lb bc, 7, 8
 	call ClearScreenArea
-	call DelayFrames
-	ret
+	jp DelayFrames
 	
 ClearEnemyHud:
 	coord hl, 10, 0
-	lb bc, 3, 10
+	lb bc, 2, 10
 	call ClearScreenArea
-	call DelayFrames
-	ret
+	coord hl, 11, 2
+	lb bc, 1, 9
+	call ClearScreenArea
+	jp DelayFrames
 	
 ItemsCantBeUsedHereText:
 	TX_FAR _ItemsCantBeUsedHereText

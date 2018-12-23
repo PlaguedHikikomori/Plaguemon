@@ -324,6 +324,10 @@ LoadSpinnerArrowTiles:
 	ld a, [hl]
 	ld [wSpriteStateData1 + 2], a
 	ld a, [wCurMapTileset]
+	cp OVERWORLD
+	ld hl, OverworldSpinnerArrows
+	jr z, .asm_44ff6
+	ld a, [wCurMapTileset]
 	cp FACILITY
 	ld hl, FacilitySpinnerArrows
 	jr z, .asm_44ff6
@@ -399,6 +403,19 @@ vGymSpinner EQU vTileset + GYM_SPINNER
 	spinner Gym_GFX, GYM_SPINNER + $010, 1, vGymSpinner + $10
 	spinner Gym_GFX, GYM_SPINNER + $100, 1, vGymSpinner + $100
 	spinner Gym_GFX, GYM_SPINNER + $110, 1, vGymSpinner + $110
+	
+OverworldSpinnerArrows:
+OVERWORLD_SPINNER EQU $20 * $10
+vOverworldSpinner EQU vTileset + OVERWORLD_SPINNER
+
+	spinner SpinnerArrowAnimTiles, $00, 1, vFacilitySpinner
+	spinner SpinnerArrowAnimTiles, $10, 1, vFacilitySpinner + $10
+	spinner SpinnerArrowAnimTiles, $20, 1, vFacilitySpinner + $100
+	spinner SpinnerArrowAnimTiles, $30, 1, vFacilitySpinner + $110
+	spinner Overworld_GFX, OVERWORLD_SPINNER + $000, 1, vOverworldSpinner
+	spinner Overworld_GFX, OVERWORLD_SPINNER + $010, 1, vOverworldSpinner + $10
+	spinner Overworld_GFX, OVERWORLD_SPINNER + $100, 1, vOverworldSpinner + $100
+	spinner Overworld_GFX, OVERWORLD_SPINNER + $110, 1, vOverworldSpinner + $110
 
 SpinnerPlayerFacingDirections:
 ; This isn't the order of the facing directions.  Rather, it's a list of

@@ -10,29 +10,23 @@ FalloutLoop::
 	ld a, $03
 	cp c
 	ret nz
-	call PoisonAllMonsters
-	ret
 	
 PoisonAllMonsters:
-	ld bc,wPartyMon1Status - wPartyMon1
-.poisonloop
-	ld a, [wPartyMon6Status]
-	cp $88
-	ret z
-	ld hl,wPartyMons
-    add hl,bc
+	ld hl, wPartyMon1Status ; load the first Pokémon status pointer
+	ld a, [wPartyCount] ; load the number of Pokémon in the player's party
+	ld d, a ; move it to d
+.poisonAllPartyLoop
 	ld a, $88
-	ld [hl], a
-    ld a, $2C 
-	ld e, a
-	xor a
-	ld d, a
-	push bc
-	pop hl
-	add hl,de
-	push hl
-	pop bc
-	jp .poisonloop
+	cp [hl] ; is the Pokémon already poisoned?
+	jr z, .checkCounter
+	ld [hl], a ; poison the Pokémon
+	ld bc, wPartyMon2Status - wPartyMon1Status ; load the value between the two addresses
+	add hl, bc ; add it to hl
+.checkCounter
+	dec d
+	jr nz, .poisonAllPartyLoop
+	ret
+
 
 	
 	
