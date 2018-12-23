@@ -158,7 +158,7 @@ AttackAnimationPointers:
 	dw RockSlideAnim
 	dw HyperFangAnim
 	dw SharpenAnim
-	dw ConversionAnim
+	dw KashiraSwapAnim
 	dw TriAttackAnim
 	dw SuperFangAnim
 	dw SlashAnim
@@ -1101,7 +1101,7 @@ SharpenAnim:
 	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
-ConversionAnim:
+KashiraSwapAnim:
 	db SE_DARK_SCREEN_FLASH, $9F
 	db $46,$FF,$21
 	db $46,$FF,$22

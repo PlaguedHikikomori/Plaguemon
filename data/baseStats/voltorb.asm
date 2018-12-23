@@ -4,8 +4,8 @@ db 30 ; base attack
 db 50 ; base defense
 db 110 ; base speed
 db 55 ; base special
-db ELECTRIC ; species type 1
-db ELECTRIC ; species type 2
+db PUPPET ; species type 1
+db GHOST ; species type 2
 db 190 ; catch rate
 db 103 ; base exp yield
 INCBIN "pic/bmon/voltorb.pic",0,1 ; 55, sprite dimensions

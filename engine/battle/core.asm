@@ -3,7 +3,7 @@ BattleCore:
 ; These are move effects (second value from the Moves table in bank $E).
 ResidualEffects1:
 ; most non-side effects
-	db CONVERSION_EFFECT
+	db KASHIRA_SWAP_EFFECT
 	db HAZE_EFFECT
 	db SWITCH_AND_TELEPORT_EFFECT
 	db MIST_EFFECT
@@ -5575,7 +5575,7 @@ MoveHitTest:
 ; if move effect is from $12 to $19 inclusive or $3a to $41 inclusive
 ; i.e. the following moves
 ; GROWL, TAIL WHIP, LEER, STRING SHOT, SAND-ATTACK, SMOKESCREEN, KINESIS,
-; FLASH, CONVERSION*, HAZE*, SCREECH, LIGHT SCREEN*, REFLECT*
+; FLASH, KASHIRA_SWAP*, HAZE*, SCREECH, LIGHT SCREEN*, REFLECT*
 ; the moves that are marked with an asterisk are not affected since this
 ; function is not called when those moves are used
 	ld a,[wEnemyBattleStatus2]
@@ -7246,20 +7246,20 @@ MoveEffectPointerTable:
 	 dw StatModifierDownEffect    ; SPECIAL_DOWN1_EFFECT
 	 dw StatModifierDownEffect    ; ACCURACY_DOWN1_EFFECT
 	 dw StatModifierDownEffect    ; EVASION_DOWN1_EFFECT
-	 dw ConversionEffect          ; CONVERSION_EFFECT
+	 dw KashiraSwapEffect         ; KASHIRA_SWAP_EFFECT
 	 dw HazeEffect                ; HAZE_EFFECT
 	 dw BideEffect                ; BIDE_EFFECT
 	 dw ThrashPetalDanceEffect    ; THRASH_PETAL_DANCE_EFFECT
 	 dw SwitchAndTeleportEffect   ; SWITCH_AND_TELEPORT_EFFECT
 	 dw TwoToFiveAttacksEffect    ; TWO_TO_FIVE_ATTACKS_EFFECT
 	 dw TwoToFiveAttacksEffect    ; unused effect
-	 dw FlinchSideEffect           ; FLINCH_SIDE_EFFECT1
+	 dw FlinchSideEffect          ; FLINCH_SIDE_EFFECT1
 	 dw SleepEffect               ; SLEEP_EFFECT
 	 dw PoisonEffect              ; POISON_SIDE_EFFECT2
 	 dw FreezeBurnParalyzeEffect  ; BURN_SIDE_EFFECT2
 	 dw FreezeBurnParalyzeEffect  ; unused effect
 	 dw FreezeBurnParalyzeEffect  ; PARALYZE_SIDE_EFFECT2
-	 dw FlinchSideEffect           ; FLINCH_SIDE_EFFECT2
+	 dw FlinchSideEffect          ; FLINCH_SIDE_EFFECT2
 	 dw OneHitKOEffect            ; OHKO_EFFECT
 	 dw ChargeEffect              ; CHARGE_EFFECT
 	 dw $0000                     ; SUPER_FANG_EFFECT
@@ -8674,8 +8674,8 @@ MoveWasDisabledText:
 PayDayEffect:
 	jpab PayDayEffect_
 
-ConversionEffect:
-	jpab ConversionEffect_
+KashiraSwapEffect:
+	jpab KashiraSwapEffect_
 
 HazeEffect:
 	jpab HazeEffect_

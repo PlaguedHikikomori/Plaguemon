@@ -14,7 +14,7 @@ dw PorygonPicBack
 ; attacks known at lvl 0
 db TACKLE
 db SHARPEN
-db CONVERSION
+db 0
 db 0
 db 0 ; growth rate
 ; learnset

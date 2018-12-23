@@ -159,7 +159,7 @@ const_value = 1
 	const ROCK_SLIDE   ; 9d
 	const HYPER_FANG   ; 9e
 	const SHARPEN      ; 9f
-	const CONVERSION   ; a0
+	const KASHIRA_SWAP ; a0
 	const TRI_ATTACK   ; a1
 	const SUPER_FANG   ; a2
 	const SLASH        ; a3

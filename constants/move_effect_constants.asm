@@ -21,14 +21,14 @@ const_value = 0
 	const ACCURACY_UP1_EFFECT        ; $0E
 	const EVASION_UP1_EFFECT         ; $0F
 	const PAY_DAY_EFFECT             ; $10
-	const SHURIKEN_EFFECT               ; $11
+	const SHURIKEN_EFFECT            ; $11
 	const ATTACK_DOWN1_EFFECT        ; $12
 	const DEFENSE_DOWN1_EFFECT       ; $13
 	const SPEED_DOWN1_EFFECT         ; $14
 	const SPECIAL_DOWN1_EFFECT       ; $15
 	const ACCURACY_DOWN1_EFFECT      ; $16
 	const EVASION_DOWN1_EFFECT       ; $17
-	const CONVERSION_EFFECT          ; $18
+	const KASHIRA_SWAP_EFFECT        ; $18
 	const HAZE_EFFECT                ; $19
 	const BIDE_EFFECT                ; $1A
 	const THRASH_PETAL_DANCE_EFFECT  ; $1B

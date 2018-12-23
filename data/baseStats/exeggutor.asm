@@ -4,8 +4,8 @@ db 95 ; base attack
 db 85 ; base defense
 db 55 ; base speed
 db 125 ; base special
-db GRASS ; species type 1
-db PSYCHIC ; species type 2
+db PUPPET ; species type 1
+db PUPPET ; species type 2
 db 45 ; catch rate
 db 212 ; base exp yield
 INCBIN "pic/bmon/exeggutor.pic",0,1 ; 77, sprite dimensions
