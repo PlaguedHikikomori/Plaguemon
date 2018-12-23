@@ -89,7 +89,7 @@ HealEffect_:
 	call BankswitchEtoF
 	ld a, [H_WHOSETURN]
 	and a
-	coord hl, 10, 9
+	coord hl, 2, 2
 	ld a, $1
 	jr z, .updateHPBar
 	coord hl, 2, 2

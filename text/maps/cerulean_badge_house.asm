@@ -56,8 +56,9 @@ _CeruleanHouse2Text_74ea0::
 	prompt
 
 _CeruleanHouse2Text_74ea5::
-	text "#MON up to lv 50"
-	line "will obey you."
+	text "#MON up to"
+	line "lv 50 will obey"
+	line "you."
 
 	para "Any higher, they"
 	line "become unruly!"
