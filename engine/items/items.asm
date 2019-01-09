@@ -490,7 +490,7 @@ ItemUseSafariBall:
 
 .skip6
 	ld a, [wEnemyMonPartyPos]
-	ld [wWhichPokemon], a ; save the current enemy pokémon's party position
+	ld [wUnusedD119], a ; save the current enemy pokémon's party position
 	ld a,[wcf91]
 	push af
 	ld a,[wEnemyMonSpecies2]
@@ -576,7 +576,7 @@ ItemUseSafariBall:
 	ret nz ; if so, don't remove a ball from the bag
 
 ; Restore the current enemy pokémon's party position
-	ld a, [wWhichPokemon]
+	ld a, [wUnusedD119]
 	ld [wEnemyMonPartyPos], a
 	
 ; Remove a ball from the bag.
