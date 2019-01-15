@@ -44,7 +44,7 @@ AttackAnimationPointers:
 	dw LeerAnim
 	dw BiteAnim
 	dw GrowlAnim
-	dw RoarAnim
+	dw VentriloquyAnim
 	dw SingAnim
 	dw SupersonicAnim
 	dw SonicBoomAnim
@@ -78,8 +78,8 @@ AttackAnimationPointers:
 	dw PoisonPowderAnim
 	dw StunSporeAnim
 	dw SleepPowderAnim
-	dw PedalDanceAnim
-	dw StringShotAnim
+	dw ParanoiaAnim
+	dw CursedWiresAnim
 	dw DragonRageAnim
 	dw FireSpinAnim
 	dw ThunderShockAnim
@@ -94,7 +94,7 @@ AttackAnimationPointers:
 	dw ConfusionAnim
 	dw PsychicAnim
 	dw HypnosisAnim
-	dw MeditateAnim
+	dw DarkVoodooAnim
 	dw AgilityAnim
 	dw QuickAttackAnim
 	dw RageAnim
@@ -135,7 +135,7 @@ AttackAnimationPointers:
 	dw KinesisAnim
 	dw SoftboiledAnim
 	dw HiJumpKickAnim
-	dw GlareAnim
+	dw CreepyStareAnim
 	dw DreamEaterAnim
 	dw PoisonGasAnim
 	dw BarrageAnim
@@ -188,8 +188,8 @@ AttackAnimationPointers:
 	dw PoisonAnim
 	dw SleepPlayerAnim
 	dw SleepEnemyAnim
-	dw ConfusedPlayerAnim
-	dw ConfusedEnemyAnim
+	dw SubjugatedPlayerAnim
+	dw SubjugatedEnemyAnim
 	dw FaintAnim
 	dw BallTossAnim
 	dw BallShakeAnim
@@ -441,7 +441,7 @@ GrowlAnim:
 	db $46,$2C,$12
 	db $FF
 
-RoarAnim:
+VentriloquyAnim:
 	db $46,$2D,$15
 	db $46,$2D,$15
 	db $46,$2D,$15
@@ -642,13 +642,15 @@ SleepPowderAnim:
 	db $06,$4E,$36
 	db $FF
 
-PedalDanceAnim:
+ParanoiaAnim:
     db SE_FLASH_SCREEN_LONG, $89
 	db $46,$2E,$12
 	db $FF
 
-StringShotAnim:
+CursedWiresAnim:
+	db SE_DARK_SCREEN_PALETTE, $FF
 	db $08,$50,$37
+	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
 DragonRageAnim: ;JUDGEMENT, WRATH OF GOD
@@ -726,7 +728,7 @@ HypnosisAnim:
 	db SE_FLASH_SCREEN_LONG, $5E
 	db $FF
 
-MeditateAnim:
+DarkVoodooAnim:
 	db SE_LIGHT_SCREEN_PALETTE, $5F
 	db $46,$FF,$43
 	db SE_DARK_SCREEN_FLASH, $FF
@@ -865,7 +867,7 @@ ReflectAnim:
 	db $FF
 
 FocusEnergyAnim:
-	db SE_SHOOT_MANY_BALLS_UPWARD
+	db SE_SHOOT_MANY_BALLS_UPWARD, $49
 	db $FF
 
 BideAnim:
@@ -975,7 +977,7 @@ HiJumpKickAnim:
 	db $46,$87,$04
 	db $FF
 
-GlareAnim:
+CreepyStareAnim:
 	db SE_DARK_SCREEN_PALETTE, $48
 	db SE_DARK_SCREEN_FLASH, $88
 	db SE_DARK_SCREEN_FLASH, $FF
@@ -1236,12 +1238,12 @@ SleepEnemyAnim:
 	db $10,$9B,$3B
 	db $FF
 
-ConfusedPlayerAnim:
+SubjugatedPlayerAnim:
 	db $08,$84,$25
 	db $08,$84,$25
 	db $FF
 
-ConfusedEnemyAnim:
+SubjugatedEnemyAnim:
 	db $08,$84,$26
 	db $08,$84,$26
 	db $FF

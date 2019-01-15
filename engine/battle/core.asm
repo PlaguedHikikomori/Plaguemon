@@ -8,7 +8,7 @@ ResidualEffects1:
 	db SWITCH_AND_TELEPORT_EFFECT
 	db MIST_EFFECT
 	db FOCUS_ENERGY_EFFECT
-	db CONFUSION_EFFECT
+	db SUBJUGATE_EFFECT
 	db HEAL_EFFECT
 	db TRANSFORM_EFFECT
 	db LIGHT_SCREEN_EFFECT
@@ -29,7 +29,7 @@ SetDamageEffects:
 ResidualEffects2:
 ; non-side effects not included in ResidualEffects1
 ; stat-affecting moves, sleep-inflicting moves, and Bide
-; e.g., Meditate, Bide, Hypnosis
+; e.g., Dark Voodoo, Bide, Hypnosis
 	db $01
 	db ATTACK_UP1_EFFECT
 	db DEFENSE_UP1_EFFECT
@@ -3280,7 +3280,7 @@ CheckIfPlayerNeedsToChargeUp:
 PlayerCanExecuteChargingMove:
 	ld hl,wPlayerBattleStatus1
 	res ChargingUp,[hl] ; reset charging up and invulnerability statuses if mon was charging up for an attack
-	                    ; being fully paralyzed or hurting oneself in confusion removes charging up status
+	                    ; being fully paralyzed or hurting oneself in Subjugation removes charging up status
 	                    ; resulting in the Pokemon being invulnerable for the whole battle
 	res Invulnerable,[hl]
 PlayerCanExecuteMove:
@@ -3564,43 +3564,43 @@ CheckPlayerStatusConditions:
 	ld hl,wPlayerDisabledMove
 	ld a,[hl]
 	and a
-	jr z,.ConfusedCheck
+	jr z,.SubjugatedCheck
 	dec a
 	ld [hl],a
 	and $f ; did Disable counter hit 0?
-	jr nz,.ConfusedCheck
+	jr nz,.SubjugatedCheck
 	ld [hl],a
 	ld [wPlayerDisabledMoveNumber],a
 	ld hl,DisabledNoMoreText
 	call PrintText
 
-.ConfusedCheck
+.SubjugatedCheck
 	ld a,[wPlayerBattleStatus1]
-	add a ; is player confused?
+	add a ; is player Subjugated?
 	jr nc,.TriedToUseDisabledMoveCheck
-	ld hl,wPlayerConfusedCounter
+	ld hl,wPlayerSubjugatedCounter
 	dec [hl]
-	jr nz,.IsConfused
+	jr nz,.IsSubjugated
 	ld hl,wPlayerBattleStatus1
-	res Confused,[hl] ; if confused counter hit 0, reset confusion status
-	ld hl,ConfusedNoMoreText
+	res Subjugated,[hl] ; if Subjugated counter hit 0, reset Subjugation status
+	ld hl,SubjugatedNoMoreText
 	call PrintText
 	jr .TriedToUseDisabledMoveCheck
-.IsConfused
-	ld hl,IsConfusedText
+.IsSubjugated
+	ld hl,IsSubjugatedText
 	call PrintText
 	xor a
 	ld [wAnimationType],a
-	ld a,CONF_ANIM - 1
+	ld a,SUBJ_ANIM - 1
 	call PlayMoveAnimation
 	call BattleRandom
 	cp a,$80 ; 50% chance to hurt itself
 	jr c,.TriedToUseDisabledMoveCheck
 	ld hl,wPlayerBattleStatus1
 	ld a,[hl]
-	and a, 1 << Confused ; if mon hurts itself, clear every other status from wPlayerBattleStatus1
+	and a, 1 << Subjugated ; if mon hurts itself, clear every other status from wPlayerBattleStatus1
 	ld [hl],a
-	call HandleSelfConfusionDamage
+	call HandleSelfSubjugationDamage
 	jr .MonHurtItselfOrFullyParalysed
 
 .TriedToUseDisabledMoveCheck
@@ -3628,7 +3628,7 @@ CheckPlayerStatusConditions:
 .MonHurtItselfOrFullyParalysed
 	ld hl,wPlayerBattleStatus1
 	ld a,[hl]
-	; clear bide, thrashing, charging up, and trapping moves such as warp (already cleared for confusion damage)
+	; clear bide, thrashing, charging up, and trapping moves such as warp (already cleared for Subjugation damage)
 	and $ff ^ ((1 << StoringEnergy) | (1 << ThrashingAbout) | (1 << ChargingUp) | (1 << UsingTrappingMove))
 	ld [hl],a
 	ld a,[wPlayerMoveEffect]
@@ -3711,12 +3711,12 @@ CheckPlayerStatusConditions:
 	push hl
 	ld hl,wPlayerBattleStatus1
 	res ThrashingAbout,[hl] ; no longer thrashing about
-	set Confused,[hl] ; confused
+	set Subjugated,[hl] ; Subjugated
 	call BattleRandom
 	and a,3
 	inc a
-	inc a ; confused for 2-5 turns
-	ld [wPlayerConfusedCounter],a
+	inc a ; Subjugated for 2-5 turns
+	ld [wPlayerSubjugatedCounter],a
 	pop hl ; skip DecrementPP
 	jp .returnToHL
 
@@ -3783,16 +3783,16 @@ DisabledNoMoreText:
 	TX_FAR _DisabledNoMoreText
 	db "@"
 
-IsConfusedText:
-	TX_FAR _IsConfusedText
+IsSubjugatedText:
+	TX_FAR _IsSubjugatedText
 	db "@"
 
 HurtItselfText:
 	TX_FAR _HurtItselfText
 	db "@"
 
-ConfusedNoMoreText:
-	TX_FAR _ConfusedNoMoreText
+SubjugatedNoMoreText:
+	TX_FAR _SubjugatedNoMoreText
 	db "@"
 
 SavingEnergyText:
@@ -3837,7 +3837,7 @@ MoveIsDisabledText:
 	TX_FAR _MoveIsDisabledText
 	db "@"
 
-HandleSelfConfusionDamage:
+HandleSelfSubjugationDamage:
 	ld hl, HurtItselfText
 	call PrintText
 	ld hl, wEnemyMonDefense
@@ -3855,7 +3855,7 @@ HandleSelfConfusionDamage:
 	push af
 	xor a
 	ld [hli], a
-	ld [wCriticalHitOrOHKO], a ; self-inflicted confusion damage can't be a Critical Hit
+	ld [wCriticalHitOrOHKO], a ; self-inflicted Subjugation damage can't be a Critical Hit
 	ld a, 40 ; 40 base power
 	ld [hli], a
 	xor a
@@ -4018,11 +4018,11 @@ ExclamationPointMoveSets:
 	db $00
 	db RECOVER, BIDE, SELFDESTRUCT, AMNESIA
 	db $00
-	db MEDITATE, AGILITY, TELEPORT, MIMIC, DOUBLE_TEAM, BARRAGE
+	db DARK_VOODOO, AGILITY, TELEPORT, MIMIC, DOUBLE_TEAM, BARRAGE
 	db $00
 	db POUND, SCRATCH, VICEGRIP, WING_ATTACK, FLY, BIND, SLAM, HORN_ATTACK, BODY_SLAM
-	db WRAP, THRASH, TAIL_WHIP, LEER, BITE, GROWL, ROAR, SING, PECK, COUNTER
-	db STRENGTH, ABSORB, STRING_SHOT, EARTHQUAKE, FISSURE, DIG, TOXIC, SCREECH, HARDEN
+	db WRAP, THRASH, TAIL_WHIP, LEER, BITE, GROWL, VENTRILOQUY, SING, PECK, COUNTER
+	db STRENGTH, ABSORB, CURSED_WIRES, EARTHQUAKE, FISSURE, DIG, TOXIC, SCREECH, HARDEN
 	db MINIMIZE, WITHDRAW, DEFENSE_CURL, METRONOME, LICK, CLAMP, CONSTRICT, POISON_GAS
 	db LEECH_LIFE, BUBBLE, FLASH, SPLASH, ACID_ARMOR, FURY_SWIPES, REST, SHARPEN, SLASH, DISCIPLE
 	db $00
@@ -4216,7 +4216,7 @@ CheckForDisobedience:
 	jr nc, .monDoesNothing
 	ld hl, WontObeyText
 	call PrintText
-	call HandleSelfConfusionDamage
+	call HandleSelfSubjugationDamage
 	jp .cannotUseMove
 .monNaps
 	call BattleRandom
@@ -4971,7 +4971,7 @@ ApplyAttackToEnemyPokemon:
 	ld b,SONICBOOM_DAMAGE ; 20
 	cp a,SONICBOOM
 	jr z,.storeDamage
-	ld b,DRAGON_RAGE_DAMAGE ; 40
+	ld b,DRAGON_RAGE_DAMAGE ; 50
 	cp a,DRAGON_RAGE
 	jr z,.storeDamage
 ; Psywave
@@ -5168,7 +5168,7 @@ ApplyAttackToPlayerPokemonDone:
 
 AttackDisciple:
 ; Unlike the two ApplyAttackToPokemon functions, Attack Disciple is shared by player and enemy.
-; Self-confusion damage as well as Hi-Jump Kick and Jump Kick recoil cause a momentary turn swap before being applied.
+; Self-Subjugation damage as well as Hi-Jump Kick and Jump Kick recoil cause a momentary turn swap before being applied.
 ; If the user has a Disciple up and would take damage because of that,
 ; damage will be applied to the other player's Disciple.
 ; Normal recoil such as from Double-Edge isn't affected by this glitch,
@@ -5597,7 +5597,7 @@ MoveHitTest:
 .enemyMistCheck
 ; if move effect is from $12 to $19 inclusive or $3a to $41 inclusive
 ; i.e. the following moves
-; GROWL, TAIL WHIP, LEER, STRING SHOT, SAND-ATTACK, SMOKESCREEN, KINESIS,
+; GROWL, TAIL WHIP, LEER, CURSED WIRES, SAND-ATTACK, SMOKESCREEN, KINESIS,
 ; FLASH, KASHIRA_SWAP*, HAZE*, SCREECH, LIGHT SCREEN*, REFLECT*
 ; the moves that are marked with an asterisk are not affected since this
 ; function is not called when those moves are used
@@ -6056,40 +6056,40 @@ CheckEnemyStatusConditions:
 	ld hl, wEnemyDisabledMove
 	ld a, [hl]
 	and a
-	jr z, .checkIfConfused
+	jr z, .checkIfSubjugated
 	dec a ; decrement disable counter
 	ld [hl], a
 	and $f ; did disable counter hit 0?
-	jr nz, .checkIfConfused
+	jr nz, .checkIfSubjugated
 	ld [hl], a
 	ld [wEnemyDisabledMoveNumber], a
 	ld hl, DisabledNoMoreText
 	call PrintText
-.checkIfConfused
+.checkIfSubjugated
 	ld a, [wEnemyBattleStatus1]
-	add a ; check if enemy mon is confused
+	add a ; check if enemy mon is Subjugated
 	jp nc, .checkIfTriedToUseDisabledMove
-	ld hl, wEnemyConfusedCounter
+	ld hl, wEnemySubjugatedCounter
 	dec [hl]
-	jr nz, .isConfused
+	jr nz, .isSubjugated
 	ld hl, wEnemyBattleStatus1
-	res Confused, [hl] ; if confused counter hit 0, reset confusion status
-	ld hl, ConfusedNoMoreText
+	res Subjugated, [hl] ; if Subjugated counter hit 0, reset Subjugation status
+	ld hl, SubjugatedNoMoreText
 	call PrintText
 	jp .checkIfTriedToUseDisabledMove
-.isConfused
-	ld hl, IsConfusedText
+.isSubjugated
+	ld hl, IsSubjugatedText
 	call PrintText
 	xor a
 	ld [wAnimationType], a
-	ld a,CONF_ANIM
+	ld a,SUBJ_ANIM
 	call PlayMoveAnimation
 	call BattleRandom
 	cp $80
 	jr c, .checkIfTriedToUseDisabledMove
 	ld hl, wEnemyBattleStatus1
 	ld a, [hl]
-	and 1 << Confused ; if mon hurts itself, clear every other status from wEnemyBattleStatus1
+	and 1 << Subjugated ; if mon hurts itself, clear every other status from wEnemyBattleStatus1
 	ld [hl], a
 	ld hl, HurtItselfText
 	call PrintText
@@ -6236,12 +6236,12 @@ CheckEnemyStatusConditions:
 	push hl
 	ld hl, wEnemyBattleStatus1
 	res ThrashingAbout, [hl] ; mon is no longer using thrash or petal dance
-	set Confused, [hl] ; mon is now confused
+	set Subjugated, [hl] ; mon is now Subjugated
 	call BattleRandom
 	and $3
 	inc a
-	inc a ; confused for 2-5 turns
-	ld [wEnemyConfusedCounter], a
+	inc a ; Subjugated for 2-5 turns
+	ld [wEnemySubjugatedCounter], a
 	pop hl ; skip DecrementPP
 	jp .enemyReturnToHL
 .checkIfUsingMultiturnMove
@@ -7294,7 +7294,7 @@ MoveEffectPointerTable:
 	 dw MistEffect                ; MIST_EFFECT
 	 dw FocusEnergyEffect         ; FOCUS_ENERGY_EFFECT
 	 dw RecoilEffect              ; RECOIL_EFFECT
-	 dw ConfusionEffect           ; CONFUSION_EFFECT
+	 dw SubjugationEffect         ; SUBJUGATE_EFFECT
 	 dw StatModifierUpEffect      ; ATTACK_UP2_EFFECT
 	 dw StatModifierUpEffect      ; DEFENSE_UP2_EFFECT
 	 dw StatModifierUpEffect      ; SPEED_UP2_EFFECT
@@ -7321,7 +7321,7 @@ MoveEffectPointerTable:
 	 dw StatModifierDownEffect    ; unused effect
 	 dw StatModifierDownEffect    ; unused effect
 	 dw StatModifierDownEffect    ; unused effect
-	 dw ConfusionSideEffect       ; CONFUSION_SIDE_EFFECT
+	 dw SubjugationSideEffect     ; SUBJUGATE_SIDE_EFFECT
 	 dw TwoToFiveAttacksEffect    ; TWINEEDLE_EFFECT
 	 dw $0000                     ; unused effect
 	 dw DiscipleEffect            ; DISCIPLE_EFFECT
@@ -8228,7 +8228,7 @@ SwitchAndTeleportEffect:
 	cp TELEPORT
 	jr z, .printText
 	ld hl, RanAwayScaredText
-	cp ROAR
+	cp VENTRILOQUY
 	jr z, .printText
 	ld hl, WasBlownAwayText
 .printText
@@ -8435,52 +8435,52 @@ FocusEnergyEffect:
 RecoilEffect:
 	jpab RecoilEffect_
 
-ConfusionSideEffect:
+SubjugationSideEffect:
 	call BattleRandom
 	cp $19 ; ~10% chance
 	ret nc
-	jr ConfusionSideEffectSuccess
+	jr SubjugationSideEffectSuccess
 
-ConfusionEffect:
+SubjugationEffect:
 	call CheckTargetDisciple
-	jr nz, ConfusionEffectFailed
+	jr nz, SubjugationEffectFailed
 	call MoveHitTest
 	ld a, [wMoveMissed]
 	and a
-	jr nz, ConfusionEffectFailed
+	jr nz, SubjugationEffectFailed
 
-ConfusionSideEffectSuccess:
+SubjugationSideEffectSuccess:
 	ld a, [H_WHOSETURN]
 	and a
 	ld hl, wEnemyBattleStatus1
-	ld bc, wEnemyConfusedCounter
+	ld bc, wEnemySubjugatedCounter
 	ld a, [wPlayerMoveEffect]
-	jr z, .confuseTarget
+	jr z, .subjugateTarget
 	ld hl, wPlayerBattleStatus1
-	ld bc, wPlayerConfusedCounter
+	ld bc, wPlayerSubjugatedCounter
 	ld a, [wEnemyMoveEffect]
-.confuseTarget
-	bit Confused, [hl] ; is mon confused?
-	jr nz, ConfusionEffectFailed
-	set Confused, [hl] ; mon is now confused
+.subjugateTarget
+	bit Subjugated, [hl] ; is mon Subjugated?
+	jr nz, SubjugationEffectFailed
+	set Subjugated, [hl] ; mon is now Subjugated
 	push af
 	call BattleRandom
 	and $3
 	inc a
 	inc a
-	ld [bc], a ; confusion status will last 2-5 turns
+	ld [bc], a ; Subjugation status will last 2-5 turns
 	pop af
-	cp CONFUSION_SIDE_EFFECT
+	cp SUBJUGATE_SIDE_EFFECT
 	call nz, PlayCurrentMoveAnimation2
-	ld hl, BecameConfusedText
+	ld hl, BecameSubjugatedText
 	jp PrintText
 
-BecameConfusedText:
-	TX_FAR _BecameConfusedText
+BecameSubjugatedText:
+	TX_FAR _BecameSubjugatedText
 	db "@"
 
-ConfusionEffectFailed:
-	cp CONFUSION_SIDE_EFFECT
+SubjugationEffectFailed:
+	cp SUBJUGATE_SIDE_EFFECT
 	ret z
 	ld c, 50
 	call DelayFrames

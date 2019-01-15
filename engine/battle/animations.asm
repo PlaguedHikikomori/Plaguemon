@@ -430,7 +430,7 @@ ShareMoveAnimations:
 	ld a,[wAnimationID]
 
 	cp a,AMNESIA
-	ld b,CONF_ANIM
+	ld b,SUBJ_ANIM
 	jr z, .replaceAnim
 
 	cp a,REST
@@ -2345,7 +2345,7 @@ IsCryMove:
 	ld a,[wAnimationID]
 	cp a,GROWL
 	jr z,.CryMove
-	cp a,ROAR
+	cp a,VENTRILOQUY
 	jr z,.CryMove
 	and a ; clear carry
 	ret
@@ -2400,7 +2400,7 @@ MoveSoundTable:
 	db SFX_BATTLE_31,         $ff,$40 ; LEER
 	db SFX_BATTLE_1E,         $00,$80 ; BITE
 	db SFX_BATTLE_0B,         $00,$c0 ; GROWL
-	db SFX_BATTLE_0B,         $00,$40 ; ROAR
+	db SFX_BATTLE_0B,         $00,$40 ; VENTRILOQUY
 	db SFX_BATTLE_35,         $00,$80 ; SING
 	db SFX_BATTLE_27,         $40,$60 ; SUPERSONIC
 	db SFX_BATTLE_27,         $00,$80 ; SONICBOOM
@@ -2434,8 +2434,8 @@ MoveSoundTable:
 	db SFX_BATTLE_1C,         $00,$80 ; POISONPOWDER
 	db SFX_BATTLE_1C,         $11,$a0 ; STUN_SPORE
 	db SFX_BATTLE_1C,         $01,$c0 ; SLEEP_POWDER
-	db SFX_BATTLE_13,         $14,$c0 ; PETAL_DANCE
-	db SFX_BATTLE_1B,         $02,$a0 ; STRING_SHOT
+	db SFX_BATTLE_13,         $14,$c0 ; PARANOIA
+	db SFX_BATTLE_1B,         $02,$a0 ; CURSED_WIRES
 	db SFX_BATTLE_29,         $f0,$80 ; DRAGON_RAGE
 	db SFX_BATTLE_29,         $20,$c0 ; FIRE_SPIN
 	db SFX_BATTLE_2F,         $00,$20 ; THUNDERSHOCK
@@ -2450,7 +2450,7 @@ MoveSoundTable:
 	db SFX_BATTLE_14,         $00,$20 ; CONFUSION
 	db SFX_PSYCHIC_M,         $00,$80 ; PSYCHIC_M
 	db SFX_BATTLE_35,         $11,$18 ; HYPNOSIS
-	db SFX_BATTLE_09,         $20,$c0 ; MEDITATE
+	db SFX_BATTLE_09,         $20,$c0 ; DARK_VOODOO
 	db SFX_FAINT_FALL,        $20,$c0 ; AGILITY
 	db SFX_BATTLE_25,         $00,$10 ; QUICK_ATTACK
 	db SFX_BATTLE_26,         $f0,$20 ; RAGE
@@ -2491,7 +2491,7 @@ MoveSoundTable:
 	db SFX_FAINT_FALL,        $18,$20 ; KINESIS
 	db SFX_BATTLE_32,         $08,$40 ; SOFTBOILED
 	db SFX_BATTLE_17,         $01,$e0 ; HI_JUMP_KICK
-	db SFX_NOT_VERY_EFFECTIVE,$09,$ff ; GLARE
+	db SFX_NOT_VERY_EFFECTIVE,$09,$ff ; CREEPY_STARE
 	db SFX_BATTLE_35,         $42,$01 ; DREAM_EATER
 	db SFX_BATTLE_1C,         $00,$ff ; POISON_GAS
 	db SFX_BATTLE_32,         $08,$e0 ; BARRAGE

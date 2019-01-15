@@ -1196,19 +1196,19 @@ _DisabledNoMoreText::
 	line "disabled no more!"
 	prompt
 
-_IsConfusedText::
+_IsSubjugatedText::
 	text "<USER>"
-	line "is confused!"
+	line "is subjugated!"
 	prompt
 
 _HurtItselfText::
-	text "It hurt itself in"
-	line "its confusion!"
+	text "it was forced to"
+	line "commit suicide!"
 	prompt
 
-_ConfusedNoMoreText::
+_SubjugatedNoMoreText::
 	text "<USER>'s"
-	line "confused no more!"
+	line "subjugated no more"
 	prompt
 
 _SavingEnergyText::
@@ -2119,9 +2119,9 @@ _DugAHoleText::
 	line "dug a hole!"
 	prompt
 
-_BecameConfusedText::
+_BecameSubjugatedText::
 	text "<TARGET>"
-	line "became confused!"
+	line "became subjugated"
 	prompt
 
 _MimicLearnedMoveText::
@@ -2169,7 +2169,7 @@ _ParalyzedMayNotAttackText::
 	prompt
 
 _DiscipleText::
-	text "He confessed a"
+	text "He professed a"
 	line "DISCIPLE!"
 	prompt
 

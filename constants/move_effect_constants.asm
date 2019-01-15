@@ -53,7 +53,7 @@ const_value = 0
 	const MIST_EFFECT                ; $2E
 	const FOCUS_ENERGY_EFFECT        ; $2F
 	const RECOIL_EFFECT              ; $30 moves like Double Edge
-	const CONFUSION_EFFECT           ; $31 Confuse Ray, Supersonic (not the move Confusion)
+	const SUBJUGATE_EFFECT           ; $31 Confuse Ray, Supersonic (not the move Confusion)
 	const ATTACK_UP2_EFFECT          ; $32
 	const DEFENSE_UP2_EFFECT         ; $33
 	const SPEED_UP2_EFFECT           ; $34
@@ -80,7 +80,7 @@ const_value = 0
 	const UNUSED_EFFECT_49           ; $49
 	const UNUSED_EFFECT_4A           ; $4A
 	const UNUSED_EFFECT_4B           ; $4B
-	const CONFUSION_SIDE_EFFECT      ; $4C
+	const SUBJUGATE_SIDE_EFFECT      ; $4C
 	const TWINEEDLE_EFFECT           ; $4D
 	const UNUSED_EFFECT_4E           ; $4E
 	const DISCIPLE_EFFECT            ; $4F

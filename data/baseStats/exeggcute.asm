@@ -4,7 +4,7 @@ db 40 ; base attack
 db 80 ; base defense
 db 40 ; base speed
 db 60 ; base special
-db PUPPET ; species type 1
+db NORMAL ; species type 1
 db PUPPET ; species type 2
 db 90 ; catch rate
 db 98 ; base exp yield

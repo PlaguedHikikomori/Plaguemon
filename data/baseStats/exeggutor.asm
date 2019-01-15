@@ -4,7 +4,7 @@ db 95 ; base attack
 db 85 ; base defense
 db 55 ; base speed
 db 125 ; base special
-db PUPPET ; species type 1
+db GHOST ; species type 1
 db PUPPET ; species type 2
 db 45 ; catch rate
 db 212 ; base exp yield

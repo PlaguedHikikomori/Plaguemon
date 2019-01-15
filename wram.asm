@@ -1719,7 +1719,7 @@ wPlayerBattleStatus1:: ; d062
 ; bit 4 - charging up for attack
 ; bit 5 - using multi-turn move (e.g. wrap)
 ; bit 6 - invulnerable to normal attack (using fly/dig)
-; bit 7 - confusion
+; bit 7 - subjugate
 	ds 1
 
 wPlayerBattleStatus2:: ; d063
@@ -1758,7 +1758,7 @@ wPlayerNumAttacksLeft::
 ; when the player is attacking multiple times, the number of attacks left
 	ds 1
 
-wPlayerConfusedCounter:: ; d06b
+wPlayerSubjugatedCounter:: ; d06b
 	ds 1
 
 wPlayerToxicCounter:: ; d06c
@@ -1775,7 +1775,7 @@ wEnemyNumAttacksLeft:: ; d06f
 ; when the enemy is attacking multiple times, the number of attacks left
 	ds 1
 
-wEnemyConfusedCounter:: ; d070
+wEnemySubjugatedCounter:: ; d070
 	ds 1
 
 wEnemyToxicCounter:: ; d071

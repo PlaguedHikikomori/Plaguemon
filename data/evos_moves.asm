@@ -456,7 +456,7 @@ Mon151_EvosMoves:
 	db 10,TRANSFORM
 	db 20,MEGA_PUNCH
 	db 30,METRONOME
-	db 40,PETAL_DANCE ;PARANOIA
+	db 40,PARANOIA
 	db 50,CROP_CIRCLES
 	db 0
 
@@ -678,7 +678,7 @@ Mon064_EvosMoves:
 	db 20,DISABLE
 	db 27,PSYBEAM
 	db 31,RECOVER
-	db 38,PETAL_DANCE
+	db 38,PARANOIA
 	db 42,REFLECT
 	db 0
 
@@ -729,7 +729,7 @@ Mon122_EvosMoves:
 	db 15,CONFUSION
 	db 23,LIGHT_SCREEN
 	db 31,DOUBLESLAP
-	db 39,MEDITATE
+	db 39,DARK_VOODOO
 	db 47,DISCIPLE
 	db 0
 
@@ -764,7 +764,7 @@ Mon024_EvosMoves:
 ;Learnset
 	db 10,POISON_STING
 	db 17,BITE
-	db 27,GLARE
+	db 27,CREEPY_STARE
 	db 36,SCREECH
 	db 47,ACID
 	db 0
@@ -805,7 +805,7 @@ Mon096_EvosMoves:
 	db 24,HEADBUTT
 	db 29,POISON_GAS
 	db 32,PSYCHIC_M
-	db 37,MEDITATE
+	db 37,DARK_VOODOO
 	db 0
 
 Mon076_EvosMoves:
@@ -1157,7 +1157,7 @@ Mon037_EvosMoves:
 	db 0
 ;Learnset
 	db 16,QUICK_ATTACK
-	db 21,ROAR
+	db 21,VENTRILOQUY
 	db 28,CONFUSE_RAY
 	db 35,FLAMETHROWER
 	db 42,FIRE_SPIN
@@ -1471,7 +1471,7 @@ Mon023_EvosMoves:
 ;Learnset
 	db 10,POISON_STING
 	db 17,BITE
-	db 24,GLARE
+	db 24,CREEPY_STARE
 	db 31,SCREECH
 	db 38,ACID
 	db 0
@@ -1701,7 +1701,7 @@ Mon097_EvosMoves:
 	db 24,HEADBUTT
 	db 33,POISON_GAS
 	db 37,PSYCHIC_M
-	db 43,MEDITATE
+	db 43,DARK_VOODOO
 	db 0
 
 Mon042_EvosMoves:
@@ -1722,7 +1722,7 @@ Mon150_EvosMoves:
 	db 0
 ;Learnset
 	db 47,TIME_WARP
-	db 58,PETAL_DANCE ;PARANOIA
+	db 58,PARANOIA
 	db 69,RECOVER
 	db 80,MIST
 	db 91,PSYCHIC_M
@@ -1900,7 +1900,7 @@ Mon065_EvosMoves:
 	db 20,DISABLE
 	db 27,PSYBEAM
 	db 31,RECOVER
-	db 38,PETAL_DANCE
+	db 38,PARANOIA
 	db 42,REFLECT
 	db 47,DISCIPLE
 	db 55,JUDGEMENT

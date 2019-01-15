@@ -13,7 +13,7 @@ dw HypnoPicFront
 dw HypnoPicFront
 ; attacks known at lvl 0
 db POUND
-db HYPNOSIS
+db CURSED_WIRES
 db DISABLE
 db CONFUSION
 db 0 ; growth rate

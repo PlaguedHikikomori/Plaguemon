@@ -45,7 +45,7 @@ const_value = 1
 	const LEER         ; 2b
 	const BITE         ; 2c
 	const GROWL        ; 2d
-	const ROAR         ; 2e
+	const VENTRILOQUY  ; 2e
 	const SING         ; 2f
 	const SUPERSONIC   ; 30
 	const SONICBOOM    ; 31
@@ -79,8 +79,8 @@ const_value = 1
 	const POISONPOWDER ; 4d
 	const STUN_SPORE   ; 4e
 	const SLEEP_POWDER ; 4f
-	const PETAL_DANCE  ; 50
-	const STRING_SHOT  ; 51
+	const PARANOIA     ; 50
+	const CURSED_WIRES ; 51
 	const DRAGON_RAGE  ; 52
 	const FIRE_SPIN    ; 53
 	const THUNDERSHOCK ; 54
@@ -95,7 +95,7 @@ const_value = 1
 	const CONFUSION    ; 5d
 	const PSYCHIC_M    ; 5e
 	const HYPNOSIS     ; 5f
-	const MEDITATE     ; 60
+	const DARK_VOODOO  ; 60
 	const AGILITY      ; 61
 	const QUICK_ATTACK ; 62
 	const RAGE         ; 63
@@ -136,7 +136,7 @@ const_value = 1
 	const KINESIS      ; 86
 	const SOFTBOILED   ; 87
 	const HI_JUMP_KICK ; 88
-	const GLARE        ; 89
+	const CREEPY_STARE ; 89
 	const DREAM_EATER  ; 8a
 	const POISON_GAS   ; 8b
 	const BARRAGE      ; 8c
@@ -206,7 +206,7 @@ const_value = STRUGGLE + 1
 	const ANIM_BC
 	const SLP_ANIM ; sleeping monster
 	const ANIM_BE
-	const CONF_ANIM ; confused monster
+	const SUBJ_ANIM ; subjugated monster
 	const ANIM_C0
 	const TOSS_ANIM ; toss Poké Ball
 	const SHAKE_ANIM ; shaking Poké Ball when catching monster

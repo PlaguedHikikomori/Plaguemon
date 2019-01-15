@@ -13,7 +13,7 @@ Flinched               EQU 3
 ChargingUp             EQU 4 ; e.g. Solar Beam, Fly
 UsingTrappingMove      EQU 5 ; e.g. Wrap
 Invulnerable           EQU 6 ; charging up Fly/Dig
-Confused               EQU 7
+Subjugated             EQU 7
 
 ; volatile statuses 2
 UsingXAccuracy    EQU 0
