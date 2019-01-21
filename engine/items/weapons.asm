@@ -216,6 +216,10 @@ FlameThrowerAnimation:
 	call ExecuteAnimation
     call BurningMan 
 	call ExecuteAnimation
+	ld a, [wBurnedPeople]
+	inc a
+	ld [wBurnedPeople], a
+	callab TryEvolvingMon
 	ret
 
 BulletAnimation:

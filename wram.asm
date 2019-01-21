@@ -2273,7 +2273,7 @@ wPrize2:: ; d13e
 	ds 1
 wPrize3:: ; d13f
 	ds 1
-
+wBurnedPeople:: ;d140
 	ds 1
 
 wSerialRandomNumberListBlock:: ; d141

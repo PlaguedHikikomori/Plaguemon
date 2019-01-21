@@ -82,6 +82,9 @@ Evolution_PartyMonLoop: ; loop over party mons
 	ld a, b
 	cp EV_LEVEL
 	jr z, .checkLevel
+	ld a, b
+	cp EV_RAM
+	jr z, .checkRam
 .checkTradeEvo
 	ld a, [wLinkState]
 	cp LINK_STATE_TRADING
@@ -104,6 +107,12 @@ Evolution_PartyMonLoop: ; loop over party mons
 	ld a, [wLoadedMonLevel]
 	cp b ; is the mon's level greater than the evolution requirement?
 	jp c, .nextEvoEntry2 ; if so, go the next evolution entry
+.checkRam
+	ld a, [hli] ; level requirement
+	ld b, a
+	ld a, [wBurnedPeople]
+	cp b ; is the mon's level greater than the evolution requirement?
+	jp nz, .nextEvoEntry2 ; if so, go the next evolution entry
 .doEvolution
 	ld [wCurEnemyLVL], a
 	ld a, 1

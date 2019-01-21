@@ -831,6 +831,7 @@ Mon154_EvosMoves:
 Mon126_EvosMoves:
 ;MAGMAR
 ;Evolutions
+	db EV_RAM,5,PROGLOTTO
 	db 0
 ;Learnset
 	db 36,LEER
