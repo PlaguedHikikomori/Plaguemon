@@ -429,7 +429,7 @@ ShareMoveAnimations:
 
 	ld a,[wAnimationID]
 
-	cp a,AMNESIA
+	cp a,BLANK_OUT
 	ld b,SUBJ_ANIM
 	jr z, .replaceAnim
 
@@ -670,7 +670,7 @@ AnimationIdSpecialEffects:
 	db REFLECT
 	dw AnimationFlashScreen
 
-	db SELFDESTRUCT
+	db SUICIDE
 	dw DoExplodeSpecialEffects
 
 	db SPORE
@@ -832,7 +832,7 @@ FlashScreenEveryFourFrameBlocks:
 	call z,AnimationFlashScreen
 	ret
 
-; used for Explosion and Selfdestruct
+; used for Explosion and Suicide
 DoExplodeSpecialEffects:
 	ld a,[wSubAnimCounter]
 	cp a,1 ; is it the end of the subanimation?
@@ -2358,13 +2358,13 @@ MoveSoundTable:
 	db SFX_POUND,             $00,$80 ; POUND
 	db SFX_BATTLE_0C,         $10,$80 ; KARATE_CHOP
 	db SFX_DOUBLESLAP,        $00,$80 ; DOUBLESLAP
-	db SFX_BATTLE_0B,         $01,$80 ; COMET_PUNCH
+	db SFX_BATTLE_0B,         $01,$80 ; UNDERWORLD
 	db SFX_BATTLE_0D,         $00,$40 ; MEGA_PUNCH
 	db SFX_SILPH_SCOPE,       $00,$ff ; PAY_DAY
 	db SFX_BATTLE_0D,         $10,$60 ; FIRE_PUNCH
 	db SFX_BATTLE_0D,         $20,$80 ; ICE_PUNCH
 	db SFX_BATTLE_0D,         $00,$a0 ; THUNDERPUNCH
-	db SFX_DAMAGE,            $00,$80 ; SCRATCH
+	db SFX_DAMAGE,            $00,$80 ; SHANK_UP
 	db SFX_BATTLE_0F,         $20,$40 ; VICEGRIP
 	db SFX_BATTLE_0F,         $00,$80 ; GUILLOTINE
 	db SFX_BATTLE_0E,         $00,$a0 ; RAZOR_WIND
@@ -2398,7 +2398,7 @@ MoveSoundTable:
 	db SFX_BATTLE_1B,         $20,$c0 ; TWINEEDLE
 	db SFX_BATTLE_19,         $00,$80 ; PIN_MISSILE
 	db SFX_BATTLE_31,         $ff,$40 ; LEER
-	db SFX_BATTLE_1E,         $00,$80 ; BITE
+	db SFX_BATTLE_1E,         $00,$80 ; BAD_TOOTH
 	db SFX_BATTLE_0B,         $00,$c0 ; GROWL
 	db SFX_BATTLE_0B,         $00,$40 ; VENTRILOQUY
 	db SFX_BATTLE_35,         $00,$80 ; SING
@@ -2448,22 +2448,22 @@ MoveSoundTable:
 	db SFX_DAMAGE,            $10,$40 ; DIG
 	db SFX_BATTLE_0F,         $10,$c0 ; TOXIC
 	db SFX_BATTLE_14,         $00,$20 ; CONFUSION
-	db SFX_PSYCHIC_M,         $00,$80 ; PSYCHIC_M
-	db SFX_BATTLE_35,         $11,$18 ; HYPNOSIS
+	db SFX_MIND_CONTROL,      $00,$80 ; MIND_CONTROL
+	db SFX_BATTLE_35,         $11,$18 ; LIMBO_LOOP
 	db SFX_BATTLE_09,         $20,$c0 ; DARK_VOODOO
 	db SFX_FAINT_FALL,        $20,$c0 ; AGILITY
 	db SFX_BATTLE_25,         $00,$10 ; QUICK_ATTACK
 	db SFX_BATTLE_26,         $f0,$20 ; RAGE
 	db SFX_BATTLE_33,         $f0,$c0 ; TELEPORT
-	db SFX_NOT_VERY_EFFECTIVE,$f0,$e0 ; NIGHT_SHADE
-	db SFX_BATTLE_09,         $f0,$40 ; MIMIC
+	db SFX_NOT_VERY_EFFECTIVE,$f0,$e0 ; STALKING
+	db SFX_BATTLE_09,         $f0,$40 ; MOCKINGBIRD
 	db SFX_BATTLE_31,         $00,$80 ; SCREECH
 	db SFX_BATTLE_33,         $80,$40 ; DOUBLE_TEAM
 	db SFX_BATTLE_33,         $00,$80 ; RECOVER
 	db SFX_BATTLE_14,         $11,$20 ; HARDEN
 	db SFX_BATTLE_14,         $22,$10 ; MINIMIZE
 	db SFX_BATTLE_1B,         $f1,$ff ; SMOKESCREEN
-	db SFX_BATTLE_13,         $f1,$ff ; CONFUSE_RAY
+	db SFX_BATTLE_13,         $f1,$ff ; BLACKMAIL
 	db SFX_BATTLE_14,         $33,$30 ; WITHDRAW
 	db SFX_BATTLE_32,         $40,$c0 ; DEFENSE_CURL
 	db SFX_BATTLE_0E,         $20,$20 ; BARRIER
@@ -2471,12 +2471,12 @@ MoveSoundTable:
 	db SFX_BATTLE_0F,         $f8,$10 ; HAZE
 	db SFX_NOT_VERY_EFFECTIVE,$f0,$10 ; REFLECT
 	db SFX_BATTLE_25,         $00,$80 ; FOCUS_ENERGY
-	db SFX_BATTLE_18,         $00,$c0 ; BIDE
+	db SFX_BATTLE_18,         $00,$c0 ; SADNESS
 	db SFX_BATTLE_32,         $c0,$ff ; METRONOME
 	db SFX_BATTLE_09,         $f2,$20 ; MIRROR_MOVE
-	db SFX_BATTLE_34,         $00,$80 ; SELFDESTRUCT
-	db SFX_BATTLE_34,         $00,$40 ; EGG_BOMB
-	db SFX_BATTLE_09,         $00,$40 ; LICK
+	db SFX_BATTLE_34,         $00,$80 ; SUICIDE
+	db SFX_BATTLE_34,         $00,$40 ; MACHINE_LEARN
+	db SFX_BATTLE_09,         $00,$40 ; TRYPOPHOBIA
 	db SFX_NOT_VERY_EFFECTIVE,$10,$ff ; SMOG
 	db SFX_BATTLE_2A,         $20,$20 ; SLUDGE
 	db SFX_BATTLE_32,         $00,$80 ; BONE_CLUB
@@ -2487,16 +2487,16 @@ MoveSoundTable:
 	db SFX_BATTLE_26,         $1e,$20 ; SKULL_BASH
 	db SFX_BATTLE_26,         $1f,$18 ; SPIKE_CANNON
 	db SFX_BATTLE_14,         $0f,$80 ; CONSTRICT
-	db SFX_BATTLE_09,         $f8,$10 ; AMNESIA
+	db SFX_BATTLE_09,         $f8,$10 ; BLANK_OUT
 	db SFX_FAINT_FALL,        $18,$20 ; KINESIS
 	db SFX_BATTLE_32,         $08,$40 ; SOFTBOILED
 	db SFX_BATTLE_17,         $01,$e0 ; HI_JUMP_KICK
 	db SFX_NOT_VERY_EFFECTIVE,$09,$ff ; CREEPY_STARE
-	db SFX_BATTLE_35,         $42,$01 ; DREAM_EATER
+	db SFX_BATTLE_35,         $42,$01 ; BRAIN_EATER
 	db SFX_BATTLE_1C,         $00,$ff ; POISON_GAS
 	db SFX_BATTLE_32,         $08,$e0 ; BARRAGE
 	db SFX_BATTLE_24,         $00,$80 ; LEECH_LIFE
-	db SFX_BATTLE_09,         $88,$10 ; LOVELY_KISS
+	db SFX_BATTLE_09,         $88,$10 ; JUDAHS_KISS
 	db SFX_BATTLE_25,         $48,$ff ; SKY_ATTACK
 	db SFX_FAINT_FALL,        $ff,$ff ; TRANSFORM
 	db SFX_BATTLE_24,         $ff,$10 ; BUBBLE

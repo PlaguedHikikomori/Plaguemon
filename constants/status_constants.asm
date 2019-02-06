@@ -6,7 +6,7 @@ FRZ EQU 5
 PAR EQU 6
 
 ; volatile statuses 1
-StoringEnergy          EQU 0 ; Bide
+StoringEnergy          EQU 0 ; Sadness
 ThrashingAbout         EQU 1 ; e.g. Thrash
 AttackingMultipleTimes EQU 2 ; e.g. Double Kick, Fury Attack
 Flinched               EQU 3
@@ -30,3 +30,4 @@ BadlyPoisoned    EQU 0
 HasLightScreenUp EQU 1
 HasReflectUp     EQU 2
 Transformed      EQU 3
+	

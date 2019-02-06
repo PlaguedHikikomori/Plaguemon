@@ -2124,7 +2124,7 @@ _BecameSubjugatedText::
 	line "became subjugated"
 	prompt
 
-_MimicLearnedMoveText::
+_MockingbirdLearnedMoveText::
 	text "<USER>"
 	line "learned"
 	cont "@"
@@ -2209,7 +2209,7 @@ _HitWithRecoilText::
 	prompt
 
 _ConvertedTypeText::
-	text "Converted type to"
+	text "Changed face with"
 	line "<TARGET>'s!"
 	prompt
 
@@ -2263,9 +2263,9 @@ _SuckedHealthText::
 	line "<TARGET>!"
 	prompt
 
-_DreamWasEatenText::
+_BrainWasEatenText::
 	text "<TARGET>'s"
-	line "dream was eaten!"
+	line "brain was eaten!"
 	prompt
 
 _TradeCenterText1::

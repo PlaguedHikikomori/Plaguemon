@@ -2,13 +2,13 @@ AttackAnimationPointers:
 	dw PoundAnim
 	dw KarateChopAnim
 	dw DoubleSlapAnim
-	dw CometPunchAnim
+	dw UnderWorldAnim
 	dw MegaPunchAnim
 	dw PayDayAnim
 	dw FirePunchAnim
 	dw IcePunchAnim
 	dw ThunderPunchAnim
-	dw ScratchAnim
+	dw ShankUpAnim
 	dw VicegripAnim
 	dw GuillotineAnim
 	dw RazorWindAnim
@@ -42,7 +42,7 @@ AttackAnimationPointers:
 	dw TwineedleAnim
 	dw PinMissileAnim
 	dw LeerAnim
-	dw BiteAnim
+	dw BadToothAnim
 	dw GrowlAnim
 	dw VentriloquyAnim
 	dw SingAnim
@@ -92,22 +92,22 @@ AttackAnimationPointers:
 	dw DigAnim
 	dw ToxicAnim
 	dw ConfusionAnim
-	dw PsychicAnim
-	dw HypnosisAnim
+	dw MindControlAnim
+	dw LimboLoopAnim
 	dw DarkVoodooAnim
 	dw AgilityAnim
 	dw QuickAttackAnim
 	dw RageAnim
 	dw TeleportAnim
-	dw NightShadeAnim
-	dw MimicAnim
+	dw StalkingAnim
+	dw MockingbirdAnim
 	dw ScreechAnim
 	dw DoubleTeamAnim
 	dw RecoverAnim
 	dw HardenAnim
 	dw MinimizeAnim
 	dw SmokeScreenAnim
-	dw ConfuseRayAnim
+	dw BlackmailAnim
 	dw WithdrawAnim
 	dw DefenseCurlAnim
 	dw BarrierAnim
@@ -115,12 +115,12 @@ AttackAnimationPointers:
 	dw HazeAnim
 	dw ReflectAnim
 	dw FocusEnergyAnim
-	dw BideAnim
+	dw SadnessAnim
 	dw MetronomeAnim
 	dw MirrorMoveAnim
-	dw SelfdestructAnim
-	dw EggBombAnim
-	dw LickAnim
+	dw SuicideAnim
+	dw MachineLearnAnim
+	dw TrypophobiaAnim
 	dw SmogAnim
 	dw SludgeAnim
 	dw BoneClubAnim
@@ -131,16 +131,16 @@ AttackAnimationPointers:
 	dw SkullBashAnim
 	dw SpikeCannonAnim
 	dw ConstrictAnim
-	dw AmnesiaAnim
+	dw BlankOutAnim
 	dw KinesisAnim
 	dw SoftboiledAnim
 	dw HiJumpKickAnim
 	dw CreepyStareAnim
-	dw DreamEaterAnim
+	dw BrainEaterAnim
 	dw PoisonGasAnim
 	dw BarrageAnim
 	dw LeechLifeAnim
-	dw LovelyKissAnim
+	dw JudahsKissAnim
 	dw SkyAttackAnim
 	dw TransformAnim
 	dw BubbleAnim
@@ -227,9 +227,11 @@ DoubleSlapAnim:
 	db $05,$02,$01
 	db $FF
 
-CometPunchAnim:
-	db $04,$03,$02
-	db $04,$03,$02
+UnderWorldAnim:
+	db SE_SLIDE_MON_HALF_OFF, $48
+	db SE_DARK_SCREEN_PALETTE, $FF
+	db SE_SHAKE_SCREEN, $58
+	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
 MegaPunchAnim:
@@ -258,7 +260,7 @@ ThunderPunchAnim:
 	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
-ScratchAnim:
+ShankUpAnim:
 	db $06,$09,$0F
 	db $FF
 
@@ -433,7 +435,7 @@ LeerAnim:
 	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
-BiteAnim:
+BadToothAnim:
 	db $08,$2B,$02
 	db $FF
 
@@ -719,12 +721,12 @@ ConfusionAnim:
 	db SE_FLASH_SCREEN_LONG, $5C
 	db $FF
 
-PsychicAnim:
+MindControlAnim:
 	db SE_FLASH_SCREEN_LONG, $5D
 	db SE_WAVY_SCREEN, $FF
 	db $FF
 
-HypnosisAnim:
+LimboLoopAnim:
 	db SE_FLASH_SCREEN_LONG, $5E
 	db $FF
 
@@ -755,12 +757,12 @@ TeleportAnim:
 	db SE_SHOOT_BALLS_UPWARD, $FF
 	db $FF
 
-NightShadeAnim:
+StalkingAnim:
 	db SE_FLASH_SCREEN_LONG, $5C
 	db SE_WAVY_SCREEN, $FF
 	db $FF
 
-MimicAnim:
+MockingbirdAnim:
 	db $46,$65,$21
 	db $46,$65,$22
 	db $FF
@@ -820,7 +822,7 @@ SmokeScreenAnim:
 	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
-ConfuseRayAnim:
+BlackmailAnim:
 	db SE_DARK_SCREEN_PALETTE, $6C
 	db $46,$FF,$3E
 	db SE_RESET_SCREEN_PALETTE, $FF
@@ -870,7 +872,7 @@ FocusEnergyAnim:
 	db SE_SHOOT_MANY_BALLS_UPWARD, $49
 	db $FF
 
-BideAnim:
+SadnessAnim:
 	db $46,$74,$04
 	db $FF
 
@@ -888,17 +890,23 @@ MirrorMoveAnim:
 	db $08,$76,$01
 	db $FF
 
-SelfdestructAnim:
+SuicideAnim:
 	db $43,$77,$34
 	db $FF
 
-EggBombAnim:
-	db $44,$78,$41
-	db $44,$78,$42
+MachineLearnAnim:
+	db SE_DARK_SCREEN_FLASH, $9F
+	db $46,$FF,$21
+	db $46,$FF,$22
+	db SE_DARK_SCREEN_FLASH, $FF
 	db $FF
 
-LickAnim:
-	db $46,$7B,$14
+TrypophobiaAnim:
+	db SE_SLIDE_MON_DOWN_AND_HIDE, $96
+	db SE_DARK_SCREEN_PALETTE, $48
+	db SE_SHOW_MON_PIC, $FF
+	db SE_WAVY_SCREEN, $5C
+	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
 SmogAnim:
@@ -955,7 +963,7 @@ ConstrictAnim:
 	db $06,$83,$23
 	db $FF
 
-AmnesiaAnim:
+BlankOutAnim:
 	db $08,$84,$25
 	db $08,$84,$25
 	db $FF
@@ -984,7 +992,7 @@ CreepyStareAnim:
 	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
-DreamEaterAnim:
+BrainEaterAnim:
 	db SE_FLASH_SCREEN_LONG, $89
 	db SE_DARK_SCREEN_PALETTE, $89
 	db $08,$89,$02
@@ -1008,7 +1016,7 @@ LeechLifeAnim:
 	db SE_DARK_SCREEN_FLASH, $FF
 	db $FF
 
-LovelyKissAnim:
+JudahsKissAnim:
 	db $06,$8D,$12
 	db $FF
 

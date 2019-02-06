@@ -651,7 +651,7 @@ wTestBattlePlayerSelectedMove:: ; ccd9
 	ds 1
 
 wMoveMenuType:: ; ccdb
-; 0=regular, 1=mimic, 2=above message box (relearn, heal pp..)
+; 0=regular, 1=mockingbird, 2=above message box (relearn, heal pp..)
 	ds 1
 
 wPlayerSelectedMove:: ; ccdc
@@ -727,7 +727,7 @@ wLuckySlotHiddenObjectIndex:: ; cd05
 wEnemyNumHits:: ; cd05
 ; number of hits by enemy in attacks like Double Slap, etc.
 
-wEnemyBideAccumulatedDamage:: ; cd05
+wEnemySadnessAccumulatedDamage:: ; cd05
 ; the amount of damage accumulated by the enemy while biding (2 bytes)
 
 	ds 10
@@ -1712,7 +1712,7 @@ wPlayerStatsToHalve:: ; d061
 	ds 1
 
 wPlayerBattleStatus1:: ; d062
-; bit 0 - bide
+; bit 0 - Sadness
 ; bit 1 - thrash / petal dance
 ; bit 2 - attacking multiple times (e.g. double kick)
 ; bit 3 - flinch
@@ -1791,7 +1791,7 @@ wEnemyDisabledMove:: ; d072
 wPlayerNumHits:: ; d074
 ; number of hits by player in attacks like Double Slap, etc.
 
-wPlayerBideAccumulatedDamage:: ; d074
+wPlayerSadnessAccumulatedDamage:: ; d074
 ; the amount of damage accumulated by the player while biding (2 bytes)
 
 wUnknownSerialCounter2:: ; d075

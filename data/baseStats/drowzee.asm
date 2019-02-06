@@ -13,7 +13,7 @@ dw DrowzeePicFront
 dw DrowzeePicFront
 ; attacks known at lvl 0
 db POUND
-db CURSED_WIRES
+db DISABLE
 db 0
 db 0
 db 0 ; growth rate

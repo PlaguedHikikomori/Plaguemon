@@ -12,7 +12,7 @@ INCBIN "pic/bmon/charizard.pic",0,1 ; 77, sprite dimensions
 dw CharizardPicFront
 dw CharizardPicFront
 ; attacks known at lvl 0
-db SCRATCH
+db SHANK_UP
 db GROWL
 db EMBER
 db LEER

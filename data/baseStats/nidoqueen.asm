@@ -13,7 +13,7 @@ dw NidoqueenPicFront
 dw NidoqueenPicBack
 ; attacks known at lvl 0
 db TACKLE
-db SCRATCH
+db SHANK_UP
 db BODY_SLAM
 db 0
 db 3 ; growth rate

@@ -14,7 +14,7 @@ dw NidorinaPicBack
 ; attacks known at lvl 0
 db GROWL
 db TACKLE
-db SCRATCH
+db SHANK_UP
 db 0
 db 3 ; growth rate
 ; learnset

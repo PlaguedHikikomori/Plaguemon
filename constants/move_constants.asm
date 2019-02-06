@@ -3,13 +3,13 @@ const_value = 1
 	const POUND        ; 01
 	const KARATE_CHOP  ; 02
 	const DOUBLESLAP   ; 03
-	const COMET_PUNCH  ; 04
+	const UNDERWORLD   ; 04
 	const MEGA_PUNCH   ; 05
 	const PAY_DAY      ; 06
 	const FIRE_PUNCH   ; 07
 	const ICE_PUNCH    ; 08
 	const THUNDERPUNCH ; 09
-	const SCRATCH      ; 0a
+	const SHANK_UP     ; 0a
 	const VICEGRIP     ; 0b
 	const GUILLOTINE   ; 0c
 	const RAZOR_WIND   ; 0d
@@ -43,7 +43,7 @@ const_value = 1
 	const TWINEEDLE    ; 29
 	const PIN_MISSILE  ; 2a
 	const LEER         ; 2b
-	const BITE         ; 2c
+	const BAD_TOOTH    ; 2c
 	const GROWL        ; 2d
 	const VENTRILOQUY  ; 2e
 	const SING         ; 2f
@@ -93,22 +93,22 @@ const_value = 1
 	const DIG          ; 5b
 	const TOXIC        ; 5c
 	const CONFUSION    ; 5d
-	const PSYCHIC_M    ; 5e
-	const HYPNOSIS     ; 5f
+	const MIND_CONTROL ; 5e
+	const LIMBO_LOOP   ; 5f
 	const DARK_VOODOO  ; 60
 	const AGILITY      ; 61
 	const QUICK_ATTACK ; 62
 	const RAGE         ; 63
 	const TELEPORT     ; 64
-	const NIGHT_SHADE  ; 65
-	const MIMIC        ; 66
+	const STALKING     ; 65
+	const MOCKINGBIRD  ; 66
 	const SCREECH      ; 67
 	const DOUBLE_TEAM  ; 68
 	const RECOVER      ; 69
 	const HARDEN       ; 6a
 	const MINIMIZE     ; 6b
 	const SMOKESCREEN  ; 6c
-	const CONFUSE_RAY  ; 6d
+	const BLACKMAIL    ; 6d
 	const WITHDRAW     ; 6e
 	const DEFENSE_CURL ; 6f
 	const BARRIER      ; 70
@@ -116,12 +116,12 @@ const_value = 1
 	const HAZE         ; 72
 	const REFLECT      ; 73
 	const FOCUS_ENERGY ; 74
-	const BIDE         ; 75
+	const SADNESS      ; 75
 	const METRONOME    ; 76
 	const MIRROR_MOVE  ; 77
-	const SELFDESTRUCT ; 78
-	const EGG_BOMB     ; 79
-	const LICK         ; 7a
+	const SUICIDE      ; 78
+	const MACHINE_LEARN; 79
+	const TRYPOPHOBIA  ; 7a
 	const SMOG         ; 7b
 	const SLUDGE       ; 7c
 	const BONE_CLUB    ; 7d
@@ -132,16 +132,16 @@ const_value = 1
 	const SKULL_BASH   ; 82
 	const SPIKE_CANNON ; 83
 	const CONSTRICT    ; 84
-	const AMNESIA      ; 85
+	const BLANK_OUT    ; 85
 	const KINESIS      ; 86
 	const SOFTBOILED   ; 87
 	const HI_JUMP_KICK ; 88
 	const CREEPY_STARE ; 89
-	const DREAM_EATER  ; 8a
+	const BRAIN_EATER  ; 8a
 	const POISON_GAS   ; 8b
 	const BARRAGE      ; 8c
 	const LEECH_LIFE   ; 8d
-	const LOVELY_KISS  ; 8e
+	const JUDAHS_KISS  ; 8e
 	const SKY_ATTACK   ; 8f
 	const TRANSFORM    ; 90
 	const BUBBLE       ; 91
@@ -168,7 +168,7 @@ const_value = 1
 	const PROTO_CANNON ; a6
 	const MECHA_PUNCH  ; a7
 	const LOW_ON_MEMORY; a8
-	const MACHINE_LEARN; a9
+	const HEADACHE     ; a9
 	const CROP_CIRCLES ; aa
 	const TIME_WARP    ; ab
 	const WRATH_OF_GOD ; ac

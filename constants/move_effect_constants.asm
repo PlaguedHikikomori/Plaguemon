@@ -12,7 +12,7 @@ const_value = 0
 	const FREEZE_SIDE_EFFECT         ; $05
 	const PARALYZE_SIDE_EFFECT1      ; $06
 	const EXPLODE_EFFECT             ; $07 Explosion, Self Destruct
-	const DREAM_EATER_EFFECT         ; $08
+	const BRAIN_EATER_EFFECT         ; $08
 	const MIRROR_MOVE_EFFECT         ; $09
 	const ATTACK_UP1_EFFECT          ; $0A
 	const DEFENSE_UP1_EFFECT         ; $0B
@@ -30,7 +30,7 @@ const_value = 0
 	const EVASION_DOWN1_EFFECT       ; $17
 	const KASHIRA_SWAP_EFFECT        ; $18
 	const HAZE_EFFECT                ; $19
-	const BIDE_EFFECT                ; $1A
+	const SADNESS_EFFECT             ; $1A
 	const THRASH_PETAL_DANCE_EFFECT  ; $1B
 	const SWITCH_AND_TELEPORT_EFFECT ; $1C
 	const TWO_TO_FIVE_ATTACKS_EFFECT ; $1D
@@ -45,7 +45,7 @@ const_value = 0
 	const OHKO_EFFECT                ; $26 moves like Horn Drill
 	const CHARGE_EFFECT              ; $27 moves like Solar Beam
 	const SUPER_FANG_EFFECT          ; $28
-	const SPECIAL_DAMAGE_EFFECT      ; $29 Seismic Toss, Night Shade, Sonic Boom, Dragon Rage, Psywave
+	const SPECIAL_DAMAGE_EFFECT      ; $29 Seismic Toss, Stalking, Sonic Boom, Dragon Rage, Psywave
 	const TRAPPING_EFFECT            ; $2A moves like Wrap
 	const FLY_EFFECT                 ; $2B
 	const ATTACK_TWICE_EFFECT        ; $2C
@@ -53,7 +53,7 @@ const_value = 0
 	const MIST_EFFECT                ; $2E
 	const FOCUS_ENERGY_EFFECT        ; $2F
 	const RECOIL_EFFECT              ; $30 moves like Double Edge
-	const SUBJUGATE_EFFECT           ; $31 Confuse Ray, Supersonic (not the move Confusion)
+	const SUBJUGATE_EFFECT           ; $31 Blackmail, Supersonic (not the move Confusion)
 	const ATTACK_UP2_EFFECT          ; $32
 	const DEFENSE_UP2_EFFECT         ; $33
 	const SPEED_UP2_EFFECT           ; $34
@@ -86,7 +86,7 @@ const_value = 0
 	const DISCIPLE_EFFECT            ; $4F
 	const HYPER_BEAM_EFFECT          ; $50
 	const RAGE_EFFECT                ; $51
-	const MIMIC_EFFECT               ; $52
+	const MOCKINGBIRD_EFFECT         ; $52
 	const METRONOME_EFFECT           ; $53
 	const GROW_CANNABIS_EFFECT       ; $54
 	const SPLASH_EFFECT              ; $55

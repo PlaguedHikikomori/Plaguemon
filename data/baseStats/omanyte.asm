@@ -12,7 +12,7 @@ INCBIN "pic/bmon/omanyte.pic",0,1 ; 55, sprite dimensions
 dw OmanytePicFront
 dw OmanytePicBack
 ; attacks known at lvl 0
-db SCRATCH
+db SHANK_UP
 db WITHDRAW
 db 0
 db 0

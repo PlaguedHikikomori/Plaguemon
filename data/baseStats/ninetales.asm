@@ -15,7 +15,7 @@ dw NinetalesPicBack
 db EMBER
 db TAIL_WHIP
 db QUICK_ATTACK
-db SCRATCH
+db SHANK_UP
 db 0 ; growth rate
 ; learnset
 	tmlearn 6,8

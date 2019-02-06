@@ -3,7 +3,7 @@
 const_value = $D8
 
 ; special effects, prefaced with "SE" for "Special Effect"
-	const SE_WAVY_SCREEN               ; $D8 used in Psywave/Night Shade/Psychic etc.
+	const SE_WAVY_SCREEN               ; $D8 used in Psywave/Stalking/Psychic etc.
 	const SE_DISCIPLE_MON              ; $D9 used in Disciple (turns the pokemon into a mini sprite)
 	const SE_SHAKE_BACK_AND_FORTH      ; $DA used in Double Team
 	const SE_SLIDE_ENEMY_MON_OFF       ; $DB used in Whirlwind
