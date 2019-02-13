@@ -14,7 +14,7 @@ dw CharizardPicFront
 ; attacks known at lvl 0
 db SHANK_UP
 db GROWL
-db EMBER
+db RITUAL
 db LEER
 db 3 ; growth rate
 ; learnset

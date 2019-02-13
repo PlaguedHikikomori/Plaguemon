@@ -45,7 +45,7 @@ const_value = 0
 	const OHKO_EFFECT                ; $26 moves like Horn Drill
 	const CHARGE_EFFECT              ; $27 moves like Solar Beam
 	const SUPER_FANG_EFFECT          ; $28
-	const SPECIAL_DAMAGE_EFFECT      ; $29 Seismic Toss, Stalking, Sonic Boom, Dragon Rage, Psywave
+	const SPECIAL_DAMAGE_EFFECT      ; $29 Seismic Toss, Stalking, Sonic Boom, God Revenge, Psywave
 	const TRAPPING_EFFECT            ; $2A moves like Wrap
 	const FLY_EFFECT                 ; $2B
 	const ATTACK_TWICE_EFFECT        ; $2C
@@ -60,7 +60,7 @@ const_value = 0
 	const SPECIAL_UP2_EFFECT         ; $35
 	const ACCURACY_UP2_EFFECT        ; $36
 	const EVASION_UP2_EFFECT         ; $37
-	const HEAL_EFFECT                ; $38 Recover, Softboiled, Rest
+	const HEAL_EFFECT                ; $38 Recover, Pregnancy, Rest
 	const TRANSFORM_EFFECT           ; $39
 	const ATTACK_DOWN2_EFFECT        ; $3A
 	const DEFENSE_DOWN2_EFFECT       ; $3B
@@ -94,4 +94,4 @@ const_value = 0
 
 ; fixed damage constants
 SONICBOOM_DAMAGE   EQU 20
-DRAGON_RAGE_DAMAGE EQU 50
+GOD_REVENGE_DAMAGE EQU 50

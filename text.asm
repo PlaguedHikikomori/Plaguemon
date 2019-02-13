@@ -1544,31 +1544,30 @@ _PotionText::
 _AntidoteText::
 	TX_RAM wcd6d
 	text " was"
-	line "cured of poison!"
+	line "cured of tumor!"
 	done
 
 _ParlyzHealText::
 	TX_RAM wcd6d
 	text "'s"
-	line "rid of paralysis!"
+	line "rid of anxiety!"
 	done
 
 _BurnHealText::
 	TX_RAM wcd6d
-	text "'s"
-	line "burn was healed!"
+	text "was exorcised!"
 	done
 
 _IceHealText::
 	TX_RAM wcd6d
 	text " was"
-	line "defrosted!"
+	line "awakened!"
 	done
 
 _AwakeningText::
 	TX_RAM wcd6d
 	text ""
-	line "woke up!"
+	line "got sober!"
 	done
 
 _FullHealText::
@@ -2011,12 +2010,13 @@ _IsEvolvingText::
 
 _FellAsleepText::
 	text "<TARGET>"
-	line "got in a COMA!"
+	line "got in OVERDOSE!"
 	prompt
 
 _AlreadyAsleepText::
 	text "<TARGET>'s"
-	line "already in COMA!"
+	line "already in"
+	cont "OVERDOSE!"
 	prompt
 
 _PoisonedText::
@@ -2037,11 +2037,11 @@ _BurnedText::
 
 _FrozenText::
 	text "<TARGET>"
-	line "was frozen solid!"
+	line "got in COMA"
 	prompt
 
 _FireDefrostedText::
-	text "Fire defrosted"
+	text "Satan awakened"
 	line "<TARGET>!"
 	prompt
 

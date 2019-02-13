@@ -5,13 +5,13 @@ AttackAnimationPointers:
 	dw UnderWorldAnim
 	dw MegaPunchAnim
 	dw PayDayAnim
-	dw FirePunchAnim
+	dw BlackMassAnim
 	dw IcePunchAnim
 	dw ThunderPunchAnim
 	dw ShankUpAnim
 	dw VicegripAnim
 	dw GuillotineAnim
-	dw RazorWindAnim
+	dw HurricaneAnim
 	dw SwordsDanceAnim
 	dw CutAnim
 	dw GustAnim
@@ -50,8 +50,8 @@ AttackAnimationPointers:
 	dw SonicBoomAnim
 	dw DisableAnim
 	dw AcidAnim
-	dw EmberAnim
-	dw FlamethrowerAnim
+	dw RitualAnim
+	dw SabbathAnim
 	dw MistAnim
 	dw WaterGunAnim
 	dw HydroPumpAnim
@@ -80,16 +80,16 @@ AttackAnimationPointers:
 	dw SleepPowderAnim
 	dw ParanoiaAnim
 	dw CursedWiresAnim
-	dw DragonRageAnim
-	dw FireSpinAnim
+	dw GodRevengeAnim
+	dw SacrificeAnim
 	dw ThunderShockAnim
 	dw ThunderBoltAnim
 	dw ThunderWaveAnim
 	dw ThunderAnim
 	dw RockThrowAnim
-	dw EarthquakeAnim
+	dw ConvulsionAnim
 	dw FissureAnim
-	dw DigAnim
+	dw TunnelAnim
 	dw ToxicAnim
 	dw ConfusionAnim
 	dw MindControlAnim
@@ -123,7 +123,7 @@ AttackAnimationPointers:
 	dw TrypophobiaAnim
 	dw SmogAnim
 	dw SludgeAnim
-	dw BoneClubAnim
+	dw RevenantAnim
 	dw FireBlastAnim
 	dw WaterfallAnim
 	dw ClampAnim
@@ -132,8 +132,8 @@ AttackAnimationPointers:
 	dw SpikeCannonAnim
 	dw ConstrictAnim
 	dw BlankOutAnim
-	dw KinesisAnim
-	dw SoftboiledAnim
+	dw EvilLaughAnim
+	dw PregnancyAnim
 	dw HiJumpKickAnim
 	dw CreepyStareAnim
 	dw BrainEaterAnim
@@ -228,9 +228,10 @@ DoubleSlapAnim:
 	db $FF
 
 UnderWorldAnim:
-	db SE_SLIDE_MON_HALF_OFF, $48
+	db SE_SLIDE_MON_OFF, $48
 	db SE_DARK_SCREEN_PALETTE, $FF
 	db SE_SHAKE_SCREEN, $58
+	db SE_SHOW_MON_PIC, $FF
 	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
@@ -243,7 +244,7 @@ PayDayAnim:
 	db $04,$05,$52
 	db $FF
 
-FirePunchAnim:
+BlackMassAnim:
 	db $06,$06,$02
 	db $46,$FF,$11
 	db $FF
@@ -272,7 +273,7 @@ GuillotineAnim: ;GUILLOTINE, GOD REVENGE
 	db $06,$0B,$2A
 	db $FF
 
-RazorWindAnim:
+HurricaneAnim:
 	db $04,$0C,$16
 	db $FF
 
@@ -446,7 +447,6 @@ GrowlAnim:
 VentriloquyAnim:
 	db $46,$2D,$15
 	db $46,$2D,$15
-	db $46,$2D,$15
 	db $FF
 
 SingAnim:
@@ -478,7 +478,7 @@ AcidAnim:
 	db $46,$32,$14
 	db $FF
 
-EmberAnim:
+RitualAnim:
     db SE_DARKEN_MON_PALETTE, $FF
 	db $41,$33,$1A
 	db $42,$33,$1A
@@ -486,7 +486,7 @@ EmberAnim:
     db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
-FlamethrowerAnim:
+SabbathAnim:
 	db SE_DARKEN_MON_PALETTE, $FF
 	db $46,$34,$0C
 	db SE_FLASH_SCREEN_LONG, $FF
@@ -655,13 +655,13 @@ CursedWiresAnim:
 	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
-DragonRageAnim: ;JUDGEMENT, WRATH OF GOD
+GodRevengeAnim: ;JUDGEMENT, WRATH OF GOD
 	db SE_DARK_SCREEN_FLASH, $FF
 	db $46,$FF,$2B
 	db SE_DARK_SCREEN_FLASH, $FF
 	db $FF
 
-FireSpinAnim:
+SacrificeAnim:
 	db $46,$52,$0C
 	db $46,$FF,$0D
 	db $46,$FF,$0E
@@ -695,7 +695,7 @@ RockThrowAnim:
 	db $04,$57,$30
 	db $FF
 
-EarthquakeAnim:
+ConvulsionAnim:
 	db SE_SHAKE_SCREEN, $58
 	db SE_SHAKE_SCREEN, $58
 	db $FF
@@ -707,7 +707,7 @@ FissureAnim:
 	db SE_SHAKE_SCREEN, $FF
 	db $FF
 
-DigAnim:
+TunnelAnim:
 	db $46,$5A,$04
 	db SE_SLIDE_MON_UP, $FF
 	db $FF
@@ -731,9 +731,14 @@ LimboLoopAnim:
 	db $FF
 
 DarkVoodooAnim:
-	db SE_LIGHT_SCREEN_PALETTE, $5F
-	db $46,$FF,$43
-	db SE_DARK_SCREEN_FLASH, $FF
+	db SE_DARK_SCREEN_PALETTE, $5F
+	db SE_MOVE_MON_HORIZONTALLY, $84
+	db SE_DELAY_ANIMATION_10, $FF
+	db SE_RESET_MON_POSITION, $84
+	db SE_DELAY_ANIMATION_10, $FF
+	db SE_MOVE_MON_HORIZONTALLY, $84
+	db SE_DELAY_ANIMATION_10, $FF
+	db SE_RESET_MON_POSITION, $84
 	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
@@ -808,17 +813,8 @@ SmokeScreenAnim:
 	db $46,$6B,$28
 	db $04,$FF,$0A
 	db SE_DARKEN_MON_PALETTE, $FF
-	db SE_DELAY_ANIMATION_10, $FF
-	db SE_DELAY_ANIMATION_10, $FF
 	db SE_DARK_SCREEN_PALETTE, $FF
-	db SE_DELAY_ANIMATION_10, $FF
-	db SE_DELAY_ANIMATION_10, $FF
-	db SE_DELAY_ANIMATION_10, $FF
-	db SE_DELAY_ANIMATION_10, $FF
-	db SE_DELAY_ANIMATION_10, $FF
-	db SE_DELAY_ANIMATION_10, $FF
 	db SE_DARKEN_MON_PALETTE, $FF
-	db SE_DELAY_ANIMATION_10, $FF
 	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
@@ -920,8 +916,13 @@ SludgeAnim:
 	db $46,$7B,$14
 	db $FF
 
-BoneClubAnim:
+RevenantAnim:
+	db $43,$98,$34
+	db SE_LIGHT_SCREEN_PALETTE, $FF
+	db SE_SLIDE_MON_UP, $FF
+	db SE_SHOOT_MANY_BALLS_UPWARD, $FF
 	db $08,$7C,$02
+	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
 FireBlastAnim:
@@ -964,15 +965,18 @@ ConstrictAnim:
 	db $FF
 
 BlankOutAnim:
+	db SE_DARK_SCREEN_FLASH, $FF
 	db $08,$84,$25
 	db $08,$84,$25
 	db $FF
 
-KinesisAnim:
-	db $08,$85,$01
+EvilLaughAnim:
+	db SE_DARK_SCREEN_PALETTE, $FF
+	db $46,$2D,$15
+	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
-SoftboiledAnim:
+PregnancyAnim:
 	db SE_SLIDE_MON_HALF_OFF, $48
 	db $08,$86,$4C
 	db SE_LIGHT_SCREEN_PALETTE, $FF
@@ -1043,7 +1047,6 @@ DizzyPunchAnim: ;CROP CIRCLES
 	db SE_DARK_SCREEN_FLASH, $6C
 	db $16,$66,$35
 	db SE_WAVY_SCREEN, $32
-	db SE_DARK_SCREEN_FLASH, $6C
 	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
@@ -1056,7 +1059,6 @@ FlashAnim: ;FLASH, TIME WARP
 	db SE_DARK_SCREEN_FLASH, $4E
 	db SE_FLASH_SCREEN_LONG, $F6
 	db $05,$F6,$01
-	db SE_DARK_SCREEN_FLASH, $4E
 	db $FF
 
 PsywaveAnim:

@@ -14,7 +14,7 @@ dw DugtrioPicBack
 ; attacks known at lvl 0
 db SHANK_UP
 db GROWL
-db DIG
+db TUNNEL
 db 0
 db 0 ; growth rate
 ; learnset

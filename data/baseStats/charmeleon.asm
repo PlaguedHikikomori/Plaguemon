@@ -14,7 +14,7 @@ dw CharmeleonPicBack
 ; attacks known at lvl 0
 db SHANK_UP
 db GROWL
-db EMBER
+db RITUAL
 db 0
 db 3 ; growth rate
 ; learnset

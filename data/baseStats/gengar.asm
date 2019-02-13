@@ -5,16 +5,16 @@ db 60 ; base defense
 db 110 ; base speed
 db 130 ; base special
 db GHOST ; species type 1
-db POISON ; species type 2
+db GHOST ; species type 2
 db 45 ; catch rate
 db 190 ; base exp yield
 INCBIN "pic/bmon/gengar.pic",0,1 ; 66, sprite dimensions
 dw GengarPicFront
 dw GengarPicFront
 ; attacks known at lvl 0
-db TRYPOPHOBIA
-db BLACKMAIL
 db STALKING
+db UNDERWORLD
+db LIMBO_LOOP
 db 0
 db 3 ; growth rate
 ; learnset

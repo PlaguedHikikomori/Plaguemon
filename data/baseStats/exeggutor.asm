@@ -12,9 +12,9 @@ INCBIN "pic/bmon/exeggutor.pic",0,1 ; 77, sprite dimensions
 dw ExeggutorPicFront
 dw ExeggutorPicBack
 ; attacks known at lvl 0
-db BARRAGE
-db LIMBO_LOOP
-db 0
+db VENTRILOQUY
+db MINIMIZE
+db STALKING
 db 0
 db 5 ; growth rate
 ; learnset

@@ -13,7 +13,7 @@ dw ArcaninePicFront
 dw ArcaninePicFront
 ; attacks known at lvl 0
 db SHANK_UP
-db EMBER
+db RITUAL
 db LEER
 db TAKE_DOWN
 db 5 ; growth rate

@@ -4022,7 +4022,7 @@ ExclamationPointMoveSets:
 	db $00
 	db POUND, SHANK_UP, VICEGRIP, WING_ATTACK, FLY, BIND, SLAM, HORN_ATTACK, BODY_SLAM
 	db WRAP, THRASH, TAIL_WHIP, LEER, BAD_TOOTH, GROWL, VENTRILOQUY, SING, PECK, COUNTER
-	db STRENGTH, ABSORB, CURSED_WIRES, EARTHQUAKE, FISSURE, DIG, TOXIC, SCREECH, HARDEN
+	db STRENGTH, ABSORB, CURSED_WIRES, CONVULSION, FISSURE, TUNNEL, TOXIC, SCREECH, HARDEN
 	db MINIMIZE, WITHDRAW, DEFENSE_CURL, METRONOME, TRYPOPHOBIA, CLAMP, CONSTRICT, POISON_GAS
 	db LEECH_LIFE, BUBBLE, FLASH, SPLASH, ACID_ARMOR, FURY_SWIPES, REST, SHARPEN, SLASH, DISCIPLE
 	db $00
@@ -4971,8 +4971,8 @@ ApplyAttackToEnemyPokemon:
 	ld b,SONICBOOM_DAMAGE ; 20
 	cp a,SONICBOOM
 	jr z,.storeDamage
-	ld b,DRAGON_RAGE_DAMAGE ; 50
-	cp a,DRAGON_RAGE
+	ld b,GOD_REVENGE_DAMAGE ; 50
+	cp a,GOD_REVENGE
 	jr z,.storeDamage
 ; Psywave
 	ld a,[hl]
@@ -5090,8 +5090,8 @@ ApplyAttackToPlayerPokemon:
 	ld b,SONICBOOM_DAMAGE
 	cp a,SONICBOOM
 	jr z,.storeDamage
-	ld b,DRAGON_RAGE_DAMAGE
-	cp a,DRAGON_RAGE
+	ld b,GOD_REVENGE_DAMAGE
+	cp a,GOD_REVENGE
 	jr z,.storeDamage
 ; Psywave
 	ld a,[hl]
@@ -5569,14 +5569,14 @@ MoveHitTest:
 	cp a,SHURIKEN_EFFECT
 	ret z ; Shuriken never misses (interestingly, Azure Heights lists this is a myth, but it appears to be true)
 	call CheckTargetDisciple ; disciple check (note that this overwrites a)
-	jr z,.checkForDigOrFlyStatus
+	jr z,.checkForTunnelOrFlyStatus
 ; this code is buggy. it's supposed to prevent HP draining moves from working on Disciples.
 ; since $7b79 overwrites a with either $00 or $01, it never works.
 	cp a,DRAIN_HP_EFFECT
 	jp z,.moveMissed
 	cp a,BRAIN_EATER_EFFECT
 	jp z,.moveMissed
-.checkForDigOrFlyStatus
+.checkForTunnelOrFlyStatus
 	bit Invulnerable,[hl]
 	jp nz,.moveMissed
 	ld a,[H_WHOSETURN]
@@ -5597,7 +5597,7 @@ MoveHitTest:
 .enemyMistCheck
 ; if move effect is from $12 to $19 inclusive or $3a to $41 inclusive
 ; i.e. the following moves
-; GROWL, TAIL WHIP, LEER, CURSED WIRES, SAND-ATTACK, SMOKESCREEN, KINESIS,
+; GROWL, TAIL WHIP, LEER, CURSED WIRES, SAND-ATTACK, SMOKESCREEN, EVIL_LAUGH,
 ; FLASH, KASHIRA_SWAP*, HAZE*, SCREECH, LIGHT SCREEN*, REFLECT*
 ; the moves that are marked with an asterisk are not affected since this
 ; function is not called when those moves are used
@@ -6919,7 +6919,7 @@ HandleExplodingAnimation:
 	ret nz
 .isExplodingMove
 	ld a, [de]
-	bit Invulnerable, a ; fly/dig
+	bit Invulnerable, a ; fly/tunnel
 	ret nz
 	ld a, [hli]
 	cp GHOST
@@ -7615,7 +7615,7 @@ FrozenText:
 	db "@"
 
 CheckDefrost:
-; any fire-type move that has a chance inflict burn (all but Fire Spin) will defrost a frozen target
+; any fire-type move that has a chance inflict burn (all but Sacrifice) will defrost a frozen target
 	and a, 1 << FRZ ; are they frozen?
 	ret z ; return if so
 	ld a, [H_WHOSETURN]
@@ -7880,7 +7880,7 @@ StatModifierDownEffect:
 	and a
 	jp nz, MoveMissed
 	ld a, [bc]
-	bit Invulnerable, a ; fly/dig
+	bit Invulnerable, a ; fly/tunnel
 	jp nz, MoveMissed
 	ld a, [de]
 	sub ATTACK_DOWN1_EFFECT
@@ -8335,15 +8335,15 @@ ChargeEffect:
 	dec de ; de contains enemy or player MOVENUM
 	cp FLY_EFFECT
 	jr nz, .notFly
-	set Invulnerable, [hl] ; mon is now invulnerable to typical attacks (fly/dig)
+	set Invulnerable, [hl] ; mon is now invulnerable to typical attacks (fly/TUNNEL)
 	ld b, TELEPORT ; load Teleport's animation
 .notFly
 	ld a, [de]
-	cp DIG
-	jr nz, .notDigOrFly
-	set Invulnerable, [hl] ; mon is now invulnerable to typical attacks (fly/dig)
+	cp TUNNEL
+	jr nz, .notTunnelOrFly
+	set Invulnerable, [hl] ; mon is now invulnerable to typical attacks (fly/tunnel)
 	ld b, ANIM_C0
-.notDigOrFly
+.notTunnelOrFly
 	xor a
 	ld [wAnimationType], a
 	ld a, b
@@ -8357,7 +8357,7 @@ ChargeMoveEffectText:
 	TX_FAR _ChargeMoveEffectText
 	TX_ASM
 	ld a, [wChargeMoveNum]
-	cp RAZOR_WIND
+	cp HURRICANE
 	ld hl, MadeWhirlwindText
 	jr z, .gotText
 	cp SOLARBEAM
@@ -8372,7 +8372,7 @@ ChargeMoveEffectText:
 	cp FLY
 	ld hl, FlewUpHighText
 	jr z, .gotText
-	cp DIG
+	cp TUNNEL
 	ld hl, DugAHoleText
 .gotText
 	ret

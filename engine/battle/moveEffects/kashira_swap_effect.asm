@@ -11,7 +11,7 @@ KashiraSwapEffect_:
 	pop de
 	ld a, [wPlayerBattleStatus1]
 .kashiraSwapEffect
-	bit Invulnerable, a ; is mon immune to typical attacks (dig/fly)
+	bit Invulnerable, a ; is mon immune to typical attacks (tunnel/fly)
 	jr nz, PrintButItFailedText
 ; copy target's types to user
 	ld a, [hli]

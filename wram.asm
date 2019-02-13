@@ -1718,7 +1718,7 @@ wPlayerBattleStatus1:: ; d062
 ; bit 3 - flinch
 ; bit 4 - charging up for attack
 ; bit 5 - using multi-turn move (e.g. wrap)
-; bit 6 - invulnerable to normal attack (using fly/dig)
+; bit 6 - invulnerable to normal attack (using fly/tunnel)
 ; bit 7 - subjugate
 	ds 1
 
@@ -2301,7 +2301,7 @@ wSerialPlayerDataBlock:: ; d152
 wPseudoItemID:: ; d152
 ; When a real item is being used, this is 0.
 ; When a move is acting as an item, this is the ID of the item it's acting as.
-; For example, out-of-battle Dig is executed using a fake Escape Rope item. In
+; For example, out-of-battle Tunnel is executed using a fake Escape Rope item. In
 ; that case, this would be ESCAPE_ROPE.
 	ds 1
 
@@ -3068,7 +3068,7 @@ wd732:: ; d732
 ; 2. does not have the player start in floor two of the player's house (instead sending them to [wLastMap])
 ; 3. allows wild battles to be avoided by holding down B
 ; bit 2: the target warp is a fly warp (bit 3 set or blacked out) or a dungeon warp (bit 4 set)
-; bit 3: used warp pad, escape rope, dig, teleport, or fly, so the target warp is a "fly warp"
+; bit 3: used warp pad, escape rope, tunnel, teleport, or fly, so the target warp is a "fly warp"
 ; bit 4: jumped into hole (Pokemon Mansion, Seafoam Islands, Victory Road) or went down waterfall (Seafoam Islands), so the target warp is a "dungeon warp"
 ; bit 5: currently being forced to ride bike (cycling road)
 ; bit 6: map destination is [wLastBlackoutMap] (usually the last used pokemon center, but could be the player's house)

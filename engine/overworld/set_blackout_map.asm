@@ -1,6 +1,6 @@
 SetLastBlackoutMap:
 ; Set the map to return to when
-; blacking out or using Teleport or Dig.
+; blacking out or using Teleport or Tunnel.
 ; Safari rest houses don't count.
 
 	push hl

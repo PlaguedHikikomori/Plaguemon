@@ -6,13 +6,13 @@ const_value = 1
 	const UNDERWORLD   ; 04
 	const MEGA_PUNCH   ; 05
 	const PAY_DAY      ; 06
-	const FIRE_PUNCH   ; 07
+	const BLACK_MASS   ; 07
 	const ICE_PUNCH    ; 08
 	const THUNDERPUNCH ; 09
 	const SHANK_UP     ; 0a
 	const VICEGRIP     ; 0b
 	const GUILLOTINE   ; 0c
-	const RAZOR_WIND   ; 0d
+	const HURRICANE    ; 0d
 	const SWORDS_DANCE ; 0e
 	const CUT          ; 0f
 	const GUST         ; 10
@@ -51,8 +51,8 @@ const_value = 1
 	const SONICBOOM    ; 31
 	const DISABLE      ; 32
 	const ACID         ; 33
-	const EMBER        ; 34
-	const FLAMETHROWER ; 35
+	const RITUAL       ; 34
+	const SABBATH      ; 35
 	const MIST         ; 36
 	const WATER_GUN    ; 37
 	const HYDRO_PUMP   ; 38
@@ -81,16 +81,16 @@ const_value = 1
 	const SLEEP_POWDER ; 4f
 	const PARANOIA     ; 50
 	const CURSED_WIRES ; 51
-	const DRAGON_RAGE  ; 52
-	const FIRE_SPIN    ; 53
+	const GOD_REVENGE  ; 52
+	const SACRIFICE    ; 53
 	const THUNDERSHOCK ; 54
 	const THUNDERBOLT  ; 55
 	const THUNDER_WAVE ; 56
 	const THUNDER      ; 57
 	const ROCK_THROW   ; 58
-	const EARTHQUAKE   ; 59
+	const CONVULSION   ; 59
 	const FISSURE      ; 5a
-	const DIG          ; 5b
+	const TUNNEL       ; 5b
 	const TOXIC        ; 5c
 	const CONFUSION    ; 5d
 	const MIND_CONTROL ; 5e
@@ -124,7 +124,7 @@ const_value = 1
 	const TRYPOPHOBIA  ; 7a
 	const SMOG         ; 7b
 	const SLUDGE       ; 7c
-	const BONE_CLUB    ; 7d
+	const REVENANT     ; 7d
 	const FIRE_BLAST   ; 7e
 	const WATERFALL    ; 7f
 	const CLAMP        ; 80
@@ -133,8 +133,8 @@ const_value = 1
 	const SPIKE_CANNON ; 83
 	const CONSTRICT    ; 84
 	const BLANK_OUT    ; 85
-	const KINESIS      ; 86
-	const SOFTBOILED   ; 87
+	const EVIL_LAUGH   ; 86
+	const PREGNANCY    ; 87
 	const HI_JUMP_KICK ; 88
 	const CREEPY_STARE ; 89
 	const BRAIN_EATER  ; 8a

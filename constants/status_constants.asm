@@ -12,7 +12,7 @@ AttackingMultipleTimes EQU 2 ; e.g. Double Kick, Fury Attack
 Flinched               EQU 3
 ChargingUp             EQU 4 ; e.g. Solar Beam, Fly
 UsingTrappingMove      EQU 5 ; e.g. Wrap
-Invulnerable           EQU 6 ; charging up Fly/Dig
+Invulnerable           EQU 6 ; charging up Fly/Tunnel
 Subjugated             EQU 7
 
 ; volatile statuses 2

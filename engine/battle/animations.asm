@@ -1208,7 +1208,7 @@ AnimationShakeScreenVertically:
 	predef_jump PredefShakeScreenVertically
 
 AnimationShakeScreen:
-; Shakes the screen for a while. Used in Earthquake/Fissure/etc. animations.
+; Shakes the screen for a while. Used in Convulsion/Fissure/etc. animations.
 	ld b, $8
 
 AnimationShakeScreenHorizontallyFast:
@@ -1952,7 +1952,7 @@ _AnimationSlideMonOff:
 	ret
 
 AnimationSlideMonHalfOff:
-; Slides the mon's sprite halfway off the screen. It's used in Softboiled.
+; Slides the mon's sprite halfway off the screen. It's used in Pregnancy.
 	ld e, 4
 	ld a, 4
 	ld [wSlideMonDelay], a
@@ -2361,13 +2361,13 @@ MoveSoundTable:
 	db SFX_BATTLE_0B,         $01,$80 ; UNDERWORLD
 	db SFX_BATTLE_0D,         $00,$40 ; MEGA_PUNCH
 	db SFX_SILPH_SCOPE,       $00,$ff ; PAY_DAY
-	db SFX_BATTLE_0D,         $10,$60 ; FIRE_PUNCH
+	db SFX_BATTLE_0D,         $10,$60 ; BLACK_MASS
 	db SFX_BATTLE_0D,         $20,$80 ; ICE_PUNCH
 	db SFX_BATTLE_0D,         $00,$a0 ; THUNDERPUNCH
 	db SFX_DAMAGE,            $00,$80 ; SHANK_UP
 	db SFX_BATTLE_0F,         $20,$40 ; VICEGRIP
 	db SFX_BATTLE_0F,         $00,$80 ; GUILLOTINE
-	db SFX_BATTLE_0E,         $00,$a0 ; RAZOR_WIND
+	db SFX_BATTLE_0E,         $00,$a0 ; HURRICANE
 	db SFX_NOT_VERY_EFFECTIVE,$10,$c0 ; SWORDS_DANCE
 	db SFX_NOT_VERY_EFFECTIVE,$00,$a0 ; CUT
 	db SFX_BATTLE_12,         $00,$c0 ; GUST
@@ -2406,8 +2406,8 @@ MoveSoundTable:
 	db SFX_BATTLE_27,         $00,$80 ; SONICBOOM
 	db SFX_BATTLE_27,         $ff,$40 ; DISABLE
 	db SFX_BATTLE_2A,         $80,$c0 ; ACID
-	db SFX_BATTLE_19,         $10,$a0 ; EMBER
-	db SFX_BATTLE_19,         $21,$e0 ; FLAMETHROWER
+	db SFX_BATTLE_19,         $10,$a0 ; RITUAL
+	db SFX_BATTLE_19,         $21,$e0 ; SABBATH
 	db SFX_BATTLE_29,         $00,$80 ; MIST
 	db SFX_BATTLE_24,         $20,$60 ; WATER_GUN
 	db SFX_BATTLE_2A,         $00,$80 ; HYDRO_PUMP
@@ -2436,16 +2436,16 @@ MoveSoundTable:
 	db SFX_BATTLE_1C,         $01,$c0 ; SLEEP_POWDER
 	db SFX_BATTLE_13,         $14,$c0 ; PARANOIA
 	db SFX_BATTLE_1B,         $02,$a0 ; CURSED_WIRES
-	db SFX_BATTLE_29,         $f0,$80 ; DRAGON_RAGE
-	db SFX_BATTLE_29,         $20,$c0 ; FIRE_SPIN
+	db SFX_BATTLE_29,         $f0,$80 ; GOD_REVENGE
+	db SFX_BATTLE_29,         $20,$c0 ; SACRIFICE
 	db SFX_BATTLE_2F,         $00,$20 ; THUNDERSHOCK
 	db SFX_BATTLE_2F,         $20,$80 ; THUNDERBOLT
 	db SFX_BATTLE_2E,         $12,$60 ; THUNDER_WAVE
 	db SFX_BATTLE_26,         $00,$80 ; THUNDER
 	db SFX_BATTLE_14,         $01,$e0 ; ROCK_THROW
-	db SFX_BATTLE_29,         $0f,$e0 ; EARTHQUAKE
+	db SFX_BATTLE_29,         $0f,$e0 ; CONVULSION
 	db SFX_BATTLE_29,         $11,$20 ; FISSURE
-	db SFX_DAMAGE,            $10,$40 ; DIG
+	db SFX_DAMAGE,            $10,$40 ; TUNNEL
 	db SFX_BATTLE_0F,         $10,$c0 ; TOXIC
 	db SFX_BATTLE_14,         $00,$20 ; CONFUSION
 	db SFX_MIND_CONTROL,      $00,$80 ; MIND_CONTROL
@@ -2479,7 +2479,7 @@ MoveSoundTable:
 	db SFX_BATTLE_09,         $00,$40 ; TRYPOPHOBIA
 	db SFX_NOT_VERY_EFFECTIVE,$10,$ff ; SMOG
 	db SFX_BATTLE_2A,         $20,$20 ; SLUDGE
-	db SFX_BATTLE_32,         $00,$80 ; BONE_CLUB
+	db SFX_BATTLE_32,         $00,$80 ; REVENANT
 	db SFX_BATTLE_29,         $1f,$20 ; FIRE_BLAST
 	db SFX_BATTLE_25,         $2f,$80 ; WATERFALL
 	db SFX_BATTLE_0F,         $1f,$ff ; CLAMP
@@ -2488,8 +2488,8 @@ MoveSoundTable:
 	db SFX_BATTLE_26,         $1f,$18 ; SPIKE_CANNON
 	db SFX_BATTLE_14,         $0f,$80 ; CONSTRICT
 	db SFX_BATTLE_09,         $f8,$10 ; BLANK_OUT
-	db SFX_FAINT_FALL,        $18,$20 ; KINESIS
-	db SFX_BATTLE_32,         $08,$40 ; SOFTBOILED
+	db SFX_FAINT_FALL,        $18,$20 ; EVIL_LAUGH
+	db SFX_BATTLE_32,         $08,$40 ; PREGNANCY
 	db SFX_BATTLE_17,         $01,$e0 ; HI_JUMP_KICK
 	db SFX_NOT_VERY_EFFECTIVE,$09,$ff ; CREEPY_STARE
 	db SFX_BATTLE_35,         $42,$01 ; BRAIN_EATER

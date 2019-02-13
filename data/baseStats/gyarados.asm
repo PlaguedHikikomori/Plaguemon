@@ -13,7 +13,7 @@ dw GyaradosPicFront
 dw GyaradosPicBack
 ; attacks known at lvl 0
 db BAD_TOOTH
-db DRAGON_RAGE
+db GOD_REVENGE
 db LEER
 db 0
 db 5 ; growth rate

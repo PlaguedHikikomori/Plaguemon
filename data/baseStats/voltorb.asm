@@ -13,7 +13,7 @@ dw VoltorbPicFront
 dw VoltorbPicFront
 ; attacks known at lvl 0
 db TACKLE
-db SCREECH
+db CREEPY_STARE
 db 0
 db 0
 db 0 ; growth rate

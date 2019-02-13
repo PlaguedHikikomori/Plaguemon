@@ -16,7 +16,7 @@ const_value = $D8
 	const SE_SPIRAL_BALLS_INWARD       ; $E2 used in Growth/Focus Energy/Hyper Beam etc.
 	const SE_SHAKE_ENEMY_HUD_2         ; $E3 unused
 	const SE_SHAKE_ENEMY_HUD           ; $E4
-	const SE_SLIDE_MON_HALF_OFF        ; $E5 used in Softboiled
+	const SE_SLIDE_MON_HALF_OFF        ; $E5 used in Pregnancy
 	const SE_PETALS_FALLING            ; $E6 used in Petal Dance
 	const SE_LEAVES_FALLING            ; $E7 used in Razor Leaf
 	const SE_TRANSFORM_MON             ; $E8 used in Transform
@@ -34,11 +34,11 @@ const_value = $D8
 	const SE_SLIDE_MON_OFF             ; $F4 used in Seismic Toss/Low Kick/etc.
 	const SE_FLASH_MON_PIC             ; $F5
 	const SE_SLIDE_MON_DOWN            ; $F6 used in Withdraw/Waterfall/fainting
-	const SE_SLIDE_MON_UP              ; $F7 used in Dig/Waterfall/etc.
+	const SE_SLIDE_MON_UP              ; $F7 used in Tunnel/Waterfall/etc.
 	const SE_FLASH_SCREEN_LONG         ; $F8 used in Confusion/Psychic/etc.
 	const SE_DARKEN_MON_PALETTE        ; $F9 used in Smokescreen/Smog/etc.
 	const SE_WATER_DROPLETS_EVERYWHERE ; $FA used in Mist/Surf/Toxic/etc.
-	const SE_SHAKE_SCREEN              ; $FB used in Earthquake/Fissure/etc.
+	const SE_SHAKE_SCREEN              ; $FB used in Convulsion/Fissure/etc.
 	const SE_RESET_SCREEN_PALETTE      ; $FC used in Leer/Thunderpunch/etc.
 	const SE_DARK_SCREEN_PALETTE       ; $FD used in Hyper Beam/Thunderpunch/etc.
 	const SE_DARK_SCREEN_FLASH         ; $FE used in Cut/Take Down/etc.

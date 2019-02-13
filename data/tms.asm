@@ -1,6 +1,6 @@
 TechnicalMachines:
 	db MEGA_PUNCH
-	db RAZOR_WIND
+	db HURRICANE
 	db SWORDS_DANCE
 	db WHIRLWIND
 	db MEGA_KICK
@@ -21,12 +21,12 @@ TechnicalMachines:
 	db RAGE
 	db MEGA_DRAIN
 	db SOLARBEAM
-	db DRAGON_RAGE
+	db GOD_REVENGE
 	db THUNDERBOLT
 	db THUNDER
-	db EARTHQUAKE
+	db CONVULSION
 	db FISSURE
-	db DIG
+	db TUNNEL
 	db MIND_CONTROL
 	db TELEPORT
 	db MOCKINGBIRD
@@ -39,7 +39,7 @@ TechnicalMachines:
 	db FIRE_BLAST
 	db SHURIKEN
 	db SKULL_BASH
-	db SOFTBOILED
+	db PREGNANCY
 	db BRAIN_EATER
 	db SKY_ATTACK
 	db REST
