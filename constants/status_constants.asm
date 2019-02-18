@@ -6,14 +6,14 @@ FRZ EQU 5
 PAR EQU 6
 
 ; volatile statuses 1
-StoringEnergy          EQU 0 ; Bide
+StoringEnergy          EQU 0 ; Sadness
 ThrashingAbout         EQU 1 ; e.g. Thrash
 AttackingMultipleTimes EQU 2 ; e.g. Double Kick, Fury Attack
 Flinched               EQU 3
 ChargingUp             EQU 4 ; e.g. Solar Beam, Fly
 UsingTrappingMove      EQU 5 ; e.g. Wrap
-Invulnerable           EQU 6 ; charging up Fly/Dig
-Confused               EQU 7
+Invulnerable           EQU 6 ; charging up Fly/Tunnel
+Subjugated             EQU 7
 
 ; volatile statuses 2
 UsingXAccuracy    EQU 0
@@ -30,3 +30,4 @@ BadlyPoisoned    EQU 0
 HasLightScreenUp EQU 1
 HasReflectUp     EQU 2
 Transformed      EQU 3
+	

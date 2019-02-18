@@ -195,12 +195,11 @@ Mon112_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 30,STOMP
-	db 35,TAIL_WHIP
-	db 40,FURY_ATTACK
-	db 48,HORN_DRILL
-	db 55,LEER
-	db 64,TAKE_DOWN
+	db 20,PREGNANCY
+	db 30,STALKING
+	db 40,BRAIN_EATER
+	db 50,CONVULSION
+	db 60,HYPER_BEAM
 	db 0
 
 Mon115_EvosMoves:
@@ -208,10 +207,10 @@ Mon115_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 17,EMBER
+	db 17,RITUAL
 	db 25,LEER
 	db 33,MECHA_PUNCH
-	db 41,FIRE_PUNCH
+	db 41,BLACK_MASS
 	db 46,PROTO_CANNON
 	db 52,SMOKESCREEN
 	db 60,HYPER_BEAM
@@ -264,11 +263,11 @@ Mon100_EvosMoves:
 	db EV_LEVEL,30,ELECTRODE
 	db 0
 ;Learnset
-	db 17,SONICBOOM
-	db 22,SELFDESTRUCT
-	db 29,LIGHT_SCREEN
-	db 36,SHURIKEN
-	db 43,EXPLOSION
+	db 17,EVIL_LAUGH
+	db 22,SADNESS
+	db 29,BAD_TOOTH
+	db 36,VENTRILOQUY
+	db 43,SUICIDE
 	db 0
 
 Mon034_EvosMoves:
@@ -279,7 +278,7 @@ Mon034_EvosMoves:
 	db 12,HORN_ATTACK
 	db 23,POISON_STING
 	db 30,THRASH
-	db 36,EARTHQUAKE
+	db 36,CONVULSION
 	db 40,JUDGEMENT
 	db 45,HORN_DRILL
 	db 52,DOUBLE_KICK
@@ -295,8 +294,8 @@ Mon080_EvosMoves:
 	db 27,GROWL
 	db 33,WATER_GUN
 	db 37,WITHDRAW
-	db 44,AMNESIA
-	db 55,PSYCHIC_M
+	db 44,BLANK_OUT
+	db 55,MIND_CONTROL
 	db 0
 
 Mon002_EvosMoves:
@@ -319,7 +318,11 @@ Mon103_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 28,STOMP
+	db 27,STALKING
+	db 34,LIMBO_LOOP
+	db 36,KASHIRA_SWAP
+	db 38,BLACKMAIL
+	db 41,MOCKINGBIRD
 	db 0
 
 Mon108_EvosMoves:
@@ -337,15 +340,14 @@ Mon108_EvosMoves:
 Mon102_EvosMoves:
 ;EXEGGCUTE
 ;Evolutions
-	db EV_ITEM,LEAF_STONE,1,EXEGGUTOR
+	db EV_ITEM,SODA_POP,1,EXEGGUTOR
 	db 0
 ;Learnset
-	db 25,REFLECT
-	db 28,GROW_CANNABIS
-	db 32,STUN_SPORE
-	db 37,POISONPOWDER
-	db 42,SOLARBEAM
-	db 48,SLEEP_POWDER
+	db 15,VENTRILOQUY
+	db 22,MINIMIZE
+	db 27,EVIL_LAUGH
+	db 33,STALKING
+	db 45,HEADBUTT
 	db 0
 
 Mon088_EvosMoves:
@@ -367,8 +369,11 @@ Mon094_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 29,HYPNOSIS
-	db 38,DREAM_EATER
+	db 34,BRAIN_EATER
+	db 40,SUICIDE
+	db 45,EVIL_LAUGH
+	db 50,TRYPOPHOBIA
+	db 60,PARANOIA
 	db 0
 
 Mon029_EvosMoves:
@@ -377,7 +382,7 @@ Mon029_EvosMoves:
 	db EV_LEVEL,16,NIDORINA
 	db 0
 ;Learnset
-	db 8,SCRATCH
+	db 8,SHANK_UP
 	db 14,POISON_STING
 	db 21,TAIL_WHIP
 	db 29,VICEGRIP
@@ -390,7 +395,7 @@ Mon031_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 12,SCRATCH
+	db 12,SHANK_UP
 	db 23,POISON_STING
 	db 30,BODY_SLAM
 	db 36,VICEGRIP
@@ -418,12 +423,12 @@ Mon111_EvosMoves:
 	db EV_LEVEL,42,RHYDON
 	db 0
 ;Learnset
-	db 30,STOMP
-	db 35,TAIL_WHIP
-	db 40,FURY_ATTACK
-	db 45,HORN_DRILL
-	db 50,LEER
-	db 55,TAKE_DOWN
+	db 17,REVENANT
+	db 22,STALKING
+	db 28,PREGNANCY
+	db 35,CREEPY_STARE
+	db 40,BRAIN_EATER
+	db 47,CONVULSION
 	db 0
 
 Mon131_EvosMoves:
@@ -431,12 +436,12 @@ Mon131_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 16,SING
-	db 20,MIST
-	db 25,BODY_SLAM
-	db 31,CONFUSE_RAY
-	db 38,ICE_BEAM
-	db 46,HYDRO_PUMP
+	db 16,BLACKMAIL
+	db 20,SACRIFICE
+	db 25,UNDERWORLD
+	db 31,BLACK_MASS
+	db 38,SABBATH
+	db 46,HYPER_BEAM
 	db 0
 
 Mon059_EvosMoves:
@@ -445,7 +450,7 @@ Mon059_EvosMoves:
 	db 0
 ;Learnset
     db 60,FIRE_BLAST
-	db 62,EARTHQUAKE
+	db 62,CONVULSION
 	db 0
 
 Mon151_EvosMoves:
@@ -456,7 +461,7 @@ Mon151_EvosMoves:
 	db 10,TRANSFORM
 	db 20,MEGA_PUNCH
 	db 30,METRONOME
-	db 40,PETAL_DANCE ;PARANOIA
+	db 40,PARANOIA
 	db 50,CROP_CIRCLES
 	db 0
 
@@ -465,8 +470,8 @@ Mon130_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 20,BITE
-	db 25,DRAGON_RAGE
+	db 20,BAD_TOOTH
+	db 25,GOD_REVENGE
 	db 33,LEER
 	db 41,JUDGEMENT
 	db 49,HYDRO_PUMP
@@ -506,11 +511,11 @@ Mon072_EvosMoves:
 Mon092_EvosMoves:
 ;GASTLY
 ;Evolutions
-	db EV_LEVEL,25,HAUNTER
+	db EV_LEVEL,28,HAUNTER
 	db 0
 ;Learnset
-	db 27,HYPNOSIS
-	db 35,DREAM_EATER
+	db 22,UNDERWORLD
+	db 27,BAD_TOOTH
 	db 0
 
 Mon123_EvosMoves:
@@ -550,7 +555,7 @@ Mon009_EvosMoves:
 ;Learnset
 	db 8,BUBBLE
 	db 15,WATER_GUN
-	db 24,BITE
+	db 24,BAD_TOOTH
 	db 31,WITHDRAW
 	db 42,SKULL_BASH
 	db 52,HYDRO_PUMP
@@ -587,7 +592,7 @@ Mon152_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-    db 40,EARTHQUAKE
+    db 40,CONVULSION
 	db 47,EXPLOSION
 	db 0
 
@@ -599,7 +604,7 @@ Mon153_EvosMoves:
 	db 23,CONFUSION
 	db 28,LOW_ON_MEMORY
 	db 35,BARRIER
-	db 42,PSYCHIC_M
+	db 42,MIND_CONTROL
 	db 50,PROTO_CANNON
 	db 60,HYPER_BEAM
 	db 0
@@ -609,11 +614,11 @@ Mon058_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 18,EMBER
+	db 18,RITUAL
 	db 23,LEER
 	db 30,TAKE_DOWN
 	db 39,AGILITY
-	db 50,FLAMETHROWER
+	db 50,SABBATH
 	db 0
 
 Mon095_EvosMoves:
@@ -664,8 +669,8 @@ Mon079_EvosMoves:
 	db 22,HEADBUTT
 	db 27,GROWL
 	db 33,WATER_GUN
-	db 40,AMNESIA
-	db 48,PSYCHIC_M
+	db 40,BLANK_OUT
+	db 48,MIND_CONTROL
 	db 0
 
 Mon064_EvosMoves:
@@ -678,7 +683,7 @@ Mon064_EvosMoves:
 	db 20,DISABLE
 	db 27,PSYBEAM
 	db 31,RECOVER
-	db 38,PETAL_DANCE
+	db 38,PARANOIA
 	db 42,REFLECT
 	db 0
 
@@ -690,9 +695,9 @@ Mon075_EvosMoves:
 ;Learnset
 	db 11,DEFENSE_CURL
 	db 16,ROCK_THROW
-	db 21,SELFDESTRUCT
+	db 21,EXPLOSION
 	db 29,HARDEN
-	db 36,EARTHQUAKE
+	db 36,CONVULSION
 	db 43,EXPLOSION
 	db 0
 
@@ -729,7 +734,7 @@ Mon122_EvosMoves:
 	db 15,CONFUSION
 	db 23,LIGHT_SCREEN
 	db 31,DOUBLESLAP
-	db 39,MEDITATE
+	db 39,DARK_VOODOO
 	db 47,DISCIPLE
 	db 0
 
@@ -750,7 +755,7 @@ Mon107_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 33,FIRE_PUNCH
+	db 33,BLACK_MASS
 	db 38,ICE_PUNCH
 	db 43,THUNDERPUNCH
 	db 48,MEGA_PUNCH
@@ -763,8 +768,8 @@ Mon024_EvosMoves:
 	db 0
 ;Learnset
 	db 10,POISON_STING
-	db 17,BITE
-	db 27,GLARE
+	db 17,BAD_TOOTH
+	db 27,CREEPY_STARE
 	db 36,SCREECH
 	db 47,ACID
 	db 0
@@ -797,15 +802,15 @@ Mon054_EvosMoves:
 Mon096_EvosMoves:
 ;DROWZEE
 ;Evolutions
-	db EV_LEVEL,26,HYPNO
+	db EV_LEVEL,33,HYPNO
 	db 0
 ;Learnset
-	db 12,DISABLE
+	db 12,CURSED_WIRES
 	db 17,CONFUSION
-	db 24,HEADBUTT
-	db 29,POISON_GAS
-	db 32,PSYCHIC_M
-	db 37,MEDITATE
+	db 24,DARK_VOODOO
+	db 29,BLANK_OUT
+	db 32,HEADBUTT
+	db 37,MIND_CONTROL
 	db 0
 
 Mon076_EvosMoves:
@@ -815,9 +820,9 @@ Mon076_EvosMoves:
 ;Learnset
 	db 11,DEFENSE_CURL
 	db 16,ROCK_THROW
-	db 21,SELFDESTRUCT
+	db 21,EXPLOSION
 	db 29,HARDEN
-	db 36,EARTHQUAKE
+	db 36,CONVULSION
 	db 43,EXPLOSION
 	db 0
 
@@ -835,11 +840,11 @@ Mon126_EvosMoves:
 	db 0
 ;Learnset
 	db 36,LEER
-	db 39,CONFUSE_RAY
-	db 43,FIRE_PUNCH
+	db 39,BLACKMAIL
+	db 43,BLACK_MASS
 	db 48,SMOKESCREEN
 	db 52,SMOG
-	db 55,FLAMETHROWER
+	db 55,SABBATH
 	db 0
 
 Mon155_EvosMoves:
@@ -882,7 +887,7 @@ Mon109_EvosMoves:
 ;Learnset
 	db 32,SLUDGE
 	db 37,SMOKESCREEN
-	db 40,SELFDESTRUCT
+	db 40,EXPLOSION
 	db 45,HAZE
 	db 48,EXPLOSION
 	db 0
@@ -927,10 +932,10 @@ Mon050_EvosMoves:
 	db 0
 ;Learnset
 	db 15,GROWL
-	db 19,DIG
+	db 19,TUNNEL
 	db 24,SAND_ATTACK
 	db 31,SLASH
-	db 40,EARTHQUAKE
+	db 40,CONVULSION
 	db 0
 
 Mon128_EvosMoves:
@@ -989,7 +994,7 @@ Mon048_EvosMoves:
 	db 30,STUN_SPORE
 	db 35,PSYBEAM
 	db 38,SLEEP_POWDER
-	db 43,PSYCHIC_M
+	db 43,MIND_CONTROL
 	db 0
 
 Mon149_EvosMoves:
@@ -1046,11 +1051,11 @@ Mon060_EvosMoves:
 	db EV_LEVEL,25,POLIWHIRL
 	db 0
 ;Learnset
-	db 16,HYPNOSIS
+	db 16,LIMBO_LOOP
 	db 19,WATER_GUN
 	db 25,DOUBLESLAP
 	db 31,BODY_SLAM
-	db 38,AMNESIA
+	db 38,BLANK_OUT
 	db 45,HYDRO_PUMP
 	db 0
 
@@ -1059,7 +1064,7 @@ Mon124_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 18,LICK
+	db 18,BLACKMAIL
 	db 23,DOUBLESLAP
 	db 31,ICE_PUNCH
 	db 39,BODY_SLAM
@@ -1072,7 +1077,7 @@ Mon146_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 51,MIMIC
+	db 51,MOCKINGBIRD
 	db 55,PROTO_CANNON
 	db 60,FIRE_BLAST
 	db 0
@@ -1083,7 +1088,7 @@ Mon144_EvosMoves:
 	db 0
 ;Learnset
 	db 51,BLIZZARD
-	db 55,MIMIC
+	db 55,MOCKINGBIRD
 	db 60,PROTO_CANNON
 	db 0
 
@@ -1094,7 +1099,7 @@ Mon145_EvosMoves:
 ;Learnset
 	db 51,PROTO_CANNON
 	db 55,THUNDER
-	db 60,MIMIC
+	db 60,MOCKINGBIRD
 	db 0
 
 Mon132_EvosMoves:
@@ -1110,7 +1115,7 @@ Mon052_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 12,BITE
+	db 12,BAD_TOOTH
 	db 17,PAY_DAY
 	db 24,SCREECH
 	db 33,FURY_SWIPES
@@ -1158,10 +1163,10 @@ Mon037_EvosMoves:
 	db 0
 ;Learnset
 	db 16,QUICK_ATTACK
-	db 21,ROAR
-	db 28,CONFUSE_RAY
-	db 35,FLAMETHROWER
-	db 42,FIRE_SPIN
+	db 21,VENTRILOQUY
+	db 28,BLACKMAIL
+	db 35,SABBATH
+	db 42,SACRIFICE
 	db 0
 
 Mon038_EvosMoves:
@@ -1214,7 +1219,7 @@ Mon147_EvosMoves:
 	db 13,VINE_WHIP
 	db 22,POISONPOWDER
 	db 30,RAZOR_LEAF
-	db 44,DRAGON_RAGE
+	db 44,GOD_REVENGE
 	db 47,GROWTH
 	db 52,JUDGEMENT
 	db 55,HYPER_BEAM
@@ -1227,12 +1232,12 @@ Mon148_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 9,EMBER
+	db 9,RITUAL
 	db 15,LEER
 	db 24,RAGE
 	db 36,SLASH
-	db 44,DRAGON_RAGE
-	db 48,FLAMETHROWER
+	db 44,GOD_REVENGE
+	db 48,SABBATH
 	db 52,JUDGEMENT
 	db 55,HYPER_BEAM
 	db 65,FIRE_BLAST
@@ -1389,7 +1394,7 @@ Mon133_EvosEnd:
 ;Learnset
 	db 27,QUICK_ATTACK
 	db 31,TAIL_WHIP
-	db 37,BITE
+	db 37,BAD_TOOTH
 	db 45,TAKE_DOWN
 	db 0
 
@@ -1399,13 +1404,13 @@ Mon136_EvosMoves:
 	db 0
 ;Learnset
 	db 27,QUICK_ATTACK
-	db 31,EMBER
+	db 31,RITUAL
 	db 37,TAIL_WHIP
-	db 40,BITE
+	db 40,BAD_TOOTH
 	db 42,LEER
-	db 44,FIRE_SPIN
+	db 44,SACRIFICE
 	db 48,RAGE
-	db 54,FLAMETHROWER
+	db 54,SABBATH
 	db 0
 
 Mon135_EvosMoves:
@@ -1431,7 +1436,7 @@ Mon134_EvosMoves:
 	db 27,QUICK_ATTACK
 	db 31,WATER_GUN
 	db 37,TAIL_WHIP
-	db 40,BITE
+	db 40,BAD_TOOTH
 	db 42,ACID_ARMOR
 	db 44,HAZE
 	db 48,MIST
@@ -1458,8 +1463,8 @@ Mon041_EvosMoves:
 	db 0
 ;Learnset
 	db 10,SUPERSONIC
-	db 15,BITE
-	db 21,CONFUSE_RAY
+	db 15,BAD_TOOTH
+	db 21,BLACKMAIL
 	db 28,WING_ATTACK
 	db 36,HAZE
 	db 0
@@ -1471,8 +1476,8 @@ Mon023_EvosMoves:
 	db 0
 ;Learnset
 	db 10,POISON_STING
-	db 17,BITE
-	db 24,GLARE
+	db 17,BAD_TOOTH
+	db 24,CREEPY_STARE
 	db 31,SCREECH
 	db 38,ACID
 	db 0
@@ -1495,11 +1500,11 @@ Mon061_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 16,HYPNOSIS
+	db 16,LIMBO_LOOP
 	db 19,WATER_GUN
 	db 26,DOUBLESLAP
 	db 33,BODY_SLAM
-	db 41,AMNESIA
+	db 41,BLANK_OUT
 	db 49,HYDRO_PUMP
 	db 0
 
@@ -1510,10 +1515,10 @@ Mon062_EvosMoves:
 ;Learnset
 	db 8,BUBBLE
 	db 15,WATER_GUN
-	db 24,BITE
+	db 24,BAD_TOOTH
 	db 31,WITHDRAW
 	db 42,SKULL_BASH
-	db 44,DRAGON_RAGE
+	db 44,GOD_REVENGE
 	db 52,JUDGEMENT
 	db 55,HYPER_BEAM
 	db 65,HYDRO_PUMP
@@ -1586,10 +1591,10 @@ Mon051_EvosMoves:
 	db 0
 ;Learnset
 	db 15,GROWL
-	db 19,DIG
+	db 19,TUNNEL
 	db 24,SAND_ATTACK
 	db 35,SLASH
-	db 47,EARTHQUAKE
+	db 47,CONVULSION
 	db 0
 
 Mon049_EvosMoves:
@@ -1602,7 +1607,7 @@ Mon049_EvosMoves:
 	db 30,STUN_SPORE
 	db 38,PSYBEAM
 	db 43,SLEEP_POWDER
-	db 50,PSYCHIC_M
+	db 50,MIND_CONTROL
 	db 0
 
 Mon087_EvosMoves:
@@ -1697,12 +1702,11 @@ Mon097_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 12,DISABLE
-	db 17,CONFUSION
-	db 24,HEADBUTT
-	db 33,POISON_GAS
-	db 37,PSYCHIC_M
-	db 43,MEDITATE
+	db 14,DARK_VOODOO
+	db 21,BLANK_OUT
+	db 29,HEADBUTT
+	db 37,VENTRILOQUY
+	db 43,MIND_CONTROL
 	db 0
 
 Mon042_EvosMoves:
@@ -1711,8 +1715,8 @@ Mon042_EvosMoves:
 	db 0
 ;Learnset
 	db 10,SUPERSONIC
-	db 15,BITE
-	db 21,CONFUSE_RAY
+	db 15,BAD_TOOTH
+	db 21,BLACKMAIL
 	db 32,WING_ATTACK
 	db 43,HAZE
 	db 0
@@ -1723,10 +1727,10 @@ Mon150_EvosMoves:
 	db 0
 ;Learnset
 	db 47,TIME_WARP
-	db 58,PETAL_DANCE ;PARANOIA
+	db 58,PARANOIA
 	db 69,RECOVER
 	db 80,MIST
-	db 91,PSYCHIC_M
+	db 91,MIND_CONTROL
 	db 99,CROP_CIRCLES
 	db 0
 
@@ -1735,10 +1739,11 @@ Mon143_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
+	db 29,STALKING
 	db 35,BODY_SLAM
-	db 41,HARDEN
-	db 48,DOUBLE_EDGE
-	db 56,HYPER_BEAM
+	db 41,BRAIN_EATER
+	db 48,HARDEN
+	db 56,SUICIDE
 	db 0
 
 Mon129_EvosMoves:
@@ -1817,11 +1822,11 @@ Mon101_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 17,SONICBOOM
-	db 22,SELFDESTRUCT
-	db 29,LIGHT_SCREEN
-	db 40,SHURIKEN
-	db 50,EXPLOSION
+	db 19,SADNESS
+	db 26,BAD_TOOTH
+	db 32,STALKING
+	db 38,VENTRILOQUY
+	db 46,SUICIDE
 	db 0
 
 Mon036_EvosMoves:
@@ -1838,7 +1843,7 @@ Mon110_EvosMoves:
 ;Learnset
 	db 32,SLUDGE
 	db 39,SMOKESCREEN
-	db 43,SELFDESTRUCT
+	db 43,EXPLOSION
 	db 49,HAZE
 	db 53,EXPLOSION
 	db 0
@@ -1848,7 +1853,7 @@ Mon053_EvosMoves:
 ;Evolutions
 	db 0
 ;Learnset
-	db 12,BITE
+	db 12,BAD_TOOTH
 	db 17,PAY_DAY
 	db 24,SCREECH
 	db 37,FURY_SWIPES
@@ -1880,8 +1885,10 @@ Mon093_EvosMoves:
 	db EV_ITEM,SODA_POP,1,GENGAR
 	db 0
 ;Learnset
-	db 29,HYPNOSIS
-	db 38,DREAM_EATER
+	db 27,BAD_TOOTH
+	db 34,BRAIN_EATER
+	db 40,SUICIDE
+	db 45,EVIL_LAUGH
 	db 0
 
 Mon063_EvosMoves:
@@ -1901,11 +1908,11 @@ Mon065_EvosMoves:
 	db 20,DISABLE
 	db 27,PSYBEAM
 	db 31,RECOVER
-	db 38,PETAL_DANCE
+	db 38,PARANOIA
 	db 42,REFLECT
 	db 47,DISCIPLE
 	db 55,JUDGEMENT
-	db 60,PSYCHIC_M
+	db 60,MIND_CONTROL
 	db 0
 
 Mon017_EvosMoves:
@@ -2057,7 +2064,7 @@ Mon077_EvosMoves:
 	db 30,TAIL_WHIP
 	db 32,STOMP
 	db 35,GROWL
-	db 39,FIRE_SPIN
+	db 39,SACRIFICE
 	db 43,TAKE_DOWN
 	db 48,AGILITY
 	db 0
@@ -2070,7 +2077,7 @@ Mon078_EvosMoves:
 	db 30,TAIL_WHIP
 	db 32,STOMP
 	db 35,GROWL
-	db 39,FIRE_SPIN
+	db 39,SACRIFICE
 	db 47,TAKE_DOWN
 	db 55,AGILITY
 	db 0
@@ -2118,7 +2125,7 @@ Mon030_EvosMoves:
 	db EV_ITEM,MOON_STONE,1,NIDOQUEEN
 	db 0
 ;Learnset
-	db 8,SCRATCH
+	db 8,SHANK_UP
 	db 14,POISON_STING
 	db 23,TAIL_WHIP
 	db 32,VICEGRIP
@@ -2134,9 +2141,9 @@ Mon074_EvosMoves:
 ;Learnset
 	db 11,DEFENSE_CURL
 	db 16,ROCK_THROW
-	db 21,SELFDESTRUCT
+	db 21,EXPLOSION
 	db 26,HARDEN
-	db 31,EARTHQUAKE
+	db 31,CONVULSION
 	db 36,EXPLOSION
 	db 0
 
@@ -2149,7 +2156,7 @@ Mon137_EvosMoves:
 	db 18,CONFUSION
 	db 24,MACHINE_LEARN
 	db 35,LOW_ON_MEMORY
-	db 40,PSYCHIC_M
+	db 40,MIND_CONTROL
 	db 47,PROTO_CANNON
 	db 56,HYPER_BEAM
 	db 0
@@ -2160,7 +2167,7 @@ Mon142_EvosMoves:
 	db 0
 ;Learnset
 	db 33,SUPERSONIC
-	db 38,BITE
+	db 38,BAD_TOOTH
 	db 45,TAKE_DOWN
 	db 54,HYPER_BEAM
 	db 0
@@ -2206,12 +2213,12 @@ Mon004_EvosMoves:
 	db EV_LEVEL,16,CHARMELEON
 	db 0
 ;Learnset
-	db 9,EMBER
+	db 9,RITUAL
 	db 15,LEER
 	db 22,RAGE
 	db 30,SLASH
-	db 38,FLAMETHROWER
-	db 46,FIRE_SPIN
+	db 38,SABBATH
+	db 46,SACRIFICE
 	db 0
 
 Mon007_EvosMoves:
@@ -2222,7 +2229,7 @@ Mon007_EvosMoves:
 ;Learnset
 	db 8,BUBBLE
 	db 15,WATER_GUN
-	db 22,BITE
+	db 22,BAD_TOOTH
 	db 28,WITHDRAW
 	db 35,SKULL_BASH
 	db 42,HYDRO_PUMP
@@ -2234,12 +2241,12 @@ Mon005_EvosMoves:
 	db EV_LEVEL,36,CHARIZARD
 	db 0
 ;Learnset
-	db 9,EMBER
+	db 9,RITUAL
 	db 15,LEER
 	db 24,RAGE
 	db 33,SLASH
-	db 42,FLAMETHROWER
-	db 56,FIRE_SPIN
+	db 42,SABBATH
+	db 56,SACRIFICE
 	db 0
 
 Mon008_EvosMoves:
@@ -2250,7 +2257,7 @@ Mon008_EvosMoves:
 ;Learnset
 	db 8,BUBBLE
 	db 15,WATER_GUN
-	db 24,BITE
+	db 24,BAD_TOOTH
 	db 31,WITHDRAW
 	db 39,SKULL_BASH
 	db 47,HYDRO_PUMP
@@ -2262,12 +2269,12 @@ Mon006_EvosMoves:
     db EV_ITEM,GOLD_TEETH,1,DRAGONAIR
 	db 0
 ;Learnset
-	db 9,EMBER
+	db 9,RITUAL
 	db 15,LEER
 	db 24,RAGE
 	db 36,SLASH
-	db 46,FLAMETHROWER
-	db 55,FIRE_SPIN
+	db 46,SABBATH
+	db 55,SACRIFICE
 	db 0
 
 Mon187_EvosMoves:

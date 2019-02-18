@@ -3,16 +3,16 @@ const_value = 1
 	const POUND        ; 01
 	const KARATE_CHOP  ; 02
 	const DOUBLESLAP   ; 03
-	const COMET_PUNCH  ; 04
+	const UNDERWORLD   ; 04
 	const MEGA_PUNCH   ; 05
 	const PAY_DAY      ; 06
-	const FIRE_PUNCH   ; 07
+	const BLACK_MASS   ; 07
 	const ICE_PUNCH    ; 08
 	const THUNDERPUNCH ; 09
-	const SCRATCH      ; 0a
+	const SHANK_UP     ; 0a
 	const VICEGRIP     ; 0b
 	const GUILLOTINE   ; 0c
-	const RAZOR_WIND   ; 0d
+	const HURRICANE    ; 0d
 	const SWORDS_DANCE ; 0e
 	const CUT          ; 0f
 	const GUST         ; 10
@@ -43,16 +43,16 @@ const_value = 1
 	const TWINEEDLE    ; 29
 	const PIN_MISSILE  ; 2a
 	const LEER         ; 2b
-	const BITE         ; 2c
+	const BAD_TOOTH    ; 2c
 	const GROWL        ; 2d
-	const ROAR         ; 2e
+	const VENTRILOQUY  ; 2e
 	const SING         ; 2f
 	const SUPERSONIC   ; 30
 	const SONICBOOM    ; 31
 	const DISABLE      ; 32
 	const ACID         ; 33
-	const EMBER        ; 34
-	const FLAMETHROWER ; 35
+	const RITUAL       ; 34
+	const SABBATH      ; 35
 	const MIST         ; 36
 	const WATER_GUN    ; 37
 	const HYDRO_PUMP   ; 38
@@ -79,36 +79,36 @@ const_value = 1
 	const POISONPOWDER ; 4d
 	const STUN_SPORE   ; 4e
 	const SLEEP_POWDER ; 4f
-	const PETAL_DANCE  ; 50
-	const STRING_SHOT  ; 51
-	const DRAGON_RAGE  ; 52
-	const FIRE_SPIN    ; 53
+	const PARANOIA     ; 50
+	const CURSED_WIRES ; 51
+	const GOD_REVENGE  ; 52
+	const SACRIFICE    ; 53
 	const THUNDERSHOCK ; 54
 	const THUNDERBOLT  ; 55
 	const THUNDER_WAVE ; 56
 	const THUNDER      ; 57
 	const ROCK_THROW   ; 58
-	const EARTHQUAKE   ; 59
+	const CONVULSION   ; 59
 	const FISSURE      ; 5a
-	const DIG          ; 5b
+	const TUNNEL       ; 5b
 	const TOXIC        ; 5c
 	const CONFUSION    ; 5d
-	const PSYCHIC_M    ; 5e
-	const HYPNOSIS     ; 5f
-	const MEDITATE     ; 60
+	const MIND_CONTROL ; 5e
+	const LIMBO_LOOP   ; 5f
+	const DARK_VOODOO  ; 60
 	const AGILITY      ; 61
 	const QUICK_ATTACK ; 62
 	const RAGE         ; 63
 	const TELEPORT     ; 64
-	const NIGHT_SHADE  ; 65
-	const MIMIC        ; 66
+	const STALKING     ; 65
+	const MOCKINGBIRD  ; 66
 	const SCREECH      ; 67
 	const DOUBLE_TEAM  ; 68
 	const RECOVER      ; 69
 	const HARDEN       ; 6a
 	const MINIMIZE     ; 6b
 	const SMOKESCREEN  ; 6c
-	const CONFUSE_RAY  ; 6d
+	const BLACKMAIL    ; 6d
 	const WITHDRAW     ; 6e
 	const DEFENSE_CURL ; 6f
 	const BARRIER      ; 70
@@ -116,15 +116,15 @@ const_value = 1
 	const HAZE         ; 72
 	const REFLECT      ; 73
 	const FOCUS_ENERGY ; 74
-	const BIDE         ; 75
+	const SADNESS      ; 75
 	const METRONOME    ; 76
 	const MIRROR_MOVE  ; 77
-	const SELFDESTRUCT ; 78
-	const EGG_BOMB     ; 79
-	const LICK         ; 7a
+	const SUICIDE      ; 78
+	const MACHINE_LEARN; 79
+	const TRYPOPHOBIA  ; 7a
 	const SMOG         ; 7b
 	const SLUDGE       ; 7c
-	const BONE_CLUB    ; 7d
+	const REVENANT     ; 7d
 	const FIRE_BLAST   ; 7e
 	const WATERFALL    ; 7f
 	const CLAMP        ; 80
@@ -132,16 +132,16 @@ const_value = 1
 	const SKULL_BASH   ; 82
 	const SPIKE_CANNON ; 83
 	const CONSTRICT    ; 84
-	const AMNESIA      ; 85
-	const KINESIS      ; 86
-	const SOFTBOILED   ; 87
+	const BLANK_OUT    ; 85
+	const EVIL_LAUGH   ; 86
+	const PREGNANCY    ; 87
 	const HI_JUMP_KICK ; 88
-	const GLARE        ; 89
-	const DREAM_EATER  ; 8a
+	const CREEPY_STARE ; 89
+	const BRAIN_EATER  ; 8a
 	const POISON_GAS   ; 8b
 	const BARRAGE      ; 8c
 	const LEECH_LIFE   ; 8d
-	const LOVELY_KISS  ; 8e
+	const JUDAHS_KISS  ; 8e
 	const SKY_ATTACK   ; 8f
 	const TRANSFORM    ; 90
 	const BUBBLE       ; 91
@@ -159,7 +159,7 @@ const_value = 1
 	const ROCK_SLIDE   ; 9d
 	const HYPER_FANG   ; 9e
 	const SHARPEN      ; 9f
-	const CONVERSION   ; a0
+	const KASHIRA_SWAP ; a0
 	const TRI_ATTACK   ; a1
 	const SUPER_FANG   ; a2
 	const SLASH        ; a3
@@ -168,7 +168,7 @@ const_value = 1
 	const PROTO_CANNON ; a6
 	const MECHA_PUNCH  ; a7
 	const LOW_ON_MEMORY; a8
-	const MACHINE_LEARN; a9
+	const HEADACHE     ; a9
 	const CROP_CIRCLES ; aa
 	const TIME_WARP    ; ab
 	const WRATH_OF_GOD ; ac
@@ -206,7 +206,7 @@ const_value = STRUGGLE + 1
 	const ANIM_BC
 	const SLP_ANIM ; sleeping monster
 	const ANIM_BE
-	const CONF_ANIM ; confused monster
+	const SUBJ_ANIM ; subjugated monster
 	const ANIM_C0
 	const TOSS_ANIM ; toss Poké Ball
 	const SHAKE_ANIM ; shaking Poké Ball when catching monster

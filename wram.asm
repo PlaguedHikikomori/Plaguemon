@@ -651,7 +651,7 @@ wTestBattlePlayerSelectedMove:: ; ccd9
 	ds 1
 
 wMoveMenuType:: ; ccdb
-; 0=regular, 1=mimic, 2=above message box (relearn, heal pp..)
+; 0=regular, 1=mockingbird, 2=above message box (relearn, heal pp..)
 	ds 1
 
 wPlayerSelectedMove:: ; ccdc
@@ -727,7 +727,7 @@ wLuckySlotHiddenObjectIndex:: ; cd05
 wEnemyNumHits:: ; cd05
 ; number of hits by enemy in attacks like Double Slap, etc.
 
-wEnemyBideAccumulatedDamage:: ; cd05
+wEnemySadnessAccumulatedDamage:: ; cd05
 ; the amount of damage accumulated by the enemy while biding (2 bytes)
 
 	ds 10
@@ -1712,14 +1712,14 @@ wPlayerStatsToHalve:: ; d061
 	ds 1
 
 wPlayerBattleStatus1:: ; d062
-; bit 0 - bide
+; bit 0 - Sadness
 ; bit 1 - thrash / petal dance
 ; bit 2 - attacking multiple times (e.g. double kick)
 ; bit 3 - flinch
 ; bit 4 - charging up for attack
 ; bit 5 - using multi-turn move (e.g. wrap)
-; bit 6 - invulnerable to normal attack (using fly/dig)
-; bit 7 - confusion
+; bit 6 - invulnerable to normal attack (using fly/tunnel)
+; bit 7 - subjugate
 	ds 1
 
 wPlayerBattleStatus2:: ; d063
@@ -1758,7 +1758,7 @@ wPlayerNumAttacksLeft::
 ; when the player is attacking multiple times, the number of attacks left
 	ds 1
 
-wPlayerConfusedCounter:: ; d06b
+wPlayerSubjugatedCounter:: ; d06b
 	ds 1
 
 wPlayerToxicCounter:: ; d06c
@@ -1775,7 +1775,7 @@ wEnemyNumAttacksLeft:: ; d06f
 ; when the enemy is attacking multiple times, the number of attacks left
 	ds 1
 
-wEnemyConfusedCounter:: ; d070
+wEnemySubjugatedCounter:: ; d070
 	ds 1
 
 wEnemyToxicCounter:: ; d071
@@ -1791,7 +1791,7 @@ wEnemyDisabledMove:: ; d072
 wPlayerNumHits:: ; d074
 ; number of hits by player in attacks like Double Slap, etc.
 
-wPlayerBideAccumulatedDamage:: ; d074
+wPlayerSadnessAccumulatedDamage:: ; d074
 ; the amount of damage accumulated by the player while biding (2 bytes)
 
 wUnknownSerialCounter2:: ; d075
@@ -2301,7 +2301,7 @@ wSerialPlayerDataBlock:: ; d152
 wPseudoItemID:: ; d152
 ; When a real item is being used, this is 0.
 ; When a move is acting as an item, this is the ID of the item it's acting as.
-; For example, out-of-battle Dig is executed using a fake Escape Rope item. In
+; For example, out-of-battle Tunnel is executed using a fake Escape Rope item. In
 ; that case, this would be ESCAPE_ROPE.
 	ds 1
 
@@ -3068,7 +3068,7 @@ wd732:: ; d732
 ; 2. does not have the player start in floor two of the player's house (instead sending them to [wLastMap])
 ; 3. allows wild battles to be avoided by holding down B
 ; bit 2: the target warp is a fly warp (bit 3 set or blacked out) or a dungeon warp (bit 4 set)
-; bit 3: used warp pad, escape rope, dig, teleport, or fly, so the target warp is a "fly warp"
+; bit 3: used warp pad, escape rope, tunnel, teleport, or fly, so the target warp is a "fly warp"
 ; bit 4: jumped into hole (Pokemon Mansion, Seafoam Islands, Victory Road) or went down waterfall (Seafoam Islands), so the target warp is a "dungeon warp"
 ; bit 5: currently being forced to ride bike (cycling road)
 ; bit 6: map destination is [wLastBlackoutMap] (usually the last used pokemon center, but could be the player's house)

@@ -12,8 +12,8 @@ INCBIN "pic/bmon/growlithe.pic",0,1 ; 55, sprite dimensions
 dw GrowlithePicFront
 dw GrowlithePicBack
 ; attacks known at lvl 0
-db BITE
-db ROAR
+db BAD_TOOTH
+db SHANK_UP
 db 0
 db 0
 db 5 ; growth rate
