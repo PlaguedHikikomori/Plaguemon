@@ -12,9 +12,9 @@ INCBIN "pic/bmon/charizard.pic",0,1 ; 77, sprite dimensions
 dw CharizardPicFront
 dw CharizardPicFront
 ; attacks known at lvl 0
-db SHANK_UP
+db SCRATCH
 db GROWL
-db RITUAL
+db EMBER
 db LEER
 db 3 ; growth rate
 ; learnset

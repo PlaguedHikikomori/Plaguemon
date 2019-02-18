@@ -876,7 +876,7 @@ _ViridianBlackboardBurnText::
 	prompt
 
 _ViridianBlackboardFrozenText::
-	text "COMA is"
+	text "OVERDOSE is"
 	line "like a limbo."
 	cont "You can be here."
 
@@ -1163,22 +1163,22 @@ _GetOutText::
 
 _FastAsleepText::
 	text "<USER> is"
-	line "in recovery!"
+	line "in other dimension!"
 	prompt
 
 _WokeUpText::
 	text "<USER>"
-	line "was awakened!"
+	line "woke up!"
 	prompt
 
 _IsFrozenText::
 	text "<USER>"
-	line "is in COMA!"
+	line "is frozen solid!"
 	prompt
 
 _FullyParalyzedText::
 	text "<USER>'s"
-	line "too scared to move"
+	line "fully paralyzed!"
 	prompt
 
 _FlinchedText::
@@ -1196,19 +1196,19 @@ _DisabledNoMoreText::
 	line "disabled no more!"
 	prompt
 
-_IsSubjugatedText::
+_IsConfusedText::
 	text "<USER>"
-	line "is subjugated!"
+	line "is confused!"
 	prompt
 
 _HurtItselfText::
-	text "it was forced to"
-	line "commit suicide!"
+	text "It hurt itself in"
+	line "its confusion!"
 	prompt
 
-_SubjugatedNoMoreText::
+_ConfusedNoMoreText::
 	text "<USER>'s"
-	line "subjugated no more"
+	line "confused no more!"
 	prompt
 
 _SavingEnergyText::
@@ -1544,30 +1544,31 @@ _PotionText::
 _AntidoteText::
 	TX_RAM wcd6d
 	text " was"
-	line "cured of tumor!"
+	line "cured of poison!"
 	done
 
 _ParlyzHealText::
 	TX_RAM wcd6d
 	text "'s"
-	line "rid of anxiety!"
+	line "rid of paralysis!"
 	done
 
 _BurnHealText::
 	TX_RAM wcd6d
-	text "was exorcised!"
+	text "'s"
+	line "burn was healed!"
 	done
 
 _IceHealText::
 	TX_RAM wcd6d
 	text " was"
-	line "awakened!"
+	line "defrosted!"
 	done
 
 _AwakeningText::
 	TX_RAM wcd6d
 	text ""
-	line "got sober!"
+	line "woke up!"
 	done
 
 _FullHealText::
@@ -2010,13 +2011,12 @@ _IsEvolvingText::
 
 _FellAsleepText::
 	text "<TARGET>"
-	line "got in OVERDOSE!"
+	line "got in a COMA!"
 	prompt
 
 _AlreadyAsleepText::
 	text "<TARGET>'s"
-	line "already in"
-	cont "OVERDOSE!"
+	line "already in COMA!"
 	prompt
 
 _PoisonedText::
@@ -2037,11 +2037,11 @@ _BurnedText::
 
 _FrozenText::
 	text "<TARGET>"
-	line "got in COMA"
+	line "was frozen solid!"
 	prompt
 
 _FireDefrostedText::
-	text "Satan awakened"
+	text "Fire defrosted"
 	line "<TARGET>!"
 	prompt
 
@@ -2119,12 +2119,12 @@ _DugAHoleText::
 	line "dug a hole!"
 	prompt
 
-_BecameSubjugatedText::
+_BecameConfusedText::
 	text "<TARGET>"
-	line "became subjugated"
+	line "became confused!"
 	prompt
 
-_MockingbirdLearnedMoveText::
+_MimicLearnedMoveText::
 	text "<USER>"
 	line "learned"
 	cont "@"
@@ -2169,7 +2169,7 @@ _ParalyzedMayNotAttackText::
 	prompt
 
 _DiscipleText::
-	text "He professed a"
+	text "He confessed a"
 	line "DISCIPLE!"
 	prompt
 
@@ -2209,7 +2209,7 @@ _HitWithRecoilText::
 	prompt
 
 _ConvertedTypeText::
-	text "Changed face with"
+	text "Converted type to"
 	line "<TARGET>'s!"
 	prompt
 
@@ -2220,12 +2220,13 @@ _StatusChangesEliminatedText::
 
 _StartedSleepingEffect::
 	text "<USER>"
-	line "went to rehab!"
+	line "started sleeping!"
 	done
 
 _FellAsleepBecameHealthyText::
 	text "<USER>"
-	line "started detox"
+	line "fell asleep and"
+	cont "became healthy!"
 	done
 
 _RegainedHealthText::
@@ -2262,9 +2263,9 @@ _SuckedHealthText::
 	line "<TARGET>!"
 	prompt
 
-_BrainWasEatenText::
+_DreamWasEatenText::
 	text "<TARGET>'s"
-	line "brain was eaten!"
+	line "dream was eaten!"
 	prompt
 
 _TradeCenterText1::

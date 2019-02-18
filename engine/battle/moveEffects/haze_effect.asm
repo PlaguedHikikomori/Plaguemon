@@ -47,7 +47,7 @@ HazeEffect_:
 	jp PrintText
 
 CureVolatileStatuses:
-	res Subjugated, [hl]
+	res Confused, [hl]
 	inc hl ; BATTSTATUS2
 	ld a, [hl]
 	; clear UsingXAccuracy, ProtectedByMist, GettingPumped, and Seeded statuses

@@ -13,7 +13,7 @@ dw WeedlePicFront
 dw WeedlePicFront
 ; attacks known at lvl 0
 db POISON_STING
-db SHARPEN
+db STRING_SHOT
 db 0
 db 0
 db 0 ; growth rate

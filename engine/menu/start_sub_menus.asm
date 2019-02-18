@@ -126,9 +126,9 @@ StartMenu_Pokemon:
 	dw .surf
 	dw .strength
 	dw .flash
-	dw .tunnel
+	dw .dig
 	dw .teleport
-	dw .pregnancy
+	dw .softboiled
 .fly
 	bit 2,a ; does the player have the Thunder Badge?
 	jp z,.newBadgeRequired
@@ -192,7 +192,7 @@ StartMenu_Pokemon:
 .flashLightsAreaText
 	TX_FAR _FlashLightsAreaText
 	db "@"
-.tunnel
+.dig
 	ld a,ESCAPE_ROPE
 	ld [wcf91],a
 	ld [wPseudoItemID],a
@@ -233,7 +233,7 @@ StartMenu_Pokemon:
 .cannotFlyHereText
 	TX_FAR _CannotFlyHereText
 	db "@"
-.pregnancy
+.softboiled
 	ld hl,wPartyMon1MaxHP
 	ld a,[wWhichPokemon]
 	ld bc,wPartyMon2 - wPartyMon1

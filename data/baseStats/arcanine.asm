@@ -12,8 +12,8 @@ INCBIN "pic/bmon/arcanine.pic",0,1 ; 77, sprite dimensions
 dw ArcaninePicFront
 dw ArcaninePicFront
 ; attacks known at lvl 0
-db SHANK_UP
-db RITUAL
+db ROAR
+db EMBER
 db LEER
 db TAKE_DOWN
 db 5 ; growth rate

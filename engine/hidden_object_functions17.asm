@@ -279,13 +279,13 @@ ViridianSchoolBlackboardText2:
 	db "@"
 
 StatusAilmentText1:
-	db   " OVD"
+	db   " COM"
 	next " TMR"
 	next " ANX@"
 
 StatusAilmentText2:
 	db   " POS"
-	next " COM"
+	next " OVD"
 	next " QUIT@@"
 
 ViridianBlackboardStatusPointers:

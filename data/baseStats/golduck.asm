@@ -12,7 +12,7 @@ INCBIN "pic/bmon/golduck.pic",0,1 ; 77, sprite dimensions
 dw GolduckPicFront
 dw GolduckPicBack
 ; attacks known at lvl 0
-db SHANK_UP
+db SCRATCH
 db TAIL_WHIP
 db DISABLE
 db 0

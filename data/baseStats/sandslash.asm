@@ -12,7 +12,7 @@ INCBIN "pic/bmon/sandslash.pic",0,1 ; 66, sprite dimensions
 dw SandslashPicFront
 dw SandslashPicFront
 ; attacks known at lvl 0
-db SHANK_UP
+db SCRATCH
 db SAND_ATTACK
 db 0
 db 0

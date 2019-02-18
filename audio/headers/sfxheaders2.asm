@@ -334,8 +334,8 @@ SFX_Battle_2E::
 SFX_Battle_2F::
 	audio SFX_Battle_2F, Ch4, Ch5, Ch7
 
-SFX_Mind_Control::
-	audio SFX_Mind_Control, Ch4, Ch5, Ch7
+SFX_Psychic_M::
+	audio SFX_Psychic_M, Ch4, Ch5, Ch7
 
 SFX_Battle_31::
 	audio SFX_Battle_31, Ch4, Ch5

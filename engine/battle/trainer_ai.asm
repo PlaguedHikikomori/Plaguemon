@@ -174,7 +174,7 @@ AIMoveChoiceModification2:
 	ld a, [wEnemyMoveEffect]
 	cp ATTACK_UP1_EFFECT
 	jr c, .nextMove
-	cp SADNESS_EFFECT
+	cp BIDE_EFFECT
 	jr c, .preferMove
 	cp ATTACK_UP2_EFFECT
 	jr c, .nextMove

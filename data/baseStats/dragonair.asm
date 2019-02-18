@@ -12,9 +12,9 @@ INCBIN "pic/bmon/dragonair.pic",0,1 ; 66, sprite dimensions
 dw DragonairPicFront
 dw DragonairPicBack
 ; attacks known at lvl 0
-db SHANK_UP
+db SCRATCH
 db GROWL
-db RITUAL
+db EMBER
 db LEER
 db 3 ; growth rate
 ; learnset

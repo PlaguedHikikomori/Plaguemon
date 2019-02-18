@@ -15,7 +15,7 @@ dw NidokingPicBack
 db TACKLE
 db HORN_ATTACK
 db POISON_STING
-db CONVULSION
+db EARTHQUAKE
 db 3 ; growth rate
 ; learnset
 	tmlearn 1,5,6,7,8

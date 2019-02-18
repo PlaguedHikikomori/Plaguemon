@@ -13,7 +13,7 @@ dw CaterpiePicFront
 dw CaterpiePicBack
 ; attacks known at lvl 0
 db TACKLE
-db SHARPEN
+db STRING_SHOT
 db 0
 db 0
 db 0 ; growth rate

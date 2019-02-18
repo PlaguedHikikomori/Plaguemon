@@ -13,7 +13,7 @@ dw PoliwhirlPicFront
 dw PoliwhirlPicFront
 ; attacks known at lvl 0
 db BUBBLE
-db LIMBO_LOOP
+db HYPNOSIS
 db WATER_GUN
 db 0
 db 3 ; growth rate
