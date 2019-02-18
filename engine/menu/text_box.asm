@@ -753,7 +753,7 @@ GetMonFieldMoves:
 ; Move id = id of move
 ; Name index = index of name in FieldMoveNames
 ; Leftmost tile = -1 + tile column in which the first letter of the move's name should be displayed
-;                 "PREGNANCY" is $08 because it has 4 more letters than "SURF", for example, whose value is $0C
+;                 "SOFTBOILED" is $08 because it has 4 more letters than "SURF", for example, whose value is $0C
 FieldMoveDisplayData:
 	db CUT, $01, $08
 	db FLY, $02, $0C
@@ -761,7 +761,7 @@ FieldMoveDisplayData:
 	db SURF, $04, $0C
 	db STRENGTH, $05, $0A
 	db FLASH, $06, $0C
-	db TUNNEL, $07, $0C
+	db DIG, $07, $0C
 	db TELEPORT, $08, $09
-	db PREGNANCY, $09, $08
+	db SOFTBOILED, $09, $08
 	db $ff ; list terminator

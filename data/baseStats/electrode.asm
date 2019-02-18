@@ -4,8 +4,8 @@ db 50 ; base attack
 db 70 ; base defense
 db 120 ; base speed
 db 80 ; base special
-db PUPPET ; species type 1
-db GHOST ; species type 2
+db ELECTRIC ; species type 1
+db ELECTRIC ; species type 2
 db 60 ; catch rate
 db 150 ; base exp yield
 INCBIN "pic/bmon/electrode.pic",0,1 ; 77, sprite dimensions
@@ -13,8 +13,8 @@ dw ElectrodePicFront
 dw ElectrodePicFront
 ; attacks known at lvl 0
 db TACKLE
-db CREEPY_STARE
-db EVIL_LAUGH
+db SCREECH
+db SONICBOOM
 db 0
 db 0 ; growth rate
 ; learnset

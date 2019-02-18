@@ -5,16 +5,16 @@ db 45 ; base defense
 db 95 ; base speed
 db 115 ; base special
 db GHOST ; species type 1
-db GHOST ; species type 2
+db POISON ; species type 2
 db 90 ; catch rate
 db 126 ; base exp yield
 INCBIN "pic/bmon/haunter.pic",0,1 ; 66, sprite dimensions
 dw HaunterPicFront
 dw HaunterPicFront
 ; attacks known at lvl 0
-db UNDERWORLD
-db BAD_TOOTH
-db STALKING
+db LICK
+db CONFUSE_RAY
+db NIGHT_SHADE
 db 0
 db 3 ; growth rate
 ; learnset

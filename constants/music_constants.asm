@@ -247,7 +247,7 @@ ENDM
 	music_const SFX_PSYBEAM,            SFX_Psybeam
 	music_const SFX_BATTLE_2E,          SFX_Battle_2E
 	music_const SFX_BATTLE_2F,          SFX_Battle_2F
-	music_const SFX_MIND_CONTROL,       SFX_Mind_Control
+	music_const SFX_PSYCHIC_M,          SFX_Psychic_M
 	music_const SFX_BATTLE_31,          SFX_Battle_31
 	music_const SFX_BATTLE_32,          SFX_Battle_32
 	music_const SFX_BATTLE_33,          SFX_Battle_33

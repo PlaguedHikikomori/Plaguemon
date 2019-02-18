@@ -13,7 +13,7 @@ dw PidgeotPicFront
 dw PidgeotPicFront
 ; attacks known at lvl 0
 db HEADBUTT
-db BLANK_OUT
+db AMNESIA
 db REST
 db 0
 db 5 ; growth rate

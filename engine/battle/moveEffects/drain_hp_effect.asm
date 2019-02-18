@@ -89,9 +89,9 @@ DrainHPEffect_:
 	jr z, .next3
 	ld a, [wEnemyMoveEffect]
 .next3
-	cp BRAIN_EATER_EFFECT
+	cp DREAM_EATER_EFFECT
 	jr nz, .printText
-	ld hl, BrainWasEatenText
+	ld hl, DreamWasEatenText
 .printText
 	jp PrintText
 
@@ -99,6 +99,6 @@ SuckedHealthText:
 	TX_FAR _SuckedHealthText
 	db "@"
 
-BrainWasEatenText:
-	TX_FAR _BrainWasEatenText
+DreamWasEatenText:
+	TX_FAR _DreamWasEatenText
 	db "@"

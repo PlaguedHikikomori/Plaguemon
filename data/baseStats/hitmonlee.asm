@@ -13,7 +13,7 @@ dw HitmonleePicFront
 dw HitmonleePicBack
 ; attacks known at lvl 0
 db DOUBLE_KICK
-db LEER
+db MEDITATE
 db 0
 db 0
 db 0 ; growth rate

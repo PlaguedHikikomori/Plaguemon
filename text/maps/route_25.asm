@@ -74,8 +74,8 @@ _Route25EndBattleText5::
 
 _Route25AfterBattleText5::
 	text "If your #MON"
-	line "gets in a coma"
-	cont "or subjugated"
+	line "gets confused or"
+	cont "gets in a coma,"
 	cont "switch it!"
 	done
 

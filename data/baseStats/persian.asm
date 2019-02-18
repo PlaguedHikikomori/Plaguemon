@@ -12,9 +12,9 @@ INCBIN "pic/bmon/persian.pic",0,1 ; 77, sprite dimensions
 dw PersianPicFront
 dw PersianPicFront
 ; attacks known at lvl 0
-db SHANK_UP
+db SCRATCH
 db GROWL
-db BAD_TOOTH
+db BITE
 db SCREECH
 db 0 ; growth rate
 ; learnset

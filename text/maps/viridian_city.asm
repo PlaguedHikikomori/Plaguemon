@@ -63,8 +63,8 @@ _ViridianCityText_191ca::
 	cont "off in the sun."
 
 	para "I had this dream"
-	line "about a HEPOCORPS"
-	cont "eating my brain."
+	line "about a DUPUPPET"
+	cont "eating my dream."
 	cont "What's this?"
 	cont "Where did this TM"
 	cont "come from?"
@@ -80,7 +80,7 @@ _ReceivedTM42Text::
 
 _TM42Explanation::
 	text "TM42 contains"
-	line "BRAIN EATER..."
+	line "DREAM EATER..."
 	cont "...Snore..."
 	done
 

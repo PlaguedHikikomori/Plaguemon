@@ -9,8 +9,8 @@ TypeNames:
 	dw .Bird
 	dw .Bug
 	dw .Ghost
-	dw .Puppet
 
+	dw .Normal
 	dw .Normal
 	dw .Normal
 	dw .Normal
@@ -48,4 +48,3 @@ TypeNames:
 .Ghost:    db "DEATH@"
 .Dragon:   db "DIVINITY@"
 .Cyber:    db "CYBER@"
-.Puppet:   db "PUPPET@"

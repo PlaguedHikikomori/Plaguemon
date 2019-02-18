@@ -12,8 +12,8 @@ INCBIN "pic/bmon/gyarados.pic",0,1 ; 77, sprite dimensions
 dw GyaradosPicFront
 dw GyaradosPicBack
 ; attacks known at lvl 0
-db BAD_TOOTH
-db GOD_REVENGE
+db BITE
+db DRAGON_RAGE
 db LEER
 db 0
 db 5 ; growth rate

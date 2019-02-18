@@ -4,16 +4,16 @@ db 85 ; base attack
 db 80 ; base defense
 db 60 ; base speed
 db 95 ; base special
-db FIRE ; species type 1
-db GHOST ; species type 2
+db WATER ; species type 1
+db ICE ; species type 2
 db 45 ; catch rate
 db 219 ; base exp yield
 INCBIN "pic/bmon/lapras.pic",0,1 ; 77, sprite dimensions
 dw LaprasPicFront
 dw LaprasPicBack
 ; attacks known at lvl 0
-db RITUAL
-db LIMBO_LOOP
+db WATER_GUN
+db GROWL
 db 0
 db 0
 db 5 ; growth rate

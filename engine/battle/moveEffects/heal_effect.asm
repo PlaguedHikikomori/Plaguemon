@@ -51,7 +51,7 @@ HealEffect_:
 	ld [wHPBarMaxHP+1], a
 	ld b, a
 	jr z, .gotHPAmountToHeal
-; Recover and Pregnancy only heal for half the mon's max HP
+; Recover and Softboiled only heal for half the mon's max HP
 	srl b
 	rr c
 .gotHPAmountToHeal
