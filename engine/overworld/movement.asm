@@ -117,7 +117,14 @@ UpdateNPCSprite:
 	ld hl, wMapSpriteData
 	add l
 	ld l, a
+	ld a, [wCurMap]
+	cp KNIFE_ROOM
+	jr nz, .back
+	ld a, $D0
+	jr .zombie	
+.back
 	ld a, [hl]        ; read movement byte 2
+.zombie
 	ld [wCurSpriteMovement2], a
 	ld h, $c1
 	ld a, [H_CURRENTSPRITEOFFSET]
@@ -682,6 +689,13 @@ CanWalkOntoTile:
 	and $7f
 	ld [hl], a         ; c2x8: set next movement delay to a random value in [0,$7f] (again with delay $100 if value is 0)
 	scf                ; set carry (marking failure to walk)
+	ld a, [wCurMap]
+	cp KNIFE_ROOM
+	ret nz
+	ld a, [wZombieLifes]
+	dec a
+	ld [wZombieLifes], a
+	scf
 	ret
 
 ; calculates the tile pointer pointing to the tile the current sprite stands on

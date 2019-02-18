@@ -2999,7 +2999,16 @@ wWhichDungeonWarp:: ; d71e
 wUnusedD71F:: ; d71f
 	ds 1
 
-	ds 8
+wScore:: ;d720
+	ds 2
+
+wZombieLifes:: ;d722
+	ds 1
+	
+wKilledZombie:: ;d723
+	ds 1
+	
+	ds 4
 
 wd728:: ; d728
 ; bit 0: using Strength outside of battle

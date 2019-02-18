@@ -12,6 +12,7 @@ PokemonTower1Object:
 
 	db $0 ; objects
 	
+	
 	; warp-to
 	EVENT_DISP POKEMONTOWER_1_WIDTH, $11, $a
 	EVENT_DISP POKEMONTOWER_1_WIDTH, $11, $b

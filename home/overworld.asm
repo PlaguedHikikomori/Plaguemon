@@ -5,6 +5,12 @@ HandleMidJump::
 
 EnterMap::
 ; Load a new map.
+	ld a, [wCurMap]
+	cp KNIFE_ROOM
+	jr nz, .continue
+	ld a, $3
+	ld [wZombieLifes], a
+.continue
 	ld a, $ff
 	ld [wJoyIgnore], a
 	call LoadMapData
@@ -43,28 +49,29 @@ EnterMap::
 OverworldLoop::
     call DelayFrame
 OverworldLoopLessDelay:
+	callba ResetZombieScore
     callba Blinking
 	callba FalloutLoop
 	call Random   ;------------------------------------
 	cp $C5
 	jp nz, .noMind
 	call Random
-	cp $EF
-	jr z, .mind
-	cp $34
-	jr z, .mind
-	cp $16
-	jr z, .mind
-	cp $82
-	jr z, .mind
-	cp $56
-	jr z, .mind
-	cp $44
-	jr z, .mind
-	cp $12
-	jr z, .mind
-	cp $AA
-	jr z, .mind
+	;cp $EF
+	;jr z, .mind
+	;cp $34
+	;jr z, .mind
+	;cp $16
+	;jr z, .mind
+	;cp $82
+	;jr z, .mind
+	;cp $56
+	;jr z, .mind
+	;cp $44
+	;jr z, .mind
+	;cp $12
+	;jr z, .mind
+	;cp $AA
+	;jr z, .mind
 	cp $26
 	jr nz, .noMind
 .mind

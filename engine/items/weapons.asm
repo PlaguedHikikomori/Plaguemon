@@ -59,6 +59,15 @@ Shoot:
 	ld [hli], a ; set the sprite
 	xor a
 	ld [hl], a  ; hide the killed NPC
+	ld a, [wCurMap]
+	cp KNIFE_ROOM
+	ret nz
+	ld a, [wKilledZombie]
+	cp $1
+	ret nz
+	callab LoadScore   ;Add score for the zombie room
+	xor a
+	ld [wKilledZombie], a
 	ret
 .noSpritesFound
 	pop hl
@@ -89,6 +98,8 @@ FindNPCToKill:
 	ld d, a ; increment d by $10
 	jr .searchSprite
 .spriteFound
+	ld a, $1
+	ld [wKilledZombie], a
 	ld a, d
 	ld [wAnimationDuration], a ; save the animation duration on ram
 	; if a sprite was found
@@ -115,10 +126,10 @@ FindNPCToKill:
 	cp $11 ; has it reached the maximum sprites value? (17, 0x11)
 	jr nz, .searchEmptyMissableObject
 .emptyMissableObjectFound ; an empty missable object was found
-	;ld a, [hSpriteIndexOrTextID] ; load into a the found sprite ID
-	;ld [hli], a ; load it into the wMissableObjectList and increase hl
-	;xor a ; reset a
-	;ld [hli], a ; load 00 to reset the object and increase hl
+	;ld a, [hSpriteIndexOrTextID] - load into a the found sprite ID
+	;ld [hli], a - load it into the wMissableObjectList and increase hl
+	;xor a - reset a
+	;ld [hli], a - load 00 to reset the object and increase hl
 	ld d, h
 	ld e, l ; load the sprite address to de
 	inc hl 
@@ -129,13 +140,13 @@ FindNPCToKill:
 .notEmptyMissableObjectFound
 	;inc hl
 	;xor a
-	;ld [hl], a ; set the sprite to 00
+	;ld [hl], a - set the sprite to 00
 	ld d, h
 	ld e, l ; load the sprite address to de
 .weaponFireAnimation
 	pop hl ; get the previously saved sprite data pointer
-	;xor a ; set a to $00
-	;ld [hSpriteIndexOrTextID], a ; reset the sprite index
+	;xor a - set a to $00
+	;ld [hSpriteIndexOrTextID], a - reset the sprite index
 	push de ; push de to preserve its state
 	ld de, $0004
 	add hl, de ; jump to the Y coordinate
