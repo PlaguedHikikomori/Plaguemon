@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 191 ; base exp yield
 INCBIN "pic/bmon/victreebel.pic",0,1 ; 77, sprite dimensions
 dw VictreebelPicFront
-dw VictreebelPicBack
+dw VictreebelPicFront
 ; attacks known at lvl 0
 db SLEEP_POWDER
 db STUN_SPORE

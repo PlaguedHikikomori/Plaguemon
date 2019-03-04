@@ -7,8 +7,7 @@ InternalThought:
 	ld a, %01111111
 	ld [rBGP], a	
 	call Sadness
-	call RunDefaultPaletteCommand
-	call GBPalNormal
+
 	ret
 	
 	
@@ -21,8 +20,10 @@ Sadness:
 	cp $56
 	jr nz, .nonZero
 	tx_pre SadnessText
+	call Drama
 .nonZero
 	tx_pre WantToKillText
+	call Drama
 	ret
 	
 SadnessText:
@@ -41,6 +42,43 @@ _WantToKillText::
 	text "I want to"
 	line "kill myself.."
 	prompt
+
+	
+Drama:
+	ld a, [wSadness]
+	cp $5   ; Numero di motivi per cui essere tristi - dichiarato anche in gengar, evos_moves
+	jr z, .here
+	inc a
+	ld [wSadness], a
+	ret
+.here
+	;call PreDrama
+	ld a, $00
+	ld [wWhichPokemon], a
+	callab TryEvolvingMon
+	ld a, $01
+	ld [wWhichPokemon], a
+	callab TryEvolvingMon
+	ld a, $02
+	ld [wWhichPokemon], a
+	callab TryEvolvingMon
+	ld a, $03
+	ld [wWhichPokemon], a
+	callab TryEvolvingMon
+	ld a, $04
+	ld [wWhichPokemon], a
+	callab TryEvolvingMon
+	ld a, $05
+	ld [wWhichPokemon], a
+	callab TryEvolvingMon
+	ret
+	
+PreDrama:
+	xor a
+	ld [hWY], a
+	call LoadFontTilePatterns
+	ret
+
 	
 
 	

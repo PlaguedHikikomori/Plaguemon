@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 142 ; base exp yield
 INCBIN "pic/bmon/charmeleon.pic",0,1 ; 66, sprite dimensions
 dw CharmeleonPicFront
-dw CharmeleonPicBack
+dw CharmeleonPicFront
 ; attacks known at lvl 0
 db SCRATCH
 db GROWL

@@ -109,10 +109,15 @@ Evolution_PartyMonLoop: ; loop over party mons
 	jp c, .nextEvoEntry2 ; if so, go the next evolution entry
 .checkRam
 	ld a, [hli] ; level requirement
+	push hl
 	ld b, a
-	ld a, [wBurnedPeople]
+	ld a, [wSadness]
 	cp b ; is the mon's level greater than the evolution requirement?
 	jp nz, .nextEvoEntry2 ; if so, go the next evolution entry
+	xor a
+	ld [hWY], a
+	call LoadFontTilePatterns
+	pop hl
 .doEvolution
 	ld [wCurEnemyLVL], a
 	ld a, 1

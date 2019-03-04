@@ -48,7 +48,7 @@ PokedexOrder:
 	db DEX_PSYDUCK
 	db DEX_DROWZEE
 	db DEX_GOLEM
-	db 0 ; MISSINGNO.
+	db DEX_TRAPTOR ; Traptor
 	db DEX_MAGMAR
 	db 0 ; MISSINGNO.
 	db DEX_ELECTABUZZ

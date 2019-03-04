@@ -48,7 +48,7 @@ PokedexEntryPointers:
 	dw PsyduckDexEntry
 	dw DrowzeeDexEntry
 	dw GolemDexEntry
-	dw MissingNoDexEntry
+	dw TraptorDexEntry
 	dw MagmarDexEntry
 	dw MissingNoDexEntry
 	dw ElectabuzzDexEntry
@@ -537,6 +537,12 @@ GolemDexEntry:
 	dw 6620
 	TX_FAR _GolemDexEntry
 	db "@"
+	
+TraptorDexEntry:
+	db "KIDNAPPER@"
+	db 4,11
+	dw 890
+	TX_FAR _TraptorDexEntry
 
 MagmarDexEntry:
 	db "LAVA@"

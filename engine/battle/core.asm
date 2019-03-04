@@ -388,6 +388,7 @@ EnemyRanText:
 	db "@"
 
 MainInBattleLoop:
+	call TrerorAlive
 	call ReadPlayerMonCurHPAndStatus
 	ld hl, wBattleMonHP
 	ld a, [hli]
@@ -8993,3 +8994,78 @@ CityStuffString5:
 CityStuffString6:
 	db   $DC,$DD,$DE,$DF
 	db   "@"
+	
+TrerorAlive:
+	ld a, [wBattleMonSpecies2]
+	ld [wcf91], a
+	ld [wd0b5], a
+	cp TRAPTOR
+	jp z, PlayerTrap
+EnemyTrap:
+	ld a, [wEnemyMonSpecies]
+	cp TRAPTOR
+	ret nz
+	ld hl, wMonHSpriteDim
+	ld a, $77
+	ld [hli], a
+	ld bc, TraptorTwoPicFront
+	ld a, c
+	ld [hli], a   
+	ld [hl], b
+	ld a, TRAPTOR
+	ld [wcf91], a
+	xor a
+	ld [wSpriteFlipped], a
+	ld de, vFrontPic
+	call LoadMonFrontSprite 
+	coord hl, 12, 5          ; Hiki, coordinate nemico libero?
+	predef CopyUncompressedPicToTilemap
+	ld c, 17
+	call DelayFrames
+	ld hl, wMonHSpriteDim
+	ld a, $77
+	ld [hli], a
+	ld bc, TraptorOnePicFront
+	ld a, c
+	ld [hli], a   
+	ld [hl], b
+	ld a, TRAPTOR
+	ld [wcf91], a
+	ld de, vFrontPic
+	call LoadMonFrontSprite 
+	coord hl, 12, 5          ; Hiki, coordinate nemico libero?
+	predef CopyUncompressedPicToTilemap
+	ret
+PlayerTrap:
+	ld hl, wMonHSpriteDim
+	ld a, $77
+	ld [hli], a
+	ld bc, TraptorTwoPicFront
+	ld a, c
+	ld [hli], a   
+	ld [hl], b
+	ld a, TRAPTOR
+	ld [wcf91], a
+	ld a, $1
+	ld [wSpriteFlipped], a
+	ld de, vBackPic
+	call LoadMonFrontSprite 
+	ld c, 17
+	call DelayFrames
+	ld hl, wMonHSpriteDim
+	ld a, $77
+	ld [hli], a
+	ld bc, TraptorOnePicFront
+	ld a, c
+	ld [hli], a   
+	ld [hl], b
+	ld a, TRAPTOR
+	ld [wcf91], a
+	ld a, $1
+	ld [wSpriteFlipped], a
+	ld de, vBackPic
+	call LoadMonFrontSprite 
+	xor a
+	ld [wSpriteFlipped], a
+	jp EnemyTrap
+	

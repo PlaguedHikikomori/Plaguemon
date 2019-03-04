@@ -55,8 +55,8 @@ OverworldLoopLessDelay:
 	call Random   ;------------------------------------
 	cp $C5
 	jp nz, .noMind
-	call Random
-	;cp $EF
+	;call Random
+	;cp $EF       -qui
 	;jr z, .mind
 	;cp $34
 	;jr z, .mind
@@ -71,9 +71,9 @@ OverworldLoopLessDelay:
 	;cp $12
 	;jr z, .mind
 	;cp $AA
-	;jr z, .mind
-	cp $26
-	jr nz, .noMind
+	;jr z, .mind  -qui
+	;cp $26
+	;jr nz, .noMind
 .mind
 	callba InternalThought ;-------------------------
 .noMind

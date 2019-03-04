@@ -49,7 +49,7 @@ const_value = 1
 	const PSYDUCK      ; $2F
 	const DROWZEE      ; $30
 	const GOLEM        ; $31
-	const MISSINGNO_32 ; $32
+	const TRAPTOR	   ; $32
 	const MAGMAR       ; $33
 	const MISSINGNO_34 ; $34
 	const ELECTABUZZ   ; $35

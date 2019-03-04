@@ -48,7 +48,7 @@ EvosMovesPointerTable:
 	dw Mon054_EvosMoves
 	dw Mon096_EvosMoves
 	dw Mon076_EvosMoves
-	dw Mon154_EvosMoves ;MissingNo
+	dw Mon154_EvosMoves ;Traptor
 	dw Mon126_EvosMoves
 	dw Mon155_EvosMoves ;MissingNo
 	dw Mon125_EvosMoves
@@ -365,6 +365,7 @@ Mon088_EvosMoves:
 Mon094_EvosMoves:
 ;GENGAR
 ;Evolutions
+	db EV_RAM,5,TRAPTOR
 	db 0
 ;Learnset
 	db 29,HYPNOSIS
@@ -822,16 +823,17 @@ Mon076_EvosMoves:
 	db 0
 
 Mon154_EvosMoves:
-;MISSINGNO
+;TRAPTOR
 ;Evolutions
 	db 0
 ;Learnset
+	db 29,HYPNOSIS
+	db 38,DREAM_EATER
 	db 0
 
 Mon126_EvosMoves:
 ;MAGMAR
 ;Evolutions
-	db EV_RAM,5,PROGLOTTO
 	db 0
 ;Learnset
 	db 36,LEER

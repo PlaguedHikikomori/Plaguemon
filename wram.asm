@@ -3007,8 +3007,10 @@ wZombieLifes:: ;d722
 	
 wKilledZombie:: ;d723
 	ds 1
+wSadness:: ;d724
+	ds 1
 	
-	ds 4
+	ds 3
 
 wd728:: ; d728
 ; bit 0: using Strength outside of battle

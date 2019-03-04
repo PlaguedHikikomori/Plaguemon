@@ -75,5 +75,5 @@ MonPartyData:
 	dn SPRITE_SNAKE, SPRITE_SNAKE           ;Dratini/Dragonair
 	dn SPRITE_SNAKE, SPRITE_MON             ;Dragonite/Mewtwo
 	dn SPRITE_MON, SPRITE_MON               ;Mew/Proglotto
-	dn SPRITE_HELIX, 0
+	dn SPRITE_HELIX, SPRITE_MON
 	

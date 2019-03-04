@@ -10,7 +10,7 @@ db 255 ; catch rate
 db 57 ; base exp yield
 INCBIN "pic/bmon/rattata.pic",0,1 ; 55, sprite dimensions
 dw RattataPicFront
-dw RattataPicBack
+dw RattataPicFront
 ; attacks known at lvl 0
 db TACKLE
 db TAIL_WHIP

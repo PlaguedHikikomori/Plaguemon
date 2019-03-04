@@ -848,23 +848,24 @@ TentacruelPicFront::   INCBIN "pic/bmon/tentacruel.pic"
 GoldeenPicFront::      INCBIN "pic/bmon/goldeen.pic"
 
 SeakingPicFront::      INCBIN "pic/bmon/seaking.pic"
-
+TraptorOnePicFront::     INCBIN "pic/bmon/traptor1.pic"
+TraptorTwoPicFront::     INCBIN "pic/bmon/traptor2.pic"
 PonytaPicFront::       INCBIN "pic/bmon/ponyta.pic"
 RapidashPicFront::     INCBIN "pic/bmon/rapidash.pic"
-PonytaPicBack::        INCBIN "pic/monback/ponytab.pic"
-RapidashPicBack::      INCBIN "pic/monback/rapidashb.pic"
+
+
 RattataPicFront::      INCBIN "pic/bmon/rattata.pic"
-RattataPicBack::       INCBIN "pic/monback/rattatab.pic"
+
 RaticatePicFront::     INCBIN "pic/bmon/raticate.pic"
-RaticatePicBack::      INCBIN "pic/monback/raticateb.pic"
+
 NidorinoPicFront::     INCBIN "pic/bmon/nidorino.pic"
-NidorinoPicBack::      INCBIN "pic/monback/nidorinob.pic"
+
 NidorinaPicFront::     INCBIN "pic/bmon/nidorina.pic"
 NidorinaPicBack::      INCBIN "pic/monback/nidorinab.pic"
 GeodudePicFront::      INCBIN "pic/bmon/geodude.pic"
 GeodudePicBack::       INCBIN "pic/monback/geodudeb.pic"
 PorygonPicFront::      INCBIN "pic/bmon/porygon.pic"
-PorygonPicBack::       INCBIN "pic/monback/porygonb.pic"
+
 AerodactylPicFront::   INCBIN "pic/bmon/aerodactyl.pic"
 
 MagnemitePicFront::    INCBIN "pic/bmon/magnemite.pic"
@@ -874,9 +875,9 @@ CharmanderPicFront::   INCBIN "pic/bmon/charmander.pic"
 SquirtlePicFront::     INCBIN "pic/bmon/squirtle.pic"
 SquirtlePicBack::      INCBIN "pic/monback/squirtleb.pic"
 CharmeleonPicFront::   INCBIN "pic/bmon/charmeleon.pic"
-CharmeleonPicBack::    INCBIN "pic/monback/charmeleonb.pic"
+
 WartortlePicFront::    INCBIN "pic/bmon/wartortle.pic"
-WartortlePicBack::     INCBIN "pic/monback/wartortleb.pic"
+
 CharizardPicFront::    INCBIN "pic/bmon/charizard.pic"
 
 FossilAerodactylPic::  INCBIN "pic/bmon/fossilaerodactyl.pic"
@@ -886,13 +887,13 @@ OddishPicBack::        INCBIN "pic/monback/oddishb.pic"
 GloomPicFront::        INCBIN "pic/bmon/gloom.pic"
 GloomPicBack::         INCBIN "pic/monback/gloomb.pic"
 VileplumePicFront::    INCBIN "pic/bmon/vileplume.pic"
-VileplumePicBack::     INCBIN "pic/monback/vileplumeb.pic"
+
 BellsproutPicFront::   INCBIN "pic/bmon/bellsprout.pic"
 BellsproutPicBack::    INCBIN "pic/monback/bellsproutb.pic"
 WeepinbellPicFront::   INCBIN "pic/bmon/weepinbell.pic"
 WeepinbellPicBack::    INCBIN "pic/monback/weepinbellb.pic"
 VictreebelPicFront::   INCBIN "pic/bmon/victreebel.pic"
-VictreebelPicBack::    INCBIN "pic/monback/victreebelb.pic"
+
 SpaceWeed::            INCBIN "pic/other/spaceweed.pic"
 Eye:                   INCBIN "gfx/eye.2bpp"
 EyeEnd:
@@ -2178,4 +2179,5 @@ INCLUDE "data/mapHeaders/kniferoom.asm"
 INCLUDE "scripts/kniferoom.asm"
 INCLUDE "data/mapObjects/kniferoom.asm"
 KnifeRoomBlocks:  INCBIN "maps/kniferoom.blk"
+
 

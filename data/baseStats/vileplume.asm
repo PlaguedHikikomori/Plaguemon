@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 184 ; base exp yield
 INCBIN "pic/bmon/vileplume.pic",0,1 ; 77, sprite dimensions
 dw VileplumePicFront
-dw VileplumePicBack
+dw VileplumePicFront
 ; attacks known at lvl 0
 db STUN_SPORE
 db SLEEP_POWDER

@@ -10,7 +10,7 @@ db 190 ; catch rate
 db 152 ; base exp yield
 INCBIN "pic/bmon/ponyta.pic",0,1 ; 66, sprite dimensions
 dw PonytaPicFront
-dw PonytaPicBack
+dw PonytaPicFront
 ; attacks known at lvl 0
 db EMBER
 db 0

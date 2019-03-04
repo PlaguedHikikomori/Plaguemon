@@ -487,6 +487,16 @@ _GolemDexEntry::
 	next "new gigantic"
 	next "form"
 	dex
+	
+_TraptorDexEntry::
+	text "This shadow"
+	next "kidnaps kids"
+	next "at night."
+
+	page "It then traps"
+	next "them in his"
+	next "belly.."
+	dex
 
 _MagmarDexEntry::
 	text "A carbonized"

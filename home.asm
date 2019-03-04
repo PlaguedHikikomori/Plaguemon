@@ -742,6 +742,10 @@ UncompressMonSprite::
 	cp PROGLOTTO
 	ld a, BANK(ProglottoPicFront)
 	jr z, .GotBank
+	ld a,b
+	cp TRAPTOR
+	ld a, BANK(TraptorOnePicFront)
+	jr z, .GotBank
 	ld a, b
 	cp BIBRODO
 	ld a, BANK(BibrodoPicFront)

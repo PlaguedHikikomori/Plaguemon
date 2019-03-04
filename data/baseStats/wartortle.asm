@@ -10,7 +10,7 @@ db 45 ; catch rate
 db 143 ; base exp yield
 INCBIN "pic/bmon/wartortle.pic",0,1 ; 66, sprite dimensions
 dw WartortlePicFront
-dw WartortlePicBack
+dw WartortlePicFront
 ; attacks known at lvl 0
 db TACKLE
 db TAIL_WHIP

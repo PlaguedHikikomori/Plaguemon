@@ -48,7 +48,7 @@ MonsterNames:
 	db "WORMACK@@@"
 	db "DUPUPETT@@"
 	db "ATOMIUM@@@"
-	db "MISSINGNO."
+	db "TRAPTOR@@@"
 	db "BURNAR@@@@"
 	db "MISSINGNO."
 	db "VOLCUTION@"
