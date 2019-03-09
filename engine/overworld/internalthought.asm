@@ -7,7 +7,6 @@ InternalThought:
 	ld a, %01111111
 	ld [rBGP], a	
 	call Sadness
-
 	ret
 	
 	
@@ -52,7 +51,7 @@ Drama:
 	ld [wSadness], a
 	ret
 .here
-	;call PreDrama
+	call PreDrama
 	ld a, $00
 	ld [wWhichPokemon], a
 	callab TryEvolvingMon
@@ -71,12 +70,19 @@ Drama:
 	ld a, $05
 	ld [wWhichPokemon], a
 	callab TryEvolvingMon
+	call PostDrama
 	ret
 	
 PreDrama:
-	xor a
-	ld [hWY], a
-	call LoadFontTilePatterns
+	call SaveScreenTilesToBuffer2
+	ret
+	
+PostDrama:
+	call LoadScreenTilesFromBuffer2
+	call EnterMap
+	ld a, $1
+	ld [wUpdateSpritesEnabled], a
+	call UpdateSprites
 	ret
 
 	

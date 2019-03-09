@@ -1,12 +1,12 @@
 db DEX_TRAPTOR ; pokedex id
-db 120 ; base hp
+db 250 ; base hp
 db 100 ; base attack
 db 120 ; base defense
 db 110 ; base speed
 db 130 ; base special
 db GHOST ; species type 1
 db POISON ; species type 2
-db 45 ; catch rate
+db 0 ; catch rate
 db 190 ; base exp yield
 INCBIN "pic/bmon/traptor1.pic",0,1 ; 66, sprite dimensions
 dw TraptorOnePicFront
