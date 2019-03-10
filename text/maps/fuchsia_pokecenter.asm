@@ -13,8 +13,8 @@ _FuchsiaPokecenterText3::
 	line "trail west of"
 	cont "NEO VIR."
 
-	para "It goes to the"
-	line "SLAUGHTERHOUSE."
+	para "It goes to"
+	line "the OLYMPUS."
 	cont "They rule this"
 	cont "fucking world."
 	done

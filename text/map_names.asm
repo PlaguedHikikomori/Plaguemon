@@ -62,13 +62,13 @@ Route19Name:
 Route20Name:
 	db "20th CANAL@"
 Route21Name:
-	db "21th CANAL@"
+	db "21st CANAL@"
 Route22Name:
-	db "22th STREET@"
+	db "22nd STREET@"
 Route23Name:
-	db "23th STREET@"
+	db "23rd STREET@"
 Route24Name:
-	db "24th STREET@"
+	db "PUSHER STREET@"
 Route25Name:
 	db "25th STREET@"
 ViridianForestName:
@@ -88,11 +88,11 @@ UndergroundPathName:
 PokemonTowerName:
 	db "CEMETERY@"
 SeafoamIslandsName:
-	db "HIDDEN ISLE@"
+	db "HIDDEN ISLANDS@"
 VictoryRoadName:
 	db "THE LAST HOPE@"
 DiglettsCaveName:
-	db "DARK CAVE@"
+	db "KAZETTO'S CAVE@"
 RocketHQName:
 	db "PLAGUE CORP.@"
 SilphCoName:

@@ -19,7 +19,7 @@ FuchsiaGymScript_75453:
 	ret
 
 Gym5CityName:
-	db "FUCHSIA CITY@"
+	db "NEO FUX@"
 Gym5LeaderName:
 	db "TUPAC@"
 

@@ -2,7 +2,7 @@ _IndigoPlateauLobbyText2::
 	text "Yo! Champ in"
 	line "the making!"
 
-	para "At SLAUGHTERHOUSE"
+	para "At OLYMPUS"
 	line "you have to face"
 	cont "the FOUR in"
 	cont "succession."

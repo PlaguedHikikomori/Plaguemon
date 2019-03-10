@@ -95,29 +95,32 @@ _OaksAideHiText::
 
 	para "If you got @"
 	TX_NUM hOaksAideRequirement, 1, 3
-	text "PLAGUEMONs,"
-	line "I'll give you"
-	cont "a torch.."
+	text ""
+	line "PLAGUEMONs I'll"
+	cont "give you some"
+	cont "good shit..."
 	
-	para "So, <PLAYER>!"
-	line "You got at"
-	cont "least @"
+	para "So, <PLAYER>! Have"
+	line "you got at least"
+	cont "@"
 	TX_NUM hOaksAideRequirement, 1, 3
-	text "#MON?"
+	text " PLAGUEMONs?"
 	done
 
 _OaksAideUhOhText::
 	text "Nah man..."
-	line "Don't play on me"
-	cont "Those are just @"
+	line "Don't play on me!"
+	cont "Those are"
+	cont "just @"
 	TX_NUM hOaksAideNumMonsOwned, 1, 3
-	text "#MON!"
+	text " PLAGUEMONs!"
 
 	para "You need @"
 	TX_NUM hOaksAideRequirement, 1, 3
-	text " kinds"
-	line "if you want the"
-	cont "torch.."
+	text ""
+	line "different beasts"
+	cont "if you want the"
+	cont "good stuff.."
 	done
 
 _OaksAideComeBackText::
@@ -135,14 +138,14 @@ _OaksAideHereYouGoText::
 
 _OaksAideGotItemText::
 	text "<PLAYER> got the"
-	line "TORCH!"
-	cont "!@@"
+	line "ITEM!"
+	cont "Now listen!@@"
 
 _OaksAideNoRoomText::
 	text "Oh! I see you"
 	line "don't have any"
-	cont "room for the"
-	cont "TORCH.."
+	cont "room for my"
+	cont "ITEM.."
 	done
 
 INCLUDE "text/maps/viridian_forest.asm"
@@ -327,7 +330,7 @@ _YeahText::
 	text "Yeah!@@"
 
 _DexSeenOwnedText::
-	text "#DEX   Seen:@"
+	text "#X   Seen:@"
 	TX_NUM wDexRatingNumMonsSeen, 1, 3
 	text ""
 	line "         Owned:@"
@@ -335,7 +338,7 @@ _DexSeenOwnedText::
 	db "@"
 
 _DexRatingText::
-	text "#DEX Rating", $6d
+	text "#X Rating", $6d
 	done
 
 _GymStatueText1::
@@ -381,7 +384,7 @@ _CeruleanPokecenterGuyText::
 	done
 
 _LavenderPokecenterGuyText::
-	text "CUBONEs wear"
+	text "RIOTTOs wear"
 	line "skulls, right?"
 
 	para "People will pay a"
@@ -422,29 +425,25 @@ _VermilionPokecenterGuyText::
 	done
 
 _CeladonCityPokecenterGuyText::
-	text "If I had a BIKE,"
-	line "I would go to"
-	cont "CYCLING ROAD!"
+	text "I need to go to"
+	line "PUSHER STREET"
+	cont "NOOOWWW!!!"
 	done
 
 _FuchsiaCityPokecenterGuyText::
-	text "If you're studying "
-	line "#MON, visit"
-	cont "the SAFARI ZONE."
-
-	para "It has all sorts"
-	line "of rare #MON."
+	text "After a nuclear"
+	line "blast, you will"
+	cont "have more or less"
+	cont "10 min to find a"
+	cont "shelter to avoid"
+	cont "the fallout."
 	done
 
 _CinnabarPokecenterGuyText::
-	text "#MON can still"
-	line "learn techniques"
-	cont "after canceling"
-	cont "evolution."
-
-	para "Evolution can wait"
-	line "until new moves"
-	cont "have been learned."
+	text "People incapable"
+	line "of guilt, usually"
+	cont "do have a good"
+	cont "time."
 	done
 
 _SaffronCityPokecenterGuyText1::
@@ -478,16 +477,16 @@ _NewBicycleText::
 
 _PushStartText::
 	text "Sometimes even"
-	line "live is an act"
-	cont "of courage."
+	line "to live is an"
+	cont "act of courage."
 	done
 
 _SaveOptionText::
 	text "If i had no "
 	line "sense of humor,"
-	cont "i would have long"
-	cont "ago committed"
-	cont "suicide."
+	cont "i would have"
+	cont "committed suicide"
+	cont "long time ago."
 	done
 
 _StrengthsAndWeaknessesText::
@@ -731,9 +730,9 @@ _ViridianSchoolNotebookText4::
 	line "carefully."
 	cont "Continue now "
 	cont "filtering with"
-	cont "DIST. WATER."
+	cont "DISTILLED WATER."
 
-	para "Test crystals ph"
+	para "Test crystals pH"
 	line "until neutral."
 
 	para "Store dry crystals"
@@ -755,8 +754,7 @@ _FightingDojoText::
 	done
 
 _IndigoPlateauHQText::
-	text "INDIGO PLATEAU"
-	line "#MON LEAGUE HQ"
+	text "#MON OLYMPUS"
 	done
 
 _RedBedroomSNESText::
@@ -1054,7 +1052,8 @@ _PlayerMonFaintedText::
 	prompt
 
 _UseNextMonText::
-	text "Fear, fag?"
+	text "Do you still"
+	line "wanna fight, fag?"
 	done
 
 _Sony1WinText::
@@ -1550,19 +1549,19 @@ _AntidoteText::
 _ParlyzHealText::
 	TX_RAM wcd6d
 	text "'s"
-	line "rid of paralysis!"
+	line "rid of anxiety!"
 	done
 
 _BurnHealText::
 	TX_RAM wcd6d
-	text "'s"
-	line "burn was healed!"
+	text "'s no"
+	line "more possessed!"
 	done
 
 _IceHealText::
 	TX_RAM wcd6d
-	text " was"
-	line "defrosted!"
+	text "'s"
+	line "life was saved!"
 	done
 
 _AwakeningText::
@@ -1810,7 +1809,7 @@ _OhFineThenText::
 
 _GetDexRatedText::
 	text "Want to get your"
-	line "#DEX rated?"
+	line "#X rated?"
 	done
 
 _ClosedOaksPCText::
@@ -1821,7 +1820,7 @@ _AccessedOaksPCText::
 	text "Accessed THE"
 	line "PROF's PC."
 
-	para "Accessed #DEX"
+	para "Accessed #X"
 	line "Rating System."
 	prompt
 
@@ -2536,7 +2535,7 @@ _PokemonCenterWelcomeText::
 
 	para "We breath a"
 	line "new life inside"
-	cont "dead #mons!"
+	cont "dead #MONs!"
 	prompt
 
 _ShallWeHealYourPokemonText::
@@ -2551,8 +2550,8 @@ _NeedYourPokemonText::
 
 _PokemonFightingFitText::
 	text "Thank you!"
-	line "Your #MON are"
-	cont "fighting fit!"
+	line "Your #MON"
+	cont "are fighting fit!"
 	done
 
 _PokemonCenterFarewellText::
@@ -2768,7 +2767,7 @@ _ItemUseBallText08::
 	prompt
 
 _ItemUseBallText06::
-	text "New #DEX data"
+	text "New #X data"
 	line "will be added for"
 	cont "@"
 	TX_RAM wEnemyMonNick
@@ -3151,3 +3150,4 @@ INCLUDE "text/pokedex.asm"
 SECTION "Move Names", ROMX, BANK[MOVE_NAMES]
 
 INCLUDE "text/move_names.asm"
+
