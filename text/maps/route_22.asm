@@ -72,6 +72,6 @@ _Route22Text_511d0::
 	prompt
 
 _Route22FrontGateText::
-	text "SLAUGHTERHOUSE"
+	text "OLYMPUS"
 	line "Front Gate"
 	done

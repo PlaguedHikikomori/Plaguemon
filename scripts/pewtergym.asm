@@ -17,7 +17,7 @@ PewterGymScript_5c3a4:
 	jp LoadGymLeaderAndCityName
 
 Gym1CityName:
-	db "PEWTER CITY@"
+	db "NEO PEW@"
 
 Gym1LeaderName:
 	db "KURT@"
