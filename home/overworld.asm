@@ -52,14 +52,13 @@ OverworldLoopLessDelay:
 	callba ResetZombieScore
     callba Blinking
 	callba FalloutLoop
-	call Random   ;------------------------------------
-	cp $C5
-	jp nz, .noMind
 	call Random   
-	cp $5C
-	jp nz, .noMind
+	cp $88
+	jr nz, .noMind
 	call Random
 	cp $56
+	jr z, .mind
+	cp $CC
 	jr z, .mind
 	cp $26
 	jr nz, .noMind

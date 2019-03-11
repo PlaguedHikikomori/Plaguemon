@@ -58,7 +58,7 @@ Space_Weed:
 	call DisplayMonFrontSpriteInBox
 	call EnableAutoTextBoxDrawing
 	tx_pre RedBedroomSNESText
-	callab Shmup   ;Inizio routine minigioco spaceweed
+	;callab Shmup   -Inizio routine minigioco spaceweed
 	ret
 
 
