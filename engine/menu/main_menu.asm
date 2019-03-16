@@ -363,7 +363,7 @@ VersionText:
 	db "@"
 	
 BuildText:
-	db "build 3.3"
+	db "build 4.0"
 	db "@"
 
 DisplayContinueGameInfo:
@@ -447,7 +447,7 @@ PrintPlayTime:
 SaveScreenInfoText:
 	db   "PLAYER"
 	next "BADGES    "
-	next "#DEX    "
+	next "#X    "
 	next "TIME@"
 
 DisplayOptionMenu:

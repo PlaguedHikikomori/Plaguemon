@@ -23,7 +23,7 @@ CinnabarGymScript_75772:
 	jp LoadGymLeaderAndCityName
 
 Gym7CityName:
-	db "CINNABAR ISLAND@"
+	db "NEO CIN@"
 Gym7LeaderName:
 	db "CHESTER@"
 

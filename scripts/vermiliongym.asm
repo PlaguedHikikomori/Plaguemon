@@ -22,7 +22,7 @@ VermilionGymScript_5ca4c:
 	jp LoadGymLeaderAndCityName
 
 Gym3CityName:
-	db "VERMILION CITY@"
+	db "NEO VER@"
 
 Gym3LeaderName:
 	db "LEMMY@"

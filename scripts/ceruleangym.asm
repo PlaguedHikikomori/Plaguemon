@@ -17,7 +17,7 @@ CeruleanGymScript_5c6d0:
 	jp LoadGymLeaderAndCityName
 
 Gym2CityName:
-	db "CERULEAN CITY@"
+	db "NEO CER@"
 
 Gym2LeaderName:
 	db "LIL PEEP@"

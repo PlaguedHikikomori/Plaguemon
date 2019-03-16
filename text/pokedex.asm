@@ -1,5 +1,5 @@
 _RhydonDexEntry::
-	text "With his hundreds"
+	text "With its hundreds"
 	next "of boobs and arms"
 	next "this monster,"
 
@@ -41,9 +41,9 @@ _ClefairyDexEntry::
 _SpearowDexEntry::
 	text "This is what"
 	next "happens when you"
-	next "put nuke near"
+	next "put uranium"
 
-	page "chickens."
+	page "near chickens."
 	next "Are you happy"
 	next "now, Kim?"
 	dex
@@ -63,19 +63,19 @@ _NidokingDexEntry::
 	next "of all the "
 	next "fucking things."
 
-	page "Fuck bitches,"
-	next "get money and"
+	page "Fucks bitches,"
+	next "gets money and"
 	next "many more."
 	dex
 
 _SlowbroDexEntry::
 	text "It detached"
-	next "from his "
+	next "from its"
 	next "original body"
 
 	page "to become"
 	next "terryfing by"
-	next "it's own"
+	next "its own"
 	dex
 
 _IvysaurDexEntry::
@@ -90,8 +90,8 @@ _IvysaurDexEntry::
 
 _ExeggutorDexEntry::
 	text "A rejected kabuki"
-	next "part-time actress"
-	next "now a full-time"
+	next "part-time actress."
+	next "Now a full-time"
 
 	page "Plaguemon for"
 	next "your own"
@@ -99,39 +99,39 @@ _ExeggutorDexEntry::
 	dex
 
 _LickitungDexEntry::
-	text "Used as cavy in"
-	next "laboratories"
+	text "Used as test"
+	next "subject in labs"
 	next "for medical"
 
 	page "experiments."
-	next "Now pukes"
+	next "Now it pukes"
 	next "continuosly"
 	dex
 
 _ExeggcuteDexEntry::
 	text "Often mistaken"
 	next "for eggs."
-	next "Instead is a"
+	next "Instead it is"
 
-	page "damn daruma "
+	page "a damn daruma"
 	next "doll. You blind"
 	next "assfuck"
 	dex
 
 _GrimerDexEntry::
-	text "Seems that"
-	next "sludge have"
-	next "bones now."
+	text "It seems that"
+	next "sludges have"
+	next "bones nowadays."
 
 	page "This makes"
 	next "most people"
-	next "throw up"
+	next "to throw up"
 	dex
 
 _GengarDexEntry::
 	text "This is the"
-	next "worst nightmare"
-	next "possible that"
+	next "worst possible"
+	next "nightmare that"
 
 	page "people can have."
 	next "It generates tons"
@@ -140,8 +140,8 @@ _GengarDexEntry::
 
 _NidoranFDexEntry::
 	text "A chopped finger."
-	next "You can use"
-	next "to put in your"
+	next "You can use it"
+	next "to put it in your"
 
 	page "holes or"
 	next "to close a"
@@ -150,20 +150,20 @@ _NidoranFDexEntry::
 
 _NidoqueenDexEntry::
 	text "A collection of"
-	next "hands by a "
+	next "hands by a"
 	next "serial killer."
 
 	page "Teamed up to"
-	next "kick ass and"
+	next "kick asses and"
 	next "shit"
 	dex
 
 _CuboneDexEntry::
 	text "Passion for"
 	next "destruction is"
-	next "also a "
+	next "also a"
 
-	page "cretive "
+	page "creative "
 	next "passion."
 	next "Right?"
 	dex
@@ -183,7 +183,7 @@ _LaprasDexEntry::
 	next "ferryman of"
 	next "the Hades."
 
-	page "Carries souls"
+	page "It carries souls"
 	next "accross the"
 	next "Styx river"
 	dex
@@ -194,14 +194,14 @@ _ArcanineDexEntry::
 	next "the creator"
 
 	page "of this game."
-	next "It piss and shit"
-	next "everywhere"
+	next "It pisses and"
+	next "shits everywhere"
 	dex
 
 _MewDexEntry::
-	text "Genetical errors"
+	text "Genetic errors"
 	next "due to greed,"
-	next "bringed us"
+	next "generated"
 
 	page "this fascinating"
 	next "monozygotic"
@@ -209,7 +209,7 @@ _MewDexEntry::
 	dex
 
 _GyaradosDexEntry::
-	text "The living "
+	text "The living"
 	next "spirit of Rokujo."
 	next "The lady of"
 
@@ -220,7 +220,7 @@ _GyaradosDexEntry::
 
 _ShellderDexEntry::
 	text "A shell corroded"
-	next "by the "
+	next "by the"
 	next "pollution"
 
 	page "of the NEO"
@@ -229,7 +229,7 @@ _ShellderDexEntry::
 	dex
 
 _TentacoolDexEntry::
-	text "My hips are "
+	text "My hips are"
 	next "moving on their"
 	next "own, SENPAI!"
 
@@ -241,10 +241,10 @@ _TentacoolDexEntry::
 _GastlyDexEntry::
 	text "This is an"
 	next "ectoplasma"
-	next "made by people"
+	next "made out of"
 
-	page "pieces."
-	next "They reunite to"
+	page "people pieces."
+	next "They reunited to"
 	next "form a new spirit"
 	dex
 
@@ -254,7 +254,7 @@ _ScytherDexEntry::
 	next "student fused"
 
 	page "in one body."
-	next "A very violent "
+	next "A very violent"
 	next "nukenin"
 	dex
 
@@ -265,7 +265,7 @@ _StaryuDexEntry::
 
 	page "that causes"
 	next "severe paranoia"
-	next "with his sting"
+	next "with its sting"
 	dex
 
 _BlastoiseDexEntry::
@@ -274,28 +274,28 @@ _BlastoiseDexEntry::
 	next "A saturated"
 
 	page "testosterone "
-	next "mutation."
-	next "Rape maniac"
+	next "mutation. Also"
+	next "a rape maniac"
 	dex
 
 _PinsirDexEntry::
-	text "A old powerful"
+	text "An old powerful"
 	next "shaman."
 	next "His existence"
 
 	page "is lost in time,"
 	next "Nobody saw him"
-	next "without mask"
+	next "without his mask"
 	dex
 
 _TangelaDexEntry::
 	text "Dust, eyes, teeth."
-	next "Everything goes in"
-	next "in this mutation."
+	next "Everything goes in-"
+	next "to this mutation."
 
-	page "Is just something"
-	next "ugly turned"
-	next "worse"
+	page "It's just some-"
+	next "thing ugly that"
+	next "has become worse"
 	dex
 	
 _ProglottoDexEntry::
@@ -305,7 +305,7 @@ _ProglottoDexEntry::
 
 	page "found abandoned"
 	next "in a dead cat"
-	next "lady house."
+	next "lady's house"
 	dex
 	
 _BibrodoDexEntry::
@@ -319,7 +319,7 @@ _BibrodoDexEntry::
 	dex
 
 _GrowlitheDexEntry::
-	text "His giant penis"
+	text "Its giant penis"
 	next "is something"
 	next "disgusting yet"
 
@@ -330,22 +330,22 @@ _GrowlitheDexEntry::
 
 _OnixDexEntry::
 	text "When the world"
-	next "collapsed."
-	next "Only monsters"
+	next "collapsed, only"
+	next "the monsters made"
 
-	page "made of radiations"
-	next "had the best"
-	next "from them"
+	page "out of radiations"
+	next "benefited from"
+	next "the situation"
 	dex
 
 _FearowDexEntry::
 	text "A screaming bird."
-	next "His annoying and"
-	next "loud verse"
+	next "Its annoying and"
+	next "loud cry can"
 
-	page "can be heard"
-	next "from very"
-	next "far"
+	page "be heard from"
+	next "extraordinary"
+	next "distances"
 	dex
 
 _PidgeyDexEntry::
@@ -353,7 +353,7 @@ _PidgeyDexEntry::
 	next "dead bird."
 	next "Not so good to"
 
-	page "eat."
+	page "be eaten."
 	next "Not so good for"
 	next "anything"
 	dex
@@ -364,7 +364,7 @@ _SlowpokeDexEntry::
 	next "skin of a hippo"
 
 	page "to fake that"
-	next "he's actually"
+	next "it's actually"
 	next "a real animal"
 	dex
 
@@ -393,14 +393,14 @@ _ChanseyDexEntry::
 	next "disaster, this"
 	next "mother started"
 
-	page "feed herself"
+	page "to feed herself"
 	next "with her own"
-	next "childs"
+	next "children"
 	dex
 
 _MachokeDexEntry::
-	text "Its easy"
-	next "to be musculare"
+	text "It's easy"
+	next "to be muscular"
 	next "when you inject"
 
 	page "tons of steroids"
@@ -433,9 +433,9 @@ _HitmonchanDexEntry::
 	next "for his tribal"
 	next "face tattoo"
 
-	page "and for have"
-	next "bitten his enemy"
-	next "ear"
+	page "and to have"
+	next "bitten the ear"
+	next "of his enemy"
 	dex
 
 _ArbokDexEntry::
@@ -443,7 +443,7 @@ _ArbokDexEntry::
 	next "glorious uroboro."
 	next "The snake that"
 
-	page "eats himself"
+	page "eats itself"
 	next "symbolizing life"
 	next "and time"
 	dex
@@ -463,9 +463,9 @@ _PsyduckDexEntry::
 	next "from the inside."
 	next "This illness"
 
-	page "made his psycho"
-	next "powers more"
-	next "aware"
+	page "made his"
+	next "psychic powers"
+	next "stronger"
 	dex
 
 _DrowzeeDexEntry::
@@ -479,7 +479,7 @@ _DrowzeeDexEntry::
 	dex
 
 _GolemDexEntry::
-	text "The tinier"
+	text "The tiniest"
 	next "part of the"
 	next "universe"
 
@@ -487,14 +487,14 @@ _GolemDexEntry::
 	next "new gigantic"
 	next "form"
 	dex
-	
+
 _TraptorDexEntry::
 	text "This shadow"
 	next "kidnaps kids"
 	next "at night."
 
 	page "It then traps"
-	next "them in his"
+	next "them in its"
 	next "belly.."
 	dex
 
@@ -511,7 +511,7 @@ _MagmarDexEntry::
 _ElectabuzzDexEntry::
 	text "Costantly under"
 	next "high voltage,"
-	next "his bones are"
+	next "its bones are"
 
 	page "always exposed"
 	next "in a stroboscopic"
@@ -523,7 +523,7 @@ _MagnetonDexEntry::
 	next "works of HAJIME"
 	next "SORAYAMA."
 
-	page "His gynoids"
+	page "Its gynoids"
 	next "are a cyberpunk"
 	next "symbol"
 	dex
@@ -533,19 +533,19 @@ _KoffingDexEntry::
 	next "monster,"
 	next "it's so toxic"
 
-	page "that he has to"
-	next "protect himself"
+	page "that it has to"
+	next "protect itself"
 	next "with a mask"
 	dex
 
 _MankeyDexEntry::
-	text "The bomb"
+	text "The atomic bomb"
 	next "created by the"
-	next "german scientist"
+	next "americans during"
 
-	page "ALBERT EINSTEIN."
-	next "Safe, when is"
-	next "unexploded"
+	page "the WW2."
+	next "Safe, when"
+	next "left unexploded"
 	dex
 
 _SeelDexEntry::
@@ -560,10 +560,10 @@ _SeelDexEntry::
 
 _DiglettDexEntry::
 	text "A dick that"
-	next "come from"
+	next "comes out of"
 	next "the ground."
 
-	page "Could be from"
+	page "It could be of"
 	next "an underground"
 	next "giant monster"
 	dex
@@ -574,8 +574,8 @@ _TaurosDexEntry::
 	next "operation only"
 
 	page "once. Eye for"
-	next "eye. Tooth for"
-	next "tooth!"
+	next "eye. Tooth"
+	next "for tooth!"
 	dex
 
 _FarfetchdDexEntry::
@@ -585,7 +585,7 @@ _FarfetchdDexEntry::
 
 	page "A slave made"
 	next "quadruped by"
-	next "chop of his limbs"
+	next "cutting his limbs"
 	dex
 
 _VenonatDexEntry::
@@ -614,7 +614,7 @@ _DoduoDexEntry::
 	next "Constantly"
 	
 	page "confused by"
-	next "it's natural"
+	next "its natural"
 	next "bipolar disorder"
 	dex
 
@@ -640,7 +640,7 @@ _JynxDexEntry::
 
 _MoltresDexEntry::
 	text "A clone of"
-	next "it's original"
+	next "its original"
 	next "monster."
 
 	page "A chinese"
@@ -650,7 +650,7 @@ _MoltresDexEntry::
 
 _ArticunoDexEntry::
 	text "A clone of"
-	next "it's original"
+	next "its original"
 	next "monster."
 
 	page "A drone"
@@ -660,7 +660,7 @@ _ArticunoDexEntry::
 
 _ZapdosDexEntry::
 	text "A clone of"
-	next "it's original"
+	next "its original"
 	next "monster."
 
 	page "A battery"
@@ -680,18 +680,18 @@ _DittoDexEntry::
 
 _MeowthDexEntry::
 	text "The cat of the"
-	next "creator."
-	next "He's always"
+	next "creator. He's"
+	next "always scared"
 
-	page "scared she jumps"
-	next "out the windows"
-	next "and dies"
+	page "that she'll"
+	next "jump out of the"
+	next "windows and dies"
 	dex
 
 _KrabbyDexEntry::
 	text "A trash bag."
 	next "A selection of"
-	next "most polluted"
+	next "the most polluted"
 
 	page "waste of nuclear"
 	next "centrals and"
@@ -711,15 +711,15 @@ _VulpixDexEntry::
 _NinetalesDexEntry::
 	text "The glorious"
 	next "nine-tailed"
-	next "fox myth."
+	next "fox myth. It"
 
-	page "Often transforms"
-	next "into woman to"
+	page "often morphs"
+	next "into a woman to"
 	next "seduce young men"
 	dex
 
 _PikachuDexEntry::
-	text "Mouse were"
+	text "Mice were"
 	next "the firsts"
 	next "monsters melted"
 
@@ -734,7 +734,7 @@ _RaichuDexEntry::
 	next "modified mouse"
 
 	page "to bring it"
-	next "back after his"
+	next "back after its"
 	next "own death"
 	dex
 
@@ -744,12 +744,12 @@ _DratiniDexEntry::
 	next "After 20"
 
 	page "years a peyote"
-	next "can be mature"
-	next "and consumed"
+	next "is mature and"
+	next "can be consumed"
 	dex
 
 _DragonairDexEntry::
-	text "It's lair is"
+	text "Its lair is"
 	next "in the lake"
 	next "of Lerna."
 
@@ -783,7 +783,7 @@ _HorseaDexEntry::
 	next "the mutation"
 	next "process didn't"
 
-	page "go so well"
+	page "go very well"
 	next "for it, causing"
 	next "a penis-face"
 	dex
@@ -801,7 +801,7 @@ _SeadraDexEntry::
 _SandshrewDexEntry::
 	text "An ancient"
 	next "mummified"
-	next "rat find in"
+	next "rat found in"
 
 	page "an egyptian"
 	next "pyramid, inside"
@@ -809,13 +809,13 @@ _SandshrewDexEntry::
 	dex
 
 _SandslashDexEntry::
-	text "The personal"
-	next "rat of a"
-	next "pharaoh."
+	text "The personal rat"
+	next "of a pharaoh."
+	next "Inside his"
 
-	page "Inside his"
-	next "pyramid are all"
-	next "his dead enemies"
+	page "pyramid there"
+	next "are all his"
+	next "dead enemies"
 	dex
 
 _OmanyteDexEntry::
@@ -833,7 +833,7 @@ _OmastarDexEntry::
 	next "experiment,"
 	next "now discontinued"
 
-	page "because it's"
+	page "because of its"
 	next "weird sexual"
 	next "perversions"
 	dex
@@ -841,7 +841,7 @@ _OmastarDexEntry::
 _JigglypuffDexEntry::
 	text "When its face"
 	next "eroded, instead"
-	next "of his brain"
+	next "of its brain"
 
 	page "it showed just"
 	next "an enormous,"
@@ -860,7 +860,7 @@ _WigglytuffDexEntry::
 
 _EeveeDexEntry::
 	text "A dead dog."
-	next "The cause of it's"
+	next "The cause of its"
 	next "death are unknown"
 
 	page "however, is a good"
@@ -883,7 +883,7 @@ _JolteonDexEntry::
 	next "dog were already"
 	next "found in Pripyat."
 
-	page "His weird mouth"
+	page "Its weird mouth"
 	next "can bite very"
 	next "painfully"
 	dex
@@ -894,7 +894,7 @@ _VaporeonDexEntry::
 	next "humans and dogs"
 
 	page "have sex and"
-	next "generate a"
+	next "generate an"
 	next "offspring"
 	dex
 
@@ -904,7 +904,7 @@ _MachopDexEntry::
 	next "puke hourly."
 
 	page "This bad habit"
-	next "made him skinny"
+	next "made it skinny"
 	next "like a model"
 	dex
 
@@ -915,15 +915,15 @@ _ZubatDexEntry::
 
 	page "to save space"
 	next "they started"
-	next "becoming one"
+	next "to become one"
 	dex
 
 _EkansDexEntry::
 	text "This monster"
 	next "was generated"
-	next "by the drips"
+	next "by the drops"
 
-	page "of blood from"
+	page "of blood of"
 	next "MEDUSA's cutted"
 	next "head"
 	dex
@@ -943,7 +943,7 @@ _PoliwhirlDexEntry::
 	next "very bad mannered"
 	next "frog."
 
-	page "He just swear"
+	page "It just swear"
 	next "and scream all"
 	next "the day"
 	dex
@@ -953,8 +953,8 @@ _PoliwrathDexEntry::
 	next "perverted"
 	next "evolution of"
 
-	page "it's predecessors."
-	next "He manages its"
+	page "its predecessors."
+	next "It manages its"
 	next "stuff orally"
 	dex
 
@@ -964,18 +964,18 @@ _WeedleDexEntry::
 	next "matter in the"
 
 	page "forest."
-	next "He kills all its"
+	next "It kills all its"
 	next "similars"
 	dex
 
 _KakunaDexEntry::
-	text "To harden in"
-	next "his sheel was"
-	next "not so useful"
+	text "Because of those"
+	next "new predators, it"
+	next "was not useful"
 
-	page "with those new"
-	next "predators, so it"
-	next "now uses uzis"
+	page "to harden its"
+	next "shell, so now"
+	next "it uses two uzi"
 	dex
 
 _BeedrillDexEntry::
@@ -1013,7 +1013,7 @@ _DugtrioDexEntry::
 	next "agglomerated."
 	next "Probably a"
 
-	page "portrait of a"
+	page "portrait of an"
 	next "ongoing gay orgy"
 	next "underground"
 	dex
@@ -1039,17 +1039,17 @@ _DewgongDexEntry::
 	dex
 
 _CaterpieDexEntry::
-	text "Mini gun used"
-	next "in some after"
-	next "catastrophe war"
+	text "Mini gun used in"
+	next "some wars after"
+	next "the catastrophe"
 
 	page "as a field"
 	next "turret gunner."
-	next "Not so precise"
+	next "Not very precise"
 	dex
 
 _MetapodDexEntry::
-	text "A coccoon"
+	text "A cocoon"
 	next "eaten by"
 	next "worms."
 
@@ -1069,47 +1069,47 @@ _ButterfreeDexEntry::
 	dex
 
 _MachampDexEntry::
-	text "This is what you"
-	next "get if you give"
-	next "steroids"
+	text "This is what"
+	next "you get if you"
+	next "give steroids"
 
-	page "to ninjas."
-	next "An overpowered mad"
-	next "samurai"
+	page "to ninjas. An"
+	next "overpowered mad"
+	next "warrior"
 	dex
 
 _GolduckDexEntry::
 	text "A dead duck"
 	next "not good to"
-	next "eat because it's"
+	next "be eaten because"
 
-	page "rotten."
-	next "Often mistaken for"
-	next "good"
+	page "it's rotten."
+	next "Often mistaken"
+	next "for a good meal"
 	dex
 
 _HypnoDexEntry::
 	text "The cursed"
 	next "puppeteer."
-	next "He will rob your"
+	next "It will rob your"
 
 	page "soul to make a"
-	next "puppet to control"
-	next "you"
+	next "puppet so it can"
+	next "control you"
 	dex
 
 _GolbatDexEntry::
 	text "Multi-tongued"
-	next "bat, its so"
-	next "venomous to"
+	next "bat, it's so"
+	next "venomous that it"
 
-	page "kill you just"
+	page "can kill you just"
 	next "with a light kiss"
 	next "on your cheek"
 	dex
 
 _MewtwoDexEntry::
-	text "Most extreme"
+	text "The most extreme"
 	next "experiment made"
 	next "by a scientist"
 
@@ -1123,7 +1123,7 @@ _SnorlaxDexEntry::
 	next "impiled to block"
 	next "the streets."
 
-	page "Its said that"
+	page "It's said that"
 	next "it probably still"
 	next "lives in groups"
 	dex
@@ -1143,8 +1143,8 @@ _MukDexEntry::
 	next "HEDORAH, the"
 	next "infamous GODZILLA"
 
-	page "enemy made of"
-	next "waste and"
+	page "enemy made out"
+	next "of waste and"
 	next "pollution"
 	dex
 
@@ -1159,7 +1159,7 @@ _KinglerDexEntry::
 	dex
 
 _CloysterDexEntry::
-	text "The females"
+	text "The female"
 	next "part that"
 	next "produces"
 
@@ -1170,10 +1170,10 @@ _CloysterDexEntry::
 
 _ElectrodeDexEntry::
 	text "A mutated doll."
-	next "Takes control"
+	next "It takes control"
 	next "over the house."
 	page "Nobody ever"
-	next "got rid of her"
+	next "forgot her"
 	next "maniac laugh"
 	dex
 
@@ -1182,7 +1182,7 @@ _ClefableDexEntry::
 	next "fused inside"
 	next "this cute fairy."
 
-	page "This was made"
+	page "This one was made"
 	next "mostly for female"
 	next "players"
 	dex
@@ -1202,9 +1202,9 @@ _PersianDexEntry::
 	next "creator of the"
 	next "game. She escaped."
 
-	page "He miss her enough"
-	next "that he've tattooed"
-	next "her on his neck"
+	page "He misses her e-"
+	next "nough that he got"
+	next "a tat on his neck"
 	dex
 
 _MarowakDexEntry::
@@ -1212,7 +1212,7 @@ _MarowakDexEntry::
 	next "a belligerant"
 	next "terrorist."
 
-	page "Always with his"
+	page "Always with its"
 	next "AUTOMATIK"
 	next "KALASHNIKOVA 47"
 	dex
@@ -1228,22 +1228,22 @@ _HaunterDexEntry::
 	dex
 
 _AbraDexEntry::
-	text "When this baby"
+	text "When this baby was"
 	next "born he couldn't"
-	next "know that will"
+	next "know that he'd"
 
 	page "be the cause of"
-	next "thousands wars"
+	next "thousands of wars"
 	next "trough ages"
 	dex
 
 _AlakazamDexEntry::
-	text "The romans"
-	next "decided to let"
-	next "jews make"
+	text "The romans decid-"
+	next "ed to let the"
+	next "jews choose what"
 
-	page "what they wanted"
-	next "to. So they"
+	page "would have been"
+	next "his fate. They"
 	next "crucified him"
 	dex
 
@@ -1260,7 +1260,7 @@ _PidgeottoDexEntry::
 _PidgeotDexEntry::
 	text "A decomposing"
 	next "monster"
-	next "with his organs"
+	next "with its organs"
 
 	page "visible on"
 	next "the surface of"
@@ -1290,21 +1290,21 @@ _BulbasaurDexEntry::
 _VenusaurDexEntry::
 	text "Opium is one of"
 	next "the most ancient"
-	next "drugs."
+	next "drugs. It causes"
 
-	page "Causes relax and"
-	next "euphoria, but is"
+	page "relax and"
+	next "euphoria, but it's"
 	next "easy to overdose"
 	dex
 
 _TentacruelDexEntry::
 	text "Sometimes tentacle"
-	next "rapes go wrong"
+	next "rapes go wrong,"
 	next "with situations"
 
 	page "where the victim"
-	next "got taken apart"
-	next "from the raper"
+	next "is ripped apart"
+	next "by the raper"
 	dex
 
 _GoldeenDexEntry::
@@ -1312,18 +1312,18 @@ _GoldeenDexEntry::
 	next "tribute to"
 	next "THE SIMPSONS"
 
-	page "series, nuclear"
-	next "orange fish"
-	next "named BLINKY"
+	page "series, it's the"
+	next "nuclear orange"
+	next "fish named BLINKY"
 	dex
 
 _SeakingDexEntry::
-	text "A unfishable"
-	next "fish, when captured"
-	next "its kill his"
+	text "An unfishable"
+	next "fish, when cap-"
+	next "tured it kills"
 
-	page "catcher with"
-	next "just his powerful"
+	page "its catcher with"
+	next "just its powerful"
 	next "sight"
 	dex
 
@@ -1379,10 +1379,10 @@ _NidorinoDexEntry::
 
 _NidorinaDexEntry::
 	text "A chopped hand."
-	next "You can use"
-	next "to jerk you"
+	next "You can use it"
+	next "to jerk off,"
 
-	page "off, pretending"
+	page "pretending that"
 	next "is some other"
 	next "person"
 	dex
@@ -1390,7 +1390,7 @@ _NidorinaDexEntry::
 _GeodudeDexEntry::
 	text "A precious"
 	next "mineral capable"
-	next "of generate"
+	next "of generating"
 
 	page "tons of energy"
 	next "for nuked zones"
@@ -1399,8 +1399,8 @@ _GeodudeDexEntry::
 
 _PorygonDexEntry::
 	text "An alive terminal"
-	next "produced by PLAGUE"
-	next "CORP. to"
+	next "produced by"
+	next "PLAGUE CORP. to"
 
 	page "code new things"
 	next "inside NEW KANTO"
@@ -1420,7 +1420,7 @@ _AerodactylDexEntry::
 _MagnemiteDexEntry::
 	text "The head of a"
 	next "cyborg, inspired"
-	next "mostly by "
+	next "mostly by"
 
 	page "GHOST IN THE"
 	next "SHELL anime"
@@ -1428,12 +1428,12 @@ _MagnemiteDexEntry::
 	dex
 
 _CharmanderDexEntry::
-	text "He always loved"
+	text "It always loved"
 	next "hot places. Like"
 	next "the hell center."
 
-	page "Is probably "
-	next "one of the worst "
+	page "It's probably"
+	next "one of the worst"
 	next "Satan's joke"
 	dex
 
@@ -1448,11 +1448,11 @@ _SquirtleDexEntry::
 	dex
 
 _CharmeleonDexEntry::
-	text "He was exiled"
+	text "It was exiled"
 	next "from heaven with"
 	next "LUCIFER."
 
-	page "He's the demon "
+	page "It's the demon"
 	next "of sodomy. Leads"
 	next "80 legions"
 	dex
@@ -1470,7 +1470,7 @@ _WartortleDexEntry::
 _CharizardDexEntry::
 	text "The lord of"
 	next "the lords."
-	next "His heads are"
+	next "Its heads are"
 
 	page "always battling,"
 	next "but when not, it"
@@ -1522,7 +1522,7 @@ _WeepinbellDexEntry::
 	next "pear capable of"
 	next "spitting"
 
-	page "venom in his"
+	page "venom in its"
 	next "enemies eyes"
 	next "causing blindness"
 	dex
@@ -1530,10 +1530,11 @@ _WeepinbellDexEntry::
 _VictreebelDexEntry::
 	text "The cursed fruit."
 	next "Everyone who tries"
-	next "to eats it"
+	next "to eat it"
 
-	page "will finish in"
+	page "will end up in"
 	next "hearing voices for"
 	next "the rest of life"
 	dex
+
 
