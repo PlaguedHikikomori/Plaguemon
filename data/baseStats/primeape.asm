@@ -12,7 +12,7 @@ INCBIN "pic/bmon/primeape.pic",0,1 ; 77, sprite dimensions
 dw PrimeapePicFront
 dw PrimeapePicFront
 ; attacks known at lvl 0
-db SCRATCH
+db SHANK_UP
 db LEER
 db KARATE_CHOP
 db FURY_SWIPES

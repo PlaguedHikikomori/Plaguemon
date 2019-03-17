@@ -10,7 +10,7 @@ db 120 ; catch rate
 db 118 ; base exp yield
 INCBIN "pic/bmon/nidorino.pic",0,1 ; 66, sprite dimensions
 dw NidorinoPicFront
-dw NidorinoPicFront
+dw NidorinoPicBack
 ; attacks known at lvl 0
 db LEER
 db TACKLE

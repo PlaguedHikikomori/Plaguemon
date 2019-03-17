@@ -12,7 +12,7 @@ INCBIN "pic/bmon/paras.pic",0,1 ; 55, sprite dimensions
 dw ParasPicFront
 dw ParasPicFront
 ; attacks known at lvl 0
-db SCRATCH
+db SHANK_UP
 db 0
 db 0
 db 0

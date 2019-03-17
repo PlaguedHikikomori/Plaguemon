@@ -12,7 +12,7 @@ INCBIN "pic/bmon/diglett.pic",0,1 ; 55, sprite dimensions
 dw DiglettPicFront
 dw DiglettPicFront
 ; attacks known at lvl 0
-db SCRATCH
+db SHANK_UP
 db 0
 db 0
 db 0
