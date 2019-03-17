@@ -1,17 +1,17 @@
-ConversionEffect_:
+KashiraSwapEffect_:
 	ld hl, wEnemyMonType1
 	ld de, wBattleMonType1
 	ld a, [H_WHOSETURN]
 	and a
 	ld a, [wEnemyBattleStatus1]
-	jr z, .conversionEffect
+	jr z, .kashiraSwapEffect
 	push hl
 	ld h, d
 	ld l, e
 	pop de
 	ld a, [wPlayerBattleStatus1]
-.conversionEffect
-	bit Invulnerable, a ; is mon immune to typical attacks (dig/fly)
+.kashiraSwapEffect
+	bit Invulnerable, a ; is mon immune to typical attacks (tunnel/fly)
 	jr nz, PrintButItFailedText
 ; copy target's types to user
 	ld a, [hli]

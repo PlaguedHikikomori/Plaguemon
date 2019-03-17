@@ -3,12 +3,12 @@ BattleCore:
 ; These are move effects (second value from the Moves table in bank $E).
 ResidualEffects1:
 ; most non-side effects
-	db CONVERSION_EFFECT
+	db KASHIRA_SWAP_EFFECT
 	db HAZE_EFFECT
 	db SWITCH_AND_TELEPORT_EFFECT
 	db MIST_EFFECT
 	db FOCUS_ENERGY_EFFECT
-	db CONFUSION_EFFECT
+	db SUBJUGATE_EFFECT
 	db HEAL_EFFECT
 	db TRANSFORM_EFFECT
 	db LIGHT_SCREEN_EFFECT
@@ -16,7 +16,7 @@ ResidualEffects1:
 	db POISON_EFFECT
 	db PARALYZE_EFFECT
 	db DISCIPLE_EFFECT
-	db MIMIC_EFFECT
+	db MOCKINGBIRD_EFFECT
 	db GROW_CANNABIS_EFFECT
 	db SPLASH_EFFECT
 	db -1
@@ -28,8 +28,8 @@ SetDamageEffects:
 	db -1
 ResidualEffects2:
 ; non-side effects not included in ResidualEffects1
-; stat-affecting moves, sleep-inflicting moves, and Bide
-; e.g., Meditate, Bide, Hypnosis
+; stat-affecting moves, sleep-inflicting moves, and Sadness
+; e.g., Dark Voodoo, Sadness, Limbo Loop
 	db $01
 	db ATTACK_UP1_EFFECT
 	db DEFENSE_UP1_EFFECT
@@ -43,7 +43,7 @@ ResidualEffects2:
 	db SPECIAL_DOWN1_EFFECT
 	db ACCURACY_DOWN1_EFFECT
 	db EVASION_DOWN1_EFFECT
-	db BIDE_EFFECT
+	db SADNESS_EFFECT
 	db SLEEP_EFFECT
 	db ATTACK_UP2_EFFECT
 	db DEFENSE_UP2_EFFECT
@@ -62,7 +62,7 @@ AlwaysHappenSideEffects:
 ; Attacks that aren't finished after they faint the opponent.
 	db DRAIN_HP_EFFECT
 	db EXPLODE_EFFECT
-	db DREAM_EATER_EFFECT
+	db BRAIN_EATER_EFFECT
 	db PAY_DAY_EFFECT
 	db TWO_TO_FIVE_ATTACKS_EFFECT
 	db $1E
@@ -77,7 +77,7 @@ SpecialEffects:
 ; ExecutePlayerMove (or ExecuteEnemyMove), because they have already been handled
 	db DRAIN_HP_EFFECT
 	db EXPLODE_EFFECT
-	db DREAM_EATER_EFFECT
+	db BRAIN_EATER_EFFECT
 	db PAY_DAY_EFFECT
 	db SHURIKEN_EFFECT
 	db TWO_TO_FIVE_ATTACKS_EFFECT
@@ -422,7 +422,7 @@ MainInBattleLoop:
 	and (1 << FRZ) | SLP ; is mon frozen or asleep?
 	jr nz, .selectEnemyMove ; if so, jump
 	ld a, [wPlayerBattleStatus1]
-	and (1 << StoringEnergy) | (1 << UsingTrappingMove) ; check player is using Bide or using a multi-turn attack like wrap
+	and (1 << StoringEnergy) | (1 << UsingTrappingMove) ; check player is using Sadness or using a multi-turn attack like wrap
 	jr nz, .selectEnemyMove ; if so, jump
 	ld a, [wEnemyBattleStatus1]
 	bit UsingTrappingMove, a ; check if enemy is using a multi-turn attack like wrap
@@ -869,7 +869,7 @@ FaintEnemyPokemon:
 ; and the states of the two Game Boys will go out of sync unless the damage
 ; was congruent to 0 modulo 256.
 	xor a
-	ld [wPlayerBideAccumulatedDamage], a
+	ld [wPlayerSadnessAccumulatedDamage], a
 	ld hl, wEnemyStatsToDouble ; clear enemy statuses
 	ld [hli], a
 	ld [hli], a
@@ -1137,7 +1137,7 @@ RemoveFaintedPlayerMon:
 	call WaitForSoundToFinish
 .skipWaitForSound
 ; a is 0, so this zeroes the enemy's accumulated damage.
-	ld hl, wEnemyBideAccumulatedDamage
+	ld hl, wEnemySadnessAccumulatedDamage
 	ld [hli], a
 	ld [hl], a
 	ld [wBattleMonStatus], a
@@ -2655,7 +2655,7 @@ BattleMenu_RunWasSelected:
 MoveSelectionMenu:
 	ld a, [wMoveMenuType]
 	dec a
-	jr z, .mimicmenu
+	jr z, .mockingbirdmenu
 	dec a
 	jr z, .relearnmenu
 	jr .regularmenu
@@ -2699,7 +2699,7 @@ MoveSelectionMenu:
 	ld b, $5
 	ld a, $c
 	jr .menuset
-.mimicmenu
+.mockingbirdmenu
 	ld hl, wEnemyMonMoves
 	call .loadmoves
 	coord hl, 0, 7
@@ -2815,7 +2815,7 @@ SelectMenuItem:
 	ld [wCurrentMenuItem], a
 	ld b, a
 	ld a, [wMoveMenuType]
-	dec a ; if not mimic
+	dec a ; if not mockingbird
 	jr nz, .notB
 	pop af
 	ret
@@ -3134,7 +3134,7 @@ SelectEnemyMove:
 	and SLP | 1 << FRZ ; sleeping or frozen
 	ret nz
 	ld a, [wEnemyBattleStatus1]
-	and (1 << UsingTrappingMove) | (1 << StoringEnergy) ; using a trapping move like wrap or bide
+	and (1 << UsingTrappingMove) | (1 << StoringEnergy) ; using a trapping move like wrap or sadness
 	ret nz
 	ld a, [wPlayerBattleStatus1]
 	bit UsingTrappingMove, a ; caught in player's trapping move (e.g. wrap)
@@ -3281,7 +3281,7 @@ CheckIfPlayerNeedsToChargeUp:
 PlayerCanExecuteChargingMove:
 	ld hl,wPlayerBattleStatus1
 	res ChargingUp,[hl] ; reset charging up and invulnerability statuses if mon was charging up for an attack
-	                    ; being fully paralyzed or hurting oneself in confusion removes charging up status
+	                    ; being fully paralyzed or hurting oneself in Subjugation removes charging up status
 	                    ; resulting in the Pokemon being invulnerable for the whole battle
 	res Invulnerable,[hl]
 PlayerCanExecuteMove:
@@ -3390,7 +3390,7 @@ MirrorMoveCheck:
 	jr z,.moveDidNotMiss
 	call PrintMoveFailureText
 	ld a,[wPlayerMoveEffect]
-	cp a,EXPLODE_EFFECT ; even if Explosion or Selfdestruct missed, its effect still needs to be activated
+	cp a,EXPLODE_EFFECT ; even if Explosion or Suicide missed, its effect still needs to be activated
 	jr z,.notDone
 	jp ExecutePlayerMoveDone ; otherwise, we're done if the move missed
 .moveDidNotMiss
@@ -3565,43 +3565,43 @@ CheckPlayerStatusConditions:
 	ld hl,wPlayerDisabledMove
 	ld a,[hl]
 	and a
-	jr z,.ConfusedCheck
+	jr z,.SubjugatedCheck
 	dec a
 	ld [hl],a
 	and $f ; did Disable counter hit 0?
-	jr nz,.ConfusedCheck
+	jr nz,.SubjugatedCheck
 	ld [hl],a
 	ld [wPlayerDisabledMoveNumber],a
 	ld hl,DisabledNoMoreText
 	call PrintText
 
-.ConfusedCheck
+.SubjugatedCheck
 	ld a,[wPlayerBattleStatus1]
-	add a ; is player confused?
+	add a ; is player Subjugated?
 	jr nc,.TriedToUseDisabledMoveCheck
-	ld hl,wPlayerConfusedCounter
+	ld hl,wPlayerSubjugatedCounter
 	dec [hl]
-	jr nz,.IsConfused
+	jr nz,.IsSubjugated
 	ld hl,wPlayerBattleStatus1
-	res Confused,[hl] ; if confused counter hit 0, reset confusion status
-	ld hl,ConfusedNoMoreText
+	res Subjugated,[hl] ; if Subjugated counter hit 0, reset Subjugation status
+	ld hl,SubjugatedNoMoreText
 	call PrintText
 	jr .TriedToUseDisabledMoveCheck
-.IsConfused
-	ld hl,IsConfusedText
+.IsSubjugated
+	ld hl,IsSubjugatedText
 	call PrintText
 	xor a
 	ld [wAnimationType],a
-	ld a,CONF_ANIM - 1
+	ld a,SUBJ_ANIM - 1
 	call PlayMoveAnimation
 	call BattleRandom
 	cp a,$80 ; 50% chance to hurt itself
 	jr c,.TriedToUseDisabledMoveCheck
 	ld hl,wPlayerBattleStatus1
 	ld a,[hl]
-	and a, 1 << Confused ; if mon hurts itself, clear every other status from wPlayerBattleStatus1
+	and a, 1 << Subjugated ; if mon hurts itself, clear every other status from wPlayerBattleStatus1
 	ld [hl],a
-	call HandleSelfConfusionDamage
+	call HandleSelfSubjugationDamage
 	jr .MonHurtItselfOrFullyParalysed
 
 .TriedToUseDisabledMoveCheck
@@ -3619,17 +3619,17 @@ CheckPlayerStatusConditions:
 .ParalysisCheck
 	ld hl,wBattleMonStatus
 	bit PAR,[hl]
-	jr z,.BideCheck
+	jr z,.SadnessCheck
 	call BattleRandom
 	cp a,$3F ; 25% to be fully paralyzed
-	jr nc,.BideCheck
+	jr nc,.SadnessCheck
 	ld hl,FullyParalyzedText
 	call PrintText
 
 .MonHurtItselfOrFullyParalysed
 	ld hl,wPlayerBattleStatus1
 	ld a,[hl]
-	; clear bide, thrashing, charging up, and trapping moves such as warp (already cleared for confusion damage)
+	; clear sadness, thrashing, charging up, and trapping moves such as warp (already cleared for Subjugation damage)
 	and $ff ^ ((1 << StoringEnergy) | (1 << ThrashingAbout) | (1 << ChargingUp) | (1 << UsingTrappingMove))
 	ld [hl],a
 	ld a,[wPlayerMoveEffect]
@@ -3648,9 +3648,9 @@ CheckPlayerStatusConditions:
 	ld hl,ExecutePlayerMoveDone
 	jp .returnToHL ; if using a two-turn move, we need to recharge the first turn
 
-.BideCheck
+.SadnessCheck
 	ld hl,wPlayerBattleStatus1
-	bit StoringEnergy,[hl] ; is mon using bide?
+	bit StoringEnergy,[hl] ; is mon using sadness?
 	jr z,.ThrashingAboutCheck
 	xor a
 	ld [wPlayerMoveNum],a
@@ -3658,7 +3658,7 @@ CheckPlayerStatusConditions:
 	ld a,[hli]
 	ld b,a
 	ld c,[hl]
-	ld hl,wPlayerBideAccumulatedDamage + 1
+	ld hl,wPlayerSadnessAccumulatedDamage + 1
 	ld a,[hl]
 	add c ; accumulate damage taken
 	ld [hld],a
@@ -3666,18 +3666,18 @@ CheckPlayerStatusConditions:
 	adc b
 	ld [hl],a
 	ld hl,wPlayerNumAttacksLeft
-	dec [hl] ; did Bide counter hit 0?
+	dec [hl] ; did Sadness counter hit 0?
 	jr z,.UnleashEnergy
 	ld hl,ExecutePlayerMoveDone
 	jp .returnToHL ; unless mon unleashes energy, can't move this turn
 .UnleashEnergy
 	ld hl,wPlayerBattleStatus1
-	res StoringEnergy,[hl] ; not using bide any more
+	res StoringEnergy,[hl] ; not using sadness any more
 	ld hl,UnleashedEnergyText
 	call PrintText
 	ld a,1
 	ld [wPlayerMovePower],a
-	ld hl,wPlayerBideAccumulatedDamage + 1
+	ld hl,wPlayerSadnessAccumulatedDamage + 1
 	ld a,[hld]
 	add a
 	ld b,a
@@ -3693,7 +3693,7 @@ CheckPlayerStatusConditions:
 	xor a
 	ld [hli],a
 	ld [hl],a
-	ld a,BIDE
+	ld a,SADNESS
 	ld [wPlayerMoveNum],a
 	ld hl,handleIfPlayerMoveMissed ; skip damage calculation, DecrementPP and MoveHitTest
 	jp .returnToHL
@@ -3712,12 +3712,12 @@ CheckPlayerStatusConditions:
 	push hl
 	ld hl,wPlayerBattleStatus1
 	res ThrashingAbout,[hl] ; no longer thrashing about
-	set Confused,[hl] ; confused
+	set Subjugated,[hl] ; Subjugated
 	call BattleRandom
 	and a,3
 	inc a
-	inc a ; confused for 2-5 turns
-	ld [wPlayerConfusedCounter],a
+	inc a ; Subjugated for 2-5 turns
+	ld [wPlayerSubjugatedCounter],a
 	pop hl ; skip DecrementPP
 	jp .returnToHL
 
@@ -3784,16 +3784,16 @@ DisabledNoMoreText:
 	TX_FAR _DisabledNoMoreText
 	db "@"
 
-IsConfusedText:
-	TX_FAR _IsConfusedText
+IsSubjugatedText:
+	TX_FAR _IsSubjugatedText
 	db "@"
 
 HurtItselfText:
 	TX_FAR _HurtItselfText
 	db "@"
 
-ConfusedNoMoreText:
-	TX_FAR _ConfusedNoMoreText
+SubjugatedNoMoreText:
+	TX_FAR _SubjugatedNoMoreText
 	db "@"
 
 SavingEnergyText:
@@ -3838,7 +3838,7 @@ MoveIsDisabledText:
 	TX_FAR _MoveIsDisabledText
 	db "@"
 
-HandleSelfConfusionDamage:
+HandleSelfSubjugationDamage:
 	ld hl, HurtItselfText
 	call PrintText
 	ld hl, wEnemyMonDefense
@@ -3856,7 +3856,7 @@ HandleSelfConfusionDamage:
 	push af
 	xor a
 	ld [hli], a
-	ld [wCriticalHitOrOHKO], a ; self-inflicted confusion damage can't be a Critical Hit
+	ld [wCriticalHitOrOHKO], a ; self-inflicted Subjugation damage can't be a Critical Hit
 	ld a, 40 ; 40 base power
 	ld [hli], a
 	xor a
@@ -4017,14 +4017,14 @@ DetermineExclamationPointTextNum:
 ExclamationPointMoveSets:
 	db SWORDS_DANCE, GROWTH
 	db $00
-	db RECOVER, BIDE, SELFDESTRUCT, AMNESIA
+	db RECOVER, SADNESS, SUICIDE, BLANK_OUT
 	db $00
-	db MEDITATE, AGILITY, TELEPORT, MIMIC, DOUBLE_TEAM, BARRAGE
+	db DARK_VOODOO, AGILITY, TELEPORT, MOCKINGBIRD, DOUBLE_TEAM, BARRAGE
 	db $00
-	db POUND, SCRATCH, VICEGRIP, WING_ATTACK, FLY, BIND, SLAM, HORN_ATTACK, BODY_SLAM
-	db WRAP, THRASH, TAIL_WHIP, LEER, BITE, GROWL, ROAR, SING, PECK, COUNTER
-	db STRENGTH, ABSORB, STRING_SHOT, EARTHQUAKE, FISSURE, DIG, TOXIC, SCREECH, HARDEN
-	db MINIMIZE, WITHDRAW, DEFENSE_CURL, METRONOME, LICK, CLAMP, CONSTRICT, POISON_GAS
+	db POUND, SHANK_UP, VICEGRIP, WING_ATTACK, FLY, BIND, SLAM, HORN_ATTACK, BODY_SLAM
+	db WRAP, THRASH, TAIL_WHIP, LEER, BAD_TOOTH, GROWL, VENTRILOQUY, SING, PECK, COUNTER
+	db STRENGTH, ABSORB, CURSED_WIRES, CONVULSION, FISSURE, TUNNEL, TOXIC, SCREECH, HARDEN
+	db MINIMIZE, WITHDRAW, DEFENSE_CURL, METRONOME, TRYPOPHOBIA, CLAMP, CONSTRICT, POISON_GAS
 	db LEECH_LIFE, BUBBLE, FLASH, SPLASH, ACID_ARMOR, FURY_SWIPES, REST, SHARPEN, SLASH, DISCIPLE
 	db $00
 	db $FF ; terminator
@@ -4217,7 +4217,7 @@ CheckForDisobedience:
 	jr nc, .monDoesNothing
 	ld hl, WontObeyText
 	call PrintText
-	call HandleSelfConfusionDamage
+	call HandleSelfSubjugationDamage
 	jp .cannotUseMove
 .monNaps
 	call BattleRandom
@@ -4967,13 +4967,13 @@ ApplyAttackToEnemyPokemon:
 	ld a,[wPlayerMoveNum]
 	cp a,SEISMIC_TOSS
 	jr z,.storeDamage
-	cp a,NIGHT_SHADE
+	cp a,STALKING
 	jr z,.storeDamage
 	ld b,SONICBOOM_DAMAGE ; 20
 	cp a,SONICBOOM
 	jr z,.storeDamage
-	ld b,DRAGON_RAGE_DAMAGE ; 40
-	cp a,DRAGON_RAGE
+	ld b,GOD_REVENGE_DAMAGE ; 50
+	cp a,GOD_REVENGE
 	jr z,.storeDamage
 ; Psywave
 	ld a,[hl]
@@ -5086,13 +5086,13 @@ ApplyAttackToPlayerPokemon:
 	ld a,[wEnemyMoveNum]
 	cp a,SEISMIC_TOSS
 	jr z,.storeDamage
-	cp a,NIGHT_SHADE
+	cp a,STALKING
 	jr z,.storeDamage
 	ld b,SONICBOOM_DAMAGE
 	cp a,SONICBOOM
 	jr z,.storeDamage
-	ld b,DRAGON_RAGE_DAMAGE
-	cp a,DRAGON_RAGE
+	ld b,GOD_REVENGE_DAMAGE
+	cp a,GOD_REVENGE
 	jr z,.storeDamage
 ; Psywave
 	ld a,[hl]
@@ -5169,7 +5169,7 @@ ApplyAttackToPlayerPokemonDone:
 
 AttackDisciple:
 ; Unlike the two ApplyAttackToPokemon functions, Attack Disciple is shared by player and enemy.
-; Self-confusion damage as well as Hi-Jump Kick and Jump Kick recoil cause a momentary turn swap before being applied.
+; Self-Subjugation damage as well as Hi-Jump Kick and Jump Kick recoil cause a momentary turn swap before being applied.
 ; If the user has a Disciple up and would take damage because of that,
 ; damage will be applied to the other player's Disciple.
 ; Normal recoil such as from Double-Edge isn't affected by this glitch,
@@ -5553,31 +5553,31 @@ MoveHitTest:
 	ld bc,wEnemyMonStatus
 	ld a,[H_WHOSETURN]
 	and a
-	jr z,.dreamEaterCheck
+	jr z,.brainEaterCheck
 ; enemy's turn
 	ld hl,wPlayerBattleStatus1
 	ld de,wEnemyMoveEffect
 	ld bc,wBattleMonStatus
-.dreamEaterCheck
+.brainEaterCheck
 	ld a,[de]
-	cp a,DREAM_EATER_EFFECT
+	cp a,BRAIN_EATER_EFFECT
 	jr nz,.shurikenCheck
-	ld a,[bc]
-	and a,SLP ; is the target pokemon sleeping?
+	ld a, [bc]
+	and a,1 << PAR ; is the target plaguemon paralysed?
 	jp z,.moveMissed
 .shurikenCheck
 	ld a,[de]
 	cp a,SHURIKEN_EFFECT
 	ret z ; Shuriken never misses (interestingly, Azure Heights lists this is a myth, but it appears to be true)
 	call CheckTargetDisciple ; disciple check (note that this overwrites a)
-	jr z,.checkForDigOrFlyStatus
+	jr z,.checkForTunnelOrFlyStatus
 ; this code is buggy. it's supposed to prevent HP draining moves from working on Disciples.
 ; since $7b79 overwrites a with either $00 or $01, it never works.
 	cp a,DRAIN_HP_EFFECT
 	jp z,.moveMissed
-	cp a,DREAM_EATER_EFFECT
+	cp a,BRAIN_EATER_EFFECT
 	jp z,.moveMissed
-.checkForDigOrFlyStatus
+.checkForTunnelOrFlyStatus
 	bit Invulnerable,[hl]
 	jp nz,.moveMissed
 	ld a,[H_WHOSETURN]
@@ -5598,8 +5598,8 @@ MoveHitTest:
 .enemyMistCheck
 ; if move effect is from $12 to $19 inclusive or $3a to $41 inclusive
 ; i.e. the following moves
-; GROWL, TAIL WHIP, LEER, STRING SHOT, SAND-ATTACK, SMOKESCREEN, KINESIS,
-; FLASH, CONVERSION*, HAZE*, SCREECH, LIGHT SCREEN*, REFLECT*
+; GROWL, TAIL WHIP, LEER, CURSED WIRES, SAND-ATTACK, SMOKESCREEN, EVIL_LAUGH,
+; FLASH, KASHIRA_SWAP*, HAZE*, SCREECH, LIGHT SCREEN*, REFLECT*
 ; the moves that are marked with an asterisk are not affected since this
 ; function is not called when those moves are used
 	ld a,[wEnemyBattleStatus2]
@@ -6057,40 +6057,40 @@ CheckEnemyStatusConditions:
 	ld hl, wEnemyDisabledMove
 	ld a, [hl]
 	and a
-	jr z, .checkIfConfused
+	jr z, .checkIfSubjugated
 	dec a ; decrement disable counter
 	ld [hl], a
 	and $f ; did disable counter hit 0?
-	jr nz, .checkIfConfused
+	jr nz, .checkIfSubjugated
 	ld [hl], a
 	ld [wEnemyDisabledMoveNumber], a
 	ld hl, DisabledNoMoreText
 	call PrintText
-.checkIfConfused
+.checkIfSubjugated
 	ld a, [wEnemyBattleStatus1]
-	add a ; check if enemy mon is confused
+	add a ; check if enemy mon is Subjugated
 	jp nc, .checkIfTriedToUseDisabledMove
-	ld hl, wEnemyConfusedCounter
+	ld hl, wEnemySubjugatedCounter
 	dec [hl]
-	jr nz, .isConfused
+	jr nz, .isSubjugated
 	ld hl, wEnemyBattleStatus1
-	res Confused, [hl] ; if confused counter hit 0, reset confusion status
-	ld hl, ConfusedNoMoreText
+	res Subjugated, [hl] ; if Subjugated counter hit 0, reset Subjugation status
+	ld hl, SubjugatedNoMoreText
 	call PrintText
 	jp .checkIfTriedToUseDisabledMove
-.isConfused
-	ld hl, IsConfusedText
+.isSubjugated
+	ld hl, IsSubjugatedText
 	call PrintText
 	xor a
 	ld [wAnimationType], a
-	ld a,CONF_ANIM
+	ld a,SUBJ_ANIM
 	call PlayMoveAnimation
 	call BattleRandom
 	cp $80
 	jr c, .checkIfTriedToUseDisabledMove
 	ld hl, wEnemyBattleStatus1
 	ld a, [hl]
-	and 1 << Confused ; if mon hurts itself, clear every other status from wEnemyBattleStatus1
+	and 1 << Subjugated ; if mon hurts itself, clear every other status from wEnemyBattleStatus1
 	ld [hl], a
 	ld hl, HurtItselfText
 	call PrintText
@@ -6147,16 +6147,16 @@ CheckEnemyStatusConditions:
 .checkIfParalysed
 	ld hl, wEnemyMonStatus
 	bit PAR, [hl]
-	jr z, .checkIfUsingBide
+	jr z, .checkIfUsingSadness
 	call BattleRandom
 	cp $3f ; 25% to be fully paralysed
-	jr nc, .checkIfUsingBide
+	jr nc, .checkIfUsingSadness
 	ld hl, FullyParalyzedText
 	call PrintText
 .monHurtItselfOrFullyParalysed
 	ld hl, wEnemyBattleStatus1
 	ld a, [hl]
-	; clear bide, thrashing about, charging up, and multi-turn moves such as warp
+	; clear sadness, thrashing about, charging up, and multi-turn moves such as warp
 	and $ff ^ ((1 << StoringEnergy) | (1 << ThrashingAbout) | (1 << ChargingUp) | (1 << UsingTrappingMove))
 	ld [hl], a
 	ld a, [wEnemyMoveEffect]
@@ -6173,9 +6173,9 @@ CheckEnemyStatusConditions:
 .notFlyOrChargeEffect
 	ld hl, ExecuteEnemyMoveDone
 	jp .enemyReturnToHL ; if using a two-turn move, enemy needs to recharge the first turn
-.checkIfUsingBide
+.checkIfUsingSadness
 	ld hl, wEnemyBattleStatus1
-	bit StoringEnergy, [hl] ; is mon using bide?
+	bit StoringEnergy, [hl] ; is mon using sadness?
 	jr z, .checkIfThrashingAbout
 	xor a
 	ld [wEnemyMoveNum], a
@@ -6183,7 +6183,7 @@ CheckEnemyStatusConditions:
 	ld a, [hli]
 	ld b, a
 	ld c, [hl]
-	ld hl, wEnemyBideAccumulatedDamage + 1
+	ld hl, wEnemySadnessAccumulatedDamage + 1
 	ld a, [hl]
 	add c ; accumulate damage taken
 	ld [hld], a
@@ -6191,18 +6191,18 @@ CheckEnemyStatusConditions:
 	adc b
 	ld [hl], a
 	ld hl, wEnemyNumAttacksLeft
-	dec [hl] ; did Bide counter hit 0?
+	dec [hl] ; did Sadness counter hit 0?
 	jr z, .unleashEnergy
 	ld hl, ExecuteEnemyMoveDone
 	jp .enemyReturnToHL ; unless mon unleashes energy, can't move this turn
 .unleashEnergy
 	ld hl, wEnemyBattleStatus1
-	res StoringEnergy, [hl] ; not using bide any more
+	res StoringEnergy, [hl] ; not using sadness any more
 	ld hl, UnleashedEnergyText
 	call PrintText
 	ld a, $1
 	ld [wEnemyMovePower], a
-	ld hl, wEnemyBideAccumulatedDamage + 1
+	ld hl, wEnemySadnessAccumulatedDamage + 1
 	ld a, [hld]
 	add a
 	ld b, a
@@ -6218,7 +6218,7 @@ CheckEnemyStatusConditions:
 	xor a
 	ld [hli], a
 	ld [hl], a
-	ld a, BIDE
+	ld a, SADNESS
 	ld [wEnemyMoveNum], a
 	call SwapPlayerAndEnemyLevels
 	ld hl, handleIfEnemyMoveMissed ; skip damage calculation, DecrementPP and MoveHitTest
@@ -6237,12 +6237,12 @@ CheckEnemyStatusConditions:
 	push hl
 	ld hl, wEnemyBattleStatus1
 	res ThrashingAbout, [hl] ; mon is no longer using thrash or petal dance
-	set Confused, [hl] ; mon is now confused
+	set Subjugated, [hl] ; mon is now Subjugated
 	call BattleRandom
 	and $3
 	inc a
-	inc a ; confused for 2-5 turns
-	ld [wEnemyConfusedCounter], a
+	inc a ; Subjugated for 2-5 turns
+	ld [wEnemySubjugatedCounter], a
 	pop hl ; skip DecrementPP
 	jp .enemyReturnToHL
 .checkIfUsingMultiturnMove
@@ -6914,13 +6914,13 @@ HandleExplodingAnimation:
 	ld de, wEnemyBattleStatus1
 	ld a, [wEnemyMoveNum]
 .player
-	cp SELFDESTRUCT
+	cp SUICIDE
 	jr z, .isExplodingMove
 	cp EXPLOSION
 	ret nz
 .isExplodingMove
 	ld a, [de]
-	bit Invulnerable, a ; fly/dig
+	bit Invulnerable, a ; fly/tunnel
 	ret nz
 	ld a, [hli]
 	cp GHOST
@@ -7254,7 +7254,7 @@ MoveEffectPointerTable:
 	 dw FreezeBurnParalyzeEffect  ; FREEZE_SIDE_EFFECT
 	 dw FreezeBurnParalyzeEffect  ; PARALYZE_SIDE_EFFECT1
 	 dw ExplodeEffect             ; EXPLODE_EFFECT
-	 dw DrainHPEffect             ; DREAM_EATER_EFFECT
+	 dw DrainHPEffect             ; BRAIN_EATER_EFFECT
 	 dw $0000                     ; MIRROR_MOVE_EFFECT
 	 dw StatModifierUpEffect      ; ATTACK_UP1_EFFECT
 	 dw StatModifierUpEffect      ; DEFENSE_UP1_EFFECT
@@ -7270,20 +7270,20 @@ MoveEffectPointerTable:
 	 dw StatModifierDownEffect    ; SPECIAL_DOWN1_EFFECT
 	 dw StatModifierDownEffect    ; ACCURACY_DOWN1_EFFECT
 	 dw StatModifierDownEffect    ; EVASION_DOWN1_EFFECT
-	 dw ConversionEffect          ; CONVERSION_EFFECT
+	 dw KashiraSwapEffect         ; KASHIRA_SWAP_EFFECT
 	 dw HazeEffect                ; HAZE_EFFECT
-	 dw BideEffect                ; BIDE_EFFECT
+	 dw SadnessEffect             ; SADNESS_EFFECT
 	 dw ThrashPetalDanceEffect    ; THRASH_PETAL_DANCE_EFFECT
 	 dw SwitchAndTeleportEffect   ; SWITCH_AND_TELEPORT_EFFECT
 	 dw TwoToFiveAttacksEffect    ; TWO_TO_FIVE_ATTACKS_EFFECT
 	 dw TwoToFiveAttacksEffect    ; unused effect
-	 dw FlinchSideEffect           ; FLINCH_SIDE_EFFECT1
+	 dw FlinchSideEffect          ; FLINCH_SIDE_EFFECT1
 	 dw SleepEffect               ; SLEEP_EFFECT
 	 dw PoisonEffect              ; POISON_SIDE_EFFECT2
 	 dw FreezeBurnParalyzeEffect  ; BURN_SIDE_EFFECT2
 	 dw FreezeBurnParalyzeEffect  ; unused effect
 	 dw FreezeBurnParalyzeEffect  ; PARALYZE_SIDE_EFFECT2
-	 dw FlinchSideEffect           ; FLINCH_SIDE_EFFECT2
+	 dw FlinchSideEffect          ; FLINCH_SIDE_EFFECT2
 	 dw OneHitKOEffect            ; OHKO_EFFECT
 	 dw ChargeEffect              ; CHARGE_EFFECT
 	 dw $0000                     ; SUPER_FANG_EFFECT
@@ -7295,7 +7295,7 @@ MoveEffectPointerTable:
 	 dw MistEffect                ; MIST_EFFECT
 	 dw FocusEnergyEffect         ; FOCUS_ENERGY_EFFECT
 	 dw RecoilEffect              ; RECOIL_EFFECT
-	 dw ConfusionEffect           ; CONFUSION_EFFECT
+	 dw SubjugationEffect         ; SUBJUGATE_EFFECT
 	 dw StatModifierUpEffect      ; ATTACK_UP2_EFFECT
 	 dw StatModifierUpEffect      ; DEFENSE_UP2_EFFECT
 	 dw StatModifierUpEffect      ; SPEED_UP2_EFFECT
@@ -7322,13 +7322,13 @@ MoveEffectPointerTable:
 	 dw StatModifierDownEffect    ; unused effect
 	 dw StatModifierDownEffect    ; unused effect
 	 dw StatModifierDownEffect    ; unused effect
-	 dw ConfusionSideEffect       ; CONFUSION_SIDE_EFFECT
+	 dw SubjugationSideEffect     ; SUBJUGATE_SIDE_EFFECT
 	 dw TwoToFiveAttacksEffect    ; TWINEEDLE_EFFECT
 	 dw $0000                     ; unused effect
 	 dw DiscipleEffect            ; DISCIPLE_EFFECT
 	 dw HyperBeamEffect           ; HYPER_BEAM_EFFECT
 	 dw RageEffect                ; RAGE_EFFECT
-	 dw MimicEffect               ; MIMIC_EFFECT
+	 dw MockingbirdEffect         ; MOCKINGBIRD_EFFECT
 	 dw $0000                     ; METRONOME_EFFECT
 	 dw GrowCannabisEffect        ; GROW_CANNABIS_EFFECT
 	 dw SplashEffect              ; SPLASH_EFFECT
@@ -7616,7 +7616,7 @@ FrozenText:
 	db "@"
 
 CheckDefrost:
-; any fire-type move that has a chance inflict burn (all but Fire Spin) will defrost a frozen target
+; any fire-type move that has a chance inflict burn (all but Sacrifice) will defrost a frozen target
 	and a, 1 << FRZ ; are they frozen?
 	ret z ; return if so
 	ld a, [H_WHOSETURN]
@@ -7881,7 +7881,7 @@ StatModifierDownEffect:
 	and a
 	jp nz, MoveMissed
 	ld a, [bc]
-	bit Invulnerable, a ; fly/dig
+	bit Invulnerable, a ; fly/tunnel
 	jp nz, MoveMissed
 	ld a, [de]
 	sub ATTACK_DOWN1_EFFECT
@@ -8031,7 +8031,7 @@ MonsStatsFellText:
 	ld a, [wEnemyMoveEffect]
 .playerTurn
 ; check if the move's effect decreases a stat by 2
-	cp BIDE_EFFECT
+	cp SADNESS_EFFECT
 	ret c
 	cp ATTACK_DOWN_SIDE_EFFECT
 	ret nc
@@ -8086,18 +8086,18 @@ StatModifierRatios:
 	db 35,  10  ; 3.50
 	db  4,   1  ; 4.00
 
-BideEffect:
+SadnessEffect:
 	ld hl, wPlayerBattleStatus1
-	ld de, wPlayerBideAccumulatedDamage
+	ld de, wPlayerSadnessAccumulatedDamage
 	ld bc, wPlayerNumAttacksLeft
 	ld a, [H_WHOSETURN]
 	and a
-	jr z, .bideEffect
+	jr z, .sadnessEffect
 	ld hl, wEnemyBattleStatus1
-	ld de, wEnemyBideAccumulatedDamage
+	ld de, wEnemySadnessAccumulatedDamage
 	ld bc, wEnemyNumAttacksLeft
-.bideEffect
-	set StoringEnergy, [hl] ; mon is now using bide
+.sadnessEffect
+	set StoringEnergy, [hl] ; mon is now using sadness
 	xor a
 	ld [de], a
 	inc de
@@ -8108,7 +8108,7 @@ BideEffect:
 	and $1
 	inc a
 	inc a
-	ld [bc], a ; set Bide counter to 2 or 3 at random
+	ld [bc], a ; set Sadness counter to 2 or 3 at random
 	ld a, [H_WHOSETURN]
 	add XSTATITEM_ANIM
 	jp PlayBattleAnimation2
@@ -8229,7 +8229,7 @@ SwitchAndTeleportEffect:
 	cp TELEPORT
 	jr z, .printText
 	ld hl, RanAwayScaredText
-	cp ROAR
+	cp VENTRILOQUY
 	jr z, .printText
 	ld hl, WasBlownAwayText
 .printText
@@ -8336,15 +8336,15 @@ ChargeEffect:
 	dec de ; de contains enemy or player MOVENUM
 	cp FLY_EFFECT
 	jr nz, .notFly
-	set Invulnerable, [hl] ; mon is now invulnerable to typical attacks (fly/dig)
+	set Invulnerable, [hl] ; mon is now invulnerable to typical attacks (fly/TUNNEL)
 	ld b, TELEPORT ; load Teleport's animation
 .notFly
 	ld a, [de]
-	cp DIG
-	jr nz, .notDigOrFly
-	set Invulnerable, [hl] ; mon is now invulnerable to typical attacks (fly/dig)
+	cp TUNNEL
+	jr nz, .notTunnelOrFly
+	set Invulnerable, [hl] ; mon is now invulnerable to typical attacks (fly/tunnel)
 	ld b, ANIM_C0
-.notDigOrFly
+.notTunnelOrFly
 	xor a
 	ld [wAnimationType], a
 	ld a, b
@@ -8358,7 +8358,7 @@ ChargeMoveEffectText:
 	TX_FAR _ChargeMoveEffectText
 	TX_ASM
 	ld a, [wChargeMoveNum]
-	cp RAZOR_WIND
+	cp HURRICANE
 	ld hl, MadeWhirlwindText
 	jr z, .gotText
 	cp SOLARBEAM
@@ -8373,7 +8373,7 @@ ChargeMoveEffectText:
 	cp FLY
 	ld hl, FlewUpHighText
 	jr z, .gotText
-	cp DIG
+	cp TUNNEL
 	ld hl, DugAHoleText
 .gotText
 	ret
@@ -8436,52 +8436,52 @@ FocusEnergyEffect:
 RecoilEffect:
 	jpab RecoilEffect_
 
-ConfusionSideEffect:
+SubjugationSideEffect:
 	call BattleRandom
 	cp $19 ; ~10% chance
 	ret nc
-	jr ConfusionSideEffectSuccess
+	jr SubjugationSideEffectSuccess
 
-ConfusionEffect:
+SubjugationEffect:
 	call CheckTargetDisciple
-	jr nz, ConfusionEffectFailed
+	jr nz, SubjugationEffectFailed
 	call MoveHitTest
 	ld a, [wMoveMissed]
 	and a
-	jr nz, ConfusionEffectFailed
+	jr nz, SubjugationEffectFailed
 
-ConfusionSideEffectSuccess:
+SubjugationSideEffectSuccess:
 	ld a, [H_WHOSETURN]
 	and a
 	ld hl, wEnemyBattleStatus1
-	ld bc, wEnemyConfusedCounter
+	ld bc, wEnemySubjugatedCounter
 	ld a, [wPlayerMoveEffect]
-	jr z, .confuseTarget
+	jr z, .subjugateTarget
 	ld hl, wPlayerBattleStatus1
-	ld bc, wPlayerConfusedCounter
+	ld bc, wPlayerSubjugatedCounter
 	ld a, [wEnemyMoveEffect]
-.confuseTarget
-	bit Confused, [hl] ; is mon confused?
-	jr nz, ConfusionEffectFailed
-	set Confused, [hl] ; mon is now confused
+.subjugateTarget
+	bit Subjugated, [hl] ; is mon Subjugated?
+	jr nz, SubjugationEffectFailed
+	set Subjugated, [hl] ; mon is now Subjugated
 	push af
 	call BattleRandom
 	and $3
 	inc a
 	inc a
-	ld [bc], a ; confusion status will last 2-5 turns
+	ld [bc], a ; Subjugation status will last 2-5 turns
 	pop af
-	cp CONFUSION_SIDE_EFFECT
+	cp SUBJUGATE_SIDE_EFFECT
 	call nz, PlayCurrentMoveAnimation2
-	ld hl, BecameConfusedText
+	ld hl, BecameSubjugatedText
 	jp PrintText
 
-BecameConfusedText:
-	TX_FAR _BecameConfusedText
+BecameSubjugatedText:
+	TX_FAR _BecameSubjugatedText
 	db "@"
 
-ConfusionEffectFailed:
-	cp CONFUSION_SIDE_EFFECT
+SubjugationEffectFailed:
+	cp SUBJUGATE_SIDE_EFFECT
 	ret z
 	ld c, 50
 	call DelayFrames
@@ -8525,13 +8525,13 @@ RageEffect:
 	set UsingRage, [hl] ; mon is now in "rage" mode
 	ret
 
-MimicEffect:
+MockingbirdEffect:
 	ld c, 50
 	call DelayFrames
 	call MoveHitTest
 	ld a, [wMoveMissed]
 	and a
-	jr nz, .mimicMissed
+	jr nz, .mockingbirdMissed
 	ld a, [H_WHOSETURN]
 	and a
 	ld hl, wBattleMonMoves
@@ -8544,7 +8544,7 @@ MimicEffect:
 	ld a, [wEnemyBattleStatus1]
 .enemyTurn
 	bit Invulnerable, a
-	jr nz, .mimicMissed
+	jr nz, .mockingbirdMissed
 .getRandomMove
 	push hl
 	call BattleRandom
@@ -8568,7 +8568,7 @@ MimicEffect:
 .letPlayerChooseMove
 	ld a, [wEnemyBattleStatus1]
 	bit Invulnerable, a
-	jr nz, .mimicMissed
+	jr nz, .mockingbirdMissed
 	ld a, [wCurrentMenuItem]
 	push af
 	ld a, $1
@@ -8592,13 +8592,13 @@ MimicEffect:
 	ld [wd11e], a
 	call GetMoveName
 	call PlayCurrentMoveAnimation
-	ld hl, MimicLearnedMoveText
+	ld hl, MockingbirdLearnedMoveText
 	jp PrintText
-.mimicMissed
+.mockingbirdMissed
 	jp PrintButItFailedText_
 
-MimicLearnedMoveText:
-	TX_FAR _MimicLearnedMoveText
+MockingbirdLearnedMoveText:
+	TX_FAR _MockingbirdLearnedMoveText
 	db "@"
 
 GrowCannabisEffect:
@@ -8698,8 +8698,8 @@ MoveWasDisabledText:
 PayDayEffect:
 	jpab PayDayEffect_
 
-ConversionEffect:
-	jpab ConversionEffect_
+KashiraSwapEffect:
+	jpab KashiraSwapEffect_
 
 HazeEffect:
 	jpab HazeEffect_
