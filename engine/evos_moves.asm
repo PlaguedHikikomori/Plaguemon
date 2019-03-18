@@ -95,6 +95,18 @@ Evolution_PartyMonLoop: ; loop over party mons
 	cp b ; is the mon's level greater than the evolution requirement?
 	jp c, Evolution_PartyMonLoop ; if so, go the next mon
 	jr .doEvolution
+.checkRam
+	ld a, [hli] ; level requirement
+	push hl
+	ld b, a
+	ld a, [wSadness]
+	cp b ; is the mon's level greater than the evolution requirement?
+	jp nz, .nextEvoEntry2 ; if so, go the next evolution entry
+	xor a
+	ld [hWY], a
+	call LoadFontTilePatterns
+	pop hl
+	jr .doEvolution
 .checkItemEvo
 	ld a, [hli]
 	ld b, a ; evolution item
@@ -107,18 +119,6 @@ Evolution_PartyMonLoop: ; loop over party mons
 	ld a, [wLoadedMonLevel]
 	cp b ; is the mon's level greater than the evolution requirement?
 	jp c, .nextEvoEntry2 ; if so, go the next evolution entry
-	jp nc, .doEvolution
-.checkRam
-	ld a, [hli] ; level requirement
-	push hl
-	ld b, a
-	ld a, [wSadness]
-	cp b ; is the mon's level greater than the evolution requirement?
-	jp nz, .nextEvoEntry2 ; if so, go the next evolution entry
-	xor a
-	ld [hWY], a
-	call LoadFontTilePatterns
-	pop hl
 .doEvolution
 	ld [wCurEnemyLVL], a
 	ld a, 1
