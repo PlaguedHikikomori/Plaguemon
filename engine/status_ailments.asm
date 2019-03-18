@@ -10,11 +10,11 @@ PrintStatusAilment:
 	jr nz, .par
 	and SLP
 	ret z
-	ld a, "C"
-	ld [hli], a
 	ld a, "O"
 	ld [hli], a
-	ld [hl], "M"
+	ld a, "V"
+	ld [hli], a
+	ld [hl], "D"
 	ret
 .psn
 	ld a, "T"
@@ -31,11 +31,11 @@ PrintStatusAilment:
 	ld [hl], "S"
 	ret
 .frz
+	ld a, "C"
+	ld [hli], a
 	ld a, "O"
 	ld [hli], a
-	ld a, "V"
-	ld [hli], a
-	ld [hl], "D"
+	ld [hl], "M"
 	ret
 .par
 	ld a, "A"

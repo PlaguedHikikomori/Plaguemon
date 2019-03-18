@@ -835,16 +835,14 @@ _ViridianSchoolBlackboardText2::
 	done
 
 _ViridianBlackboardSleepText::
-	text "#MON can't"
-	line "attack if they"
-	cont "are in a COMA!"
+	text "OVERDOSE is"
+	line "like a limbo."
+	cont "You can be here."
 
-	para "COMA can last"
-	line "as long as it"
-	cont "will."
+	para "Or you can't."
+	line "Use NALOXONE"
+	cont "To have a chance."
 
-	para "Use A SLAP to"
-	line "wake them up!"
 	prompt
 
 _ViridianBlackboardPoisonText::
@@ -874,14 +872,16 @@ _ViridianBlackboardBurnText::
 	prompt
 
 _ViridianBlackboardFrozenText::
-	text "COMA is"
-	line "like a limbo."
-	cont "You can be here."
+	text "#MON can't"
+	line "attack if they"
+	cont "are in a COMA!"
 
-	para "Or you can't."
-	line "Use NALOXONE"
-	cont "To have a chance."
+	para "COMA can last"
+	line "as long as it"
+	cont "will."
 
+	para "Use A SLAP to"
+	line "wake them up!"
 	prompt
 
 _VermilionGymTrashText::
@@ -1167,7 +1167,7 @@ _FastAsleepText::
 
 _WokeUpText::
 	text "<USER>"
-	line "was awakened!"
+	line "got sober!"
 	prompt
 
 _IsFrozenText::
@@ -2163,7 +2163,7 @@ _IsUnaffectedText::
 
 _ParalyzedMayNotAttackText::
 	text "<TARGET>'s"
-	line "too scared! It may"
+	line "too scared!It may"
 	cont "not attack!"
 	prompt
 
