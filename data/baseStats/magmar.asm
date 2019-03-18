@@ -12,7 +12,7 @@ INCBIN "pic/bmon/magmar.pic",0,1 ; 66, sprite dimensions
 dw MagmarPicFront
 dw MagmarPicFront
 ; attacks known at lvl 0
-db EMBER
+db RITUAL
 db 0
 db 0
 db 0

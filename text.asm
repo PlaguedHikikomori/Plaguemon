@@ -874,7 +874,7 @@ _ViridianBlackboardBurnText::
 	prompt
 
 _ViridianBlackboardFrozenText::
-	text "OVERDOSE is"
+	text "COMA is"
 	line "like a limbo."
 	cont "You can be here."
 
@@ -1162,22 +1162,22 @@ _GetOutText::
 
 _FastAsleepText::
 	text "<USER> is"
-	line "in other dimension!"
+	line "in recovery!"
 	prompt
 
 _WokeUpText::
 	text "<USER>"
-	line "woke up!"
+	line "was awakened!"
 	prompt
 
 _IsFrozenText::
 	text "<USER>"
-	line "is frozen solid!"
+	line "is in COMA!"
 	prompt
 
 _FullyParalyzedText::
 	text "<USER>'s"
-	line "fully paralyzed!"
+	line "too scared!"
 	prompt
 
 _FlinchedText::
@@ -1195,19 +1195,19 @@ _DisabledNoMoreText::
 	line "disabled no more!"
 	prompt
 
-_IsConfusedText::
+_IsSubjugatedText::
 	text "<USER>"
-	line "is confused!"
+	line "is subjugated!"
 	prompt
 
 _HurtItselfText::
-	text "It hurt itself in"
-	line "its confusion!"
+	text "It was forced to"
+	line "commit suicide!"
 	prompt
 
-_ConfusedNoMoreText::
+_SubjugatedNoMoreText::
 	text "<USER>'s"
-	line "confused no more!"
+	line "subjugated no more!"
 	prompt
 
 _SavingEnergyText::
@@ -1543,7 +1543,7 @@ _PotionText::
 _AntidoteText::
 	TX_RAM wcd6d
 	text " was"
-	line "cured of poison!"
+	line "cured of tumor!"
 	done
 
 _ParlyzHealText::
@@ -1554,8 +1554,7 @@ _ParlyzHealText::
 
 _BurnHealText::
 	TX_RAM wcd6d
-	text "'s no"
-	line "more possessed!"
+	text "was exorcised!"
 	done
 
 _IceHealText::
@@ -1567,7 +1566,7 @@ _IceHealText::
 _AwakeningText::
 	TX_RAM wcd6d
 	text ""
-	line "woke up!"
+	line "got sober!"
 	done
 
 _FullHealText::
@@ -2010,12 +2009,13 @@ _IsEvolvingText::
 
 _FellAsleepText::
 	text "<TARGET>"
-	line "got in a COMA!"
+	line "got in a OVERDOSE!"
 	prompt
 
 _AlreadyAsleepText::
 	text "<TARGET>'s"
-	line "already in COMA!"
+	line "already in" 
+	cont "OVERDOSE!"
 	prompt
 
 _PoisonedText::
@@ -2036,7 +2036,7 @@ _BurnedText::
 
 _FrozenText::
 	text "<TARGET>"
-	line "was frozen solid!"
+	line "got in COMA!"
 	prompt
 
 _FireDefrostedText::
@@ -2118,12 +2118,12 @@ _DugAHoleText::
 	line "dug a hole!"
 	prompt
 
-_BecameConfusedText::
+_BecameSubjugatedText::
 	text "<TARGET>"
-	line "became confused!"
+	line "became subjugated!"
 	prompt
 
-_MimicLearnedMoveText::
+_MockingbirdLearnedMoveText::
 	text "<USER>"
 	line "learned"
 	cont "@"
@@ -2163,12 +2163,12 @@ _IsUnaffectedText::
 
 _ParalyzedMayNotAttackText::
 	text "<TARGET>'s"
-	line "paralyzed! It may"
+	line "too scared! It may"
 	cont "not attack!"
 	prompt
 
 _DiscipleText::
-	text "He confessed a"
+	text "He professed a"
 	line "DISCIPLE!"
 	prompt
 
@@ -2208,7 +2208,7 @@ _HitWithRecoilText::
 	prompt
 
 _ConvertedTypeText::
-	text "Converted type to"
+	text "Changed face with"
 	line "<TARGET>'s!"
 	prompt
 
@@ -2219,13 +2219,12 @@ _StatusChangesEliminatedText::
 
 _StartedSleepingEffect::
 	text "<USER>"
-	line "started sleeping!"
+	line "went to rehab!"
 	done
 
 _FellAsleepBecameHealthyText::
 	text "<USER>"
-	line "fell asleep and"
-	cont "became healthy!"
+	line "started detox"
 	done
 
 _RegainedHealthText::
@@ -2262,9 +2261,9 @@ _SuckedHealthText::
 	line "<TARGET>!"
 	prompt
 
-_DreamWasEatenText::
+_BrainWasEatenText::
 	text "<TARGET>'s"
-	line "dream was eaten!"
+	line "brain was eaten!"
 	prompt
 
 _TradeCenterText1::
@@ -3150,4 +3149,3 @@ INCLUDE "text/pokedex.asm"
 SECTION "Move Names", ROMX, BANK[MOVE_NAMES]
 
 INCLUDE "text/move_names.asm"
-

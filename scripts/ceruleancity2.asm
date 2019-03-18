@@ -1,6 +1,6 @@
 CeruleanHideRocket:
 ; code similar to this appears in a lot of banks; this particular
-; one is called after you beat the Rocket that gives you TM28 DIG.
+; one is called after you beat the Rocket that gives you TM28 TUNNEL.
 ; the screen then fades out, he disappears, and fades back in
 	call GBFadeOutToBlack
 	ld a, HS_CERULEAN_GUARD_1

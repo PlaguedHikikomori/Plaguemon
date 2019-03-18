@@ -922,9 +922,9 @@ ItemUseMedicine:
 	ld a,$ff
 	ld [wUpdateSpritesEnabled],a
 	ld a,[wPseudoItemID]
-	and a ; using Softboiled?
-	jr z,.notUsingSoftboiled
-; if using softboiled
+	and a ; using Pregnancy?
+	jr z,.notUsingPregnancy
+; if using pregnancy
 	call GoBackToPartyMenu
 	jr .getPartyMonDataAddress
 .emptyParty
@@ -936,7 +936,7 @@ ItemUseMedicine:
 	text "You don't have"
 	line "any #MON!"
 	prompt
-.notUsingSoftboiled
+.notUsingPregnancy
 	call DisplayPartyMenu
 .getPartyMonDataAddress
 	jp c,.canceledItemUse
@@ -955,11 +955,11 @@ ItemUseMedicine:
 	pop af
 	ld [wWhichPokemon],a
 	ld a,[wPseudoItemID]
-	and a ; using Softboiled?
+	and a ; using Pregnancy?
 	jr z,.checkItemType
-; if using softboiled
+; if using pregnancy
 	ld a,[wWhichPokemon]
-	cp d ; is the pokemon trying to use softboiled on itself?
+	cp d ; is the pokemon trying to use pregnancy on itself?
 	jr z,ItemUseMedicine ; if so, force another choice
 .checkItemType
 	ld a,[wcf91]
@@ -1108,9 +1108,9 @@ ItemUseMedicine:
 	ld a,[hl]
 	ld [wHPBarMaxHP],a ; max HP stored at wHPBarMaxHP (2 bytes, big-endian)
 	ld a,[wPseudoItemID]
-	and a ; using Softboiled?
-	jp z,.notUsingSoftboiled2
-; if using softboiled
+	and a ; using Pregnancy?
+	jp z,.notUsingPregnancy2
+; if using pregnancy
 	ld hl,wHPBarMaxHP
 	ld a,[hli]
 	push af
@@ -1133,10 +1133,10 @@ ItemUseMedicine:
 	ld a,5
 	ld [H_DIVISOR],a
 	ld b,2 ; number of bytes
-	call Divide ; get 1/5 of max HP of pokemon that used Softboiled
+	call Divide ; get 1/5 of max HP of pokemon that used Pregnancy
 	ld bc,(wPartyMon1HP + 1) - (wPartyMon1MaxHP + 1)
-	add hl,bc ; hl now points to LSB of current HP of pokemon that used Softboiled
-; subtract 1/5 of max HP from current HP of pokemon that used Softboiled
+	add hl,bc ; hl now points to LSB of current HP of pokemon that used Pregnancy
+; subtract 1/5 of max HP from current HP of pokemon that used Pregnancy
 	ld a,[H_QUOTIENT + 3]
 	push af
 	ld b,a
@@ -1155,7 +1155,7 @@ ItemUseMedicine:
 	coord hl, 4, 1
 	ld a,[wWhichPokemon]
 	ld bc,2 * SCREEN_WIDTH
-	call AddNTimes ; calculate coordinates of HP bar of pokemon that used Softboiled
+	call AddNTimes ; calculate coordinates of HP bar of pokemon that used Pregnancy
 	ld a,SFX_HEAL_HP
 	call PlaySoundWaitForCurrent
 	ld a,[hFlags_0xFFF6]
@@ -1163,7 +1163,7 @@ ItemUseMedicine:
 	ld [hFlags_0xFFF6],a
 	ld a,$02
 	ld [wHPBarType],a
-	predef UpdateHPBar2 ; animate HP bar decrease of pokemon that used Softboiled
+	predef UpdateHPBar2 ; animate HP bar decrease of pokemon that used Pregnancy
 	ld a,[hFlags_0xFFF6]
 	res 0,a
 	ld [hFlags_0xFFF6],a
@@ -1179,7 +1179,7 @@ ItemUseMedicine:
 	pop af
 	ld [hl],a
 	jr .addHealAmount
-.notUsingSoftboiled2
+.notUsingPregnancy2
 	ld a,[wcf91]
 	cp a,SODA_POP
 	ld b,60 ; Soda Pop heal amount
@@ -1295,8 +1295,8 @@ ItemUseMedicine:
 	jp .done
 .doneHealing
 	ld a,[wPseudoItemID]
-	and a ; using Softboiled?
-	jr nz,.skipRemovingItem ; no item to remove if using Softboiled
+	and a ; using Pregnancy?
+	jr nz,.skipRemovingItem ; no item to remove if using Pregnancy
 	push hl
 	call RemoveUsedItem
 	pop hl
@@ -1350,7 +1350,7 @@ ItemUseMedicine:
 	pop af
 .done
 	ld a,[wPseudoItemID]
-	and a ; using Softboiled?
+	and a ; using Pregnancy?
 	ret nz ; if so, return
 	call GBPalWhiteOut
 	call z,RunDefaultPaletteCommand
@@ -1594,7 +1594,7 @@ ThrewRockText:
 	TX_FAR _ThrewRockText
 	db "@"
 
-; also used for Dig out-of-battle effect
+; also used for Tunnel out-of-battle effect
 ItemUseEscapeRope:
 	ld a,[wIsInBattle]
 	and a
@@ -1624,7 +1624,7 @@ ItemUseEscapeRope:
 	ld [wEscapedFromBattle],a
 	ld [wActionResultOrTookBattleTurn],a ; item used
 	ld a,[wPseudoItemID]
-	and a ; using Dig?
+	and a ; using Tunnel?
 	ret nz ; if so, returnz
 	call ItemUseReloadOverworldData
 	ld c,30

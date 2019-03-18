@@ -15,7 +15,7 @@ dw FlareonPicFront
 db TACKLE
 db SAND_ATTACK
 db QUICK_ATTACK
-db EMBER
+db RITUAL
 db 0 ; growth rate
 ; learnset
 	tmlearn 6,8

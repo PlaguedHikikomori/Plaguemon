@@ -15,7 +15,7 @@ dw DragonitePicFront
 db LEER
 db AGILITY
 db THUNDER_WAVE
-db DRAGON_RAGE
+db GOD_REVENGE
 db 5 ; growth rate
 ; learnset
 	tmlearn 2,6,7,8
