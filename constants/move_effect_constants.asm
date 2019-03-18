@@ -42,7 +42,7 @@ const_value = 0
 	const UNUSED_EFFECT_23           ; $23
 	const PARALYZE_SIDE_EFFECT2      ; $24
 	const FLINCH_SIDE_EFFECT2        ; $25
-	const OHKO_EFFECT                ; $26 moves like Horn Drill
+	const OHKO_EFFECT                ; $26 moves like Kidnapping
 	const CHARGE_EFFECT              ; $27 moves like Solar Beam
 	const SUPER_FANG_EFFECT          ; $28
 	const SPECIAL_DAMAGE_EFFECT      ; $29 Seismic Toss, Stalking, Sonic Boom, God Revenge, Psywave

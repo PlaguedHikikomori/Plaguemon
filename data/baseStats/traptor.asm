@@ -15,7 +15,7 @@ dw TraptorOnePicFront
 db STALKING
 db UNDERWORLD
 db LIMBO_LOOP
-db 0
+db KIDNAPPING
 db 3 ; growth rate
 ; learnset
 	tmlearn 1,5,6,8

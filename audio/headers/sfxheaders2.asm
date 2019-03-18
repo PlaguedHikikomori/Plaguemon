@@ -283,8 +283,8 @@ SFX_Doubleslap::
 SFX_Battle_1E::
 	audio SFX_Battle_1E, Ch4, Ch7
 
-SFX_Horn_Drill::
-	audio SFX_Horn_Drill, Ch7
+SFX_Kidnapping::
+	audio SFX_Kidnapping, Ch7
 
 SFX_Battle_20::
 	audio SFX_Battle_20, Ch7

@@ -30,7 +30,7 @@ AttackAnimationPointers:
 	dw HeatButtAnim
 	dw HornAttackAnim
 	dw FuryAttackAnim
-	dw HornDrillAnim
+	dw KidnappingAnim
 	dw TackleAnim
 	dw BodySlamAnim
 	dw WrapAnim
@@ -361,12 +361,11 @@ FuryAttackAnim:
 	db $02,$FF,$46
 	db $FF
 
-HornDrillAnim:
-	db $42,$1F,$05
-	db $42,$FF,$05
-	db $42,$FF,$05
-	db $42,$FF,$05
-	db $42,$FF,$05
+KidnappingAnim:
+	db SE_DARK_SCREEN_PALETTE, $FF
+	db $06,$4C,$36
+	db SE_DARK_SCREEN_FLASH, $FF
+	db SE_RESET_SCREEN_PALETTE, $FF
 	db $FF
 
 TackleAnim:
@@ -878,6 +877,7 @@ MetronomeAnim:
 	db SE_RESET_MON_POSITION, $84
 	db SE_DELAY_ANIMATION_10, $FF
 	db SE_MOVE_MON_HORIZONTALLY, $84
+	
 	db SE_DELAY_ANIMATION_10, $FF
 	db SE_RESET_MON_POSITION, $84
 	db $FF

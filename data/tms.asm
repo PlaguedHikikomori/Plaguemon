@@ -5,7 +5,7 @@ TechnicalMachines:
 	db WHIRLWIND
 	db MEGA_KICK
 	db TOXIC
-	db HORN_DRILL
+	db KIDNAPPING
 	db BODY_SLAM
 	db TAKE_DOWN
 	db DOUBLE_EDGE

@@ -42,7 +42,7 @@ MoveEnd:
 	move HEADBUTT,     FLINCH_SIDE_EFFECT2,         70, NORMAL,   100, 15
 	move HORN_ATTACK,  NO_ADDITIONAL_EFFECT,        65, NORMAL,   100, 25
 	move FURY_ATTACK,  TWO_TO_FIVE_ATTACKS_EFFECT,  15, NORMAL,    85, 20
-	move HORN_DRILL,   OHKO_EFFECT,                  1, NORMAL,    30,  5
+	move KIDNAPPING,   OHKO_EFFECT,                  1, NORMAL,    45,  5
 	move TACKLE,       NO_ADDITIONAL_EFFECT,        35, NORMAL,    95, 35
 	move BODY_SLAM,    PARALYZE_SIDE_EFFECT2,       85, NORMAL,   100, 15
 	move WRAP,         TRAPPING_EFFECT,             15, WATER ,    85, 20

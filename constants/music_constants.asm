@@ -230,7 +230,7 @@ ENDM
 	music_const SFX_BATTLE_1C,          SFX_Battle_1C
 	music_const SFX_DOUBLESLAP,         SFX_Doubleslap
 	music_const SFX_BATTLE_1E,          SFX_Battle_1E
-	music_const SFX_HORN_DRILL,         SFX_Horn_Drill
+	music_const SFX_KIDNAPPING,         SFX_Kidnapping
 	music_const SFX_BATTLE_20,          SFX_Battle_20
 	music_const SFX_BATTLE_21,          SFX_Battle_21
 	music_const SFX_BATTLE_22,          SFX_Battle_22
