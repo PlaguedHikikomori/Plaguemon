@@ -1,20 +1,20 @@
 db DEX_TRAPTOR ; pokedex id
-db 250 ; base hp
-db 100 ; base attack
-db 120 ; base defense
+db 100 ; base hp
+db 105 ; base attack
+db 100 ; base defense
 db 110 ; base speed
 db 130 ; base special
 db GHOST ; species type 1
-db POISON ; species type 2
+db GHOST ; species type 2
 db 0 ; catch rate
 db 190 ; base exp yield
 INCBIN "pic/bmon/traptor1.pic",0,1 ; 66, sprite dimensions
 dw TraptorOnePicFront
 dw TraptorOnePicFront
 ; attacks known at lvl 0
-db LICK
-db CONFUSE_RAY
-db NIGHT_SHADE
+db STALKING
+db UNDERWORLD
+db LIMBO_LOOP
 db 0
 db 3 ; growth rate
 ; learnset

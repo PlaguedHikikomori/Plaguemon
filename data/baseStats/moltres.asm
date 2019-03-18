@@ -13,7 +13,7 @@ dw MoltresPicFront
 dw MoltresPicBack
 ; attacks known at lvl 0
 db MACHINE_LEARN
-db FIRE_SPIN
+db SACRIFICE
 db DRILL_PECK
 db 0
 db 5 ; growth rate

@@ -5,15 +5,15 @@ db 95 ; base defense
 db 25 ; base speed
 db 30 ; base special
 db GROUND ; species type 1
-db ROCK ; species type 2
+db GHOST ; species type 2
 db 120 ; catch rate
 db 135 ; base exp yield
 INCBIN "pic/bmon/rhyhorn.pic",0,1 ; 77, sprite dimensions
 dw RhyhornPicFront
 dw RhyhornPicBack
 ; attacks known at lvl 0
-db HORN_ATTACK
-db 0
+db SHANK_UP
+db JUDAHS_KISS
 db 0
 db 0
 db 5 ; growth rate

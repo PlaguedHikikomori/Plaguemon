@@ -12,7 +12,7 @@ INCBIN "pic/bmon/mankey.pic",0,1 ; 55, sprite dimensions
 dw MankeyPicFront
 dw MankeyPicBack
 ; attacks known at lvl 0
-db SCRATCH
+db SHANK_UP
 db LEER
 db 0
 db 0

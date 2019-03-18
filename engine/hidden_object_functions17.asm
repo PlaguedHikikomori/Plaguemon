@@ -58,7 +58,7 @@ Space_Weed:
 	call DisplayMonFrontSpriteInBox
 	call EnableAutoTextBoxDrawing
 	tx_pre RedBedroomSNESText
-	;callab Shmup   -Inizio routine minigioco spaceweed
+;	callab Shmup   ;Inizio routine minigioco spaceweed
 	ret
 
 
@@ -279,13 +279,13 @@ ViridianSchoolBlackboardText2:
 	db "@"
 
 StatusAilmentText1:
-	db   " COM"
+	db   " OVD"
 	next " TMR"
 	next " ANX@"
 
 StatusAilmentText2:
 	db   " POS"
-	next " OVD"
+	next " COM"
 	next " QUIT@@"
 
 ViridianBlackboardStatusPointers:

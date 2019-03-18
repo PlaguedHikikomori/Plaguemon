@@ -12,7 +12,7 @@ INCBIN "pic/bmon/parasect.pic",0,1 ; 77, sprite dimensions
 dw ParasectPicFront
 dw ParasectPicBack
 ; attacks known at lvl 0
-db SCRATCH
+db SHANK_UP
 db STUN_SPORE
 db LEECH_LIFE
 db 0

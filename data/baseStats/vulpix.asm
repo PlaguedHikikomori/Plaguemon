@@ -12,7 +12,7 @@ INCBIN "pic/bmon/vulpix.pic",0,1 ; 66, sprite dimensions
 dw VulpixPicFront
 dw VulpixPicBack
 ; attacks known at lvl 0
-db EMBER
+db RITUAL
 db TAIL_WHIP
 db 0
 db 0
