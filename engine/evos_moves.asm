@@ -107,6 +107,7 @@ Evolution_PartyMonLoop: ; loop over party mons
 	ld a, [wLoadedMonLevel]
 	cp b ; is the mon's level greater than the evolution requirement?
 	jp c, .nextEvoEntry2 ; if so, go the next evolution entry
+	jp nc, .doEvolution
 .checkRam
 	ld a, [hli] ; level requirement
 	push hl
