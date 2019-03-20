@@ -24,7 +24,7 @@ _PokemonTower1Text4::
 	done
 
 _PokemonTower1Text5::
-	text "Equip the SHOTGUN"
+	text "Equip the AK 47"
 	line "before entering"
 	cont "the room. Then"
 	cont "shoot like a"
