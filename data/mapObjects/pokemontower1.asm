@@ -9,8 +9,10 @@ PokemonTower1Object:
 	db $0,  $b, $1, KNIFE_ROOM
 
 	db $0 ; signs
+	
 
-	db $0 ; objects
+	db $1 ; objects
+	object SPRITE_MEDIUM, 9, 3, STAY, DOWN, 5 ; person
 	
 	
 	; warp-to
