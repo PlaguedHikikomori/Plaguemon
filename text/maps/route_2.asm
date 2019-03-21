@@ -1,7 +1,8 @@
 _Route2Text3::
-	text "STREET 2"
-	line "NEO VIR -"
-	cont "NEO PEW"
+	text "If you step on"
+	line "those crystals"
+	cont "your beasts will"
+	cont "grow a damn TUMOR"
 	done
 
 _Route2Text4::

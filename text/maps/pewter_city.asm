@@ -22,7 +22,7 @@ _PewterCityText2::
 
 _PewterCityText_193f1::
 	text "Did you check out"
-	line "the MUSEUM scum?"
+	line "the MUSEUM, scum?"
 	done
 
 _PewterCityText_193f6::

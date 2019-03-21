@@ -129,7 +129,7 @@ _CeruleanCityText10::
 
 _CeruleanCityText17::
 	text "CERULEAN CITY"
-	line "Drugs addicted"
+	line "Junkies"
 	cont "Everywhere."
 	done
 
