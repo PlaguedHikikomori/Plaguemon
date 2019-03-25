@@ -30,7 +30,7 @@ MoveNames::
 	db "HEADBUTT@"
 	db "RAPE@"
 	db "GANG BANG@"
-	db "ANAL RAPE@"
+	db "ABDUCTION@"
 	db "TACKLE@"
 	db "SODOMY@"
 	db "BONDAGE@"
