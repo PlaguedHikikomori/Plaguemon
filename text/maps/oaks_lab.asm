@@ -20,7 +20,7 @@ _OaksLabText41::
 	done
 
 _OaksLabText39::
-	text "It's a Plague "
+	text "It's a PLAGUE"
 	line "VIAL."
 	cont "Weird shit."
 	done
@@ -378,43 +378,42 @@ _OaksLabText_44201::
 	done
 
 _OaksLabText_44206::
-	text "Almost"
-	line "a full retard! "
-	cont "Todays is "
-	cont "a wasted day!"
+	text "Almost a full"
+	line "retard! Today"
+	cont "is a wasted day!"
 	done
 
 _OaksLabText_4420b::
 	text "You still need"
 	line "more #MON!"
-	cont "Try to catch"
-	cont "other species!"
+	cont "Enslave more of"
+	cont "those fuckers!"
 	done
 
 _OaksLabText_44210::
-	text "Good, you're"
-	line "trying hard!"
-	cont "Get an ITEMFINDER"
-	cont "from my AIDE!"
+	text "Yo! Stop to"
+	line "constantly ask me"
+	cont "how many fuckers"
+	cont "you enslaved!"
 	done
 
 _OaksLabText_44215::
-	text "Looking good!"
-	line "Go find my AIDE"
-	cont "when you get 50!"
+	text "You know that"
+	line "your PLAGUEX"
+	cont "isn't complete!"
 	done
 
 _OaksLabText_4421a::
 	text "You finally got at"
-	line "least 50 species!"
+	line "least 50 beasts!"
 	cont "Be sure to get"
 	cont "EXP.ALL from my"
 	cont "AIDE!"
 	done
 
 _OaksLabText_4421f::
-	text "Ho! This is getting"
-	line "even better!"
+	text "Your PLAGUEX is"
+	line "not complete!"
 	done
 
 _OaksLabText_44224::
@@ -424,9 +423,9 @@ _OaksLabText_44224::
 	done
 
 _OaksLabText_44229::
-	text "Wonderful!"
-	line "Do you like to"
-	cont "collect things?"
+	text "Do you like to"
+	line "collect things,"
+	cont "asshole?"
 	done
 
 _OaksLabText_4422e::
@@ -437,38 +436,72 @@ _OaksLabText_4422e::
 
 _OaksLabText_44233::
 	text "You finally got at"
-	line "least 100 species!"
-	cont "I can't believe"
-	cont "how good you are!"
+	line "least 100 beasts!"
+	cont "You are truly a"
+	cont "mad slaver!"
 	done
 
 _OaksLabText_44238::
 	text "You even have the"
-	line "evolved forms of"
-	cont "#MON! Super!"
+	line "mutated forms of"
+	cont "#MON!"
 	done
 
 _OaksLabText_4423d::
-	text "Excellent! Trade"
-	line "with friends to"
-	cont "get some more!"
+	text "Try to steal"
+	line "PLAGUEMONs of"
+	cont "other slavers!"
 	done
 
 _OaksLabText_44242::
-	text "Outstanding!"
-	line "You've become a"
-	cont "real pro at this!"
+	text "C'mon! You've"
+	line "almost completed"
+	cont "your PLAGUEX!"
 	done
 
 _OaksLabText_44247::
-	text "I have nothing"
-	line "left to say!"
-	cont "You're the"
-	cont "authority now!"
+	text "Your PLAGUEX is"
+	line "almost complete!"
+	cont "Don't stop now!"
 	done
 
 _OaksLabText_4424c::
-	text "Your #X is"
-	line "entirely complete!"
-	cont "Congratulations!"
+	text "Congratulations,"
+	line "you've completed"
+	cont "the PLAGUEX!"
+
+	para "However, with our"
+	line "actions we con-"
+	cont "tributed to alter"
+	cont "an already unsta-"
+	cont "ble equilibrium"
+	cont "in the ecosystem"
+	cont "of this collaps-"
+	cont "ing world. Is it"
+	cont "possible that we"
+	cont "arrived to the"
+	cont "point where there"
+	cont "is no going back?"
+
+	para "Our avidity and"
+	line "lust for power"
+	cont "led us to this"
+	cont "situation."
+
+	para "Fuck, even if we"
+	line "are only code in"
+	cont "an emulation of"
+	cont "another universe"
+	cont "this is still our"
+	cont "home. I've become"
+	cont "mad because of"
+	cont "this thought, and"
+	cont "now there's noth-"
+	cont "ing left to do"
+	cont "for me than to"
+	cont "give you this"
+	cont "message."
+
+	para "Save this world,"
+	line "and do it NOW!!!"
 	done

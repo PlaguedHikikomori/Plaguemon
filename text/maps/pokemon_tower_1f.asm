@@ -24,7 +24,11 @@ _PokemonTower1Text4::
 	done
 
 _PokemonTower1Text5::
-	text "I am a CHANNELER!"
-	line "There are spirits"
-	cont "up to mischief!"
+	text "Equip the AK 47"
+	line "before entering"
+	cont "the room. Then"
+	cont "shoot like a"
+	cont "madman! Press"
+	cont "START to see the"
+	cont "score."
 	done
