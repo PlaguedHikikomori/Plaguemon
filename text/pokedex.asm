@@ -1114,7 +1114,7 @@ _MewtwoDexEntry::
 	next "by a scientist"
 
 	page "that used to love"
-	next "ESCHER designs and"
+	next "GIGER's designs and"
 	next "ALIEN movies"
 	dex
 
