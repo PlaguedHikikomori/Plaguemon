@@ -49,6 +49,7 @@ EnterMap::
 OverworldLoop::
     call DelayFrame
 OverworldLoopLessDelay:
+	;callba SadFace
 	callba ResetZombieScore
     callba Blinking
 	callba FalloutLoop
@@ -66,7 +67,7 @@ OverworldLoopLessDelay:
 	callba InternalThought ;-------------------------
 .noMind
 	ld a, [hJoyPressed]
-	cp SELECT
+	cp $6 ; B and SELECT
 	jr nz, .noburp
 	ldpikacry e, PikachuCry1
 	callab PlayPikachuSoundClip

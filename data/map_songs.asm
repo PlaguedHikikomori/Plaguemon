@@ -150,7 +150,7 @@ MapSongBanks:
 	db MUSIC_LAVENDER, BANK(Music_Lavender) 
 	db MUSIC_LAVENDER, BANK(Music_Lavender) 
 	db MUSIC_LAVENDER, BANK(Music_Lavender) 
-	db MUSIC_ROUTES4, BANK(Music_Routes4) 
+	db $FF, $FF                                ;rave room
 	db MUSIC_LAVENDER, BANK(Music_Lavender) 
 	db MUSIC_MEET_PROF_OAK, BANK(Music_MeetProfOak) 
 	db MUSIC_LAVENDER, BANK(Music_Lavender) 

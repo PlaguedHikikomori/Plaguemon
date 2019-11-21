@@ -85,6 +85,7 @@ HiddenObjectMaps:
 	db VERMILION_CITY
 	db CERULEAN_CITY
 	db ROUTE_4
+	db CELADON_MART_3
 	db $FF
 
 HiddenObjectPointers:
@@ -175,6 +176,7 @@ HiddenObjectPointers:
 	dw VermilionCityHiddenObjects
 	dw CeruleanCityHiddenObjects
 	dw Route4HiddenObjects
+	dw CeladonMart3HiddenObjects
 
 ; format: y-coord, x-coord, text id/item id, object routine
 TradeCenterHiddenObjects:
@@ -518,6 +520,8 @@ CinnabarPokecenterHiddenObjects:
 SaffronGymHiddenObjects:
 	db $0f,$09,$04
 	dbw BANK(GymStatues),GymStatues
+	db $0D,$0B,$02                      ;ZENER
+	dbw BANK(PlayZener),PlayZener		;ZENER
 	db $FF
 MtMoonPokecenterHiddenObjects:
 	db $04,$00,$08
@@ -858,4 +862,8 @@ CeruleanCityHiddenObjects:
 Route4HiddenObjects:
 	db $03,$28,GREAT_BALL
 	dbw BANK(HiddenItems),HiddenItems
+	db $FF
+CeladonMart3HiddenObjects:
+	db $04,$06,$09
+	dbw BANK(PlayPorn),PlayPorn
 	db $FF

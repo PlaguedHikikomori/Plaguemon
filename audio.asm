@@ -703,4 +703,45 @@ PikachuCry2::
 PikachuCry2_End:
 
 	db $77  ; unused
+
+
+SECTION "Pikachu Cries 3",ROMX,BANK[PCM_3]
+PikachuCry3::
+	dw (PikachuCry3_End - PikachuCry3) - 2 ; length of pcm data
+	INCBIN "audio/moan/moan.pcm"
+PikachuCry3_End:
+ 
+	db $77  ; unused
 	
+SECTION "Pikachu Cries 4",ROMX,BANK[PCM_6]
+PikachuCry4::
+	dw (PikachuCry4_End - PikachuCry4) - 2 ; length of pcm data
+	INCBIN "audio/909/snare.pcm"
+PikachuCry4_End:
+
+	db $77  ; unused
+	
+PikachuCry5::
+	dw (PikachuCry5_End - PikachuCry5) - 2 ; length of pcm data
+	INCBIN "audio/909/kick.pcm"
+PikachuCry5_End:
+
+	db $77  ; unused
+	
+SECTION "Pikachu Cries 5",ROMX,BANK[PCM_7]		
+PikachuCry6::
+	dw (PikachuCry6_End - PikachuCry6) - 2 ; length of pcm data
+	INCBIN "audio/909/rim.pcm"
+PikachuCry6_End:
+
+	db $77  ; unused
+	
+PikachuCry7::
+	dw (PikachuCry7_End - PikachuCry7) - 2 ; length of pcm data
+	INCBIN "audio/909/tom.pcm"
+PikachuCry7_End:
+
+	db $77  ; unused
+	
+
+

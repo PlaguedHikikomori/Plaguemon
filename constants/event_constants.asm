@@ -2523,7 +2523,7 @@ const_value = 0
 	const EVENT_9D8                                  ; 9D8, (D882, bit 0)
 	const EVENT_9D9                                  ; 9D9, (D882, bit 1)
 	const EVENT_BEAT_ARTICUNO                        ; 9DA, (D882, bit 2)
-	const EVENT_9DB                                  ; 9DB, (D882, bit 3)
+	const EVENT_BEAT_FETUSO                          ; 9DB, (D882, bit 3)
 	const EVENT_9DC                                  ; 9DC, (D882, bit 4)
 	const EVENT_9DD                                  ; 9DD, (D882, bit 5)
 	const EVENT_9DE                                  ; 9DE, (D882, bit 6)

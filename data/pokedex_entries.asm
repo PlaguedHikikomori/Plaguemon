@@ -50,11 +50,11 @@ PokedexEntryPointers:
 	dw GolemDexEntry
 	dw TraptorDexEntry
 	dw MagmarDexEntry
-	dw MissingNoDexEntry
+	dw SpiritusDexEntry
 	dw ElectabuzzDexEntry
 	dw MagnetonDexEntry
 	dw KoffingDexEntry
-	dw MissingNoDexEntry
+	dw FetusoDexEntry
 	dw MankeyDexEntry
 	dw SeelDexEntry
 	dw DiglettDexEntry
@@ -550,6 +550,13 @@ MagmarDexEntry:
 	dw 980
 	TX_FAR _MagmarDexEntry
 	db "@"
+	
+SpiritusDexEntry:
+	db "HOLY GHOST@"
+	db 9,99
+	dw 999
+	TX_FAR _SpiritusDexEntry
+	db "@"
 
 ElectabuzzDexEntry:
 	db "SHOCKED@"
@@ -571,7 +578,14 @@ KoffingDexEntry:
 	dw 20
 	TX_FAR _KoffingDexEntry
 	db "@"
-
+	
+FetusoDexEntry:
+	db "FETUS@"
+	db 2,0
+	dw 20
+	TX_FAR _FetusoDexEntry
+	db "@"
+	
 MankeyDexEntry:
 	db "H BOMB@"
 	db 1,8

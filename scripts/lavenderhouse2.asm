@@ -3,26 +3,26 @@ LavenderHouse2Script:
 	ld a, [hJoyPressed]
 	cp A_BUTTON
 	jr nz, .other2
-	ld a, SFX_SNARE_2
-	call PlaySound
+	ldpikacry e, PikachuCry1
+	callab PlayPikachuSoundClip3
 .other2
 	ld a, [hJoyPressed]
 	cp B_BUTTON 
 	jr nz, .other
-	ld a, SFX_GO_INSIDE
-	call PlaySound
+	ldpikacry e, PikachuCry1
+	callab PlayPikachuSoundClip4
 .other
 	ld a, [hJoyPressed]
 	cp D_LEFT
 	jr nz, .other3
-	ld a, SFX_TINK
-	call PlaySound
+	ldpikacry e, PikachuCry2
+	callab PlayPikachuSoundClip3
 .other3
 	ld a, [hJoyPressed]
 	cp D_RIGHT
 	jr nz, .other4
-	ld a, SFX_POISONED
-	call PlaySound
+	ldpikacry e, PikachuCry2
+	callab PlayPikachuSoundClip4
 .other4
     ld a, [hJoyPressed]
 	cp SELECT

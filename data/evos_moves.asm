@@ -50,7 +50,7 @@ EvosMovesPointerTable:
 	dw Mon076_EvosMoves
 	dw Mon154_EvosMoves ;Traptor
 	dw Mon126_EvosMoves
-	dw Mon155_EvosMoves ;MissingNo
+	dw Mon155_EvosMoves ;Spiritus
 	dw Mon125_EvosMoves
 	dw Mon082_EvosMoves
 	dw Mon109_EvosMoves
@@ -855,10 +855,14 @@ Mon126_EvosMoves:
 	db 0
 
 Mon155_EvosMoves:
-;MISSINGNO
+;SPIRITUS
 ;Evolutions
 	db 0
 ;Learnset
+	db 44,DISCIPLE
+	db 51,JUDGEMENT
+	db 56,MIND_CONTROL
+	db 99,WRATH_OF_GOD
 	db 0
 
 Mon125_EvosMoves:
@@ -900,10 +904,16 @@ Mon109_EvosMoves:
 	db 0
 
 Mon156_EvosMoves:
-;MISSINGNO
+;FETUSO
 ;Evolutions
 	db 0
 ;Learnset
+	db 8,TRANSFORM
+	db 16,MEGA_PUNCH
+	db 27,METRONOME
+	db 32,PARANOIA
+	db 44,CROP_CIRCLES
+	db 51,HYPER_BEAM
 	db 0
 
 Mon056_EvosMoves:
@@ -1909,6 +1919,7 @@ Mon063_EvosMoves:
 Mon065_EvosMoves:
 ;ALAKAZAM/MARTIRUS
 ;Evolutions
+	db EV_ZENER,10,SPIRITUS
 	db 0
 ;Learnset
 	db 16,CONFUSION

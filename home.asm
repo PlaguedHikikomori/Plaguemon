@@ -743,6 +743,14 @@ UncompressMonSprite::
 	ld a, BANK(ProglottoPicFront)
 	jr z, .GotBank
 	ld a,b
+	cp FETUSO
+	ld a, BANK(FetusoPicFront)
+	jr z, .GotBank
+	ld a,b
+	cp SPIRITUS
+	ld a, BANK(SpiritusPicFront)
+	jr z, .GotBank
+	ld a,b
 	cp TRAPTOR
 	ld a, BANK(TraptorOnePicFront)
 	jr z, .GotBank

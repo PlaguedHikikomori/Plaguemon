@@ -352,6 +352,8 @@ INCLUDE "engine/overworld/ledges.asm"
 
 SECTION "bank7",ROMX,BANK[$7]
 
+
+
 INCLUDE "data/mapHeaders/cinnabarisland.asm"
 INCLUDE "data/mapObjects/cinnabarisland.asm"
 CinnabarIslandBlocks: INCBIN "maps/cinnabarisland.blk"
@@ -1937,8 +1939,7 @@ Gate_Block:        INCBIN "gfx/blocksets/gate.bst"
 
 Forest_GFX:        INCBIN "gfx/tilesets/forest.2bpp"
 Forest_Block:      INCBIN "gfx/blocksets/forest.bst"
-Facility_GFX:      INCBIN "gfx/tilesets/facility.2bpp"
-Facility_Block:    INCBIN "gfx/blocksets/facility.bst"
+
 
 
 
@@ -2175,8 +2176,38 @@ DiskSprite:            INCBIN "gfx/sprites/disk.2bpp"
 SECTION "Pics 6", ROMX, BANK[PICS_6]
 ProglottoPicFront:: INCBIN "pic/bmon/proglotto.pic"
 BibrodoPicFront::  INCBIN "pic/bmon/bibrodo.pic"
+SpiritusPicFront::  INCBIN "pic/bmon/spiritus.pic"
+FetusoPicFront::  INCBIN "pic/bmon/fetuso.pic"
 INCLUDE "data/mapHeaders/kniferoom.asm"
 INCLUDE "scripts/kniferoom.asm"
 INCLUDE "data/mapObjects/kniferoom.asm"
 KnifeRoomBlocks:  INCBIN "maps/kniferoom.blk"
+INCLUDE "scripts/porn.asm"
+
+SECTION "bank23",ROMX,BANK[$23]
+INCLUDE "engine/pikachu_pcm2.asm"
+
+
+SECTION "bank24",ROMX,BANK[$24]
+SCOPARE: INCBIN "gfx/scopare/scopare.2bpp"
+SCOPARE2: INCBIN "gfx/scopare/scopare2.2bpp"
+SCOPARE3: INCBIN "gfx/scopare/scopare3.2bpp"
+SECTION "bank25",ROMX,BANK[$25]
+SCOPARE4: INCBIN "gfx/scopare/scopare4.2bpp"
+SCOPARE5: INCBIN "gfx/scopare/scopare5.2bpp"
+SECTION "bank31",ROMX,BANK[$31]
+INCLUDE "engine/pikachu_pcm3.asm"
+Facility_GFX:      INCBIN "gfx/tilesets/facility.2bpp"
+Facility_Block:    INCBIN "gfx/blocksets/facility.bst"
+INCLUDE "scripts/zener.asm"
+ZENER: INCBIN "gfx/zener/zener.2bpp"
+CARTE: INCBIN "gfx/zener/carte.2bpp"
+NUMBERS: INCBIN "gfx/zener/numbers.2bpp"
+SECTION "bank32",ROMX,BANK[$32]
+INCLUDE "engine/pikachu_pcm4.asm"
+INCLUDE "scripts/sadface.asm"
+HikiSad1:: INCBIN "pic/other/hikisad1.pic"
+HikiSad2:: INCBIN "pic/other/hikisad2.pic"
+HikiSad3:: INCBIN "pic/other/hikisad3.pic"
+
 

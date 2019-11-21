@@ -2001,7 +2001,7 @@ _StoppedEvolvingText::
 	prompt
 
 _IsEvolvingText::
-	text "What? @"
+	text "OMG! @"
 	TX_RAM wcf4b
 	text ""
 	line "is mutating!"

@@ -9,12 +9,6 @@ _FuchsiaPokecenterText1::
 	done
 
 _FuchsiaPokecenterText3::
-	text "There's a narrow"
-	line "trail west of"
-	cont "NEO VIR."
-
-	para "It goes to"
-	line "the OLYMPUS."
-	cont "They rule this"
-	cont "fucking world."
+	text "I got out from my"
+	line "mother's vagina.."
 	done

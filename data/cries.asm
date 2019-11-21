@@ -51,11 +51,11 @@ CryData:
 	db $12, $23, $40; Golem
 	db $07, $11, $FF; Traptor
 	db $04, $23, $30; Magmar
-	db $00, $00, $00; MissingNo.
+	db $1C, $22, $FF; Spiritus
 	db $06, $23, $FF; Electabuzz
 	db $1C, $66, $C0; Magneton
 	db $12, $23, $DD; Koffing
-	db $00, $00, $00; MissingNo.
+	db $1E, $13, $FF; Fetuso
 	db $0A, $23, $60; Mankey
 	db $0C, $23, $C0; Seel
 	db $0B, $23, $01; Diglett

@@ -154,6 +154,8 @@ const_value = 1
 	const DEX_PROGLOTTO  ; 152
 	const DEX_BIBRODO    ; 153
 	const DEX_TRAPTOR    ; 154
+	const DEX_SPIRITUS   ; 155
+	const DEX_FETUSO     ; 156
 
 NUM_POKEMON    EQU 152
 NUM_POKEMON_EXTRA EQU 103

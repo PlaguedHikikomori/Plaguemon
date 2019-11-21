@@ -37,8 +37,9 @@ SaffronGymObject:
 
 	db $0 ; signs
 
-	db $1 ; objects
+	db $2 ; objects
 	object SPRITE_GIRL, $9, $8, STAY, DOWN, $1, OPP_SABRINA, $1
+	object SPRITE_MEDIUM, $B, $D, STAY, DOWN, $2
 	
 	; warp-to
 	EVENT_DISP SAFFRON_GYM_WIDTH, $11, $8

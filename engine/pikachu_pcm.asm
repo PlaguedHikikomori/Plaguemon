@@ -93,5 +93,7 @@ PikachuCriesPointerTable:
 ; bank 21
 	pikacry_def PikachuCry1
 	pikacry_def PikachuCry2
+
+
 	
 	

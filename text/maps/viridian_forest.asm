@@ -55,7 +55,7 @@ _ViridianFrstAfterBattleText3::
 _ViridianForestText8::
 	text "I'm sad.."
 	done
-
+	
 _ViridianForestText9::
 	text "FACT:"
 

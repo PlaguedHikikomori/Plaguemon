@@ -21,12 +21,15 @@ ViridianForestTextPointers:
 	dw PickUpItemText
 	dw PickUpItemText
 	dw ViridianForestText8
+	dw FetusoText
 	dw ViridianForestText9
 	dw ViridianForestText10
 	dw ViridianForestText11
 	dw ViridianForestText12
 	dw ViridianForestText13
 	dw ViridianForestText14
+	
+	
 
 ViridianForestTrainerHeader0:
 	dbEventFlagBit EVENT_BEAT_VIRIDIAN_FOREST_TRAINER_0
@@ -54,9 +57,34 @@ ViridianForestTrainerHeader2:
 	dw ViridianForestAfterBattleText3 ; TextAfterBattle
 	dw ViridianForestEndBattleText3 ; TextEndBattle
 	dw ViridianForestEndBattleText3 ; TextEndBattle
+	
+FetusoTrainerHeader:
+	dbEventFlagBit EVENT_BEAT_FETUSO
+	db ($0 << 4) ; trainer's view range
+	dwEventFlagAddress EVENT_BEAT_FETUSO
+	dw FetusoBattleText
+	dw MewBattleText ; TextAfterBattle
+	dw MewBattleText ; TextEndBattle
+	dw MewBattleText ; TextEndBattle
+
+
 
 	db $ff
 
+FetusoText:
+	TX_ASM
+	ld hl, FetusoTrainerHeader
+	call TalkToTrainer
+	jp TextScriptEnd
+	
+FetusoBattleText:
+	TX_FAR _FetusoBattleText
+	TX_ASM
+	ld a, FETUSO
+	call PlayCry
+	call WaitForSoundToFinish
+	jp TextScriptEnd
+	
 ViridianForestText1:
 	TX_FAR _ViridianForestText1
 	db "@"
@@ -73,6 +101,12 @@ ViridianForestText3:
 	call TalkToTrainer
 	jp TextScriptEnd
 
+ViridianForestText15:
+	TX_ASM
+	ld hl, ViridianForestTrainerHeader2
+	call TalkToTrainer
+	jp TextScriptEnd
+	
 ViridianForestText4:
 	TX_ASM
 	ld hl, ViridianForestTrainerHeader2
@@ -118,6 +152,7 @@ ViridianForestAfterBattleText3:
 ViridianForestText8:
 	TX_FAR _ViridianForestText8
 	db "@"
+	
 
 ViridianForestText9:
 	TX_FAR _ViridianForestText9
@@ -142,3 +177,7 @@ ViridianForestText13:
 ViridianForestText14:
 	TX_FAR _ViridianForestText14
 	db "@"
+	
+_FetusoBattleText::
+	text "Where's Mommy?!@@"
+	done

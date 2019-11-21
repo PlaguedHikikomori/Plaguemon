@@ -46,7 +46,7 @@ _WantToKillText::
 Drama:
 	ld a, [wSadness]
 	cp $5   ; Numero di motivi per cui essere tristi - dichiarato anche in gengar, evos_moves
-	jr z, .here
+	jr nc, .here
 	inc a
 	ld [wSadness], a
 	ret
@@ -75,6 +75,10 @@ Drama:
 	
 PreDrama:
 	call SaveScreenTilesToBuffer2
+	xor a
+	ld [hWY], a
+	call LoadFontTilePatterns
+	call LoadTextBoxTilePatterns
 	ret
 	
 PostDrama:

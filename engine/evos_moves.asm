@@ -85,6 +85,9 @@ Evolution_PartyMonLoop: ; loop over party mons
 	ld a, b
 	cp EV_RAM
 	jr z, .checkRam
+	ld a, b
+	cp EV_ZENER
+	jr z, .checkZener
 .checkTradeEvo
 	ld a, [wLinkState]
 	cp LINK_STATE_TRADING
@@ -97,15 +100,17 @@ Evolution_PartyMonLoop: ; loop over party mons
 	jr .doEvolution
 .checkRam
 	ld a, [hli] ; level requirement
-	push hl
 	ld b, a
 	ld a, [wSadness]
 	cp b ; is the mon's level greater than the evolution requirement?
-	jp nz, .nextEvoEntry2 ; if so, go the next evolution entry
-	xor a
-	ld [hWY], a
-	call LoadFontTilePatterns
-	pop hl
+	jp c, Evolution_PartyMonLoop ; if so, go the next mon
+	jr .doEvolution
+.checkZener
+	ld a, [hli] ; level requirement
+	ld b, a
+	ld a, [wGuessed]
+	cp b ; is the mon's level greater than the evolution requirement?
+	jp c, Evolution_PartyMonLoop ; if so, go the next mon
 	jr .doEvolution
 .checkItemEvo
 	ld a, [hli]

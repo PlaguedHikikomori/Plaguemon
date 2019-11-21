@@ -3179,8 +3179,17 @@ ENDU
 
 wTrainerHeaderPtr:: ; da30
 	ds 2
-
-	ds 6
+wStar::
+	ds 1
+wCircle::
+	ds 1
+wSquare::
+	ds 1
+wWaves::
+	ds 1
+wPlus::
+	ds 1
+	ds 1
 
 wOpponentAfterWrongAnswer:: ; da38
 ; the trainer the player must face after getting a wrong answer in the Cinnabar
@@ -3194,7 +3203,15 @@ wCurMapScript:: ; da39
 ; mostly copied from map-specific map script pointer and written back later
 	ds 1
 
-	ds 7
+wZenerCardsDeck::
+	ds 1
+wWhichCard:: 
+	ds 1
+wPlayerCard:: 
+	ds 1
+wGuessed:: 
+	ds 1
+	ds 3
 
 wPlayTimeHours:: ; da41
 	ds 1

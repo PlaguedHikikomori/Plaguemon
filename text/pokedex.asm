@@ -507,6 +507,16 @@ _MagmarDexEntry::
 	next "of the lava"
 	next "disaster"
 	dex
+	
+_SpiritusDexEntry::
+	text "And after"
+	next "three days.."
+	next "His Ghost.."
+
+	page "Came back"
+	next "to kick"
+	next "asses!"
+	dex
 
 _ElectabuzzDexEntry::
 	text "Costantly under"
@@ -536,6 +546,16 @@ _KoffingDexEntry::
 	page "that it has to"
 	next "protect itself"
 	next "with a mask"
+	dex
+	
+_FetusoDexEntry::
+	text "A fetus"
+	next "abandoned by"
+	next "its mother."
+
+	page "A real heart-"
+	next "breaker. Cursed"
+	next "love model."
 	dex
 
 _MankeyDexEntry::
